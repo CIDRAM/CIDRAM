@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malay language data for the front-end (last modified: 2026.03.13).
+# This file: Malay language data for the front-end (last modified: 2026.03.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,7 +24,7 @@
 # requests, ask. I can help.
 ##/
 
-Abuse category:
+Abuse category: !lazy
  Bad web bot: "Bot web buruk (mengikis alamat e-mel, kandungan, perangkak yang tidak menghormati robots.txt, permintaan yang berlebihan, penipuan ejen pengguna, dll)."
  Brute-force attacks: "Serangan brute-force (serangan brute-force bukti kelayakan pada log masuk halaman web, SMTP, RDP, dll)."
  Categories (at least one is required): "Kategori (sekurang-kurangnya satu diperlukan)"
@@ -50,7 +50,7 @@ Abuse category:
  VPN IP: "IP VPN."
  Web spam: "Spam web (spam komen/forum, spam perujuk HTTP, atau spam CMS lain)."
  Webapp attacks: "Serangan aplikasi web (meneliti kelemahan atau eksploitasi, atau cuba mengeksploitasi aplikasi web, CMS, atau penyelesaian e-dagang yang dipasang, cth., WordPress, Drupal, phpMyAdmin, dsb)."
-Extended Description:
+Extended Description: !lazy
  AbuseIPDB module: "Menyekat permintaan daripada IP yang disenaraikan oleh AbuseIPDB."
  BGPView module: "Memanfaatkan {{Links.BGPView}} API untuk menyediakan kemudahan carian ASN dan kod negara untuk CIDRAM, membolehkan ASN dan negara untuk disekat atau disenarai putih melalui konfigurasi CIDRAM, dan menyediakan cara untuk pengesahan rangkaian sosial untuk mengesahkan permintaan Facebook. (Jika anda menggunakan modul ini, anda tidak perlu menggunakan modul IP-API, kerana mereka mempunyai tujuan yang sama)."
  Bad TLDs blocker module: "Menyekat hos kepunyaan TLD yang kerap digunakan oleh penghantar spam, penggodam, dan entiti jahat lain."
@@ -78,7 +78,7 @@ Extended Description:
  Referrer spam module: "Menyekat berdasarkan spam perujuk pada umumnya tidak akan memberikan sebarang manfaat keselamatan yang bermakna, tetapi dalam beberapa kes, mungkin berguna untuk sesetengah pengguna, untuk mengumpulkan lebih banyak maklumat tentang permintaan, dan untuk dapat melaporkannya."
  Stop Forum Spam module: "Melindungi halaman pendaftaran dan log masuk daripada IP yang disenaraikan oleh SFS."
  Tor blocker module: "Melarang akses daripada nod keluar Tor melalui carian DNSEL (menyokong kedua-dua IPv4 dan IPv6)."
-Name:
+Name: !lazy
  AbuseIPDB module: "Modul AbuseIPDB."
  BGPView module: "Modul BGPView."
  BOBUAM: "Modul ejen pengguna bot atau penyemak imbas (BOBUAM)."
@@ -129,7 +129,7 @@ checkbox:
  Test as sensitive request: "Uji sebagai permintaan sensitif"
  Untrack positives: "Memadam penjejakan untuk positif?"
  When blocked, suppress output template: "Apabila disekat, menindas templat keluaran."
-config:
+config: !lazy
  abuseipdb: "Konfigurasi untuk modul AbuseIPDB."
  abuseipdb_api_key: &EnterAPIKey "Sila masukkan kunci API anda disini."
  abuseipdb_build_profiles_from_usage_type: "Buat profil menggunakan jenis penggunaan yang dikembalikan oleh API? False = Tidak. True = Ya. Lalai = True."
@@ -800,7 +800,7 @@ link:
  Subtractor: "Penolakan"
  Updates: "Kemas kini"
  View mode: "Mod pandangan"
-macro:
+macro: !lazy
  Description:
   activate_modules: &MayImpactPerformance "Tidak disyorkan secara amnya, kerana mungkin terdapat beberapa yang anda tidak perlukan. Memasang dan mengaktifkan komponen apabila ia tidak diperlukan boleh menjejaskan prestasi secara negatif."
   install_l10n_core: &RecommendKeepingCore "Apabila arahan konfigurasi <code>lang_override</code> didayakan, jika penyemak imbas pengguna menentukan bahasa pilihan yang tertentu, selagi data L10N core untuk bahasa itu dipasang, CIDRAM dapat memaparkan halaman "akses dinafikan" dalam bahasa yang ditentukan. Sehubungan itu, adalah disyorkan untuk memastikan semua data L10N core dipasang."
@@ -954,7 +954,7 @@ response:
  _Yes: "Ya"
  please_check_config: "Sila semak konfigurasi anda untuk memastikan bahawa modul yang baru dipasang akan berfungsi seperti yang anda mahukan."
  release_notes: "<a href="%s"><span class="navicon link"></span>Nota keluaran untuk %s.</a>"
-stages:
+stages: !lazy
  Deploy CAPTCHAs (blocked requests): "Paparkan CAPTCHA (permintaan yang disekat)"
  Deploy CAPTCHAs (non-blocked requests): "Paparkan CAPTCHA (permintaan yang tidak disekat)"
  Execute IP tracking: "Jalankan penjejakan IP"

@@ -7,10 +7,10 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2026.03.13).
+# This file: English language data for the front-end (last modified: 2026.03.17).
 ##/
 
-Abuse category:
+Abuse category: !lazy
  Bad web bot:
   en-AU: "Bad web bot (scraping for email addresses, content, crawlers that don't honour robots.txt, excessive requests, user agent spoofing, etc)."
   en-US: "Bad web bot (scraping for email addresses, content, crawlers that don't honor robots.txt, excessive requests, user agent spoofing, etc)."
@@ -38,7 +38,7 @@ Abuse category:
  VPN IP: "VPN IP."
  Web spam: "Web spam (comment/forum spam, HTTP referrer spam, or other CMS spam)."
  Webapp attacks: "Webapp attacks (probing for vulnerabilities or exploits, or attempting to exploit installed webapps, CMS, or e-commerce solutions, e.g., WordPress, Drupal, phpMyAdmin, etc)."
-Extended Description:
+Extended Description: !lazy
  AbuseIPDB module: "Blocks requests from IPs listed at AbuseIPDB."
  BGPView module: "Leverages the {{Links.BGPView}} API to provide an ASN and country code lookup facility for CIDRAM, enabling ASNs and countries to be blocked or whitelisted via the CIDRAM configuration, and providing a means for social networking verification to verify Facebook requests. (If you use this module, you won't need to use the IP-API module, as they serve the same purpose)."
  Bad TLDs blocker module: "Blocks hosts belonging to TLDs frequently used by spammers, hackers, and other nefarious entities."
@@ -70,7 +70,7 @@ Extended Description:
  Referrer spam module: "Blocking based on referrer spam won't generally provide any meaningful security benefit, but in some cases, could be useful for some users, for gathering more information about requests, and for being able to report it."
  Stop Forum Spam module: "Protects registration and login pages against IPs listed by SFS."
  Tor blocker module: "Prohibits access from Tor exit nodes through DNSEL lookups (supports both IPv4 and IPv6)."
-Name:
+Name: !lazy
  AbuseIPDB module: "AbuseIPDB module."
  BGPView module: "BGPView module."
  BOBUAM: "Bot or browser user agents module (BOBUAM)."
@@ -121,7 +121,7 @@ checkbox:
  Test as sensitive request: "Test as sensitive request"
  Untrack positives: "Untrack positives?"
  When blocked, suppress output template: "When blocked, suppress output template."
-config:
+config: !lazy
  abuseipdb: "Configuration for the AbuseIPDB module."
  abuseipdb_api_key: &EnterAPIKey "Please enter your API key here."
  abuseipdb_build_profiles_from_usage_type: "Build profiles using the usage type returned by the API? False = No. True = Yes. Default = True."
@@ -830,7 +830,7 @@ link:
  Subtractor: "Subtractor"
  Updates: "Updates"
  View mode: "View mode"
-macro:
+macro: !lazy
  Description:
   activate_modules: &MayImpactPerformance "Not generally recommended, as there's likely to be some that you don't need. Installing and activating components when they aren't needed could negatively impact performance."
   install_l10n_core: &RecommendKeepingCore "When the <code>lang_override</code> configuration directive is enabled, if a user's browser specifies a particular language preference, as long as core L10N data for that language is installed, CIDRAM is able to display the "access denied" page in that specified language. Accordingly, having all core L10N data remain installed is recommended."
@@ -988,7 +988,7 @@ response:
  _Yes: "Yes"
  please_check_config: "Please check your configuration in order to ensure that the newly installed module will behave as you intend."
  release_notes: "<a href="%s"><span class="navicon link"></span>Release notes for %s.</a>"
-stages:
+stages: !lazy
  Deploy CAPTCHAs (blocked requests): "Deploy CAPTCHAs (blocked requests)"
  Deploy CAPTCHAs (non-blocked requests): "Deploy CAPTCHAs (non-blocked requests)"
  Execute IP tracking: "Execute IP tracking"

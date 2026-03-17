@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Gujarati language data for the front-end (last modified: 2026.03.13).
+# This file: Gujarati language data for the front-end (last modified: 2026.03.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,7 +24,7 @@
 # requests, ask. I can help.
 ##/
 
-Abuse category:
+Abuse category: !lazy
  Bad web bot: "ખરાબ વેબ બોટ (ઈમેલ એડ્રેસ અને કન્ટેન્ટ માટે સ્ક્રેપિંગ, ક્રોલર્સ કે જે robots.txt ને માન આપતા નથી, વધુ પડતી વિનંતીઓ, વપરાશકર્તા એજન્ટ સ્પૂફિંગ, વગેરે)."
  Brute-force attacks: "બ્રુટ-ફોર્સ હુમલા (વેબપેજ લોગિન, SMTP, RDP, વગેરે પર ઓળખપત્ર બ્રુટ-ફોર્સ હુમલા)."
  Categories (at least one is required): "શ્રેણીઓ (ઓછામાં ઓછી એક આવશ્યક છે)"
@@ -50,7 +50,7 @@ Abuse category:
  VPN IP: "VPN IP."
  Web spam: "વેબ સ્પામ (ટિપ્પણી/ફોરમ સ્પામ, HTTP રેફરર સ્પામ, અથવા અન્ય CMS સ્પામ)."
  Webapp attacks: "વેબએપ હુમલા (ઇન્સ્ટોલ કરેલ વેબએપ્સ, CMS, અથવા ઈ-કોમર્સ સોલ્યુશન્સ, જેમ કે WordPress, Drupal, phpMyAdmin, વગેરેમાંથી નબળાઈઓનો ઉપયોગ કરવાનો પ્રયાસ)."
-Extended Description:
+Extended Description: !lazy
  AbuseIPDB module: "AbuseIPDB પર સૂચિબદ્ધ IP ની વિનંતીઓને અવરોધિત કરે છે."
  BGPView module: "CIDRAM માટે ASN અને કન્ટ્રી કોડ લુકઅપ સુવિધા પૂરી પાડવા માટે {{Links.BGPView}} નો ઉપયોગ કરે છે, ASN અને દેશોને CIDRAM રૂપરેખાંકન દ્વારા અવરોધિત અથવા વ્હાઇટલિસ્ટ કરવામાં સક્ષમ બનાવે છે, અને Facebook વિનંતીઓને ચકાસવા માટે સોશિયલ નેટવર્કિંગ વેરિફિકેશન માટે એક માધ્યમ પ્રદાન કરે છે. (જો તમે આ મોડ્યુલનો ઉપયોગ કરો છો, તો તમારે IP-API મોડ્યુલનો ઉપયોગ કરવાની જરૂર રહેશે નહીં, કારણ કે તે સમાન હેતુ પૂરા પાડે છે)."
  Bad TLDs blocker module: "સ્પામર્સ, હેકર્સ, અને અન્ય ઘૃણાસ્પદ સંસ્થાઓ દ્વારા વારંવાર ઉપયોગમાં લેવાતા TLD સાથે જોડાયેલા હોસ્ટ્સને અવરોધિત કરે છે."
@@ -78,7 +78,7 @@ Extended Description:
  Referrer spam module: "રેફરર સ્પામના આધારે અવરોધિત કરવાથી સામાન્ય રીતે કોઈ અર્થપૂર્ણ સુરક્ષા લાભ મળશે નહીં, પરંતુ કેટલાક કિસ્સાઓમાં, કેટલાક વપરાશકર્તાઓ માટે, વિનંતીઓ વિશે વધુ માહિતી ભેગી કરવા અને તેની જાણ કરવામાં સક્ષમ થવા માટે ઉપયોગી થઈ શકે છે."
  Stop Forum Spam module: "SFS દ્વારા સૂચિબદ્ધ IP સરનામાઓ સામે નોંધણી અને લૉગિન પૃષ્ઠોનું રક્ષણ કરે છે."
  Tor blocker module: "DNSEL લુકઅપ્સ દ્વારા ટોર એક્ઝિટ નોડ્સની ઍક્સેસને પ્રતિબંધિત કરે છે (IPv4 અને IPv6 બંનેને સપોર્ટ કરે છે)."
-Name:
+Name: !lazy
  AbuseIPDB module: "AbuseIPDB મોડ્યુલ."
  BGPView module: "BGPView મોડ્યુલ."
  BOBUAM: "બોટ અથવા બ્રાઉઝર વપરાશકર્તા એજન્ટ મોડ્યુલ (BOBUAM)."
@@ -129,7 +129,7 @@ checkbox:
  Test as sensitive request: "સંવેદનશીલ વિનંતી તરીકે પરીક્ષણ કરો"
  Untrack positives: "હકારાત્મકને અનટ્રેક કરીએ?"
  When blocked, suppress output template: "જ્યારે અવરોધિત હોય, ત્યારે આઉટપુટ ટેમ્પલેટને અક્ષમ કરો."
-config:
+config: !lazy
  abuseipdb: "AbuseIPDB મોડ્યુલ માટે રૂપરેખાંકન."
  abuseipdb_api_key: &EnterAPIKey "કૃપા કરીને તમારી API કી અહીં દાખલ કરો."
  abuseipdb_build_profiles_from_usage_type: "API દ્વારા પરત કરવામાં આવેલ ઉપયોગના પ્રકારનો ઉપયોગ કરીને પ્રોફાઇલો બનાવવી છે? False/ખોટા = ના. True/સાચું = હા. ડિફૉલ્ટ = True."
@@ -803,7 +803,7 @@ link:
  Subtractor: "બાદબાકી કરનાર"
  Updates: "અપડેટ્સ"
  View mode: "જોવાનો મોડ"
-macro:
+macro: !lazy
  Description:
   activate_modules: &MayImpactPerformance "સામાન્ય રીતે ભલામણ કરવામાં આવતી નથી, કારણ કે તમને જરૂર ન હોય તેવા કેટલાક હોવાની શક્યતા છે. જ્યારે જરૂરી ન હોય ત્યારે ઘટકોને ઇન્સ્ટોલ અને સક્રિય કરવાથી પ્રભાવને નકારાત્મક અસર થઈ શકે છે."
   install_l10n_core: &RecommendKeepingCore "જ્યારે <code>lang_override</code> રૂપરેખાંકન ડાયરેક્ટિવ સક્રિય થયેલ હોય, જો વપરાશકર્તાનું બ્રાઉઝર કોઈ ચોક્કસ ભાષાની પસંદગીનો ઉલ્લેખ કરે છે, જ્યાં સુધી તે ભાષા માટેનો કોર L10N ડેટા ઇન્સ્ટોલ કરેલ હોય, તો CIDRAM તે સ્પષ્ટ ભાષામાં "ઍક્સેસ નકારી છે" પૃષ્ઠ પ્રદર્શિત કરવામાં સક્ષમ છે. તદનુસાર, તમામ કોર L10N ડેટા ઇન્સ્ટોલ રહેવાની ભલામણ કરવામાં આવે છે."
@@ -959,7 +959,7 @@ response:
  _Yes: "હા"
  please_check_config: "મહેરબાની કરીને તમારું રૂપરેખાંકન તપાસો તેની ખાતરી કરવા માટે કે નવું ઇન્સ્ટોલ કરેલ મોડ્યુલ તમે ઇચ્છો તે પ્રમાણે વર્તે."
  release_notes: "<a href="%s"><span class="navicon link"></span>%s માટે પ્રકાશન નોંધો.</a>"
-stages:
+stages: !lazy
  Deploy CAPTCHAs (blocked requests): "કેપ્ચા દર્શાવો (અવરોધિત વિનંતીઓ)"
  Deploy CAPTCHAs (non-blocked requests): "કેપ્ચા દર્શાવો (બિન-અવરોધિત વિનંતીઓ)"
  Execute IP tracking: "IP ટ્રેકિંગ ચલાવો"

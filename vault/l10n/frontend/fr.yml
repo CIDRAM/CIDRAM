@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2026.03.13).
+# This file: French language data for the front-end (last modified: 2026.03.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,7 +24,7 @@
 # requests, ask. I can help.
 ##/
 
-Abuse category:
+Abuse category: !lazy
  Bad web bot:
   fr-FR: "Mauvais robot Web (recherche d'adresses e-mail, de contenu, robots d'exploration qui n'honorent pas le fichier robots.txt, requêtes excessives, usurpation d'agent utilisateur, etc)."
   fr-CA: "Mauvais robot Web (recherche d'adresses courriel, de contenu, robots d'exploration qui n'honorent pas le fichier robots.txt, requêtes excessives, usurpation d'agent utilisateur, etc)."
@@ -58,7 +58,7 @@ Abuse category:
  VPN IP: "IP VPN."
  Web spam: "Spam Web (spam de commentaire/forum, spam de référence HTTP, ou autre spam par CMS)."
  Webapp attacks: "Attaques d'applications Web (rechercher des vulnérabilités ou des exploits, ou tenter d'exploiter les applications Web, les CMS ou les solutions de commerce électronique installés, par exemple, WordPress, Drupal, phpMyAdmin, etc)."
-Extended Description:
+Extended Description: !lazy
  AbuseIPDB module: "Bloque les requêtes des adresses IP répertoriées dans AbuseIPDB."
  BGPView module: "Exploite l'API {{Links.BGPView}} pour fournir la possibilité de rechercher des codes de pays et des ASN pour CIDRAM, permettre le blocage ou la mise en liste blanche des ASN et des pays via la configuration CIDRAM, et fournir un moyen de vérification des réseaux sociaux pour vérifier les requêtes de Facebook. (Si vous utilisez ce module, vous n'aurez pas besoin d'utiliser le module IP-API, car ils ont le même objectif)."
  Bad TLDs blocker module: "Bloque les hôtes appartenant aux TLDs fréquemment utilisés par les spammeurs, les hackers et autres entités malveillantes."
@@ -90,7 +90,7 @@ Extended Description:
  Referrer spam module: "Le blocage basé sur le spam référent ne procure généralement aucun avantage de sécurité significatif, mais dans certains cas, cela pourrait être utile à certains utilisateurs pour rassembler plus d'informations sur les requêtes et pour pouvoir les rapporter."
  Stop Forum Spam module: "Protège l'enregistrement et les pages de connexion contre les adresses IP répertoriées par SFS."
  Tor blocker module: "Interdit l'accès à partir des nœuds de sortie Tor via les recherches DNSEL (le supporte IPv4 et IPv6)."
-Name:
+Name: !lazy
  AbuseIPDB module: "Module AbuseIPDB."
  BGPView module: "Module BGPView."
  BOBUAM: "Module pour les agents utilisateurs de robots ou de navigateurs (BOBUAM)."
@@ -141,7 +141,7 @@ checkbox:
  Test as sensitive request: "Tester en tant que requête sensible"
  Untrack positives: "Annuler le surveillance des positifs\_?"
  When blocked, suppress output template: "Lorsqu'il est bloqué, supprime le modèle de sortie."
-config:
+config: !lazy
  abuseipdb: "Configuration pour le module AbusIPDB."
  abuseipdb_api_key: &EnterAPIKey "Veuillez entrer votre clé API ici."
  abuseipdb_build_profiles_from_usage_type: "Créer des profils à l'aide du type d'utilisation renvoyé par l'API\_? False = Non. True = Oui. Défaut = True."
@@ -864,7 +864,7 @@ link:
  Subtractor: "Soustracteur"
  Updates: "Mises à jour"
  View mode: "Mode d'affichage"
-macro:
+macro: !lazy
  Description:
   activate_modules: &MayImpactPerformance "Généralement pas recommandé, car il y en a probablement certains dont vous n'avez pas besoin. L'installation et l'activation de composants lorsqu'ils ne sont pas nécessaires peuvent avoir un impact négatif sur les performances."
   install_l10n_core: &RecommendKeepingCore "Lorsque la directive de configuration <code>lang_override</code> est activé, si le navigateur d'un utilisateur spécifie une préférence de langue particulière, tant que les données L10N de core pour cette langue sont installées, CIDRAM est capable d'afficher la page «\_accès refusé\_» dans cette langue spécifié."
@@ -1026,7 +1026,7 @@ response:
  _Yes: "Oui"
  please_check_config: "Vérifier votre configuration afin d'assurer que le module nouvellement installé se comportera comme vous le souhaitez."
  release_notes: "<a href="%s"><span class="navicon link"></span>Notes de version pour %s.</a>"
-stages:
+stages: !lazy
  Deploy CAPTCHAs (blocked requests): "Déployer les CAPTCHAs (requêtes bloquées)"
  Deploy CAPTCHAs (non-blocked requests): "Déployer les CAPTCHAs (requêtes non bloquées)"
  Execute IP tracking: "Exécuter le surveillance d'IP"

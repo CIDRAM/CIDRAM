@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2026.03.13).
+# This file: Vietnamese language data for the front-end (last modified: 2026.03.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,7 +24,7 @@
 # requests, ask. I can help.
 ##/
 
-Abuse category:
+Abuse category: !lazy
  Bad web bot: "Bot web xấu (tìm kiếm địa chỉ email, nội dung, trình thu thập thông tin không tôn trọng robots.txt, yêu cầu quá mức, giả mạo đại lý người dùng, vv)."
  Brute-force attacks: "Tấn công lực lượng vũ phu (các tấn công lực lượng vũ phu vào thông tin đăng nhập trang web, SMTP, RDP, vv)."
  Categories (at least one is required): "Thể loại (ít nhất một là bắt buộc)"
@@ -50,7 +50,7 @@ Abuse category:
  VPN IP: "IP VPN."
  Web spam: "Thư rác trên web (thư rác trong bình luận hay diễn đàn, thư rác giới thiệu HTTP, hoặc thư rác CMS khác)."
  Webapp attacks: "Tấn công ứng dụng web (thăm dò các lỗ hổng hoặc cách khai thác, hoặc cố gắng khai thác các ứng dụng web, CMS, hoặc giải pháp thương mại điện tử đã cài đặt, ví dụ, WordPress, Drupal, phpMyAdmin, vv)."
-Extended Description:
+Extended Description: !lazy
  AbuseIPDB module: "Chặn các yêu cầu từ IP được liệt kê tại AbuseIPDB."
  BGPView module: "Tận dụng API {{Links.BGPView}} để cung cấp phương tiện tra cứu mã quốc gia và ASN cho CIDRAM, cho phép các ASN và quốc gia bị chặn hay đưa vào danh sách trắng thông qua cấu hình CIDRAM, và cung cấp một phương tiện để xác minh mạng xã hội để xác minh các yêu cầu của Facebook. (Nếu bạn sử dụng mô-đun này, bạn sẽ không cần sử dụng mô-đun IP-API, vì chúng phục vụ cùng một mục đích)."
  Bad TLDs blocker module: "Chặn các máy chủ web của các TLD mà thường được sử dụng bởi các chương trình thư rác, hacker và thực thể bất chính khác."
@@ -78,7 +78,7 @@ Extended Description:
  Referrer spam module: "Chặn dựa trên spam giới thiệu thường không cung cấp bất kỳ lợi ích bảo mật có ý nghĩa nào, nhưng trong một số trường hợp, có thể hữu ích cho một số người dùng, để thu thập thêm thông tin về các yêu cầu và để có thể báo cáo nó."
  Stop Forum Spam module: "Bảo vệ các trang đăng ký và đăng nhập đối với các địa chỉ IP do SFS liệt kê."
  Tor blocker module: "Cấm truy cập từ các nút thoát Tor thông qua tra cứu DNSEL (hỗ trợ cả IPv4 và IPv6)."
-Name:
+Name: !lazy
  AbuseIPDB module: "Mô-đun AbuseIPDB."
  BGPView module: "Mô-đun BGPView."
  BOBUAM: "Mô-đun cho các đại lý người dùng của bot hoặc trình duyệt (BOBUAM)."
@@ -129,7 +129,7 @@ checkbox:
  Test as sensitive request: "Kiểm tra theo yêu cầu nhạy cảm"
  Untrack positives: "Ngừng giám sát các tích cực?"
  When blocked, suppress output template: "Khi bị chặn, đàn áp mẫu đầu ra."
-config:
+config: !lazy
  abuseipdb: "Cấu hình cho mô-đun AbuseIPDB."
  abuseipdb_api_key: &EnterAPIKey "Vui lòng nhập khóa API của bạn tại đây."
  abuseipdb_build_profiles_from_usage_type: "Xây dựng hồ sơ bằng cách sử dụng loại sử dụng do API trả về? False = Không. True = Vâng. Mặc định = True."
@@ -799,7 +799,7 @@ link:
  Subtractor: "Phép trừ"
  Updates: "Cập nhật"
  View mode: "Chế độ xem"
-macro:
+macro: !lazy
  Description:
   activate_modules: &MayImpactPerformance "Nói chung không nên khuyến khích vì có thể có một số thứ bạn không cần. Việc cài đặt và kích hoạt các thành phần khi không cần thiết có thể tác động tiêu cực đến hiệu suất."
   install_l10n_core: &RecommendKeepingCore "Khi chỉ thị cấu hình <code>lang_override</code> được bật, nếu trình duyệt của người dùng chỉ định một ngôn ngữ cụ thể, miễn là dữ liệu L10N core cho ngôn ngữ đó được cài đặt, thì CIDRAM có thể hiển thị trang "truy cập đã bị từ chối" bằng ngôn ngữ được chỉ định đó. Theo đó, được khuyến khích cài đặt tất cả dữ liệu L10N core."
@@ -953,7 +953,7 @@ response:
  _Yes: "Vâng"
  please_check_config: "Vui lòng kiểm tra cấu hình của bạn để đảm bảo rằng mô-đun mới được cài đặt sẽ hoạt động như bạn dự định."
  release_notes: "<a href="%s"><span class="navicon link"></span>Ghi chú phát hành cho %s.</a>"
-stages:
+stages: !lazy
  Deploy CAPTCHAs (blocked requests): "Triển khai CAPTCHA (yêu cầu bị chặn)"
  Deploy CAPTCHAs (non-blocked requests): "Triển khai CAPTCHA (yêu cầu không bị chặn)"
  Execute IP tracking: "Thực hiện giám sát IP"

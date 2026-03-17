@@ -8,12 +8,12 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Duration value type (last modified: 2026.03.16).
+ * This file: Duration value type (last modified: 2026.03.17).
  */
 
 namespace CIDRAM\CIDRAM;
 
-class Duration implements \Stringable
+class Duration
 {
     /**
      * @var int How many days.
@@ -62,7 +62,7 @@ class Duration implements \Stringable
      */
     public function __construct(string $Raw = '', string $Convention = '')
     {
-        if (!preg_match(
+        if (!\preg_match(
             '~^(?:(?<Weeks>\d+(?:\.\d+)?)[Ww](?:[Ee]{2}[Kk][Ss]?)?)?' .
             '(?:(?<Days>\d+(?:\.\d+)?)[Dd](?:[Aa][Yy][Ss]?)?)?' .
             '(?:(?<Hours>\d+(?:\.\d+)?)(?:\xB0|°|[Hh](?:[Oo][Uu][Rr][Ss]?)?))?' .
@@ -72,7 +72,7 @@ class Duration implements \Stringable
             '(?:(?<Micro>\d+(?:\.\d+)?)µs)?' .
             '(?:(?<Nano>\d+(?:\.\d+)?)ns)?' .
             '$|^(?<Unspecified>\d+(?:\.\d+)?)?$~',
-            preg_replace('~[\s,]~', '', $Raw),
+            \preg_replace('~[\s,]~', '', $Raw),
             $Parts
         )) {
             return;
@@ -82,7 +82,7 @@ class Duration implements \Stringable
             $$Unit = $Parts[$Unit] ?? 0;
             if ($$Unit === '') {
                 $$Unit = 0;
-            } elseif (strpos($$Unit, '.') !== false) {
+            } elseif (\strpos($$Unit, '.') !== false) {
                 $$Unit = (float)$$Unit;
             } else {
                 $$Unit = (int)$$Unit;
@@ -96,38 +96,38 @@ class Duration implements \Stringable
         $MicroBefore = $Micro += ($Nano > 0 ? $Nano / 1000 : 0);
         while (true) {
             if ($Micro > 1000) {
-                $Add = floor($Micro / 1000);
+                $Add = \floor($Micro / 1000);
                 $Micro -= $Add * 1000;
                 $Milli += $Add;
             }
             if ($Milli > 1000) {
-                $Add = floor($Milli / 1000);
+                $Add = \floor($Milli / 1000);
                 $Milli -= $Add * 1000;
                 $Seconds += $Add;
             }
             if ($Seconds > 60) {
-                $Add = floor($Seconds / 60);
+                $Add = \floor($Seconds / 60);
                 $Seconds -= $Add * 60;
                 $Minutes += $Add;
             }
             if ($Minutes > 60) {
-                $Add = floor($Minutes / 60);
+                $Add = \floor($Minutes / 60);
                 $Minutes -= $Add * 60;
                 $Hours += $Add;
             }
             if ($Hours > 24) {
-                $Add = floor($Hours / 24);
+                $Add = \floor($Hours / 24);
                 $Hours -= $Add * 24;
                 $Days += $Add;
             }
-            $Whole = floor($Days);
+            $Whole = \floor($Days);
             $Add = $Days - $Whole;
             if ($Add > 0) {
                 $Hours += $Add * 24;
                 $Days = $Whole;
             }
             foreach ([['Hours', 'Minutes'], ['Minutes', 'Seconds']] as $Pair) {
-                $Whole = floor(${$Pair[0]});
+                $Whole = \floor(${$Pair[0]});
                 $Add = ${$Pair[0]} - $Whole;
                 if ($Add > 0) {
                     ${$Pair[1]} += $Add * 60;
@@ -135,7 +135,7 @@ class Duration implements \Stringable
                 }
             }
             foreach ([['Seconds', 'Milli'], ['Milli', 'Micro']] as $Pair) {
-                $Whole = floor(${$Pair[0]});
+                $Whole = \floor(${$Pair[0]});
                 $Add = ${$Pair[0]} - $Whole;
                 if ($Add > 0) {
                     ${$Pair[1]} += $Add * 1000;
@@ -202,8 +202,8 @@ class Duration implements \Stringable
                 $Output .= $this->Milli . 'ms';
             }
             if ($this->Micro > 0) {
-                $Whole = floor($this->Micro);
-                $Nano = floor(($this->Micro - $Whole) * 1000);
+                $Whole = \floor($this->Micro);
+                $Nano = \floor(($this->Micro - $Whole) * 1000);
                 if ($Whole > 0) {
                     $Output .= $Whole . 'μs';
                 }

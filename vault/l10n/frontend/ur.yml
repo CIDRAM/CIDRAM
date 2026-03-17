@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data for the front-end (last modified: 2026.03.13).
+# This file: Urdu language data for the front-end (last modified: 2026.03.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,7 +24,7 @@
 # requests, ask. I can help.
 ##/
 
-Abuse category:
+Abuse category: !lazy
  Bad web bot: "خراب ویب بوٹ (ای میل پتوں اور مواد کے لیے سکریپنگ، ایسے کرالر جو robots.txt کا احترام نہیں کرتے، ضرورت سے زیادہ درخواستیں، صارف ایجنٹ کی جعل سازی وغیرہ)."
  Brute-force attacks: "بروٹ فورس حملے (ویب پیج لاگ انز، SMTP، RDP، وغیرہ پر کریڈینشل بروٹ فورس حملے)."
  Categories (at least one is required): "زمرے (کم از کم ایک درکار ہے)"
@@ -50,7 +50,7 @@ Abuse category:
  VPN IP: "VPN IP."
  Web spam: "ویب سپیم (تبصرہ/فورم سپیم، HTTP ریفرر سپیم، یا دیگر CMS سپیم)."
  Webapp attacks: "ویب ایپ حملے (نصب شدہ ویب ایپس، CMS، یا ای کامرس حل کے، مثال کے طور پر، WordPress، Drupal، phpMyAdmin، وغیرہ، خلاف استعمال کرنے کے لیے کمزوریوں یا استحصال کی تحقیقات)."
-Extended Description:
+Extended Description: !lazy
  AbuseIPDB module: "AbuseIPDB میں درج IP کے بلاکس کی درخواستیں."
  BGPView module: "ASN اور ملکی کوڈز کو تلاش کرنے کے لیے {{Links.BGPView}} کا استعمال کریں. اس سے ASN اور ممالک کو کنفگریشن کے ذریعے مسدود یا وائٹ لسٹ کرنے کا اہل بناتا ہے، اور Facebook درخواستوں کی توثیق کرنے کا ایک ذریعہ فراہم کرتا ہے. (اگر آپ یہ ماڈیول استعمال کرتے ہیں، تو آپ کو IP-API ماڈیول استعمال کرنے کی ضرورت نہیں ہوگی، کیونکہ وہ ایک ہی مقصد کو پورا کرتے ہیں)."
  Bad TLDیں blocker module: "عام طور پر اسپیمرز، ہیکرز، اور دیگر نواحی اداروں کے ذریعہ TLDیں سے تعلق رکھنے والے بلاکس میزبان."
@@ -78,7 +78,7 @@ Extended Description:
  Referrer spam module: "ریفرر اسپام پر مبنی مسدودیت عام طور پر کوئی معنی خیز فائدہ نہیں فراہم کرے گی، لیکن کبھی کبھی درخواستوں کے بارے میں مزید معلومات اکٹھا کرنے اور اس کی اطلاع دینے کے قابل ہوسکتے ہیں."
  Stop Forum Spam module: "SFS کے ذریعہ درج کردہ IP پتوں کے خلاف رجسٹریشن اور لاگ ان صفحات کی حفاظت کرتا ہے."
  Tor blocker module: "DNSEL تلاش کے ذریعے ٹور ایگزٹ نوڈس تک رسائی کو روکتا ہے (IPv4 اور IPv6 دونوں کو سپورٹ کرتا ہے)."
-Name:
+Name: !lazy
  AbuseIPDB module: "AbuseIPDB ماڈیول."
  BGPView module: "BGPView ماڈیول."
  BOBUAM: "بوٹ یا براؤزر صارف ایجنٹ ماڈیول (BOBUAM)."
@@ -129,7 +129,7 @@ checkbox:
  Test as sensitive request: "حساس درخواست کے طور پر ٹیسٹ کریں"
  Untrack positives: "مثبت سے باخبر رہنا بند کرو؟"
  When blocked, suppress output template: "بلاک ہونے پر، آؤٹ پٹ ٹیمپلیٹ کا استعمال نہ کریں."
-config:
+config: !lazy
  abuseipdb: "AbuseIPDB ماڈیول کے لیے کنفیگریشن."
  abuseipdb_api_key: &EnterAPIKey "براہ کرم اپنی API کلید یہاں درج کریں."
  abuseipdb_build_profiles_from_usage_type: "API کے ذریعہ واپس کردہ استعمال کی قسم کا استعمال کرتے ہوئے پروفائلز بنائیں؟ True (سچے) = جی ہاں [پہلے سے طے شدہ]؛ False (جھوٹی) = نہیں."
@@ -801,7 +801,7 @@ link:
  Subtractor: "سبکٹرکٹر"
  Updates: "تازہ ترین معلومات کے"
  View mode: "ڈسپلے موڈ"
-macro:
+macro: !lazy
  Description:
   activate_modules: &MayImpactPerformance "عام طور پر سفارش نہیں کی جاتی ہے، کیونکہ امکان ہے کہ کچھ ایسے ہوں جن کی آپ کو ضرورت نہیں ہے. جب اجزاء کی ضرورت نہ ہو تو انسٹال اور فعال کرنا کارکردگی پر منفی اثر ڈال سکتا ہے."
   install_l10n_core: &RecommendKeepingCore "جب <code dir="ltr">lang_override</code> کنفیگریشن ڈائریکٹو فعال ہو جاتا ہے، اگر کسی صارف کا براؤزر کسی خاص زبان کی ترجیح بتاتا ہے، جب تک اس زبان کے لیے core L10N ڈیٹا انسٹال ہے، CIDRAM اس مخصوص زبان میں "رسائی مسترد کر دی" صفحہ کو ظاہر کرنے کے قابل ہے. اس کے مطابق، تمام core L10N ڈیٹا انسٹال رہنے کی سفارش کی جاتی ہے."
@@ -957,7 +957,7 @@ response:
  _Yes: "جی ہاں"
  please_check_config: "کنفیگریشن کی جانچ پڑتال کریں تاکہ یہ یقینی بنایا جاسکے کہ نیا نصب شدہ ماڈیول جس طرح کا سلوک کرے گا."
  release_notes: "<a href="%s"><span class="navicon link"></span>%s کے لیے نوٹ جاری کریں.</a>"
-stages:
+stages: !lazy
  Deploy CAPTCHAs (blocked requests): "CAPTCHA تعینات کریں (بلاک شدہ درخواستیں)"
  Deploy CAPTCHAs (non-blocked requests): "CAPTCHA تعینات کریں (غیر مسدود درخواستیں)"
  Execute IP tracking: "IP ٹریکنگ پر عمل کریں"

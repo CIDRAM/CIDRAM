@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Catalan language data for the front-end (last modified: 2026.03.13).
+# This file: Catalan language data for the front-end (last modified: 2026.03.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,7 +24,7 @@
 # requests, ask. I can help.
 ##/
 
-Abuse category:
+Abuse category: !lazy
  Bad web bot: "Mal web bot (raspat d'adreces de correu electrònic, contingut, rastrejadors que no respecten robots.txt, sol·licituds excessives, falsificació d'agents d'usuari, etc)."
  Brute-force attacks: "Atacs de força bruta (atacs de força bruta de credencials als inicis de sessió de pàgines web, SMTP, RDP, etc)."
  Categories (at least one is required): "Categories (cal com a mínim una)"
@@ -50,7 +50,7 @@ Abuse category:
  VPN IP: "IP VPN."
  Web spam: "Brossa web (correu brossa de comentaris/fòrums, correu brossa de referència HTTP, o un altre correu brossa de CMS)."
  Webapp attacks: "Atacs a aplicacions web (cercar vulnerabilitats o exploits, o intentar explotar aplicacions web instal·lades, CMS, o solucions de comerç electrònic, per exemple, WordPress, Drupal, phpMyAdmin, etc)."
-Extended Description:
+Extended Description: !lazy
  AbuseIPDB module: "Bloqueja les sol·licituds de les IP enumerades a AbuseIPDB."
  BGPView module: "Aprofita l'API {{Links.BGPView}} per proporcionar una funció de cerca d'ASN i codi de país per a CIDRAM, que permet bloquejar o incloure a la llista blanca ASN i països mitjançant la configuració CIDRAM, i proporciona un mitjà per a la verificació de xarxes socials per verificar les sol·licituds de Facebook. (Si utilitzeu aquest mòdul, no haureu d'utilitzar el mòdul IP-API, ja que tenen el mateix propòsit)."
  Bad TLDs blocker module: "Bloqueja els amfitrions pertanyents a TLD utilitzats freqüentment per spammers, pirates informàtics, i altres entitats nefastes."
@@ -78,7 +78,7 @@ Extended Description:
  Referrer spam module: "El bloqueig basat en el correu brossa de referència generalment no proporcionarà cap benefici significatiu de seguretat, però en alguns casos pot ser útil per a alguns usuaris, per recopilar més informació sobre les sol·licituds i per poder informar-ne."
  Stop Forum Spam module: "Protegeix les pàgines de registre i d'inici de sessió contra les IP enumerades per SFS."
  Tor blocker module: "Prohibeix l'accés des dels nodes de sortida de Tor mitjançant cerques DNSEL (suporta tant IPv4 com IPv6)."
-Name:
+Name: !lazy
  AbuseIPDB module: "Mòdul AbuseIPDB."
  BGPView module: "Mòdul BGPView."
  BOBUAM: "Mòdul d'agents d'usuari de bot o navegador (BOBUAM)."
@@ -129,7 +129,7 @@ checkbox:
  Test as sensitive request: "Prova com a sol·licitud sensible"
  Untrack positives: "Cancel·la el seguiment de positius?"
  When blocked, suppress output template: "Quan estigui bloquejat, no utilitzeu la plantilla de sortida."
-config:
+config: !lazy
  abuseipdb: "Configuració del mòdul AbuseIPDB."
  abuseipdb_api_key: &EnterAPIKey "Introduïu la vostra clau API aquí."
  abuseipdb_build_profiles_from_usage_type: "Creeu perfils amb el tipus d'ús que retorna l'API? False/Fals = No. True/Cert = Sí. Predeterminat = True."
@@ -800,7 +800,7 @@ link:
  Subtractor: "Restador"
  Updates: "Actualitzacions"
  View mode: "Mode de visualització"
-macro:
+macro: !lazy
  Description:
   activate_modules: &MayImpactPerformance "En general no es recomana, ja que és probable que n'hi hagi que no necessitis. Instal·lar i activar components quan no són necessaris podria afectar negativament el rendiment."
   install_l10n_core: &RecommendKeepingCore "Quan la directiva de configuració <code>lang_override</code> està habilitada, si el navegador d'un usuari especifica una preferència d'idioma particular, sempre que s'instal·lin les dades bàsiques de L10N per a aquest idioma, CIDRAM pot mostrar la pàgina "accés denegat" en aquest idioma especificat. En conseqüència, es recomana tenir instal·lades totes les dades bàsiques de L10N."
@@ -956,7 +956,7 @@ response:
  _Yes: "Sí"
  please_check_config: "Si us plau, comproveu la vostra configuració per assegurar-vos que el mòdul recentment instal·lat es comportarà com voleu."
  release_notes: "<a href="%s"><span class="navicon link"></span>Notes de la versió per a %s.</a>"
-stages:
+stages: !lazy
  Deploy CAPTCHAs (blocked requests): "Desplegueu CAPTCHA (sol·licituds bloquejades)"
  Deploy CAPTCHAs (non-blocked requests): "Desplegueu CAPTCHA (sol·licituds no bloquejades)"
  Execute IP tracking: "Executeu seguiment d'IP"

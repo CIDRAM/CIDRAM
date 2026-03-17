@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Report orchestrator (last modified: 2024.09.12).
+ * This file: Report orchestrator (last modified: 2026.03.17).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -65,17 +65,17 @@ class Reporter
         if (!isset($this->Reports[$IP])) {
             $this->Reports[$IP] = ['Categories' => [], 'Comments' => [], 'IP' => $IP];
         }
-        if (!is_array($Categories)) {
+        if (!\is_array($Categories)) {
             $Categories = [$Categories];
         }
         foreach ($Categories as $Category) {
             $this->Reports[$IP]['Categories'][] = $Category;
         }
-        if (!is_array($Comments)) {
+        if (!\is_array($Comments)) {
             $Comments = [$Comments];
         }
         foreach ($Comments as $Comment) {
-            if (!is_string($Comment) || $Comment === '') {
+            if (!\is_string($Comment) || $Comment === '') {
                 continue;
             }
             $this->Reports[$IP]['Comments'][] = $Comment;
@@ -89,7 +89,7 @@ class Reporter
      */
     public function count(): int
     {
-        return count($this->Reports);
+        return \count($this->Reports);
     }
 
     /**
@@ -101,20 +101,20 @@ class Reporter
     {
         /** Iterate through handlers. */
         foreach ($this->Handlers as $Handler) {
-            $DateTime = date('c', time());
+            $DateTime = \date('c', \time());
 
             /** Iterate through queued reports. */
             foreach ($this->Reports as $Report) {
                 /** Guard. */
-                if (count($Report['Categories']) === 0 || count($Report['Comments']) === 0 || $Report['IP'] === '') {
+                if (\count($Report['Categories']) === 0 || \count($Report['Comments']) === 0 || $Report['IP'] === '') {
                     continue;
                 }
 
                 /** Don't duplicate categories. */
-                $Report['Categories'] = array_unique($Report['Categories'], SORT_NUMERIC);
+                $Report['Categories'] = \array_unique($Report['Categories'], SORT_NUMERIC);
 
                 /** Prepare comments. */
-                $Report['Comments'] = sprintf('Automated report (%s). %s', $DateTime, implode(' ', $Report['Comments']));
+                $Report['Comments'] = \sprintf('Automated report (%s). %s', $DateTime, \implode(' ', $Report['Comments']));
 
                 /** Call handler. */
                 $Handler($Report, $DateTime);
@@ -125,12 +125,12 @@ class Reporter
         if ($this->Events->assigned('writeToReportLog')) {
             foreach ($this->Reports as $Report) {
                 /** Guard. */
-                if (count($Report['Comments']) === 0 || $Report['IP'] === '') {
+                if (\count($Report['Comments']) === 0 || $Report['IP'] === '') {
                     continue;
                 }
 
                 /** Fire the logger. */
-                $this->Events->fireEvent('writeToReportLog', implode(' ', $Report['Comments']), $Report['IP']);
+                $this->Events->fireEvent('writeToReportLog', \implode(' ', $Report['Comments']), $Report['IP']);
             }
         }
 

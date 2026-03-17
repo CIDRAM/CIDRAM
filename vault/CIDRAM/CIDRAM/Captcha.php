@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Captcha class (last modified: 2025.08.14).
+ * This file: Captcha class (last modified: 2026.03.17).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -21,11 +21,6 @@ abstract class Captcha
     public $Results = '';
 
     /**
-     * @var string Appended to template data.
-     */
-    public $TemplateInsert = '<input type="hidden" id="hostnameoverride" name="hostname" value="">';
-
-    /**
      * @var bool Whether to bypass the request.
      */
     public $Bypass = false;
@@ -36,6 +31,11 @@ abstract class Captcha
     public $CIDRAM;
 
     /**
+     * @var string Appended to template data.
+     */
+    public const TEMPLATE_INSERT = '<input type="hidden" id="hostnameoverride" name="hostname" value="">';
+
+    /**
      * Meld together two or more strings by padding to equal length and
      * bitshifting each by each other.
      *
@@ -43,12 +43,12 @@ abstract class Captcha
      */
     public function meld(string ...$Strings): string
     {
-        $StrLens = array_map('strlen', $Strings);
-        $WalkLen = max($StrLens);
-        $Count = count($Strings);
+        $StrLens = \array_map('strlen', $Strings);
+        $WalkLen = \max($StrLens);
+        $Count = \count($Strings);
         for ($Index = 0; $Index < $Count; $Index++) {
             if ($StrLens[$Index] < $WalkLen) {
-                $Strings[$Index] = str_pad($Strings[$Index], $WalkLen, "\xFF");
+                $Strings[$Index] = \str_pad($Strings[$Index], $WalkLen, "\xFF");
             }
         }
         for ($Lt = $Strings[0], $Index = 1, $Meld = ''; $Index < $Count; $Index++, $Meld = '') {
@@ -87,7 +87,7 @@ abstract class Captcha
     public function generateFailed(string $Platform = ''): void
     {
         /** Set CAPTCHA status. */
-        $this->CIDRAM->BlockInfo['CAPTCHA'] = sprintf($this->CIDRAM->L10N->getString('state.Failed'), $Platform ?: $this->CIDRAM->L10N->getString('field.unknown'));
+        $this->CIDRAM->BlockInfo['CAPTCHA'] = \sprintf($this->CIDRAM->L10N->getString('state.Failed'), $Platform ?: $this->CIDRAM->L10N->getString('field.unknown'));
 
         /** Append to CAPTCHA statistics if necessary. */
         if (isset($this->CIDRAM->Stages['Statistics:Enable'], $this->CIDRAM->StatisticsTracked['CAPTCHAs-Failed'])) {
@@ -104,7 +104,7 @@ abstract class Captcha
     public function generatePassed(string $Platform = ''): void
     {
         /** Set CAPTCHA status. */
-        $this->CIDRAM->BlockInfo['CAPTCHA'] = sprintf($this->CIDRAM->L10N->getString('state.Passed'), $Platform ?: $this->CIDRAM->L10N->getString('field.unknown'));
+        $this->CIDRAM->BlockInfo['CAPTCHA'] = \sprintf($this->CIDRAM->L10N->getString('state.Passed'), $Platform ?: $this->CIDRAM->L10N->getString('field.unknown'));
 
         /** Append to CAPTCHA statistics if necessary. */
         if (isset($this->CIDRAM->Stages['Statistics:Enable'], $this->CIDRAM->StatisticsTracked['CAPTCHAs-Passed'])) {
@@ -119,12 +119,12 @@ abstract class Captcha
      */
     public function generateSalt(): string
     {
-        if (!is_readable($this->CIDRAM->Vault . 'salt.dat')) {
+        if (!\is_readable($this->CIDRAM->Vault . 'salt.dat')) {
             $Salt = $this->CIDRAM->generateSalt();
-            if (is_writable($this->CIDRAM->Vault)) {
-                $Handle = fopen($this->CIDRAM->Vault . 'salt.dat', 'wb');
-                fwrite($Handle, $Salt);
-                fclose($Handle);
+            if (\is_writable($this->CIDRAM->Vault)) {
+                $Handle = \fopen($this->CIDRAM->Vault . 'salt.dat', 'wb');
+                \fwrite($Handle, $Salt);
+                \fclose($Handle);
             }
             return $Salt;
         }
@@ -140,20 +140,20 @@ abstract class Captcha
      */
     public function clearExpired(string &$List, bool &$Check): void
     {
-        if (strlen($List) === 0) {
+        if (\strlen($List) === 0) {
             return;
         }
         $End = 0;
         while (true) {
             $Begin = $End;
-            if (!$End = strpos($List, "\n", $Begin + 1)) {
+            if (!$End = \strpos($List, "\n", $Begin + 1)) {
                 break;
             }
-            $Line = substr($List, $Begin, $End - $Begin);
-            if ($Split = strrpos($Line, ',')) {
-                $Expiry = (int)substr($Line, $Split + 1);
+            $Line = \substr($List, $Begin, $End - $Begin);
+            if ($Split = \strrpos($Line, ',')) {
+                $Expiry = (int)\substr($Line, $Split + 1);
                 if ($Expiry < $this->CIDRAM->Now) {
-                    $List = str_replace($Line, '', $List);
+                    $List = \str_replace($Line, '', $List);
                     $End = 0;
                     $Check = true;
                 }

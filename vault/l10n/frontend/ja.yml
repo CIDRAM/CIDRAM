@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2026.03.13).
+# This file: Japanese language data for the front-end (last modified: 2026.03.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,7 +24,7 @@
 # requests, ask. I can help.
 ##/
 
-Abuse category:
+Abuse category: !lazy
  Bad web bot: "悪質なウェブボット（Ｅメール・アドレスとコンテンツのスクレイピングする、「robots.txt」を無視するクローラー、過剰なリクエスト、ユーザー・エージェントのスプーフィング、など）。"
  Brute-force attacks: "ブルート・フォース攻撃（ウェブ・ページのログイン、ＳＭＴＰ、ＲＤＰ、などに対する資格情報のブルート・フォース攻撃）。"
  Categories (at least one is required): "カテゴリ（少なくとも１つは必要です）"
@@ -50,7 +50,7 @@ Abuse category:
  VPN IP: "ＶＰＮ ＩＰ。"
  Web spam: "ウェブ・スパム（コメントおよびフォーラムのスパム、ＨＴＴＰリファラーのスパム、またはその他のＣＭＳスパム）。"
  Webapp attacks: "ウェブ・アプリ攻撃（脆弱性や悪用を調査する、またはインストールされているウェブ・アプリ、ＣＭＳ「例: WordPress、Drupal、phpMyAdmin、など」、または電子商取引ソリューションを悪用しようとする）。"
-Extended Description:
+Extended Description: !lazy
  AbuseIPDB module: "AbuseIPDBにリストされているＩＰからのリクエストをブロックします。"
  BGPView module: "{{Links.BGPView}}のＡＰＩを活用して、ＣＩＤＲＡＭのためにＡＳＮおよび国コード検索機能を提供します。​ＣＩＤＲＡＭコンフィギュレーションを介して、ＡＳＮと国をブロックまたはホワイトリストに登録できます。​Facebookリクエストを検証する、ソーシャル・メディア・ベリフィケーションの手段を提供します。 （このモジュールを使用する場合、同じ目的を果たすため、IP-APIモジュールを使用する必要はありません）。"
  Bad TLDs blocker module: "スパマー、ハッカー、その他の悪意のあるエンティティによって頻繁に使用されるＴＬＤに属するホストをブロックします。"
@@ -78,7 +78,7 @@ Extended Description:
  Referrer spam module: "リファラー・スパムに基づくブロックは、通常、有意義なセキュリティ上の利点を提供しません、ただし、場合によっては、リクエストに関する詳細情報の収集、およびレポートの作成に役立つ可能性があります。"
  Stop Forum Spam module: "ＳＦＳによってリストされたＩＰに対して登録ページとログインページを保護します。"
  Tor blocker module: "ＤＮＳＥＬルックアップによるＴｏｒ出口ノードからのアクセスを禁止します（ＩＰｖ４とＩＰｖ６の両方をサポートします）。"
-Name:
+Name: !lazy
  AbuseIPDB module: "AbuseIPDB モジュール。"
  BGPView module: "BGPView モジュール。"
  BOBUAM: "ボットまたはブラウザーのユーザー・エージェント・モジュール 「BOBUAM」。"
@@ -129,7 +129,7 @@ checkbox:
  Test as sensitive request: "機密リクエストとしてテストする"
  Untrack positives: "陽性の追跡をやめますか？"
  When blocked, suppress output template: "ブロックされている場合、出力テンプレートを抑制する。"
-config:
+config: !lazy
  abuseipdb: "AbuseIPDBモジュールのコンフィギュレーション。"
  abuseipdb_api_key: &EnterAPIKey "ここにＡＰＩキーを入力してください。"
  abuseipdb_build_profiles_from_usage_type: "ＡＰＩによって返される使用タイプを使用してプロファイルを作成しますか？ True = はい（Default/デフォルルト）。 False = いいえ。"
@@ -798,7 +798,7 @@ link:
  Subtractor: "減算器"
  Updates: "アップデート"
  View mode: "表示モード"
-macro:
+macro: !lazy
  Description:
   activate_modules: &MayImpactPerformance "それらのすべてをおそらく必要ないでしょうため、お勧めしません。​必要のないコンポーネントをインストールしてアクティブ化すると、パフォーマンスに悪影響を及ぼす可能性があります。"
   install_l10n_core: &RecommendKeepingCore "<code>lang_override</code>コンフィギュレーション・ディレクティブが有効な場合は、ユーザーのブラウザが特定の言語設定を指定している場合は、その言語のコアＬ１０Ｎデータがインストールされている限り、CIDRAMは、指定された言語で「アクセス拒否」ページを表示できます。​したがって、すべてのコアＬ１０Ｎデータをインストールしたままにしておくことをお勧めします。"
@@ -952,7 +952,7 @@ response:
  _Yes: "はい"
  please_check_config: "新しくインストールされたモジュールが意図したとおりに動作することを確認するために、コンフィギュレーションを確認してください。"
  release_notes: "<a href="%s"><span class="navicon link"></span>%s のリリース・ノート。</a>"
-stages:
+stages: !lazy
  Deploy CAPTCHAs (blocked requests): "キャプチャを展開する（ブロックされたリクエスト）"
  Deploy CAPTCHAs (non-blocked requests): "キャプチャを展開する（ブロックされていないリクエスト）"
  Execute IP tracking: "ＩＰトラッキングを実行する"

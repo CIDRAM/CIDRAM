@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data for the front-end (last modified: 2026.03.13).
+# This file: Bangla language data for the front-end (last modified: 2026.03.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,7 +24,7 @@
 # requests, ask. I can help.
 ##/
 
-Abuse category:
+Abuse category: !lazy
  Bad web bot: "খারাপ ওয়েব বট (ইমেইল ঠিকানা এবং সামগ্রীর জন্য স্ক্র্যাপিং, ক্রলার যারা robots.txt, অত্যধিক অনুরোধ, ব্যবহারকারী এজেন্ট স্পুফিং ইত্যাদিকে সম্মান করে না)।"
  Brute-force attacks: "ব্রুট-ফোর্স আক্রমণ (ওয়েবপেজ লগইন, SMTP, RDP, ইত্যাদির উপর ক্রেডেনশিয়াল ব্রুট-ফোর্স আক্রমণ)।"
  Categories (at least one is required): "বিভাগ (অন্তত একটি প্রয়োজন)"
@@ -50,7 +50,7 @@ Abuse category:
  VPN IP: "VPN আইপি।"
  Web spam: "ওয়েব স্প্যাম (মন্তব্য/ফোরাম স্প্যাম, HTTP রেফারার স্প্যাম, বা অন্যান্য CMS স্প্যাম৷)।"
  Webapp attacks: "ওয়েব অ্যাপ আক্রমণ (ইনস্টল করা ওয়েবঅ্যাপ, CMS, বা ই-কমার্স সমাধানের, যেমন, WordPress, Drupal, phpMyAdmin, ইত্যাদি, বিরুদ্ধে ব্যবহার করার জন্য দুর্বলতা বা শোষণের সন্ধান করছেন)।"
-Extended Description:
+Extended Description: !lazy
  AbuseIPDB module: "AbuseIPDB এ তালিকাভুক্ত আইপিগুলির থেকে ব্লক অনুরোধ।"
  BGPView module: "{{Links.BGPView}}, CIDRAM জন্য একটি ASN এবং দেশ কোড পরিষেবা সরবরাহ করে, CIDRAM কনফিগারেশনের মাধ্যমে ASN এবং দেশগুলিকে অবরুদ্ধ বা শ্বেত তালিকাভুক্ত করতে সক্ষম করে, এবং Facebook অনুরোধগুলি যাচাই করার জন্য একটি উপায় সরবরাহ করে। (আপনি যদি এই মডিউলটি ব্যবহার করেন, তাহলে আপনাকে IP-API মডিউল ব্যবহার করতে হবে না, কারণ তারা একই উদ্দেশ্যে কাজ করে)।"
  Bad TLDs blocker module: "TLDগুলি সাথে যুক্ত ব্লক হোস্ট ঘন ঘন স্প্যামার, হ্যাকার, এবং অন্যান্য নৃশংস সত্ত্বা দ্বারা ব্যবহৃত।"
@@ -78,7 +78,7 @@ Extended Description:
  Referrer spam module: "রেফারার স্প্যামের উপর ভিত্তি করে ব্লক করা সাধারণত কোনও অর্থবহ সুরক্ষা সুবিধা দেয় না, তবে কিছু ক্ষেত্রে এটি কিছু ব্যবহারকারীর পক্ষে কার্যকর হতে পারে, অনুরোধ সম্পর্কে আরও তথ্য সংগ্রহ করার জন্য, এবং এটি রিপোর্ট করতে সক্ষম হওয়ার জন্য।"
  Stop Forum Spam module: "SFS দ্বারা তালিকাভুক্ত আইপিগুলির বিরুদ্ধে রেজিস্ট্রেশন এবং লগইন পেজ রক্ষা করে।"
  Tor blocker module: "DNSEL লুকআপের মাধ্যমে টর এক্সিট নোড থেকে অ্যাক্সেস নিষিদ্ধ করে (IPv4 এবং IPv6 উভয় সমর্থন করে)।"
-Name:
+Name: !lazy
  AbuseIPDB module: "AbuseIPDB মডিউল।"
  BGPView module: "BGPView মডিউল।"
  BOBUAM: "বট বা ব্রাউজার ব্যবহারকারী এজেন্ট মডিউল (BOBUAM)।"
@@ -129,7 +129,7 @@ checkbox:
  Test as sensitive request: "সংবেদনশীল অনুরোধ হিসাবে পরীক্ষা"
  Untrack positives: "ইতিবাচক আনট্র্যাক করবেন?"
  When blocked, suppress output template: "ব্লক করা হলে, আউটপুট টেমপ্লেট দমন করুন।"
-config:
+config: !lazy
  abuseipdb: "AbuseIPDB মডিউলের জন্য কনফিগারেশন।"
  abuseipdb_api_key: &EnterAPIKey "অনুগ্রহ করে এখানে আপনার API কী লিখুন।"
  abuseipdb_build_profiles_from_usage_type: "API দ্বারা প্রত্যাবর্তিত ব্যবহারের ধরন ব্যবহার করে প্রোফাইলগুলি তৈরি করবেন? True = হাঁ [ডিফল্ট]; False = না।"
@@ -796,7 +796,7 @@ link:
  Subtractor: "বিয়োগকারক"
  Updates: "আপডেট"
  View mode: "দর্শন মোড"
-macro:
+macro: !lazy
  Description:
   activate_modules: &MayImpactPerformance "সাধারণত সুপারিশ করা হয় না, কারণ আপনার প্রয়োজন নেই এমন কিছু হতে পারে। উপাদানগুলি যখন প্রয়োজন হয় না তখন ইনস্টল এবং সক্রিয় করা কর্মক্ষমতাকে নেতিবাচকভাবে প্রভাবিত করতে পারে।"
   install_l10n_core: &RecommendKeepingCore "যখন <code>lang_override</code> কনফিগারেশন নির্দেশ সক্রিয় করা হয়, যদি একজন ব্যবহারকারীর ব্রাউজার একটি নির্দিষ্ট ভাষা পছন্দ নির্দিষ্ট করে, যতক্ষণ সেই ভাষার জন্য কোর L10N ডেটা ইনস্টল করা থাকে, CIDRAM সেই নির্দিষ্ট ভাষায় "অ্যাক্সেস অস্বীকার" পৃষ্ঠা প্রদর্শন করতে সক্ষম হয়। তদনুসারে, সমস্ত কোর L10N ডেটা ইনস্টল থাকা বাঞ্ছনীয়।"
@@ -950,7 +950,7 @@ response:
  _Yes: "হাঁ"
  please_check_config: "সদ্য ইনস্টল করা মডিউলটি আপনার ইচ্ছা অনুসারে আচরণ করবে তা নিশ্চিত করার জন্য দয়া করে আপনার কনফিগারেশনটি পরীক্ষা করুন।"
  release_notes: "<a href="%s"><span class="navicon link"></span>%s এর জন্য নোট রিলিজ।</a>"
-stages:
+stages: !lazy
  Deploy CAPTCHAs (blocked requests): "ক্যাপচা স্থাপন করুন (অবরুদ্ধ অনুরোধের জন্য)"
  Deploy CAPTCHAs (non-blocked requests): "ক্যাপচা স্থাপন করুন (অ-অবরুদ্ধ অনুরোধের জন্য)"
  Execute IP tracking: "আইপি ট্র্যাকিং চালান"

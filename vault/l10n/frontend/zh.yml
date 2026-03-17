@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese language data for the front-end (last modified: 2026.03.13).
+# This file: Chinese language data for the front-end (last modified: 2026.03.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,7 +24,7 @@
 # requests, ask. I can help.
 ##/
 
-Abuse category:
+Abuse category: !lazy
  Bad web bot: {"zh-Hans": "糟糕的网络机器人（抓取电子邮件地址、内容、不尊重 robots.txt、过多的请求、用户代理欺骗、等等）。", "zh-Hant": "糟糕的網路機器人（抓取電子郵件地址、內容、不尊重 robots.txt、過多的請求、用戶代理欺騙、等等）。"}
  Brute-force attacks: {"zh-Hans": "暴力攻击（针对网页登录、SMTP、RDP 等的凭证暴力攻击）。", "zh-Hant": "暴力攻擊（針對網頁登入、SMTP、RDP 等的憑證暴力攻擊）。"}
  Categories (at least one is required): {"zh-Hans": "类别（至少需要一个）", "zh-Hant": "類別（至少需要一個）"}
@@ -50,7 +50,7 @@ Abuse category:
  VPN IP: "VPN IP。"
  Web spam: {"zh-Hans": "网络垃圾邮件（评论/论坛垃圾邮件、HTTP引荐来源网址垃圾邮件、或其他CMS垃圾邮件）。", "zh-Hant": "網路垃圾郵件（評論/論壇垃圾郵件、HTTP引薦來源網址垃圾郵件、或其他CMS垃圾郵件）。"}
  Webapp attacks: {"zh-Hans": "网络应用程序攻击（探测漏洞用于对抗网络应用程序、CMS、电子商务，例如，WordPress、Drupal、phpMyAdmin、等等）。", "zh-Hant": "網路應用程式攻擊（探測漏洞用於對抗網路應用程式、CMS、電子商務，例如，WordPress、Drupal、phpMyAdmin、等等）。"}
-Extended Description:
+Extended Description: !lazy
  AbuseIPDB module: {"zh-Hans": "阻止来自AbuseIPDB列出的IP的请求。", "zh-Hant": "阻止來自AbuseIPDB列出的IP的請求。"}
  BGPView module:
   zh-Hans: "利用{{Links.BGPView}} API为CIDRAM提供ASN和国家代码查找功能，提供通过CIDRAM配置一种ASN和国家被阻止或列入白名单的方法，并提供一种用于社交媒体验证的方式来验证Facebook请求。 （如果您使用此模块，则无需使用IP-API模块，因为它们的用途相同）。"
@@ -86,7 +86,7 @@ Extended Description:
  Referrer spam module: {"zh-Hans": "基于引荐来源垃圾邮件阻止通常不会提供任何有意义的安全利益，但在某些情况下，对某些用户可能有用，用于收集有关请求的更多信息，以及能够报告它。", "zh-Hant": "基於引薦來源垃圾郵件阻止通常不會提供任何有意義的安全利益，但在某些情況下，對某些用戶可能有用，用於收集有關請求的更多信息，以及能夠報告它。"}
  Stop Forum Spam module: {"zh-Hans": "防止通过SFS列出的IP地址访问注册和登录页面。", "zh-Hant": "防止通過SFS列出的IP位址訪問註冊和登錄頁面。"}
  Tor blocker module: {"zh-Hans": "禁止通过DNSEL查找从Tor出口节点进行访问（支持IPv4和IPv6）。", "zh-Hant": "禁止通過DNSEL查找從Tor出口節點進行訪問（支持IPv4和IPv6）。"}
-Name:
+Name: !lazy
  AbuseIPDB module: {"zh-Hans": "AbuseIPDB模块。", "zh-Hant": "AbuseIPDB模組。"}
  BGPView module: {"zh-Hans": "BGPView模块。", "zh-Hant": "BGPView模組。"}
  BOBUAM: {"zh-Hans": "机器人或浏览器用户代理模块（BOBUAM）。", "zh-Hant": "機器人或瀏覽器用戶代理模組（BOBUAM）。"}
@@ -137,7 +137,7 @@ checkbox:
  Test as sensitive request: {"zh-Hans": "作为敏感请求进行测试", "zh-Hant": "作為敏感請求進行測試"}
  Untrack positives: {"zh-Hans": "取消跟踪阳性？", "zh-Hant": "取消跟踪陽性？"}
  When blocked, suppress output template: {"zh-Hans": "被阻止时，禁止输出模板。", "zh-Hant": "被阻止時，禁止輸出模板。"}
-config:
+config: !lazy
  abuseipdb: {"zh-Hans": "AbuseIPDB模块的配置。", "zh-Hant": "AbuseIPDB模組的配置。"}
  abuseipdb_api_key: &EnterAPIKey {"zh-Hans": "请在此处输入您的API密钥。", "zh-Hant": "請在此處輸入您的API金鑰。"}
  abuseipdb_build_profiles_from_usage_type: {"zh-Hans": "使用API返回的使用类型构建分类？ False = 不要使用。 True = 使用。 标准 = True。", "zh-Hant": "使用API返回的使用類型構建分類？ False = 不要使用。 True = 使用。 標準 = True。"}
@@ -964,7 +964,7 @@ link:
  Subtractor: {"zh-Hans": "减法仪", "zh-Hant": "減法儀"}
  Updates: "更新"
  View mode: "查看模式"
-macro:
+macro: !lazy
  Description:
   activate_modules: &MayImpactPerformance {"zh-Hans": "通常不推荐，因为可能有一些您不需要。​在不需要时安装和启用组件可能会对性能产生负面影响。", "zh-Hant": "通常不推薦，因為可能有一些您不需要。​在不需要時安裝和啟用組件可能會對性能產生負面影響。"}
   install_l10n_core: &RecommendKeepingCore {"zh-Hans": "在启用<code>lang_override</code>配置指令时，如果用户的浏览器指定了语言，只要安装了该语言的核心L10N数据，CIDRAM就能够以该语言显示“拒绝访问”页面。​因此，建议保留所有核心L10N数据。", "zh-Hant": "在啟用<code>lang_override</code>配置指令時，如果用戶的瀏覽器指定了語言，只要安裝了該語言的核心L10N數據，CIDRAM就能夠以該語言顯示『拒絕訪問』頁面。​因此，建議保留所有核心L10N數據。"}
@@ -1128,7 +1128,7 @@ response:
  _Yes: "是"
  please_check_config: {"zh-Hans": "请检查您的配置，以确保新安装的模块按您的意愿运行。", "zh-Hant": "請檢查您的配置，以確保新安裝的模組按您的意願運行。"}
  release_notes: {"zh-Hans": "<a href="%s"><span class="navicon link"></span>%s的发行说明。</a>", "zh-Hant": "<a href="%s"><span class="navicon link"></span>%s的發行說明。</a>"}
-stages:
+stages: !lazy
  Deploy CAPTCHAs (blocked requests): {"zh-Hans": "部署验证码（被阻止的请求）", "zh-Hant": "部署驗證碼（被阻止的請求）"}
  Deploy CAPTCHAs (non-blocked requests): {"zh-Hans": "部署验证码（非阻止的请求）", "zh-Hant": "部署驗證碼（非阻止的請求）"}
  Execute IP tracking: {"zh-Hans": "执行IP跟踪", "zh-Hant": "執行IP跟踪"}

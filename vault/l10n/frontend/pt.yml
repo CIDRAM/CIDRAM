@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2026.03.13).
+# This file: Portuguese language data for the front-end (last modified: 2026.03.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,7 +24,7 @@
 # requests, ask. I can help.
 ##/
 
-Abuse category:
+Abuse category: !lazy
  Bad web bot:
   pt-BR: "Bot web ruim (busca de endereços de e-mail, conteúdo, rastreadores que não respeitam robots.txt, solicitações excessivas, falsificação de agente de usuário, etc)."
   pt-PT: "Bot web ruim (busca de endereços de e-mail, conteúdo, rastreadores que não respeitam robots.txt, solicitações excessivas, falsificação de agente de utilizador, etc)."
@@ -54,7 +54,7 @@ Abuse category:
  VPN IP: "IP VPN."
  Web spam: "Spam da web (spam de comentários/fórum, spam de referência HTTP, ou outro spam de CMS)."
  Webapp attacks: "Ataques de aplicativos da web (sondar vulnerabilidades ou explorações, ou tentar explorar aplicativos da web, CMS, ou soluções de comércio eletrônico instalados, por exemplo, WordPress, Drupal, phpMyAdmin, etc)."
-Extended Description:
+Extended Description: !lazy
  AbuseIPDB module: "Bloqueia solicitações de IPs listados no AbuseIPDB."
  BGPView module:
   pt-BR: "Aproveita a API {{Links.BGPView}} para fornecer funcionalidade de pesquisa para ASNs e códigos de país para o CIDRAM, permitindo que ASNs e países sejam bloqueados ou incluídos na lista branca por meio da configuração da CIDRAM, e fornecer um meio de verificação de rede social para verificar solicitações do Facebook. (Se você usar este módulo, não precisará usar o módulo IP-API, pois eles têm a mesma propósito)."
@@ -90,7 +90,7 @@ Extended Description:
   pt-PT: "O bloqueio baseado em spam de referência geralmente não fornece nenhum benefício de segurança significativo, mas, em alguns casos, pode ser útil para alguns utilizadores, para coletar mais informações sobre solicitações e para relatá-las."
  Stop Forum Spam module: "Protege as páginas de registro e login contra IPs listados pelo SFS."
  Tor blocker module: "Proíbe o acesso de nós de saída do Tor por meio de pesquisas DNSEL (suporta IPv4 e IPv6 ambas)."
-Name:
+Name: !lazy
  AbuseIPDB module: "Módulo AbuseIPDB."
  BGPView module: "Módulo BGPView."
  BOBUAM:
@@ -149,7 +149,7 @@ checkbox:
  Test as sensitive request: "Teste como solicitação confidencial"
  Untrack positives: "Cancelar o monitoramento de positivos?"
  When blocked, suppress output template: "Quando bloqueado, suprime o modelo de saída."
-config:
+config: !lazy
  abuseipdb: "Configuração para o módulo AbuseIPDB."
  abuseipdb_api_key: &EnterAPIKey {"pt-BR": "Por favor, insira sua chave de API aqui.", "pt-PT": "Por favor, insira a sua chave de API aqui."}
  abuseipdb_build_profiles_from_usage_type:
@@ -1020,7 +1020,7 @@ link:
  Subtractor: "Subtrator"
  Updates: "Atualizações"
  View mode: "Modo de visualização"
-macro:
+macro: !lazy
  Description:
   activate_modules: &MayImpactPerformance "Geralmente não é recomendado, pois é provável que haja alguns de que você não precisa. Instalar e ativar componentes quando não são necessários pode afetar negativamente o desempenho."
   install_l10n_core: &RecommendKeepingCore {"pt-BR": "Quando a diretiva de configuração <code>lang_override</code> está habilitada, se o navegador de um usuário especifica uma preferência de idioma em particular, contanto que os dados L10N core para esse idioma estejam instalados, o CIDRAM é capaz de exibir a página "acesso negado" nesse idioma especificado. Como tal, é recomendável manter todos os dados do L10N core instalados.", "pt-PT": "Quando a diretiva de configuração <code>lang_override</code> está habilitada, se o navegador de um utilizador especifica uma preferência de idioma em particular, contanto que os dados L10N core para esse idioma estejam instalados, o CIDRAM é capaz de exibir a página "acesso negado" nesse idioma especificado. Como tal, é recomendável manter todos os dados do L10N core instalados."}
@@ -1194,7 +1194,7 @@ response:
   pt-BR: "Verifique sua configuração para garantir que o módulo recém-instalado se comporte como você deseja."
   pt-PT: "Verifique a sua configuração para garantir que o módulo recém-instalado se comporte como você deseja."
  release_notes: "<a href="%s"><span class="navicon link"></span>Notas de lançamento para %s.</a>"
-stages:
+stages: !lazy
  Deploy CAPTCHAs (blocked requests): "Implantar CAPTCHAs (solicitações bloqueadas)"
  Deploy CAPTCHAs (non-blocked requests): "Implantar CAPTCHAs (solicitações não bloqueadas)"
  Execute IP tracking: {"pt-BR": "Executar o monitoração IP", "pt-PT": "Executar a monitorização IP"}

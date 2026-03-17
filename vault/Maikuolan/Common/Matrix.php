@@ -1,6 +1,6 @@
 <?php
 /**
- * Matrix handler (last modified: 2025.06.24).
+ * Matrix handler (last modified: 2026.03.17).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -58,7 +58,7 @@ class Matrix extends CommonAbstract
      * Iterate a callback function over the specified coordinates.
      *
      * @param string|int $Description The coordinates to iterate over.
-     * @param callable $Callback The callback function to iterate.
+     * @param callable|null $Callback The callback function to iterate.
      * @param array $Data Other data optionally passed to the callback.
      * @throws Exception if the number of indexes doesn't match the number of dimensions.
      * @return mixed The return value from the callback function (defaults to
@@ -67,12 +67,12 @@ class Matrix extends CommonAbstract
     public function iterateCallback($Description, ?callable $Callback = null, ...$Data)
     {
         /** Guard. */
-        if (!is_string($Description) && !is_int($Description)) {
+        if (!\is_string($Description) && !\is_int($Description)) {
             return;
         }
 
         /** Set default callback for when omitted (just returning the value verbatim). */
-        if (!is_callable($Callback)) {
+        if (!\is_callable($Callback)) {
             $Callback = function ($Value) {
                 return $Value;
             };
@@ -81,24 +81,24 @@ class Matrix extends CommonAbstract
         /** Results from the callback function (if provided by the callback). */
         $Out = [];
 
-        $Description = explode(',', $Description);
+        $Description = \explode(',', $Description);
         $Dimension = 0;
         $Indexes = [];
 
         /** Build ranges. */
         foreach ($Description as $Descriptor) {
-            $Range = explode('-', $Descriptor);
-            if (count($Range) === 2 && is_numeric($Range[0]) && is_numeric($Range[1]) && $Range[0] <= $Range[1]) {
+            $Range = \explode('-', $Descriptor);
+            if (\count($Range) === 2 && \is_numeric($Range[0]) && \is_numeric($Range[1]) && $Range[0] <= $Range[1]) {
                 $First = $Range[0];
                 $Last = $Range[1];
-            } elseif (count($Range) === 1) {
+            } elseif (\count($Range) === 1) {
                 $First = $Range[0];
                 $Last = $Range[0];
             } else {
                 $First = 0;
-                if (is_int($this->Magnitude)) {
+                if (\is_int($this->Magnitude)) {
                     $Last = $this->Magnitude - 1;
-                } elseif (is_array($this->Magnitude) && isset($this->Magnitude[$Dimension]) && is_int($this->Magnitude[$Dimension])) {
+                } elseif (\is_array($this->Magnitude) && isset($this->Magnitude[$Dimension]) && \is_int($this->Magnitude[$Dimension])) {
                     $Last = $this->Magnitude[$Dimension] - 1;
                 } else {
                     $Last = -1;
@@ -109,8 +109,8 @@ class Matrix extends CommonAbstract
         }
 
         /** Exception: The number of indexes doesn't match the number of dimensions. */
-        if (($IndexCount = count($Indexes)) !== $this->Dimensions) {
-            throw new \Exception(sprintf('iterateCallback() expects %d dimensions, but %d were given', $this->Dimensions, $IndexCount));
+        if (($IndexCount = \count($Indexes)) !== $this->Dimensions) {
+            throw new \Exception(\sprintf('iterateCallback() expects %d dimensions, but %d were given', $this->Dimensions, $IndexCount));
             return;
         }
 
@@ -120,9 +120,9 @@ class Matrix extends CommonAbstract
                 continue;
             }
             $Set = &$Out;
-            while (($DPos = strpos($Key, ',')) !== false) {
-                $KeyPart = substr($Key, 0, $DPos);
-                $Key = substr($Key, $DPos + 1);
+            while (($DPos = \strpos($Key, ',')) !== false) {
+                $KeyPart = \substr($Key, 0, $DPos);
+                $Key = \substr($Key, $DPos + 1);
                 if (!isset($Set[$KeyPart])) {
                     $Set[$KeyPart] = [];
                 }
@@ -151,9 +151,9 @@ class Matrix extends CommonAbstract
         }
 
         /** Determine magnitude for this vector. */
-        if (is_int($this->Magnitude)) {
+        if (\is_int($this->Magnitude)) {
             $ThisMagnitude = $this->Magnitude;
-        } elseif (is_array($this->Magnitude) && isset($this->Magnitude[$Dimension]) && is_int($this->Magnitude[$Dimension])) {
+        } elseif (\is_array($this->Magnitude) && isset($this->Magnitude[$Dimension]) && \is_int($this->Magnitude[$Dimension])) {
             $ThisMagnitude = $this->Magnitude[$Dimension];
         } else {
             $ThisMagnitude = 0;
@@ -209,13 +209,13 @@ class Matrix extends CommonAbstract
             $Current = &$Matrix[$Index['Current']];
 
             /** Determine the current coordinate's key. */
-            $Key = $KeyRoot . (strlen($KeyRoot) ? ',' : '') . $Index['Current'];
+            $Key = $KeyRoot . (\strlen($KeyRoot) ? ',' : '') . $Index['Current'];
 
-            if (is_numeric($Index['Current'])) {
+            if (\is_numeric($Index['Current'])) {
                 /** Get previous coordinate. */
                 if (isset($Matrix[$Index['Current'] - 1])) {
                     $Previous = &$Matrix[$Index['Current'] - 1];
-                    $KeyPrevious = $KeyRoot . (strlen($KeyRoot) ? ',' : '') . ($Index['Current'] - 1);
+                    $KeyPrevious = $KeyRoot . (\strlen($KeyRoot) ? ',' : '') . ($Index['Current'] - 1);
                 } else {
                     unset($Previous);
                     $Previous = null;
@@ -225,7 +225,7 @@ class Matrix extends CommonAbstract
                 /** Get next coordinate. */
                 if (isset($Matrix[$Index['Current'] + 1])) {
                     $Next = &$Matrix[$Index['Current'] + 1];
-                    $KeyNext = $KeyRoot . (strlen($KeyRoot) ? ',' : '') . ($Index['Current'] + 1);
+                    $KeyNext = $KeyRoot . (\strlen($KeyRoot) ? ',' : '') . ($Index['Current'] + 1);
                 } else {
                     unset($Next);
                     $Next = null;

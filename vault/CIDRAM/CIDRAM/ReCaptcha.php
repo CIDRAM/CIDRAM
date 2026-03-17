@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: ReCaptcha class (last modified: 2026.03.15).
+ * This file: ReCaptcha class (last modified: 2026.03.17).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -28,7 +28,7 @@ class ReCaptcha extends Captcha
 
         /** Refer to the documentation regarding the behaviour of "lockuser". */
         if ($this->CIDRAM->Configuration['recaptcha']['lockuser']) {
-            if (file_exists($this->CIDRAM->Vault . 'hashes.dat')) {
+            if (\file_exists($this->CIDRAM->Vault . 'hashes.dat')) {
                 $HastList = $this->CIDRAM->readFile($this->CIDRAM->Vault . 'hashes.dat');
                 $HastListModified = false;
             } else {
@@ -43,10 +43,10 @@ class ReCaptcha extends Captcha
              * Determine whether a reCAPTCHA instance has already been completed by the
              * user and populate relevant variables.
              */
-            if (!empty($_COOKIE['CIDRAM']) && ($Split = strpos($_COOKIE['CIDRAM'], ',')) !== false) {
-                $UserHash = substr($_COOKIE['CIDRAM'], 0, $Split);
-                if (strpos($HastList, "\n" . $UserHash . ',') !== false) {
-                    $UserSalt = base64_decode(substr($_COOKIE['CIDRAM'], $Split));
+            if (!empty($_COOKIE['CIDRAM']) && ($Split = \strpos($_COOKIE['CIDRAM'], ',')) !== false) {
+                $UserHash = \substr($_COOKIE['CIDRAM'], 0, $Split);
+                if (\strpos($HastList, "\n" . $UserHash . ',') !== false) {
+                    $UserSalt = \base64_decode(\substr($_COOKIE['CIDRAM'], $Split));
                     if ($this->CIDRAM->Configuration['recaptcha']['lockip']) {
                         $UserMeld = $this->meld($Salt, $UserSalt, $this->CIDRAM->ipAddr);
                     } else {
@@ -54,19 +54,19 @@ class ReCaptcha extends Captcha
                     }
                 }
             }
-            if (!isset($UserMeld) || strlen($UserMeld) === 0) {
+            if (!isset($UserMeld) || \strlen($UserMeld) === 0) {
                 $UserMeld = '';
                 $UserSalt = '';
                 $UserHash = '';
             }
 
             /** Verify whether they've passed, update cookies, generate fields. */
-            if ($UserHash !== '' && $UserMeld !== '' && password_verify($UserMeld, $UserHash)) {
+            if ($UserHash !== '' && $UserMeld !== '' && \password_verify($UserMeld, $UserHash)) {
                 $this->Bypass = true;
                 $this->resetSCT();
             } else {
                 /** Set reCAPTCHA status. */
-                $this->CIDRAM->BlockInfo['CAPTCHA'] = sprintf($this->CIDRAM->L10N->getString('state.Enabled'), 'reCAPTCHA');
+                $this->CIDRAM->BlockInfo['CAPTCHA'] = \sprintf($this->CIDRAM->L10N->getString('state.Enabled'), 'reCAPTCHA');
 
                 /** We've received a response. */
                 if (isset($_POST['g-recaptcha-response'])) {
@@ -82,11 +82,11 @@ class ReCaptcha extends Captcha
                         } else {
                             $Cookie = $this->meld($Salt, $UserSalt);
                         }
-                        if (strpos($Cookie, "\0") !== false) {
-                            $Cookie = str_replace("\0", '', $Cookie);
+                        if (\strpos($Cookie, "\0") !== false) {
+                            $Cookie = \str_replace("\0", '', $Cookie);
                         }
-                        $UserHash = password_hash($Cookie, $this->DefaultAlgo);
-                        $Cookie = $UserHash . ',' . base64_encode($UserSalt);
+                        $UserHash = \password_hash($Cookie, $this->DefaultAlgo);
+                        $Cookie = $UserHash . ',' . \base64_encode($UserSalt);
                         setcookie(
                             'CIDRAM',
                             $Cookie,
@@ -119,13 +119,13 @@ class ReCaptcha extends Captcha
 
             /** Update the hash list if any changes were made. */
             if ($HastListModified) {
-                $Handle = fopen($this->CIDRAM->Vault . 'hashes.dat', 'wb');
-                fwrite($Handle, $HastList);
-                fclose($Handle);
+                $Handle = \fopen($this->CIDRAM->Vault . 'hashes.dat', 'wb');
+                \fwrite($Handle, $HastList);
+                \fclose($Handle);
             }
         } else {
             /** Attempt to load the IP bypass list. */
-            if (file_exists($this->CIDRAM->Vault . 'ipbypass.dat')) {
+            if (\file_exists($this->CIDRAM->Vault . 'ipbypass.dat')) {
                 $BypassList = $this->CIDRAM->readFile($this->CIDRAM->Vault . 'ipbypass.dat');
                 $BypassListModified = false;
             } else {
@@ -140,12 +140,12 @@ class ReCaptcha extends Captcha
              * Verify whether a reCAPTCHA instance has already been completed before
              * for the current IP, populate relevant variables, and generate fields.
              */
-            if (strpos($BypassList, "\n" . $this->CIDRAM->ipAddr . ',') !== false) {
+            if (\strpos($BypassList, "\n" . $this->CIDRAM->ipAddr . ',') !== false) {
                 $this->Bypass = true;
                 $this->resetSCT();
             } else {
                 /** Set reCAPTCHA status. */
-                $this->CIDRAM->BlockInfo['CAPTCHA'] = sprintf($this->CIDRAM->L10N->getString('state.Enabled'), 'reCAPTCHA');
+                $this->CIDRAM->BlockInfo['CAPTCHA'] = \sprintf($this->CIDRAM->L10N->getString('state.Enabled'), 'reCAPTCHA');
 
                 /** We've received a response. */
                 if (isset($_POST['g-recaptcha-response'])) {
@@ -175,9 +175,9 @@ class ReCaptcha extends Captcha
 
             /** Update the IP bypass list if any changes were made. */
             if ($BypassListModified) {
-                $Handle = fopen($this->CIDRAM->Vault . 'ipbypass.dat', 'wb');
-                fwrite($Handle, $BypassList);
-                fclose($Handle);
+                $Handle = \fopen($this->CIDRAM->Vault . 'ipbypass.dat', 'wb');
+                \fwrite($Handle, $BypassList);
+                \fclose($Handle);
             }
         }
 
@@ -192,8 +192,8 @@ class ReCaptcha extends Captcha
         }
 
         $Truncate = $this->CIDRAM->readBytes($this->CIDRAM->Configuration['logging']['truncate']);
-        $WriteMode = (!file_exists($Filename) || $Truncate > 0 && filesize($Filename) >= $Truncate) ? 'wb' : 'ab';
-        $Data = sprintf(
+        $WriteMode = (!\file_exists($Filename) || $Truncate > 0 && \filesize($Filename) >= $Truncate) ? 'wb' : 'ab';
+        $Data = \sprintf(
             '%1$s%7$s%2$s - %3$s%7$s%4$s - %8$s%7$s%9$s - %5$s%7$s%6$s',
             $this->CIDRAM->L10N->getString('field.IP address'),
             $this->CIDRAM->Configuration['legal']['pseudonymise_ip_addresses'] ? $this->CIDRAM->pseudonymiseIp($this->CIDRAM->ipAddr) : $this->CIDRAM->ipAddr,
@@ -211,9 +211,9 @@ class ReCaptcha extends Captcha
             $Data .= "\n";
         }
 
-        $File = fopen($Filename, $WriteMode);
-        fwrite($File, $Data);
-        fclose($File);
+        $File = \fopen($Filename, $WriteMode);
+        \fwrite($File, $Data);
+        \fclose($File);
         if ($WriteMode === 'wb') {
             $this->CIDRAM->logRotation($this->CIDRAM->Configuration['recaptcha']['recaptcha_log']);
         }
@@ -233,7 +233,7 @@ class ReCaptcha extends Captcha
         $Script = '<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>';
         $Script .= '<script type="text/javascript">document.getElementById(\'hostnameoverride\').value=window.location.hostname;</script>';
         $MsgCookieWarning = $this->CIDRAM->ClientL10N->getString('captcha_cookie_warning') ?: $this->CIDRAM->L10N->getString('captcha_cookie_warning');
-        return $API === 'Invisible' ? sprintf(
+        return $API === 'Invisible' ? \sprintf(
             "\n<hr />\n<p class=\"detected\"%s>%s%s<br /></p>\n" .
             '<div class="gForm">' .
                 '<div id="gForm" class="g-recaptcha" data-sitekey="%s" data-theme="%s" data-callback="onSubmitCallback" data-size="invisible"></div>' .
@@ -246,8 +246,8 @@ class ReCaptcha extends Captcha
             $CookieWarn ? '<br />' . $MsgCookieWarning : '',
             $SiteKey,
             $this->determineTheme(),
-            $this->TemplateInsert
-        ) . $Script . "\n" : sprintf(
+            self::TEMPLATE_INSERT
+        ) . $Script . "\n" : \sprintf(
             "\n<hr />\n<p class=\"detected\"%s>%s%s<br /></p>\n" .
             '<form id="gF" method="POST" action="" class="gForm" onsubmit="javascript:grecaptcha.execute()">' .
                 '<div id="gForm" data-theme="%s"></div><div>%s<input type="submit" value="%s" /></div>' .
@@ -256,7 +256,7 @@ class ReCaptcha extends Captcha
             $ApiMessage ? ($this->CIDRAM->ClientL10N->getString('captcha_message') ?: $this->CIDRAM->L10N->getString('captcha_message')) : '',
             $CookieWarn ? '<br />' . $MsgCookieWarning : '',
             $this->determineTheme(),
-            $this->TemplateInsert,
+            self::TEMPLATE_INSERT,
             $this->CIDRAM->ClientL10N->getString('label.Submit') ?: $this->CIDRAM->L10N->getString('label.Submit')
         ) . $Script;
     }
@@ -270,7 +270,7 @@ class ReCaptcha extends Captcha
      */
     private function generateCallbackData(string $SiteKey, string $API): string
     {
-        return sprintf(
+        return \sprintf(
             "\n  <script type=\"text/javascript\">var onloadCallback=function(){grecaptcha.render(%s)%s}</script>",
             "'gForm',{'sitekey':'" . $SiteKey . "'" . ($API === 'Invisible' ? ",'size':'invisible'" : '') . '}',
             ($API === 'Invisible') ? ';grecaptcha.execute()' : ''
@@ -290,7 +290,7 @@ class ReCaptcha extends Captcha
             'response' => $_POST['g-recaptcha-response'],
             'remoteip' => $this->CIDRAM->ipAddr
         ]);
-        $this->Bypass = (strpos($this->Results, '"success": true,') !== false);
+        $this->Bypass = (\strpos($this->Results, '"success": true,') !== false);
     }
 
     /**

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Romanian language data for the front-end (last modified: 2026.03.13).
+# This file: Romanian language data for the front-end (last modified: 2026.03.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,7 +24,7 @@
 # requests, ask. I can help.
 ##/
 
-Abuse category:
+Abuse category: !lazy
  Bad web bot: "Bot web rău (caută adrese de e-mail, conținut, crawler-uri care nu onorează robots.txt, solicitări excesive, falsificarea agentului de utilizator, etc)."
  Brute-force attacks: "Atacurile cu forță brută (atacuri cu forță brută de acreditări asupra autentificărilor pe paginile web, SMTP, RDP, etc)."
  Categories (at least one is required): "Categorii (cel puțin una este necesară)"
@@ -50,7 +50,7 @@ Abuse category:
  VPN IP: "IP VPN."
  Web spam: "Spam web (spam de comentarii/forum, spam de referință HTTP, sau alt spam CMS)."
  Webapp attacks: "Atacurile aplicațiilor web (sondarea vulnerabilităților sau exploatărilor, sau încercarea de a exploata aplicațiile web, CMS, sau soluții de comerț electronic instalate, de exemplu, WordPress, Drupal, phpMyAdmin, etc)."
-Extended Description:
+Extended Description: !lazy
  AbuseIPDB module: "Blochează solicitările de la IP-uri listate la AbuseIPDB."
  BGPView module: "Utilizează {{Links.BGPView}} API pentru a oferi o facilitate de căutare ASN și cod de țară pentru CIDRAM, permițând blocarea sau înscrierea în lista albă a ASN-urilor și a țărilor prin configurația CIDRAM, și oferind un mijloc de verificare a rețelelor sociale pentru a verifica solicitările Facebook. (Dacă utilizați acest modul, nu va trebui să utilizați modulul IP-API, deoarece au același scop)."
  Bad TLDs blocker module: "Blochează gazdele aparținând TLD-urilor utilizate frecvent de spammeri, hackeri, și alte entități nefaste."
@@ -78,7 +78,7 @@ Extended Description:
  Referrer spam module: "Blocarea bazată pe spam de referință nu va oferi, în general, niciun beneficiu semnificativ de securitate, dar în unele cazuri, ar putea fi utilă pentru unii utilizatori, pentru a colecta mai multe informații despre solicitări și pentru a le putea raporta."
  Stop Forum Spam module: "Protejează paginile de înregistrare și autentificare împotriva IP-urilor enumerate de SFS."
  Tor blocker module: "Refuză accesul de la nodurile de ieșire Tor prin căutări DNSEL (acceptă atât IPv4, cât și IPv6)."
-Name:
+Name: !lazy
  AbuseIPDB module: "Modul AbuseIPDB."
  BGPView module: "Modul BGPView."
  BOBUAM: "Modulul de agenți de utilizator bot sau browser (BOBUAM)."
@@ -129,7 +129,7 @@ checkbox:
  Test as sensitive request: "Testați ca solicităre sensibilă"
  Untrack positives: "Anulați urmărirea pozitive?"
  When blocked, suppress output template: "Când este blocat, suprimați șablonul de ieșire."
-config:
+config: !lazy
  abuseipdb: "Configurare pentru modulul AbuseIPDB."
  abuseipdb_api_key: &EnterAPIKey "Vă rugăm să introduceți aici cheia dvs. API."
  abuseipdb_build_profiles_from_usage_type: "Creați profiluri folosind tipul de utilizare returnat de API? False = Nu. True = Da. Implicit = True."
@@ -817,7 +817,7 @@ link:
  Subtractor: "Scăzător"
  Updates: "Actualizări"
  View mode: "Mod de vizualizare"
-macro:
+macro: !lazy
  Description:
   activate_modules: &MayImpactPerformance "Nu este recomandat în general, deoarece este posibil să existe unele de care nu aveți nevoie. Instalarea și activarea componentelor atunci când nu sunt necesare ar putea avea un impact negativ asupra performanței."
   install_l10n_core: &RecommendKeepingCore "Când directiva de configurare <code>lang_override</code> este activată, dacă browserul unui utilizator specifică o anumită preferință de limbă, atâta timp cât sunt instalate datele de bază L10N pentru acea limbă, CIDRAM poate afișa pagina „acces refuzat” în limba specificată. În consecință, se recomandă ca toate datele de bază L10N să rămână instalate."
@@ -974,7 +974,7 @@ response:
  _Yes: "Da"
  please_check_config: "Vă rugăm să vă verificați configurația pentru a vă asigura că modulul nou instalat se va comporta așa cum doriți."
  release_notes: "<a href="%s"><span class="navicon link"></span>Note de lansare pentru %s.</a>"
-stages:
+stages: !lazy
  Deploy CAPTCHAs (blocked requests): "Implementați CAPTCHA (solicitări blocate)"
  Deploy CAPTCHAs (non-blocked requests): "Implementați CAPTCHA (solicitări neblocate)"
  Execute IP tracking: "Executați urmărirea IP"

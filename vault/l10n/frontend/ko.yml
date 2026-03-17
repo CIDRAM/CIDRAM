@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2026.03.13).
+# This file: Korean language data for the front-end (last modified: 2026.03.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,7 +24,7 @@
 # requests, ask. I can help.
 ##/
 
-Abuse category:
+Abuse category: !lazy
  Bad web bot: "나쁜 웹봇 (이메일 주소와 콘텐츠를 찾으려면, robots.txt를 무시하는 크롤러, 과도한 요청, 사용자 에이전트 스푸핑, 등등)."
  Brute-force attacks: "무차별 공격 (웹페이지 로그인, SMTP, RDP, 등에 대한 자격 증명 무차별 대입 공격)."
  Categories (at least one is required): "카테고리 (하나 이상 필수)"
@@ -50,7 +50,7 @@ Abuse category:
  VPN IP: "VPN IP."
  Web spam: "웹 스팸 (댓글/포럼 스팸, HTTP 리퍼러 스팸, 또는 기타 CMS 스팸)."
  Webapp attacks: "웹앱 공격 (취약점이나 악용을 조사하거나 설치된 웹앱, CMS «예: WordPress, Drupal, phpMyAdmin, 등등», 또는 전자상거래 솔루션을 악용하려는 시도)."
-Extended Description:
+Extended Description: !lazy
  AbuseIPDB module: "AbuseIPDB에 나열된 IP의 요청을 차단합니다."
  BGPView module: "{{Links.BGPView}} API를 활용하여 CIDRAM에 대한 ASN 및 국가 코드 조회 기능 제공. CIDRAM 구성을 통해 ASN 및 국가를 차단 또는 허용 할 수 있습니다. Facebook 요청을 확인하기 위한 소셜 네트워킹 확인 수단 제공. (이 모듈을 사용하는 경우, 동일한 용도로 사용되므로, IP-API 모듈을 사용할 필요가 없습니다)."
  Bad TLDs blocker module: "스팸 발송자, 해커 및 기타 사기꾼이 자주 사용하는 TLD에 속한 호스트를 차단합니다."
@@ -78,7 +78,7 @@ Extended Description:
  Referrer spam module: "리퍼러 스팸에 기반한 차단은 일반적으로 의미 있는 보안 이점을 제공하지 않습니다, 그러나 어떤 경우에는, 요청에 대한 추가 정보를 수집하고 보고서를 생성하는 데 유용 할 수 있습니다."
  Stop Forum Spam module: "SFS가 나열한 IP에 대한 등록 및 로그인 페이지를 보호합니다."
  Tor blocker module: "DNSEL 조회를 통한 Tor 출구 노드의 액세스 금지 (IPv4 및 IPv6 모두 지원)."
-Name:
+Name: !lazy
  AbuseIPDB module: "AbuseIPDB 모듈."
  BGPView module: "BGPView 모듈."
  BOBUAM: "봇 또는 브라우저 사용자 에이전트 모듈 (BOBUAM)."
@@ -129,7 +129,7 @@ checkbox:
  Test as sensitive request: "민감한 요청으로 테스트"
  Untrack positives: "포지티브를 추적 해제하시겠습니까?"
  When blocked, suppress output template: "차단되면, 출력 템플릿을 억제합니다."
-config:
+config: !lazy
  abuseipdb: "AbuseIPDB 모듈 구성."
  abuseipdb_api_key: &EnterAPIKey "여기에 API 키를 입력하세요."
  abuseipdb_build_profiles_from_usage_type: "API에서 반환된 사용 유형을 사용하여 프로필을 작성하시겠습니까? True = 예 (Default / 기본 설정); False = 아니오."
@@ -795,7 +795,7 @@ link:
  Subtractor: "빼기 도구"
  Updates: "업데이트"
  View mode: "보기 모드"
-macro:
+macro: !lazy
  Description:
   activate_modules: &MayImpactPerformance "모두 필요하지 않을 수 있으므로 권장하지 않습니다. 필요하지 않은 구성 요소를 설치하고 활성화하면 성능에 부정적인 영향을 미칠 수 있습니다."
   install_l10n_core: &RecommendKeepingCore "<code>lang_override</code> 구성 지시문이 활성화된 경우, 사용자의 브라우저가 특정 언어 기본 설정을 지정하는 경우, 해당 언어의 core L10N 데이터가 설치되어 있는 한, CIDRAM은 지정된 언어로 "액세스 거부" 페이지를 표시할 수 있습니다. 따라서, 모든 core L10N 데이터를 설치된 상태로 유지하는 것이 좋습니다."
@@ -949,7 +949,7 @@ response:
  _Yes: "예"
  please_check_config: "새로 설치된 모듈이 의도 한 대로 작동하는지 확인하려면 구성을 확인하십시오."
  release_notes: "<a href="%s"><span class="navicon link"></span>%s에 대한 릴리스 노트.</a>"
-stages:
+stages: !lazy
  Deploy CAPTCHAs (blocked requests): "보안문자 배포 (차단된 요청)"
  Deploy CAPTCHAs (non-blocked requests): "보안문자 배포 (차단되지 않은 요청)"
  Execute IP tracking: "IP 추적 실행"

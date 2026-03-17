@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2026.03.13).
+# This file: Thai language data for the front-end (last modified: 2026.03.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,7 +24,7 @@
 # requests, ask. I can help.
 ##/
 
-Abuse category:
+Abuse category: !lazy
  Bad web bot: "เว็บบอทที่ไม่ดี (การคัดลอกที่อยู่อีเมลและเนื้อหา โปรแกรมรวบรวมข้อมูลที่ไม่ปฏิบัติตาม robots.txt คำขอที่มากเกินไป การปลอมแปลงตัวแทนผู้ใช้ ฯลฯ)."
  Brute-force attacks: "การโจมตีด้วยกำลังดุร้าย (การโจมตีข้อมูลประจำด้วยกำลังดุร้ายในการเข้าสู่ระบบหน้าเว็บ SMTP RDP ฯลฯ)."
  Categories (at least one is required): "หมวดหมู่ (ต้องมีอย่างน้อยหนึ่งรายการ)"
@@ -50,7 +50,7 @@ Abuse category:
  VPN IP: "VPN IP."
  Web spam: "เว็บสแปม (สแปมความคิดเห็น/ฟอรัม สแปมผู้อ้างอิง HTTP หรือสแปม CMS อื่นๆ)."
  Webapp attacks: "การโจมตีผ่านเว็บแอป (มองหาช่องโหว่ที่จะใช้กับเว็บแอป CMS หรือโซลูชันอีคอมเมิร์ซ เช่น WordPress, Drupal, phpMyAdmin เป็นต้น)."
-Extended Description:
+Extended Description: !lazy
  AbuseIPDB module: "บล็อคคำขอจาก IP ที่แสดงรายการไว้ที่ AbuseIPDB."
  BGPView module: "ใช้ {{Links.BGPView}} เพื่อจัดเตรียมความสามารถในการค้นหา ASN และรหัสประเทศสำหรับ CIDRAM การเปิดใช้งาน ASN และประเทศต่างๆให้ถูกบล็อคหรืออนุญาตผ่านการกำหนดค่า CIDRAM และจัดหาวิธีสำหรับการตรวจสอบเครือข่ายสังคมออนไลน์เพื่อยืนยันคำขอ Facebook. (หากคุณใช้โมดูลนี้ คุณไม่จำเป็นต้องใช้โมดูล IP-API เนื่องจากมีจุดประสงค์เดียวกัน)."
  Bad TLDs blocker module: "บล็อคโฮสต์ของ TLD ที่มักใช้โดยผู้ส่งสแปม แฮ็กเกอร์ และบุคคลอื่น ๆ ที่ไม่เป็นไปตามหลักเกณฑ์."
@@ -78,7 +78,7 @@ Extended Description:
  Referrer spam module: "การปิดกั้นโดยอ้างอิงจากสแปมอ้างอิงจะไม่ให้ประโยชน์ด้านความปลอดภัยที่มีความหมาย แต่ในบางกรณีอาจมีประโยชน์สำหรับผู้ใช้บางคน เพื่อรวบรวมข้อมูลเพิ่มเติมเกี่ยวกับคำขอและเพื่อให้สามารถรายงานได้."
  Stop Forum Spam module: "ปกป้องหน้าการลงทะเบียนและเข้าสู่ระบบต่อต้าน IP ที่ระบุโดย SFS."
  Tor blocker module: "ห้ามการเข้าถึงจากโหนดทางออกของ Tor ผ่านการค้นหา DNSEL (รองรับทั้ง IPv4 และ IPv6)."
-Name:
+Name: !lazy
  AbuseIPDB module: "โมดูล AbuseIPDB."
  BGPView module: "โมดูล BGPView."
  BOBUAM: "โมดูลสำหรับตัวแทนผู้ใช้ของบอทหรือเบราว์เซอร์ (BOBUAM)."
@@ -129,7 +129,7 @@ checkbox:
  Test as sensitive request: "ทดสอบตามคำขอที่ละเอียดอ่อน"
  Untrack positives: "เลิกติดตามผลบวก?"
  When blocked, suppress output template: "เมื่อถูกบล็อค ไม่แสดงเทมเพลตเอาต์พุต."
-config:
+config: !lazy
  abuseipdb: "การกำหนดค่าสำหรับโมดูล AbuseIPDB."
  abuseipdb_api_key: &EnterAPIKey "โปรดป้อนคีย์ API ของคุณที่นี่."
  abuseipdb_build_profiles_from_usage_type: "สร้างโปรไฟล์โดยใช้ประเภทการใช้งานที่ส่งคืนโดย API หรือไม่? False = ไม่. True = ใช่. ค่าเริ่มต้น = True."
@@ -791,7 +791,7 @@ link:
  Subtractor: "การลบ"
  Updates: "อัปเดต"
  View mode: "โหมดการแสดงผล"
-macro:
+macro: !lazy
  Description:
   activate_modules: &MayImpactPerformance "ไม่แนะนำโดยทั่วไป เนื่องจากอาจมีบางอย่างที่คุณไม่ต้องการ. เมื่อส่วนประกอบไม่จำเป็น การติดตั้งและเปิดใช้งานอาจส่งผลเสียต่อประสิทธิภาพการทำงาน."
   install_l10n_core: &RecommendKeepingCore "เมื่อเปิดใช้งานคำสั่งการกำหนดค่า <code>lang_override</code> หากเบราว์เซอร์ของผู้ใช้ระบุการตั้งค่าภาษาเฉพาะ ตราบเท่าที่มีการติดตั้งข้อมูล core L10N สำหรับภาษานั้น CIDRAM สามารถแสดงหน้า "ปฏิเสธการเข้าใช้" ในภาษาที่ระบุ. ดังนั้น ขอแนะนำให้ติดตั้งข้อมูล core L10N ทั้งหมดไว้."
@@ -945,7 +945,7 @@ response:
  _Yes: "ใช่แล้ว"
  please_check_config: "ตรวจสอบการกำหนดค่าของคุณเพื่อให้แน่ใจว่าโมดูลที่ติดตั้งใหม่จะทำงานตามที่ตั้งใจไว้."
  release_notes: "<a href="%s"><span class="navicon link"></span>บันทึกประจำรุ่นสำหรับ %s.</a>"
-stages:
+stages: !lazy
  Deploy CAPTCHAs (blocked requests): "ปรับใช้ CAPTCHA (คำขอที่ถูกบล็อค)"
  Deploy CAPTCHAs (non-blocked requests): "ปรับใช้ CAPTCHA (คำขอที่ไม่ถูกบล็อค)"
  Execute IP tracking: "ดำเนินการติดตาม IP"

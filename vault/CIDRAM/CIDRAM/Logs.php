@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used by the logs page (last modified: 2025.10.03).
+ * This file: Methods used by the logs page (last modified: 2026.03.17).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -31,18 +31,18 @@ trait Logs
             \RecursiveDirectoryIterator::FOLLOW_SYMLINKS | \RecursiveDirectoryIterator::SKIP_DOTS | \RecursiveDirectoryIterator::UNIX_PATHS
         ), \RecursiveIteratorIterator::SELF_FIRST), 0, 1000);
         foreach ($List as $Item => $List) {
-            $ThisName = str_replace('\\', '/', substr($Item, strlen($Base)));
+            $ThisName = \str_replace('\\', '/', \substr($Item, \strlen($Base)));
             $Normalised = $ThisName;
-            if (!is_file($Item) || !is_readable($Item) || is_dir($Item) || !$this->isLogFile($ThisName, $Normalised)) {
+            if (!\is_file($Item) || !\is_readable($Item) || \is_dir($Item) || !$this->isLogFile($ThisName, $Normalised)) {
                 continue;
             }
-            $Arr[$Normalised] = ['Filename' => $ThisName, 'Filesize' => filesize($Item)];
+            $Arr[$Normalised] = ['Filename' => $ThisName, 'Filesize' => \filesize($Item)];
             $this->formatFileSize($Arr[$Normalised]['Filesize']);
         }
         if ($Order === 'ascending') {
-            ksort($Arr);
+            \ksort($Arr);
         } elseif ($Order === 'descending') {
-            krsort($Arr);
+            \krsort($Arr);
         }
         return $Arr;
     }
@@ -59,42 +59,42 @@ trait Logs
      */
     private function formatter(string &$In, string $BlockLink = '', string $Current = '', string $FieldSeparator = ': ', bool $Flags = false): void
     {
-        if (strpos($In, "<br />\n") === false) {
+        if (\strpos($In, "<br />\n") === false) {
             $In = '<div class="hB hFd s">' . $In . '</div>';
             return;
         }
         $Out = '';
         $In = "\n" . $In;
-        $Len = strlen($In);
+        $Len = \strlen($In);
         $Caret = 0;
-        $this->CIDRAM['BlockSeparator'] = (strpos($In, "<br />\n<br />\n") !== false) ? "<br />\n<br />\n" : "<br />\n";
-        $BlockSeparatorLen = strlen($this->CIDRAM['BlockSeparator']);
-        $Timestamp = date('Y-m-d\TH:i', $this->Now);
+        $this->CIDRAM['BlockSeparator'] = (\strpos($In, "<br />\n<br />\n") !== false) ? "<br />\n<br />\n" : "<br />\n";
+        $BlockSeparatorLen = \strlen($this->CIDRAM['BlockSeparator']);
+        $Timestamp = \date('Y-m-d\TH:i', $this->Now);
         while ($Caret < $Len) {
             $Remainder = $Len - $Caret;
             if ($Remainder < self::MAX_BLOCKSIZE && $Remainder < ini_get('pcre.backtrack_limit')) {
-                $Section = substr($In, $Caret) . $this->CIDRAM['BlockSeparator'];
+                $Section = \substr($In, $Caret) . $this->CIDRAM['BlockSeparator'];
                 $Caret = $Len;
             } else {
-                $SectionLen = strrpos(substr($In, $Caret, self::MAX_BLOCKSIZE), $this->CIDRAM['BlockSeparator']);
-                $Section = substr($In, $Caret, $SectionLen) . $this->CIDRAM['BlockSeparator'];
+                $SectionLen = \strrpos(\substr($In, $Caret, self::MAX_BLOCKSIZE), $this->CIDRAM['BlockSeparator']);
+                $Section = \substr($In, $Caret, $SectionLen) . $this->CIDRAM['BlockSeparator'];
                 $Caret += $SectionLen;
             }
 
             /** Add code tags. */
-            preg_match_all('~(&lt;\?(?:(?!&lt;\?)[^\n])+\?&gt;|<\?(?:(?!<\?)[^\n])+\?>|\{\?(?:(?!\{\?)[^\n])+\?\})~i', $Section, $Parts);
+            \preg_match_all('~(&lt;\?(?:(?!&lt;\?)[^\n])+\?&gt;|<\?(?:(?!<\?)[^\n])+\?>|\{\?(?:(?!\{\?)[^\n])+\?\})~i', $Section, $Parts);
             foreach ($Parts[0] as $ThisPart) {
-                if (strlen($ThisPart) > 512 || strpos($ThisPart, "\n") !== false) {
+                if (\strlen($ThisPart) > 512 || \strpos($ThisPart, "\n") !== false) {
                     continue;
                 }
-                $Section = str_replace($ThisPart, '<code>' . $ThisPart . '</code>', $Section);
+                $Section = \str_replace($ThisPart, '<code>' . $ThisPart . '</code>', $Section);
             }
 
             /** Add label styles. */
-            if (preg_match_all('~\n(- .*|(?!：)[^\n:]+)' . $FieldSeparator . '((?:(?!<br />)[^\n])+)~i', $Section, $Parts) && count($Parts[1])) {
-                $Parts[1] = array_unique($Parts[1]);
+            if (\preg_match_all('~\n(- .*|(?!：)[^\n:]+)' . $FieldSeparator . '((?:(?!<br />)[^\n])+)~i', $Section, $Parts) && \count($Parts[1])) {
+                $Parts[1] = \array_unique($Parts[1]);
                 foreach ($Parts[1] as $ThisPart) {
-                    $Section = str_replace(
+                    $Section = \str_replace(
                         "\n" . $ThisPart . $FieldSeparator,
                         "\n<span class=\"textLabel\">" . $ThisPart . '</span>' . $FieldSeparator,
                         $Section
@@ -103,28 +103,28 @@ trait Logs
             }
 
             /** Fix bad encoding and add block info search links. */
-            if (isset($Parts[2]) && is_array($Parts[2]) && count($Parts[2]) && $BlockSeparatorLen === 14) {
-                $Parts[2] = array_unique($Parts[2]);
+            if (isset($Parts[2]) && \is_array($Parts[2]) && \count($Parts[2]) && $BlockSeparatorLen === 14) {
+                $Parts[2] = \array_unique($Parts[2]);
                 foreach ($Parts[2] as $ThisPart) {
-                    $ThisPartUnsafe = str_replace(['&lt;', '&gt;', '&#34;'], ['<', '>', '"'], $ThisPart);
+                    $ThisPartUnsafe = \str_replace(['&lt;', '&gt;', '&#34;'], ['<', '>', '"'], $ThisPart);
                     $TestString = $this->Demojibakefier->guard($ThisPartUnsafe);
                     $IPSVGs = ' ';
                     if ($this->expandIpv4($ThisPart, true) || $this->expandIpv6($ThisPart, true)) {
-                        if (isset($this->CIDRAM['Extra SVG Icons']) && is_array($this->CIDRAM['Extra SVG Icons'])) {
+                        if (isset($this->CIDRAM['Extra SVG Icons']) && \is_array($this->CIDRAM['Extra SVG Icons'])) {
                             foreach ($this->CIDRAM['Extra SVG Icons'] as $ExtraSvgIcon) {
-                                $IPSVGs .= substr_count($ExtraSvgIcon, '%s') > 1 ? sprintf($ExtraSvgIcon, $ThisPart, $Timestamp) : sprintf($ExtraSvgIcon, $ThisPart);
+                                $IPSVGs .= \substr_count($ExtraSvgIcon, '%s') > 1 ? \sprintf($ExtraSvgIcon, $ThisPart, $Timestamp) : \sprintf($ExtraSvgIcon, $ThisPart);
                             }
                             $IPSVGs = $this->parseVars([], $IPSVGs, true);
                         }
                     }
                     $Alternate = (
                         $TestString !== $ThisPartUnsafe && $this->Demojibakefier->Last
-                    ) ? '<code dir="ltr">🔁' . $this->Demojibakefier->Last . '➡️UTF-8' . $FieldSeparator . '</code>' . str_replace(['<', '>', '"'], ['&lt;', '&gt;', '&#34;'], $TestString) . "<br />\n" : '';
+                    ) ? '<code dir="ltr">🔁' . $this->Demojibakefier->Last . '➡️UTF-8' . $FieldSeparator . '</code>' . \str_replace(['<', '>', '"'], ['&lt;', '&gt;', '&#34;'], $TestString) . "<br />\n" : '';
                     if ($ThisPart === '' || $ThisPart === $Current) {
                         if ($ThisPart === '') {
                             $IPSVGs = '';
                         }
-                        $Section = str_replace(
+                        $Section = \str_replace(
                             '</span>' . $FieldSeparator . $ThisPart . "<br />\n",
                             '</span>' . $FieldSeparator . $ThisPart . $IPSVGs . "<br />\n" . $Alternate,
                             $Section
@@ -132,13 +132,13 @@ trait Logs
                         continue;
                     }
                     $BlockLinkFromRemoved = $this->paginationRemoveFrom($BlockLink);
-                    $Section = str_replace(
+                    $Section = \str_replace(
                         '</span>' . $FieldSeparator . $ThisPart . "<br />\n",
                         '</span>' . $FieldSeparator . $ThisPart . $IPSVGs . '<a href="' . $BlockLinkFromRemoved . '&search=' . $this->preparePartForSearchLink($ThisPart) . '">»</a>' . "<br />\n" . $Alternate,
                         $Section
                     );
-                    if (preg_match('~^(https?://)([^/\s]+)~i', $ThisPart, $Domain) && isset($Domain[1], $Domain[2])) {
-                        $Section = str_replace(
+                    if (\preg_match('~^(https?://)([^/\s]+)~i', $ThisPart, $Domain) && isset($Domain[1], $Domain[2])) {
+                        $Section = \str_replace(
                             '</span>' . $FieldSeparator . $Domain[1] . $Domain[2],
                             '</span>' . $FieldSeparator . $Domain[1] . '<a href="' . $BlockLinkFromRemoved . '&search=' . $this->preparePartForSearchLink($Domain[2], '*', '*') . '">' . $Domain[2] . '</a>',
                             $Section
@@ -148,20 +148,20 @@ trait Logs
             }
 
             /** Make satisfied red. */
-            $Section = preg_replace('~(?<=' . $FieldSeparator . ')' . $this->L10N->getString('response.Satisfied') . '(?=\n|<br />| <a href)~', '<span class="txtRd">' . $this->L10N->getString('response.Satisfied') . '</span>', $Section);
+            $Section = \preg_replace('~(?<=' . $FieldSeparator . ')' . $this->L10N->getString('response.Satisfied') . '(?=\n|<br />| <a href)~', '<span class="txtRd">' . $this->L10N->getString('response.Satisfied') . '</span>', $Section);
 
             /** Add pair styles. */
-            if (preg_match_all('~\n((?:<span class="textLabel">.*|(?!：)[^\n:]+)' . $FieldSeparator . '(?:(?!<br />)[^\n])+)~i', $Section, $Parts) && count($Parts[1])) {
+            if (\preg_match_all('~\n((?:<span class="textLabel">.*|(?!：)[^\n:]+)' . $FieldSeparator . '(?:(?!<br />)[^\n])+)~i', $Section, $Parts) && \count($Parts[1])) {
                 foreach ($Parts[1] as $ThisPart) {
-                    $Section = str_replace("\n" . $ThisPart . "<br />\n", "\n<span class=\"s\">" . $ThisPart . "</span><br />\n", $Section);
+                    $Section = \str_replace("\n" . $ThisPart . "<br />\n", "\n<span class=\"s\">" . $ThisPart . "</span><br />\n", $Section);
                 }
             }
 
             /** Add signature section name search links. */
-            if (preg_match_all('~\\("([^()"]+)", L~', $Section, $Parts) && count($Parts[1])) {
-                $Parts[1] = array_unique($Parts[1]);
+            if (\preg_match_all('~\\("([^()"]+)", L~', $Section, $Parts) && \count($Parts[1])) {
+                $Parts[1] = \array_unique($Parts[1]);
                 foreach ($Parts[1] as $ThisPart) {
-                    $Section = str_replace(
+                    $Section = \str_replace(
                         '("' . $ThisPart . '", L',
                         '("<a href="' . $this->paginationRemoveFrom($BlockLink) . '&search=' . $this->preparePartForSearchLink($ThisPart, '*', '*') . '">' . $ThisPart . '</a>", L',
                         $Section
@@ -170,7 +170,7 @@ trait Logs
             }
 
             /** Add country flags. */
-            if (preg_match_all('~\[([A-Z]{2})\]~', $Section, $Parts) && count($Parts[1])) {
+            if (\preg_match_all('~\[([A-Z]{2})\]~', $Section, $Parts) && \count($Parts[1])) {
                 if ($Flags) {
                     $OuterOpen = '';
                     $OuterClose = '';
@@ -183,7 +183,7 @@ trait Logs
                     $InnerClose = '';
                 }
                 foreach ($Parts[1] as $ThisPart) {
-                    $Section = str_replace(
+                    $Section = \str_replace(
                         '[' . $ThisPart . ']',
                         $OuterOpen . '<a href="' . $this->paginationRemoveFrom($BlockLink) . '&search=' . $this->preparePartForSearchLink($ThisPart) . '" title="' . $ThisPart . '">' . $InnerOpen . $ThisPart . $InnerClose . '</a>' . $OuterClose,
                         $Section
@@ -191,20 +191,20 @@ trait Logs
                 }
             }
 
-            $Out .= substr($Section, 0, $BlockSeparatorLen * -1);
+            $Out .= \substr($Section, 0, $BlockSeparatorLen * -1);
         }
-        $Out = substr($Out, 1);
+        $Out = \substr($Out, 1);
         $In = [];
         $BlockStart = 0;
         $BlockEnd = 0;
         while ($BlockEnd !== false) {
             $Darken = empty($Darken);
             $Style = '<div class="logVis h' . ($Darken ? 'B' : 'W') . ' hFd fW">';
-            $BlockEnd = strpos($Out, $this->CIDRAM['BlockSeparator'], $BlockStart);
-            $In[] = $Style . substr($Out, $BlockStart, $BlockEnd - $BlockStart + $BlockSeparatorLen) . '</div>';
+            $BlockEnd = \strpos($Out, $this->CIDRAM['BlockSeparator'], $BlockStart);
+            $In[] = $Style . \substr($Out, $BlockStart, $BlockEnd - $BlockStart + $BlockSeparatorLen) . '</div>';
             $BlockStart = $BlockEnd + $BlockSeparatorLen;
         }
-        $In = str_replace("<br />\n</div>", "<br /></div>\n", implode('', $In));
+        $In = \str_replace("<br />\n</div>", "<br /></div>\n", \implode('', $In));
     }
 
     /**
@@ -222,30 +222,30 @@ trait Logs
         }
         $Data = [];
         $PosA = 0;
-        while (($PosB = strpos($In, "\n", $PosA)) !== false) {
-            $Line = substr($In, $PosA, $PosB - $PosA);
+        while (($PosB = \strpos($In, "\n", $PosA)) !== false) {
+            $Line = \substr($In, $PosA, $PosB - $PosA);
             $PosA = $PosB + 1;
-            if (strlen($Line) === 0) {
+            if (\strlen($Line) === 0) {
                 continue;
             }
             foreach ($Exclusions as $Exclusion) {
-                if (substr($Line, 0, strlen($Exclusion)) === $Exclusion) {
+                if (\substr($Line, 0, \strlen($Exclusion)) === $Exclusion) {
                     continue 2;
                 }
             }
-            $Separator = (strpos($Line, '：') !== false) ? '：' : ': ';
-            $FieldsCount = substr_count($Line, ' - ') + 1;
-            $FieldsCountMatch = (substr_count($Line, $Separator) === $FieldsCount);
-            $Fields = ($FieldsCountMatch && $FieldsCount > 1) ? explode(' - ', $Line) : [$Line];
+            $Separator = (\strpos($Line, '：') !== false) ? '：' : ': ';
+            $FieldsCount = \substr_count($Line, ' - ') + 1;
+            $FieldsCountMatch = (\substr_count($Line, $Separator) === $FieldsCount);
+            $Fields = ($FieldsCountMatch && $FieldsCount > 1) ? \explode(' - ', $Line) : [$Line];
             foreach ($Fields as $FieldRaw) {
-                if (($SeparatorPos = strpos($FieldRaw, $Separator)) === false) {
+                if (($SeparatorPos = \strpos($FieldRaw, $Separator)) === false) {
                     continue;
                 }
-                $Field = trim(substr($FieldRaw, 0, $SeparatorPos));
-                if (in_array($Field, $Exclusions, true)) {
+                $Field = \trim(\substr($FieldRaw, 0, $SeparatorPos));
+                if (\in_array($Field, $Exclusions, true)) {
                     continue;
                 }
-                $Entry = trim(substr($FieldRaw, $SeparatorPos + strlen($Separator)));
+                $Entry = \trim(\substr($FieldRaw, $SeparatorPos + \strlen($Separator)));
                 if (!isset($Data[$Field])) {
                     $Data[$Field] = [];
                 }
@@ -256,11 +256,11 @@ trait Logs
             }
         }
         $Data['Origin'] = [];
-        $Timestamp = date('Y-m-d\TH:i', $this->Now);
+        $Timestamp = \date('Y-m-d\TH:i', $this->Now);
         for ($A = 65; $A < 91; $A++) {
             for ($B = 65; $B < 91; $B++) {
                 $Code = '[' . chr($A) . chr($B) . ']';
-                if ($Count = substr_count($In, $Code)) {
+                if ($Count = \substr_count($In, $Code)) {
                     $Data['Origin'][$Code] = $Count;
                 }
             }
@@ -272,37 +272,37 @@ trait Logs
         foreach ($Data as $Field => $Entries) {
             $Out .= '<tr><td class="h2f" colspan="2"><div class="s">' . $Field . "</div></td></tr>\n";
             if ($this->FE['SortOrder'] === 'descending') {
-                arsort($Entries, SORT_NUMERIC);
+                \arsort($Entries, SORT_NUMERIC);
             } else {
-                asort($Entries, SORT_NUMERIC);
+                \asort($Entries, SORT_NUMERIC);
             }
             foreach ($Entries as $Entry => $Count) {
-                if (!(substr($Entry, 0, 1) === '[' && substr($Entry, 3, 1) === ']')) {
+                if (!(\substr($Entry, 0, 1) === '[' && \substr($Entry, 3, 1) === ']')) {
                     $IPSVGs = '';
                     if ($this->expandIpv4($Entry, true) || $this->expandIpv6($Entry, true)) {
-                        if (isset($this->CIDRAM['Extra SVG Icons']) && is_array($this->CIDRAM['Extra SVG Icons'])) {
+                        if (isset($this->CIDRAM['Extra SVG Icons']) && \is_array($this->CIDRAM['Extra SVG Icons'])) {
                             foreach ($this->CIDRAM['Extra SVG Icons'] as $ExtraSvgIcon) {
-                                $IPSVGs .= substr_count($ExtraSvgIcon, '%s') > 1 ? sprintf($ExtraSvgIcon, $Entry, $Timestamp) : sprintf($ExtraSvgIcon, $Entry);
+                                $IPSVGs .= \substr_count($ExtraSvgIcon, '%s') > 1 ? \sprintf($ExtraSvgIcon, $Entry, $Timestamp) : \sprintf($ExtraSvgIcon, $Entry);
                             }
                             $IPSVGs = $this->parseVars([], $IPSVGs, true);
                         }
                     }
                     $Entry .= ' ' . $IPSVGs . '<a href="' . $this->paginationRemoveFrom($BlockLink) . '&search=' . $this->preparePartForSearchLink($Entry) . '">»</a>';
                 }
-                preg_match_all('~\\("([^()"]+)", L~', $Entry, $Parts);
-                if (count($Parts[1])) {
+                \preg_match_all('~\\("([^()"]+)", L~', $Entry, $Parts);
+                if (\count($Parts[1])) {
                     foreach ($Parts[1] as $ThisPart) {
-                        $Entry = str_replace(
+                        $Entry = \str_replace(
                             '("' . $ThisPart . '", L',
                             '("<a href="' . $this->paginationRemoveFrom($BlockLink) . '&search=' . $this->preparePartForSearchLink($ThisPart) . '">' . $ThisPart . '</a>", L',
                             $Entry
                         );
                     }
                 }
-                preg_match_all('~\[([A-Z]{2})\]~', $Entry, $Parts);
-                if (count($Parts[1])) {
+                \preg_match_all('~\[([A-Z]{2})\]~', $Entry, $Parts);
+                if (\count($Parts[1])) {
                     foreach ($Parts[1] as $ThisPart) {
-                        $Entry = str_replace('[' . $ThisPart . ']', $this->FE['Flags'] ? (
+                        $Entry = \str_replace('[' . $ThisPart . ']', $this->FE['Flags'] ? (
                             '<a href="' . $this->paginationRemoveFrom($BlockLink) . '&search=' . $this->preparePartForSearchLink($ThisPart) . '"><span class="flag ' . $ThisPart . '"></span></a>'
                         ) : (
                             '[<a href="' . $this->paginationRemoveFrom($BlockLink) . '&search=' . $this->preparePartForSearchLink($ThisPart) . '">' . $ThisPart . '</a>]'
@@ -334,23 +334,23 @@ trait Logs
      */
     private function splitBeforeLine(string $Data, string $Boundary): array
     {
-        $Len = strlen($Data);
+        $Len = \strlen($Data);
         if ($Len < 1) {
             return ['', ''];
         }
         if ($Boundary === '') {
             return ['', $Data];
         }
-        $BPos = strpos($Data, $Boundary);
+        $BPos = \strpos($Data, $Boundary);
         if ($BPos === false || $BPos < 1) {
             return ['', $Data];
         }
         $Offset = ($Len - $BPos) * -1;
-        $LPos = strrpos($Data, "\n", $Offset);
+        $LPos = \strrpos($Data, "\n", $Offset);
         if ($LPos === false) {
             return ['', $Data];
         }
-        return [substr($Data, 0, $LPos + 1), substr($Data, $LPos + 1)];
+        return [\substr($Data, 0, $LPos + 1), \substr($Data, $LPos + 1)];
     }
 
     /**
@@ -363,10 +363,10 @@ trait Logs
     private function isolateFirstFieldEntry(string $Block, string $Separator): string
     {
         $Segment = '';
-        if (($Position = strpos($Block, $Separator)) !== false) {
-            $Segment = substr($Block, $Position + strlen($Separator));
-            if (($FieldEndPos = strpos($Segment, "\n")) !== false) {
-                $Segment = substr($Segment, 0, $FieldEndPos);
+        if (($Position = \strpos($Block, $Separator)) !== false) {
+            $Segment = \substr($Block, $Position + \strlen($Separator));
+            if (($FieldEndPos = \strpos($Segment, "\n")) !== false) {
+                $Segment = \substr($Segment, 0, $FieldEndPos);
             }
         }
         return $Segment ?: '';
@@ -387,19 +387,19 @@ trait Logs
     private function stepThroughBlocks(string $Data, &$Needle, $End, string $SearchQuery = '', string $Direction = '>', bool $WildCardHead = false, bool $WildCardFoot = false): bool
     {
         /** Guard. */
-        if (!is_int($End) || $Data === '' || ($Direction !== '<' && $Direction !== '>')) {
+        if (!\is_int($End) || $Data === '' || ($Direction !== '<' && $Direction !== '>')) {
             return false;
         }
 
         /** Needed for guards. */
-        $DataLen = strlen($Data);
+        $DataLen = \strlen($Data);
 
         /** Directionality. */
         if ($Direction === '>') {
             $StrFunction = 'strpos';
         } else {
             $StrFunction = 'strrpos';
-            $End = ((strlen($Data) - $Needle) * -1) - strlen($this->CIDRAM['BlockSeparator']);
+            $End = ((\strlen($Data) - $Needle) * -1) - \strlen($this->CIDRAM['BlockSeparator']);
         }
 
         /** Guard against the needle being outside the range of the data length. */
@@ -421,7 +421,7 @@ trait Logs
             }
             return (
                 ($Needle = $StrFunction($Data, ($this->CIDRAM['BlockSeparator'] === "\n\n" ? $this->FE['FieldSeparator'] . $SearchQuery . "\n" : $SearchQuery), $End)) !== false ||
-                (strlen($SearchQuery) === 2 && ($Needle = $StrFunction($Data, '[' . $SearchQuery . ']', $End)) !== false)
+                (\strlen($SearchQuery) === 2 && ($Needle = $StrFunction($Data, '[' . $SearchQuery . ']', $End)) !== false)
             );
         }
 
@@ -438,17 +438,17 @@ trait Logs
      */
     private function paginationFromLink(string $Label, string $Needle): void
     {
-        $From = urlencode($this->FE['From']);
-        $URLNeedle = urlencode($Needle);
-        if (strpos($this->FE['BlockLink'], '&from=' . $From) !== false) {
-            $Link = str_replace('&from=' . $From, '&from=' . $URLNeedle, $this->FE['BlockLink']);
+        $From = \urlencode($this->FE['From']);
+        $URLNeedle = \urlencode($Needle);
+        if (\strpos($this->FE['BlockLink'], '&from=' . $From) !== false) {
+            $Link = \str_replace('&from=' . $From, '&from=' . $URLNeedle, $this->FE['BlockLink']);
         } else {
             $Link = $this->FE['BlockLink'] . '&from=' . $URLNeedle;
         }
         if (!empty($this->CIDRAM['QueryVars']['search'])) {
-            $Link .= '&search=' . urlencode($this->CIDRAM['QueryVars']['search']);
+            $Link .= '&search=' . \urlencode($this->CIDRAM['QueryVars']['search']);
         }
-        $this->FE['SearchInfo'] .= sprintf(' %s <a href="%s">%s</a>', $this->L10N->getString($Label), $Link, $Needle);
+        $this->FE['SearchInfo'] .= \sprintf(' %s <a href="%s">%s</a>', $this->L10N->getString($Label), $Link, $Needle);
     }
 
     /**
@@ -459,7 +459,7 @@ trait Logs
      */
     private function paginationRemoveFrom(string $Link): string
     {
-        return preg_replace(['~\?from=[^&]+~i', '~&from=[^&]+~i'], ['?', ''], $Link);
+        return \preg_replace(['~\?from=[^&]+~i', '~&from=[^&]+~i'], ['?', ''], $Link);
     }
 
     /**
@@ -474,7 +474,7 @@ trait Logs
         $Out = [];
         foreach ($Arr as $Item) {
             $NewKey = $Perform($Item);
-            if (is_string($NewKey) || is_int($NewKey)) {
+            if (\is_string($NewKey) || \is_int($NewKey)) {
                 $Out[$NewKey] = $Item;
             }
         }
@@ -491,7 +491,7 @@ trait Logs
      */
     private function preparePartForSearchLink(string $Part, string $Head = '', string $Tail = ''): string
     {
-        return str_replace('=', '_', base64_encode($Head . str_replace('*', '\\*', $Part) . $Tail));
+        return \str_replace('=', '_', \base64_encode($Head . \str_replace('*', '\\*', $Part) . $Tail));
     }
 
     /**
@@ -510,15 +510,15 @@ trait Logs
         }
         $WildCardHead = false;
         $WildCardFoot = false;
-        if (substr($SearchLink, 0, 1) === '*') {
+        if (\substr($SearchLink, 0, 1) === '*') {
             $WildCardHead = true;
-            $SearchLink = substr($SearchLink, 1);
+            $SearchLink = \substr($SearchLink, 1);
         }
-        if (preg_match('~(?<!\\\\)(?:\\\\{2})*\\*$~', $SearchLink)) {
+        if (\preg_match('~(?<!\\\\)(?:\\\\{2})*\\*$~', $SearchLink)) {
             $WildCardFoot = true;
-            $SearchLink = substr($SearchLink, 0, -1);
+            $SearchLink = \substr($SearchLink, 0, -1);
         }
-        $SearchLink = preg_replace('~(?<!\\\\)\\\\((?:\\\\{2})*)\\*~', '\1*', $SearchLink);
+        $SearchLink = \preg_replace('~(?<!\\\\)\\\\((?:\\\\{2})*)\\*~', '\1*', $SearchLink);
         return [$WildCardHead, $WildCardFoot, $SearchLink];
     }
 }

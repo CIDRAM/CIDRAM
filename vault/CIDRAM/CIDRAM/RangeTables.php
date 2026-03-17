@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used by the range tables page (last modified: 2025.11.03).
+ * This file: Methods used by the range tables page (last modified: 2026.03.17).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -24,7 +24,7 @@ trait RangeTables
      */
     private function rangeTablesTallyIpv6(array &$Arr, int $Range)
     {
-        $Order = ceil($Range / 16) - 1;
+        $Order = \ceil($Range / 16) - 1;
         $Arr[$Order] += 2 ** ((128 - $Range) % 16);
     }
 
@@ -39,7 +39,7 @@ trait RangeTables
     {
         for ($Iter = 7; $Iter > 0; $Iter--) {
             if (!empty($Arr[$Iter + 1])) {
-                $Arr[$Iter] += (floor($Arr[$Iter + 1] / 655.36) / 100);
+                $Arr[$Iter] += (\floor($Arr[$Iter + 1] / 655.36) / 100);
             }
             while ($Arr[$Iter] >= self::MAX_BLOCKSIZE) {
                 $Arr[$Iter] -= self::MAX_BLOCKSIZE;
@@ -67,47 +67,47 @@ trait RangeTables
      */
     private function rangeTablesFetchLine(string &$Data, int &$Offset, string &$Needle, bool &$HasOrigin)
     {
-        $Check = strpos($Data, $Needle, $Offset);
+        $Check = \strpos($Data, $Needle, $Offset);
         if ($Check !== false) {
-            $NeedleLen = strlen($Needle);
-            $LFPos = strpos($Data, "\n", $Check + $NeedleLen);
+            $NeedleLen = \strlen($Needle);
+            $LFPos = \strpos($Data, "\n", $Check + $NeedleLen);
             if ($LFPos !== false) {
                 if ($Deduct = $LFPos - $Check - $NeedleLen) {
-                    $Param = trim(substr($Data, $Check + $NeedleLen + 1, $Deduct - 1));
-                    $Offset = $Check + $NeedleLen + strlen($Param) + 1;
+                    $Param = \trim(\substr($Data, $Check + $NeedleLen + 1, $Deduct - 1));
+                    $Offset = $Check + $NeedleLen + \strlen($Param) + 1;
                 } else {
                     $Param = '';
                     $Offset = $Check + $NeedleLen;
                 }
             } else {
-                $Param = trim(substr($Data, $Check + $NeedleLen));
+                $Param = \trim(\substr($Data, $Check + $NeedleLen));
                 $Offset = false;
             }
             $From = $Check > 128 ? $Check - 128 : 0;
-            $CPos = strrpos(substr($Data, $From, $Check - $From), "\n");
-            if (substr($Data, $CPos + 1, 1) === '#') {
+            $CPos = \strrpos(\substr($Data, $From, $Check - $From), "\n");
+            if (\substr($Data, $CPos + 1, 1) === '#') {
                 return false;
             }
             $Origin = '??';
             $Tag = '';
-            $CPos = strpos($Data, "\n\n", $Offset);
+            $CPos = \strpos($Data, "\n\n", $Offset);
             if ($Offset !== false) {
                 if ($HasOrigin) {
-                    $OPos = strpos($Data, "\nOrigin: ", $Offset);
+                    $OPos = \strpos($Data, "\nOrigin: ", $Offset);
                     if ($OPos !== false && ($CPos === false || $CPos > $OPos)) {
-                        $Origin = substr($Data, $OPos + 9, 2);
+                        $Origin = \substr($Data, $OPos + 9, 2);
                     }
                 }
-                $TPos = strpos($Data, "\nTag: ", $Offset);
+                $TPos = \strpos($Data, "\nTag: ", $Offset);
                 if ($TPos !== false && ($CPos === false || $CPos > $TPos)) {
-                    $TEPos = strpos($Data, "\n", $TPos + 1);
-                    $Tag = substr($Data, $TPos + 6, $TEPos - $TPos - 6);
+                    $TEPos = \strpos($Data, "\n", $TPos + 1);
+                    $Tag = \substr($Data, $TPos + 6, $TEPos - $TPos - 6);
                 }
             }
-            $Param = preg_replace([
+            $Param = \preg_replace([
                 '~ until (\d{4})[.-](\d\d)[.-](\d\d)$~i',
                 '~ from (\d{4})[.-](\d\d)[.-](\d\d)$~i'
-            ], '', trim($Param));
+            ], '', \trim($Param));
             return ['Param' => $Param, 'Origin' => $Origin, 'Tag' => $Tag];
         }
         $Offset = false;
@@ -133,16 +133,16 @@ trait RangeTables
             if ($File === '' || $this->isReserved($File)) {
                 continue;
             }
-            $File = (strpos($File, ':') === false) ? $File : substr($File, strpos($File, ':') + 1);
+            $File = (\strpos($File, ':') === false) ? $File : \substr($File, \strpos($File, ':') + 1);
             $Data = $this->readFile($this->SignaturesPath . $File);
-            if (strlen($Data) === 0) {
+            if (\strlen($Data) === 0) {
                 continue;
             }
-            if (isset($this->FE['Matrix-Data']) && class_exists('\Maikuolan\Common\Matrix') && function_exists('imagecreatetruecolor')) {
+            if (isset($this->FE['Matrix-Data']) && \class_exists('\Maikuolan\Common\Matrix') && \function_exists('imagecreatetruecolor')) {
                 $this->FE['Matrix-Data'] .= $Data;
             }
             $this->normaliseLinebreaks($Data);
-            $HasOrigin = (strpos($Data, "\nOrigin: ") !== false);
+            $HasOrigin = (\strpos($Data, "\nOrigin: ") !== false);
             foreach ($SigTypes as $SigType) {
                 for ($Range = 1; $Range <= $MaxRange; $Range++) {
                     if ($MaxRange === 32) {
@@ -213,12 +213,12 @@ trait RangeTables
         for ($Range = 1; $Range <= $MaxRange; $Range++) {
             $Size = '*Math.pow(2,' . ($MaxRange - $Range) . ')';
             foreach ([$IPType, $IPType . '-Ignored', $IPType . '-Total'] as $IgnoreState) {
-                if (count($Arr[$IgnoreState][$SigType][$Range])) {
+                if (\count($Arr[$IgnoreState][$SigType][$Range])) {
                     $StatClass = $ZeroPlus;
-                    arsort($Arr[$IgnoreState][$SigType][$Range]);
+                    \arsort($Arr[$IgnoreState][$SigType][$Range]);
                     foreach ($Arr[$IgnoreState][$SigType][$Range] as $Param => &$Count) {
                         if ($IPType === 'IPv4') {
-                            $ThisID = preg_replace('~[^\da-z]~i', '_', $IgnoreState . $SigType . $Range . $Param);
+                            $ThisID = \preg_replace('~[^\da-z]~i', '_', $IgnoreState . $SigType . $Range . $Param);
                             $Total = '<span id="' . $ThisID . '"></span>';
                             $JS .= 'w(\'' . $ThisID . '\',nft((' . $Count . $Size . ').toString()));';
                             $Count = $this->NumberFormatter->format($Count) . ' (' . $Total . ')';
@@ -229,12 +229,12 @@ trait RangeTables
                             $Count = $Param . ' – ' . $Count;
                         }
                     }
-                    $Arr[$IgnoreState][$SigType][$Range] = implode('<br />', $Arr[$IgnoreState][$SigType][$Range]);
-                    if (count($Arr[$IgnoreState . '-Origin'][$SigType][$Range])) {
-                        arsort($Arr[$IgnoreState . '-Origin'][$SigType][$Range]);
+                    $Arr[$IgnoreState][$SigType][$Range] = \implode('<br />', $Arr[$IgnoreState][$SigType][$Range]);
+                    if (\count($Arr[$IgnoreState . '-Origin'][$SigType][$Range])) {
+                        \arsort($Arr[$IgnoreState . '-Origin'][$SigType][$Range]);
                         foreach ($Arr[$IgnoreState . '-Origin'][$SigType][$Range] as $Origin => &$Count) {
                             if ($IPType === 'IPv4') {
-                                $ThisID = preg_replace('~[^\da-z]~i', '_', $IgnoreState . $SigType . $Range . $Origin);
+                                $ThisID = \preg_replace('~[^\da-z]~i', '_', $IgnoreState . $SigType . $Range . $Origin);
                                 $Total = '<span id="' . $ThisID . '"></span>';
                                 $JS .= 'w(\'' . $ThisID . '\',nft((' . $Count . $Size . ').toString()));';
                                 $Count = $this->NumberFormatter->format($Count) . ' (' . $Total . ')';
@@ -245,7 +245,7 @@ trait RangeTables
                                 $this->FE['Flags'] && $Origin !== '??' ? '<span class="flag ' . $Origin . '"></span> – ' : ''
                             ) . $Count;
                         }
-                        $Arr[$IgnoreState . '-Origin'][$SigType][$Range] = implode('<br /><br />', $Arr[$IgnoreState . '-Origin'][$SigType][$Range]);
+                        $Arr[$IgnoreState . '-Origin'][$SigType][$Range] = \implode('<br /><br />', $Arr[$IgnoreState . '-Origin'][$SigType][$Range]);
                         $Arr[$IgnoreState][$SigType][$Range] .= '<hr />' . $Arr[$IgnoreState . '-Origin'][$SigType][$Range];
                     }
                 } else {
@@ -261,12 +261,12 @@ trait RangeTables
             }
         }
         foreach ([$IPType, $IPType . '-Ignored', $IPType . '-Total'] as $IgnoreState) {
-            if (count($Arr[$IgnoreState][$SigType]['Total'])) {
+            if (\count($Arr[$IgnoreState][$SigType]['Total'])) {
                 $StatClass = $ZeroPlus;
                 if ($MaxRange === 32) {
-                    arsort($Arr[$IgnoreState][$SigType]['Total']);
+                    \arsort($Arr[$IgnoreState][$SigType]['Total']);
                 } elseif ($MaxRange === 128) {
-                    uasort($Arr[$IgnoreState][$SigType]['Total'], function ($A, $B): int {
+                    \uasort($Arr[$IgnoreState][$SigType]['Total'], function ($A, $B): int {
                         for ($i = 0; $i < 8; $i++) {
                             if ($A[$i] !== $B[$i]) {
                                 return $A[$i] > $B[$i] ? -1 : 1;
@@ -277,12 +277,12 @@ trait RangeTables
                 }
                 foreach ($Arr[$IgnoreState][$SigType]['Total'] as $Param => &$Count) {
                     if ($MaxRange === 32) {
-                        $ThisID = preg_replace('~[^\da-z]~i', '_', $IgnoreState . $SigType . 'Total' . $Param);
+                        $ThisID = \preg_replace('~[^\da-z]~i', '_', $IgnoreState . $SigType . 'Total' . $Param);
                         $JS .= 'w(\'' . $ThisID . '\',nft((' . $Count . ').toString()));';
                     } elseif ($MaxRange === 128) {
                         $Count = $this->rangeTablesFinaliseIpv6($Count);
                         $Count[1] = $Count[1] ? '+\' × \'+nft((2).toString())+\'<sup>^\'+nft((' . $Count[1] . ').toString())+\'</sup>\'' : '';
-                        $ThisID = preg_replace('~[^\da-z]~i', '_', $IgnoreState . $SigType . 'Total' . $Param);
+                        $ThisID = \preg_replace('~[^\da-z]~i', '_', $IgnoreState . $SigType . 'Total' . $Param);
                         $JS .= 'w(\'' . $ThisID . '\',' . ($Count[1] ? '\'~\'+' : '') . 'nft((' . $Count[0] . ').toString())' . $Count[1] . ');';
                     }
                     $Count = '<span id="' . $ThisID . '"></span>';
@@ -290,24 +290,24 @@ trait RangeTables
                         $Count = $Param . ' – ' . $Count;
                     }
                 }
-                $Arr[$IgnoreState][$SigType]['Total'] = implode('<br />', $Arr[$IgnoreState][$SigType]['Total']);
-                if (count($Arr[$IgnoreState . '-Origin'][$SigType]['Total'])) {
-                    arsort($Arr[$IgnoreState . '-Origin'][$SigType]['Total']);
+                $Arr[$IgnoreState][$SigType]['Total'] = \implode('<br />', $Arr[$IgnoreState][$SigType]['Total']);
+                if (\count($Arr[$IgnoreState . '-Origin'][$SigType]['Total'])) {
+                    \arsort($Arr[$IgnoreState . '-Origin'][$SigType]['Total']);
                     foreach ($Arr[$IgnoreState . '-Origin'][$SigType]['Total'] as $Origin => &$Count) {
                         if ($MaxRange === 32) {
-                            $ThisID = preg_replace('~[^\da-z]~i', '_', $IgnoreState . $SigType . 'Total' . $Origin);
+                            $ThisID = \preg_replace('~[^\da-z]~i', '_', $IgnoreState . $SigType . 'Total' . $Origin);
                             $JS .= 'w(\'' . $ThisID . '\',nft((' . $Count . ').toString()));';
                         } elseif ($MaxRange === 128) {
                             $Count = $this->rangeTablesFinaliseIpv6($Count);
                             $Count[1] = $Count[1] ? '+\' × \'+nft((2).toString())+\'<sup>^\'+nft((' . $Count[1] . ').toString())+\'</sup>\'' : '';
-                            $ThisID = preg_replace('~[^\da-z]~i', '_', $IgnoreState . $SigType . 'Total' . $Origin);
+                            $ThisID = \preg_replace('~[^\da-z]~i', '_', $IgnoreState . $SigType . 'Total' . $Origin);
                             $JS .= 'w(\'' . $ThisID . '\',' . ($Count[1] ? '\'~\'+' : '') . 'nft((' . $Count[0] . ').toString())' . $Count[1] . ');';
                         }
                         $Count = '<code class="hB">' . $Origin . '</code> – ' . (
                             $this->FE['Flags'] && $Origin !== '??' ? '<span class="flag ' . $Origin . '"></span> – ' : ''
                         ) . '<span id="' . $ThisID . '"></span>';
                     }
-                    $Arr[$IgnoreState . '-Origin'][$SigType]['Total'] = implode('<br /><br />', $Arr[$IgnoreState . '-Origin'][$SigType]['Total']);
+                    $Arr[$IgnoreState . '-Origin'][$SigType]['Total'] = \implode('<br /><br />', $Arr[$IgnoreState . '-Origin'][$SigType]['Total']);
                     $Arr[$IgnoreState][$SigType]['Total'] .= '<hr />' . $Arr[$IgnoreState . '-Origin'][$SigType]['Total'];
                 }
             } else {
@@ -372,7 +372,7 @@ trait RangeTables
         $RangeCatOptions = [];
         $Styling = ['Run' => ' class="txtOe"', 'Whitelist' => ' class="txtGn"', 'Greylist' => ' class="txtGn"', 'Deny' => ' class="txtRd"'];
         foreach ($SigTypes as $SigType) {
-            $Class = 'sigtype_' . strtolower($SigType);
+            $Class = 'sigtype_' . \strtolower($SigType);
             $RangeCatOptions[] = '<option value="' . $Class . '"' . ($Styling[$SigType] ?? '') . '>' . $SigType . '</option>';
             $this->FE['Labels'] .= '<span style="display:none" class="s ' . $Class . '">' . $this->L10N->getString('label.Signature type') . ' ' . $SigType . '</span>';
             if ($SigType === 'Run') {
@@ -383,7 +383,7 @@ trait RangeTables
             $this->rangeTablesIterateData($Arr, $Out, $JS, $SigType, 32, 'IPv4', $ZeroPlus, $Class);
             $this->rangeTablesIterateData($Arr, $Out, $JS, $SigType, 128, 'IPv6', $ZeroPlus, $Class);
         }
-        $this->FE['rangeCatOptions'] = implode("\n            ", $RangeCatOptions);
+        $this->FE['rangeCatOptions'] = \implode("\n            ", $RangeCatOptions);
         $this->FE['RangeRows'] = '';
         foreach ([['IPv4', 32], ['IPv6', 128]] as $Build) {
             for ($Range = 1; $Range <= $Build[1]; $Range++) {
@@ -394,8 +394,8 @@ trait RangeTables
                 ] as $Label) {
                     if (!empty($Out[$Label[0]])) {
                         foreach ($SigTypes as $SigType) {
-                            $Class = 'sigtype_' . strtolower($SigType);
-                            if (strpos($Out[$Label[0]], $Class) === false) {
+                            $Class = 'sigtype_' . \strtolower($SigType);
+                            if (\strpos($Out[$Label[0]], $Class) === false) {
                                 $Out[$Label[0]] .= '<span style="display:none" class="' . $Class . ' s">-</span>';
                             }
                         }
@@ -414,20 +414,20 @@ trait RangeTables
             $ThisRight = '<table><tr><td>';
             $InternalIPv4 = 'IPv4' . $Label[0] . '/Total';
             $InternalIPv6 = 'IPv6' . $Label[0] . '/Total';
-            if (isset($Out[$InternalIPv4]) && strlen($Out[$InternalIPv4])) {
+            if (isset($Out[$InternalIPv4]) && \strlen($Out[$InternalIPv4])) {
                 foreach ($SigTypes as $SigType) {
-                    $Class = 'sigtype_' . strtolower($SigType);
-                    if (strpos($Out[$InternalIPv4], $Class) === false) {
+                    $Class = 'sigtype_' . \strtolower($SigType);
+                    if (\strpos($Out[$InternalIPv4], $Class) === false) {
                         $Out[$InternalIPv4] .= '<span style="display:none" class="' . $Class . ' s">-</span>';
                     }
                 }
                 $ThisRight .= $Out[$InternalIPv4];
             }
             $ThisRight .= '</td><td>';
-            if (isset($Out[$InternalIPv6]) && strlen($Out[$InternalIPv6])) {
+            if (isset($Out[$InternalIPv6]) && \strlen($Out[$InternalIPv6])) {
                 foreach ($SigTypes as $SigType) {
-                    $Class = 'sigtype_' . strtolower($SigType);
-                    if (strpos($Out[$InternalIPv6], $Class) === false) {
+                    $Class = 'sigtype_' . \strtolower($SigType);
+                    if (\strpos($Out[$InternalIPv6], $Class) === false) {
                         $Out[$InternalIPv6] .= '<span style="display:none" class="' . $Class . ' s">-</span>';
                     }
                 }
@@ -462,7 +462,7 @@ trait RangeTables
          */
         return function (&$Current, $Key, &$Previous, $KeyPrevious, &$Next, $KeyNext, &$Step, $Amount) {
             if (
-                !is_array($Current) ||
+                !\is_array($Current) ||
                 !isset($Current['R'], $Current['G'], $Current['B'], $Amount[0], $Amount[1]) ||
                 ($Amount[0] !== 'R' && $Amount[0] !== 'G' && $Amount[0] !== 'B')
             ) {
@@ -483,14 +483,14 @@ trait RangeTables
          * @param string $Current The value of the current coordinate.
          */
         return function (&$Current) {
-            if (!is_array($Current) || !isset($Current['R'], $Current['G'], $Current['B'])) {
+            if (!\is_array($Current) || !isset($Current['R'], $Current['G'], $Current['B'])) {
                 return;
             }
             foreach ($Current as &$RGB) {
-                if (!is_int($RGB) || $RGB < 0) {
+                if (!\is_int($RGB) || $RGB < 0) {
                     $RGB = 0;
                 }
-                $RGB = ceil($RGB);
+                $RGB = \ceil($RGB);
                 if ($RGB > 255) {
                     $RGB = 255;
                 }
@@ -517,14 +517,14 @@ trait RangeTables
          * @return void
          */
         return function (&$Current, $Key, &$Previous, $KeyPrevious, &$Next, $KeyNext, &$Step, $Offsets) {
-            if (!is_array($Current) || !is_array($Offsets) || !isset($Current['R'], $Current['G'], $Current['B'], $this->CIDRAM['Matrix-Image'])) {
+            if (!\is_array($Current) || !\is_array($Offsets) || !isset($Current['R'], $Current['G'], $Current['B'], $this->CIDRAM['Matrix-Image'])) {
                 return;
             }
             $Colour = ($Current['R'] * 65536) + ($Current['G'] * 256) + $Current['B'];
-            $XY = explode(',', $Key);
+            $XY = \explode(',', $Key);
             $X = $XY[0] ?? 0;
             $Y = $XY[1] ?? 0;
-            if (is_array($Offsets) && isset($Offsets[0], $Offsets[1]) && is_int($Offsets[0]) && is_int($Offsets[1])) {
+            if (\is_array($Offsets) && isset($Offsets[0], $Offsets[1]) && \is_int($Offsets[0]) && \is_int($Offsets[1])) {
                 $X += $Offsets[0];
                 $Y += $Offsets[1];
             }
@@ -542,18 +542,18 @@ trait RangeTables
     private function matrixCreateGenerator(string &$Source): \Generator
     {
         $SPos = 0;
-        while (($FPos = strpos($Source, "\n", $SPos)) !== false) {
+        while (($FPos = \strpos($Source, "\n", $SPos)) !== false) {
             $Mark = [];
             if (isset($this->CIDRAM['Matrix-%Print'])) {
                 $this->CIDRAM['Matrix-%Print']();
             }
-            $Line = substr($Source, $SPos, $FPos - $SPos);
+            $Line = \substr($Source, $SPos, $FPos - $SPos);
             $SPos = $FPos + 1;
-            if ($Line === '' || substr($Line, 0, 1) === '#') {
+            if ($Line === '' || \substr($Line, 0, 1) === '#') {
                 continue;
             }
             $Matches = [];
-            if (preg_match('~^(\d+).(\d+).(\d+).(\d+)/(\d+) (Deny|Whitelist|Greylist|Run)~', $Line, $Matches)) {
+            if (\preg_match('~^(\d+).(\d+).(\d+).(\d+)/(\d+) (Deny|Whitelist|Greylist|Run)~', $Line, $Matches)) {
                 $Mark['6or4'] = 4;
                 if ($Matches[6] === 'Deny') {
                     $Mark['Colour'] = 'R';
@@ -593,10 +593,10 @@ trait RangeTables
                 }
                 yield $Mark;
             } elseif (
-                preg_match('~^()([\da-f]{1,2})()()::/(\d+) (Deny|Whitelist|Greylist|Run)~', $Line, $Matches) ||
-                preg_match('~^([\da-f]{1,2})([\da-f]{2})()()::/(\d+) (Deny|Whitelist|Greylist|Run)~', $Line, $Matches) ||
-                preg_match('~^([\da-f]{1,2})([\da-f]{2}):()([\da-f]{1,2})::/(\d+) (Deny|Whitelist|Greylist|Run)~', $Line, $Matches) ||
-                preg_match('~^([\da-f]{1,2})([\da-f]{2}):([\da-f]{1,2})([\da-f]{2})::/(\d+) (Deny|Whitelist|Greylist|Run)~', $Line, $Matches)
+                \preg_match('~^()([\da-f]{1,2})()()::/(\d+) (Deny|Whitelist|Greylist|Run)~', $Line, $Matches) ||
+                \preg_match('~^([\da-f]{1,2})([\da-f]{2})()()::/(\d+) (Deny|Whitelist|Greylist|Run)~', $Line, $Matches) ||
+                \preg_match('~^([\da-f]{1,2})([\da-f]{2}):()([\da-f]{1,2})::/(\d+) (Deny|Whitelist|Greylist|Run)~', $Line, $Matches) ||
+                \preg_match('~^([\da-f]{1,2})([\da-f]{2}):([\da-f]{1,2})([\da-f]{2})::/(\d+) (Deny|Whitelist|Greylist|Run)~', $Line, $Matches)
             ) {
                 $Mark['6or4'] = 6;
                 if ($Matches[6] === 'Deny') {
@@ -610,29 +610,29 @@ trait RangeTables
                     for ($Iterant = $Matches[5], $To = 256; $Iterant > 0; $Iterant--) {
                         $To /= 2;
                     }
-                    $To += hexdec($Matches[1]) - 1;
-                    $Mark['Range'] = hexdec($Matches[1]) . '-' . $To . ',0-255';
+                    $To += \hexdec($Matches[1]) - 1;
+                    $Mark['Range'] = \hexdec($Matches[1]) . '-' . $To . ',0-255';
                     $Mark['Amount'] = 255;
                 } elseif ($Matches[5] <= 16) {
                     for ($Iterant = $Matches[5] - 8, $To = 256; $Iterant > 0; $Iterant--) {
                         $To /= 2;
                     }
-                    $To += hexdec($Matches[2]) - 1;
-                    $Mark['Range'] = hexdec($Matches[1]) . ',' . hexdec($Matches[2]) . '-' . $To;
+                    $To += \hexdec($Matches[2]) - 1;
+                    $Mark['Range'] = \hexdec($Matches[1]) . ',' . \hexdec($Matches[2]) . '-' . $To;
                     $Mark['Amount'] = 255;
                 } elseif ($Matches[5] <= 24) {
                     for ($Iterant = $Matches[5] - 16, $To = 256; $Iterant > 0; $Iterant--) {
                         $To /= 2;
                     }
-                    $To += hexdec($Matches[3]) - 1;
-                    $Mark['Range'] = hexdec($Matches[1]) . ',' . hexdec($Matches[2]);
+                    $To += \hexdec($Matches[3]) - 1;
+                    $Mark['Range'] = \hexdec($Matches[1]) . ',' . \hexdec($Matches[2]);
                     $Mark['Amount'] = $To;
                 } else {
                     for ($Iterant = $Matches[5] - 24, $To = 256; $Iterant > 0; $Iterant--) {
                         $To /= 2;
                     }
-                    $To += hexdec($Matches[4]) - 1;
-                    $Mark['Range'] = hexdec($Matches[1]) . ',' . hexdec($Matches[2]);
+                    $To += \hexdec($Matches[4]) - 1;
+                    $Mark['Range'] = \hexdec($Matches[1]) . ',' . \hexdec($Matches[2]);
                     $Mark['Amount'] = $To / 256;
                 }
                 yield $Mark;
@@ -655,7 +655,7 @@ trait RangeTables
     {
         if ($CLI) {
             $Splits = ['Percentage' => 0, 'Skip' => 0];
-            $Splits['Max'] = substr_count($Source, "\n");
+            $Splits['Max'] = \substr_count($Source, "\n");
             $this->CIDRAM['Matrix-%Print'] = function () use (&$Splits) {
                 $Splits['Percentage']++;
                 $Splits['Skip']++;
@@ -665,9 +665,9 @@ trait RangeTables
                 $Current = $Splits['Percentage'] / $Splits['Max'];
                 if ($Splits['Skip'] > 24) {
                     $Splits['Skip'] = 0;
-                    $Memory = memory_get_usage();
+                    $Memory = \memory_get_usage();
                     $this->formatFileSize($Memory);
-                    echo "\rWorking ... " . $this->NumberFormatter->format($Current, 2) . '% (' . $this->timeFormat(time(), $this->Configuration['general']['time_format']) . ') <RAM: ' . $Memory . '>';
+                    echo "\rWorking ... " . $this->NumberFormatter->format($Current, 2) . '% (' . $this->timeFormat(\time(), $this->Configuration['general']['time_format']) . ') <RAM: ' . $Memory . '>';
                 }
             };
             echo "\rWorking ...";
@@ -723,7 +723,7 @@ trait RangeTables
         imageline($this->CIDRAM['Matrix-Image'], 10, 307, 269, 307, 16777215);
         imageline($this->CIDRAM['Matrix-Image'], 284, 307, 543, 307, 16777215);
 
-        imagestring($this->CIDRAM['Matrix-Image'], 2, 12, 2, 'CIDRAM signature file analysis (image generated ' . date('Y.m.d', time()) . ').', 16777215);
+        imagestring($this->CIDRAM['Matrix-Image'], 2, 12, 2, 'CIDRAM signature file analysis (image generated ' . \date('Y.m.d', \time()) . ').', 16777215);
         imagefilledrectangle($this->CIDRAM['Matrix-Image'], 12, 14, 22, 24, 16711680);
         imagestring($this->CIDRAM['Matrix-Image'], 2, 24, 12, '"Deny" signatures', 16711680);
         imagefilledrectangle($this->CIDRAM['Matrix-Image'], 130, 14, 140, 24, 65280);
@@ -744,19 +744,19 @@ trait RangeTables
             if (!$Destination) {
                 $Destination = 'export.png';
             }
-            imagepng($this->CIDRAM['Matrix-Image'], $this->Vault . $Destination);
-            $Memory = memory_get_usage();
+            \imagepng($this->CIDRAM['Matrix-Image'], $this->Vault . $Destination);
+            $Memory = \memory_get_usage();
             $this->formatFileSize($Memory);
-            echo "\rWorking ... " . $this->NumberFormatter->format(100, 2) . '% (' . $this->timeFormat(time(), $this->Configuration['general']['time_format']) . ') <RAM: ' . $Memory . '>' . "\n\n";
+            echo "\rWorking ... " . $this->NumberFormatter->format(100, 2) . '% (' . $this->timeFormat(\time(), $this->Configuration['general']['time_format']) . ') <RAM: ' . $Memory . '>' . "\n\n";
         } else {
-            ob_start();
-            imagepng($this->CIDRAM['Matrix-Image']);
-            $Out = ob_get_contents();
-            ob_end_clean();
+            \ob_start();
+            \imagepng($this->CIDRAM['Matrix-Image']);
+            $Out = \ob_get_contents();
+            \ob_end_clean();
             return $Out;
         }
         if (\PHP_VERSION_ID < 80000) {
-            imagedestroy($this->CIDRAM['Matrix-Image']);
+            \imagedestroy($this->CIDRAM['Matrix-Image']);
         }
         return '';
     }

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2026.03.13).
+# This file: Arabic language data for the front-end (last modified: 2026.03.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,7 +24,7 @@
 # requests, ask. I can help.
 ##/
 
-Abuse category:
+Abuse category: !lazy
  Bad web bot: "بوت الويب السيئ (تجريف لعناوين البريد الإلكتروني والمحتوى، برامج الزحف التي لا تحترم ملف robots.txt، والطلبات المفرطة، وانتحال وكيل المستخدم، وما إلى ذلك)."
  Brute-force attacks: "هجمات القوة الغاشمة (هجمات القوة الغاشمة لبيانات الاعتماد على عمليات تسجيل الدخول إلى صفحات الويب، وSMTP، وRDP، وما إلى ذلك)."
  Categories (at least one is required): "الفئات (مطلوب واحدة على الأقل)"
@@ -50,7 +50,7 @@ Abuse category:
  VPN IP: "VPN IP."
  Web spam: "البريد العشوائي على شبكة الإنترنت (البريد العشوائي للتعليق/المنتدى، أو البريد العشوائي لإحالة HTTP، أو البريد العشوائي CMS)."
  Webapp attacks: "هجمات تطبيق الويب (البحث عن نقاط الضعف أو الاستغلال، أو محاولة استغلال تطبيقات الويب، أو CMS، أو حلول التجارة الإلكترونية المثبتة، على سبيل المثال، WordPress، Drupal، phpMyAdmin، إلخ)."
-Extended Description:
+Extended Description: !lazy
  AbuseIPDB module: "بحظر الطلبات من عناوين IP المدرجة في AbuseIPDB."
  BGPView module: "يستخدم {{Links.BGPView}} لتوفير ASN ومنشأة البحث عن رمز البلد لـ CIDRAM، وبالتالي تمكين ASN والبلدان من حظرها أو إدراجها في القائمة البيضاء عبر تكوين CIDRAM، وتوفير وسيلة للتحقق من الشبكات الاجتماعية للتحقق من طلبات Facebook. (إذا كنت تستخدم هذه الوحدة، فلن تحتاج إلى استخدام وحدة IP-API، لأنها تخدم نفس الغرض)."
  Bad TLDs blocker module: "كتل المضيفين التي تنتمي إلى TLD، التي يتم استخدامها بشكل متكرر من قبل مرسلي المحتوى غير المرغوب فيه والمتسللين والكيانات الشائنة الأخرى."
@@ -78,7 +78,7 @@ Extended Description:
  Referrer spam module: "لا يوفر الحظر بناءً على الإحالة غير المرغوب فيها عمومًا أي فائدة أمنية ذات مغزى، ولكن في بعض الحالات، قد يكون مفيدًا لبعض المستخدمين، ولجمع مزيد من المعلومات حول الطلبات، وللتمكن من الإبلاغ عنها."
  Stop Forum Spam module: "يحمي تسجيل صفحات ضد عناوين IP المدرجة من قبل SFS."
  Tor blocker module: "يحظر الوصول من عقد خروج Tor من خلال عمليات بحث DNSEL (يدعم كلا من IPv4 و IPv6)."
-Name:
+Name: !lazy
  AbuseIPDB module: "AbuseIPDB المكون."
  BGPView module: "BGPView المكون."
  BOBUAM: "وحدة وكيل مستخدم الروبوت أو المتصفح (BOBUAM)."
@@ -129,7 +129,7 @@ checkbox:
  Test as sensitive request: "اختبر كما لو كان طلبًا حساسًا"
  Untrack positives: "التوقف عن تتبع الإيجابيات؟"
  When blocked, suppress output template: "عند حظره، قم بإيقاف قالب الإخراج."
-config:
+config: !lazy
  abuseipdb: "التكوين لوحدة AbuseIPDB."
  abuseipdb_api_key: &EnterAPIKey "الرجاء إدخال مفتاح API الخاص بك هنا."
  abuseipdb_build_profiles_from_usage_type: "إنشاء ملفات تعريف باستخدام نوع الاستخدام الذي تم إرجاعه بواسطة API؟ صحيح/True = نعم [افتراضي]؛ زائفة/False = لا."
@@ -799,7 +799,7 @@ link:
  Subtractor: "أداة الطرح"
  Updates: "التحديثات"
  View mode: "وضع العرض"
-macro:
+macro: !lazy
  Description:
   activate_modules: &MayImpactPerformance "لا يوصى به بشكل عام، حيث من المحتمل أن يكون هناك البعض الذي لا تحتاجه. عندما لا تكون هناك حاجة للمكونات، فقد يؤثر تثبيتها وتنشيطها سلبًا على الأداء."
   install_l10n_core: &RecommendKeepingCore "عندما يتم تمكين توجيه التكوين <code dir="ltr">lang_override</code>، إذا كان متصفح المستخدم يحدد تفضيل لغة معين، طالما تم تثبيت بيانات core L10N لتلك اللغة، CIDRAM قادر على عرض صفحة "تم رفض الوصول" بهذه اللغة المحددة. وفقًا لذلك، يوصى بتثبيت كافة بيانات core L10N."
@@ -953,7 +953,7 @@ response:
  _Yes: "نعم"
  please_check_config: "يرجى التحقق من التكوين الخاص بك للتأكد من أن الوحدة المثبتة حديثًا سوف تعمل بالشكل الذي تريده."
  release_notes: "<a href="%s"><span class="navicon link"></span>ملاحظات إصدار %s.</a>"
-stages:
+stages: !lazy
  Deploy CAPTCHAs (blocked requests): "انشر الكابتشا (الطلبات المحظورة)"
  Deploy CAPTCHAs (non-blocked requests): "انشر الكابتشا (الطلبات غير المحظورة)"
  Execute IP tracking: "تنفيذ تتبع IP"

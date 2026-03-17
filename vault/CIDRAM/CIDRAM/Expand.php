@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used to expand CIDRs (last modified: 2024.08.02).
+ * This file: Methods used to expand CIDRs (last modified: 2026.03.17).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -28,7 +28,7 @@ trait Expand
      */
     public function expandIpv4(string $Addr, bool $ValidateOnly = false, int $FactorLimit = 32)
     {
-        if (!preg_match(
+        if (!\preg_match(
             '/^([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])$/',
             $Addr,
             $Octets
@@ -43,7 +43,7 @@ trait Expand
         for ($Cycle = 0; $Cycle < 4; $Cycle++) {
             for ($Size = 128, $Step = 0; $Step < 8; $Step++, $Size /= 2) {
                 $CIDR = $Step + ($Cycle * 8);
-                $Base[$Cycle] = floor($Octets[$Cycle + 1] / $Size) * $Size;
+                $Base[$Cycle] = \floor($Octets[$Cycle + 1] / $Size) * $Size;
                 $CIDRs[$CIDR] = $Base[0] . '.' . $Base[1] . '.' . $Base[2] . '.' . $Base[3] . '/' . ($CIDR + 1);
                 if ($CIDR >= $FactorLimit) {
                     break 2;
@@ -71,7 +71,7 @@ trait Expand
          * pattern that can be found at
          * @link https://sroze.io/regex-ip-v4-et-ipv6-6cc005cabe8c
          */
-        if (!preg_match(
+        if (!\preg_match(
             '/^((([\da-f]{1,4}:){7}[\da-f]{1,4})|(([\da-f]{1,4}:){6}:[\da-f]{1,4})' .
             '|(([\da-f]{1,4}:){5}:([\da-f]{1,4}:)?[\da-f]{1,4})|(([\da-f]{1,4}:){4' .
             '}:([\da-f]{1,4}:){0,2}[\da-f]{1,4})|(([\da-f]{1,4}:){3}:([\da-f]{1,4}' .
@@ -93,34 +93,34 @@ trait Expand
             return true;
         }
         $NAddr = $Addr;
-        if (substr($NAddr, 0, 2) === '::') {
+        if (\substr($NAddr, 0, 2) === '::') {
             $NAddr = '0' . $NAddr;
         }
-        if (substr($NAddr, -2) === '::') {
+        if (\substr($NAddr, -2) === '::') {
             $NAddr .= '0';
         }
-        if (strpos($NAddr, '::') !== false) {
-            $Key = 7 - substr_count($Addr, ':');
+        if (\strpos($NAddr, '::') !== false) {
+            $Key = 7 - \substr_count($Addr, ':');
             $Arr = [':0:', ':0:0:', ':0:0:0:', ':0:0:0:0:', ':0:0:0:0:0:', ':0:0:0:0:0:0:'];
             if (!isset($Arr[$Key])) {
                 return false;
             }
-            $NAddr = str_replace('::', $Arr[$Key], $Addr);
+            $NAddr = \str_replace('::', $Arr[$Key], $Addr);
             unset($Arr, $Key);
         }
-        $NAddr = explode(':', $NAddr);
-        if (count($NAddr) !== 8) {
+        $NAddr = \explode(':', $NAddr);
+        if (\count($NAddr) !== 8) {
             return false;
         }
         for ($i = 0; $i < 8; $i++) {
-            $NAddr[$i] = hexdec($NAddr[$i]);
+            $NAddr[$i] = \hexdec($NAddr[$i]);
         }
         $CIDRs = [];
         $Base = [0, 0, 0, 0, 0, 0, 0, 0];
         for ($Cycle = 0; $Cycle < 8; $Cycle++) {
             for ($Size = 32768, $Step = 0; $Step < 16; $Step++, $Size /= 2) {
                 $CIDR = $Step + ($Cycle * 16);
-                $Base[$Cycle] = dechex(floor($NAddr[$Cycle] / $Size) * $Size);
+                $Base[$Cycle] = \dechex(\floor($NAddr[$Cycle] / $Size) * $Size);
                 $CIDRs[$CIDR] = $Base[0] . ':' . $Base[1] . ':' . $Base[2] . ':' . $Base[3] . ':' . $Base[4] . ':' . $Base[5] . ':' . $Base[6] . ':' . $Base[7] . '/' . ($CIDR + 1);
                 if ($CIDR >= $FactorLimit) {
                     break 2;
@@ -128,18 +128,18 @@ trait Expand
             }
         }
         foreach ($CIDRs as &$CIDR) {
-            if (strpos($CIDR, '::') !== false) {
-                $CIDR = preg_replace('~(?::0)*::(?:0:)*~i', '::', $CIDR, 1);
-                $CIDR = str_replace('::0/', '::/', $CIDR);
+            if (\strpos($CIDR, '::') !== false) {
+                $CIDR = \preg_replace('~(?::0)*::(?:0:)*~i', '::', $CIDR, 1);
+                $CIDR = \str_replace('::0/', '::/', $CIDR);
                 continue;
             }
-            if (strpos($CIDR, ':0:0/') !== false) {
-                $CIDR = preg_replace('~(:0){2,}\/~i', '::/', $CIDR, 1);
+            if (\strpos($CIDR, ':0:0/') !== false) {
+                $CIDR = \preg_replace('~(:0){2,}\/~i', '::/', $CIDR, 1);
                 continue;
             }
-            if (strpos($CIDR, ':0:0:') !== false) {
-                $CIDR = preg_replace('~(:0)+:(0:)+~i', '::', $CIDR, 1);
-                $CIDR = str_replace('::0/', '::/', $CIDR);
+            if (\strpos($CIDR, ':0:0:') !== false) {
+                $CIDR = \preg_replace('~(:0)+:(0:)+~i', '::', $CIDR, 1);
+                $CIDR = \str_replace('::0/', '::/', $CIDR);
                 continue;
             }
         }

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Tamil language data for the front-end (last modified: 2026.03.13).
+# This file: Tamil language data for the front-end (last modified: 2026.03.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,7 +24,7 @@
 # requests, ask. I can help.
 ##/
 
-Abuse category:
+Abuse category: !lazy
  Bad web bot: "மோசமான வலை போட் (மின்னஞ்சல் முகவரிகள் மற்றும் உள்ளடக்கத்தைத் தேடுகிறது, robots.txt ஐ மதிக்காத கிராலர்கள், அதிகப்படியான கோரிக்கைகள், பயனர் முகவர் ஏமாற்றுதல், போன்றவை)."
  Brute-force attacks: "ப்ரூட்-ஃபோர்ஸ் தாக்குதல்கள் (வலைப்பக்க உள்நுழைவுகள், SMTP, RDP, போன்றவற்றின் மீதான தாக்குதல்கள்)."
  Categories (at least one is required): "வகைகள் (குறைந்தது ஒன்று தேவை)"
@@ -50,7 +50,7 @@ Abuse category:
  VPN IP: "VPN IP."
  Web spam: "வலை ஸ்பேம் (கருத்து/ஃபோரம் ஸ்பேம், HTTP பரிந்துரையாளர் ஸ்பேம், அல்லது பிற CMS ஸ்பேம்)."
  Webapp attacks: "வெப் ஆப் தாக்குதல்கள் (நிறுவப்பட்ட இணைய பயன்பாடுகள், CMS, அல்லது ஈ-காமர்ஸ் தீர்வுகளுக்கு, எ.கா., வேர்ட்பிரஸ், Drupal, phpMyAdmin, போன்றவை, எதிராகப் பயன்படுத்தக்கூடிய பாதிப்புகள் அல்லது சுரண்டல்களைத் தேடுகிறது)."
-Extended Description:
+Extended Description: !lazy
  AbuseIPDB module: "AbuseIPDBஇல் பட்டியலிடப்பட்ட IP முகவரிகளிடமிருந்து கோரிக்கைகளைத் தடுக்கிறது."
  BGPView module: "CIDRAMகான ASN மற்றும் நாட்டு குறியீடு தேடல் வசதியை வழங்க {{Links.BGPView}} APIக் கட்டுப்படுத்துகிறது. இது ASN மற்றும் நாடுகளை CIDRAM உள்ளமைவு வழியாக தடுக்க அல்லது அனுமதிப்பட்டியல் செய்ய உதவுகிறது, மேலும் Facebook கோரிக்கைகளை சரிபார்க்க ஒரு வழிமுறையை வழங்குகிறது. (நீங்கள் இந்தத் தொகுதியைப் பயன்படுத்தினால், IP-API தொகுதியைப் பயன்படுத்த வேண்டிய அவசியமில்லை, ஏனெனில் அவை ஒரே நோக்கத்திற்காகச் செயல்படுகின்றன)."
  Bad TLDs blocker module: "ஸ்பேமர்கள், ஹேக்கர்கள் மற்றும் பிற தீங்கு விளைவிக்கும் நிறுவனங்களால் அடிக்கடி பயன்படுத்தப்படும் TLDகளுக்கு சொந்தமான ஹோஸ்ட்களைத் தடுக்கிறது."
@@ -77,7 +77,7 @@ Extended Description:
  Referrer spam module: "குறிப்பு ஸ்பேமின் அடிப்படையில் தடுப்பது பொதுவாக எந்த அர்த்தமுள்ள பாதுகாப்பு நன்மையையும் வழங்காது, ஆனால் சில சந்தர்ப்பங்களில் சில பயனர்களுக்கு இது பயனுள்ளதாக இருக்கும், கோரிக்கைகளைப் பற்றிய கூடுதல் தகவல்களைச் சேகரிப்பதற்கும், அதைப் புகாரளிப்பதற்கும்."
  Stop Forum Spam module: "SFSஆல் பட்டியலிடப்பட்ட IP முகவரிகளுக்கு எதிராக பதிவு மற்றும் உள்நுழைவு பக்கங்களை பாதுகாக்கிறது."
  Tor blocker module: "DNSEL தேடுதல்கள் மூலம் Tor வெளியேறும் முனைகளிலிருந்து அணுகலைத் தடுக்கிறது (IPv4 மற்றும் IPv6 இரண்டையும் ஆதரிக்கிறது)."
-Name:
+Name: !lazy
  AbuseIPDB module: "AbuseIPDB தொகுதி."
  BGPView module: "BGPView தொகுதி."
  BOBUAM: "பாட் அல்லது உலாவி பயனர் முகவர் தொகுதி (BOBUAM)."
@@ -129,7 +129,7 @@ checkbox:
  Test as sensitive request: "முக்கிய கோரிக்கையாக சோதிக்கவும்"
  Untrack positives: "நேர்மறைகளைக் கண்காணிப்பதை நிறுத்தவா?"
  When blocked, suppress output template: "தடுக்கப்பட்டால், வெளியீட்டு வார்ப்புருவை அடக்கு."
-config:
+config: !lazy
  abuseipdb: "AbuseIPDB தொகுதிக்கான உள்ளமைவு."
  abuseipdb_api_key: &EnterAPIKey "உங்கள் API விசையை இங்கே உள்ளிடவும்."
  abuseipdb_build_profiles_from_usage_type: "API வழங்கும் பயன்பாட்டு வகையைப் பயன்படுத்தி சுயவிவரங்களை உருவாக்கவா? False = இல்லை. True = ஆம். இயல்புநிலை = True."
@@ -824,7 +824,7 @@ link:
  Subtractor: "கழித்தல்"
  Updates: "மேம்படுத்தல்கள்"
  View mode: "காட்சி பயன்முறை"
-macro:
+macro: !lazy
  Description:
   activate_modules: &MayImpactPerformance "பொதுவாகப் பரிந்துரைக்கப்படுவதில்லை, ஏனெனில் உங்களுக்குத் தேவையில்லாத சில இருக்கலாம். கூறுகள் தேவையில்லாத போது, அவற்றை நிறுவுதல் மற்றும் செயல்படுத்துவது நிறுவுதல் செயல்திறனை எதிர்மறையாக பாதிக்கலாம்."
   install_l10n_core: &RecommendKeepingCore "<code>lang_override</code> கட்டமைப்பு கட்டளை இயக்கப்படும் போது, ஒரு பயனரின் உலாவி ஒரு குறிப்பிட்ட மொழி விருப்பத்தை குறிப்பிட்டால், அந்த மொழிக்கான core L10N தரவு நிறுவப்பட்டிருக்கும் வரை, CIDRAM ஆனது "அணுகல் மறுக்கப்பட்டது" பக்கத்தை குறிப்பிட்ட மொழியில் காட்ட முடியும். அதன்படி, அனைத்து core L10N தரவும் நிறுவப்பட்டிருக்க பரிந்துரைக்கப்படுகிறது."
@@ -875,7 +875,7 @@ previewer:
  Seconds: "விநாடிகள்"
  Weeks: "வாரங்கள்"
  Years: "வருடங்கள்"
-purpose:
+purpose: !lazy
  3D graphics file: "3D கிராபிக்ஸ் கோப்பு (எ.கா., CAD, மாதிரிகள், பொருட்கள், இழைமங்கள்)"
  Audio file: "ஆடியோ கோப்பு"
  Card file: "அட்டை கோப்பு"
@@ -996,7 +996,7 @@ response:
  _Yes: "ஆம்"
  please_check_config: "புதிதாக நிறுவப்பட்ட தொகுதி நீங்கள் நினைத்தபடி செயல்படும் என்பதை உறுதிப்படுத்த உங்கள் உள்ளமைவை சரிபார்க்கவும்."
  release_notes: "<a href="%s"><span class="navicon link"></span>%s க்கான வெளியீட்டு குறிப்புகள்.</a>"
-stages:
+stages: !lazy
  Check whether banned: "தடை செய்யப்பட்டுள்ளதா என சரிபார்க்கவும்"
  Deploy CAPTCHAs (blocked requests): "CAPTCHAகளை பயன்படுத்தவும் (கோரிக்கைகள் தடுக்கப்பட்டன)"
  Deploy CAPTCHAs (non-blocked requests): "CAPTCHAகளை பயன்படுத்தவும் (கோரிக்கைகள் தடுக்கப்படவில்லை)"

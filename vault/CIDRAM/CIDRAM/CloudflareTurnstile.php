@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Cloudflare Turnstile class (last modified: 2026.03.15).
+ * This file: Cloudflare Turnstile class (last modified: 2026.03.17).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -27,14 +27,14 @@ class CloudflareTurnstile extends Captcha
         $Salt = $this->generateSalt();
 
         /** Initialise messages. */
-        $this->Messages = array_flip(explode("\n", $this->CIDRAM->Configuration['captcha']['messages']));
+        $this->Messages = \array_flip(\explode("\n", $this->CIDRAM->Configuration['captcha']['messages']));
 
         /** What to lock CAPTCHAs to. */
         $LockTo = $this->CIDRAM->Configuration['captcha']['lockto']['cloudflare'] ?? 'user';
 
         if ($LockTo === 'ip') {
             /** Attempt to load the IP bypass list. */
-            if (file_exists($this->CIDRAM->Vault . 'ipbypass.dat')) {
+            if (\file_exists($this->CIDRAM->Vault . 'ipbypass.dat')) {
                 $BypassList = $this->CIDRAM->readFile($this->CIDRAM->Vault . 'ipbypass.dat');
                 $BypassListModified = false;
             } else {
@@ -49,12 +49,12 @@ class CloudflareTurnstile extends Captcha
              * Verify whether a Cloudflare Turnstile instance has already been completed before
              * for the current IP, populate relevant variables, and generate fields.
              */
-            if (strpos($BypassList, "\n" . $this->CIDRAM->ipAddr . ',') !== false) {
+            if (\strpos($BypassList, "\n" . $this->CIDRAM->ipAddr . ',') !== false) {
                 $this->Bypass = true;
                 $this->resetSCT();
             } else {
                 /** Set Cloudflare Turnstile status. */
-                $this->CIDRAM->BlockInfo['CAPTCHA'] = sprintf($this->CIDRAM->L10N->getString('state.Enabled'), 'Cloudflare Turnstile');
+                $this->CIDRAM->BlockInfo['CAPTCHA'] = \sprintf($this->CIDRAM->L10N->getString('state.Enabled'), 'Cloudflare Turnstile');
 
                 /** We've received a response. */
                 if (isset($_POST['cf-turnstile-response'], $_POST['cfidem'])) {
@@ -81,12 +81,12 @@ class CloudflareTurnstile extends Captcha
 
             /** Update the IP bypass list if any changes were made. */
             if ($BypassListModified) {
-                $Handle = fopen($this->CIDRAM->Vault . 'ipbypass.dat', 'wb');
-                fwrite($Handle, $BypassList);
-                fclose($Handle);
+                $Handle = \fopen($this->CIDRAM->Vault . 'ipbypass.dat', 'wb');
+                \fwrite($Handle, $BypassList);
+                \fclose($Handle);
             }
         } else {
-            if (file_exists($this->CIDRAM->Vault . 'hashes.dat')) {
+            if (\file_exists($this->CIDRAM->Vault . 'hashes.dat')) {
                 $HastList = $this->CIDRAM->readFile($this->CIDRAM->Vault . 'hashes.dat');
                 $HastListModified = false;
             } else {
@@ -101,26 +101,26 @@ class CloudflareTurnstile extends Captcha
              * Determine whether a Cloudflare Turnstile instance has already been completed by the
              * user and populate relevant variables.
              */
-            if (!empty($_COOKIE['CIDRAM']) && ($Split = strpos($_COOKIE['CIDRAM'], ',')) !== false) {
-                $UserHash = substr($_COOKIE['CIDRAM'], 0, $Split);
-                if (strpos($HastList, "\n" . $UserHash . ',') !== false) {
-                    $UserSalt = base64_decode(substr($_COOKIE['CIDRAM'], $Split));
+            if (!empty($_COOKIE['CIDRAM']) && ($Split = \strpos($_COOKIE['CIDRAM'], ',')) !== false) {
+                $UserHash = \substr($_COOKIE['CIDRAM'], 0, $Split);
+                if (\strpos($HastList, "\n" . $UserHash . ',') !== false) {
+                    $UserSalt = \base64_decode(\substr($_COOKIE['CIDRAM'], $Split));
                     $UserMeld = $LockTo === 'both' ? $this->meld($Salt, $UserSalt, $this->CIDRAM->ipAddr) : $this->meld($Salt, $UserSalt);
                 }
             }
-            if (!isset($UserMeld) || strlen($UserMeld) === 0) {
+            if (!isset($UserMeld) || \strlen($UserMeld) === 0) {
                 $UserMeld = '';
                 $UserSalt = '';
                 $UserHash = '';
             }
 
             /** Verify whether they've passed, update cookies, generate fields. */
-            if ($UserHash !== '' && $UserMeld !== '' && password_verify($UserMeld, $UserHash)) {
+            if ($UserHash !== '' && $UserMeld !== '' && \password_verify($UserMeld, $UserHash)) {
                 $this->Bypass = true;
                 $this->resetSCT();
             } else {
                 /** Set Cloudflare Turnstile status. */
-                $this->CIDRAM->BlockInfo['CAPTCHA'] = sprintf($this->CIDRAM->L10N->getString('state.Enabled'), 'Cloudflare Turnstile');
+                $this->CIDRAM->BlockInfo['CAPTCHA'] = \sprintf($this->CIDRAM->L10N->getString('state.Enabled'), 'Cloudflare Turnstile');
 
                 /** We've received a response. */
                 if (isset($_POST['cf-turnstile-response'], $_POST['cfidem'])) {
@@ -134,12 +134,12 @@ class CloudflareTurnstile extends Captcha
                         $Cookie = $LockTo === 'both' ? $this->meld($Salt, $UserSalt, $this->CIDRAM->ipAddr) : $this->meld($Salt, $UserSalt);
 
                         /** Purge null bytes. */
-                        if (strpos($Cookie, "\0") !== false) {
-                            $Cookie = str_replace("\0", '', $Cookie);
+                        if (\strpos($Cookie, "\0") !== false) {
+                            $Cookie = \str_replace("\0", '', $Cookie);
                         }
 
-                        $UserHash = password_hash($Cookie, $this->DefaultAlgo);
-                        $Cookie = $UserHash . ',' . base64_encode($UserSalt);
+                        $UserHash = \password_hash($Cookie, $this->DefaultAlgo);
+                        $Cookie = $UserHash . ',' . \base64_encode($UserSalt);
                         setcookie(
                             'CIDRAM',
                             $Cookie,
@@ -166,9 +166,9 @@ class CloudflareTurnstile extends Captcha
 
             /** Update the hash list if any changes were made. */
             if ($HastListModified) {
-                $Handle = fopen($this->CIDRAM->Vault . 'hashes.dat', 'wb');
-                fwrite($Handle, $HastList);
-                fclose($Handle);
+                $Handle = \fopen($this->CIDRAM->Vault . 'hashes.dat', 'wb');
+                \fwrite($Handle, $HastList);
+                \fclose($Handle);
             }
         }
 
@@ -193,7 +193,7 @@ class CloudflareTurnstile extends Captcha
             $this->CIDRAM->Cache->incEntry('Statistics-CloudflareTurnstile:Served');
         }
 
-        return sprintf(
+        return \sprintf(
             "\n<hr />\n<p class=\"detected\"%s>%s%s<br /></p>\n" .
             '<form id="CTf" method="POST" action="" class="gForm">' .
                 '<div class="cf-turnstile" data-sitekey="%s" data-theme="%s" data-size="flexible" data-language="%s"></div>' .
@@ -205,7 +205,7 @@ class CloudflareTurnstile extends Captcha
             $SiteKey,
             $this->determineTheme(),
             $this->CIDRAM->ClientL10N->getString('hl.cloudflare') ?: $this->CIDRAM->L10N->getString('hl.cloudflare'),
-            $this->TemplateInsert,
+            self::TEMPLATE_INSERT,
             $this->CIDRAM->BlockInfo['ID'] ?? $this->CIDRAM->generateId(),
             $this->CIDRAM->ClientL10N->getString('label.Submit') ?: $this->CIDRAM->L10N->getString('label.Submit')
         ) . '<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script><script type="text/javascript">document.addEventListener(\'DOMContentLoaded\',function(){document.getElementById(\'CTf\').action=window.location});document.getElementById(\'hostnameoverride\').value=window.location.hostname;</script>';
@@ -225,7 +225,7 @@ class CloudflareTurnstile extends Captcha
             'remoteip' => $this->CIDRAM->ipAddr,
             'idempotency_key' => $_POST['cfidem']
         ]);
-        $this->Bypass = (strpos($this->Results, '"success":true') !== false);
+        $this->Bypass = (\strpos($this->Results, '"success":true') !== false);
     }
 
     /**

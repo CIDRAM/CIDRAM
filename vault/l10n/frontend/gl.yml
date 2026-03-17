@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Galician language data for the front-end (last modified: 2026.03.13).
+# This file: Galician language data for the front-end (last modified: 2026.03.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,7 +24,7 @@
 # requests, ask. I can help.
 ##/
 
-Abuse category:
+Abuse category: !lazy
  Bad web bot: "Mal web bot (raspado de enderezos de correo electrónico, contido, rastreadores que non respectan robots.txt, solicitudes excesivas, suplantación de axentes de usuario, etc)."
  Brute-force attacks: "Ataques de forza bruta (ataques de forza bruta de credenciais aos inicios de sesión na páxina web, SMTP, RDP, etc)."
  Categories (at least one is required): "Categorías (requírese polo menos unha)"
@@ -50,7 +50,7 @@ Abuse category:
  VPN IP: "IP VPN."
  Web spam: "Spam web (spam de comentarios/foros, spam de referencia HTTP, ou outro spam de CMS)."
  Webapp attacks: "Ataques a aplicacións web (buscar vulnerabilidades ou exploits, ou intentar explotar aplicacións web instaladas, CMS, ou solucións de comercio electrónico, por exemplo, WordPress, Drupal, phpMyAdmin, etc)."
-Extended Description:
+Extended Description: !lazy
  AbuseIPDB module: "Bloquea solicitudes de IPs listadas en AbuseIPDB."
  BGPView module: "Aproveita a API {{Links.BGPView}} para proporcionar unha función de busca de códigos de país e ASN para CIDRAM, permitindo que ASNs e países sexan bloqueados ou incluídos na lista branca mediante a configuración CIDRAM, e proporcionando un medio para verificar as redes sociais para verificar as solicitudes de Facebook. (Se usa este módulo, non necesitará utilizar o módulo IP-API, xa que serven para o mesmo propósito)."
  Bad TLDs blocker module: "Bloquea os hosts pertencentes a TLD usados con frecuencia por spammers, hackers, e outras entidades nefastas."
@@ -77,7 +77,7 @@ Extended Description:
  Referrer spam module: "O bloqueo baseado no spam de referencia xeralmente non proporciona ningún beneficio de seguridade significativo, pero nalgúns casos, pode ser útil para algúns usuarios, para recoller máis información sobre as solicitudes e para poder informar dela."
  Stop Forum Spam module: "Protexe as páxinas de rexistro e inicio de sesión contra as IP listadas por SFS."
  Tor blocker module: "Prohibe o acceso desde os nodos de saída de Tor mediante buscas DNSEL (admite tanto IPv4 como IPv6)."
-Name:
+Name: !lazy
  AbuseIPDB module: "Módulo AbuseIPDB."
  BGPView module: "Módulo BGPView."
  BOBUAM: "Módulo de axentes de usuario de bot ou navegador (BOBUAM)."
@@ -129,7 +129,7 @@ checkbox:
  Test as sensitive request: "Proba como solicitude sensible"
  Untrack positives: "Cancelar o seguimento de positivos?"
  When blocked, suppress output template: "Cando estea bloqueado, non use o modelo de saída."
-config:
+config: !lazy
  abuseipdb: "Configuración para o módulo AbuseIPDB."
  abuseipdb_api_key: &EnterAPIKey "Introduce aquí a túa clave API."
  abuseipdb_build_profiles_from_usage_type: "Crear perfís usando o tipo de uso que devolve a API? False/Falso = Non. True/Verdadeiro = Si. Predeterminado = True."
@@ -818,7 +818,7 @@ link:
  Subtractor: "Restador"
  Updates: "Actualizacións"
  View mode: "Modo de visualización"
-macro:
+macro: !lazy
  Description:
   activate_modules: &MayImpactPerformance "Xeralmente non recomendado, xa que é probable que haxa algúns que non necesites. Instalar e activar compoñentes cando non son necesarios pode afectar negativamente o rendemento."
   install_l10n_core: &RecommendKeepingCore "Cando a directiva de configuración <code>lang_override</code> está activada, se o navegador dun usuario especifica unha preferencia de idioma particular, sempre que estean instalados os datos básicos de L10N para ese idioma, CIDRAM poderá mostrar a páxina de "acceso denegado" nese idioma especificado. En consecuencia, recoméndase ter instalados todos os datos básicos de L10N."
@@ -869,7 +869,7 @@ previewer:
  Seconds: "Segundos"
  Weeks: "Semanas"
  Years: "Anos"
-purpose:
+purpose: !lazy
  3D graphics file: "Ficheiro de gráficos 3D (por exemplo, CAD, modelos, materiais, texturas)"
  Audio file: "Ficheiro de son"
  Card file: "Ficheiro de tarxeta"
@@ -990,7 +990,7 @@ response:
  _Yes: "Si"
  please_check_config: "Comprobe a súa configuración para asegurarse de que o módulo recén instalado se comportará como quere."
  release_notes: "<a href="%s"><span class="navicon link"></span>Notas de publicación para %s.</a>"
-stages:
+stages: !lazy
  Check whether banned: "Comprobar se está prohibido"
  Deploy CAPTCHAs (blocked requests): "Despregar CAPTCHA (solicitudes bloqueadas)"
  Deploy CAPTCHAs (non-blocked requests): "Despregar CAPTCHA (solicitudes non bloqueadas)"

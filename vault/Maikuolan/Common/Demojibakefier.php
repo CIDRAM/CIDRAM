@@ -1,6 +1,6 @@
 <?php
 /**
- * Demojibakefier (last modified: 2024.11.07).
+ * Demojibakefier (last modified: 2026.03.17).
  *
  * Intended to normalise the character encoding of a given string to a
  * preferred character encoding when the given string's byte sequences don't
@@ -60,7 +60,7 @@ class Demojibakefier extends CommonAbstract
      */
     public function __construct(string $NormaliseTo = '')
     {
-        if ($NormaliseTo !== '' && in_array($NormaliseTo, $this->supported())) {
+        if ($NormaliseTo !== '' && \in_array($NormaliseTo, $this->supported())) {
             $this->NormaliseTo = $NormaliseTo;
         }
     }
@@ -156,7 +156,7 @@ class Demojibakefier extends CommonAbstract
          * @link https://stackify.dev/253347-regex-to-detect-invalid-utf-8-string
          */
         if ($Encoding === 'UTF-8') {
-            return !preg_match(
+            return !\preg_match(
                 '~[' . self::CTRL0 . '\x7F\xC0\xC1\xF5-\xFF]|' .
                 '[\xC2-\xDF](?![\x80-\xBF])|' .
                 '\xE0(?![\xA0-\xBF][\x80-\xBF])|' .
@@ -177,7 +177,7 @@ class Demojibakefier extends CommonAbstract
          * @link https://unicode.org/faq/utf_bom.html
          */
         if ($Encoding === 'UTF-16BE') {
-            return !(strlen($String) % 2) && !preg_match(
+            return !(\strlen($String) % 2) && !\preg_match(
                 '~[\xD8-\xDB][\x00-\xFF](?![\xDC-\xDF][\x00-\xFF])|(?<![\xD8-\xDB][\x00-\xFF])[\xDC-\xDF][\x00-\xFF]~',
                 $String
             );
@@ -187,64 +187,64 @@ class Demojibakefier extends CommonAbstract
          * @link https://unicode.org/faq/utf_bom.html
          */
         if ($Encoding === 'UTF-16LE') {
-            return !(strlen($String) % 2) && !preg_match(
+            return !(\strlen($String) % 2) && !\preg_match(
                 '~[\x00-\xFF][\xDC-\xDF](?![\x00-\xFF][\xD8-\xDB])|(?<![\x00-\xFF][\xDC-\xDF])[\x00-\xFF][\xD8-\xDB]~',
                 $String
             );
         }
-        if (preg_match('~^ISO-8859-(?:[12459]|1[03456])$~', $Encoding)) {
-            return !preg_match('~[' . self::CTRL0 . '\x7F-\x9F\xAD]~', $String);
+        if (\preg_match('~^ISO-8859-(?:[12459]|1[03456])$~', $Encoding)) {
+            return !\preg_match('~[' . self::CTRL0 . '\x7F-\x9F\xAD]~', $String);
         }
         if ($Encoding === 'ISO-8859-3') {
-            return !preg_match('~[' . self::CTRL0 . '\x7F-\x9F\xA5\xAD\xAE\xBE\xC3\xD0\xE3\xF0]~', $String);
+            return !\preg_match('~[' . self::CTRL0 . '\x7F-\x9F\xA5\xAD\xAE\xBE\xC3\xD0\xE3\xF0]~', $String);
         }
         if ($Encoding === 'ISO-8859-6') {
-            return !preg_match('~[' . self::CTRL0 . '\x7F-\xA3\xA5-\xAB\xAD-\xBA\xBC-\xBE\xC0\xDB-\xDF\xF3-\xFF]~', $String);
+            return !\preg_match('~[' . self::CTRL0 . '\x7F-\xA3\xA5-\xAB\xAD-\xBA\xBC-\xBE\xC0\xDB-\xDF\xF3-\xFF]~', $String);
         }
         if ($Encoding === 'ISO-8859-7') {
-            return !preg_match('~[' . self::CTRL0 . '\x7F-\x9F\xA4\xA5\xAA\xAD\xAE\xD2\xFF]~', $String);
+            return !\preg_match('~[' . self::CTRL0 . '\x7F-\x9F\xA4\xA5\xAA\xAD\xAE\xD2\xFF]~', $String);
         }
         if ($Encoding === 'ISO-8859-8') {
-            return !preg_match('~[' . self::CTRL0 . '\x7F-\x9F\xA1\xAD\xBF-\xDE\xFB-\xFF]~', $String);
+            return !\preg_match('~[' . self::CTRL0 . '\x7F-\x9F\xA1\xAD\xBF-\xDE\xFB-\xFF]~', $String);
         }
         if ($Encoding === 'ISO-8859-11') {
-            return !preg_match('~[' . self::CTRL0 . '\x7F-\xA0\xDB-\xDE\xFC-\xFF]~', $String);
+            return !\preg_match('~[' . self::CTRL0 . '\x7F-\xA0\xDB-\xDE\xFC-\xFF]~', $String);
         }
         if ($Encoding === 'CP1250') { // Windows-1250
-            return !preg_match('~[' . self::CTRL0 . '\x7F\x81\x83\x88\x98\xAD]~', $String);
+            return !\preg_match('~[' . self::CTRL0 . '\x7F\x81\x83\x88\x98\xAD]~', $String);
         }
         if ($Encoding === 'CP1251') { // Windows-1251
-            return !preg_match('~[' . self::CTRL0 . '\x7F\x98\xAD]~', $String);
+            return !\preg_match('~[' . self::CTRL0 . '\x7F\x98\xAD]~', $String);
         }
         if ($Encoding === 'CP1252') { // Windows-1252
-            return !preg_match('~[' . self::CTRL0 . '\x7F\x81\x8D\x8F\x90\x9D\xAD]~', $String);
+            return !\preg_match('~[' . self::CTRL0 . '\x7F\x81\x8D\x8F\x90\x9D\xAD]~', $String);
         }
         if ($Encoding === 'CP1253') { // Windows-1253
-            return !preg_match('~[' . self::CTRL0 . '\x7F\x81\x88\x8A\x8C-\x8F\x90\x98\x9A\x9C-\x9F\xAA\xAD\xD2\xFF]~', $String);
+            return !\preg_match('~[' . self::CTRL0 . '\x7F\x81\x88\x8A\x8C-\x8F\x90\x98\x9A\x9C-\x9F\xAA\xAD\xD2\xFF]~', $String);
         }
         if ($Encoding === 'CP1254') { // Windows-1254
-            return !preg_match('~[' . self::CTRL0 . '\x7F\x81\x8D-\x8F\x90\x9D\x9E\xAD]~', $String);
+            return !\preg_match('~[' . self::CTRL0 . '\x7F\x81\x8D-\x8F\x90\x9D\x9E\xAD]~', $String);
         }
         if ($Encoding === 'CP1255') { // Windows-1255
-            return !preg_match('~[' . self::CTRL0 . '\x7F\x81\x8A\x8C-\x8F\x90\x9A\x9C-\x9F\xAD\xCA\xD9-\xDF\xFB\xFC\xFF]~', $String);
+            return !\preg_match('~[' . self::CTRL0 . '\x7F\x81\x8A\x8C-\x8F\x90\x9A\x9C-\x9F\xAD\xCA\xD9-\xDF\xFB\xFC\xFF]~', $String);
         }
         if ($Encoding === 'CP1256') { // Windows-1256
-            return !preg_match('~[' . self::CTRL0 . '\x7F\xAD]~', $String);
+            return !\preg_match('~[' . self::CTRL0 . '\x7F\xAD]~', $String);
         }
         if ($Encoding === 'CP1257') { // Windows-1257
-            return !preg_match('~[' . self::CTRL0 . '\x7F\x81\x83\x88\x8A\x8C\x90\x98\x9A\x9C\x9F\xA1\xA5\xAD]~', $String);
+            return !\preg_match('~[' . self::CTRL0 . '\x7F\x81\x83\x88\x8A\x8C\x90\x98\x9A\x9C\x9F\xA1\xA5\xAD]~', $String);
         }
         if ($Encoding === 'CP1258') { // Windows-1258
-            return !preg_match('~[' . self::CTRL0 . '\x7F\x81\x8A\x8D-\x8F\x90\x9A\x9D\x9E\xAD]~', $String);
+            return !\preg_match('~[' . self::CTRL0 . '\x7F\x81\x8A\x8D-\x8F\x90\x9A\x9D\x9E\xAD]~', $String);
         }
-        if (preg_match('~^GB(?:18030|2312)$~', $Encoding)) { // GB18030 supersedes GB2312
-            return !preg_match('~[' . self::CTRL0 . '\xFF]$~', $String);
+        if (\preg_match('~^GB(?:18030|2312)$~', $Encoding)) { // GB18030 supersedes GB2312
+            return !\preg_match('~[' . self::CTRL0 . '\xFF]$~', $String);
         }
         if ($Encoding === 'BIG5') {
-            return !preg_match('~[' . self::CTRL0 . '\xFF]|(?<![\xA1-\xF9])[\x80-\xA0]~', $String);
+            return !\preg_match('~[' . self::CTRL0 . '\xFF]|(?<![\xA1-\xF9])[\x80-\xA0]~', $String);
         }
         if ($Encoding === 'SHIFT-JIS') {
-            return !preg_match(
+            return !\preg_match(
                 '~[' . self::CTRL0 . '\x7F\xFD-\xFF]|' .
                 '[\x81-\xE9](?![\x40-\xFC])|' .
                 '\xEA(?![\x40-\xA4])|' .
@@ -254,53 +254,53 @@ class Demojibakefier extends CommonAbstract
             );
         }
         if ($Encoding === 'JOHAB') {
-            return !preg_match('~[' . self::CTRL0 . '\x7F\xFF]|(?<![\x84-\xD3\xD8-\xDE\xE0-\xF9])[\xD4-\xD7\xDF\xFA-\xFE]~', $String);
+            return !\preg_match('~[' . self::CTRL0 . '\x7F\xFF]|(?<![\x84-\xD3\xD8-\xDE\xE0-\xF9])[\xD4-\xD7\xDF\xFA-\xFE]~', $String);
         }
         /**
          * @link https://en.wikipedia.org/wiki/Universal_Coded_Character_Set
          */
         if ($Encoding === 'UCS-2') {
-            return !(strlen($String) % 2);
+            return !(\strlen($String) % 2);
         }
         /**
          * @link https://en.wikipedia.org/wiki/Universal_Coded_Character_Set
          * @link https://en.wikipedia.org/wiki/UTF-32
          */
-        if (preg_match('~^UCS-4|UTF-32[BL]E$~', $Encoding)) {
-            return !(strlen($String) % 4);
+        if (\preg_match('~^UCS-4|UTF-32[BL]E$~', $Encoding)) {
+            return !(\strlen($String) % 4);
         }
-        if (preg_match('~^CP(?:[47]37|86[012356])$~', $Encoding)) {
-            return !preg_match('~[' . self::CTRL0 . '\x7F\xFF]~', $String);
+        if (\preg_match('~^CP(?:[47]37|86[012356])$~', $Encoding)) {
+            return !\preg_match('~[' . self::CTRL0 . '\x7F\xFF]~', $String);
         }
-        if (preg_match('~^CP(?:775|85[0258])$~', $Encoding)) {
-            return !preg_match('~[' . self::CTRL0 . '\x7F\xF0\xFF]~', $String);
+        if (\preg_match('~^CP(?:775|85[0258])$~', $Encoding)) {
+            return !\preg_match('~[' . self::CTRL0 . '\x7F\xF0\xFF]~', $String);
         }
         if ($Encoding === 'CP857') {
-            return !preg_match('~[' . self::CTRL0 . '\x7F\xD5\xE7\xF0\xF2\xFF]~', $String);
+            return !\preg_match('~[' . self::CTRL0 . '\x7F\xD5\xE7\xF0\xF2\xFF]~', $String);
         }
         if ($Encoding === 'CP864') {
-            return !preg_match('~[' . self::CTRL0 . '\x7F\x9B\x9C\x9F\xA1\xA6\xA7\xFF]~', $String);
+            return !\preg_match('~[' . self::CTRL0 . '\x7F\x9B\x9C\x9F\xA1\xA6\xA7\xFF]~', $String);
         }
         if ($Encoding === 'CP869') {
-            return !preg_match('~[' . self::CTRL0 . '\x7F-\x85\x87\x93\x94\xF0\xFF]~', $String);
+            return !\preg_match('~[' . self::CTRL0 . '\x7F-\x85\x87\x93\x94\xF0\xFF]~', $String);
         }
         if ($Encoding === 'CP874') {
-            return !preg_match('~[' . self::CTRL0 . '\x7F\x81-\x84\x86-\x90\x98-\x9F\xDB-\xDE\xFC-\xFF]~', $String);
+            return !\preg_match('~[' . self::CTRL0 . '\x7F\x81-\x84\x86-\x90\x98-\x9F\xDB-\xDE\xFC-\xFF]~', $String);
         }
-        if (preg_match('~^KOI8-(?:[RUF]|RU)$~', $Encoding)) {
-            return !preg_match('~[' . self::CTRL0 . '\x7F]~', $String);
+        if (\preg_match('~^KOI8-(?:[RUF]|RU)$~', $Encoding)) {
+            return !\preg_match('~[' . self::CTRL0 . '\x7F]~', $String);
         }
         if ($Encoding === 'KOI8-T') {
-            return !preg_match('~[' . self::CTRL0 . '\x7F\x88\x8F\x98\x9A\x9C-\x9F\xA8-\xAA\xAF\xB4\xB8\xBA\xBC-\xBE]~', $String);
+            return !\preg_match('~[' . self::CTRL0 . '\x7F\x88\x8F\x98\x9A\x9C-\x9F\xA8-\xAA\xAF\xB4\xB8\xBA\xBC-\xBE]~', $String);
         }
-        if (preg_match('~^CP(?:037|500)$~', $Encoding)) {
-            return !preg_match('~[\x00-\x3F\xCA\xFF]~', $String);
+        if (\preg_match('~^CP(?:037|500)$~', $Encoding)) {
+            return !\preg_match('~[\x00-\x3F\xCA\xFF]~', $String);
         }
         if ($Encoding === 'CP875') {
-            return !preg_match('~[\x00-\x3F\x74\xCA\xFF]~', $String);
+            return !\preg_match('~[\x00-\x3F\x74\xCA\xFF]~', $String);
         }
         if ($Encoding === 'CP1026') {
-            return !preg_match('~[\x00-\x3F\xFF]~', $String);
+            return !\preg_match('~[\x00-\x3F\xFF]~', $String);
         }
 
         /** Encoding not recognised; Assuming non-conformant and returning false accordingly. */
@@ -316,12 +316,12 @@ class Demojibakefier extends CommonAbstract
      */
     public function shannonEntropy(string $String)
     {
-        if (!$Len = strlen($String)) {
+        if (!$Len = \strlen($String)) {
             return 0;
         }
         $Chars = [];
         for ($Pos = 0; $Pos < $Len; $Pos++) {
-            $Char = substr($String, $Pos, 1);
+            $Char = \substr($String, $Pos, 1);
             if (!isset($Chars[$Char])) {
                 $Chars[$Char] = 0;
             }
@@ -343,7 +343,7 @@ class Demojibakefier extends CommonAbstract
     public function normalise(string $String): string
     {
         $this->Last = '';
-        $this->Len = strlen($String);
+        $this->Len = \strlen($String);
 
         /** Return early if the string is empty. */
         if ($this->Len === 0) {
@@ -391,12 +391,12 @@ class Demojibakefier extends CommonAbstract
         $this->weigh($String, $Valid);
 
         /** Sort weights from highest to lowest and attempt to reduce candidates by the largest weight. */
-        uasort($Valid, function ($A, $B): int {
+        \uasort($Valid, function ($A, $B): int {
             return $A['Weight'] === $B['Weight'] ? 0 : ($A['Weight'] < $B['Weight'] ? 1 : -1);
         });
 
         $this->dropVariants($Valid);
-        $Current = key($Valid);
+        $Current = \key($Valid);
         foreach ($Valid as $Key => $Value) {
             if ($Value['Weight'] < $Valid[$Current]['Weight']) {
                 unset($Valid[$Key]);
@@ -404,7 +404,7 @@ class Demojibakefier extends CommonAbstract
         }
 
         /** Check whether we can return a single possible value. */
-        if (($Count = count($Valid)) === 1) {
+        if (($Count = \count($Valid)) === 1) {
             $this->Last = $Current;
             return $Valid[$Current]['String'];
         }
@@ -439,12 +439,12 @@ class Demojibakefier extends CommonAbstract
             "\xEF\xBC\x9A",
             "\x85"
         ] as $Delimiter) {
-            if (($Count = substr_count($String, $Delimiter)) && $Count < $this->Segments) {
-                $Segments = explode($Delimiter, $String);
+            if (($Count = \substr_count($String, $Delimiter)) && $Count < $this->Segments) {
+                $Segments = \explode($Delimiter, $String);
                 foreach ($Segments as &$Segment) {
                     $Segment = $this->normalise($Segment);
                 }
-                $NewString = implode($Delimiter, $Segments);
+                $NewString = \implode($Delimiter, $Segments);
                 $this->Len = $Length;
                 if ($NewString !== $String) {
                     $this->Last = 'Mixed';
@@ -467,7 +467,7 @@ class Demojibakefier extends CommonAbstract
      */
     public function guard(string $String): string
     {
-        return !function_exists('iconv') || $this->checkConformity($String, $this->NormaliseTo) ? $String : $this->normalise($String);
+        return !\function_exists('iconv') || $this->checkConformity($String, $this->NormaliseTo) ? $String : $this->normalise($String);
     }
 
     /**
@@ -482,7 +482,7 @@ class Demojibakefier extends CommonAbstract
     private function weigh(string $String, array &$Arr): void
     {
         /** For when it really, really looks like UTF-8 (easier to detect in isolation than other encodings). */
-        if (isset($Arr['UTF-8']['Weight']) && preg_match(
+        if (isset($Arr['UTF-8']['Weight']) && \preg_match(
             '~\xE0[\xA0-\xBF][\x80-\xBF]|
             [\xE1-\xEC][\x80-\xBF]{2}|
             \xED[\x80-\x9F][\x80-\xBF]|
@@ -495,40 +495,40 @@ class Demojibakefier extends CommonAbstract
         }
 
         /** For when it (..kinda sorta maybe) looks like SHIFT-JIS. */
-        if (isset($Arr['SHIFT-JIS']['Weight']) && preg_match('~[\x81-\xE9][\x40-\xFC]|\xEA[\x40-\xA4]~', $String)) {
-            $TestElse = preg_replace('~[\x00-\x20]|[\x81-\xE9][\x40-\xFC]|\xEA[\x40-\xA4]~', '', $String);
-            $Arr['SHIFT-JIS']['Weight'] += strlen($TestElse) ? 2 : 1;
+        if (isset($Arr['SHIFT-JIS']['Weight']) && \preg_match('~[\x81-\xE9][\x40-\xFC]|\xEA[\x40-\xA4]~', $String)) {
+            $TestElse = \preg_replace('~[\x00-\x20]|[\x81-\xE9][\x40-\xFC]|\xEA[\x40-\xA4]~', '', $String);
+            $Arr['SHIFT-JIS']['Weight'] += \strlen($TestElse) ? 2 : 1;
         }
 
         /** For when it (..kinda sorta maybe) looks like JOHAB. */
-        if (isset($Arr['JOHAB']['Weight']) && preg_match('~[\x84-\xD3][\x41-\x7E\x81-\xFE]|[\xD8-\xDE\xE0-\xF9][\x31-\x7E\x91-\xFE]~', $String)) {
-            $TestElse = preg_replace('~[\x00-\x20]|[\x84-\xD3][\x41-\x7E\x81-\xFE]|[\xD8-\xDE\xE0-\xF9][\x31-\x7E\x91-\xFE]~', '', $String);
-            $Arr['JOHAB']['Weight'] += strlen($TestElse) ? 2 : 1;
+        if (isset($Arr['JOHAB']['Weight']) && \preg_match('~[\x84-\xD3][\x41-\x7E\x81-\xFE]|[\xD8-\xDE\xE0-\xF9][\x31-\x7E\x91-\xFE]~', $String)) {
+            $TestElse = \preg_replace('~[\x00-\x20]|[\x84-\xD3][\x41-\x7E\x81-\xFE]|[\xD8-\xDE\xE0-\xF9][\x31-\x7E\x91-\xFE]~', '', $String);
+            $Arr['JOHAB']['Weight'] += \strlen($TestElse) ? 2 : 1;
         }
 
         /** For when it (..kinda sorta maybe) looks like BIG5. */
-        if (isset($Arr['BIG5']['Weight']) && preg_match('~[\xA1-\xF9][\x80-\xA0]~', $String)) {
-            $TestElse = preg_replace('~[\x00-\x20]|[\xA1-\xF9][\x80-\xA0]~', '', $String);
-            $Arr['BIG5']['Weight'] += strlen($TestElse) ? 2 : 1;
+        if (isset($Arr['BIG5']['Weight']) && \preg_match('~[\xA1-\xF9][\x80-\xA0]~', $String)) {
+            $TestElse = \preg_replace('~[\x00-\x20]|[\xA1-\xF9][\x80-\xA0]~', '', $String);
+            $Arr['BIG5']['Weight'] += \strlen($TestElse) ? 2 : 1;
         }
 
         /** For when it (..kinda sorta maybe) looks like UTF-16BE. */
-        if (isset($Arr['UTF-16BE']['Weight']) && preg_match('~\0[\x20-\x7E]|[\xD8-\xDB][\x00-\xFF][\xDC-\xDF][\x00-\xFF]|[\xD8-\xDB][\x00-\xFF][\xDC-\xDF][\x00-\xFF]~', $String)) {
+        if (isset($Arr['UTF-16BE']['Weight']) && \preg_match('~\0[\x20-\x7E]|[\xD8-\xDB][\x00-\xFF][\xDC-\xDF][\x00-\xFF]|[\xD8-\xDB][\x00-\xFF][\xDC-\xDF][\x00-\xFF]~', $String)) {
             $Arr['UTF-16BE']['Weight']++;
         }
 
         /** For when it (..kinda sorta maybe) looks like UTF-16LE. */
-        if (isset($Arr['UTF-16LE']['Weight']) && preg_match('~[\x20-\x7E]\0|[\x00-\xFF][\xDC-\xDF][\x00-\xFF][\xD8-\xDB]|[\x00-\xFF][\xDC-\xDF][\x00-\xFF][\xD8-\xDB]~', $String)) {
+        if (isset($Arr['UTF-16LE']['Weight']) && \preg_match('~[\x20-\x7E]\0|[\x00-\xFF][\xDC-\xDF][\x00-\xFF][\xD8-\xDB]|[\x00-\xFF][\xDC-\xDF][\x00-\xFF][\xD8-\xDB]~', $String)) {
             $Arr['UTF-16LE']['Weight']++;
         }
 
         /** Commonly found in UCS-2. */
-        if (isset($Arr['UCS-2']['Weight']) && strpos($String, "\x1B") !== false) {
+        if (isset($Arr['UCS-2']['Weight']) && \strpos($String, "\x1B") !== false) {
             $Arr['UCS-2']['Weight']++;
         }
 
         /** Commonly found in UCS-4/UTF-32. */
-        if (preg_match('~\0\0|\x1B~', $String)) {
+        if (\preg_match('~\0\0|\x1B~', $String)) {
             foreach (['UCS-4', 'UTF-32BE', 'UTF-32LE'] as $Frequent) {
                 if (isset($Arr[$Frequent]['Weight'])) {
                     $Arr[$Frequent]['Weight']++;
@@ -537,8 +537,8 @@ class Demojibakefier extends CommonAbstract
         }
 
         /** Probably English, or at least, some western European language, compatible with ASCII. Let's try ISO-8859-1. */
-        if (isset($Arr['ISO-8859-1']['Weight']) && preg_match('~[\x20-\x7E]~', $String) && !preg_match('~[^\x20-\x7E\xE0-\xF6\xF8-\xFD]~', $String)) {
-            $Arr['ISO-8859-1']['Weight'] += !preg_match('~[^\x20-\x7e]~', $String) ? 2 : 1;
+        if (isset($Arr['ISO-8859-1']['Weight']) && \preg_match('~[\x20-\x7E]~', $String) && !\preg_match('~[^\x20-\x7E\xE0-\xF6\xF8-\xFD]~', $String)) {
+            $Arr['ISO-8859-1']['Weight'] += !\preg_match('~[^\x20-\x7e]~', $String) ? 2 : 1;
         }
 
         /** There are some other encodings, too, that are used more frequently than others. Should account for these. */
@@ -550,8 +550,8 @@ class Demojibakefier extends CommonAbstract
 
         /** Compare frequency of byte sequences to try to adjust GB18030. */
         if (isset($Arr['GB18030']['Weight'])) {
-            $With = (preg_match_all('~[\x81-\xFE][\x30-\x39]~', $String) / 2) + preg_match_all('~[\x81-\xFE][\x40-\x7E\x80-\xFE]~', $String);
-            $Without = preg_match_all('~(?<![\x30-\x39])[\x81-\xFE](?![\x30-\x39])~', $String) + preg_match_all('~[\x81-\xFE](?![\x40-\x7E\x80-\xFE])~', $String);
+            $With = (\preg_match_all('~[\x81-\xFE][\x30-\x39]~', $String) / 2) + \preg_match_all('~[\x81-\xFE][\x40-\x7E\x80-\xFE]~', $String);
+            $Without = \preg_match_all('~(?<![\x30-\x39])[\x81-\xFE](?![\x30-\x39])~', $String) + \preg_match_all('~[\x81-\xFE](?![\x40-\x7E\x80-\xFE])~', $String);
             if ($With !== $Without) {
                 $Arr['GB18030']['Weight'] += ($With > $Without) ? 0.5 : -0.5;
             }
@@ -562,8 +562,8 @@ class Demojibakefier extends CommonAbstract
             $Arr['GB2312']['Weight']--;
         }
 
-        $RateAZ = preg_match_all('~[\x41-\x5A\x61-\x7A]~', $String) / $this->Len;
-        $EntrAZ = round(abs($RateAZ * log($RateAZ, 2)), 2);
+        $RateAZ = \preg_match_all('~[\x41-\x5A\x61-\x7A]~', $String) / $this->Len;
+        $EntrAZ = \round(abs($RateAZ * log($RateAZ, 2)), 2);
 
         /** More common versus less common byte sequences in 1-byte encodings. */
         foreach ([
@@ -590,8 +590,8 @@ class Demojibakefier extends CommonAbstract
             'KOI8-T' => '[\x80\x81\x83\x8A\x8C-\x8E\x90\xA1-\xA3\xA5\xB3\xB5\xC0-\xFF]'
         ] as $Encoding => $Bytes) {
             if (isset($Arr[$Encoding]['Weight'])) {
-                $RateThis = preg_match_all('~' . $Bytes . '~', $String) / $this->Len;
-                $EntrThis = round(abs($RateThis * log($RateThis, 2)), 2);
+                $RateThis = \preg_match_all('~' . $Bytes . '~', $String) / $this->Len;
+                $EntrThis = \round(abs($RateThis * log($RateThis, 2)), 2);
                 if ($EntrThis !== $EntrAZ) {
                     $Arr[$Encoding]['Weight'] += ($EntrThis > $EntrAZ) ? 0.5 : -0.5;
                 }
@@ -604,10 +604,10 @@ class Demojibakefier extends CommonAbstract
             $WeightBE = 0;
             $WeightLE = 0;
             foreach ($Split as $Pair) {
-                if (preg_match('~^(?:[\x00-\x0F].|[\xD8-\xDB][\xDC-\xDF])$~', $Pair)) {
+                if (\preg_match('~^(?:[\x00-\x0F].|[\xD8-\xDB][\xDC-\xDF])$~', $Pair)) {
                     $WeightBE++;
                 }
-                if (preg_match('~^(?:.[\x00-\x0F]|[\xDC-\xDF][\xD8-\xDB])$~', $Pair)) {
+                if (\preg_match('~^(?:.[\x00-\x0F]|[\xDC-\xDF][\xD8-\xDB])$~', $Pair)) {
                     $WeightLE++;
                 }
             }
@@ -625,8 +625,8 @@ class Demojibakefier extends CommonAbstract
             $WeightBE = 0;
             $WeightLE = 0;
             foreach ($Split as $Pair) {
-                $BEPUC = preg_match('~^\xDB[\x80-\xFF]$~', $Pair);
-                $LEPUC = preg_match('~^[\x80-\xFF]\xDB$~', $Pair);
+                $BEPUC = \preg_match('~^\xDB[\x80-\xFF]$~', $Pair);
+                $LEPUC = \preg_match('~^[\x80-\xFF]\xDB$~', $Pair);
                 if ($BEPUC && !$LEPUC) {
                     $WeightBE++;
                 } elseif (!$BEPUC && $LEPUC) {
@@ -657,10 +657,10 @@ class Demojibakefier extends CommonAbstract
             $WeightBE = 0;
             $WeightLE = 0;
             foreach ($Split as $Pair) {
-                if (preg_match('~^\0\0..$~', $Pair)) {
+                if (\preg_match('~^\0\0..$~', $Pair)) {
                     $WeightBE++;
                 }
-                if (preg_match('~^..\0\0$~', $Pair)) {
+                if (\preg_match('~^..\0\0$~', $Pair)) {
                     $WeightLE++;
                 }
             }
@@ -688,7 +688,7 @@ class Demojibakefier extends CommonAbstract
         foreach ($ComplexArr as $Complex) {
             foreach ($this->supported() as $Simple) {
                 if (
-                    !in_array($Simple, $ComplexArr) &&
+                    !\in_array($Simple, $ComplexArr) &&
                     !isset($SimpleDone[$Simple]) &&
                     isset($Arr[$Complex]['Weight'], $Arr[$Simple]['Weight']) &&
                     $Arr[$Complex]['Weight'] === $Arr[$Simple]['Weight'] &&
@@ -735,7 +735,7 @@ class Demojibakefier extends CommonAbstract
             isset($Arr['UCS-4'])
         ) {
             foreach ($Arr as $Key => $Value) {
-                if (!preg_match('~^(?:UTF|UCS|GB|BIG5|SHIFT-JIS|JOHAB)~', $Key)) {
+                if (!\preg_match('~^(?:UTF|UCS|GB|BIG5|SHIFT-JIS|JOHAB)~', $Key)) {
                     unset($Arr[$Key]);
                 }
             }

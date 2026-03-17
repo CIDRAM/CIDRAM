@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used to simulate block events (last modified: 2026.02.24).
+ * This file: Methods used to simulate block events (last modified: 2026.03.17).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -73,11 +73,11 @@ trait SimulateBlockEvent
 
         /** Initialise SimulateBlockEvent. */
         foreach ($this->CIDRAM['Provide']['Initialise SimulateBlockEvent'] as $InitialiseKey => $InitialiseValue) {
-            if (!property_exists($this, $InitialiseKey)) {
+            if (!\property_exists($this, $InitialiseKey)) {
                 continue;
             }
-            if (is_array($InitialiseValue) && isset($this->$InitialiseKey) && is_array($this->$InitialiseKey)) {
-                $this->$InitialiseKey = array_replace_recursive($this->$InitialiseKey, $InitialiseValue);
+            if (\is_array($InitialiseValue) && isset($this->$InitialiseKey) && \is_array($this->$InitialiseKey)) {
+                $this->$InitialiseKey = \array_replace_recursive($this->$InitialiseKey, $InitialiseValue);
                 continue;
             }
             $this->$InitialiseKey = $InitialiseValue;
@@ -106,10 +106,10 @@ trait SimulateBlockEvent
             $UA = $this->FE['custom-ua'] ?? '';
             $Query = $this->FE['custom-query'] ?? '';
         }
-        $UA = str_replace(['&quot;', '&gt;', '&lt;', '&amp;'], ['"', '>', '<', '&'], $UA) ?: 'SimulateBlockEvent';
-        $Query = str_replace(['&quot;', '&gt;', '&lt;', '&amp;'], ['"', '>', '<', '&'], $Query) ?: 'SimulateBlockEvent';
+        $UA = \str_replace(['&quot;', '&gt;', '&lt;', '&amp;'], ['"', '>', '<', '&'], $UA) ?: 'SimulateBlockEvent';
+        $Query = \str_replace(['&quot;', '&gt;', '&lt;', '&amp;'], ['"', '>', '<', '&'], $Query) ?: 'SimulateBlockEvent';
         if (!empty($this->CIDRAM['Can state assumptions']) && isset($this->CIDRAM['Assumptions'][$Addr]) && $this->CIDRAM['Assumptions'][$Addr] !== $Addr) {
-            $this->CIDRAM['ThisIP']['Assumption'] = '<br /><small>(' . sprintf($this->L10N->getString('label.Entered %s Assuming %s'), $this->CIDRAM['Assumptions'][$Addr], $Addr) . ')</small>';
+            $this->CIDRAM['ThisIP']['Assumption'] = '<br /><small>(' . \sprintf($this->L10N->getString('label.Entered %s Assuming %s'), $this->CIDRAM['Assumptions'][$Addr], $Addr) . ')</small>';
         }
 
         /** Populate BlockInfo. */
@@ -120,9 +120,9 @@ trait SimulateBlockEvent
             'IPAddr' => $Addr,
             'IPAddrResolved' => $this->resolve6to4($Addr),
             'Query' => $Query,
-            'Referrer' => str_replace(['&quot;', '&gt;', '&lt;', '&amp;'], ['"', '>', '<', '&'], $this->FE['custom-referrer'] ?? '') ?: 'SimulateBlockEvent',
+            'Referrer' => \str_replace(['&quot;', '&gt;', '&lt;', '&amp;'], ['"', '>', '<', '&'], $this->FE['custom-referrer'] ?? '') ?: 'SimulateBlockEvent',
             'UA' => $UA,
-            'UALC' => strtolower($UA),
+            'UALC' => \strtolower($UA),
             'SignatureCount' => 0,
             'Signatures' => '',
             'WhyReason' => '',
@@ -228,7 +228,7 @@ trait SimulateBlockEvent
                 $this->CIDRAM['ModuleResCache'] = [];
             }
             $this->initialiseErrorHandler();
-            $Modules = explode("\n", $this->Configuration['components']['modules']);
+            $Modules = \explode("\n", $this->Configuration['components']['modules']);
             if (!$this->Configuration['signatures']['tracking_override']) {
                 $RestoreTrackingOptionsOverride = $this->CIDRAM['Tracking options override'] ?? '';
             }
@@ -237,15 +237,15 @@ trait SimulateBlockEvent
              * Doing this with array_walk instead of foreach to ensure that modules
              * have their own scope and that superfluous data isn't preserved.
              */
-            array_walk($Modules, function ($Module): void {
+            \array_walk($Modules, function ($Module): void {
                 if (!empty($this->CIDRAM['Whitelisted'])) {
                     return;
                 }
-                $Module = (strpos($Module, ':') === false) ? $Module : substr($Module, strpos($Module, ':') + 1);
+                $Module = (\strpos($Module, ':') === false) ? $Module : \substr($Module, \strpos($Module, ':') + 1);
                 $Before = $this->BlockInfo['SignatureCount'];
-                if (isset($this->CIDRAM['ModuleResCache'][$Module]) && is_object($this->CIDRAM['ModuleResCache'][$Module])) {
+                if (isset($this->CIDRAM['ModuleResCache'][$Module]) && \is_object($this->CIDRAM['ModuleResCache'][$Module])) {
                     $this->CIDRAM['ModuleResCache'][$Module]();
-                } elseif (!$this->isReserved($Module) && is_readable($this->ModulesPath . $Module)) {
+                } elseif (!$this->isReserved($Module) && \is_readable($this->ModulesPath . $Module)) {
                     require $this->ModulesPath . $Module;
                 }
                 if (isset($this->Stages['Modules:Tracking']) && $this->BlockInfo['SignatureCount'] !== $Before) {
@@ -354,7 +354,7 @@ trait SimulateBlockEvent
                             ($this->Configuration['captcha']['usemode'][$CAPTCHA[3]] >= 3 && $this->Configuration['captcha']['usemode'][$CAPTCHA[3]] <= 5) ||
                             ($this->Configuration['captcha']['usemode'][$CAPTCHA[3]] === 6 && (
                                 isset($this->BlockInfo['rURI']) &&
-                                $this->isSensitive(preg_replace('/\s/', '', strtolower($this->BlockInfo['rURI'])))
+                                $this->isSensitive(\preg_replace('/\s/', '', \strtolower($this->BlockInfo['rURI'])))
                             ))
                         )
                     ) {
@@ -364,7 +364,7 @@ trait SimulateBlockEvent
                 }
             }
         }
-        if (is_int($this->CIDRAM['ThisStatusHTTP'])) {
+        if (\is_int($this->CIDRAM['ThisStatusHTTP'])) {
             if (($Try = $this->getStatusHTTP($this->CIDRAM['ThisStatusHTTP'])) !== '') {
                 $this->CIDRAM['ThisStatusHTTP'] .= ' ' . $Try;
             } elseif ($this->CIDRAM['ThisStatusHTTP'] === 200) {
@@ -391,21 +391,21 @@ trait SimulateBlockEvent
         $this->initialiseCache();
         $this->FE = ['DateTime' => $this->timeFormat($this->Now, $this->Configuration['general']['time_format'])];
         if ($this->Stages === []) {
-            $this->Stages = array_flip(explode("\n", $this->Configuration['general']['stages']));
+            $this->Stages = \array_flip(\explode("\n", $this->Configuration['general']['stages']));
         }
         if ($this->Shorthand === []) {
-            $this->Shorthand = array_flip(explode("\n", $this->Configuration['signatures']['shorthand']));
+            $this->Shorthand = \array_flip(\explode("\n", $this->Configuration['signatures']['shorthand']));
         }
-        if (strlen($Query)) {
+        if (\strlen($Query)) {
             $this->FE['custom-query'] = $Query;
         }
-        if (strlen($Referrer)) {
+        if (\strlen($Referrer)) {
             $this->FE['custom-referrer'] = $Referrer;
         }
-        if (strlen($UA)) {
+        if (\strlen($UA)) {
             $this->FE['custom-ua'] = $UA;
         }
-        if (is_array($Addr)) {
+        if (\is_array($Addr)) {
             $Results = [];
             foreach ($Addr as $ThisAddr) {
                 $this->simulateBlockEvent($ThisAddr, true, true, $Modules, $Verification, $Verification, $Verification, $Aux);
@@ -425,6 +425,6 @@ trait SimulateBlockEvent
      */
     private function correctFieldInput(string $Input = ''): string
     {
-        return preg_replace(['~([.:])x(?:/.+)?$~i', '~[/, ].*$|&[a-z]+;|(?!.*:)(?<!:)(?<!:.)(?<!:..)(?<!:...)(?<!:....)[^\d.](?!.*:)|(?!.*\.)(?<!\.)(?<!\..)(?<!\...)(?<!\....)[^\da-f:](?!.*\.)|[. ]+$~i', '~\.{2,}~', '~:{3,}~'], ['{\1}0', '', '.', '::'], $Input);
+        return \preg_replace(['~([.:])x(?:/.+)?$~i', '~[/, ].*$|&[a-z]+;|(?!.*:)(?<!:)(?<!:.)(?<!:..)(?<!:...)(?<!:....)[^\d.](?!.*:)|(?!.*\.)(?<!\.)(?<!\..)(?<!\...)(?<!\....)[^\da-f:](?!.*\.)|[. ]+$~i', '~\.{2,}~', '~:{3,}~'], ['{\1}0', '', '.', '::'], $Input);
     }
 }

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Serbian language data for the front-end (last modified: 2026.03.13).
+# This file: Serbian language data for the front-end (last modified: 2026.03.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,7 +24,7 @@
 # requests, ask. I can help.
 ##/
 
-Abuse category:
+Abuse category: !lazy
  Bad web bot: "Лош веб бот (стругање за адресе е-поште, садржај, пописиваче који не поштују robots.txt, прекомерне захтеве, лажирање корисничког агента, итд)."
  Brute-force attacks: "Напади грубе силе (напади грубом силом акредитива на пријаве на веб странице, СМТП, РДП, итд)."
  Categories (at least one is required): "Категорије (најмање једна је обавезна)"
@@ -50,7 +50,7 @@ Abuse category:
  VPN IP: "ВПН ИП."
  Web spam: "Веб спам (нежељена пошта коментара/форума, нежељена пошта ХТТП упућивача, или друга нежељена пошта ЦМС-а)."
  Webapp attacks: "Напади на веб апликације (испитивање рањивости или експлоатације, или покушај експлоатације инсталираних веб апликација, ЦМС-а, или решења за е-трговину, нпр., ВордПресс, Друпал, пхпМиАдмин, итд)."
-Extended Description:
+Extended Description: !lazy
  AbuseIPDB module: "Блокира захтеве са ИП адреса наведених на АбусеИПДБ."
  BGPView module: "Користи {{Links.BGPView}} АПИ да обезбеди могућност тражења АСН-а и кода земље за ЦИДРАМ, омогућавајући АСН-овима и земљама да буду блокирани или стављени на белу листу преко конфигурације ЦИДРАМ-а, и обезбеђујући средства за верификацију друштвених мрежа ради верификације Фацебоок захтева. (Ако користите овај модул, нећете морати да користите ИП-АПИ модул, јер они служе истој сврси)."
  Bad TLDs blocker module: "Блокира хостове који припадају ТЛД-овима које често користе спамери, хакери, и други подли ентитети."
@@ -77,7 +77,7 @@ Extended Description:
  Referrer spam module: "Блокирање засновано на упућивач спам генерално неће пружити никакву значајну безбедносну корист, али у неким случајевима може бити корисно за неке кориснике, за прикупљање више информација о захтевима и за могућност да их пријавити."
  Stop Forum Spam module: "ИП адресама које је навео СФС биће онемогућен приступ страницама за пријаву и регистрацију."
  Tor blocker module: "Забрањује приступ из Тор излазних чворова преко ДНСЕЛ прегледа (IPv4 и IPv6 обоје подржавају)."
-Name:
+Name: !lazy
  AbuseIPDB module: "АбусеИПДБ модул."
  BGPView module: "БГПВиев модул."
  BOBUAM: "Модул за корисничке агенте ботова и претраживача (БОБУАМ)."
@@ -129,7 +129,7 @@ checkbox:
  Test as sensitive request: "Тестирајте као осетљив захтев"
  Untrack positives: "Опозовете праћење позитивних?"
  When blocked, suppress output template: "Када је блокиран, потисните излазни шаблон."
-config:
+config: !lazy
  abuseipdb: "Конфигурација за АбусеИПДБ модул."
  abuseipdb_api_key: &EnterAPIKey "Унесите свој АПИ кључ овде."
  abuseipdb_build_profiles_from_usage_type: "Правите профиле користећи врсте употребе који враћа АПИ? Лажно = Не. Истинито = Да. Подразумевано = True."
@@ -831,7 +831,7 @@ link:
  Subtractor: "Субтрацтор"
  Updates: "Ажурирања"
  View mode: "Режим прегледа"
-macro:
+macro: !lazy
  Description:
   activate_modules: &MayImpactPerformance "Генерално се не препоручује, јер вероватно постоје неки који вам нису потребни. Инсталирање и активирање компоненти када нису потребне може негативно утицати на перформансе."
   install_l10n_core: &RecommendKeepingCore "Када је омогућена директива за конфигурацију <code>lang_override</code>, ако кориснички прегледач наведе одређену језичку преференцију, све док су инсталирани основни L10N подаци за тај језик, ЦИДРАМ може да прикаже страницу „приступ забрањен“ на том наведеном језику. Сходно томе, препоручује се да сви основни L10N подаци остану инсталирани."
@@ -882,7 +882,7 @@ previewer:
  Seconds: "Секунде"
  Weeks: "Недеље"
  Years: "Године"
-purpose:
+purpose: !lazy
  3D graphics file: "3Д графичка датотека (нпр., CAD, модели, материјали, текстуре)"
  Audio file: "Аудио датотека"
  Card file: "Картотека"
@@ -1004,7 +1004,7 @@ response:
  _Yes: "Да"
  please_check_config: "Проверите своју конфигурацију како бисте били сигурни да ће се новоинсталирани модул понашати како желите."
  release_notes: "<a href="%s"><span class="navicon link"></span>Напомене о издању за %s.</a>"
-stages:
+stages: !lazy
  Check whether banned: "Проверите да ли је забрањено"
  Deploy CAPTCHAs (blocked requests): "Примените ЦАПТЦХА (блокирани захтеви)"
  Deploy CAPTCHAs (non-blocked requests): "Примените ЦАПТЦХА (неблокирани захтеви)"

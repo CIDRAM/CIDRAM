@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2026.03.13).
+# This file: Latvian language data for the front-end (last modified: 2026.03.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,7 +24,7 @@
 # requests, ask. I can help.
 ##/
 
-Abuse category:
+Abuse category: !lazy
  Bad web bot: "Slikts tīmekļa robots (e-pasta adrešu un satura nokasīšana, rāpuļprogrammas, kas neievēro robots.txt, pārmērīgi pieprasījumi, lietotāju aģentu viltošana, utt)."
  Brute-force attacks: "Brutāla spēka uzbrukumi (akreditācijas brutāla spēka uzbrukumi tīmekļa lapu pieteikumiem, SMTP, RDP, utt)."
  Categories (at least one is required): "Kategorijas (nepieciešama vismaz viena)"
@@ -50,7 +50,7 @@ Abuse category:
  VPN IP: "VPN IP."
  Web spam: "Tīmekļa surogātpasts (komentāru/foruma surogātpasts, HTTP referer surogātpasts, vai cits CMS surogātpasts)."
  Webapp attacks: "Tīmekļa lietotņu uzbrukumi (ievainojamības vai ekspluatācijas meklēšana, ko izmantot pret instalētajām tīmekļa lietotnēm, CMS, vai e-komercijas risinājumiem, piemēram, WordPress, Drupal, phpMyAdmin, utt)."
-Extended Description:
+Extended Description: !lazy
  AbuseIPDB module: "Bloķē pieprasījumus no IP, kas uzskaitīti vietnē AbuseIPDB."
  BGPView module: "Izmanto {{Links.BGPView}} API, lai nodrošinātu ASN un valsts koda meklēšanas iespēju CIDRAM, tādējādi dodot iespēju bloķēt vai iekļaut baltajā sarakstā ASN un valstis, izmantojot CIDRAM konfigurāciju, un sociālo mediju verifikācijas līdzekļu nodrošināšana, lai pārbaudītu Facebook pieprasījumus. (Ja izmantojat šo moduli, jums nebūs jāizmanto IP-API modulis, jo tie kalpo vienam un tam pašam mērķim)."
  Bad TLDs blocker module: "Bloķē TLD piederošos resursdatorus, kurus bieži izmanto surogātpasta izplatītāji, hakeri, un citas nekonkrētas vienības."
@@ -77,7 +77,7 @@ Extended Description:
  Referrer spam module: "Bloķēšana, pamatojoties uz referer surogātpastu, parasti nesniegs nozīmīgus drošības ieguvumus, taču dažos gadījumos tas varētu būt noderīgs dažiem lietotājiem, lai savāktu vairāk informācijas par pieprasījumiem un par iespēju par to ziņot."
  Stop Forum Spam module: "Aizsargā reģistrācijas un ielogošanās lapas pret SFS uzskaitītajiem IP."
  Tor blocker module: "Aizliedz piekļuvi no Tor izejas mezgliem, izmantojot DNSEL uzmeklēšanu (atbalsta gan IPv4 un IPv6)."
-Name:
+Name: !lazy
  AbuseIPDB module: "AbuseIPDB modulis."
  BGPView module: "BGPView modulis."
  BOBUAM: "Modulis robotu vai pārlūkprogrammu lietotāju aģentiem (BOBUAM)."
@@ -129,7 +129,7 @@ checkbox:
  Test as sensitive request: "Pārbaudīt kā sensitīvu pieprasījumu"
  Untrack positives: "Vai atcelt pozitīvu izsekošana?"
  When blocked, suppress output template: "Ja tas ir bloķēts, apspiest izvades veidni."
-config:
+config: !lazy
  abuseipdb: "AbuseIPDB moduļa konfigurācija."
  abuseipdb_api_key: &EnterAPIKey "Lūdzu, ievadiet šeit savu API atslēgu."
  abuseipdb_build_profiles_from_usage_type: "Vai veidot profilus, izmantojot API atgriezto lietošanas veidu? False = Nē. True = Jā. Noklusējuma = True."
@@ -821,7 +821,7 @@ link:
  Subtractor: "Atdalītājs"
  Updates: "Atjauninājumi"
  View mode: "Skatīšanās režīms"
-macro:
+macro: !lazy
  Description:
   activate_modules: &MayImpactPerformance "Parasti nav ieteicams, jo, iespējams, ir daži, kas jums nav vajadzīgi. Komponentu instalēšana un aktivizēšana, kad tie nav nepieciešami, var negatīvi ietekmēt veiktspēju."
   install_l10n_core: &RecommendKeepingCore "Kad ir iespējota <code>lang_override</code> konfigurācijas direktīva, ja lietotāja pārlūkprogrammā ir norādīta valodas izvēle, kamēr ir instalēti šīs valodas core L10N dati, CIDRAM var parādīt lapu "piekļuve liegta" šajā norādītajā valodā. Attiecīgi ir ieteicams saglabāt visus L10N pamatdatus."
@@ -872,7 +872,7 @@ previewer:
  Seconds: "Sekundes"
  Weeks: "Nedēļas"
  Years: "Gadi"
-purpose:
+purpose: !lazy
  3D graphics file: "3D grafikas fails (piemēram, CAD, modeļi, materiāli, tekstūras)"
  Audio file: "Audio fails"
  Card file: "Kartes fails"
@@ -993,7 +993,7 @@ response:
  _Yes: "Jā"
  please_check_config: "Lūdzu, pārbaudiet konfigurāciju, lai pārliecinātos, ka tikko instalētais modulis rīkosies atbilstoši iecerētajam."
  release_notes: "<a href="%s"><span class="navicon link"></span>Piezīmes par %s.</a>"
-stages:
+stages: !lazy
  Check whether banned: "Pārbaudiet, vai ir aizliegts"
  Deploy CAPTCHAs (blocked requests): "Izvietojiet CAPTCHA (bloķēti pieprasījumi)"
  Deploy CAPTCHAs (non-blocked requests): "Izvietojiet CAPTCHA (nebloķēti pieprasījumi)"

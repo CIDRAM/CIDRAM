@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hebrew language data for the front-end (last modified: 2026.03.13).
+# This file: Hebrew language data for the front-end (last modified: 2026.03.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,7 +24,7 @@
 # requests, ask. I can help.
 ##/
 
-Abuse category:
+Abuse category: !lazy
  Bad web bot: "בוט אינטרנט גרוע (מחפש כתובות אימייל ותוכן, סורקים שאינם מכבדים את robots.txt, בקשות מוגזמות, זיוף של סוכן משתמש, וכו')."
  Brute-force attacks: "התקפות בכוח גס (התקפות בכוח גס על כניסות לדפי אינטרנט, SMTP, RDP, וכו')."
  Categories (at least one is required): "קטגוריות (דרושה לפחות אחת)"
@@ -50,7 +50,7 @@ Abuse category:
  VPN IP: "VPN IP."
  Web spam: "ספאם באינטרנט (ספאם של הערות/פורום, ספאם מפנה HTTP, או ספאם אחר של CMS)."
  Webapp attacks: "התקפות של אפליקציות אינטרנט (חיפוש אחר פגיעויות או ניצול, או ניסיון לנצל אפליקציות אינטרנט, CMS, או פתרונות מסחר אלקטרוני מותקנים, למשל., WordPress, Drupal, phpMyAdmin, וכו')."
-Extended Description:
+Extended Description: !lazy
  AbuseIPDB module: "חוסם בקשות מכתובות IP הרשומות ב-AbuseIPDB."
  BGPView module: "מנף את ה-{{Links.BGPView}} API כדי לספק מתקן חיפוש ASN וקוד מדינה עבור CIDRAM, המאפשרת חסימה או אישור של ASN ומדינות באמצעות תצורת CIDRAM, ומספקת אמצעי לאימות רשתות חברתיות לאימות בקשות של פייסבוק. (אם אתה משתמש במודול זה, לא תצטרך להשתמש במודול IP-API, מכיוון שהם משרתים את אותה מטרה)."
  Bad TLDs blocker module: "חוסם מארחים השייכים ל-TLD בשימוש תכוף על ידי שולחי ספאם, האקרים, וגורמים מרושעים אחרים."
@@ -77,7 +77,7 @@ Extended Description:
  Referrer spam module: "חסימה המבוססת על ספאם מפנה לא תספק בדרך כלל תועלת אבטחה משמעותית, אך במקרים מסוימים, יכול להיות שימושי עבור חלק מהמשתמשים, לאיסוף מידע נוסף על בקשות וליכולת לדווח על כך."
  Stop Forum Spam module: "מגן על דפי רישום וכניסה מפני כתובות IP הרשומות על ידי SFS."
  Tor blocker module: "אוסר על גישה מצמתי יציאה של Tor דרך חיפושי DNSEL (תומך גם ב-IPv4 וגם ב-IPv6)."
-Name:
+Name: !lazy
  AbuseIPDB module: "מודול AbuseIPDB."
  BGPView module: "מודול BGPView."
  BOBUAM: "מודול סוכני משתמש של בוט או דפדפן (BOBUAM)."
@@ -129,7 +129,7 @@ checkbox:
  Test as sensitive request: "בדוק כבקשה רגישה"
  Untrack positives: "לבטל מעקב חיוביים?"
  When blocked, suppress output template: "כאשר חסום, דחק את תבנית הפלט."
-config:
+config: !lazy
  abuseipdb: "תצורה עבור מודול AbuseIPDB."
  abuseipdb_api_key: &EnterAPIKey "אנא הזן את מפתח ה-API שלך כאן."
  abuseipdb_build_profiles_from_usage_type: "לבנות פרופילים באמצעות סוג השימוש המוחזר על ידי ה-API? False = לא. True = כן. סטנדרטי = True."
@@ -816,7 +816,7 @@ link:
  Subtractor: "כלי להחסיר"
  Updates: "עדכונים"
  View mode: "מצב צפייה"
-macro:
+macro: !lazy
  Description:
   activate_modules: &MayImpactPerformance "לא מומלץ בדרך כלל, מכיוון שסביר להניח שיש כאלה שאתה לא צריך. התקנה והפעלה של רכיבים כאשר אין בהם צורך עלולים להשפיע לרעה על הביצועים."
   install_l10n_core: &RecommendKeepingCore "כאשר הוראת התצורה <code dir="ltr">lang_override</code> מופעלת, אם הדפדפן של משתמש מציין העדפת שפה מסוימת, כל עוד נתוני ליבה L10N עבור שפה זו מותקנים, CIDRAM מסוגל להציג את דף "הגישה נדחתה" בשפה שצוינה. בהתאם לכך, מומלץ להשאיר את כל נתוני הליבה של L10N מותקנים."
@@ -867,7 +867,7 @@ previewer:
  Seconds: "שניות"
  Weeks: "שבועות"
  Years: "שנים"
-purpose:
+purpose: !lazy
  3D graphics file: "קובץ גרפיקה תלת-ממדי (למשל, CAD, מודלים, חומרים, טקסטורות)"
  Audio file: "קובץ שמע"
  Card file: "קובץ כרטיס"
@@ -988,7 +988,7 @@ response:
  _Yes: "כן"
  please_check_config: "אנא בדוק את התצורה שלך כדי להבטיח שהמודול שהותקן לאחרונה יתנהג כפי שאתה מתכוון."
  release_notes: "<a href="%s"><span class="navicon link"></span>הערות שחרור עבור %s.</a>"
-stages:
+stages: !lazy
  Check whether banned: "בדוק האם אסור"
  Deploy CAPTCHAs (blocked requests): "פרוס CAPTCHA (בקשות חסומות)"
  Deploy CAPTCHAs (non-blocked requests): "פרוס CAPTCHA (בקשות לא חסומות)"

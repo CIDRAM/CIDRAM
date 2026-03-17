@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Ukrainian language data for the front-end (last modified: 2026.03.13).
+# This file: Ukrainian language data for the front-end (last modified: 2026.03.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,7 +24,7 @@
 # requests, ask. I can help.
 ##/
 
-Abuse category:
+Abuse category: !lazy
  Bad web bot: "Поганий веб-бот (сканування адрес електронної пошти, вмісту, сканерів, які не поважають robots.txt, надмірних запитів, підробки користувацького агента, тощо)."
  Brute-force attacks: "Атаки грубою силою (атаки грубої сили на логіни веб-сторінок, SMTP, RDP, тощо)."
  Categories (at least one is required): "Категорії (потрібна принаймні одна)"
@@ -50,7 +50,7 @@ Abuse category:
  VPN IP: "VPN IP."
  Web spam: "Веб-спам (спам у коментарях/форумах, спам у реферері HTTP, або інший спам CMS)."
  Webapp attacks: "Атаки веб-додатків (перевірка вразливостей або експлойтів для використання проти встановлених веб-додатків, CMS, або рішень для електронної комерції, наприклад, WordPress, Drupal, phpMyAdmin, тощо)."
-Extended Description:
+Extended Description: !lazy
  AbuseIPDB module: "Блокує запити від IP-адрес, указаних у AbuseIPDB."
  BGPView module: "Використовує {{Links.BGPView}} API щоб надати можливість пошуку за ASN і кодами країни для CIDRAM, таким чином дозволяючи ASN і країни бути заблокованими або додавати в білий список через конфігурацію CIDRAM, і надаючи засоби перевірки соціальних мереж для перевірки запитів Facebook. (Якщо ви використовуєте цей модуль, вам не потрібно буде використовувати модуль IP-API, оскільки вони служать тій самій меті)."
  Bad TLDs blocker module: "Блокує хости, що належать до TLD, які часто використовуються спамерами, хакерами та іншими нечестивими особами."
@@ -77,7 +77,7 @@ Extended Description:
  Referrer spam module: "Блокування на основі спаму-реферера, як правило, не забезпечить жодних суттєвих переваг безпеки, але в деяких випадках може бути корисним для деяких користувачів, для збору додаткової інформації про запити та для того, щоб мати можливість повідомити про це."
  Stop Forum Spam module: "Захищає сторінки реєстрації та входу від IP-адрес, указаних SFS."
  Tor blocker module: "Забороняє доступ із вузлів виходу Tor через пошук DNSEL (підтримує IPv4 і IPv6 оба)."
-Name:
+Name: !lazy
  AbuseIPDB module: "Модуль AbuseIPDB."
  BGPView module: "Модуль BGPView."
  BOBUAM: "Модуль для користувальницьких агентів ботів або браузерів (BOBUAM)."
@@ -129,7 +129,7 @@ checkbox:
  Test as sensitive request: "Перевірити як конфіденційний запит"
  Untrack positives: "Скасувати відстеження позитивів?"
  When blocked, suppress output template: "Якщо заблоковано, придушити вихід шаблон."
-config:
+config: !lazy
  abuseipdb: "Конфігурація для модуля AbuseIPDB."
  abuseipdb_api_key: &EnterAPIKey "Будь ласка, введіть свій ключ API тут."
  abuseipdb_build_profiles_from_usage_type: "Створювати профілі, використовуючи тип використання, який повертає API? False = Ні. True = Так. Стандарт = True."
@@ -833,7 +833,7 @@ link:
  Subtractor: "Від'ємник"
  Updates: "Оновлення"
  View mode: "Режим перегляду"
-macro:
+macro: !lazy
  Description:
   activate_modules: &MayImpactPerformance "Загалом не рекомендується, оскільки ймовірно є такі, які вам не потрібні. Встановлення та активація компонентів, коли вони не потрібні, може негативно вплинути на продуктивність."
   install_l10n_core: &RecommendKeepingCore "Коли ввімкнено директиву конфігурації <code>lang_override</code>, якщо веб-переглядач користувача вказує певну мову, якщо встановлено «core» дані L10N для цієї мови, CIDRAM може відобразити сторінку «доступ заборонено» цією вказаною мовою. Відповідно, рекомендується, щоб усі «core» дані L10N залишалися встановленими."
@@ -884,7 +884,7 @@ previewer:
  Seconds: "Секунд"
  Weeks: "Тижнів"
  Years: "Років"
-purpose:
+purpose: !lazy
  3D graphics file: "Файл 3D-графіки (наприклад, CAD, моделі, матеріали, текстури)"
  Audio file: "Аудіофайл"
  Card file: "Картотека"
@@ -1006,7 +1006,7 @@ response:
  _Yes: "Так"
  please_check_config: "Будь ласка, перевірте свою конфігурацію, щоб переконатися, що нещодавно встановлений модуль працюватиме так, як ви бажаєте."
  release_notes: "<a href="%s"><span class="navicon link"></span>Примітки до випуску для %s.</a>"
-stages:
+stages: !lazy
  Check whether banned: "Перевірте, чи забанено"
  Deploy CAPTCHAs (blocked requests): "Показати CAPTCHA (запити які заблоковані)"
  Deploy CAPTCHAs (non-blocked requests): "Показати CAPTCHA (запити які не заблоковані)"

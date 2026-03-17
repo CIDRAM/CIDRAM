@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Friendly Captcha class (last modified: 2026.03.15).
+ * This file: Friendly Captcha class (last modified: 2026.03.17).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -27,14 +27,14 @@ class FriendlyCaptcha extends Captcha
         $Salt = $this->generateSalt();
 
         /** Initialise messages. */
-        $this->Messages = array_flip(explode("\n", $this->CIDRAM->Configuration['captcha']['messages']));
+        $this->Messages = \array_flip(\explode("\n", $this->CIDRAM->Configuration['captcha']['messages']));
 
         /** What to lock CAPTCHAs to. */
         $LockTo = $this->CIDRAM->Configuration['captcha']['lockto']['friendly'] ?? 'user';
 
         if ($LockTo === 'ip') {
             /** Attempt to load the IP bypass list. */
-            if (file_exists($this->CIDRAM->Vault . 'ipbypass.dat')) {
+            if (\file_exists($this->CIDRAM->Vault . 'ipbypass.dat')) {
                 $BypassList = $this->CIDRAM->readFile($this->CIDRAM->Vault . 'ipbypass.dat');
                 $BypassListModified = false;
             } else {
@@ -49,12 +49,12 @@ class FriendlyCaptcha extends Captcha
              * Verify whether a Friendly Captcha instance has already been completed before
              * for the current IP, populate relevant variables, and generate fields.
              */
-            if (strpos($BypassList, "\n" . $this->CIDRAM->ipAddr . ',') !== false) {
+            if (\strpos($BypassList, "\n" . $this->CIDRAM->ipAddr . ',') !== false) {
                 $this->Bypass = true;
                 $this->resetSCT();
             } else {
                 /** Set Friendly Captcha status. */
-                $this->CIDRAM->BlockInfo['CAPTCHA'] = sprintf($this->CIDRAM->L10N->getString('state.Enabled'), 'Friendly Captcha');
+                $this->CIDRAM->BlockInfo['CAPTCHA'] = \sprintf($this->CIDRAM->L10N->getString('state.Enabled'), 'Friendly Captcha');
 
                 /** We've received a response. */
                 if (
@@ -84,12 +84,12 @@ class FriendlyCaptcha extends Captcha
 
             /** Update the IP bypass list if any changes were made. */
             if ($BypassListModified) {
-                $Handle = fopen($this->CIDRAM->Vault . 'ipbypass.dat', 'wb');
-                fwrite($Handle, $BypassList);
-                fclose($Handle);
+                $Handle = \fopen($this->CIDRAM->Vault . 'ipbypass.dat', 'wb');
+                \fwrite($Handle, $BypassList);
+                \fclose($Handle);
             }
         } else {
-            if (file_exists($this->CIDRAM->Vault . 'hashes.dat')) {
+            if (\file_exists($this->CIDRAM->Vault . 'hashes.dat')) {
                 $HastList = $this->CIDRAM->readFile($this->CIDRAM->Vault . 'hashes.dat');
                 $HastListModified = false;
             } else {
@@ -104,26 +104,26 @@ class FriendlyCaptcha extends Captcha
              * Determine whether a Friendly Captcha instance has already been completed by the
              * user and populate relevant variables.
              */
-            if (!empty($_COOKIE['CIDRAM']) && ($Split = strpos($_COOKIE['CIDRAM'], ',')) !== false) {
-                $UserHash = substr($_COOKIE['CIDRAM'], 0, $Split);
-                if (strpos($HastList, "\n" . $UserHash . ',') !== false) {
-                    $UserSalt = base64_decode(substr($_COOKIE['CIDRAM'], $Split));
+            if (!empty($_COOKIE['CIDRAM']) && ($Split = \strpos($_COOKIE['CIDRAM'], ',')) !== false) {
+                $UserHash = \substr($_COOKIE['CIDRAM'], 0, $Split);
+                if (\strpos($HastList, "\n" . $UserHash . ',') !== false) {
+                    $UserSalt = \base64_decode(\substr($_COOKIE['CIDRAM'], $Split));
                     $UserMeld = $LockTo === 'both' ? $this->meld($Salt, $UserSalt, $this->CIDRAM->ipAddr) : $this->meld($Salt, $UserSalt);
                 }
             }
-            if (!isset($UserMeld) || strlen($UserMeld) === 0) {
+            if (!isset($UserMeld) || \strlen($UserMeld) === 0) {
                 $UserMeld = '';
                 $UserSalt = '';
                 $UserHash = '';
             }
 
             /** Verify whether they've passed, update cookies, generate fields. */
-            if ($UserHash !== '' && $UserMeld !== '' && password_verify($UserMeld, $UserHash)) {
+            if ($UserHash !== '' && $UserMeld !== '' && \password_verify($UserMeld, $UserHash)) {
                 $this->Bypass = true;
                 $this->resetSCT();
             } else {
                 /** Set Friendly Captcha status. */
-                $this->CIDRAM->BlockInfo['CAPTCHA'] = sprintf($this->CIDRAM->L10N->getString('state.Enabled'), 'Friendly Captcha');
+                $this->CIDRAM->BlockInfo['CAPTCHA'] = \sprintf($this->CIDRAM->L10N->getString('state.Enabled'), 'Friendly Captcha');
 
                 /** We've received a response. */
                 if (
@@ -140,12 +140,12 @@ class FriendlyCaptcha extends Captcha
                         $Cookie = $LockTo === 'both' ? $this->meld($Salt, $UserSalt, $this->CIDRAM->ipAddr) : $this->meld($Salt, $UserSalt);
 
                         /** Purge null bytes. */
-                        if (strpos($Cookie, "\0") !== false) {
-                            $Cookie = str_replace("\0", '', $Cookie);
+                        if (\strpos($Cookie, "\0") !== false) {
+                            $Cookie = \str_replace("\0", '', $Cookie);
                         }
 
-                        $UserHash = password_hash($Cookie, $this->DefaultAlgo);
-                        $Cookie = $UserHash . ',' . base64_encode($UserSalt);
+                        $UserHash = \password_hash($Cookie, $this->DefaultAlgo);
+                        $Cookie = $UserHash . ',' . \base64_encode($UserSalt);
                         setcookie(
                             'CIDRAM',
                             $Cookie,
@@ -172,9 +172,9 @@ class FriendlyCaptcha extends Captcha
 
             /** Update the hash list if any changes were made. */
             if ($HastListModified) {
-                $Handle = fopen($this->CIDRAM->Vault . 'hashes.dat', 'wb');
-                fwrite($Handle, $HastList);
-                fclose($Handle);
+                $Handle = \fopen($this->CIDRAM->Vault . 'hashes.dat', 'wb');
+                \fwrite($Handle, $HastList);
+                \fclose($Handle);
             }
         }
 
@@ -204,7 +204,7 @@ class FriendlyCaptcha extends Captcha
         } else {
             $Script = '<script type="module" src="https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@0.1.31/site.min.js" async defer></script><script nomodule src="https://cdn.jsdelivr.net/npm/@friendlycaptcha/sdk@0.1.31/site.compat.min.js" async defer></script>';
         }
-        return sprintf(
+        return \sprintf(
             "\n<hr />\n<p class=\"detected\"%s>%s%s<br /></p>\n" .
             '<form id="FCf" method="POST" action="" class="gForm">' .
                 '<div class="frc-captcha" data-sitekey="%s" data-theme="%s" lang="%s"></div>' .
@@ -216,7 +216,7 @@ class FriendlyCaptcha extends Captcha
             $SiteKey,
             $this->determineTheme(),
             $this->CIDRAM->ClientL10N->getString('hl.friendly') ?: $this->CIDRAM->L10N->getString('hl.friendly'),
-            $this->TemplateInsert,
+            self::TEMPLATE_INSERT,
             $this->CIDRAM->ClientL10N->getString('label.Submit') ?: $this->CIDRAM->L10N->getString('label.Submit')
         ) . $Script . '<script type="text/javascript">document.addEventListener(\'DOMContentLoaded\',function(){document.getElementById(\'FCf\').action=window.location});document.getElementById(\'hostnameoverride\').value=window.location.hostname;</script>';
     }
@@ -236,13 +236,13 @@ class FriendlyCaptcha extends Captcha
                 'sitekey' => $this->CIDRAM->Configuration['captcha']['friendly_sitekey'],
                 'secret' => $this->CIDRAM->Configuration['captcha']['friendly_apikey']
             ]);
-            $this->Bypass = (strpos($this->Results, '"success":true') !== false);
+            $this->Bypass = (\strpos($this->Results, '"success":true') !== false);
         } elseif ($this->CIDRAM->Configuration['captcha']['api']['friendly'] === 'v2') {
             $this->Results = $this->CIDRAM->Request->request('https://global.frcapi.com/api/v2/captcha/siteverify', [
                 'response' => $_POST['frc-captcha-response'],
                 'sitekey' => $this->CIDRAM->Configuration['captcha']['friendly_sitekey']
             ], -1, ['X-API-Key: ' . $this->CIDRAM->Configuration['captcha']['friendly_apikey']]);
-            $this->Bypass = (strpos($this->Results, '"success":true') !== false);
+            $this->Bypass = (\strpos($this->Results, '"success":true') !== false);
         }
     }
 

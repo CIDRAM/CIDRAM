@@ -1,6 +1,6 @@
 <?php
 /**
- * YAML handler (last modified: 2026.03.10).
+ * YAML handler (last modified: 2026.03.17).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -169,7 +169,7 @@ class YAML extends CommonAbstract implements \Countable
      */
     public function __construct(string $In = '')
     {
-        if (class_exists('\Maikuolan\Common\Demojibakefier')) {
+        if (\class_exists('\Maikuolan\Common\Demojibakefier')) {
             $this->Demojibakefier = new \Maikuolan\Common\Demojibakefier();
         }
         if ($In !== '') {
@@ -217,21 +217,21 @@ class YAML extends CommonAbstract implements \Countable
                  * Attempt to determine input encoding.
                  * @link https://yaml.org/spec/1.2.2/#52-character-encodings
                  */
-                if (preg_match('~^\0\0(?:\0|\xFE\xFF)~', $In)) {
-                    $In = substr($In, 4);
+                if (\preg_match('~^\0\0(?:\0|\xFE\xFF)~', $In)) {
+                    $In = \substr($In, 4);
                     $this->LastInputEncoding = 'UTF-32BE';
-                } elseif (preg_match('~^(?:\xFF\xFE|.\0)\0\0~', $In)) {
-                    $In = substr($In, 4);
+                } elseif (\preg_match('~^(?:\xFF\xFE|.\0)\0\0~', $In)) {
+                    $In = \substr($In, 4);
                     $this->LastInputEncoding = 'UTF-32LE';
-                } elseif (preg_match('~^(?:\xFE\xFF|\0)~', $In)) {
-                    $In = substr($In, 2);
+                } elseif (\preg_match('~^(?:\xFE\xFF|\0)~', $In)) {
+                    $In = \substr($In, 2);
                     $this->LastInputEncoding = 'UTF-16BE';
-                } elseif (preg_match('~^(?:\xFF\xFE|.\0)~', $In)) {
-                    $In = substr($In, 2);
+                } elseif (\preg_match('~^(?:\xFF\xFE|.\0)~', $In)) {
+                    $In = \substr($In, 2);
                     $this->LastInputEncoding = 'UTF-16LE';
                 } else {
-                    if (substr($In, 0, 3) === "\xEF\xBB\xBF") {
-                        $In = substr($In, 3);
+                    if (\substr($In, 0, 3) === "\xEF\xBB\xBF") {
+                        $In = \substr($In, 3);
                     }
                     $this->LastInputEncoding = 'UTF-8';
                 }
@@ -264,19 +264,19 @@ class YAML extends CommonAbstract implements \Countable
             }
 
             /** Attempt to capture header comments. */
-            if (preg_match('~^(##\\\\(?:\n#[^\n]*)+\n##/\n\n|(?:#[^\n]*\n)+\n)~m', $In, $Captured)) {
+            if (\preg_match('~^(##\\\\(?:\n#[^\n]*)+\n##/\n\n|(?:#[^\n]*\n)+\n)~m', $In, $Captured)) {
                 $this->CapturedHeader = $Captured[0];
             }
         }
 
-        $In = str_replace("\r", '', $Depth === 0 ? trim($In) : $In);
+        $In = \str_replace("\r", '', $Depth === 0 ? \trim($In) : $In);
         $Key = '';
         $Value = '';
         $SendTo = '';
 
         /** In case of processing JSON data, or YAML data contained entirely by flow collections. */
         foreach ([['[', ']'], ['{', '}']] as $Braces) {
-            if (substr($In, 0, 1) === $Braces[0] && substr($In, -1) === $Braces[1]) {
+            if (\substr($In, 0, 1) === $Braces[0] && \substr($In, -1) === $Braces[1]) {
                 return $this->flowControl($In, $Arr, $Braces[0]);
             }
         }
@@ -287,18 +287,18 @@ class YAML extends CommonAbstract implements \Countable
         /** Continues until there aren't any new lines to process remaining. */
         while ($SoL !== false) {
             /** @var int|false End position of the current line. */
-            $EoL = strpos($In, "\n", $SoL);
+            $EoL = \strpos($In, "\n", $SoL);
 
             /** @var string The current line. */
-            $ThisLine = ($EoL === false) ? substr($In, $SoL) : substr($In, $SoL, $EoL - $SoL);
+            $ThisLine = ($EoL === false) ? \substr($In, $SoL) : \substr($In, $SoL, $EoL - $SoL);
 
             /** @var int|false Start position of the next line. */
             $SoL = ($EoL === false) ? false : $EoL + 1;
 
             /** Strip comments and whitespace. */
-            if (!($ThisLine = preg_replace(['/(?<!\\\\)#.*$/', '/\s+$/'], '', $ThisLine))) {
+            if (!($ThisLine = \preg_replace(['/(?<!\\\\)#.*$/', '/\s+$/'], '', $ThisLine))) {
                 /** Line preservation for multi-line and folded blocks. .*/
-                if (($this->MultiLine || $this->MultiLineFolded) && strlen($SendTo)) {
+                if (($this->MultiLine || $this->MultiLineFolded) && \strlen($SendTo)) {
                     $SendTo .= "\n";
                 }
 
@@ -309,13 +309,13 @@ class YAML extends CommonAbstract implements \Countable
             $ThisTab = 0;
 
             /** Determine the indent of the current line. */
-            while (($Chr = substr($ThisLine, $ThisTab, 1)) && ($Chr === ' ' || $Chr === "\t")) {
+            while (($Chr = \substr($ThisLine, $ThisTab, 1)) && ($Chr === ' ' || $Chr === "\t")) {
                 $ThisTab++;
             }
 
             /** Used for reconstruction. */
             if ($this->LastIndent === '') {
-                $this->LastIndent = str_repeat(substr($ThisLine, 0, 1), $ThisTab);
+                $this->LastIndent = \str_repeat(\substr($ThisLine, 0, 1), $ThisTab);
             }
 
             /**
@@ -332,24 +332,24 @@ class YAML extends CommonAbstract implements \Countable
                     if ($SendTo) {
                         if ($this->MultiLine) {
                             $SendTo .= "\n";
-                        } elseif (substr($ThisLine, $TabLen, 1) !== ' ' && substr($SendTo, -1) !== ' ') {
+                        } elseif (\substr($ThisLine, $TabLen, 1) !== ' ' && \substr($SendTo, -1) !== ' ') {
                             $SendTo .= ' ';
                         }
                     }
-                    $SendTo .= substr($ThisLine, $TabLen);
+                    $SendTo .= \substr($ThisLine, $TabLen);
                 }
                 continue;
             }
 
             /** Final byte in current line. */
-            $FinalByte = substr($ThisLine, -1, 1);
+            $FinalByte = \substr($ThisLine, -1, 1);
 
             /** Detect entities. */
-            $IsEntityEnd = $this->Entity && $SendTo !== '' && strlen($ThisLine) === $TabLen && $FinalByte === ')';
+            $IsEntityEnd = $this->Entity && $SendTo !== '' && \strlen($ThisLine) === $TabLen && $FinalByte === ')';
             $this->Entity = false;
 
             /** Detect flow switch. */
-            if ($IsFlowSwitchEnd = $FinalByte === $this->FlowSwitchTo && $SendTo !== '' && strlen($ThisLine) === $TabLen && is_string($Arr[$Key]) && strlen($Arr[$Key]) === 1) {
+            if ($IsFlowSwitchEnd = $FinalByte === $this->FlowSwitchTo && $SendTo !== '' && \strlen($ThisLine) === $TabLen && \is_string($Arr[$Key]) && \strlen($Arr[$Key]) === 1) {
                 $SendTo = $Arr[$Key] . $SendTo . $ThisLine;
             }
             $this->FlowSwitchTo = '';
@@ -375,33 +375,41 @@ class YAML extends CommonAbstract implements \Countable
                     if (!isset($Arr[$Key])) {
                         $Arr[$Key] = [];
                     }
-                    if (!is_array($Arr[$Key])) {
+                    if (!\is_array($Arr[$Key])) {
                         if ($this->IsBlockSeqChild) {
                             $Arr[$Key] = [$Arr[$Key]];
                         } else {
                             $Arr[$Key] = [];
                         }
                     }
-                    $Success = $this->process(preg_replace('~\n$~m', '', $SendTo), $Arr[$Key], $TabLen);
-                    if ($IsEntityEnd) {
-                        $Hydrate = $Arr[$Key];
-                        $Arr[$Key] = new \stdClass();
-                        foreach ($Hydrate as $EnKey => $EnValue) {
-                            $Arr[$Key]->{$EnKey} = $EnValue;
+                    if (!$IsEntityEnd && isset($ThisBlockTag) && $ThisBlockTag === 'lazy' && \class_exists('\Maikuolan\Common\LazyArray')) {
+                        $Arr[$Key] = new \Maikuolan\Common\LazyArray(function ($Data) use ($TabLen): array {
+                            $Arr = [];
+                            $this->process($Data, $Arr, $TabLen);
+                            return $Arr;
+                        }, \preg_replace('~\n$~m', '', $SendTo));
+                    } else {
+                        $Success = $this->process(\preg_replace('~\n$~m', '', $SendTo), $Arr[$Key], $TabLen);
+                        if ($IsEntityEnd) {
+                            $Hydrate = $Arr[$Key];
+                            $Arr[$Key] = new \stdClass();
+                            foreach ($Hydrate as $EnKey => $EnValue) {
+                                $Arr[$Key]->{$EnKey} = $EnValue;
+                            }
                         }
                     }
                 } else {
                     $this->tryStringDataTraverseByRef($SendTo);
                     if ($this->Chomp === '-') {
-                        $SendTo = preg_replace('~[\r\n]+$~m', '', $SendTo);
+                        $SendTo = \preg_replace('~[\r\n]+$~m', '', $SendTo);
                     } elseif ($this->Chomp === '') {
-                        $SendTo = preg_replace('~([\r\n])[\r\n]+$~m', '\1', $SendTo);
+                        $SendTo = \preg_replace('~([\r\n])[\r\n]+$~m', '\1', $SendTo);
                     }
                     $Arr[$Key] = $SendTo;
                 }
                 $HasMerged = false;
                 if (isset($ThisBlockTag) && $ThisBlockTag !== '') {
-                    if ($ThisBlockTag === '!merge' && is_array($Arr[$Key])) {
+                    if ($ThisBlockTag === '!merge' && \is_array($Arr[$Key])) {
                         $MergeData = $Arr[$Key];
                         unset($Arr[$Key]);
                         $Arr += $this->merge($MergeData);
@@ -410,7 +418,7 @@ class YAML extends CommonAbstract implements \Countable
                         $Arr[$Key] = $this->coerce($Arr[$Key], false, $ThisBlockTag);
                     }
                 }
-                if (!$HasMerged && $Key === '<<' && is_array($Arr[$Key])) {
+                if (!$HasMerged && $Key === '<<' && \is_array($Arr[$Key])) {
                     $MergeData = $Arr[$Key];
                     unset($Arr[$Key]);
                     $Arr += $this->merge($MergeData);
@@ -438,26 +446,41 @@ class YAML extends CommonAbstract implements \Countable
                 if (!isset($Arr[$Key])) {
                     $Arr[$Key] = [];
                 }
-                if (!is_array($Arr[$Key])) {
+                if (!\is_array($Arr[$Key])) {
                     if ($this->IsBlockSeqChild) {
                         $Arr[$Key] = [$Arr[$Key]];
                     } else {
                         $Arr[$Key] = [];
                     }
                 }
-                $Success = $this->process(preg_replace('~\n$~m', '', $SendTo), $Arr[$Key], $TabLen);
+                if (!$IsEntityEnd && isset($ThisBlockTag) && $ThisBlockTag === 'lazy' && \class_exists('\Maikuolan\Common\LazyArray')) {
+                    $Arr[$Key] = new \Maikuolan\Common\LazyArray(function ($Data) use ($TabLen): array {
+                        $Arr = [];
+                        $this->process($Data, $Arr, $TabLen);
+                        return $Arr;
+                    }, \preg_replace('~\n$~m', '', $SendTo));
+                } else {
+                    $Success = $this->process(\preg_replace('~\n$~m', '', $SendTo), $Arr[$Key], $TabLen);
+                    if ($IsEntityEnd) {
+                        $Hydrate = $Arr[$Key];
+                        $Arr[$Key] = new \stdClass();
+                        foreach ($Hydrate as $EnKey => $EnValue) {
+                            $Arr[$Key]->{$EnKey} = $EnValue;
+                        }
+                    }
+                }
             } else {
                 $this->tryStringDataTraverseByRef($SendTo);
                 if ($this->Chomp === '-') {
-                    $SendTo = preg_replace('~[\r\n]+$~m', '', $SendTo);
+                    $SendTo = \preg_replace('~[\r\n]+$~m', '', $SendTo);
                 } elseif ($this->Chomp === '') {
-                    $SendTo = preg_replace('~([\r\n])[\r\n]+$~m', '\1', $SendTo);
+                    $SendTo = \preg_replace('~([\r\n])[\r\n]+$~m', '\1', $SendTo);
                 }
                 $Arr[$Key] = $SendTo;
             }
             $HasMerged = false;
             if (isset($ThisBlockTag) && $ThisBlockTag !== '') {
-                if ($ThisBlockTag === '!merge' && is_array($Arr[$Key])) {
+                if ($ThisBlockTag === '!merge' && \is_array($Arr[$Key])) {
                     $MergeData = $Arr[$Key];
                     unset($Arr[$Key]);
                     $Arr += $this->merge($MergeData);
@@ -466,7 +489,7 @@ class YAML extends CommonAbstract implements \Countable
                     $Arr[$Key] = $this->coerce($Arr[$Key], false, $ThisBlockTag);
                 }
             }
-            if (!$HasMerged && $Key === '<<' && is_array($Arr[$Key])) {
+            if (!$HasMerged && $Key === '<<' && \is_array($Arr[$Key])) {
                 $MergeData = $Arr[$Key];
                 unset($Arr[$Key]);
                 $Arr += $this->merge($MergeData);
@@ -488,7 +511,7 @@ class YAML extends CommonAbstract implements \Countable
     public function reconstruct(array $Arr, bool $UseCaptured = false, bool $DoWithAnchors = false): string
     {
         $Out = '';
-        $this->DoWithAnchors = (count($this->Anchors) && $DoWithAnchors);
+        $this->DoWithAnchors = (\count($this->Anchors) && $DoWithAnchors);
         if ($UseCaptured) {
             if ($this->LastIndent !== '') {
                 $this->Indent = $this->LastIndent;
@@ -513,18 +536,28 @@ class YAML extends CommonAbstract implements \Countable
     {
         if (
             empty($this->Refs) ||
-            !is_string($Data) ||
-            !preg_match_all('~\{\{ ?([^\r\n{}]+) ?\}\}~', $Data, $VarMatches) ||
+            !\is_string($Data) ||
+            !\preg_match_all('~\{\{ ?([^\r\n{}]+) ?\}\}~', $Data, $VarMatches) ||
             !isset($VarMatches[0][0], $VarMatches[1][0])
         ) {
             return;
         }
-        $MatchCount = count($VarMatches[0]);
+        $MatchCount = \count($VarMatches[0]);
         for ($Index = 0; $Index < $MatchCount; $Index++) {
-            if (($Extracted = $this->dataTraverse($this->Refs, $VarMatches[1][$Index])) && is_string($Extracted)) {
-                $Data = str_replace($VarMatches[0][$Index], $Extracted, $Data);
+            if (($Extracted = $this->dataTraverse($this->Refs, $VarMatches[1][$Index])) && \is_string($Extracted)) {
+                $Data = \str_replace($VarMatches[0][$Index], $Extracted, $Data);
             }
         }
+    }
+
+    /**
+     * Count processed data.
+     *
+     * @return int The number of elements in the processed data array.
+     */
+    public function count(): int
+    {
+        return \count($this->Data);
     }
 
     /**
@@ -537,11 +570,11 @@ class YAML extends CommonAbstract implements \Countable
     private function normaliseValue(string &$Value, bool $EnforceScalar = false): void
     {
         /** Avoid mistyping due to excess whitespace. */
-        $Value = trim($Value);
+        $Value = \trim($Value);
 
         /** Resolve tags. */
-        if (preg_match('~^!([!/\dA-Za-z_:,-]+)(?: (.+))?$~', $Value, $Resolved)) {
-            $Tag = strtolower($Resolved[1]);
+        if (\preg_match('~^!([!/\dA-Za-z_:,-]+)(?: (.+))?$~', $Value, $Resolved)) {
+            $Tag = \strtolower($Resolved[1]);
             if (!$EnforceScalar) {
                 $this->LastResolvedTag = $Tag;
             }
@@ -558,13 +591,13 @@ class YAML extends CommonAbstract implements \Countable
             /** Check for anchors and populate if necessary. */
             $AnchorMatches = [];
             if (
-                preg_match('~^&([\dA-Za-z]+) +(.*)$~', $Value, $AnchorMatches) &&
+                \preg_match('~^&([\dA-Za-z]+) +(.*)$~', $Value, $AnchorMatches) &&
                 isset($AnchorMatches[1], $AnchorMatches[2])
             ) {
                 $Value = $AnchorMatches[2];
                 $this->Anchors[$AnchorMatches[1]] = $Value;
             } elseif (
-                preg_match('~^\*([\dA-Za-z]+)$~', $Value, $AnchorMatches) &&
+                \preg_match('~^\*([\dA-Za-z]+)$~', $Value, $AnchorMatches) &&
                 isset($AnchorMatches[1], $this->Anchors[$AnchorMatches[1]])
             ) {
                 $Value = $this->Anchors[$AnchorMatches[1]];
@@ -575,7 +608,7 @@ class YAML extends CommonAbstract implements \Countable
 
             /** In case of processing JSON data or flow collections. */
             foreach ([['[', ']'], ['{', '}']] as $Braces) {
-                if (substr($Value, 0, 1) === $Braces[0] && substr($Value, -1) === $Braces[1]) {
+                if (\substr($Value, 0, 1) === $Braces[0] && \substr($Value, -1) === $Braces[1]) {
                     $NewArr = [];
                     $this->flowControl($Value, $NewArr, $Braces[0]);
                     $Value = $NewArr;
@@ -587,7 +620,7 @@ class YAML extends CommonAbstract implements \Countable
             }
         }
 
-        $ValueLen = strlen($Value);
+        $ValueLen = \strlen($Value);
 
         /** Check for string quotes. */
         foreach ([
@@ -599,8 +632,8 @@ class YAML extends CommonAbstract implements \Countable
             ["\xe2\x80\x98", "\xe2\x80\x99", 3],
             ["\xe2\x80\x9c", "\xe2\x80\x9d", 3]
         ] as $Wrapper) {
-            if (substr($Value, 0, $Wrapper[2]) === $Wrapper[0] && substr($Value, $ValueLen - $Wrapper[2]) === $Wrapper[1]) {
-                $Value = substr($Value, $Wrapper[2], $ValueLen - ($Wrapper[2] * 2));
+            if (\substr($Value, 0, $Wrapper[2]) === $Wrapper[0] && \substr($Value, $ValueLen - $Wrapper[2]) === $Wrapper[1]) {
+                $Value = \substr($Value, $Wrapper[2], $ValueLen - ($Wrapper[2] * 2));
                 $Value = $this->unescape($Value, $Wrapper[0]);
                 if ($Tag !== '') {
                     $Value = $this->coerce($Value, $EnforceScalar, $Tag);
@@ -611,10 +644,10 @@ class YAML extends CommonAbstract implements \Countable
 
         /** Executed only for keys. */
         if ($EnforceScalar) {
-            $Value = trim($Value);
+            $Value = \trim($Value);
             if ($Tag !== '') {
                 $Value = $this->coerce($Value, $EnforceScalar, $Tag);
-            } elseif (preg_match('~^\d+$~', $Value)) {
+            } elseif (\preg_match('~^\d+$~', $Value)) {
                 $Value = (int)$Value;
             }
             return;
@@ -625,7 +658,7 @@ class YAML extends CommonAbstract implements \Countable
             return;
         }
 
-        $ValueLow = strtolower($Value);
+        $ValueLow = \strtolower($Value);
         if ($ValueLow === 'true' || $ValueLow === 'on' || $ValueLow === 'y' || $ValueLow === 'yes' || $Value === '+') {
             $Value = true;
         } elseif ($ValueLow === 'false' || $ValueLow === 'n' || $ValueLow === 'no' || $ValueLow === 'off' || $Value === '-' || $ValueLen === 0) {
@@ -638,16 +671,16 @@ class YAML extends CommonAbstract implements \Countable
             $Value = -INF;
         } elseif ($ValueLow === '.nan') {
             $Value = NAN;
-        } elseif (preg_match('~^0x[\dA-Fa-f]+$~', $Value)) {
-            $Value = hexdec(str_replace('_', '', substr($Value, 2)));
-        } elseif (preg_match('~^0o[0-8]+$~', $Value)) {
-            $Value = octdec(str_replace('_', '', substr($Value, 2)));
-        } elseif (preg_match('~^0b[01]+$~', $Value)) {
-            $Value = bindec(str_replace('_', '', substr($Value, 2)));
-        } elseif (preg_match('~^\d+$~', $Value)) {
-            $Value = (int)str_replace('_', '', $Value);
-        } elseif (preg_match('~^(?:\d+\.\d+|\d+(?:\.\d+)?[Ee][-+]\d+)$~', $Value)) {
-            $Value = (float)str_replace('_', '', $Value);
+        } elseif (\preg_match('~^0x[\dA-Fa-f]+$~', $Value)) {
+            $Value = \hexdec(\str_replace('_', '', \substr($Value, 2)));
+        } elseif (\preg_match('~^0o[0-8]+$~', $Value)) {
+            $Value = octdec(\str_replace('_', '', \substr($Value, 2)));
+        } elseif (\preg_match('~^0b[01]+$~', $Value)) {
+            $Value = bindec(\str_replace('_', '', \substr($Value, 2)));
+        } elseif (\preg_match('~^\d+$~', $Value)) {
+            $Value = (int)\str_replace('_', '', $Value);
+        } elseif (\preg_match('~^(?:\d+\.\d+|\d+(?:\.\d+)?[Ee][-+]\d+)$~', $Value)) {
+            $Value = (float)\str_replace('_', '', $Value);
         }
     }
 
@@ -675,30 +708,30 @@ class YAML extends CommonAbstract implements \Countable
             $Key = '...';
             $Value = null;
             $Arr[$Key] = $Value;
-        } elseif ((substr($ThisLine, -1) === ':' || substr($ThisLine, -1) === '(') && strpos($ThisLine, ': ') === false) {
-            $Key = substr($ThisLine, $ThisTab, -1);
+        } elseif ((\substr($ThisLine, -1) === ':' || \substr($ThisLine, -1) === '(') && \strpos($ThisLine, ': ') === false) {
+            $Key = \substr($ThisLine, $ThisTab, -1);
             $this->normaliseValue($Key, true);
             if (!isset($Arr[$Key])) {
                 $Arr[$Key] = null;
             }
             $Value = null;
-            if (substr($ThisLine, -1) === '(') {
+            if (\substr($ThisLine, -1) === '(') {
                 $this->Entity = true;
             }
-        } elseif (substr($ThisLine, $ThisTab, 2) === '? ') {
-            $Key = substr($ThisLine, $ThisTab + 2);
+        } elseif (\substr($ThisLine, $ThisTab, 2) === '? ') {
+            $Key = \substr($ThisLine, $ThisTab + 2);
             $this->normaliseValue($Key, true);
             $Value = null;
             $Arr[$Key] = null;
-        } elseif (substr($ThisLine, $ThisTab, 2) === '- ') {
-            $Value = substr($ThisLine, $ThisTab + 2);
-            if (strpos($Value, ': ') !== false && substr($Value, 0, 1) !== '{' && substr($Value, -1) !== '}' && !(substr($Value, 0, 1) === '"' && substr($Value, -1) === '"' && strpos($Value, '": "') === false)) {
+        } elseif (\substr($ThisLine, $ThisTab, 2) === '- ') {
+            $Value = \substr($ThisLine, $ThisTab + 2);
+            if (\strpos($Value, ': ') !== false && \substr($Value, 0, 1) !== '{' && \substr($Value, -1) !== '}' && !(\substr($Value, 0, 1) === '"' && \substr($Value, -1) === '"' && \strpos($Value, '": "') === false)) {
                 $Value = '{' . $Value . '}';
             }
-            $ValueLen = strlen($Value);
+            $ValueLen = \strlen($Value);
             $this->normaliseValue($Value);
             if ($ValueLen > 0) {
-                if ($this->LastResolvedTag === '!merge' && is_array($Value)) {
+                if ($this->LastResolvedTag === '!merge' && \is_array($Value)) {
                     $Arr += $this->merge($Value);
                 } else {
                     $Arr[] = $Value;
@@ -706,51 +739,51 @@ class YAML extends CommonAbstract implements \Countable
             }
             $Key = $this->arrayKeyLast($Arr);
             $this->IsBlockSeqChild = true;
-        } elseif (substr($ThisLine, $ThisTab) === '-') {
+        } elseif (\substr($ThisLine, $ThisTab) === '-') {
             $Value = null;
             $Arr[] = $Value;
             $Key = $this->arrayKeyLast($Arr);
             $this->IsBlockSeqChild = true;
-        } elseif (($DelPos = strpos($ThisLine, ': ')) !== false) {
-            $Key = substr($ThisLine, $ThisTab, $DelPos - $ThisTab);
+        } elseif (($DelPos = \strpos($ThisLine, ': ')) !== false) {
+            $Key = \substr($ThisLine, $ThisTab, $DelPos - $ThisTab);
             $InlineEntity = false;
-            if (substr($Key, 0, 1) === '[' && substr($Key, -1) === ']') {
+            if (\substr($Key, 0, 1) === '[' && \substr($Key, -1) === ']') {
                 $TryList = [];
                 $this->flowControl($Key, $TryList, '[', true);
-                $TryListCount = count($TryList);
+                $TryListCount = \count($TryList);
             } else {
                 $TryListCount = 0;
-                if (($EnPos = strpos($Key, '(')) !== false && substr($ThisLine, -1, 1) === ')') {
+                if (($EnPos = \strpos($Key, '(')) !== false && \substr($ThisLine, -1, 1) === ')') {
                     $InlineEntity = true;
-                    $Key = substr($Key, 0, $EnPos);
+                    $Key = \substr($Key, 0, $EnPos);
                 }
             }
-            $KeyLen = strlen($Key);
+            $KeyLen = \strlen($Key);
             $this->normaliseValue($Key, true);
             if (!$Key) {
-                if (substr($ThisLine, $ThisTab, $DelPos - $ThisTab + 2) !== '0: ') {
+                if (\substr($ThisLine, $ThisTab, $DelPos - $ThisTab + 2) !== '0: ') {
                     return false;
                 }
                 $Key = 0;
             }
-            $Value = $InlineEntity ? '{' . substr($ThisLine, $ThisTab + $KeyLen + 1, -1) . '}' : substr($ThisLine, $ThisTab + $KeyLen + 2);
-            $ValueLen = strlen($Value);
+            $Value = $InlineEntity ? '{' . \substr($ThisLine, $ThisTab + $KeyLen + 1, -1) . '}' : \substr($ThisLine, $ThisTab + $KeyLen + 2);
+            $ValueLen = \strlen($Value);
             $this->normaliseValue($Value);
             if ($ValueLen > 0) {
-                if (($this->LastResolvedTag === '!merge' || $Key === '<<') && is_array($Value) && !$InlineEntity) {
+                if (($this->LastResolvedTag === '!merge' || $Key === '<<') && \is_array($Value) && !$InlineEntity) {
                     $Arr += $this->merge($Value);
-                } elseif ($TryListCount !== 0 && (!is_array($Value) || count($Value) === $TryListCount)) {
-                    if (is_array($Value)) {
+                } elseif ($TryListCount !== 0 && (!\is_array($Value) || \count($Value) === $TryListCount)) {
+                    if (\is_array($Value)) {
                         $Values = $Value;
                         foreach ($TryList as $Key) {
-                            $Arr[$Key] = array_shift($Values);
+                            $Arr[$Key] = \array_shift($Values);
                         }
                     } else {
                         foreach ($TryList as $Key) {
                             $Arr[$Key] = $Value;
                         }
                     }
-                } elseif ($InlineEntity && is_array($Value)) {
+                } elseif ($InlineEntity && \is_array($Value)) {
                     $Arr[$Key] = new \stdClass();
                     foreach ($Value as $EnKey => $EnValue) {
                         $Arr[$Key]->{$EnKey} = $EnValue;
@@ -764,8 +797,8 @@ class YAML extends CommonAbstract implements \Countable
                     }
                 }
             }
-        } elseif (strpos($ThisLine, ':') === false && strlen($ThisLine) > 1) {
-            $Value = substr($ThisLine, $ThisTab);
+        } elseif (\strpos($ThisLine, ':') === false && \strlen($ThisLine) > 1) {
+            $Value = \substr($ThisLine, $ThisTab);
             $this->normaliseValue($Value);
             $Arr[] = $Value;
             $Key = $this->arrayKeyLast($Arr);
@@ -775,14 +808,14 @@ class YAML extends CommonAbstract implements \Countable
          * Chomping.
          * @link https://yaml.org/spec/1.2.2/#8112-block-chomping-indicator
          */
-        if (is_string($Value) && strlen($Value) === 2) {
-            $Chomp = substr($Value, -1);
+        if (\is_string($Value) && \strlen($Value) === 2) {
+            $Chomp = \substr($Value, -1);
             if ($Chomp === '-') {
                 $this->Chomp = '-';
-                $Value = substr($Value, 0, 1);
+                $Value = \substr($Value, 0, 1);
             } elseif ($Chomp === '+') {
                 $this->Chomp = '+';
-                $Value = substr($Value, 0, 1);
+                $Value = \substr($Value, 0, 1);
             } else {
                 $this->Chomp = '';
             }
@@ -805,7 +838,7 @@ class YAML extends CommonAbstract implements \Countable
      */
     private function processInner(array $Arr, string &$Out, int $Depth = 0): void
     {
-        $Sequential = (array_keys($Arr) === range(0, count($Arr) - 1));
+        $Sequential = (\array_keys($Arr) === \range(0, \count($Arr) - 1));
         $NullSet = $this->isNullSet($Arr);
         if ($Depth >= $this->FlowRebuildDepth) {
             $Out .= $Sequential ? '[' : '{';
@@ -818,7 +851,7 @@ class YAML extends CommonAbstract implements \Countable
                 }
                 if ($Value instanceof \stdClass) {
                     $Out .= $this->escapeKey($Key) . '(';
-                    $Properties = get_object_vars($Value);
+                    $Properties = \get_object_vars($Value);
                     $this->processInner($Properties, $Out, $Depth + 1);
                     $Out .= ')';
                     continue;
@@ -826,7 +859,12 @@ class YAML extends CommonAbstract implements \Countable
                 if (!$Sequential) {
                     $Out .= ($this->QuoteKeys ? $this->scalarToString($Key) : $this->escapeKey($Key)) . ':';
                 }
-                if (is_array($Value)) {
+                if ($Value instanceof \Maikuolan\Common\LazyArray) {
+                    $Out .= ' !lazy';
+                    $Value->trigger();
+                    $Value = $Value->Data;
+                }
+                if (\is_array($Value)) {
                     $this->processInner($Value, $Out, $Depth + 1);
                     continue;
                 }
@@ -861,7 +899,7 @@ class YAML extends CommonAbstract implements \Countable
                 $Out .= "...\n";
                 continue;
             }
-            $ThisDepth = str_repeat($this->Indent, $Depth);
+            $ThisDepth = \str_repeat($this->Indent, $Depth);
             if ($NullSet && !$Sequential) {
                 $Out .= $ThisDepth . '?';
                 $Value = $this->escapeKey($Key);
@@ -870,18 +908,23 @@ class YAML extends CommonAbstract implements \Countable
                 if ($Depth < $this->FlowRebuildDepth - 1) {
                     $Out .= "\n";
                 }
-                $Properties = get_object_vars($Value);
+                $Properties = \get_object_vars($Value);
                 $this->processInner($Properties, $Out, $Depth + 1);
                 $Out .= $ThisDepth . ")\n";
                 continue;
             } else {
                 $Out .= $ThisDepth . ($Sequential ? '-' : ($this->QuoteKeys ? $this->scalarToString($Key) : $this->escapeKey($Key)) . ':');
             }
-            if (is_array($Value)) {
+            if ($Value instanceof \Maikuolan\Common\LazyArray) {
+                $Out .= ' !lazy';
+                $Value->trigger();
+                $Value = $Value->Data;
+            }
+            if (\is_array($Value)) {
                 if ($Sequential && key($Value) !== 0 && $Depth < $this->FlowRebuildDepth - 2) {
                     $Append = '';
                     $this->processInner($Value, $Append, $Depth + 2);
-                    $Out .= substr($Append, $Depth + 1);
+                    $Out .= \substr($Append, $Depth + 1);
                     continue;
                 } elseif ($Depth < $this->FlowRebuildDepth - 1) {
                     $Out .= "\n";
@@ -890,24 +933,20 @@ class YAML extends CommonAbstract implements \Countable
                 continue;
             }
             $Out .= ' ';
-            if (is_string($Value)) {
+            if (\is_string($Value)) {
                 if ($this->Demojibakefier !== null && !$this->Demojibakefier->checkConformity($Value, 'UTF-8')) {
-                    $ToAdd = '!!binary ' . $this->Quotes . base64_encode($Value) . $this->Quotes;
+                    $ToAdd = '!!binary ' . $this->Quotes . \base64_encode($Value) . $this->Quotes;
                 } else {
-                    $HasHash = strpos($Value, '#') !== false;
-                    if (!$HasHash && strpos($Value, "\n") !== false) {
-                        if (preg_match('~\n{2,}$~m', $Value)) {
+                    $HasHash = \strpos($Value, '#') !== false;
+                    if (!$HasHash && \strpos($Value, "\n") !== false) {
+                        if (\preg_match('~\n{2,}$~m', $Value)) {
                             $ToAdd = "|+\n" . $ThisDepth . $this->Indent;
                         } else {
                             $ToAdd = "|\n" . $ThisDepth . $this->Indent;
                         }
-                        $ToAdd .= preg_replace('~\n(?=[^\n])~m', "\n" . $ThisDepth . $this->Indent, $Value);
-                    } elseif (!$HasHash && $this->FoldedAt > 0 && strpos($Value, ' ') !== false && strlen($Value) >= $this->FoldedAt) {
-                        $ToAdd = ">\n" . $ThisDepth . $this->Indent . wordwrap(
-                            $Value,
-                            $this->FoldedAt,
-                            "\n" . $ThisDepth . $this->Indent
-                        );
+                        $ToAdd .= \preg_replace('~\n(?=[^\n])~m', "\n" . $ThisDepth . $this->Indent, $Value);
+                    } elseif (!$HasHash && $this->FoldedAt > 0 && \strpos($Value, ' ') !== false && \strlen($Value) >= $this->FoldedAt) {
+                        $ToAdd = ">\n" . $ThisDepth . $this->Indent . \wordwrap($Value, $this->FoldedAt, "\n" . $ThisDepth . $this->Indent);
                     } else {
                         $ToAdd = $this->Quotes . $this->escape($Value) . $this->Quotes;
                     }
@@ -942,21 +981,21 @@ class YAML extends CommonAbstract implements \Countable
     private function escape(string $Value = '', bool $Newlines = true): string
     {
         if ($this->Quotes === "'") {
-            return str_replace(['\\', '#', "'"], ['\\\\', '\#', "''"], $Value);
+            return \str_replace(['\\', '#', "'"], ['\\\\', '\#', "''"], $Value);
         }
         if ($this->Quotes !== '"') {
-            return str_replace(['\\', '#'], ['\\\\', '\#'], $Value);
+            return \str_replace(['\\', '#'], ['\\\\', '\#'], $Value);
         }
-        $Value = str_replace('\\', '\\\\', $Value);
+        $Value = \str_replace('\\', '\\\\', $Value);
         if ($Newlines) {
-            $Value = str_replace("\n", '\n', $Value);
+            $Value = \str_replace("\n", '\n', $Value);
         }
-        $Value = str_replace(
+        $Value = \str_replace(
             ['#', "\0", "\7", "\8", "\t", "\x0B", "\x0C", "\x0D", "\x1B", "\xC2\x85", "\xC2\xA0", "\xE2\x80\xA8", "\xE2\x80\xA9"],
             ['\#', '\0', '\a', '\b', '\t', '\v', '\f', '\r', '\e', '\N', '\_', '\L', '\P'],
             $Value
         );
-        $Value = preg_replace_callback([
+        $Value = \preg_replace_callback([
             '~[\x01-\x06\x0E\x0F\x10-\x1A\x1C-\x1F\x7F\xC0\xC1\xF5-\xFF]~',
             '~[\xC2-\xDF](?![\x80-\xBF])~',
             '~\xE0(?![\xA0-\xBF][\x80-\xBF])~',
@@ -970,10 +1009,10 @@ class YAML extends CommonAbstract implements \Countable
             '~(?<=[\xF0-\xF4])[\x80-\xBF](?![\x80-\xBF]{2})~',
             '~(?<=[\xF0-\xF4][\x80-\xBF])[\x80-\xBF](?![\x80-\xBF])~'
         ], function ($Match) {
-            return '\\x' . bin2hex($Match[0]);
+            return '\\x' . \bin2hex($Match[0]);
         }, $Value);
         if ($this->EscapeBySpec) {
-            $Value = str_replace(['"', '/'], ['\"', '\/'], $Value);
+            $Value = \str_replace(['"', '/'], ['\"', '\/'], $Value);
         }
         return $Value;
     }
@@ -986,10 +1025,10 @@ class YAML extends CommonAbstract implements \Countable
      */
     private function escapeKey(string $Key = ''): string
     {
-        if (strpos($Key, '#') === false && strpos($Key, '\\') === false) {
+        if (\strpos($Key, '#') === false && \strpos($Key, '\\') === false) {
             return $Key;
         }
-        return '"' . str_replace(['\\', '#'], ['\\\\', '\#'], $Key) . '"';
+        return '"' . \str_replace(['\\', '#'], ['\\\\', '\#'], $Key) . '"';
     }
 
     /**
@@ -1005,7 +1044,7 @@ class YAML extends CommonAbstract implements \Countable
             set_error_handler(function ($errno) {
                 return;
             });
-            $Value = preg_replace([
+            $Value = \preg_replace([
                 '~(?<!\\\\)\\\\((?:\\\\{2})*)#~',
                 '~(?<!\\\\)\\\\((?:\\\\{2})*)0~',
                 '~(?<!\\\\)\\\\((?:\\\\{2})*)a~',
@@ -1023,31 +1062,31 @@ class YAML extends CommonAbstract implements \Countable
                 '~(?<!\\\\)\\\\((?:\\\\{2})*)L~',
                 '~(?<!\\\\)\\\\((?:\\\\{2})*)P~'
             ], ['\1#', "\\1\0", "\\1\7", "\\1\x08", "\\1\t", "\\1\n", "\\1\x0B", "\\1\x0C", "\\1\x0D", "\\1\x1B", '\1"', '\1/', "\\1\xC2\x85", "\\1\xC2\xA0", "\\1\xE2\x80\xA8", "\\1\xE2\x80\xA9"], $Value);
-            $Value = preg_replace_callback('~(?<!\\\\)\\\\((?:\\\\{2})*)x([\dA-Fa-f]{2})~', function ($Captured) {
-                return ($Decoded = hex2bin($Captured[2])) === false ? $Captured[0] : $Captured[1] . $Decoded;
+            $Value = \preg_replace_callback('~(?<!\\\\)\\\\((?:\\\\{2})*)x([\dA-Fa-f]{2})~', function ($Captured) {
+                return ($Decoded = \hex2bin($Captured[2])) === false ? $Captured[0] : $Captured[1] . $Decoded;
             }, $Value);
-            $Value = preg_replace_callback('~(?<!\\\\)\\\\((?:\\\\{2})*)u([\dA-Fa-f]{4})~', function ($Captured) {
-                if (($Decoded = hex2bin($Captured[2])) === false) {
+            $Value = \preg_replace_callback('~(?<!\\\\)\\\\((?:\\\\{2})*)u([\dA-Fa-f]{4})~', function ($Captured) {
+                if (($Decoded = \hex2bin($Captured[2])) === false) {
                     return $Captured[0];
                 }
                 $Reversed = ($Attempt = iconv('UTF-16BE', 'UTF-8', $Decoded)) === false ? '' : iconv('UTF-8', 'UTF-16BE', $Attempt);
                 return $Captured[1] . (($Attempt !== false && strcmp($Reversed, $Decoded) === 0) ? $Attempt : $Decoded);
             }, $Value);
-            $Value = preg_replace_callback('~(?<!\\\\)\\\\((?:\\\\{2})*)U([\dA-Fa-f]{8})~', function ($Captured) {
-                if (($Decoded = hex2bin($Captured[2])) === false) {
+            $Value = \preg_replace_callback('~(?<!\\\\)\\\\((?:\\\\{2})*)U([\dA-Fa-f]{8})~', function ($Captured) {
+                if (($Decoded = \hex2bin($Captured[2])) === false) {
                     return $Captured[0];
                 }
                 $Reversed = ($Attempt = iconv('UTF-32BE', 'UTF-8', $Decoded)) === false ? '' : iconv('UTF-8', 'UTF-32BE', $Attempt);
                 return $Captured[1] . (($Attempt !== false && strcmp($Reversed, $Decoded) === 0) ? $Attempt : $Decoded);
             }, $Value);
-            $Value = str_replace('\\\\', '\\', $Value);
+            $Value = \str_replace('\\\\', '\\', $Value);
             restore_error_handler();
             return $Value;
         }
         if ($Style === "'" || $Style === "\xe2\x80\x98" || $Style === "\x93") {
-            return str_replace(["''", '\#', '\\\\'], ["'", '#', '\\'], $Value);
+            return \str_replace(["''", '\#', '\\\\'], ["'", '#', '\\'], $Value);
         }
-        return str_replace(['\#', '\\\\'], ['#', '\\'], $Value);
+        return \str_replace(['\#', '\\\\'], ['#', '\\'], $Value);
     }
 
     /**
@@ -1095,18 +1134,18 @@ class YAML extends CommonAbstract implements \Countable
              * @link https://yaml.org/type/omap.html
              */
             if ($Tag === '!map' || $Tag === '!omap') {
-                if (!is_array($Value)) {
-                    if (is_string($Value)) {
+                if (!\is_array($Value)) {
+                    if (\is_string($Value)) {
                         $this->normaliseValue($Value);
                     }
                     return [$Value];
                 }
                 $Arr = [];
                 foreach ($Value as $ThisKey => $ThisValue) {
-                    if (is_string($ThisKey)) {
+                    if (\is_string($ThisKey)) {
                         $this->normaliseValue($ThisKey, true);
                     }
-                    if (is_string($ThisValue)) {
+                    if (\is_string($ThisValue)) {
                         $this->normaliseValue($ThisValue);
                     }
                     $Arr[$ThisKey] = $ThisValue;
@@ -1119,15 +1158,15 @@ class YAML extends CommonAbstract implements \Countable
              * @link https://yaml.org/type/seq.html
              */
             if ($Tag === '!seq') {
-                if (!is_array($Value)) {
-                    if (is_string($Value)) {
+                if (!\is_array($Value)) {
+                    if (\is_string($Value)) {
                         $this->normaliseValue($Value);
                     }
                     return [$Value];
                 }
                 $Arr = [];
                 foreach ($Value as $ThisValue) {
-                    if (is_string($ThisValue)) {
+                    if (\is_string($ThisValue)) {
                         $this->normaliseValue($ThisValue);
                     }
                     $Arr[] = $ThisValue;
@@ -1140,12 +1179,12 @@ class YAML extends CommonAbstract implements \Countable
              * @link https://yaml.org/type/set.html
              */
             if ($Tag === '!set') {
-                if (!is_array($Value)) {
+                if (!\is_array($Value)) {
                     return [$Value => null];
                 }
                 $Arr = [];
                 foreach ($Value as $ThisValue) {
-                    if (!is_scalar($ThisValue)) {
+                    if (!\is_scalar($ThisValue)) {
                         continue;
                     }
                     $Arr[$ThisValue] = null;
@@ -1155,21 +1194,21 @@ class YAML extends CommonAbstract implements \Countable
 
             /** Unserialising a PHP object. */
             if ($Tag === 'php/object') {
-                return $this->AllowObjectUnserialize && is_string($Value) && $Value !== '' ? unserialize($Value) : $Value;
+                return $this->AllowObjectUnserialize && \is_string($Value) && $Value !== '' ? unserialize($Value) : $Value;
             }
 
             /** For extending with other non-scalar coercion. */
-            if (method_exists($this, $Tag . 'TagNonScalar')) {
+            if (\method_exists($this, $Tag . 'TagNonScalar')) {
                 return $this->{$Tag . 'TagNonScalar'}($Value);
             }
         }
 
-        if (is_string($Value)) {
-            $ValueLen = strlen($Value);
-            $ValueLow = strtolower($Value);
+        if (\is_string($Value)) {
+            $ValueLen = \strlen($Value);
+            $ValueLow = \strtolower($Value);
         } else {
-            if (is_array($Value)) {
-                $ValueLen = count($Value);
+            if (\is_array($Value)) {
+                $ValueLen = \count($Value);
             } else {
                 $ValueLen = empty($Value) ? 0 : 1;
             }
@@ -1180,10 +1219,10 @@ class YAML extends CommonAbstract implements \Countable
          * @link https://yaml.org/type/bool.html
          */
         if ($Tag === '!bool') {
-            if (is_bool($Value)) {
+            if (\is_bool($Value)) {
                 return $Value;
             }
-            if (!is_scalar($Value)) {
+            if (!\is_scalar($Value)) {
                 return $ValueLen > 0;
             }
             if ($ValueLow === 'false' || $ValueLow === 'n' || $ValueLow === 'no' || $ValueLow === 'off' || $Value === '-' || $ValueLen === 0 || $ValueLow === 'null' || $Value === '~') {
@@ -1196,32 +1235,32 @@ class YAML extends CommonAbstract implements \Countable
          * @link https://yaml.org/type/float.html
          */
         if ($Tag === '!float') {
-            if (is_float($Value)) {
+            if (\is_float($Value)) {
                 return $Value;
             }
-            if (!is_scalar($Value)) {
+            if (!\is_scalar($Value)) {
                 return (float)$ValueLen;
             }
             if ($ValueLow === 'true' || $ValueLow === 'on' || $ValueLow === 'y' || $ValueLow === 'yes' || $Value === '+') {
                 return 1.0;
             }
-            return (float)str_replace('_', '', $Value);
+            return (float)\str_replace('_', '', $Value);
         }
 
         /**
          * @link https://yaml.org/type/int.html
          */
         if ($Tag === '!int') {
-            if (is_int($Value)) {
+            if (\is_int($Value)) {
                 return $Value;
             }
-            if (!is_scalar($Value)) {
+            if (!\is_scalar($Value)) {
                 return $ValueLen;
             }
             if ($ValueLow === 'true' || $ValueLow === 'on' || $ValueLow === 'y' || $ValueLow === 'yes' || $Value === '+') {
                 return 1;
             }
-            return (int)str_replace('_', '', $Value);
+            return (int)\str_replace('_', '', $Value);
         }
 
         /**
@@ -1237,43 +1276,43 @@ class YAML extends CommonAbstract implements \Countable
             if ($Value === false) {
                 return 'false';
             }
-            if (is_string($Value)) {
+            if (\is_string($Value)) {
                 return $Value;
             }
-            return is_scalar($Value) ? (string)$Value : '';
+            return \is_scalar($Value) ? (string)$Value : '';
         }
 
         /**
          * @link https://yaml.org/type/binary.html
          */
         if ($Tag === '!binary') {
-            return is_string($Value) && $Value !== '' ? base64_decode(preg_replace('~\s~', '', $Value)) : '';
+            return \is_string($Value) && $Value !== '' ? \base64_decode(\preg_replace('~\s~', '', $Value)) : '';
         }
 
         /** PHP constants. */
         if ($Tag === 'php/const') {
-            return is_string($Value) && $Value !== '' && defined($Value) ? constant($Value) : $Value;
+            return \is_string($Value) && $Value !== '' && \defined($Value) ? constant($Value) : $Value;
         }
 
         /** For extending with other scalar coercion. */
-        if (method_exists($this, $Tag . 'Tag')) {
+        if (\method_exists($this, $Tag . 'Tag')) {
             return $this->{$Tag . 'Tag'}($Value);
         }
 
         /** Tags intended for working with strings only. */
-        if (is_string($Value)) {
+        if (\is_string($Value)) {
             /** Hash functions. */
-            if (substr($Tag, 0, 5) === 'hash:') {
-                $Algo = substr($Tag, 5);
-                if (in_array($Algo, hash_algos(), true)) {
-                    return hash($Algo, $Value);
+            if (\substr($Tag, 0, 5) === 'hash:') {
+                $Algo = \substr($Tag, 5);
+                if (\in_array($Algo, \hash_algos(), true)) {
+                    return \hash($Algo, $Value);
                 }
             }
 
             /** Permitted PHP string functions. */
-            if (preg_match($this->AllowedStringTagsPattern, $Tag) && function_exists($Tag)) {
+            if (\preg_match($this->AllowedStringTagsPattern, $Tag) && \function_exists($Tag)) {
                 /** Needed to ensure that older PHP versions are consistent with PHP 8.1's behaviour. */
-                if (preg_match('~^(?:html(?:_entity_decode|entities|specialchars(?:_decode)?))$~', $Tag)) {
+                if (\preg_match('~^(?:html(?:_entity_decode|entities|specialchars(?:_decode)?))$~', $Tag)) {
                     return $Tag($Value, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401);
                 }
 
@@ -1283,7 +1322,7 @@ class YAML extends CommonAbstract implements \Countable
         }
 
         /** Permitted numeric PHP functions. */
-        if (is_numeric($Value) && preg_match($this->AllowedNumericTagsPattern, $Tag) && function_exists($Tag)) {
+        if (\is_numeric($Value) && \preg_match($this->AllowedNumericTagsPattern, $Tag) && \function_exists($Tag)) {
             return $Tag($Value);
         }
 
@@ -1305,8 +1344,8 @@ class YAML extends CommonAbstract implements \Countable
 
         $NewArr = [];
         foreach ($Arr as $Key => $Value) {
-            if (is_int($Key)) {
-                if (is_array($Value)) {
+            if (\is_int($Key)) {
+                if (\is_array($Value)) {
                     $NewArr += $this->merge($Value);
                 }
                 continue;
@@ -1334,7 +1373,7 @@ class YAML extends CommonAbstract implements \Countable
 
         /** Flow sequence. */
         if ($Brace === '[') {
-            $Split = explode(',', substr($In, 1, -1));
+            $Split = \explode(',', \substr($In, 1, -1));
             $Segment = '';
             $SequenceDepth = 0;
             $MappingDepth = 0;
@@ -1344,9 +1383,9 @@ class YAML extends CommonAbstract implements \Countable
              * sequences or mappings are detected.
              */
             foreach ($Split as $Try) {
-                $Trimmed = trim($Try);
-                $Start = substr($Trimmed, 0, 1);
-                $End = substr($Trimmed, -1);
+                $Trimmed = \trim($Try);
+                $Start = \substr($Trimmed, 0, 1);
+                $End = \substr($Trimmed, -1);
                 $Segment = ($SequenceDepth < 1 && $MappingDepth < 1) ? $Try : $Segment . ',' . $Try;
                 $this->flowControlDepth($Start, $End, $SequenceDepth, $MappingDepth);
                 if ($SequenceDepth < 1 && $MappingDepth < 1) {
@@ -1372,7 +1411,7 @@ class YAML extends CommonAbstract implements \Countable
 
         /** Flow mappings. */
         if ($Brace === '{') {
-            $Split = explode(',', substr($In, 1, -1));
+            $Split = \explode(',', \substr($In, 1, -1));
             $Segment = '';
             $SequenceDepth = 0;
             $MappingDepth = 0;
@@ -1383,16 +1422,16 @@ class YAML extends CommonAbstract implements \Countable
              */
             foreach ($Split as $Try) {
                 /** Guard for trailing commas. */
-                if (trim($Try) === '') {
+                if (\trim($Try) === '') {
                     continue;
                 }
 
                 if ($SequenceDepth < 1 && $MappingDepth < 1) {
-                    if (($CPos = strpos($Try, ':')) === false) {
-                        if (strlen($Key) && isset($Arr[$Key])) {
-                            $Trimmed = trim($Arr[$Key]);
-                            $First = substr($Trimmed, 0, 1);
-                            $Last = substr($Trimmed, -1);
+                    if (($CPos = \strpos($Try, ':')) === false) {
+                        if (\strlen($Key) && isset($Arr[$Key])) {
+                            $Trimmed = \trim($Arr[$Key]);
+                            $First = \substr($Trimmed, 0, 1);
+                            $Last = \substr($Trimmed, -1);
 
                             /** Might belong to the previous entry, in case the value contains commas. */
                             if (($First === '"' && $Last !== '"') || ($First === "'" && $Last !== "'")) {
@@ -1404,20 +1443,20 @@ class YAML extends CommonAbstract implements \Countable
                         /** Fail immediately if the mapping entry isn't valid. */
                         return false;
                     }
-                    $Key = trim(substr($Try, 0, $CPos));
+                    $Key = \trim(\substr($Try, 0, $CPos));
 
                     /** Fail immediately if the key is empty. */
-                    if (strlen($Key) < 1) {
+                    if (\strlen($Key) < 1) {
                         return false;
                     }
 
-                    $Value = substr($Try, $CPos + 1);
+                    $Value = \substr($Try, $CPos + 1);
                 } else {
                     $Value = $Try;
                 }
-                $Trimmed = trim($Value);
-                $Start = substr($Trimmed, 0, 1);
-                $End = substr($Trimmed, -1);
+                $Trimmed = \trim($Value);
+                $Start = \substr($Trimmed, 0, 1);
+                $End = \substr($Trimmed, -1);
                 $Segment = ($SequenceDepth < 1 && $MappingDepth < 1) ? $Value : $Segment . ',' . $Try;
                 $this->flowControlDepth($Start, $End, $SequenceDepth, $MappingDepth);
                 if ($SequenceDepth < 1 && $MappingDepth < 1) {
@@ -1493,12 +1532,12 @@ class YAML extends CommonAbstract implements \Countable
      */
     private function arrayKeyLast(array &$Arr)
     {
-        if (function_exists('array_key_last')) {
-            return array_key_last($Arr);
+        if (\function_exists('array_key_last')) {
+            return \array_key_last($Arr);
         }
-        end($Arr);
-        $Key = key($Arr);
-        reset($Arr);
+        \end($Arr);
+        $Key = \key($Arr);
+        \reset($Arr);
         return $Key;
     }
 
@@ -1511,14 +1550,14 @@ class YAML extends CommonAbstract implements \Countable
     private function flattenTagNonScalar($In)
     {
         /** Return the input verbatim if it isn't an array. */
-        if (!is_array($In)) {
+        if (!\is_array($In)) {
             return $In;
         }
 
         $NewArr = [];
         foreach ($In as $Key => $Value) {
-            if (is_array($Value)) {
-                $NewArr = array_merge($NewArr, $this->flattenTagNonScalar($Value));
+            if (\is_array($Value)) {
+                $NewArr = \array_merge($NewArr, $this->flattenTagNonScalar($Value));
                 continue;
             }
             $NewArr[$Key] = $Value;
@@ -1551,39 +1590,29 @@ class YAML extends CommonAbstract implements \Countable
         if ($In === -INF) {
             return '-.inf';
         }
-        if (is_float($In)) {
+        if (\is_float($In)) {
             if (is_nan($In)) {
                 return '.nan';
             }
             return $In;
         }
-        if (is_int($In)) {
+        if (\is_int($In)) {
             return $In;
         }
-        if (is_string($In)) {
+        if (\is_string($In)) {
             if ($this->Demojibakefier !== null && !$this->Demojibakefier->checkConformity($In, 'UTF-8')) {
-                return '!!binary ' . $this->Quotes . base64_encode($In) . $this->Quotes;
+                return '!!binary ' . $this->Quotes . \base64_encode($In) . $this->Quotes;
             }
             return $this->Quotes . $this->escape($In) . $this->Quotes;
         }
-        if (is_object($In)) {
+        if (\is_object($In)) {
             if ($this->AllowObjectSerialize) {
                 return '!php/object ' . $this->Quotes . $this->escape(serialize($In)) . $this->Quotes;
-            } elseif (method_exists($In, '__toString')) {
+            } elseif (\method_exists($In, '__toString')) {
                 return $this->Quotes . $this->escape((string)$In) . $this->Quotes;
             }
             throw new \Error('Non-stringable object detected while attempting to reconstruct YAML data');
         }
         throw new \Error('Unsupported data type provided to scalarToString while attempting to reconstruct YAML data');
-    }
-
-    /**
-     * Count processed data.
-     *
-     * @return int The number of elements in the processed data array.
-     */
-    public function count(): int
-    {
-        return count($this->Data);
     }
 }

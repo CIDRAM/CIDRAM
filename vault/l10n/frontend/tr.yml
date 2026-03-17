@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2026.03.13).
+# This file: Turkish language data for the front-end (last modified: 2026.03.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,7 +24,7 @@
 # requests, ask. I can help.
 ##/
 
-Abuse category:
+Abuse category: !lazy
  Bad web bot: "Kötü web botu (e-posta adresleri veya içerik için kazıma, robots.txt'yi dikkate almayan tarayıcılar, aşırı istekler, kullanıcı aracısı sahteciliği, vb)."
  Brute-force attacks: "Kaba kuvvet saldırıları (web sayfası oturum açma işlemleri, SMTP, RDP, vb üzerinde kimlik bilgisi kaba kuvvet saldırıları)."
  Categories (at least one is required): "Kategoriler (en az bir tanesi gereklidir)"
@@ -50,7 +50,7 @@ Abuse category:
  VPN IP: "VPN IP'si."
  Web spam: "Web spam'ı (yorum/forum spam'ı, HTTP yönlendiren spam'ı, veya diğer CMS spam'ı)."
  Webapp attacks: "Web uygulaması saldırıları (yüklü web uygulamalarına, CMS'ye, veya e-ticaret çözümlerine karşı kullanılacak güvenlik açıklarını veya istismarları araştırmak, örneğin, WordPress, Drupal, phpMyAdmin, vb)."
-Extended Description:
+Extended Description: !lazy
  AbuseIPDB module: "AbuseIPDB'de listelenen IP'lerden gelen istekleri engeller."
  BGPView module: "CIDRAM için ASN ve ülke kodu arama olanağı sağlamak için {{Links.BGPView}} API'den yararlanır, ASN'lerin ve ülkelerin CIDRAM yapılandırması aracılığıyla engellenmesini veya beyaz listeye eklenmesini sağlamak, ve Facebook isteklerini doğrulamak için sosyal ağ doğrulaması için bir araç sağlamak. (Bu modülü kullanırsanız, aynı amaca hizmet ettikleri için IP-API modülünü kullanmanıza gerek kalmaz)."
  Bad TLDs blocker module: "Spam gönderenler, bilgisayar korsanları ve diğer haince varlıklar tarafından sıkça TLD'lere ait kullanılan ana bilgisayarları engeller."
@@ -77,7 +77,7 @@ Extended Description:
  Referrer spam module: "Yönlendiren spam'e dayalı engelleme genellikle anlamlı bir güvenlik avantajı sağlamaz, ancak bazı durumlarda, bazı kullanıcılar için istekler hakkında daha fazla bilgi toplamak ve bunu rapor edebilmek için yararlı olabilir."
  Stop Forum Spam module: "SFS tarafından listelenen IP'lere karşı kayıt ve oturum açma sayfalarını korur."
  Tor blocker module: "DNSEL aramaları aracılığıyla Tor çıkış düğümlerinden erişimi yasaklar (IPv4 ve IPv6'yı ikisi de destekleniyor)."
-Name:
+Name: !lazy
  AbuseIPDB module: "AbuseIPDB modülü."
  BGPView module: "BGPView modülü."
  BOBUAM: "Bot veya tarayıcı kullanıcı aracıları modülü (BOBUAM)."
@@ -129,7 +129,7 @@ checkbox:
  Test as sensitive request: "Hassas istek olarak test et"
  Untrack positives: "Pozitifler için izleme durdurulsun mu?"
  When blocked, suppress output template: "Engellendiğinde, çıktı şablonunu bastırmak."
-config:
+config: !lazy
  abuseipdb: "AbuseIPDB modülü için yapılandırma."
  abuseipdb_api_key: &EnterAPIKey "Lütfen API anahtarınızı buraya girin."
  abuseipdb_build_profiles_from_usage_type: "API tarafından döndürülen kullanım türünü kullanarak profiller oluşturulsun mu? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."
@@ -817,7 +817,7 @@ link:
  Subtractor: "Çıkarıcı"
  Updates: "Güncellemeler"
  View mode: "Görünüm modu"
-macro:
+macro: !lazy
  Description:
   activate_modules: &MayImpactPerformance "İhtiyacınız olmayan bazı şeyler olabileceğinden, bu genellikle önerilmez. Bileşenleri ihtiyaç duyulmadığında yüklemek ve etkinleştirmek, performansı olumsuz etkileyebilir."
   install_l10n_core: &RecommendKeepingCore "<code>lang_override</code> yapılandırma yönergesi etkinleştirildiğinde, bir kullanıcının tarayıcısı belirli bir dil tercihi belirtiyorsa, o dil için çekir L10N verileri kurulu olduğu sürece, CIDRAM, belirtilen dilde "erişim reddedildi" sayfasını görüntüleyebilir. Buna göre, tüm çekirdek L10N verilerinin kurulu kalması önerilir."
@@ -868,7 +868,7 @@ previewer:
  Seconds: "Saniye"
  Weeks: "Hafta"
  Years: "Yıl"
-purpose:
+purpose: !lazy
  3D graphics file: "3B grafik dosyası (örneğin, CAD, modeller, malzemeler, dokular)"
  Audio file: "Ses dosyası"
  Card file: "Kart dosyası"
@@ -989,7 +989,7 @@ response:
  _Yes: "Evet"
  please_check_config: "Yeni kurulan modülün istediğiniz gibi davrandığından emin olmak için lütfen yapılandırmanızı kontrol edin."
  release_notes: "<a href="%s"><span class="navicon link"></span>%s için sürüm notları.</a>"
-stages:
+stages: !lazy
  Check whether banned: "Yasak olup olmadığını kontrol edin"
  Deploy CAPTCHAs (blocked requests): "CAPTCHA'ları göster (engellenen istekler)"
  Deploy CAPTCHAs (non-blocked requests): "CAPTCHA'ları göster (engellenmeyen istekler)"

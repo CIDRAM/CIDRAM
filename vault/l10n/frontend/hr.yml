@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Croatian language data for the front-end (last modified: 2026.03.13).
+# This file: Croatian language data for the front-end (last modified: 2026.03.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,7 +24,7 @@
 # requests, ask. I can help.
 ##/
 
-Abuse category:
+Abuse category: !lazy
  Bad web bot: "Loš web bot (traženje adresa e-pošte, sadržaja, alata za indeksiranje koji ne poštuju robots.txt, pretjeranih zahtjeva, lažiranja korisničkog agenta, itd)."
  Brute-force attacks: "Napadi grubom silom (napadi grubom silom vjerodajnica na prijave na web stranice, SMTP, RDP, itd)."
  Categories (at least one is required): "Kategorije (potrebna je barem jedna)"
@@ -50,7 +50,7 @@ Abuse category:
  VPN IP: "VPN IP."
  Web spam: "Web spam (neželjeni komentari ili postova na forumu, neželjena pošta HTTP preporuke, ili druga neželjena pošta CMS-a)."
  Webapp attacks: "Napadi na web aplikacije (traženje ranjivosti ili iskorištavanja, ili pokušaj iskorištavanja instaliranih web aplikacija, CMS-a, ili rješenja za e-trgovinu, npr., WordPress, Drupal, phpMyAdmin, itd)."
-Extended Description:
+Extended Description: !lazy
  AbuseIPDB module: "Blokira zahtjeve sa IP adresa navedenih na AbuseIPDB."
  BGPView module: "Iskorištava {{Links.BGPView}} API za pružanje mogućnosti traženja ASN-a i koda zemlje za CIDRAM, omogućavajući blokiranje ASN-ova i zemalja ili stavljanje na bijelu listu putem konfiguracije CIDRAM-a, i pružajući sredstva za provjeru društvenog umrežavanja za provjeru Facebook zahtjeva. (Ako koristite ovaj modul, nećete morati koristiti IP-API modul jer oni služe istoj svrsi)."
  Bad TLDs blocker module: "Blokira hostove koji pripadaju TLD-ovima koje često koriste spameri, hakeri, i drugi zlobni entiteti."
@@ -77,7 +77,7 @@ Extended Description:
  Referrer spam module: "Blokiranje na temelju spam preporuke općenito neće pružiti značajnu sigurnosnu korist, ali u nekim slučajevima može biti korisno za neke korisnike, za prikupljanje više informacija o zahtjevima i za mogućnost prijaviti."
  Stop Forum Spam module: "IP adresama koje navodi SFS bit će onemogućen pristup stranicama za prijavu i registraciju."
  Tor blocker module: "Zabranjuje pristup s Tor izlaznih čvorova putem DNSEL pretraživanja (IPv4 i IPv6 oboje podržano)."
-Name:
+Name: !lazy
  AbuseIPDB module: "AbuseIPDB modul."
  BGPView module: "BGPView modul."
  BOBUAM: "Modul za korisničke agente botova i preglednika (BOBUAM)."
@@ -129,7 +129,7 @@ checkbox:
  Test as sensitive request: "Testiraj kao osjetljiv zahtjev"
  Untrack positives: "Poništiti praćenje pozitivnih?"
  When blocked, suppress output template: "Kada je blokiran, potisnite izlazni predložak."
-config:
+config: !lazy
  abuseipdb: "Konfiguracija za AbuseIPDB modul."
  abuseipdb_api_key: &EnterAPIKey "Ovdje unesite svoj API ključ."
  abuseipdb_build_profiles_from_usage_type: "Izgraditi profile pomoću vrste upotrebe koju vraća API? False/Lažno = Ne. True/Istinito = Da. Zadano = True."
@@ -827,7 +827,7 @@ link:
  Subtractor: "Oduzimač"
  Updates: "Ažuriranja"
  View mode: "Način prikaza"
-macro:
+macro: !lazy
  Description:
   activate_modules: &MayImpactPerformance "Općenito se ne preporučuje, jer vjerovatno postoje neki koji vam neće trebati. Instaliranje i aktiviranje komponenti kada nisu potrebne može negativno utjecati na performanse."
   install_l10n_core: &RecommendKeepingCore "Kada je omogućena direktiva konfiguracije <code>lang_override</code>, ako korisnikov preglednik odredi određenu jezičnu preferenciju, sve dok su instalirani osnovni L10N podaci za taj jezik, CIDRAM može prikazati stranicu "pristup odbijen" na tom određenom jeziku. Sukladno tome, preporučuje se da svi osnovni L10N podaci ostanu instalirani."
@@ -878,7 +878,7 @@ previewer:
  Seconds: "Sekundi"
  Weeks: "Tjedna"
  Years: "Godine"
-purpose:
+purpose: !lazy
  3D graphics file: "3D grafička datoteka (npr., CAD, modeli, materijali, teksture)"
  Audio file: "Zvučna datoteka"
  Card file: "Kartoteka"
@@ -1000,7 +1000,7 @@ response:
  _Yes: "Da"
  please_check_config: "Provjerite svoju konfiguraciju kako biste bili sigurni da će se novoinstalirani modul ponašati kako želite."
  release_notes: "<a href="%s"><span class="navicon link"></span>Bilješke o izdanju za %s.</a>"
-stages:
+stages: !lazy
  Check whether banned: "Provjerite je li zabranjeno"
  Deploy CAPTCHAs (blocked requests): "Uvedite CAPTCHA (blokirani zahtjevi)"
  Deploy CAPTCHAs (non-blocked requests): "Uvedite CAPTCHA (neblokirani zahtjevi)"

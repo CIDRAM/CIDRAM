@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Afrikaans language data for the front-end (last modified: 2026.03.13).
+# This file: Afrikaans language data for the front-end (last modified: 2026.03.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,7 +24,7 @@
 # requests, ask. I can help.
 ##/
 
-Abuse category:
+Abuse category: !lazy
  Bad web bot: "Slegte webbot (skraap vir e-posadresse, inhoud, deurkruipers wat nie robots.txt eerbiedig nie, oormatige versoeke, spoofing van gebruikersagente, ens)."
  Brute-force attacks: "Brute-force aanvalle (geloofwaardige brute-force aanvalle op webbladaanmeldings, SMTP, RDP, ens)."
  Categories (at least one is required): "Kategorieë (ten minste een word vereis)"
@@ -50,7 +50,7 @@ Abuse category:
  VPN IP: "VPN IP."
  Web spam: "Web strooipos (kommentaar/forum-strooipos, HTTP-verwyser-strooipos, of ander CMS-strooipos)."
  Webapp attacks: "Webapp aanvalle (ondersoek vir kwesbaarhede of uitbuiting, of probeer om geïnstalleerde webtoepassings, CMS, of e-handelsoplossings te ontgin, bv., WordPress, Drupal, phpMyAdmin, ens)."
-Extended Description:
+Extended Description: !lazy
  AbuseIPDB module: "Blokkeer versoeke van IP's wat by AbuseIPDB gelys word."
  BGPView module: "Gebruik die {{Links.BGPView}}-API om 'n ASN en landkode opsoekfasiliteit vir CIDRAM te verskaf, wat dit moontlik maak om ASN'e en lande via die CIDRAM-konfigurasie geblokkeer of gewitlys te word, en die verskaffing van 'n manier om versoeke van Facebook en ander sosiale versoeke te verifieer. (As jy hierdie module gebruik, hoef jy nie die IP-API-module te gebruik nie, aangesien dit dieselfde doel dien)."
  Bad TLDs blocker module: "Blokkeer gashere wat aan TLD's behoort wat gereeld deur spammers, kuberkrakers, en ander onheilspellende entiteite gebruik word."
@@ -77,7 +77,7 @@ Extended Description:
  Referrer spam module: "Blokkering gebaseer op verwyser-strooipos sal oor die algemeen geen betekenisvolle sekuriteitsvoordeel bied nie, maar in sommige gevalle kan dit nuttig wees vir sommige gebruikers, om meer inligting oor versoeke in te samel en om dit te kan rapporteer."
  Stop Forum Spam module: "Beskerm registrasie en intekenbladsye teen IP's wat deur SFS gelys word."
  Tor blocker module: "Verbied toegang vanaf Tor-uitgangsnodusse deur DNSEL-opsoeke (ondersteun beide IPv4 en IPv6)."
-Name:
+Name: !lazy
  AbuseIPDB module: "AbuseIPDB module."
  BGPView module: "BGPView module."
  BOBUAM: "Bot of blaaier gebruikersagente module (BOBUAM)."
@@ -129,7 +129,7 @@ checkbox:
  Test as sensitive request: "Toets as sensitiewe versoek"
  Untrack positives: "Ontspoor positiewe?"
  When blocked, suppress output template: "As dit geblokkeer is, onderdruk uitsetsjabloon."
-config:
+config: !lazy
  abuseipdb: "Konfigurasie vir die AbuseIPDB module."
  abuseipdb_api_key: &EnterAPIKey "Voer jou API-sleutel hier in."
  abuseipdb_build_profiles_from_usage_type: "Bou profiele met die gebruikstipe wat deur die API teruggestuur word? False = Nee. True = Ja. Verstek = True."
@@ -822,7 +822,7 @@ link:
  Subtractor: "Aftrekker"
  Updates: "Opdaterings"
  View mode: "Kykmodus"
-macro:
+macro: !lazy
  Description:
   activate_modules: &MayImpactPerformance "Word nie algemeen aanbeveel nie, aangesien daar waarskynlik sommige is wat jy nie nodig het nie. Die installering en aktivering van komponente wanneer dit nie nodig is nie, kan prestasie negatief beïnvloed."
   install_l10n_core: &RecommendKeepingCore "Wanneer die <code>lang_override</code>-konfigurasie-opsie geaktiveer is, as 'n gebruiker se blaaier 'n spesifieke taalvoorkeur spesifiseer, solank as core L10N-data vir daardie taal geïnstalleer is, CIDRAM is in staat om die "toegang geweier"-bladsy in daardie gespesifiseerde taal te vertoon. Gevolglik word aanbeveel dat alle core L10N-data geïnstalleer bly."
@@ -873,7 +873,7 @@ previewer:
  Seconds: "Sekondes"
  Weeks: "Weke"
  Years: "Jare"
-purpose:
+purpose: !lazy
  3D graphics file: "3D-grafiese lêer (bv., CAD, modelle, materiale, teksture)"
  Audio file: "Oudiolêer"
  Card file: "Kaartlêer"
@@ -994,7 +994,7 @@ response:
  _Yes: "Ja"
  please_check_config: "Gaan asseblief jou konfigurasie na om te verseker dat die nuut geïnstalleerde module sal optree soos jy beplan."
  release_notes: "<a href="%s"><span class="navicon link"></span>Vrystellingnotas vir %s.</a>"
-stages:
+stages: !lazy
  Check whether banned: "Kontroleer of dit verbode is"
  Deploy CAPTCHAs (blocked requests): "Ontplooi CAPTCHA's (geblokkeerde versoeke)"
  Deploy CAPTCHAs (non-blocked requests): "Ontplooi CAPTCHA's (nie-geblokkeerde versoeke)"

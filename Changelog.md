@@ -545,5 +545,5 @@
 - [2026.02.26]: Refactored BOBUAM, removing three configuration directives (sanity_check, block_bots, and block_eol_browsers), and adding a new configuration directive (what_to_block) as a replacement (#675).
 - [2026.02.28]: Refactored some of the L10N data.
 - [2026.03.13]: Added the ability to duplicate cache data across different cache mechanisms at the front-end cache data page.
-- [2026.03.16]: Added explicit implements Stringable to the Duration class (not strictly necessary, but improves compatibility with PHP8+ strict typing in cases where union types of string|Stringable could be used at the implementation).
+- [2026.03.17]: Various minor performance improvements.
 - *Plus all the regular signature updates.*

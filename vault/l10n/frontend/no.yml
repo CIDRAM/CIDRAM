@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2026.03.13).
+# This file: Norwegian language data for the front-end (last modified: 2026.03.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,7 +24,7 @@
 # requests, ask. I can help.
 ##/
 
-Abuse category:
+Abuse category: !lazy
  Bad web bot: "Dårlig webbot (skraping etter e-postadresser, innhold, crawlere som ikke respekterer robots.txt, overdrevne forespørsler, bruker agent forfalskning, osv)."
  Brute-force attacks: "Brute-force angrep (brute-force angrep på nettsidepålogginger, SMTP, RDP, osv)."
  Categories (at least one is required): "Kategorier (minst én kreves)"
@@ -50,7 +50,7 @@ Abuse category:
  VPN IP: "VPN IP."
  Web spam: "Nettspam (kommentar-/forumspam, HTTP-henvisningsspam, eller annen CMS-spam)."
  Webapp attacks: "Webapp angrep (søke etter sårbarheter eller utnyttelser, eller forsøke å utnytte installerte webapper, CMS, eller e-handelsløsninger, f.eks., WordPress, Drupal, phpMyAdmin, osv)."
-Extended Description:
+Extended Description: !lazy
  AbuseIPDB module: "Blokkerer forespørsler fra IPer oppført på AbuseIPDB."
  BGPView module: "Utnytter {{Links.BGPView}} API for å tilby et ASN og landkode oppslag funksjonalitet for CIDRAM, slik at ASNer og land kan blokkeres eller hvitelister via CIDRAM-konfigurasjonen, og tilveiebringe et middel for verifisering av sosiale nettverk for å bekrefte Facebook-forespørsler. (Hvis du bruker denne modulen, du ikke trenger bruke IP-API-modulen, siden de tjener samme formål)."
  Bad TLDs blocker module: "Blokker vertene som tilhører TLDer ofte brukt av spammere, hackere og andre farlige enheter."
@@ -77,7 +77,7 @@ Extended Description:
  Referrer spam module: "Blokkering basert på referansesøppel vil vanligvis ikke gi noen meningsfull sikkerhetsgevinst, men i noen tilfeller kan det være nyttig for noen brukere, for å samle mer informasjon om forespørsler og for å kunne rapportere det."
  Stop Forum Spam module: "Beskytter registrerings og innloggingssider mot IP-adresser oppført av SFS."
  Tor blocker module: "Forbyr tilgang fra Tor-utgangsnoder gjennom DNSEL-oppslag (støtter både IPv4 og IPv6)."
-Name:
+Name: !lazy
  AbuseIPDB module: "AbuseIPDB modul."
  BGPView module: "BGPView modul."
  BOBUAM: "Bot eller nettleser brukeragentmodul (BOBUAM)."
@@ -129,7 +129,7 @@ checkbox:
  Test as sensitive request: "Test som sensitiv forespørsel"
  Untrack positives: "Slutte å spore etter positive?"
  When blocked, suppress output template: "Når blokkert, undertrykk utdatamalen."
-config:
+config: !lazy
  abuseipdb: "Konfigurasjon for AbuseIPDB-modulen."
  abuseipdb_api_key: &EnterAPIKey "Vennligst skriv inn API-nøkkelen din her."
  abuseipdb_build_profiles_from_usage_type: "Bygge profiler med brukstypen som returneres av APIen? False = Nei. True = Ja. Standardverdi = True."
@@ -821,7 +821,7 @@ link:
  Subtractor: "Subtraktor"
  Updates: "Oppdateringer"
  View mode: "Visningsmodus"
-macro:
+macro: !lazy
  Description:
   activate_modules: &MayImpactPerformance "Ikke generelt anbefalt, siden det sannsynligvis er noen du ikke trenger. Installering og aktivering av komponenter når de ikke er nødvendige kan påvirke ytelsen negativt."
   install_l10n_core: &RecommendKeepingCore "Når <code>lang_override</code>-konfigurasjonsdirektivet er aktivert, hvis en brukers nettleser spesifiserer en bestemt språkpreferanse, så lenge core L10N-data for det språket er installert, kan CIDRAM vise «tilgang nektet»-siden på det angitte språket. Derfor anbefales det å ha alle core L10N-dataene installert."
@@ -872,7 +872,7 @@ previewer:
  Seconds: "Sekunder"
  Weeks: "Uker"
  Years: "År"
-purpose:
+purpose: !lazy
  3D graphics file: "3D-grafikkfil (f.eks., CAD, modeller, materialer, teksturer)"
  Audio file: "Lydfil"
  Card file: "Kortfil"
@@ -993,7 +993,7 @@ response:
  _Yes: "Ja"
  please_check_config: "Sjekk konfigurasjonen for å sikre at den nylig installerte modulen vil oppføre seg slik du har tenkt deg."
  release_notes: "<a href="%s"><span class="navicon link"></span>Utgivelsesnotater for %s.</a>"
-stages:
+stages: !lazy
  Check whether banned: "Sjekk om det er utestengt"
  Deploy CAPTCHAs (blocked requests): "Vis CAPTCHA (blokkerte forespørsler)"
  Deploy CAPTCHAs (non-blocked requests): "Vis CAPTCHA (ikke-blokkerte forespørsler)"

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2026.03.13).
+ * This file: The CIDRAM core (last modified: 2026.03.17).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -300,14 +300,14 @@ class Core
 
         /** Fetch domain segment of HTTP_HOST (needed for writing cookies safely). */
         $this->CIDRAM['HTTP_HOST'] = empty($_SERVER['HTTP_HOST']) ? '' : (
-            strpos($_SERVER['HTTP_HOST'], ':') === false ? $_SERVER['HTTP_HOST'] : substr($_SERVER['HTTP_HOST'], 0, strpos($_SERVER['HTTP_HOST'], ':'))
+            \strpos($_SERVER['HTTP_HOST'], ':') === false ? $_SERVER['HTTP_HOST'] : \substr($_SERVER['HTTP_HOST'], 0, \strpos($_SERVER['HTTP_HOST'], ':'))
         );
 
         /** Allow post override of HTTP_HOST (assists with proxied front-end pages). */
         $this->CIDRAM['HostnameOverride'] = $_POST['hostname'] ?? '';
 
         /** Checks whether the CIDRAM defaults file is readable. */
-        if (!is_readable($this->Vault . 'defaults.yml')) {
+        if (!\is_readable($this->Vault . 'defaults.yml')) {
             header('Content-Type: text/plain');
             die('[CIDRAM] Can\'t read the defaults file! Can\'t continue until this is resolved.');
         }
@@ -325,7 +325,7 @@ class Core
         $this->Configuration = [];
 
         /** Attempts to parse a custom-defined CIDRAM configuration file. */
-        if ($ConfigurationPath !== '' && is_readable($ConfigurationPath)) {
+        if ($ConfigurationPath !== '' && \is_readable($ConfigurationPath)) {
             if ($this->YAML->process($this->readFile($ConfigurationPath), $this->Configuration)) {
                 /** Declare the configuration file used. */
                 $this->ConfigurationPath = $this->canonical($ConfigurationPath);
@@ -336,9 +336,9 @@ class Core
         if (
             $this->ConfigurationPath === '' &&
             !empty($_SERVER['HTTP_HOST']) &&
-            ($this->CIDRAM['Domain'] = preg_replace(['/^www\./', '/:/'], ['', '_'], strtolower($_SERVER['HTTP_HOST']))) &&
-            !preg_match('/[^.\da-z_-]/', $this->CIDRAM['Domain']) &&
-            is_readable($this->Vault . $this->CIDRAM['Domain'] . '.config.yml')
+            ($this->CIDRAM['Domain'] = \preg_replace(['/^www\./', '/:/'], ['', '_'], \strtolower($_SERVER['HTTP_HOST']))) &&
+            !\preg_match('/[^.\da-z_-]/', $this->CIDRAM['Domain']) &&
+            \is_readable($this->Vault . $this->CIDRAM['Domain'] . '.config.yml')
         ) {
             if ($this->YAML->process($this->readFile($this->Vault . $this->CIDRAM['Domain'] . '.config.yml'), $this->Configuration)) {
                 /** Declare the configuration file used. */
@@ -347,7 +347,7 @@ class Core
         }
 
         /** Attempts to parse the standard CIDRAM configuration file. */
-        if ($this->ConfigurationPath === '' && is_readable($this->Vault . 'config.yml')) {
+        if ($this->ConfigurationPath === '' && \is_readable($this->Vault . 'config.yml')) {
             if ($this->YAML->process($this->readFile($this->Vault . 'config.yml'), $this->Configuration)) {
                 /** Declare the configuration file used. */
                 $this->ConfigurationPath = $this->canonical($this->Vault . 'config.yml');
@@ -367,8 +367,8 @@ class Core
 
         /** Load any other configured event handlers. */
         if (!empty($this->Configuration['components']['events'])) {
-            foreach (array_unique(explode("\n", $this->Configuration['components']['events'])) as $LoadThis) {
-                if (strlen($LoadThis) > 0 && substr($LoadThis, -4) === '.php' && !$this->isReserved($LoadThis) && is_readable($this->EventsPath . $LoadThis)) {
+            foreach (\array_unique(\explode("\n", $this->Configuration['components']['events'])) as $LoadThis) {
+                if (\strlen($LoadThis) > 0 && \substr($LoadThis, -4) === '.php' && !$this->isReserved($LoadThis) && \is_readable($this->EventsPath . $LoadThis)) {
                     require $this->EventsPath . $LoadThis;
                 }
             }
@@ -379,11 +379,11 @@ class Core
         $this->ipAddr = (new \Maikuolan\Common\IPHeader($this->Configuration['general']['ipaddr']))->Resolution;
 
         /** Adjusted present time. */
-        $this->Now = time() + ($this->Configuration['general']['time_offset'] * 60);
+        $this->Now = \time() + ($this->Configuration['general']['time_offset'] * 60);
 
         /** Set timezone. */
         if (!empty($this->Configuration['general']['timezone']) && $this->Configuration['general']['timezone'] !== 'SYSTEM') {
-            date_default_timezone_set($this->Configuration['general']['timezone']);
+            \date_default_timezone_set($this->Configuration['general']['timezone']);
         }
 
         /**
@@ -400,7 +400,7 @@ class Core
 
         /** Set default hashing algorithm. */
         $this->DefaultAlgo = (
-            !empty($this->Configuration['general']['default_algo']) && defined($this->Configuration['general']['default_algo'])
+            !empty($this->Configuration['general']['default_algo']) && \defined($this->Configuration['general']['default_algo'])
         ) ? constant($this->Configuration['general']['default_algo']) : PASSWORD_DEFAULT;
 
         /** Instantiate the request class. */
@@ -420,7 +420,7 @@ class Core
         $this->Request->Proxy = $this->Configuration['general']['request_proxy'];
         $this->Request->ProxyAuth = $this->Configuration['general']['request_proxyauth'];
         $this->Request->UserAgent = $this->ScriptUA;
-        $this->Request->SendToOut = (defined('DEV_DEBUG_MODE') && DEV_DEBUG_MODE === true);
+        $this->Request->SendToOut = (\defined('DEV_DEBUG_MODE') && DEV_DEBUG_MODE === true);
 
         /** CIDRAM favicon. */
         [$this->CIDRAM['favicon'], $this->CIDRAM['favicon_extension']] = $this->fetchFavicon($this->Configuration['template_data']['theme']);
@@ -451,13 +451,13 @@ class Core
     public function readFile(string $File, int &$Err = 0): string
     {
         /** Guard. */
-        if ($File === '' || !is_file($File) || !is_readable($File)) {
+        if ($File === '' || !\is_file($File) || !\is_readable($File)) {
             $Err = 1;
             return '';
         }
 
-        $Data = file_get_contents($File);
-        if (is_string($Data)) {
+        $Data = \file_get_contents($File);
+        if (\is_string($Data)) {
             return $Data;
         }
         $Err = 2;
@@ -478,16 +478,16 @@ class Core
         if ($Haystack === '') {
             return '';
         }
-        if ($L10N && preg_match_all('~\{([.,%_ ?!\dA-Za-z()-]+)\}~', $Haystack, $Matches)) {
-            foreach (array_unique($Matches[1]) as $Key) {
+        if ($L10N && \preg_match_all('~\{([.,%_ ?!\dA-Za-z()-]+)\}~', $Haystack, $Matches)) {
+            foreach (\array_unique($Matches[1]) as $Key) {
                 if (($Value = $this->L10N->getString($Key)) !== '') {
-                    $Haystack = str_replace('{' . $Key . '}', $Value, $Haystack);
+                    $Haystack = \str_replace('{' . $Key . '}', $Value, $Haystack);
                 }
             }
         }
         foreach ($Needles as $Key => $Value) {
-            if (!is_array($Value) && $Value !== null) {
-                $Haystack = str_replace('{' . $Key . '}', $Value, $Haystack);
+            if (!\is_array($Value) && $Value !== null) {
+                $Haystack = \str_replace('{' . $Key . '}', $Value, $Haystack);
             }
         }
         return $Haystack;
@@ -502,24 +502,24 @@ class Core
     {
         $IgnoreMe = [];
         $IgnoreFile = $this->readFile($this->Vault . 'ignore.dat');
-        if (strpos($IgnoreFile, "\r")) {
+        if (\strpos($IgnoreFile, "\r")) {
             $IgnoreFile = (
-                strpos($IgnoreFile, "\r\n") !== false
-            ) ? str_replace("\r", '', $IgnoreFile) : str_replace("\r", "\n", $IgnoreFile);
+                \strpos($IgnoreFile, "\r\n") !== false
+            ) ? \str_replace("\r", '', $IgnoreFile) : \str_replace("\r", "\n", $IgnoreFile);
         }
         $IgnoreFile = "\n" . $IgnoreFile . "\n";
         $PosB = -1;
         while (true) {
-            $PosA = strpos($IgnoreFile, "\nIgnore ", ($PosB + 1));
+            $PosA = \strpos($IgnoreFile, "\nIgnore ", ($PosB + 1));
             if ($PosA === false) {
                 break;
             }
             $PosA += 8;
-            if (!$PosB = strpos($IgnoreFile, "\n", $PosA)) {
+            if (!$PosB = \strpos($IgnoreFile, "\n", $PosA)) {
                 break;
             }
-            $Tag = substr($IgnoreFile, $PosA, ($PosB - $PosA));
-            if (strlen($Tag)) {
+            $Tag = \substr($IgnoreFile, $PosA, ($PosB - $PosA));
+            if (\strlen($Tag)) {
                 $IgnoreMe[$Tag] = true;
             }
             $PosB--;
@@ -539,12 +539,12 @@ class Core
     public function getter(string $Haystack, int $Offset, string $Tag, string $DefTag): string
     {
         $Key = "\n" . $Tag . ': ';
-        $KeyLen = strlen($Key);
+        $KeyLen = \strlen($Key);
         return (
-            ($PosX = strpos($Haystack, $Key, $Offset)) &&
-            ($PosY = strpos($Haystack, "\n", $PosX + 1)) &&
-            !substr_count($Haystack, "\n\n", $Offset, $PosX - $Offset + 1)
-        ) ? substr($Haystack, $PosX + $KeyLen, $PosY - $PosX - $KeyLen) : $DefTag;
+            ($PosX = \strpos($Haystack, $Key, $Offset)) &&
+            ($PosY = \strpos($Haystack, "\n", $PosX + 1)) &&
+            !\substr_count($Haystack, "\n\n", $Offset, $PosX - $Offset + 1)
+        ) ? \substr($Haystack, $PosX + $KeyLen, $PosY - $PosX - $KeyLen) : $DefTag;
     }
 
     /**
@@ -560,8 +560,8 @@ class Core
     public function checkFactors(array $Files, array $Factors): bool
     {
         $Counts = [
-            'Files' => count($Files),
-            'Factors' => count($Factors)
+            'Files' => \count($Files),
+            'Factors' => \count($Factors)
         ];
         if (!isset($this->CIDRAM['FileCache'])) {
             $this->CIDRAM['FileCache'] = [];
@@ -571,8 +571,8 @@ class Core
         }
         for ($FileIndex = 0; $FileIndex < $Counts['Files']; $FileIndex++) {
             $Files[$FileIndex] = (
-                strpos($Files[$FileIndex], ':') === false
-            ) ? $Files[$FileIndex] : substr($Files[$FileIndex], strpos($Files[$FileIndex], ':') + 1);
+                \strpos($Files[$FileIndex], ':') === false
+            ) ? $Files[$FileIndex] : \substr($Files[$FileIndex], \strpos($Files[$FileIndex], ':') + 1);
             if ($Files[$FileIndex] === '' || $this->isReserved($Files[$FileIndex])) {
                 continue;
             }
@@ -597,13 +597,13 @@ class Core
                 }
                 continue;
             }
-            $FileExtension = strtolower(substr($Files[$FileIndex], -4));
+            $FileExtension = \strtolower(\substr($Files[$FileIndex], -4));
             $Files[$FileIndex] = $this->CIDRAM['FileCache'][$Files[$FileIndex]];
             if (
                 $FileExtension === '.csv' &&
-                strpos($Files[$FileIndex], "\n") === false &&
-                strpos($Files[$FileIndex], "\r") === false &&
-                strpos($Files[$FileIndex], ",") !== false
+                \strpos($Files[$FileIndex], "\n") === false &&
+                \strpos($Files[$FileIndex], "\r") === false &&
+                \strpos($Files[$FileIndex], ",") !== false
             ) {
                 $Files[$FileIndex] = ',' . $Files[$FileIndex] . ',';
                 $SigFormat = 'CSV';
@@ -611,33 +611,33 @@ class Core
                 $SigFormat = 'DAT';
             }
             $Files[$FileIndex] = (
-                strpos($Files[$FileIndex], "\r\n") !== false
-            ) ? str_replace("\r", '', $Files[$FileIndex]) : str_replace("\r", "\n", $Files[$FileIndex]);
+                \strpos($Files[$FileIndex], "\r\n") !== false
+            ) ? \str_replace("\r", '', $Files[$FileIndex]) : \str_replace("\r", "\n", $Files[$FileIndex]);
             $Files[$FileIndex] = "\n" . $Files[$FileIndex] . "\n";
             if ($Counts['Factors'] === 32) {
                 if ($SigFormat === 'CSV') {
-                    $NoCIDR = ',' . substr($Factors[31], 0, -3) . ',';
+                    $NoCIDR = ',' . \substr($Factors[31], 0, -3) . ',';
                     $LastCIDR = ',' . $Factors[31] . ',';
                 } else {
-                    $NoCIDR = "\n" . substr($Factors[31], 0, -3) . ' ';
+                    $NoCIDR = "\n" . \substr($Factors[31], 0, -3) . ' ';
                     $LastCIDR = "\n" . $Factors[31] . ' ';
                 }
             } elseif ($Counts['Factors'] === 128) {
                 if ($SigFormat === 'CSV') {
-                    $NoCIDR = ',' . substr($Factors[127], 0, -4) . ',';
+                    $NoCIDR = ',' . \substr($Factors[127], 0, -4) . ',';
                     $LastCIDR = ',' . $Factors[127] . ',';
                 } else {
-                    $NoCIDR = "\n" . substr($Factors[127], 0, -4) . ' ';
+                    $NoCIDR = "\n" . \substr($Factors[127], 0, -4) . ' ';
                     $LastCIDR = "\n" . $Factors[127] . ' ';
                 }
             }
             if (stripos($Files[$FileIndex], $NoCIDR) !== false) {
-                $Files[$FileIndex] = str_ireplace($NoCIDR, $LastCIDR, $Files[$FileIndex]);
+                $Files[$FileIndex] = \str_ireplace($NoCIDR, $LastCIDR, $Files[$FileIndex]);
             }
             if ($SigFormat === 'CSV') {
                 $LN = ' ("' . $DefTag . '", L0:F' . $FileIndex . ')';
                 for ($FactorIndex = 0; $FactorIndex < $Counts['Factors']; $FactorIndex++) {
-                    if ($Occurs = substr_count($Files[$FileIndex], ',' . $Factors[$FactorIndex] . ',')) {
+                    if ($Occurs = \substr_count($Files[$FileIndex], ',' . $Factors[$FactorIndex] . ',')) {
                         $this->BlockInfo['ReasonMessage'] = $this->ClientL10N->getString('ReasonMessage.Generic') ?: $this->L10N->getString('ReasonMessage.Generic');
                         if (!empty($this->BlockInfo['WhyReason'])) {
                             $this->BlockInfo['WhyReason'] .= ', ';
@@ -659,15 +659,15 @@ class Core
                     if ($PosA === false) {
                         break;
                     }
-                    $PosA += strlen($Factors[$FactorIndex]) + 2;
-                    if (!$PosB = strpos($Files[$FileIndex], "\n", $PosA)) {
+                    $PosA += \strlen($Factors[$FactorIndex]) + 2;
+                    if (!$PosB = \strpos($Files[$FileIndex], "\n", $PosA)) {
                         break;
                     }
                     if ($DefersTo = $this->getter($Files[$FileIndex], $PosA, 'Defers to', '')) {
-                        $DefersTo = preg_quote($DefersTo);
+                        $DefersTo = \preg_quote($DefersTo);
                         if (
-                            preg_match('~(?:^|\n)' . $DefersTo . '(?:$|\n)~i', $this->Configuration['components']['ipv4']) ||
-                            preg_match('~(?:^|\n)' . $DefersTo . '(?:$|\n)~i', $this->Configuration['components']['ipv6'])
+                            \preg_match('~(?:^|\n)' . $DefersTo . '(?:$|\n)~i', $this->Configuration['components']['ipv4']) ||
+                            \preg_match('~(?:^|\n)' . $DefersTo . '(?:$|\n)~i', $this->Configuration['components']['ipv6'])
                         ) {
                             continue;
                         }
@@ -696,34 +696,34 @@ class Core
                         $Origin = ', [' . $Origin . ']';
                     }
                     if (
-                        ($PosX = strpos($Files[$FileIndex], "\n---\n", $PosA)) &&
-                        ($PosY = strpos($Files[$FileIndex], "\n\n", ($PosX + 1))) &&
-                        !substr_count($Files[$FileIndex], "\n\n", $PosA, ($PosX - $PosA + 1))
+                        ($PosX = \strpos($Files[$FileIndex], "\n---\n", $PosA)) &&
+                        ($PosY = \strpos($Files[$FileIndex], "\n\n", ($PosX + 1))) &&
+                        !\substr_count($Files[$FileIndex], "\n\n", $PosA, ($PosX - $PosA + 1))
                     ) {
-                        $this->YAML->process(substr($Files[$FileIndex], ($PosX + 5), ($PosY - $PosX - 5)), $this->Configuration);
+                        $this->YAML->process(\substr($Files[$FileIndex], ($PosX + 5), ($PosY - $PosX - 5)), $this->Configuration);
                     }
-                    $LN = ' ("' . $Tag . '", L' . substr_count($Files[$FileIndex], "\n", 0, $PosA) . ':F' . $FileIndex . $Origin . ')';
-                    $Signature = substr($Files[$FileIndex], $PosA, ($PosB - $PosA));
-                    $PosS = strpos($Signature, ' ');
-                    $Category = $PosS === false ? '' : substr($Signature, 0, $PosS);
+                    $LN = ' ("' . $Tag . '", L' . \substr_count($Files[$FileIndex], "\n", 0, $PosA) . ':F' . $FileIndex . $Origin . ')';
+                    $Signature = \substr($Files[$FileIndex], $PosA, ($PosB - $PosA));
+                    $PosS = \strpos($Signature, ' ');
+                    $Category = $PosS === false ? '' : \substr($Signature, 0, $PosS);
                     if ($Category === '') {
                         $Category = $Signature;
                         $Signature = '';
                     } else {
-                        $Signature = substr($Signature, $PosS + 1);
-                        if (preg_match('~ until (\d{4})[.-](\d\d)[.-](\d\d)$~i', $Signature, $EndParts)) {
-                            $Until = mktime(0, 0, 0, (int)$EndParts[2], (int)$EndParts[3], (int)$EndParts[1]);
+                        $Signature = \substr($Signature, $PosS + 1);
+                        if (\preg_match('~ until (\d{4})[.-](\d\d)[.-](\d\d)$~i', $Signature, $EndParts)) {
+                            $Until = \mktime(0, 0, 0, (int)$EndParts[2], (int)$EndParts[3], (int)$EndParts[1]);
                             if ($this->Now > $Until) {
                                 continue;
                             }
-                            $Signature = preg_replace('~ until (\d{4})[.-](\d\d)[.-](\d\d)$~i', '', $Signature);
+                            $Signature = \preg_replace('~ until (\d{4})[.-](\d\d)[.-](\d\d)$~i', '', $Signature);
                         }
-                        if (preg_match('~ from (\d{4})[.-](\d\d)[.-](\d\d)$~i', $Signature, $EndParts)) {
-                            $From = mktime(0, 0, 0, (int)$EndParts[2], (int)$EndParts[3], (int)$EndParts[1]);
+                        if (\preg_match('~ from (\d{4})[.-](\d\d)[.-](\d\d)$~i', $Signature, $EndParts)) {
+                            $From = \mktime(0, 0, 0, (int)$EndParts[2], (int)$EndParts[3], (int)$EndParts[1]);
                             if ($this->Now < $From) {
                                 continue;
                             }
-                            $Signature = preg_replace('~ from (\d{4})[.-](\d\d)[.-](\d\d)$~i', '', $Signature);
+                            $Signature = \preg_replace('~ from (\d{4})[.-](\d\d)[.-](\d\d)$~i', '', $Signature);
                         }
                     }
                     $RunExitCode = 0;
@@ -731,13 +731,13 @@ class Core
                         if (!isset($this->CIDRAM['RunParamResCache'])) {
                             $this->CIDRAM['RunParamResCache'] = [];
                         }
-                        if (isset($this->CIDRAM['RunParamResCache'][$Signature]) && is_object($this->CIDRAM['RunParamResCache'][$Signature])) {
+                        if (isset($this->CIDRAM['RunParamResCache'][$Signature]) && \is_object($this->CIDRAM['RunParamResCache'][$Signature])) {
                             $RunExitCode = $this->CIDRAM['RunParamResCache'][$Signature]($Factors, $FactorIndex, $LN, $Tag);
-                        } elseif (!$this->isReserved($Signature) && is_readable($this->Vault . $Signature)) {
+                        } elseif (!$this->isReserved($Signature) && \is_readable($this->Vault . $Signature)) {
                             require_once $this->Vault . $Signature;
                         } else {
                             $this->CIDRAM['ExtraErrorInfo'] = $Signature;
-                            trigger_error($this->L10N->getString('response.Required files are missing'), E_USER_WARNING);
+                            \trigger_error($this->L10N->getString('response.Required files are missing'), E_USER_WARNING);
                         }
                     }
                     if ($RunExitCode === 4) {
@@ -837,7 +837,7 @@ class Core
 
         /** Test an IPv4 address. */
         if ($IPv4Factors = $this->expandIpv4($Addr)) {
-            $IPv4Files = explode("\n", $this->Configuration['components']['ipv4']);
+            $IPv4Files = \explode("\n", $this->Configuration['components']['ipv4']);
             try {
                 $IPv4Test = $this->checkFactors($IPv4Files, $IPv4Factors);
             } catch (\Exception $e) {
@@ -855,7 +855,7 @@ class Core
 
         /** Test an IPv6 address. */
         if ($IPv6Factors = $this->expandIpv6($Addr)) {
-            $IPv6Files = explode("\n", $this->Configuration['components']['ipv6']);
+            $IPv6Files = \explode("\n", $this->Configuration['components']['ipv6']);
             try {
                 $IPv6Test = $this->checkFactors($IPv6Files, $IPv6Factors);
             } catch (\Exception $e) {
@@ -904,12 +904,12 @@ class Core
     {
         static $CommonPart = '([12]\d{3})(?:\xe2\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|1[0-2])(?:\xe2\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|[1-2]\d|3[01])';
         if (
-            preg_match('/^' . $CommonPart . '\x20?T?([01]\d|2[0-3])[\x2d\x2e\x3a]?([0-5]\d)[\x2d\x2e\x3a]?([0-5]\d)$/i', $in, $Arr) ||
-            preg_match('/^' . $CommonPart . '\x20?T?([01]\d|2[0-3])[\x2d\x2e\x3a]?([0-5]\d)$/i', $in, $Arr) ||
-            preg_match('/^' . $CommonPart . '\x20?T?([01]\d|2[0-3])$/i', $in, $Arr) ||
-            preg_match('/^' . $CommonPart . '$/i', $in, $Arr) ||
-            preg_match('/^([12]\d{3})(?:\xe2\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|1[0-2])$/i', $in, $Arr) ||
-            preg_match('/^([12]\d{3})$/i', $in, $Arr)
+            \preg_match('/^' . $CommonPart . '\x20?T?([01]\d|2[0-3])[\x2d\x2e\x3a]?([0-5]\d)[\x2d\x2e\x3a]?([0-5]\d)$/i', $in, $Arr) ||
+            \preg_match('/^' . $CommonPart . '\x20?T?([01]\d|2[0-3])[\x2d\x2e\x3a]?([0-5]\d)$/i', $in, $Arr) ||
+            \preg_match('/^' . $CommonPart . '\x20?T?([01]\d|2[0-3])$/i', $in, $Arr) ||
+            \preg_match('/^' . $CommonPart . '$/i', $in, $Arr) ||
+            \preg_match('/^([12]\d{3})(?:\xe2\x88\x92|[\x2d-\x2f\x5c])?(0[1-9]|1[0-2])$/i', $in, $Arr) ||
+            \preg_match('/^([12]\d{3})$/i', $in, $Arr)
         ) {
             $Arr = [
                 (int)$Arr[1],
@@ -919,7 +919,7 @@ class Core
                 isset($Arr[5]) ? (int)$Arr[5] : 0,
                 isset($Arr[6]) ? (int)$Arr[6] : 0
             ];
-            $Expires = mktime($Arr[3], $Arr[4], $Arr[5], $Arr[1], $Arr[2], $Arr[0]);
+            $Expires = \mktime($Arr[3], $Arr[4], $Arr[5], $Arr[1], $Arr[2], $Arr[0]);
             return $Expires ?: false;
         }
         return false;
@@ -936,30 +936,30 @@ class Core
     public function timeFormat(int $Time, $In)
     {
         /** Guard. */
-        if (!is_array($In) && (strpos($In, '{') === false || strpos($In, '}') === false)) {
+        if (!\is_array($In) && (\strpos($In, '{') === false || \strpos($In, '}') === false)) {
             return $In;
         }
 
-        $Time = date('dmYHisDMP', $Time);
+        $Time = \date('dmYHisDMP', $Time);
         $Values = [
-            'dd' => substr($Time, 0, 2),
-            'mm' => substr($Time, 2, 2),
-            'yyyy' => substr($Time, 4, 4),
-            'yy' => substr($Time, 6, 2),
-            'hh' => substr($Time, 8, 2),
-            'ii' => substr($Time, 10, 2),
-            'ss' => substr($Time, 12, 2),
-            'Day' => substr($Time, 14, 3),
-            'Mon' => substr($Time, 17, 3),
-            'tz' => substr($Time, 20, 3) . substr($Time, 24, 2),
-            't:z' => substr($Time, 20, 6)
+            'dd' => \substr($Time, 0, 2),
+            'mm' => \substr($Time, 2, 2),
+            'yyyy' => \substr($Time, 4, 4),
+            'yy' => \substr($Time, 6, 2),
+            'hh' => \substr($Time, 8, 2),
+            'ii' => \substr($Time, 10, 2),
+            'ss' => \substr($Time, 12, 2),
+            'Day' => \substr($Time, 14, 3),
+            'Mon' => \substr($Time, 17, 3),
+            'tz' => \substr($Time, 20, 3) . \substr($Time, 24, 2),
+            't:z' => \substr($Time, 20, 6)
         ];
         $Values['d'] = (int)$Values['dd'];
         $Values['m'] = (int)$Values['mm'];
         $Values['h'] = (int)$Values['hh'];
         $Values['i'] = (int)$Values['ii'];
         $Values['s'] = (int)$Values['ss'];
-        return is_array($In) ? array_map(function (string $Item) use (&$Values): string {
+        return \is_array($In) ? \array_map(function (string $Item) use (&$Values): string {
             return $this->parseVars($Values, $Item);
         }, $In) : $this->parseVars($Values, $In);
     }
@@ -974,7 +974,7 @@ class Core
      */
     public function autoType(&$Var, string $Type = ''): void
     {
-        if (in_array($Type, ['checkbox', 'email', 'string', 'timezone', 'url'], true)) {
+        if (\in_array($Type, ['checkbox', 'email', 'string', 'timezone', 'url'], true)) {
             $Var = (string)$Var;
         } elseif ($Type === 'float') {
             $Var = (float)$Var;
@@ -983,11 +983,11 @@ class Core
         } elseif ($Type === 'duration') {
             $Var = new Duration($Var);
         } elseif ($Type === 'bool') {
-            $Var = (strtolower($Var) !== 'false' && $Var);
+            $Var = (\strtolower($Var) !== 'false' && $Var);
         } elseif ($Type === 'kb') {
             $Var = $this->readBytes((string)$Var, 1);
         } else {
-            $LVar = strtolower($Var);
+            $LVar = \strtolower($Var);
             if ($LVar === 'true') {
                 $Var = true;
             } elseif ($LVar === 'false') {
@@ -1008,7 +1008,7 @@ class Core
     public function fallback(array $Fallbacks, array &$Config): void
     {
         foreach ($Fallbacks as $KeyCat => $DCat) {
-            if (!is_array($DCat)) {
+            if (!\is_array($DCat)) {
                 continue;
             }
             if (!isset($Config[$KeyCat])) {
@@ -1020,7 +1020,7 @@ class Core
             $Cat = &$Config[$KeyCat];
             foreach ($DCat as $DKey => $DData) {
                 if (isset($DData['labels'], $DData['style']) && $DData['style'] === 'matrix') {
-                    if (!isset($Cat[$DKey]) || !is_array($Cat[$DKey])) {
+                    if (!isset($Cat[$DKey]) || !\is_array($Cat[$DKey])) {
                         $Cat[$DKey] = [];
                     }
                     foreach ($DData['labels'] as $MLabelKey => $MLabelValue) {
@@ -1032,7 +1032,7 @@ class Core
                         }
                         $Dir = &$Cat[$DKey][$MLabelKey];
                         $Type = $DData['type'][$MLabelKey] ?? $DData['type'] ?? '';
-                        if (is_string($Type) && $Type !== '') {
+                        if (\is_string($Type) && $Type !== '') {
                             $this->autoType($Dir, $Type);
                         }
                     }
@@ -1045,9 +1045,9 @@ class Core
                     unset($Dir);
                 }
                 $Dir = &$Cat[$DKey];
-                if (isset($DData['value_preg_filter']) && is_array($DData['value_preg_filter'])) {
+                if (isset($DData['value_preg_filter']) && \is_array($DData['value_preg_filter'])) {
                     foreach ($DData['value_preg_filter'] as $FilterKey => $FilterValue) {
-                        $Dir = preg_replace($FilterKey, $FilterValue, $Dir);
+                        $Dir = \preg_replace($FilterKey, $FilterValue, $Dir);
                     }
                 }
                 if (isset($DData['type'])) {
@@ -1067,13 +1067,13 @@ class Core
     public function supplementary(string $Source, string $Path = ''): array
     {
         $Out = [];
-        $Source = explode("\n", $Source);
+        $Source = \explode("\n", $Source);
         foreach ($Source as $File) {
-            if (is_readable($Path . $File)) {
+            if (\is_readable($Path . $File)) {
                 $Out[] = $Path . $File;
             }
         }
-        return array_unique($Out);
+        return \array_unique($Out);
     }
 
     /**
@@ -1100,12 +1100,12 @@ class Core
         if (isset($this->CIDRAM['DnsReverses-' . $Addr], $this->CIDRAM['DnsReverses-' . $Addr]['Host'])) {
             return $this->CIDRAM['DnsReverses-' . $Addr]['Host'];
         }
-        if (($Try = $this->Cache->getEntry('DnsReverses-' . $Addr)) !== false && is_array($Try) && isset($Try['Host'])) {
+        if (($Try = $this->Cache->getEntry('DnsReverses-' . $Addr)) !== false && \is_array($Try) && isset($Try['Host'])) {
             $this->CIDRAM['DnsReverses-' . $Addr] = $Try;
             return $Try['Host'];
         }
 
-        if (strpos($Addr, '.') !== false && strpos($Addr, ':') === false && preg_match(
+        if (\strpos($Addr, '.') !== false && \strpos($Addr, ':') === false && \preg_match(
             '/^([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])' .
             '\.([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])$/',
             $Addr,
@@ -1113,26 +1113,26 @@ class Core
         )) {
             /** The IP address is IPv4. */
             $Lookup =
-                chr(strlen($Octets[4])) . $Octets[4] .
-                chr(strlen($Octets[3])) . $Octets[3] .
-                chr(strlen($Octets[2])) . $Octets[2] .
-                chr(strlen($Octets[1])) . $Octets[1] .
+                chr(\strlen($Octets[4])) . $Octets[4] .
+                chr(\strlen($Octets[3])) . $Octets[3] .
+                chr(\strlen($Octets[2])) . $Octets[2] .
+                chr(\strlen($Octets[1])) . $Octets[1] .
                 "\7in-addr\4arpa\0\0\x0c\0\1";
-        } elseif (strpos($Addr, '.') === false && strpos($Addr, ':') !== false && $this->expandIpv6($Addr, true)) {
+        } elseif (\strpos($Addr, '.') === false && \strpos($Addr, ':') !== false && $this->expandIpv6($Addr, true)) {
             /** The IP address is IPv6. */
             $Lookup = $Addr;
-            if (strpos($Addr, '::') !== false) {
-                $Repeat = 8 - substr_count($Addr, ':');
-                $Lookup = str_replace('::', str_repeat(':0', ($Repeat < 1 ? 0 : $Repeat)) . ':', $Lookup);
+            if (\strpos($Addr, '::') !== false) {
+                $Repeat = 8 - \substr_count($Addr, ':');
+                $Lookup = \str_replace('::', \str_repeat(':0', ($Repeat < 1 ? 0 : $Repeat)) . ':', $Lookup);
             }
-            while (strlen($Lookup) < 39) {
-                $Lookup = preg_replace(
+            while (\strlen($Lookup) < 39) {
+                $Lookup = \preg_replace(
                     ['/^:/', '/:$/', '/^([\da-f]{1,3}):/i', '/:([\da-f]{1,3})$/i', '/:([\da-f]{1,3}):/i'],
                     ['0:', ':0', '0\1:', ':0\1', ':0\1:'],
                     $Lookup
                 );
             }
-            $Lookup = strrev(preg_replace(['/:/', '/(.)/'], ['', "\\1\1"], $Lookup)) . "\3ip6\4arpa\0\0\x0c\0\1";
+            $Lookup = strrev(\preg_replace(['/:/', '/(.)/'], ['', "\\1\1"], $Lookup)) . "\3ip6\4arpa\0\0\x0c\0\1";
         } else {
             /** The IP address is.. wrong. Let's exit the method. */
             return $Addr;
@@ -1140,7 +1140,7 @@ class Core
 
         /** Sending UDP is usually pointless if we're not on root. */
         if (!isset($this->CIDRAM['Root'])) {
-            $this->CIDRAM['Root'] = (!function_exists('posix_getuid') || posix_getuid() === 0);
+            $this->CIDRAM['Root'] = (!\function_exists('posix_getuid') || posix_getuid() === 0);
         }
 
         /** Use gethostbyaddr if enabled and if we anticipate UDP failing. */
@@ -1153,20 +1153,20 @@ class Core
             $this->CIDRAM['_allow_url_fopen'] = ini_get('allow_url_fopen');
             $this->CIDRAM['_allow_url_fopen'] = !(!$this->CIDRAM['_allow_url_fopen'] || $this->CIDRAM['_allow_url_fopen'] === 'Off');
         }
-        if (!$this->CIDRAM['Root'] || empty($Lookup) || !function_exists('fsockopen') || !$this->CIDRAM['_allow_url_fopen']) {
+        if (!$this->CIDRAM['Root'] || empty($Lookup) || !\function_exists('fsockopen') || !$this->CIDRAM['_allow_url_fopen']) {
             return $Addr;
         }
 
         /** DNS is disabled. Let's exit the method. */
-        if (strlen($DNS) === 0 && strlen($this->Configuration['general']['default_dns']) === 0) {
+        if (\strlen($DNS) === 0 && \strlen($this->Configuration['general']['default_dns']) === 0) {
             return $this->Configuration['general']['allow_gethostbyaddr_lookup'] ? $this->dnsReverseFallback($Addr) : $Addr;
         }
 
         /** Expand list of lookup servers. */
-        $DNS = explode("\n", $this->Configuration['general']['default_dns']);
+        $DNS = \explode("\n", $this->Configuration['general']['default_dns']);
 
         /** UDP padding. */
-        $LeftPad = str_pad(rand(0, 99), 2, '0', STR_PAD_LEFT) . "\1\0\0\1\0\0\0\0\0\0";
+        $LeftPad = \str_pad(\rand(0, 99), 2, '0', STR_PAD_LEFT) . "\1\0\0\1\0\0\0\0\0\0";
 
         /** Perform the lookup. */
         foreach ($DNS as $Server) {
@@ -1175,11 +1175,11 @@ class Core
             }
             $Handle = fsockopen('udp://' . $Server, 53);
             if ($Handle !== false) {
-                fwrite($Handle, $LeftPad . $Lookup);
+                \fwrite($Handle, $LeftPad . $Lookup);
                 stream_set_timeout($Handle, $Timeout);
                 stream_set_blocking($Handle, true);
-                $Response = fread($Handle, 1024);
-                fclose($Handle);
+                $Response = \fread($Handle, 1024);
+                \fclose($Handle);
             }
         }
 
@@ -1196,18 +1196,18 @@ class Core
 
         /** We got a response! Now let's process it accordingly. */
         $Host = '';
-        if (($Pos = strpos($Response, $Lookup)) !== false) {
-            $Pos += strlen($Lookup) + 12;
-            while (($Byte = substr($Response, $Pos, 1)) && $Byte !== "\0") {
+        if (($Pos = \strpos($Response, $Lookup)) !== false) {
+            $Pos += \strlen($Lookup) + 12;
+            while (($Byte = \substr($Response, $Pos, 1)) && $Byte !== "\0") {
                 if ($Host) {
                     $Host .= '.';
                 }
-                $Len = hexdec(bin2hex($Byte));
-                $Host .= substr($Response, $Pos + 1, $Len);
+                $Len = \hexdec(\bin2hex($Byte));
+                $Host .= \substr($Response, $Pos + 1, $Len);
                 $Pos += 1 + $Len;
             }
         }
-        $this->CIDRAM['DnsReverses-' . $Addr] = ['Host' => preg_replace('/[^:\da-z._~-]/i', '', $Host) ?: $Addr];
+        $this->CIDRAM['DnsReverses-' . $Addr] = ['Host' => \preg_replace('/[^:\da-z._~-]/i', '', $Host) ?: $Addr];
         $this->Cache->setEntry('DnsReverses-' . $Addr, $this->CIDRAM['DnsReverses-' . $Addr], 21600);
         return $this->CIDRAM['DnsReverses-' . $Addr]['Host'];
     }
@@ -1220,7 +1220,7 @@ class Core
      */
     public function dnsReverseFallback(string $Addr): string
     {
-        $this->CIDRAM['DnsReverses-' . $Addr] = ['Host' => preg_replace('/[^:\da-z._~-]/i', '', gethostbyaddr($Addr)) ?: $Addr];
+        $this->CIDRAM['DnsReverses-' . $Addr] = ['Host' => \preg_replace('/[^:\da-z._~-]/i', '', gethostbyaddr($Addr)) ?: $Addr];
         $this->Cache->setEntry('DnsReverses-' . $Addr, $this->CIDRAM['DnsReverses-' . $Addr], 21600);
         return $this->CIDRAM['DnsReverses-' . $Addr]['Host'];
     }
@@ -1244,8 +1244,8 @@ class Core
         if (($Try = $this->Cache->getEntry('DnsForwards-' . $Host)) !== false) {
             return $this->CIDRAM['DnsForwards-' . $Host] = $Try;
         }
-        $Host = urlencode($Host);
-        if (($HostLen = strlen($Host)) > 253) {
+        $Host = \urlencode($Host);
+        if (($HostLen = \strlen($Host)) > 253) {
             return '';
         }
         $RecordParam = '';
@@ -1271,11 +1271,11 @@ class Core
             $PadLen--;
             $URI .= str_shuffle(self::PAD_FOR_DNS)[0];
         }
-        $Results = json_decode($this->Request->request($URI, [], $Timeout), true);
+        $Results = \json_decode($this->Request->request($URI, [], $Timeout), true);
         if (empty($Results) || empty($Results['Answer'][0]['data'])) {
             $this->CIDRAM['DnsForwards-' . $Host] = '';
         } else {
-            $this->CIDRAM['DnsForwards-' . $Host] = preg_replace('/[^\da-f.:]/i', '', $Results['Answer'][0]['data']);
+            $this->CIDRAM['DnsForwards-' . $Host] = \preg_replace('/[^\da-f.:]/i', '', $Results['Answer'][0]['data']);
         }
         $this->Cache->setEntry('DnsForwards-' . $Host, $this->CIDRAM['DnsForwards-' . $Host], $TTL);
         return $this->CIDRAM['DnsForwards-' . $Host];
@@ -1298,10 +1298,10 @@ class Core
         }
 
         /** Resolve the DNS hostname. */
-        if (strlen($this->CIDRAM['Hostname']) === 0 || $this->CIDRAM['Hostname'] === $this->BlockInfo['IPAddr']) {
+        if (\strlen($this->CIDRAM['Hostname']) === 0 || $this->CIDRAM['Hostname'] === $this->BlockInfo['IPAddr']) {
             /** Block non-verified requests. */
             if (isset($this->CIDRAM['VPermissions'][$Friendly . ':BlockNonVerified'])) {
-                $this->trigger(true, sprintf($this->L10N->getString('Short.Unverified_UA'), $Friendly));
+                $this->trigger(true, \sprintf($this->L10N->getString('Short.Unverified_UA'), $Friendly));
                 $this->addProfileEntry('Blocked Non-Verified');
             }
 
@@ -1316,10 +1316,10 @@ class Core
 
         /** Compare the hostname against the accepted domain/hostname partials. */
         foreach ($Domains as $Domain) {
-            $Len = strlen($Domain) * -1;
+            $Len = \strlen($Domain) * -1;
             if (
-                substr($this->CIDRAM['Hostname'], $Len) === $Domain ||
-                (substr($Domain, 0, 1) === '.' && $this->CIDRAM['Hostname'] === substr($Domain, 1))
+                \substr($this->CIDRAM['Hostname'], $Len) === $Domain ||
+                (\substr($Domain, 0, 1) === '.' && $this->CIDRAM['Hostname'] === \substr($Domain, 1))
             ) {
                 $Pass = true;
                 break;
@@ -1345,7 +1345,7 @@ class Core
                 $this->bypass((
                     isset($this->CIDRAM['VPermissions'][$Friendly . ':SingleHitBypass'], $this->BlockInfo['SignatureCount'], $this->BlockInfo['WhyReason']) &&
                     $this->BlockInfo['SignatureCount'] === 1 &&
-                    preg_match('~, L\d+:F\d+,| Lookup~', $this->BlockInfo['WhyReason'])
+                    \preg_match('~, L\d+:F\d+,| Lookup~', $this->BlockInfo['WhyReason'])
                 ), $this->L10N->getString('why_single_hit_bypass'));
 
                 /** Exit. */
@@ -1359,7 +1359,7 @@ class Core
             if ($Resolved === '') {
                 /** Block non-verified requests. */
                 if (isset($this->CIDRAM['VPermissions'][$Friendly . ':BlockNonVerified'])) {
-                    $this->trigger(true, sprintf($this->L10N->getString('Short.Unverified_UA'), $Friendly));
+                    $this->trigger(true, \sprintf($this->L10N->getString('Short.Unverified_UA'), $Friendly));
                     $this->addProfileEntry('Blocked Non-Verified');
                 }
 
@@ -1383,7 +1383,7 @@ class Core
                 $this->bypass((
                     isset($this->CIDRAM['VPermissions'][$Friendly . ':SingleHitBypass'], $this->BlockInfo['SignatureCount'], $this->BlockInfo['WhyReason']) &&
                     $this->BlockInfo['SignatureCount'] === 1 &&
-                    preg_match('~, L\d+:F\d+,| Lookup~', $this->BlockInfo['WhyReason'])
+                    \preg_match('~, L\d+:F\d+,| Lookup~', $this->BlockInfo['WhyReason'])
                 ), $this->L10N->getString('why_single_hit_bypass'));
 
                 /** Exit. */
@@ -1393,7 +1393,7 @@ class Core
 
         /** It's a fake; Block it. */
         if (isset($this->CIDRAM['VPermissions'][$Friendly . ':BlockNegatives'])) {
-            $this->trigger(true, sprintf($this->L10N->getString('Short.Fake_UA'), $Friendly));
+            $this->trigger(true, \sprintf($this->L10N->getString('Short.Fake_UA'), $Friendly));
             $this->addProfileEntry('Blocked Negative');
 
             /** Reporting. */
@@ -1405,7 +1405,7 @@ class Core
      * Checks whether an IP is expected. If so, tracking is disabled for the IP
      * being checked, and if not, the request is blocked. Has no return value.
      *
-     * @param string|array $Expected Accepted/Expected IPs.
+     * @param string|array|\Stringable $Expected Accepted/Expected IPs.
      * @param string $Friendly A friendly name to use when logging.
      * @param array $Values Verification data for the entity being verified.
      * @return void
@@ -1425,7 +1425,7 @@ class Core
      * Checks whether a CIDR is expected. If so, tracking is disabled for the IP
      * being checked, and if not, the request is blocked. Has no return value.
      *
-     * @param string|array $Expected Accepted/Expected CIDRs.
+     * @param string|array|\Stringable $Expected Accepted/Expected CIDRs.
      * @param string $Friendly A friendly name to use when logging.
      * @param array $Values Verification data for the entity being verified.
      * @return void
@@ -1447,7 +1447,7 @@ class Core
      * Will only work as expected if a module or other facility of some kind,
      * capable of performing ASN lookups, has been enabled.
      *
-     * @param string|array $Origins Accepted originating ASNs.
+     * @param string|array|\Stringable $Origins Accepted originating ASNs.
      * @param string $Friendly A friendly name to use when logging.
      * @param array $Values Verification data for the entity being verified.
      * @return void
@@ -1487,9 +1487,9 @@ class Core
         if ($ReasonLong === '') {
             $ReasonLong = $this->ClientL10N->getString('ReasonMessage.' . $ReasonShort) ?: $this->L10N->getString('ReasonMessage.' . $ReasonShort) ?: $this->ClientL10N->getString('denied') ?: $this->L10N->getString('denied');
         }
-        if (count($DefineOptions) > 0) {
+        if (\count($DefineOptions) > 0) {
             foreach ($DefineOptions as $CatKey => $CatValue) {
-                if (!is_array($CatValue)) {
+                if (!\is_array($CatValue)) {
                     continue;
                 }
                 foreach ($CatValue as $OptionKey => $OptionValue) {
@@ -1508,7 +1508,7 @@ class Core
         if ($this->Stage === 'Aux') {
             $this->BlockInfo['Signatures'] .= 'auxiliary.yml:' . $ReasonShort;
         } else {
-            $Debug = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT | DEBUG_BACKTRACE_IGNORE_ARGS, 1)[0];
+            $Debug = \debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT | DEBUG_BACKTRACE_IGNORE_ARGS, 1)[0];
             $Source = basename($Debug['file']);
             $this->BlockInfo['Signatures'] .= $Source . ':L' . $Debug['line'];
         }
@@ -1541,7 +1541,7 @@ class Core
         }
         if (!empty($DefineOptions)) {
             foreach ($DefineOptions as $CatKey => $CatValue) {
-                if (!is_array($CatValue)) {
+                if (!\is_array($CatValue)) {
                     continue;
                 }
                 foreach ($CatValue as $OptionKey => $OptionValue) {
@@ -1559,7 +1559,7 @@ class Core
         if ($this->Stage === 'Aux') {
             $this->BlockInfo['Signatures'] .= 'auxiliary.yml:' . $ReasonShort;
         } else {
-            $Debug = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT | DEBUG_BACKTRACE_IGNORE_ARGS, 1)[0];
+            $Debug = \debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT | DEBUG_BACKTRACE_IGNORE_ARGS, 1)[0];
             $Source = basename($Debug['file']);
             $this->BlockInfo['Signatures'] .= $Source . ':L' . $Debug['line'];
         }
@@ -1600,24 +1600,24 @@ class Core
     {
         $Salt = '';
         try {
-            $Length = random_int(self::GENERATE_SALT_MIN_LEN, self::GENERATE_SALT_MAX_LEN);
+            $Length = \random_int(self::GENERATE_SALT_MIN_LEN, self::GENERATE_SALT_MAX_LEN);
         } catch (\Exception $e) {
-            $Length = rand(self::GENERATE_SALT_MIN_LEN, self::GENERATE_SALT_MAX_LEN);
+            $Length = \rand(self::GENERATE_SALT_MIN_LEN, self::GENERATE_SALT_MAX_LEN);
         }
         try {
             $Salt = random_bytes($Length);
         } catch (\Exception $e) {
             $Salt = '';
         }
-        if (!strlen($Salt)) {
+        if (!\strlen($Salt)) {
             try {
                 for ($Index = 0; $Index < $Length; $Index++) {
-                    $Salt .= chr(random_int(self::GENERATE_SALT_MIN_CHR, self::GENERATE_SALT_MAX_CHR));
+                    $Salt .= chr(\random_int(self::GENERATE_SALT_MIN_CHR, self::GENERATE_SALT_MAX_CHR));
                 }
             } catch (\Exception $e) {
                 $Salt = '';
                 for ($Index = 0; $Index < $Length; $Index++) {
-                    $Salt .= chr(rand(self::GENERATE_SALT_MIN_CHR, self::GENERATE_SALT_MAX_CHR));
+                    $Salt .= chr(\rand(self::GENERATE_SALT_MIN_CHR, self::GENERATE_SALT_MAX_CHR));
                 }
             }
         }
@@ -1625,16 +1625,17 @@ class Core
     }
 
     /**
-     * If input isn't an array, make it so. Remove empty elements.
+     * Ensure input is an array and remove empty elements.
      *
      * @param mixed $Input
+     * @return void
      */
-    public function arrayify(&$Input)
+    public function arrayify(&$Input): void
     {
-        if (!is_array($Input)) {
+        if (!\is_array($Input)) {
             $Input = [$Input];
         }
-        $Input = array_filter($Input);
+        $Input = \array_filter($Input);
     }
 
     /**
@@ -1648,16 +1649,16 @@ class Core
     public function readBytes(string $In, int $Mode = 0)
     {
         $Unit = '';
-        if (preg_match('/([KkMmGgTtPpOoBb]|К|к|М|м|Г|г|Т|т|П|п|Ｋ|ｋ|Ｍ|ｍ|Ｇ|ｇ|Ｔ|ｔ|Ｐ|ｐ|Б|б|Ｂ|ｂ)([OoBb]|Б|б|Ｂ|ｂ)?$/', $In, $Matches)) {
-            if (preg_match('/^([Kk]|К|к)$/', $Matches[1])) {
+        if (\preg_match('/([KkMmGgTtPpOoBb]|К|к|М|м|Г|г|Т|т|П|п|Ｋ|ｋ|Ｍ|ｍ|Ｇ|ｇ|Ｔ|ｔ|Ｐ|ｐ|Б|б|Ｂ|ｂ)([OoBb]|Б|б|Ｂ|ｂ)?$/', $In, $Matches)) {
+            if (\preg_match('/^([Kk]|К|к)$/', $Matches[1])) {
                 $Unit = 'K';
-            } elseif (preg_match('/^([Mm]|М|м)$/', $Matches[1])) {
+            } elseif (\preg_match('/^([Mm]|М|м)$/', $Matches[1])) {
                 $Unit = 'M';
-            } elseif (preg_match('/^([Gg]|Г|г)$/', $Matches[1])) {
+            } elseif (\preg_match('/^([Gg]|Г|г)$/', $Matches[1])) {
                 $Unit = 'G';
-            } elseif (preg_match('/^([Tt]|Т|т)$/', $Matches[1])) {
+            } elseif (\preg_match('/^([Tt]|Т|т)$/', $Matches[1])) {
                 $Unit = 'T';
-            } elseif (preg_match('/^([Pp]|П|п)$/', $Matches[1])) {
+            } elseif (\preg_match('/^([Pp]|П|п)$/', $Matches[1])) {
                 $Unit = 'P';
             }
         }
@@ -1669,7 +1670,7 @@ class Core
         if (isset($Multiply[$Unit])) {
             $In *= $Multiply[$Unit];
         }
-        return (int)floor($In);
+        return (int)\floor($In);
     }
 
     /**
@@ -1680,43 +1681,43 @@ class Core
      */
     public function resolve6to4(string $In): string
     {
-        if (!preg_match('~^(?:200[12]|fe80):~i', $In)) {
+        if (!\preg_match('~^(?:200[12]|fe80):~i', $In)) {
             return '';
         }
-        $Parts = explode(':', $In, 8);
+        $Parts = \explode(':', $In, 8);
 
         /** 6to4. */
         if ($Parts[0] === '2002') {
-            if (empty($Parts[1]) || empty($Parts[2]) || preg_match('~[^\da-f]~i', $Parts[1]) || preg_match('~[^\da-f]~i', $Parts[2])) {
+            if (empty($Parts[1]) || empty($Parts[2]) || \preg_match('~[^\da-f]~i', $Parts[1]) || \preg_match('~[^\da-f]~i', $Parts[2])) {
                 return '';
             }
-            $Parts[1] = hexdec($Parts[1]) ?: 0;
-            $Parts[2] = hexdec($Parts[2]) ?: 0;
-            $Octets = [0 => floor($Parts[1] / 256), 1 => $Parts[1] % 256, 2 => floor($Parts[2] / 256), 3 => $Parts[2] % 256];
-            return implode('.', $Octets);
+            $Parts[1] = \hexdec($Parts[1]) ?: 0;
+            $Parts[2] = \hexdec($Parts[2]) ?: 0;
+            $Octets = [0 => \floor($Parts[1] / 256), 1 => $Parts[1] % 256, 2 => \floor($Parts[2] / 256), 3 => $Parts[2] % 256];
+            return \implode('.', $Octets);
         }
 
         /** Teredo. */
         if ($Parts[0] === '2001' && empty($Parts[1])) {
             $Parts = array_reverse($Parts);
-            $Bits = ($Parts[1] ?: '') . str_pad(($Parts[0] ?: ''), 4, '0', STR_PAD_LEFT);
-            if (preg_match('~[^\da-f]~i', $Bits)) {
+            $Bits = ($Parts[1] ?: '') . \str_pad(($Parts[0] ?: ''), 4, '0', STR_PAD_LEFT);
+            if (\preg_match('~[^\da-f]~i', $Bits)) {
                 return '';
             }
-            $Bits = hexdec($Bits) ^ 0xffffffff;
+            $Bits = \hexdec($Bits) ^ 0xffffffff;
             $Octets = [0 => 0, 1 => 0, 2 => 0, 3 => $Bits % 256];
-            $Octets[2] = ($Bits = floor($Bits / 256)) % 256;
-            $Octets[1] = ($Bits = floor($Bits / 256)) % 256;
-            $Octets[0] = floor($Bits / 256);
-            return implode('.', $Octets);
+            $Octets[2] = ($Bits = \floor($Bits / 256)) % 256;
+            $Octets[1] = ($Bits = \floor($Bits / 256)) % 256;
+            $Octets[0] = \floor($Bits / 256);
+            return \implode('.', $Octets);
         }
 
         /** ISATAP. */
-        if (preg_match('~^fe80::(?:0200:)?5efe:([\da-f]{1,4}):([\da-f]{1,4})$~i', $In, $Parts)) {
-            $Parts[1] = hexdec($Parts[1]) ?: 0;
-            $Parts[2] = hexdec($Parts[2]) ?: 0;
-            $Octets = [0 => floor($Parts[1] / 256), 1 => $Parts[1] % 256, 2 => floor($Parts[2] / 256), 3 => $Parts[2] % 256];
-            return implode('.', $Octets);
+        if (\preg_match('~^fe80::(?:0200:)?5efe:([\da-f]{1,4}):([\da-f]{1,4})$~i', $In, $Parts)) {
+            $Parts[1] = \hexdec($Parts[1]) ?: 0;
+            $Parts[2] = \hexdec($Parts[2]) ?: 0;
+            $Octets = [0 => \floor($Parts[1] / 256), 1 => $Parts[1] % 256, 2 => \floor($Parts[2] / 256), 3 => $Parts[2] % 256];
+            return \implode('.', $Octets);
         }
 
         return '';
@@ -1780,7 +1781,7 @@ class Core
             if (!isset($this->CIDRAM['VPermissions'])) {
                 $this->CIDRAM['VPermissions'] = [];
             }
-            $this->CIDRAM['VPermissions'] += array_flip(explode("\n", $this->Configuration['verification']['search_engines']));
+            $this->CIDRAM['VPermissions'] += \array_flip(\explode("\n", $this->Configuration['verification']['search_engines']));
         }
         $Before = $this->BlockInfo['SignatureCount'];
         $this->xVerification('Search Engine Verification', true);
@@ -1801,7 +1802,7 @@ class Core
             if (!isset($this->CIDRAM['VPermissions'])) {
                 $this->CIDRAM['VPermissions'] = [];
             }
-            $this->CIDRAM['VPermissions'] += array_flip(explode("\n", $this->Configuration['verification']['social_media']));
+            $this->CIDRAM['VPermissions'] += \array_flip(\explode("\n", $this->Configuration['verification']['social_media']));
         }
         $Before = $this->BlockInfo['SignatureCount'];
         $this->xVerification('Social Media Verification', false);
@@ -1822,7 +1823,7 @@ class Core
             if (!isset($this->CIDRAM['VPermissions'])) {
                 $this->CIDRAM['VPermissions'] = [];
             }
-            $this->CIDRAM['VPermissions'] += array_flip(explode("\n", $this->Configuration['verification']['other']));
+            $this->CIDRAM['VPermissions'] += \array_flip(\explode("\n", $this->Configuration['verification']['other']));
         }
         $Before = $this->BlockInfo['SignatureCount'];
         $this->xVerification('Other Verification', false);
@@ -1844,7 +1845,7 @@ class Core
         }
 
         foreach ($this->CIDRAM['VerificationData']['Search Engine Verification'] as $Values) {
-            if (isset($Values['Bypass flag']) && strlen($Values['Bypass flag'])) {
+            if (isset($Values['Bypass flag']) && \strlen($Values['Bypass flag'])) {
                 $this->CIDRAM[$Values['Bypass flag']] = false;
             }
         }
@@ -1872,25 +1873,25 @@ class Core
         $Path = $this->timeFormat($this->Now, $Path);
 
         /** We'll skip is_dir/mkdir calls if open_basedir is populated (to avoid PHP bug #69240). */
-        $Restrictions = strlen(ini_get('open_basedir')) > 0;
+        $Restrictions = \strlen(ini_get('open_basedir')) > 0;
 
         /** Split path into steps. */
-        $Steps = preg_split('~[\\\\/]~', $Path, -1, PREG_SPLIT_NO_EMPTY);
+        $Steps = \preg_split('~[\\\\/]~', $Path, -1, PREG_SPLIT_NO_EMPTY);
 
         /** Separate file from path. */
-        $File = $PointsToFile ? array_pop($Steps) : '';
+        $File = $PointsToFile ? \array_pop($Steps) : '';
 
         /** Build directories. */
         foreach ($Steps as $Step) {
             if (!isset($Rebuilt)) {
-                $Rebuilt = preg_match('~^[\\\\/]~', $Path) ? DIRECTORY_SEPARATOR . $Step : $Step;
+                $Rebuilt = \preg_match('~^[\\\\/]~', $Path) ? DIRECTORY_SEPARATOR . $Step : $Step;
             } else {
                 $Rebuilt .= DIRECTORY_SEPARATOR . $Step;
             }
-            if (preg_match('~^\.+$~', $Step)) {
+            if (\preg_match('~^\.+$~', $Step)) {
                 continue;
             }
-            if (!$Restrictions && !is_dir($Rebuilt) && !mkdir($Rebuilt)) {
+            if (!$Restrictions && !\is_dir($Rebuilt) && !\mkdir($Rebuilt)) {
                 return '';
             }
         }
@@ -1901,7 +1902,7 @@ class Core
         }
 
         /** Return an empty string if the final rebuilt path isn't writable. */
-        if (!is_writable($Rebuilt)) {
+        if (!\is_writable($Rebuilt)) {
             return '';
         }
 
@@ -1933,13 +1934,13 @@ class Core
      */
     public function deleteDirectory(string $Dir): void
     {
-        while (strrpos($Dir, '/') !== false || strrpos($Dir, '\\') !== false) {
-            $Separator = (strrpos($Dir, '/') !== false) ? '/' : '\\';
-            $Dir = substr($Dir, 0, strrpos($Dir, $Separator));
-            if (!is_dir($this->Vault . $Dir) || !$this->isDirEmpty($this->Vault . $Dir)) {
+        while (\strrpos($Dir, '/') !== false || \strrpos($Dir, '\\') !== false) {
+            $Separator = (\strrpos($Dir, '/') !== false) ? '/' : '\\';
+            $Dir = \substr($Dir, 0, \strrpos($Dir, $Separator));
+            if (!\is_dir($this->Vault . $Dir) || !$this->isDirEmpty($this->Vault . $Dir)) {
                 break;
             }
-            rmdir($this->Vault . $Dir);
+            \rmdir($this->Vault . $Dir);
         }
     }
 
@@ -1952,10 +1953,10 @@ class Core
      */
     public function buildLogPattern(string $Str, bool $GZ = false): string
     {
-        return '~^' . preg_replace(
+        return '~^' . \preg_replace(
             ['~\\{(?:d|m|h|i|s)\\}~i', '~\\{(?:dd|mm|yy|hh|ii|ss)\\}~i', '~\\{yyyy\\}~i', '~\\{(?:Day|Mon)\\}~i', '~\\{tz\\}~i', '~\\{t:z\\}~i'],
             ['\d{1,2}', '\d{2}', '\d{4}', '\w{3}', '.{1,2}\d{4}', '.{1,2}\d{2}:\d{2}'],
-            preg_replace([
+            \preg_replace([
                 '~\\\\{yyyy\\\\}~i',
                 '~\\\\{yy\\\\}~i',
                 '~\\\\{mm\\\\}~i',
@@ -1983,7 +1984,7 @@ class Core
                 '(?<ss>\d{2})',
                 '(?<s>\d{1,2})',
                 '(?<Mon>\w{3})'
-            ], preg_quote(str_replace('\\', '/', $Str)), 1)
+            ], \preg_quote(\str_replace('\\', '/', $Str)), 1)
         ) . ($GZ ? '(?:\.gz)?' : '') . '$~i';
     }
 
@@ -1996,24 +1997,24 @@ class Core
     public function gZCompressFile(string $File): bool
     {
         /** Guard. */
-        if ($File === '' || !is_file($File) || !is_readable($File)) {
+        if ($File === '' || !\is_file($File) || !\is_readable($File)) {
             return false;
         }
 
-        $Handle = fopen($File, 'rb');
-        if (!is_resource($Handle)) {
+        $Handle = \fopen($File, 'rb');
+        if (!\is_resource($Handle)) {
             return false;
         }
-        $HandleGZ = gzopen($File . '.gz', 'wb');
-        if (!is_resource($HandleGZ)) {
+        $HandleGZ = \gzopen($File . '.gz', 'wb');
+        if (!\is_resource($HandleGZ)) {
             return false;
         }
-        while (!feof($Handle)) {
-            $Data = fread($Handle, self::FILE_BLOCKSIZE);
-            gzwrite($HandleGZ, $Data);
+        while (!\feof($Handle)) {
+            $Data = \fread($Handle, self::FILE_BLOCKSIZE);
+            \gzwrite($HandleGZ, $Data);
         }
-        gzclose($HandleGZ);
-        fclose($Handle);
+        \gzclose($HandleGZ);
+        \fclose($Handle);
         return true;
     }
 
@@ -2034,27 +2035,27 @@ class Core
         }
         $Pattern = $this->buildLogPattern($Pattern);
         $Arr = [];
-        $Offset = strlen($this->Vault);
+        $Offset = \strlen($this->Vault);
         $List = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($this->Vault, \RecursiveDirectoryIterator::SKIP_DOTS), \RecursiveIteratorIterator::SELF_FIRST);
         foreach ($List as $Item => $List) {
-            $ItemFixed = str_replace('\\', '/', substr($Item, $Offset));
-            if ($ItemFixed && preg_match($Pattern, $ItemFixed) && is_readable($Item)) {
-                $Arr[$ItemFixed] = filemtime($Item);
+            $ItemFixed = \str_replace('\\', '/', \substr($Item, $Offset));
+            if ($ItemFixed && \preg_match($Pattern, $ItemFixed) && \is_readable($Item)) {
+                $Arr[$ItemFixed] = \filemtime($Item);
             }
         }
         unset($ItemFixed, $List, $Offset);
-        $Count = count($Arr);
+        $Count = \count($Arr);
         $Err = 0;
         if ($Count > $Limit) {
-            asort($Arr, SORT_NUMERIC);
+            \asort($Arr, SORT_NUMERIC);
             $StageRestore = $this->Stage ?? '';
             $this->Stage = '';
             foreach ($Arr as $Item => $Modified) {
                 if ($Action === 'Archive') {
                     $Err += !$this->gZCompressFile($this->Vault . $Item);
                 }
-                $Err += !unlink($this->Vault . $Item);
-                if (strpos($Item, '/') !== false) {
+                $Err += !\unlink($this->Vault . $Item);
+                if (\strpos($Item, '/') !== false) {
                     $this->deleteDirectory($Item);
                 }
                 $Count--;
@@ -2075,15 +2076,15 @@ class Core
      */
     public function pseudonymiseIp(string $IP): string
     {
-        if (($CPos = strpos($IP, ':')) !== false) {
-            $Parts = [(substr($IP, 0, $CPos) ?: ''), (substr($IP, $CPos + 1) ?: '')];
-            if (($CPos = strpos($Parts[1], ':')) !== false) {
-                $Parts[1] = substr($Parts[1], 0, $CPos) ?: '';
+        if (($CPos = \strpos($IP, ':')) !== false) {
+            $Parts = [(\substr($IP, 0, $CPos) ?: ''), (\substr($IP, $CPos + 1) ?: '')];
+            if (($CPos = \strpos($Parts[1], ':')) !== false) {
+                $Parts[1] = \substr($Parts[1], 0, $CPos) ?: '';
             }
             $Parts = $Parts[0] . ':' . $Parts[1] . '::x';
-            return str_replace(':::', '::', $Parts);
+            return \str_replace(':::', '::', $Parts);
         }
-        return preg_replace(
+        return \preg_replace(
             '/^([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])$/',
             '\1.\2.\3.x',
             $IP
@@ -2129,7 +2130,7 @@ class Core
     public function auxMatch($Criteria, $Actual, string $Method = '', string $SourceName = '', string $Name = '', bool $Negate = false): bool
     {
         /** Recurse through actual values if an array. */
-        if (is_array($Actual)) {
+        if (\is_array($Actual)) {
             foreach ($Actual as $ThisActual) {
                 if ($this->auxMatch($Criteria, $ThisActual, $Method, $SourceName, $Name, $Negate)) {
                     return true;
@@ -2139,12 +2140,12 @@ class Core
         }
 
         /** Guard against non-scalar values. */
-        if (!is_scalar($Actual)) {
+        if (!\is_scalar($Actual)) {
             return false;
         }
 
         /** Normalise criteria to an array. */
-        if (!is_array($Criteria)) {
+        if (!\is_array($Criteria)) {
             $Criteria = [$Criteria];
         }
 
@@ -2154,19 +2155,19 @@ class Core
         foreach ($Criteria as $TestCase) {
             $this->CIDRAM['Last aux regex matches'] = [];
             if ($Method === 'Auto') {
-                $Boundary = preg_quote(substr($TestCase, 0, 1));
+                $Boundary = \preg_quote(\substr($TestCase, 0, 1));
                 if (
-                    preg_match('~^(?!\\\\)(?![\0-\x20\dA-Za-z\xC0-\xFF]).$~', $Boundary) &&
-                    preg_match($Boundary === '~' ? '/^' . $Boundary . '.+' . $Boundary . 'i?m?s?x?A?D?S?U?u?n?$/' : '~^' . $Boundary . '.+' . $Boundary . 'i?m?s?x?A?D?S?U?u?n?$~', $TestCase)
+                    \preg_match('~^(?!\\\\)(?![\0-\x20\dA-Za-z\xC0-\xFF]).$~', $Boundary) &&
+                    \preg_match($Boundary === '~' ? '/^' . $Boundary . '.+' . $Boundary . 'i?m?s?x?A?D?S?U?u?n?$/' : '~^' . $Boundary . '.+' . $Boundary . 'i?m?s?x?A?D?S?U?u?n?$~', $TestCase)
                 ) {
                     $Operator = $Negate ? '≇' : '≅';
                 } else {
-                    $Operator = strpos($TestCase, '*') === false ? $this->operatorFromAuxValue($TestCase, $Negate) : ($Negate ? '≉' : '≈');
+                    $Operator = \strpos($TestCase, '*') === false ? $this->operatorFromAuxValue($TestCase, $Negate) : ($Negate ? '≉' : '≈');
                 }
             } elseif ($Method === 'RegEx') {
                 $Operator = $Negate ? '≇' : '≅';
             } elseif ($Method === 'WinEx') {
-                $Operator = strpos($TestCase, '*') === false ? ($Negate ? '≠' : '=') : ($Negate ? '≉' : '≈');
+                $Operator = \strpos($TestCase, '*') === false ? ($Negate ? '≠' : '=') : ($Negate ? '≉' : '≈');
             } else {
                 $Operator = $this->operatorFromAuxValue($TestCase, $Negate);
             }
@@ -2174,7 +2175,7 @@ class Core
             /** Perform a match using regular expressions. */
             if ($Operator === '≇' || $Operator === '≅') {
                 $Matches = [];
-                if (preg_match($TestCase, $Actual, $Matches)) {
+                if (\preg_match($TestCase, $Actual, $Matches)) {
                     $this->CIDRAM['Last aux regex matches'] = $Matches;
                     $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response.Not satisfied' : 'response.Satisfied'));
                     return true;
@@ -2185,7 +2186,7 @@ class Core
 
             /** Perform a match using Windows-style wildcards. */
             if ($Operator === '≉' || $Operator === '≈') {
-                if (preg_match('~^' . str_replace('\*', '.*', preg_quote($TestCase, '~')) . '$~', $Actual)) {
+                if (\preg_match('~^' . \str_replace('\*', '.*', \preg_quote($TestCase, '~')) . '$~', $Actual)) {
                     $this->addInspectionEntry($Name, $SourceName . ' (' . $Actual . ') ' . $Operator . ' ' . $TestCase, $this->L10N->getString($Negate ? 'response.Not satisfied' : 'response.Satisfied'));
                     return true;
                 }
@@ -2197,9 +2198,9 @@ class Core
             if ($Operator === '≠' || $Operator === '=') {
                 if ($ActualType !== gettype($TestCase)) {
                     if ($ActualType === 'integer') {
-                        $TestCase = (int)preg_replace('~^\D*~', '', $TestCase);
+                        $TestCase = (int)\preg_replace('~^\D*~', '', $TestCase);
                     } elseif ($ActualType === 'double') {
-                        $TestCase = (float)preg_replace('~^\D*~', '', $TestCase);
+                        $TestCase = (float)\preg_replace('~^\D*~', '', $TestCase);
                     } elseif ($ActualType === 'string') {
                         $TestCase = (string)$TestCase;
                     }
@@ -2276,22 +2277,22 @@ class Core
 
         /** Apply webhooks. */
         if (!empty($Webhooks)) {
-            $this->Webhooks = array_merge($this->Webhooks, $Webhooks);
+            $this->Webhooks = \array_merge($this->Webhooks, $Webhooks);
         }
 
         /** Process other options and special flags. */
         foreach ($this->CIDRAM['Provide']['Auxiliary Rules']['Flags'] as $FlagSetName => $FlagSet) {
             foreach ($FlagSet as $FlagName => $FlagData) {
-                if (empty($Flags[$FlagName]) || !isset($FlagData['Sets']) || !is_array($FlagData['Sets'])) {
+                if (empty($Flags[$FlagName]) || !isset($FlagData['Sets']) || !\is_array($FlagData['Sets'])) {
                     continue;
                 }
                 foreach ($FlagData['Sets'] as $SetKey => $SetData) {
-                    if (!property_exists($this, $SetKey)) {
+                    if (!\property_exists($this, $SetKey)) {
                         continue;
                     }
                     $Property = &$this->$SetKey;
-                    if (is_array($SetData) && is_array($Property)) {
-                        $Property = array_replace_recursive($Property, $SetData);
+                    if (\is_array($SetData) && \is_array($Property)) {
+                        $Property = \array_replace_recursive($Property, $SetData);
                         continue;
                     }
                     $Property = $SetData;
@@ -2318,12 +2319,12 @@ class Core
             if (!isset($this->CIDRAM['AuxRunResCache'])) {
                 $this->CIDRAM['AuxRunResCache'] = [];
             }
-            if (isset($this->CIDRAM['AuxRunResCache'][$Run]) && is_object($this->CIDRAM['AuxRunResCache'][$Run])) {
+            if (isset($this->CIDRAM['AuxRunResCache'][$Run]) && \is_object($this->CIDRAM['AuxRunResCache'][$Run])) {
                 $RunExitCode = $this->CIDRAM['AuxRunResCache'][$Run]();
-            } elseif (!$this->isReserved($Run) && is_readable($this->Vault . $Run)) {
+            } elseif (!$this->isReserved($Run) && \is_readable($this->Vault . $Run)) {
                 require_once $this->Vault . $Run;
             } else {
-                trigger_error($this->L10N->getString('response.Required files are missing'), E_USER_WARNING);
+                \trigger_error($this->L10N->getString('response.Required files are missing'), E_USER_WARNING);
             }
         }
 
@@ -2380,7 +2381,7 @@ class Core
     public function aux(): void
     {
         /** Exit procedure early if the rules don't exist. */
-        if (!file_exists($this->Vault . 'auxiliary.yml')) {
+        if (!\file_exists($this->Vault . 'auxiliary.yml')) {
             return;
         }
 
@@ -2393,17 +2394,17 @@ class Core
         /** Iterate through the auxiliary rules. */
         foreach ($this->CIDRAM['AuxData'] as $Name => $Data) {
             /** Safety. */
-            if (!is_array($Data) || empty($Data) || !empty($Data['Disable this rule'])) {
+            if (!\is_array($Data) || empty($Data) || !empty($Data['Disable this rule'])) {
                 continue;
             }
 
             /** Skip not yet started rules. */
             if (
                 isset($Data['From']) &&
-                is_string($Data['From']) &&
-                preg_match('~^(\d{4})[.-](\d\d)[.-](\d\d)$~', $Data['From'], $From)
+                \is_string($Data['From']) &&
+                \preg_match('~^(\d{4})[.-](\d\d)[.-](\d\d)$~', $Data['From'], $From)
             ) {
-                $From = mktime(0, 0, 0, (int)$From[2], (int)$From[3], (int)$From[1]);
+                $From = \mktime(0, 0, 0, (int)$From[2], (int)$From[3], (int)$From[1]);
                 if ($this->Now < $From) {
                     continue;
                 }
@@ -2412,10 +2413,10 @@ class Core
             /** Skip expired rules. */
             if (
                 isset($Data['Expiry']) &&
-                is_string($Data['Expiry']) &&
-                preg_match('~^(\d{4})[.-](\d\d)[.-](\d\d)$~', $Data['Expiry'], $Expiry)
+                \is_string($Data['Expiry']) &&
+                \preg_match('~^(\d{4})[.-](\d\d)[.-](\d\d)$~', $Data['Expiry'], $Expiry)
             ) {
-                $Expiry = mktime(0, 0, 0, (int)$Expiry[2], (int)$Expiry[3], (int)$Expiry[1]);
+                $Expiry = \mktime(0, 0, 0, (int)$Expiry[2], (int)$Expiry[3], (int)$Expiry[1]);
                 if ($this->Now > $Expiry) {
                     continue;
                 }
@@ -2447,7 +2448,7 @@ class Core
             $Flags = [];
             foreach ($this->CIDRAM['Provide']['Auxiliary Rules']['Flags'] as $FlagSet) {
                 foreach ($FlagSet as $FlagKey => $FlagData) {
-                    $Flags[$FlagKey] = is_array($FlagData) && !empty($Data[$FlagKey]);
+                    $Flags[$FlagKey] = \is_array($FlagData) && !empty($Data[$FlagKey]);
                 }
             }
 
@@ -2465,12 +2466,12 @@ class Core
                 if (!empty($Data[$Mode]['But not if matches'])) {
                     /** Iterate through sources. */
                     foreach ($this->CIDRAM['Provide']['Auxiliary Rules']['Sources'] as $SourceArrKey => $SourceArr) {
-                        if (!property_exists($this, $SourceArrKey)) {
+                        if (!\property_exists($this, $SourceArrKey)) {
                             continue;
                         }
                         $Property = &$this->$SourceArrKey;
-                        if (is_array($SourceArr)) {
-                            if (!is_array($Property) && !(is_object($Property) && $Property instanceof \ArrayAccess)) {
+                        if (\is_array($SourceArr)) {
+                            if (!\is_array($Property) && !(\is_object($Property) && $Property instanceof \ArrayAccess)) {
                                 continue;
                             }
                             foreach ($SourceArr as $SourceKey => $Source) {
@@ -2478,7 +2479,7 @@ class Core
                                 if (!isset($Data[$Mode]['But not if matches'][$SourceKey], $Property[$SourceKey])) {
                                     continue;
                                 }
-                                if (!is_array($Data[$Mode]['But not if matches'][$SourceKey])) {
+                                if (!\is_array($Data[$Mode]['But not if matches'][$SourceKey])) {
                                     $Data[$Mode]['But not if matches'][$SourceKey] = [$Data[$Mode]['But not if matches'][$SourceKey]];
                                 }
                                 foreach ($Data[$Mode]['But not if matches'][$SourceKey] as $Value) {
@@ -2493,7 +2494,7 @@ class Core
                         if (!isset($Data[$Mode]['But not if matches'][$SourceArrKey])) {
                             continue;
                         }
-                        if (!is_array($Data[$Mode]['But not if matches'][$SourceArrKey])) {
+                        if (!\is_array($Data[$Mode]['But not if matches'][$SourceArrKey])) {
                             $Data[$Mode]['But not if matches'][$SourceArrKey] = [$Data[$Mode]['But not if matches'][$SourceArrKey]];
                         }
                         $SourceName = $this->L10N->getString($SourceArr) ?: $SourceArr;
@@ -2510,12 +2511,12 @@ class Core
                 if (!empty($Data[$Mode]['If matches'])) {
                     /** Iterate through sources. */
                     foreach ($this->CIDRAM['Provide']['Auxiliary Rules']['Sources'] as $SourceArrKey => $SourceArr) {
-                        if (!property_exists($this, $SourceArrKey)) {
+                        if (!\property_exists($this, $SourceArrKey)) {
                             continue;
                         }
                         $Property = &$this->$SourceArrKey;
-                        if (is_array($SourceArr)) {
-                            if (!is_array($Property) && !(is_object($Property) && $Property instanceof \ArrayAccess)) {
+                        if (\is_array($SourceArr)) {
+                            if (!\is_array($Property) && !(\is_object($Property) && $Property instanceof \ArrayAccess)) {
                                 continue;
                             }
                             foreach ($SourceArr as $SourceKey => $Source) {
@@ -2523,7 +2524,7 @@ class Core
                                 if (!isset($Data[$Mode]['If matches'][$SourceKey], $Property[$SourceKey])) {
                                     continue;
                                 }
-                                if (!is_array($Data[$Mode]['If matches'][$SourceKey])) {
+                                if (!\is_array($Data[$Mode]['If matches'][$SourceKey])) {
                                     $Data[$Mode]['If matches'][$SourceKey] = [$Data[$Mode]['If matches'][$SourceKey]];
                                 }
                                 foreach ($Data[$Mode]['If matches'][$SourceKey] as $Value) {
@@ -2533,19 +2534,19 @@ class Core
                                         if ($Logic === 'All') {
                                             continue;
                                         }
-                                        if (preg_match_all('~\\\\(\d+)~', $Name, $Counts) && isset($Counts[1], $this->CIDRAM['Last aux regex matches'][1])) {
-                                            $Counts = array_unique($Counts[1]);
+                                        if (\preg_match_all('~\\\\(\d+)~', $Name, $Counts) && isset($Counts[1], $this->CIDRAM['Last aux regex matches'][1])) {
+                                            $Counts = \array_unique($Counts[1]);
                                             foreach ($Counts as $Iterator) {
                                                 if (isset($this->CIDRAM['Last aux regex matches'][$Iterator])) {
-                                                    $Name = str_replace('\\' . $Iterator, $this->CIDRAM['Last aux regex matches'][$Iterator], $Name);
+                                                    $Name = \str_replace('\\' . $Iterator, $this->CIDRAM['Last aux regex matches'][$Iterator], $Name);
                                                 }
                                             }
                                         }
-                                        if (preg_match_all('~\\\\(\d+)~', $Reason, $Counts) && isset($Counts[1], $this->CIDRAM['Last aux regex matches'][1])) {
-                                            $Counts = array_unique($Counts[1]);
+                                        if (\preg_match_all('~\\\\(\d+)~', $Reason, $Counts) && isset($Counts[1], $this->CIDRAM['Last aux regex matches'][1])) {
+                                            $Counts = \array_unique($Counts[1]);
                                             foreach ($Counts as $Iterator) {
                                                 if (isset($this->CIDRAM['Last aux regex matches'][$Iterator])) {
-                                                    $Reason = str_replace('\\' . $Iterator, $this->CIDRAM['Last aux regex matches'][$Iterator], $Reason);
+                                                    $Reason = \str_replace('\\' . $Iterator, $this->CIDRAM['Last aux regex matches'][$Iterator], $Reason);
                                                 }
                                             }
                                         }
@@ -2567,7 +2568,7 @@ class Core
                         if (!isset($Data[$Mode]['If matches'][$SourceArrKey])) {
                             continue;
                         }
-                        if (!is_array($Data[$Mode]['If matches'][$SourceArrKey])) {
+                        if (!\is_array($Data[$Mode]['If matches'][$SourceArrKey])) {
                             $Data[$Mode]['If matches'][$SourceArrKey] = [$Data[$Mode]['If matches'][$SourceArrKey]];
                         }
                         $SourceName = $this->L10N->getString($SourceArr) ?: $SourceArr;
@@ -2578,19 +2579,19 @@ class Core
                                 if ($Logic === 'All') {
                                     continue;
                                 }
-                                if (preg_match_all('~\\\\(\d+)~', $Name, $Counts) && isset($Counts[1], $this->CIDRAM['Last aux regex matches'][1])) {
-                                    $Counts = array_unique($Counts[1]);
+                                if (\preg_match_all('~\\\\(\d+)~', $Name, $Counts) && isset($Counts[1], $this->CIDRAM['Last aux regex matches'][1])) {
+                                    $Counts = \array_unique($Counts[1]);
                                     foreach ($Counts as $Iterator) {
                                         if (isset($this->CIDRAM['Last aux regex matches'][$Iterator])) {
-                                            $Name = str_replace('\\' . $Iterator, $this->CIDRAM['Last aux regex matches'][$Iterator], $Name);
+                                            $Name = \str_replace('\\' . $Iterator, $this->CIDRAM['Last aux regex matches'][$Iterator], $Name);
                                         }
                                     }
                                 }
-                                if (preg_match_all('~\\\\(\d+)~', $Reason, $Counts) && isset($Counts[1], $this->CIDRAM['Last aux regex matches'][1])) {
-                                    $Counts = array_unique($Counts[1]);
+                                if (\preg_match_all('~\\\\(\d+)~', $Reason, $Counts) && isset($Counts[1], $this->CIDRAM['Last aux regex matches'][1])) {
+                                    $Counts = \array_unique($Counts[1]);
                                     foreach ($Counts as $Iterator) {
                                         if (isset($this->CIDRAM['Last aux regex matches'][$Iterator])) {
-                                            $Reason = str_replace('\\' . $Iterator, $this->CIDRAM['Last aux regex matches'][$Iterator], $Reason);
+                                            $Reason = \str_replace('\\' . $Iterator, $this->CIDRAM['Last aux regex matches'][$Iterator], $Reason);
                                         }
                                     }
                                 }
@@ -2611,19 +2612,19 @@ class Core
 
                 /** Perform action for matching rules requiring all conditions to be met. */
                 if ($Logic === 'All' && $Matched) {
-                    if (preg_match_all('~\\\\(\d+)~', $Name, $Counts) && isset($Counts[1], $this->CIDRAM['Last aux regex matches'][1])) {
-                        $Counts = array_unique($Counts[1]);
+                    if (\preg_match_all('~\\\\(\d+)~', $Name, $Counts) && isset($Counts[1], $this->CIDRAM['Last aux regex matches'][1])) {
+                        $Counts = \array_unique($Counts[1]);
                         foreach ($Counts as $Iterator) {
                             if (isset($this->CIDRAM['Last aux regex matches'][$Iterator])) {
-                                $Name = str_replace('\\' . $Iterator, $this->CIDRAM['Last aux regex matches'][$Iterator], $Name);
+                                $Name = \str_replace('\\' . $Iterator, $this->CIDRAM['Last aux regex matches'][$Iterator], $Name);
                             }
                         }
                     }
-                    if (preg_match_all('~\\\\(\d+)~', $Reason, $Counts) && isset($Counts[1], $this->CIDRAM['Last aux regex matches'][1])) {
-                        $Counts = array_unique($Counts[1]);
+                    if (\preg_match_all('~\\\\(\d+)~', $Reason, $Counts) && isset($Counts[1], $this->CIDRAM['Last aux regex matches'][1])) {
+                        $Counts = \array_unique($Counts[1]);
                         foreach ($Counts as $Iterator) {
                             if (isset($this->CIDRAM['Last aux regex matches'][$Iterator])) {
-                                $Reason = str_replace('\\' . $Iterator, $this->CIDRAM['Last aux regex matches'][$Iterator], $Reason);
+                                $Reason = \str_replace('\\' . $Iterator, $this->CIDRAM['Last aux regex matches'][$Iterator], $Reason);
                             }
                         }
                     }
@@ -2649,63 +2650,63 @@ class Core
     public function operatorFromAuxValue(string &$Value, bool $Negate = false): string
     {
         $Try = $Value;
-        $Stub = substr($Try, 0, 1);
+        $Stub = \substr($Try, 0, 1);
         if ($Stub === '&') {
-            if (substr($Try, 0, 4) === '&lt;') {
+            if (\substr($Try, 0, 4) === '&lt;') {
                 $Stub = '<';
-                $Try = substr($Try, 3);
-            } elseif (substr($Try, 0, 4) === '&gt;') {
+                $Try = \substr($Try, 3);
+            } elseif (\substr($Try, 0, 4) === '&gt;') {
                 $Stub = '>';
-                $Try = substr($Try, 3);
+                $Try = \substr($Try, 3);
             }
         }
         if ($Stub === '>') {
-            $Try = substr($Try, 1);
-            $Stub = substr($Try, 0, 1);
+            $Try = \substr($Try, 1);
+            $Stub = \substr($Try, 0, 1);
             if ($Stub === '=') {
-                $Try = substr($Try, 1);
-                if (is_numeric($Try)) {
+                $Try = \substr($Try, 1);
+                if (\is_numeric($Try)) {
                     $Value = $Try;
                     return $Negate ? '≱' : '≥';
                 }
                 return $Negate ? '≠' : '=';
             }
-            if (is_numeric($Try)) {
+            if (\is_numeric($Try)) {
                 $Value = $Try;
                 return $Negate ? '≯' : '>';
             }
             return $Negate ? '≠' : '=';
         }
         if ($Stub === '<') {
-            $Try = substr($Try, 1);
-            $Stub = substr($Try, 0, 1);
+            $Try = \substr($Try, 1);
+            $Stub = \substr($Try, 0, 1);
             if ($Stub === '=') {
-                $Try = substr($Try, 1);
-                if (is_numeric($Try)) {
+                $Try = \substr($Try, 1);
+                if (\is_numeric($Try)) {
                     $Value = $Try;
                     return $Negate ? '≰' : '≤';
                 }
                 return $Negate ? '≠' : '=';
             }
-            if (is_numeric($Try)) {
+            if (\is_numeric($Try)) {
                 $Value = $Try;
                 return $Negate ? '≮' : '<';
             }
             return $Negate ? '≠' : '=';
         }
         if ($Stub === "\xe2") {
-            $Stub = substr($Try, 1, 2);
+            $Stub = \substr($Try, 1, 2);
             if ($Stub === "\x89\xa5") {
-                $Try = substr($Try, 3);
-                if (is_numeric($Try)) {
+                $Try = \substr($Try, 3);
+                if (\is_numeric($Try)) {
                     $Value = $Try;
                     return $Negate ? '≱' : '≥';
                 }
                 return $Negate ? '≠' : '=';
             }
             if ($Stub === "\x89\xa4") {
-                $Try = substr($Try, 3);
-                if (is_numeric($Try)) {
+                $Try = \substr($Try, 3);
+                if (\is_numeric($Try)) {
                     $Value = $Try;
                     return $Negate ? '≰' : '≤';
                 }
@@ -2723,22 +2724,22 @@ class Core
     public function auxTestCaseToNumeric($Value)
     {
         /** Already numeric. */
-        if (is_int($Value) || is_float($Value)) {
+        if (\is_int($Value) || \is_float($Value)) {
             return $Value;
         }
 
         /** Guard against non-scalar values which could break the process. */
-        if (!is_scalar($Value)) {
+        if (!\is_scalar($Value)) {
             return 0;
         }
 
-        if (!is_string($Value)) {
+        if (!\is_string($Value)) {
             $Value = (string)$Value;
         }
 
         /** Convert IPv4 address to numeric value. */
-        if (preg_match('~^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$~', $Value)) {
-            $Value = explode('.', $Value);
+        if (\preg_match('~^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$~', $Value)) {
+            $Value = \explode('.', $Value);
             return ($Value[0] * 16777216) + ($Value[1] * 65536) + ($Value[2] * 256) + $Value[3];
         }
 
@@ -2775,13 +2776,13 @@ class Core
     public function rateLimitWriteEvent(string $RL_Capture, int $RL_Size): void
     {
         /** Guard. */
-        if (isset($this->CIDRAM['ViewCalled']) && preg_match('~(?:^|\n)FE(?:\n|$)~', $this->Configuration['rate_limiting']['exceptions'])) {
+        if (isset($this->CIDRAM['ViewCalled']) && \preg_match('~(?:^|\n)FE(?:\n|$)~', $this->Configuration['rate_limiting']['exceptions'])) {
             return;
         }
 
         $SourceName = ($this->Configuration['rate_limiting']['segregate'] && $this->CIDRAM['HTTP_HOST'] !== '') ? 'rl-' . $this->CIDRAM['HTTP_HOST'] : 'rl';
-        $TimePacked = pack('l*', $this->Now);
-        $SizePacked = pack('l*', $RL_Size);
+        $TimePacked = \pack('l*', $this->Now);
+        $SizePacked = \pack('l*', $RL_Size);
         $Data = $TimePacked . $SizePacked . $RL_Capture;
 
         /** Override if using a different preferred caching mechanism. */
@@ -2791,9 +2792,9 @@ class Core
         }
 
         /** Default process. */
-        $Handle = fopen($this->Vault . $SourceName . '.dat', 'ab');
-        fwrite($Handle, $Data);
-        fclose($Handle);
+        $Handle = \fopen($this->Vault . $SourceName . '.dat', 'ab');
+        \fwrite($Handle, $Data);
+        \fclose($Handle);
     }
 
     /**
@@ -2809,29 +2810,29 @@ class Core
         }
 
         $Pos = 0;
-        $EoS = strlen($this->CIDRAM['RL_Data']);
+        $EoS = \strlen($this->CIDRAM['RL_Data']);
         while ($Pos < $EoS) {
-            $Time = substr($this->CIDRAM['RL_Data'], $Pos, 4);
-            if (strlen($Time) !== 4) {
+            $Time = \substr($this->CIDRAM['RL_Data'], $Pos, 4);
+            if (\strlen($Time) !== 4) {
                 break;
             }
-            $Time = unpack('l*', $Time);
+            $Time = \unpack('l*', $Time);
             if ($Time[1] > $this->CIDRAM['RL_Expired']) {
                 break;
             }
             $Pos += 8;
-            $Block = substr($this->CIDRAM['RL_Data'], $Pos, 4);
-            if (strlen($Block) !== 4) {
+            $Block = \substr($this->CIDRAM['RL_Data'], $Pos, 4);
+            if (\strlen($Block) !== 4) {
                 $this->CIDRAM['RL_Data'] = '';
                 break;
             }
-            $Block = unpack('l*', $Block);
+            $Block = \unpack('l*', $Block);
             $Pos += 4 + $Block[1];
         }
         if ($Pos) {
             $SourceName = ($this->Configuration['rate_limiting']['segregate'] && $this->CIDRAM['HTTP_HOST'] !== '') ? 'rl-' . $this->CIDRAM['HTTP_HOST'] : 'rl';
             if ($this->CIDRAM['RL_Data']) {
-                $this->CIDRAM['RL_Data'] = substr($this->CIDRAM['RL_Data'], $Pos);
+                $this->CIDRAM['RL_Data'] = \substr($this->CIDRAM['RL_Data'], $Pos);
             }
 
             /** Override if using a different preferred caching mechanism. */
@@ -2841,9 +2842,9 @@ class Core
             }
 
             /** Default process. */
-            $Handle = fopen($this->Vault . $SourceName . '.dat', 'wb');
-            fwrite($Handle, $this->CIDRAM['RL_Data']);
-            fclose($Handle);
+            $Handle = \fopen($this->Vault . $SourceName . '.dat', 'wb');
+            \fwrite($Handle, $this->CIDRAM['RL_Data']);
+            \fclose($Handle);
         }
     }
 
@@ -2857,15 +2858,15 @@ class Core
         $Pos = 0;
         $Bytes = 0;
         $Requests = 0;
-        while (strlen($this->CIDRAM['RL_Data']) > $Pos && $Pos = strpos($this->CIDRAM['RL_Data'], $this->CIDRAM['RL_Capture'], $Pos + 1)) {
+        while (\strlen($this->CIDRAM['RL_Data']) > $Pos && $Pos = \strpos($this->CIDRAM['RL_Data'], $this->CIDRAM['RL_Capture'], $Pos + 1)) {
             if ($Pos === false) {
                 break;
             }
-            $Size = substr($this->CIDRAM['RL_Data'], $Pos - 4, 4);
-            if (strlen($Size) !== 4) {
+            $Size = \substr($this->CIDRAM['RL_Data'], $Pos - 4, 4);
+            if (\strlen($Size) !== 4) {
                 break;
             }
-            $Size = unpack('l*', $Size);
+            $Size = \unpack('l*', $Size);
             $Bytes += $Size[1];
             $Requests++;
         }
@@ -2879,9 +2880,9 @@ class Core
      */
     public function rateGetOldest(): array
     {
-        if (($Pos = strpos($this->CIDRAM['RL_Data'], $this->CIDRAM['RL_Capture'])) !== false) {
-            $Bytes = unpack('l*', substr($this->CIDRAM['RL_Data'], $Pos - 4, 4));
-            $Time = unpack('l*', substr($this->CIDRAM['RL_Data'], $Pos - 8, 4));
+        if (($Pos = \strpos($this->CIDRAM['RL_Data'], $this->CIDRAM['RL_Capture'])) !== false) {
+            $Bytes = \unpack('l*', \substr($this->CIDRAM['RL_Data'], $Pos - 4, 4));
+            $Time = \unpack('l*', \substr($this->CIDRAM['RL_Data'], $Pos - 8, 4));
         }
         return ['Bytes' => $Bytes[1] ?? 0, 'Time' => $Time[1] ?? 0];
     }
@@ -2908,12 +2909,12 @@ class Core
          * @return bool True to end further processing; False to defer processing.
          */
         $this->CIDRAM['PreviousErrorHandler'] = set_error_handler(function ($errno, $errstr, $errfile, $errline) {
-            $VaultLen = strlen($this->Vault);
+            $VaultLen = \strlen($this->Vault);
             if (
-                strlen($errfile) > $VaultLen &&
-                str_replace('\\', '/', substr($errfile, 0, $VaultLen)) === str_replace('\\', '/', $this->Vault)
+                \strlen($errfile) > $VaultLen &&
+                \str_replace('\\', '/', \substr($errfile, 0, $VaultLen)) === \str_replace('\\', '/', $this->Vault)
             ) {
-                $errfile = substr($errfile, $VaultLen);
+                $errfile = \substr($errfile, $VaultLen);
             }
             $ExtraErrorInfo = $this->CIDRAM['ExtraErrorInfo'] ?? '';
             $this->CIDRAM['Errors'][] = [$errno, $errstr, $errfile, $errline, $ExtraErrorInfo];
@@ -2946,20 +2947,20 @@ class Core
      */
     public function generateId(): string
     {
-        $Time = explode(' ', microtime(), 2);
+        $Time = \explode(' ', \microtime(), 2);
         $Time[0] = (string)($Time[0] * 1000000);
-        while (strlen($Time[0]) < 6) {
+        while (\strlen($Time[0]) < 6) {
             $Time[0] = '0' . $Time[0];
         }
 
         /** PHP >= 7.3 (https://www.php.net/manual/en/function.hrtime.php */
-        if (function_exists('hrtime')) {
+        if (\function_exists('hrtime')) {
             try {
-                $HRTime = (string)hrtime(true);
-                if (strlen($HRTime) > 10) {
-                    $HRTime = substr($HRTime, -10);
+                $HRTime = (string)\hrtime(true);
+                if (\strlen($HRTime) > 10) {
+                    $HRTime = \substr($HRTime, -10);
                 }
-                while (strlen($HRTime) < 10) {
+                while (\strlen($HRTime) < 10) {
                     $HRTime = '0' . $HRTime;
                 }
             } catch (\Exception $Exception) {
@@ -2969,15 +2970,15 @@ class Core
             $HRTime = '';
         }
 
-        $HRLen = strlen($HRTime);
+        $HRLen = \strlen($HRTime);
         $Time = $Time[1] . '-' . $Time[0] . '-' . $HRTime;
         if ($HRLen < 10) {
-            $Low = 10 ** (9 - strlen($HRTime));
+            $Low = 10 ** (9 - \strlen($HRTime));
             $High = ($Low * 10) - 1;
             try {
-                $Pad = random_int($Low, $High);
+                $Pad = \random_int($Low, $High);
             } catch (\Exception $Exception) {
-                $Pad = rand($Low, $High);
+                $Pad = \rand($Low, $High);
             }
             $Time .= $Pad;
         }
@@ -2992,11 +2993,11 @@ class Core
      */
     public function addProfileEntry(string $Entries): void
     {
-        foreach (explode(';', $Entries) as $Profile) {
+        foreach (\explode(';', $Entries) as $Profile) {
             $this->Profiles[] = $Profile;
         }
-        sort($this->Profiles, SORT_STRING);
-        $this->Profiles = array_unique($this->Profiles);
+        \sort($this->Profiles, SORT_STRING);
+        $this->Profiles = \array_unique($this->Profiles);
     }
 
     /**
@@ -3007,7 +3008,7 @@ class Core
      */
     public function hasProfile($Profile): bool
     {
-        if (is_array($Profile)) {
+        if (\is_array($Profile)) {
             foreach ($Profile as $Checking) {
                 if ($this->hasProfile($Checking)) {
                     return true;
@@ -3015,7 +3016,7 @@ class Core
             }
             return false;
         }
-        if (!is_string($Profile)) {
+        if (!\is_string($Profile)) {
             return false;
         }
         foreach ($this->Profiles as $Has) {
@@ -3065,18 +3066,18 @@ class Core
         if (isset($this->CIDRAM['isSensitive'])) {
             return $this->CIDRAM['isSensitive'];
         }
-        foreach (explode("\n", $this->Configuration['general']['sensitive']) as $Try) {
-            $First = substr($Try, 0, 1);
+        foreach (\explode("\n", $this->Configuration['general']['sensitive']) as $Try) {
+            $First = \substr($Try, 0, 1);
             if ($First === '/') {
                 $PathOnly = $_SERVER['REQUEST_URI'] ?? '/';
-                if ($Try === substr($PathOnly, 0, strlen($Try))) {
+                if ($Try === \substr($PathOnly, 0, \strlen($Try))) {
                     return $this->CIDRAM['isSensitive'] = true;
                 }
-            } elseif (!preg_match('~^[\dA-Za-z]$~', $First) && $First === substr(preg_replace('~[a-z]+$~', '', $Try), -1)) {
-                if (preg_match($Try, $URI)) {
+            } elseif (!\preg_match('~^[\dA-Za-z]$~', $First) && $First === \substr(\preg_replace('~[a-z]+$~', '', $Try), -1)) {
+                if (\preg_match($Try, $URI)) {
                     return $this->CIDRAM['isSensitive'] = true;
                 }
-            } elseif (strpos($URI, $Try) !== false) {
+            } elseif (\strpos($URI, $Try) !== false) {
                 return $this->CIDRAM['isSensitive'] = true;
             }
         }
@@ -3094,11 +3095,11 @@ class Core
         if (($Primary = $this->readFile($Path . $this->Configuration['general']['lang'] . '.yml')) === '') {
             if (isset($this->CIDRAM['Config Defaults']['general']['lang']['defer'][$this->Configuration['general']['lang']])) {
                 if (($Primary = $this->readFile($Path . $this->CIDRAM['Config Defaults']['general']['lang']['defer'][$this->Configuration['general']['lang']] . '.yml')) === '') {
-                    $Primary = $this->readFile($Path . preg_replace('~-.*$~', '', $this->CIDRAM['Config Defaults']['general']['lang']['defer'][$this->Configuration['general']['lang']]) . '.yml');
+                    $Primary = $this->readFile($Path . \preg_replace('~-.*$~', '', $this->CIDRAM['Config Defaults']['general']['lang']['defer'][$this->Configuration['general']['lang']]) . '.yml');
                 }
             }
             if ($Primary === '') {
-                $Try = preg_replace('~-.*$~', '', $this->Configuration['general']['lang']);
+                $Try = \preg_replace('~-.*$~', '', $this->Configuration['general']['lang']);
                 if (($Primary = $this->readFile($Path . $Try . '.yml')) === '') {
                     if (isset($this->CIDRAM['Config Defaults']['general']['lang']['defer'][$Try])) {
                         $Primary = $this->readFile($Path . $this->CIDRAM['Config Defaults']['general']['lang']['defer'][$Try] . '.yml');
@@ -3118,7 +3119,7 @@ class Core
         if ($this->L10NAccepted === '' && $Accepted !== '') {
             $this->L10NAccepted = $Accepted;
         }
-        $Fallback = substr($this->L10NAccepted, 0, 3) === 'en-' ? '' : $this->readFile($Path . 'en.yml');
+        $Fallback = \substr($this->L10NAccepted, 0, 3) === 'en-' ? '' : $this->readFile($Path . 'en.yml');
         if ($Fallback !== '') {
             $Arr = [];
             $this->YAML->process($Fallback, $Arr);
@@ -3128,16 +3129,16 @@ class Core
         }
 
         /** Instantiate the L10N object, or append to the instance if it already exists. */
-        if ($this->L10N instanceof \Maikuolan\Common\L10N && is_array($this->L10N->Data)) {
-            if (!empty($Primary) && is_array($this->L10N->Data)) {
-                $this->L10N->Data = array_merge_recursive($this->L10N->Data, $Primary);
+        if ($this->L10N instanceof \Maikuolan\Common\L10N && \is_array($this->L10N->Data)) {
+            if (!empty($Primary) && \is_array($this->L10N->Data)) {
+                $this->L10N->Data = \array_merge_recursive($this->L10N->Data, $Primary);
             }
-            if (!empty($Fallback) && is_array($this->L10N->Fallback)) {
-                $this->L10N->Fallback = array_merge_recursive($this->L10N->Fallback, $Fallback);
+            if (!empty($Fallback) && \is_array($this->L10N->Fallback)) {
+                $this->L10N->Fallback = \array_merge_recursive($this->L10N->Fallback, $Fallback);
             }
         } else {
             $this->L10N = new \Maikuolan\Common\L10N($Primary, $Fallback);
-            if (substr($this->L10NAccepted, 0, 3) === 'en-') {
+            if (\substr($this->L10NAccepted, 0, 3) === 'en-') {
                 $this->L10N->autoAssignRules($this->L10NAccepted);
             } else {
                 $this->L10N->autoAssignRules($this->L10NAccepted, 'en-AU');
@@ -3151,17 +3152,17 @@ class Core
                 $this->ClientL10N = &$this->L10N;
             }
         } else {
-            $Try = explode(',', $_SERVER['HTTP_ACCEPT_LANGUAGE'], 20);
+            $Try = \explode(',', $_SERVER['HTTP_ACCEPT_LANGUAGE'], 20);
             $Accepted = '';
             foreach ($Try as $Accepted) {
-                $Accepted = preg_replace(['~;.*$~', '~[^-A-Za-z]|-$~'], '', $Accepted);
+                $Accepted = \preg_replace(['~;.*$~', '~[^-A-Za-z]|-$~'], '', $Accepted);
                 $Primary = '';
                 $IsSameAs = false;
                 if ($this->L10NAccepted === $Accepted) {
                     $IsSameAs = true;
                     break;
                 }
-                $Main = strpos($Accepted, '-') === false ? '' : strtolower(preg_replace('~-.*$~', '', $Accepted));
+                $Main = \strpos($Accepted, '-') === false ? '' : \strtolower(\preg_replace('~-.*$~', '', $Accepted));
                 if (($Primary = $this->readFile($Path . $Accepted . '.yml')) !== '' || ($Primary = $this->readFile($Path . $Main . '.yml')) !== '') {
                     break;
                 }
@@ -3175,7 +3176,7 @@ class Core
                     }
                     if (
                         ($Primary = $this->readFile($Path . $this->CIDRAM['Config Defaults']['general']['lang']['defer'][$Accepted] . '.yml')) !== '' ||
-                        ($Primary = $this->readFile($Path . preg_replace('~-.*$~', '', $this->CIDRAM['Config Defaults']['general']['lang']['defer'][$Accepted]) . '.yml')) !== ''
+                        ($Primary = $this->readFile($Path . \preg_replace('~-.*$~', '', $this->CIDRAM['Config Defaults']['general']['lang']['defer'][$Accepted]) . '.yml')) !== ''
                     ) {
                         break 2;
                     }
@@ -3197,8 +3198,8 @@ class Core
                     $this->ClientL10NAccepted = $Accepted;
                 }
                 $this->YAML->process($Primary, $Arr);
-                if ($this->ClientL10N instanceof \Maikuolan\Common\L10N && is_array($this->ClientL10N->Data)) {
-                    $this->ClientL10N->Data = array_merge_recursive($this->ClientL10N->Data, $Arr);
+                if ($this->ClientL10N instanceof \Maikuolan\Common\L10N && \is_array($this->ClientL10N->Data)) {
+                    $this->ClientL10N->Data = \array_merge_recursive($this->ClientL10N->Data, $Arr);
                 } else {
                     $this->ClientL10N = new \Maikuolan\Common\L10N($Arr, $this->L10N);
                     $this->ClientL10N->autoAssignRules($Accepted);
@@ -3225,11 +3226,11 @@ class Core
     public function fetchFavicon(string $Theme = 'default'): array
     {
         foreach (['ico', 'png', 'jpg', 'gif'] as $Extension) {
-            if (!is_readable($this->Vault . 'favicon_' . $Theme . '.' . $Extension)) {
+            if (!\is_readable($this->Vault . 'favicon_' . $Theme . '.' . $Extension)) {
                 continue;
             }
             return [
-                base64_encode($this->readFile($this->Vault . 'favicon_' . $Theme . '.' . $Extension)),
+                \base64_encode($this->readFile($this->Vault . 'favicon_' . $Theme . '.' . $Extension)),
                 $Extension === 'ico' ? 'x-icon' : $Extension
             ];
         }
@@ -3252,9 +3253,9 @@ class Core
      */
     public function canonical(string $Path): string
     {
-        $Path = str_replace('\\', '/', $Path);
-        while (preg_match('~/[^/]+/\.\./|/\./|/{2,}~', $Path)) {
-            $Path = preg_replace('~/[^/]+/\.\./|/\./|/{2,}~', '/', $Path);
+        $Path = \str_replace('\\', '/', $Path);
+        while (\preg_match('~/[^/]+/\.\./|/\./|/{2,}~', $Path)) {
+            $Path = \preg_replace('~/[^/]+/\.\./|/\./|/{2,}~', '/', $Path);
         }
         return $Path;
     }
@@ -3269,7 +3270,7 @@ class Core
      */
     public function isReserved(string $Name): bool
     {
-        return preg_match('~(?:^|\\\\|/)(?:\.{1,3}|aux|com(?:\d+|¹|²|³)|con|lpt(?:\d+|¹|²|³)|nul|prn)(?:(?:\..*)?$|\\\\|/)|[ .]$~i', $Name);
+        return \preg_match('~(?:^|\\\\|/)(?:\.{1,3}|aux|com(?:\d+|¹|²|³)|con|lpt(?:\d+|¹|²|³)|nul|prn)(?:(?:\..*)?$|\\\\|/)|[ .]$~i', $Name);
     }
 
     /**
@@ -3280,9 +3281,9 @@ class Core
      */
     public function freeFromTraversal(string $Path): bool
     {
-        return !preg_match(
+        return !\preg_match(
             '~(?:[^\da-z\p{L}\p{N}\p{M}\p{P}\p{S}\p{Z}.]|[\\\\/?&=]|^)\.\.+(?:[^\da-z\p{L}\p{N}\p{M}\p{P}\p{S}\p{Z}.]|[\\\\/?&=]|$)|/\.+(?:[^\da-z\p{L}\p{N}\p{M}\p{P}\p{S}\p{Z}.]|[\\\\/?&=]|$)|(?:[^\da-z\p{L}\p{N}\p{M}\p{P}\p{S}\p{Z}.]|[\\\\/])\.+/|[\x01-\x1F]~i',
-            str_ireplace(
+            \str_ireplace(
                 ['%25', '%20', '%21', '%22', '%23', '%24', '%26', '%27', '%28', '%29', '%2a', '%2b', '%2c', '%2d', '%2e', '%2f', '%3a', '%3b', '%3c', '%3d', '%3e', '%3f', '%5b', '%5c', '%5d', '%5e', '%5f', '%60', '\\'],
                 ['%', ' ', '!', '"', '#', '$', '&', '\'', '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '[', '/', ']', '^', '_', '`', '/'],
                 $Path
@@ -3294,18 +3295,22 @@ class Core
      * Routes from uaIpMatch, uaCidrMatch, and uaAsnMatch. Has no return value.
      *
      * @param mixed $Datapoints The datapoint to be matched.
-     * @param string|array $Expected The expected values (per the call origin).
+     * @param string|array|\Stringable $Expected The expected values (per the call origin).
      * @param string $Friendly A friendly name to use when logging.
      * @return void
      */
     private function uaXMatch($Datapoints, $Expected, string $Friendly): void
     {
         $this->arrayify($Datapoints);
+        if ($Expected instanceof \Maikuolan\Common\LazyArray) {
+            $Expected->trigger();
+            $Expected = $Expected->Data;
+        }
         $this->arrayify($Expected);
 
         /** Compare the actual value from the request against the expected values. */
         foreach ($Datapoints as $Datapoint) {
-            if (in_array($Datapoint, $Expected)) {
+            if (\in_array($Datapoint, $Expected)) {
                 /** Untrack positives. */
                 if (isset($this->CIDRAM['VPermissions'][$Friendly . ':UntrackPositives'])) {
                     $this->CIDRAM['Trackable'] = false;
@@ -3321,7 +3326,7 @@ class Core
                 $this->bypass((
                     isset($this->CIDRAM['VPermissions'][$Friendly . ':SingleHitBypass'], $this->BlockInfo['SignatureCount'], $this->BlockInfo['WhyReason']) &&
                     $this->BlockInfo['SignatureCount'] === 1 &&
-                    preg_match('~, L\d+:F\d+,| Lookup~', $this->BlockInfo['WhyReason'])
+                    \preg_match('~, L\d+:F\d+,| Lookup~', $this->BlockInfo['WhyReason'])
                 ), $this->L10N->getString('why_single_hit_bypass'));
 
                 /** Exit. */
@@ -3331,7 +3336,7 @@ class Core
 
         /** Nothing matched. Block it. */
         if (isset($this->CIDRAM['VPermissions'][$Friendly . ':BlockNegatives'])) {
-            $this->trigger(true, sprintf($this->L10N->getString('Short.Fake_UA'), $Friendly));
+            $this->trigger(true, \sprintf($this->L10N->getString('Short.Fake_UA'), $Friendly));
             $this->addProfileEntry('Blocked Negative');
 
             /** Reporting. */
@@ -3368,20 +3373,20 @@ class Core
         }
         foreach ($this->CIDRAM['VerificationData'][$From] as $Name => $Values) {
             if (
-                !is_array($Values) ||
+                !\is_array($Values) ||
                 !isset($Values['Method'], $Values['Valid domains']) ||
                 ($BypassFlags && !empty($Values['Bypass flag']) && !empty($this->CIDRAM[$Values['Bypass flag']]))
             ) {
                 continue;
             }
             if (
-                (!empty($Values['User Agent']) && strpos($this->BlockInfo['UALC'], $Values['User Agent']) !== false) ||
-                (!empty($Values['User Agent Pattern']) && preg_match($Values['User Agent Pattern'], $this->BlockInfo['UALC']))
+                (!empty($Values['User Agent']) && \strpos($this->BlockInfo['UALC'], $Values['User Agent']) !== false) ||
+                (!empty($Values['User Agent Pattern']) && \preg_match($Values['User Agent Pattern'], $this->BlockInfo['UALC']))
             ) {
                 if (isset($this->CIDRAM['VPermissions'][$Name . ':Verify'])) {
                     $this->{$Values['Method']}($Values['Valid domains'], $Name, $Values);
                 } elseif (isset($this->CIDRAM['VPermissions'][$Name . ':BlockNonVerified'])) {
-                    $this->trigger(true, sprintf($this->L10N->getString('Short.Unverified_UA'), $Name));
+                    $this->trigger(true, \sprintf($this->L10N->getString('Short.Unverified_UA'), $Name));
                     $this->addProfileEntry('Blocked Non-Verified');
                 }
             }
@@ -3418,7 +3423,7 @@ class Core
     {
         if ($this->Configuration['signatures']['conflict_response'] === 429) {
             $Signature = 'RL';
-            $this->BlockInfo['ReasonMessage'] = sprintf($this->ClientL10N->getString('ReasonMessage.RL') ?: $this->L10N->getString('ReasonMessage.RL'), sprintf($this->L10N->getPlural(3, '%s seconds'), $this->NumberFormatter->format(3)));
+            $this->BlockInfo['ReasonMessage'] = \sprintf($this->ClientL10N->getString('ReasonMessage.RL') ?: $this->L10N->getString('ReasonMessage.RL'), \sprintf($this->L10N->getPlural(3, '%s seconds'), $this->NumberFormatter->format(3)));
         } else {
             $Signature = 'Conflict';
             $this->BlockInfo['ReasonMessage'] = $this->ClientL10N->getString('ReasonMessage.Conflict') ?: $this->L10N->getString('ReasonMessage.Conflict');

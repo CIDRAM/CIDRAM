@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Czech language data for the front-end (last modified: 2026.03.13).
+# This file: Czech language data for the front-end (last modified: 2026.03.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,7 +24,7 @@
 # requests, ask. I can help.
 ##/
 
-Abuse category:
+Abuse category: !lazy
  Bad web bot: "Špatný webový robot (vyhledávání e-mailových adres, obsahu, prohledávače, které nerespektují soubor robots.txt, nadměrné požadavky, falšování uživatelských agentů, atd)."
  Brute-force attacks: "Útoky hrubou silou (útoky hrubou silou na přihlášení na webové stránky, SMTP, RDP, atd)."
  Categories (at least one is required): "Kategorie (alespoň jedna je povinná)"
@@ -50,7 +50,7 @@ Abuse category:
  VPN IP: "IP VPN."
  Web spam: "Webový spam (spam v komentářích/fórech, spam v odkazu HTTP, nebo jiný spam CMS)."
  Webapp attacks: "Útoky na webové aplikace (hledání zranitelností nebo zneužití, nebo pokus o zneužití nainstalovaných webových aplikací, CMS, nebo řešení elektronického obchodu, např., WordPress, Drupal, phpMyAdmin, atd)."
-Extended Description:
+Extended Description: !lazy
  AbuseIPDB module: "Blokuje požadavky z IP adres uvedených na AbuseIPDB."
  BGPView module: "Využívá {{Links.BGPView}} API k poskytování zařízení pro vyhledávání ASN a kódu země pro CIDRAM, umožňující blokování nebo whitelistaci ASN a zemí prostřednictvím konfigurace CIDRAM a poskytuje prostředky pro ověření sociálních sítí pro ověření požadavků Facebooku. (Pokud použijete tento modul, nebudete muset používat modul IP-API, protože slouží stejnému účelu)."
  Bad TLDs blocker module: "Blokuje hostitele patřící k TLD, které často používají spameři, hackeři, a další nebezpečné entity."
@@ -77,7 +77,7 @@ Extended Description:
  Referrer spam module: "Blokování na základě odkazujícího spamu obecně neposkytuje žádnou smysluplnou bezpečnostní výhodu, ale v některých případech může být užitečné pro některé uživatele, aby získali více informací o požadavcích a to reportovat."
  Stop Forum Spam module: "Chrání registrační a přihlašovací stránky před IP adresami uvedenými v SFS."
  Tor blocker module: "Zakazuje přístup z výstupních uzlů Tor prostřednictvím vyhledávání DNSEL (podporuje IPv4 i IPv6)."
-Name:
+Name: !lazy
  AbuseIPDB module: "Modul AbuseIPDB."
  BGPView module: "Modul BGPView."
  BOBUAM: "Modul pro uživatelské agenty botů a prohlížečů (BOBUAM)."
@@ -129,7 +129,7 @@ checkbox:
  Test as sensitive request: "Testovat jako citlivý požadavek"
  Untrack positives: "Zrušit sledování pro pozitiva?"
  When blocked, suppress output template: "Při zablokování potlačte výstupní šablonu."
-config:
+config: !lazy
  abuseipdb: "Konfigurace pro modul AbuseIPDB."
  abuseipdb_api_key: &EnterAPIKey "Zde zadejte svůj klíč API."
  abuseipdb_build_profiles_from_usage_type: "Sestavit profily pomocí typu použití vráceného rozhraním API? False (Nepravdivé) = Ne. True (Pravdivé) = Ano. Standardní = True."
@@ -826,7 +826,7 @@ link:
  Subtractor: "Odečítač"
  Updates: "Aktualizace"
  View mode: "Režim zobrazení"
-macro:
+macro: !lazy
  Description:
   activate_modules: &MayImpactPerformance "Obecně se nedoporučuje, protože pravděpodobně existují takové, které nepotřebujete. Instalace a aktivace komponenty, když nejsou potřeba, by mohla negativně ovlivnit výkon."
   install_l10n_core: &RecommendKeepingCore "Když je aktivována konfigurační direktiva <code>lang_override</code>, pokud prohlížeč uživatele specifikuje konkrétní jazykové preference, pokud jsou nainstalována základní data L10N pro tento jazyk, CIDRAM je schopen zobrazit stránku „přístup odepřen“ v daném jazyce. V souladu s tím se doporučuje nechat nainstalovaná všechna základní data L10N."
@@ -877,7 +877,7 @@ previewer:
  Seconds: "Sekundy"
  Weeks: "Týdny"
  Years: "Let"
-purpose:
+purpose: !lazy
  3D graphics file: "3D grafický soubor (např., CAD, modely, materiály, textury)"
  Audio file: "Zvukový soubor"
  Card file: "Soubor karet"
@@ -999,7 +999,7 @@ response:
  _Yes: "Ano"
  please_check_config: "Zkontrolujte prosím svou konfiguraci, abyste se ujistili že se nově nainstalovaný modul bude chovat tak, jak zamýšlíte."
  release_notes: "<a href="%s"><span class="navicon link"></span>Poznámky k vydání pro %s.</a>"
-stages:
+stages: !lazy
  Check whether banned: "Zkontrolujte zda je zakázáno"
  Deploy CAPTCHAs (blocked requests): "Nasaďte CAPTCHA (zablokované požadavky)"
  Deploy CAPTCHAs (non-blocked requests): "Nasaďte CAPTCHA (neblokované požadavky)"

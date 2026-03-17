@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2026.03.13).
+ * This file: General methods used by the front-end (last modified: 2026.03.17).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -54,11 +54,11 @@ trait FrontEndMethods
     private function fileManagerRecursiveList(string $Base, bool $Recursive = true): array
     {
         $this->FE['CanShowRecursive'] = $Recursive ? -1 : 0;
-        if (!file_exists($Base) || !is_dir($Base) || !is_readable($Base)) {
+        if (!\file_exists($Base) || !\is_dir($Base) || !\is_readable($Base)) {
             if ($this->FE['state_msg'] !== '') {
                 $this->FE['state_msg'] .= '<br />';
             }
-            $this->FE['state_msg'] .= sprintf($this->L10N->getString('response.Failed to access %s'), $Base);
+            $this->FE['state_msg'] .= \sprintf($this->L10N->getString('response.Failed to access %s'), $Base);
             return [];
         }
         $Arr = [[
@@ -82,9 +82,9 @@ trait FrontEndMethods
         $Ord = 4;
         $Dirs = [];
         $Key = 0;
-        $StartTime = time();
-        $Offset = strlen($Base);
-        $VLen = strlen($this->Vault);
+        $StartTime = \time();
+        $Offset = \strlen($Base);
+        $VLen = \strlen($this->Vault);
         if ($Recursive) {
             $List = new \LimitIterator(new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator(
                 $Base,
@@ -103,7 +103,7 @@ trait FrontEndMethods
         $FailToNonRecursive = false;
         foreach ($List as $Item => $List) {
             /** Guard against timeouts due to huge directories. */
-            if ((time() - $StartTime) > 3) {
+            if ((\time() - $StartTime) > 3) {
                 if ($Recursive) {
                     $FailToNonRecursive = true;
                     break;
@@ -115,10 +115,10 @@ trait FrontEndMethods
                 $ThisName = $List->getFilename();
                 $Item = $Base . $ThisName;
             } else {
-                $ThisName = substr($Item, $Offset);
+                $ThisName = \substr($Item, $Offset);
             }
             $Key++;
-            if (preg_match('~^(?:/\.\.|./\.|\.{3})$~', str_replace('\\', '/', substr($Item, -3)))) {
+            if (\preg_match('~^(?:/\.\.|./\.|\.{3})$~', \str_replace('\\', '/', \substr($Item, -3)))) {
                 continue;
             }
             $Arr[$Key] = [
@@ -135,7 +135,7 @@ trait FrontEndMethods
                 'FS' => -1,
                 'mtime' => -2
             ];
-            if (strpos($Arr[$Key]['Filename'], '/') === false) {
+            if (\strpos($Arr[$Key]['Filename'], '/') === false) {
                 $Arr[$Key]['dynClass'] = '';
             } else {
                 $this->FE['CanShowRecursive'] = 1;
@@ -143,41 +143,41 @@ trait FrontEndMethods
             }
             $Ord += 4;
             $Item = $this->canonical($Item);
-            $ThisDir = dirname($Item);
+            $ThisDir = \dirname($Item);
             if (!isset($Dirs[$ThisDir])) {
-                $Dirs[$ThisDir] = is_writable($ThisDir);
+                $Dirs[$ThisDir] = \is_writable($ThisDir);
             }
             $Arr[$Key]['Deletable'] = $Dirs[$ThisDir];
-            if (is_dir($Item) && !is_file($Item)) {
+            if (\is_dir($Item) && !\is_file($Item)) {
                 $Arr[$Key]['Directory'] = true;
                 $Arr[$Key]['Filesize'] = '';
                 $Arr[$Key]['Component'] = $this->L10N->getString('field.Directory');
                 $Arr[$Key]['Icon'] = 'icon=folder';
-                if (!preg_match('~["<>\r\n]~', $Item)) {
+                if (!\preg_match('~["<>\r\n]~', $Item)) {
                     $this->FE['basepathList'] .= "\n            <option value=\"" . $Item . '">' . $Item . '</option>';
                 }
                 continue;
             }
             $Arr[$Key]['Directory'] = false;
-            if (!is_file($Item)) {
+            if (!\is_file($Item)) {
                 $Arr[$Key]['Filesize'] = $Arr[$Key]['Component'] = $this->L10N->getString('field.Unknown');
                 continue;
             }
-            $Arr[$Key]['Readable'] = is_readable($Item);
-            $Arr[$Key]['Writable'] = is_writable($Item);
-            $Arr[$Key]['Filesize'] = $Arr[$Key]['FS'] = filesize($Item);
-            $Arr[$Key]['mtime'] = filemtime($Item);
+            $Arr[$Key]['Readable'] = \is_readable($Item);
+            $Arr[$Key]['Writable'] = \is_writable($Item);
+            $Arr[$Key]['Filesize'] = $Arr[$Key]['FS'] = \filesize($Item);
+            $Arr[$Key]['mtime'] = \filemtime($Item);
             $Component = '';
             $NoEdit = false;
             $LockIcon = false;
-            $CheckAs = substr($Item, 0, $VLen) === $this->Vault ? substr($Item, $VLen) : '';
+            $CheckAs = \substr($Item, 0, $VLen) === $this->Vault ? \substr($Item, $VLen) : '';
             if ($CheckAs !== '' && isset($this->Components['Files'])) {
                 if (isset($this->Components['Files'][$CheckAs])) {
                     $Component = $this->Components['Files'][$CheckAs];
-                } elseif (preg_match('~^\.ht|\.safety$|^salt\.dat$~i', $CheckAs)) {
+                } elseif (\preg_match('~^\.ht|\.safety$|^salt\.dat$~i', $CheckAs)) {
                     $Component = $this->L10N->getString('label.Safety mechanisms');
                     $NoEdit = true;
-                } elseif (preg_match('~(?:^|\.)config\.yml$~i', $CheckAs)) {
+                } elseif (\preg_match('~(?:^|\.)config\.yml$~i', $CheckAs)) {
                     $Component = $this->L10N->getString('link.Configuration');
                     $Arr[$Key]['Icon'] = 'icon=configuration';
                     $LockIcon = true;
@@ -189,13 +189,13 @@ trait FrontEndMethods
                     $Component = $this->L10N->getString('link.Auxiliary Rules');
                     $Arr[$Key]['Icon'] = 'icon=auxiliary';
                     $LockIcon = true;
-                } elseif (preg_match('~(?:(?:^|/)ignore\.dat|_custom\.dat|\.sig|\.inc)$|(?:^|/)signatures/~i', $CheckAs)) {
+                } elseif (\preg_match('~(?:(?:^|/)ignore\.dat|_custom\.dat|\.sig|\.inc)$|(?:^|/)signatures/~i', $CheckAs)) {
                     $Component = $this->L10N->getString('label.Other rules, signature files, etc');
                 } elseif ($CheckAs === 'cache.dat') {
                     $Component = $this->L10N->getString('label.Cache data and temporary files');
                     $Arr[$Key]['Icon'] = 'icon=cache';
                     $LockIcon = true;
-                } elseif (preg_match('~(?:\.tmp|\.rollback|^(?:hashes|ipbypass|rl)\.dat)$~i', $CheckAs)) {
+                } elseif (\preg_match('~(?:\.tmp|\.rollback|^(?:hashes|ipbypass|rl)\.dat)$~i', $CheckAs)) {
                     $Component = $this->L10N->getString('label.Cache data and temporary files');
                 } elseif ($CheckAs === 'installed.yml') {
                     $Component = $this->L10N->getString('label.Component updates metadata');
@@ -208,17 +208,17 @@ trait FrontEndMethods
             }
             $this->formatFileSize($Arr[$Key]['Filesize']);
             $Arr[$Key]['Filesize'] = $Arr[$Key]['Filesize'] . ' – ' . $this->timeFormat($Arr[$Key]['mtime'], $this->Configuration['general']['time_format']);
-            if (($ExtDel = strrpos($Item, '.')) === false || ($Ext = strtoupper(substr($Item, $ExtDel + 1))) === '') {
+            if (($ExtDel = \strrpos($Item, '.')) === false || ($Ext = \strtoupper(\substr($Item, $ExtDel + 1))) === '') {
                 $Arr[$Key]['Component'] = $Component === '' ? $this->L10N->getString('field.Unknown') : $Component . $this->L10N->getString('field.Unknown');
                 continue;
             }
             $Arr[$Key]['Component'] = $Component ?: $this->L10N->getString('field.Unknown');
-            if (!$NoEdit && preg_match('/^(?:[BD]AT|SVG|TEX|URL)$/', $Ext)) {
+            if (!$NoEdit && \preg_match('/^(?:[BD]AT|SVG|TEX|URL)$/', $Ext)) {
                 $Arr[$Key]['CanEdit'] = true;
             }
             if ($Base === $this->Vault && $Ext === 'ICO') {
                 if (!$LockIcon) {
-                    $Arr[$Key]['Icon'] = 'file=' . urlencode($Arr[$Key]['Filename']);
+                    $Arr[$Key]['Icon'] = 'file=' . \urlencode($Arr[$Key]['Filename']);
                 }
                 $Arr[$Key]['Component'] = $Component . $this->L10N->getString('purpose.Graphics file');
                 continue;
@@ -233,32 +233,32 @@ trait FrontEndMethods
                     $Arr[$Key]['Icon'] = 'icon=torrent';
                 }
                 $Arr[$Key]['Component'] = $Component . $this->L10N->getString('purpose.Torrent file');
-            } elseif (preg_match('/^(?:CML|DX|G3K|JDX|MML|MOL|ODF|SDF?|SMI|SXM|TEX)$/', $Ext)) {
+            } elseif (\preg_match('/^(?:CML|DX|G3K|JDX|MML|MOL|ODF|SDF?|SMI|SXM|TEX)$/', $Ext)) {
                 if (!$LockIcon) {
                     $Arr[$Key]['Icon'] = 'icon=formulas';
                 }
                 $Arr[$Key]['Component'] = $Component . $this->L10N->getString('purpose.Formulas file');
-            } elseif (preg_match('/^(?:A(?:BF|FM)|B(?:[DM]F|RFNT)|F(?:NT|ON[DT]?)|MGF|OTF|PF[ABM]|S(?:FD|NF)|T(?:DF|FM|T[CF])|UFO|WOFF)$/', $Ext)) {
+            } elseif (\preg_match('/^(?:A(?:BF|FM)|B(?:[DM]F|RFNT)|F(?:NT|ON[DT]?)|MGF|OTF|PF[ABM]|S(?:FD|NF)|T(?:DF|FM|T[CF])|UFO|WOFF)$/', $Ext)) {
                 if (!$LockIcon) {
                     $Arr[$Key]['Icon'] = 'icon=font';
                 }
                 $Arr[$Key]['Component'] = $Component . $this->L10N->getString('purpose.Font file');
-            } elseif (preg_match('/^(?:CA?RD|VC(?:ARD|F))$/', $Ext)) {
+            } elseif (\preg_match('/^(?:CA?RD|VC(?:ARD|F))$/', $Ext)) {
                 if (!$LockIcon) {
                     $Arr[$Key]['Icon'] = 'icon=card';
                 }
                 $Arr[$Key]['Component'] = $Component . $this->L10N->getString('purpose.Card file');
-            } elseif (preg_match('/^(?:DPS|FODP|GSLIDES|KEYNOTE|NBP?|O[DT]P|P(?:EZ|OT[MX]?|P[ST]X?|RDX|RZ)|S(?:DD|H[FW]|HOW|LP|SPSS|TI|XI)|THMX|WATCH|XDP)$/', $Ext)) {
+            } elseif (\preg_match('/^(?:DPS|FODP|GSLIDES|KEYNOTE|NBP?|O[DT]P|P(?:EZ|OT[MX]?|P[ST]X?|RDX|RZ)|S(?:DD|H[FW]|HOW|LP|SPSS|TI|XI)|THMX|WATCH|XDP)$/', $Ext)) {
                 if (!$LockIcon) {
                     $Arr[$Key]['Icon'] = 'icon=presentation';
                 }
                 $Arr[$Key]['Component'] = $Component . $this->L10N->getString('purpose.Graphs or presentation file');
-            } elseif (preg_match('/^(?:0XE|INFECTED|QFU|QUARANTINED|ZL9)$/', $Ext)) {
+            } elseif (\preg_match('/^(?:0XE|INFECTED|QFU|QUARANTINED|ZL9)$/', $Ext)) {
                 if (!$LockIcon) {
                     $Arr[$Key]['Icon'] = 'icon=quarantine';
                 }
                 $Arr[$Key]['Component'] = $Component . $this->L10N->getString('purpose.Quarantined file');
-            } elseif (preg_match(
+            } elseif (\preg_match(
                 '/^(?:.*DB|4(?:D[CDRZ]|DIND[XY])|' .
                 'A(?:CCDE|D[PT]|PR)|BOX|CHML|D(?:A[FT]|BF|TA)|' .
                 'E(?:AP|GT|SS)|F(?:P[357]?|RM)|GTABLE|KEXI[CS]?|' .
@@ -271,7 +271,7 @@ trait FrontEndMethods
                     $Arr[$Key]['Icon'] = 'icon=database';
                 }
                 $Arr[$Key]['Component'] = $Component . $this->L10N->getString('purpose.Database file');
-            } elseif (preg_match(
+            } elseif (\preg_match(
                 '/^(?:[123]86|73K|89K|A(?:6P|C[CT].*|PP|SH.*)|' .
                 'B(?:AT|IN|PL|TM)|C(?:CC|MD|OM.*|PL|SH)|D(?:LL|RV)|E(?:LF|X[E_])|G(?:AD.*|EO)|' .
                 'I(?:N[SX]|PA|SU)|J(?:OB|SE)|K(?:O|SH)|LIB|' .
@@ -284,7 +284,7 @@ trait FrontEndMethods
                     $Arr[$Key]['Icon'] = 'icon=executable';
                 }
                 $Arr[$Key]['Component'] = $Component . $this->L10N->getString('purpose.Executable file');
-            } elseif (preg_match(
+            } elseif (\preg_match(
                 '/^(?:16SVX|3GA|8SVX|' .
                 'A(?:A[CX]?|BC|C[3DT]|IF[CF]?|IMPPL|LA?C|L[PS]|MR|PE|S[FTX]|TMOS|UD?|UDIO|UP3?|WB?)|' .
                 'B(?:AND|CWAV|RSTM|WF)|' .
@@ -303,7 +303,7 @@ trait FrontEndMethods
                     $Arr[$Key]['Icon'] = 'icon=audio';
                 }
                 $Arr[$Key]['Component'] = $Component . $this->L10N->getString('purpose.Audio file');
-            } elseif (preg_match(
+            } elseif (\preg_match(
                 '/^(?:12[3M]|A(?:B[23]|ST|WS)|BCSV|C(?:ELL|HIP|LF|SV|TS)|' .
                 'D(?:EX|FG|I[FS])|E(?:DXZ?|FU|SS)|F(?:CS|ODS|P)|' .
                 'G(?:NM|NUMERIC|S(?:HEET)?)|IMP|LCW|N(?:CSS|UMBERS)|' .
@@ -316,12 +316,12 @@ trait FrontEndMethods
                     $Arr[$Key]['Icon'] = 'icon=spreadsheet';
                 }
                 $Arr[$Key]['Component'] = $Component . $this->L10N->getString('purpose.Spreadsheet file or tabular data');
-            } elseif (preg_match('/^(?:AXX|BPW|C(?:ERT?|RT)|DER|EEA|G(?:PG|XK)|HTPASSWD|JKS|K(?:DBX?|EY|ODE)|NSIGNE?|OMF|P(?:12|7[BC]|ASS(?:WORD)?|EM|FX|GP|PK|UB|WD)|SSH|TC)$/', $Ext)) {
+            } elseif (\preg_match('/^(?:AXX|BPW|C(?:ERT?|RT)|DER|EEA|G(?:PG|XK)|HTPASSWD|JKS|K(?:DBX?|EY|ODE)|NSIGNE?|OMF|P(?:12|7[BC]|ASS(?:WORD)?|EM|FX|GP|PK|UB|WD)|SSH|TC)$/', $Ext)) {
                 if (!$LockIcon) {
                     $Arr[$Key]['Icon'] = 'icon=encrypted';
                 }
                 $Arr[$Key]['Component'] = $Component . $this->L10N->getString('purpose.Encrypted or sensitive file');
-            } elseif (preg_match(
+            } elseif (\preg_match(
                 '/^(?:.._|.[QZ].|7Z|' .
                 'A(?:AR|CE|FA|LZ|PK|PPX?|PPXBUNDLE|R[CJK]?)?|' .
                 'B(?:16Z|[AHRZ]|IN|Z2)|' .
@@ -343,12 +343,12 @@ trait FrontEndMethods
                     $Arr[$Key]['Icon'] = 'icon=archive';
                 }
                 $Arr[$Key]['Component'] = $Component . $this->L10N->getString('purpose.Compressed file or archive');
-            } elseif (preg_match('/^(?:3(?:DM[FL]?|DS|DXML|MF)|A(?:BC|MF|ND)|BLEND\d*|CAD|D(?:AE|WG)|FBX|G(?:CODE|ITF|LB|LTF)|IGES|J?MESH|MTL|OBJ|P(?:BR|LY|RC)|S(?:KP|TEP|TL)|USDZ|VRML|X(?:3D|VL))$/', $Ext)) {
+            } elseif (\preg_match('/^(?:3(?:DM[FL]?|DS|DXML|MF)|A(?:BC|MF|ND)|BLEND\d*|CAD|D(?:AE|WG)|FBX|G(?:CODE|ITF|LB|LTF)|IGES|J?MESH|MTL|OBJ|P(?:BR|LY|RC)|S(?:KP|TEP|TL)|USDZ|VRML|X(?:3D|VL))$/', $Ext)) {
                 if (!$LockIcon) {
                     $Arr[$Key]['Icon'] = 'icon=models';
                 }
                 $Arr[$Key]['Component'] = $Component . $this->L10N->getString('purpose.3D graphics file');
-            } elseif (preg_match(
+            } elseif (\preg_match(
                 '/^(?:3(?:DMLW|DV|G2|GP(?:P2)?)|' .
                 'A(?:AF|CT?|EP|I|M[CFV]|N8|NIM?|OI|RT|S[EFMS]|T3|VCHD|VIF?|WG)|' .
                 'B(?:3D|DL4|FRES|IK|LOCK|LP|M[2P]|MD3|PG|RAW|RRES|TI|W)|' .
@@ -384,7 +384,7 @@ trait FrontEndMethods
                     $Arr[$Key]['Icon'] = 'icon=graphics';
                 }
                 $Arr[$Key]['Component'] = $Component . $this->L10N->getString('purpose.Graphics file');
-            } elseif (preg_match(
+            } elseif (\preg_match(
                 '/^(?:0|1ST|60.|A(?:BW|FP|MI|NS|WW)|BBEB|C(?:CF|WK)|D(?:BK|O[CT][MTX]?)|' .
                 'E(?:PUB|VTX)|F(?:B[23]|DX|ODT|T[MX])|G(?:DOC|UIDE)|HWP(?:ML)?|KPUB|' .
                 'L(?:RF|WP)|M(?:AN|BP|CW|WD)|O(?:D[MT]|DOC|MM|SHEET|T[HT]|XPS)|' .
@@ -397,7 +397,7 @@ trait FrontEndMethods
                     $Arr[$Key]['Icon'] = 'icon=presentation';
                 }
                 $Arr[$Key]['Component'] = $Component . $this->L10N->getString('purpose.Document');
-            } elseif (preg_match(
+            } elseif (\preg_match(
                 '/^(?:[SDMPX]?HT[AM]L?X?|A(?:D[ABS]|HK|PPLESCRIPT|SC?|SC(?:II(?:DOC)?)?|SM|TOM|U3|WK)?|' .
                 'B(?:AS|B|MX)?|C(?:A?ML|B[LP]|C|FG|SV|IA|JS|LASS|LJS?|LS|NF|OB|OFFEE|ONF(?:IG)?|PP|SS?|SPROJ|XX)?|' .
                 'D(?:ART|BA|BPRO123|IFF|ITA)?|E(?:BUILD|FS|L|NV|RB)?|' .
@@ -418,12 +418,12 @@ trait FrontEndMethods
                     $Arr[$Key]['Icon'] = 'icon=documentation';
                 }
                 $Arr[$Key]['Component'] = $Component . $this->L10N->getString('purpose.Plain-text file');
-            } elseif (preg_match('/^(?:DESKTOP|DIRECTORY|LI?NK|PLIST|SHORTCUT|URL|WEBLOC)$/', $Ext)) {
+            } elseif (\preg_match('/^(?:DESKTOP|DIRECTORY|LI?NK|PLIST|SHORTCUT|URL|WEBLOC)$/', $Ext)) {
                 if (!$LockIcon) {
                     $Arr[$Key]['Icon'] = 'icon=link';
                 }
                 $Arr[$Key]['Component'] = $Component . $this->L10N->getString('purpose.Shortcut file');
-            } elseif (preg_match('/^(?:CACHE|FOO|OLD|TE?MP)(-\d+)?$/', $Ext) || substr($Arr[$Key]['Filename'], 0, 2) === '~$') {
+            } elseif (\preg_match('/^(?:CACHE|FOO|OLD|TE?MP)(-\d+)?$/', $Ext) || \substr($Arr[$Key]['Filename'], 0, 2) === '~$') {
                 if (!$LockIcon) {
                     $Arr[$Key]['Icon'] = 'icon=cache';
                 }
@@ -443,7 +443,7 @@ trait FrontEndMethods
             $Value['OrdRev2'] = $Ord + 2;
             $Value['OrdRev3'] = $Ord + 3;
         }
-        uasort($Arr, function ($A, $B): int {
+        \uasort($Arr, function ($A, $B): int {
             if ($A['FS'] === $B['FS']) {
                 return 0;
             }
@@ -464,7 +464,7 @@ trait FrontEndMethods
             $Value['OrdFSRev2'] = $Ord + 2;
             $Value['OrdFSRev3'] = $Ord + 3;
         }
-        uasort($Arr, function ($A, $B): int {
+        \uasort($Arr, function ($A, $B): int {
             if ($A['mtime'] === $B['mtime']) {
                 return 0;
             }
@@ -485,7 +485,7 @@ trait FrontEndMethods
             $Value['OrdMTRev2'] = $Ord + 2;
             $Value['OrdMTRev3'] = $Ord + 3;
         }
-        ksort($Arr);
+        \ksort($Arr);
         return $Arr;
     }
 
@@ -499,23 +499,23 @@ trait FrontEndMethods
     private function filesAsKeys(string $Base, bool $Rescursive = true): array
     {
         $Arr = [];
-        $Offset = strlen($Base);
+        $Offset = \strlen($Base);
         if ($Rescursive) {
             $List = new \LimitIterator(new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator(
                 $Base,
                 \RecursiveDirectoryIterator::FOLLOW_SYMLINKS | \RecursiveDirectoryIterator::SKIP_DOTS | \RecursiveDirectoryIterator::UNIX_PATHS
             ), \RecursiveIteratorIterator::SELF_FIRST), 0, 1000);
             foreach ($List as $Item => $List) {
-                $Arr[substr($Item, $Offset)] = true;
+                $Arr[\substr($Item, $Offset)] = true;
             }
         } else {
             $List = new \DirectoryIterator($Base);
             foreach ($List as $Item) {
                 $Item = $Item->getPathname();
-                if (is_dir($Item) || !is_file($Item) || preg_match('~^(?:/\.\.|./\.|\.{3})$~', str_replace('\\', '/', substr($Item, -3)))) {
+                if (\is_dir($Item) || !\is_file($Item) || \preg_match('~^(?:/\.\.|./\.|\.{3})$~', \str_replace('\\', '/', \substr($Item, -3)))) {
                     continue;
                 }
-                $Arr[substr($Item, $Offset)] = true;
+                $Arr[\substr($Item, $Offset)] = true;
             }
         }
         return $Arr;
@@ -531,14 +531,14 @@ trait FrontEndMethods
      */
     private function pathSecurityCheck(string $Path): bool
     {
-        $Path = str_replace('\\', '/', $Path);
-        if (preg_match('~(?://|[^!\d\w\._-]$)~i', $Path) || !$this->freeFromTraversal($Path)) {
+        $Path = \str_replace('\\', '/', $Path);
+        if (\preg_match('~(?://|[^!\d\w\._-]$)~i', $Path) || !$this->freeFromTraversal($Path)) {
             return false;
         }
-        $Path = preg_split('@/@', $Path, -1, PREG_SPLIT_NO_EMPTY);
+        $Path = \preg_split('@/@', $Path, -1, PREG_SPLIT_NO_EMPTY);
         $Valid = true;
-        array_walk($Path, function ($Segment) use (&$Valid): void {
-            if (empty($Segment) || preg_match('/(?:[\x00-\x1F\x7F]+|^\.+$)/i', $Segment)) {
+        \array_walk($Path, function ($Segment) use (&$Valid): void {
+            if (empty($Segment) || \preg_match('/(?:[\x00-\x1F\x7F]+|^\.+$)/i', $Segment)) {
                 $Valid = false;
             }
         });
@@ -555,11 +555,11 @@ trait FrontEndMethods
      */
     private function ipv4GetLast(string $First, int $Factor): string
     {
-        $Octets = explode('.', $First);
+        $Octets = \explode('.', $First);
         $Split = $Bracket = $Factor / 8;
-        $Split -= floor($Split);
+        $Split -= \floor($Split);
         $Split = (int)(8 - ($Split * 8));
-        $Octet = floor($Bracket);
+        $Octet = \floor($Bracket);
         if ($Octet < 4) {
             $Octets[$Octet] += (2 ** $Split) - 1;
         }
@@ -567,7 +567,7 @@ trait FrontEndMethods
             $Octets[$Octet + 1] = 255;
             $Octet++;
         }
-        return implode('.', $Octets);
+        return \implode('.', $Octets);
     }
 
     /**
@@ -580,21 +580,21 @@ trait FrontEndMethods
      */
     private function ipv6GetLast(string $First, int $Factor): string
     {
-        if (strpos($First, '::') !== false) {
-            $Abr = 7 - substr_count($First, ':');
+        if (\strpos($First, '::') !== false) {
+            $Abr = 7 - \substr_count($First, ':');
             $Arr = [':0:', ':0:0:', ':0:0:0:', ':0:0:0:0:', ':0:0:0:0:0:', ':0:0:0:0:0:0:'];
-            $First = str_replace('::', $Arr[$Abr], $First);
+            $First = \str_replace('::', $Arr[$Abr], $First);
         }
-        $Octets = explode(':', $First);
+        $Octets = \explode(':', $First);
         $Octet = 8;
         while ($Octet > 0) {
             $Octet--;
-            $Octets[$Octet] = hexdec($Octets[$Octet]);
+            $Octets[$Octet] = \hexdec($Octets[$Octet]);
         }
         $Split = $Bracket = $Factor / 16;
-        $Split -= floor($Split);
+        $Split -= \floor($Split);
         $Split = (int)(16 - ($Split * 16));
-        $Octet = floor($Bracket);
+        $Octet = \floor($Bracket);
         if ($Octet < 8) {
             $Octets[$Octet] += (2 ** $Split) - 1;
         }
@@ -605,13 +605,13 @@ trait FrontEndMethods
         $Octet = 8;
         while ($Octet > 0) {
             $Octet--;
-            $Octets[$Octet] = dechex($Octets[$Octet]);
+            $Octets[$Octet] = \dechex($Octets[$Octet]);
         }
-        $Last = implode(':', $Octets);
-        if (strpos($Last . '/', ':0:0/') !== false) {
-            $Last = preg_replace('/(:0){2,}$/i', '::', $Last, 1);
-        } elseif (strpos($Last, ':0:0:') !== false) {
-            $Last = preg_replace('/(?:(:0)+:(0:)+|::0$)/i', '::', $Last, 1);
+        $Last = \implode(':', $Octets);
+        if (\strpos($Last . '/', ':0:0/') !== false) {
+            $Last = \preg_replace('/(:0){2,}$/i', '::', $Last, 1);
+        } elseif (\strpos($Last, ':0:0:') !== false) {
+            $Last = \preg_replace('/(?:(:0)+:(0:)+|::0$)/i', '::', $Last, 1);
         }
         return $Last;
     }
@@ -643,22 +643,22 @@ trait FrontEndMethods
     private function getAssetPath(string $Asset, bool $CanFail = false): string
     {
         /** Guard against unsafe paths and traversal attacks. */
-        if (preg_match('~[^\da-z._]~i', $Asset) || !$this->freeFromTraversal($Asset)) {
+        if (\preg_match('~[^\da-z._]~i', $Asset) || !$this->freeFromTraversal($Asset)) {
             return '';
         }
 
         /** Non-default theme assets. */
-        if (file_exists($this->AssetsPath . 'frontend' . DIRECTORY_SEPARATOR . $this->Configuration['frontend']['theme'] . DIRECTORY_SEPARATOR . $Asset)) {
+        if (\file_exists($this->AssetsPath . 'frontend' . DIRECTORY_SEPARATOR . $this->Configuration['frontend']['theme'] . DIRECTORY_SEPARATOR . $Asset)) {
             return $this->AssetsPath . 'frontend' . DIRECTORY_SEPARATOR . $this->Configuration['frontend']['theme'] . DIRECTORY_SEPARATOR . $Asset;
         }
 
         /** Default theme assets. */
-        if (file_exists($this->AssetsPath . 'frontend' . DIRECTORY_SEPARATOR . 'default' . DIRECTORY_SEPARATOR . $Asset)) {
+        if (\file_exists($this->AssetsPath . 'frontend' . DIRECTORY_SEPARATOR . 'default' . DIRECTORY_SEPARATOR . $Asset)) {
             return $this->AssetsPath . 'frontend' . DIRECTORY_SEPARATOR . 'default' . DIRECTORY_SEPARATOR . $Asset;
         }
 
         /** Front-end assets base directory assets. */
-        if (file_exists($this->AssetsPath . 'frontend' . DIRECTORY_SEPARATOR . $Asset)) {
+        if (\file_exists($this->AssetsPath . 'frontend' . DIRECTORY_SEPARATOR . $Asset)) {
             return $this->AssetsPath . 'frontend' . DIRECTORY_SEPARATOR . $Asset;
         }
 
@@ -676,7 +676,7 @@ trait FrontEndMethods
      */
     private function numberJs(): string
     {
-        return sprintf(
+        return \sprintf(
             $this->readFile($this->getAssetPath('numberJs.js')),
             $this->NumberFormatter->getSetJSON($this->NumberFormatter->ConversionSet),
             $this->NumberFormatter->GroupSeparator,
@@ -728,8 +728,8 @@ trait FrontEndMethods
      */
     private function normaliseLinebreaks(string &$Data)
     {
-        if (strpos($Data, "\r")) {
-            $Data = (strpos($Data, "\r\n") !== false) ? str_replace("\r", '', $Data) : str_replace("\r", "\n", $Data);
+        if (\strpos($Data, "\r")) {
+            $Data = (\strpos($Data, "\r\n") !== false) ? \str_replace("\r", '', $Data) : \str_replace("\r", "\n", $Data);
         }
     }
 
@@ -746,7 +746,7 @@ trait FrontEndMethods
         }
         $this->FE['SL_Signatures'] = 0;
         $this->FE['SL_Sections'] = 0;
-        $this->FE['SL_Files'] = count($Files);
+        $this->FE['SL_Files'] = \count($Files);
         $this->FE['SL_Unique'] = 0;
         $Out = '';
         $SectionsForIgnore = [];
@@ -759,7 +759,7 @@ trait FrontEndMethods
                 continue;
             }
             $Data = $this->readFile($this->SignaturesPath . $File);
-            if (strlen($Data) === 0) {
+            if (\strlen($Data) === 0) {
                 continue;
             }
             $this->normaliseLinebreaks($Data);
@@ -768,21 +768,21 @@ trait FrontEndMethods
             $ThisCount = 0;
             $OriginCount = 0;
             while (true) {
-                $PosA = strpos($Data, "\n", $PosB + 1);
+                $PosA = \strpos($Data, "\n", $PosB + 1);
                 if ($PosA === false) {
                     break;
                 }
                 $PosA++;
-                if (!$PosB = strpos($Data, "\n", $PosA)) {
+                if (!$PosB = \strpos($Data, "\n", $PosA)) {
                     break;
                 }
-                $Line = substr($Data, $PosA, $PosB - $PosA);
+                $Line = \substr($Data, $PosA, $PosB - $PosA);
                 $PosB--;
-                if (substr($Line, -1) === "\n") {
-                    $Line = substr($Line, 0, -1);
+                if (\substr($Line, -1) === "\n") {
+                    $Line = \substr($Line, 0, -1);
                 }
-                if (substr($Line, 0, 5) === 'Tag: ') {
-                    $Tag = substr($Line, 5);
+                if (\substr($Line, 0, 5) === 'Tag: ') {
+                    $Tag = \substr($Line, 5);
                     $this->FE['SL_Sections']++;
                     if (!isset($SectionsForIgnore[$Tag])) {
                         $SectionsForIgnore[$Tag] = empty($this->CIDRAM['Ignore'][$Tag]);
@@ -815,8 +815,8 @@ trait FrontEndMethods
                     $ThisSectionMeta = [];
                     continue;
                 }
-                if (substr($Line, 0, 8) === 'Origin: ') {
-                    $Origin = substr($Line, 8);
+                if (\substr($Line, 0, 8) === 'Origin: ') {
+                    $Origin = \substr($Line, 8);
                     if (!isset($ThisSectionMeta[$Origin])) {
                         $ThisSectionMeta[$Origin] = 0;
                     }
@@ -824,7 +824,7 @@ trait FrontEndMethods
                     $OriginCount = 0;
                     continue;
                 }
-                if (!$Line || preg_match('~^([\n#]|Expires|Defers to)~', $Line) || strpos($Line, '/') === false) {
+                if (!$Line || \preg_match('~^([\n#]|Expires|Defers to)~', $Line) || \strpos($Line, '/') === false) {
                     continue;
                 }
                 $ThisCount++;
@@ -833,33 +833,33 @@ trait FrontEndMethods
             }
         }
         $Class = 'ng2';
-        ksort($SectionMeta);
-        $this->FE['SL_Unique'] = count($SectionMeta);
+        \ksort($SectionMeta);
+        $this->FE['SL_Unique'] = \count($SectionMeta);
         foreach ($SectionMeta as $Section => $Counts) {
             $ThisCount = $SignaturesCount[$Section] ?? 0;
-            $ThisFiles = isset($FilesCount[$Section]) ? count($FilesCount[$Section]) : 0;
-            $ThisCount = sprintf(
+            $ThisFiles = isset($FilesCount[$Section]) ? \count($FilesCount[$Section]) : 0;
+            $ThisCount = \sprintf(
                 $this->L10N->getPlural($ThisFiles, 'label.%s across %s file'),
-                sprintf(
+                \sprintf(
                     $this->L10N->getPlural($ThisCount, 'label.%s signature'),
                     '<span class="txtRd">' . $this->NumberFormatter->format($ThisCount) . '</span>'
                 ),
                 '<span class="txtRd">' . $this->NumberFormatter->format($ThisFiles) . '</span>'
             );
             $Class = (isset($Class) && $Class === 'ng2') ? 'ng1' : 'ng2';
-            $SectionSafe = preg_replace('~[^\da-z]~i', '', $Section);
+            $SectionSafe = \preg_replace('~[^\da-z]~i', '', $Section);
             $SectionLabel = $Section . ' (' . $ThisCount . ')';
             $OriginOut = '';
-            arsort($Counts);
+            \arsort($Counts);
             foreach ($Counts as $Origin => $Quantity) {
                 $State = !empty($SectionsForIgnore[$Section . ':' . $Origin]);
-                $OriginSafe = $SectionSafe . preg_replace('~[^A-Z]~', '', $Origin);
-                $Quantity = sprintf(
+                $OriginSafe = $SectionSafe . \preg_replace('~[^A-Z]~', '', $Origin);
+                $Quantity = \sprintf(
                     $this->L10N->getPlural($Quantity, 'label.%s signature'),
                     $this->NumberFormatter->format($Quantity)
                 );
                 $OriginDisplay = '<code>' . $Origin . '</code>' . ($this->FE['Flags'] ? ' – <span class="flag ' . $Origin . '"></span>' : '');
-                $OriginOut .= "\n" . sprintf(
+                $OriginOut .= "\n" . \sprintf(
                     '<div class="sectionControlNotIgnored%s">%s – %s – %s<a href="javascript:void()" onclick="javascript:slx(\'%s:%s\',\'%s</a></div>',
                     $OriginSafe . '" style="transform:skew(-18deg)' . ($State ? '' : ';display:none'),
                     $OriginDisplay,
@@ -868,7 +868,7 @@ trait FrontEndMethods
                     $Section,
                     $Origin,
                     'ignore\',\'sectionControlNotIgnored' . $OriginSafe . '\',\'sectionControlIgnored' . $OriginSafe . '\')">' . $this->L10N->getString('label.Ignore this')
-                ) . sprintf(
+                ) . \sprintf(
                     '<div class="sectionControlIgnored%s">%s – %s – %s<a href="javascript:void()" onclick="javascript:slx(\'%s:%s\',\'%s</a></div>',
                     $OriginSafe . '" style="transform:skew(-18deg);filter:grayscale(75%) contrast(50%)' . ($State ? ';display:none' : ''),
                     $OriginDisplay,
@@ -880,14 +880,14 @@ trait FrontEndMethods
                 );
             }
             $State = !empty($SectionsForIgnore[$Section]);
-            $Out .= "\n" . sprintf(
+            $Out .= "\n" . \sprintf(
                 '<div class="%s sectionControlNotIgnored%s"><strong>%s%s</strong><br />%s</div>',
                 $Class,
                 $State ? $SectionSafe : $SectionSafe . '" style="display:none',
                 $SectionLabel,
                 ' – <a href="javascript:void()" onclick="javascript:slx(\'' . $Section . '\',\'ignore\',\'sectionControlNotIgnored' . $SectionSafe . '\',\'sectionControlIgnored' . $SectionSafe . '\')">' . $this->L10N->getString('label.Ignore this') . '</a>',
                 $OriginOut
-            ) . sprintf(
+            ) . \sprintf(
                 '<div class="%s sectionControlIgnored%s"><strong>%s%s</strong><br />%s</div>',
                 $Class,
                 $SectionSafe . '" style="filter:grayscale(50%) contrast(50%)' . ($State ? ';display:none' : ''),
@@ -914,14 +914,14 @@ trait FrontEndMethods
 
         /** Fetch and prepare username. */
         if ($Username = (empty($this->FE['User']) ? '' : $this->FE['User'])) {
-            $Username = preg_replace('~^([^<>]+)<[^<>]+>$~', '\1', $Username);
-            if (($AtChar = strpos($Username, '@')) !== false) {
-                $Username = substr($Username, 0, $AtChar);
+            $Username = \preg_replace('~^([^<>]+)<[^<>]+>$~', '\1', $Username);
+            if (($AtChar = \strpos($Username, '@')) !== false) {
+                $Username = \substr($Username, 0, $AtChar);
             }
         }
 
         /** Prepare page greeting. */
-        $this->FE['Greeting'] = sprintf($this->L10N->getString('tip.Greeting'), $Username);
+        $this->FE['Greeting'] = \sprintf($this->L10N->getString('tip.Greeting'), $Username);
 
         /** Prepare page tooltip/description. */
         $this->FE['FE_Tip'] = $this->parseVars([], $Tips);
@@ -951,14 +951,14 @@ trait FrontEndMethods
             $Segments[] = 'Logged In';
         }
         foreach ($Labels as $Label) {
-            $Template = str_replace(['<!-- ' . $Label . ' Begin -->', '<!-- ' . $Label . ' End -->'], '', $Template);
+            $Template = \str_replace(['<!-- ' . $Label . ' Begin -->', '<!-- ' . $Label . ' End -->'], '', $Template);
         }
         foreach ($Segments as $Segment) {
             while ($Before = $Template) {
-                $BPos = strpos($Template, '<!-- ' . $Segment . ' Begin -->');
-                $EPos = $BPos === false ? false : strpos($Template, '<!-- ' . $Segment . ' End -->', $BPos);
+                $BPos = \strpos($Template, '<!-- ' . $Segment . ' Begin -->');
+                $EPos = $BPos === false ? false : \strpos($Template, '<!-- ' . $Segment . ' End -->', $BPos);
                 if ($BPos !== false && $EPos !== false) {
-                    $Template = substr($Template, 0, $BPos) . substr($Template, $EPos + strlen($Segment) + 13);
+                    $Template = \substr($Template, 0, $BPos) . \substr($Template, $EPos + \strlen($Segment) + 13);
                 }
                 if ($Template === $Before) {
                     break;
@@ -978,17 +978,17 @@ trait FrontEndMethods
      */
     private function isLogFile(string $File, string &$Normalised = ''): bool
     {
-        $FileLC = strtolower($File);
+        $FileLC = \strtolower($File);
         $Normalised = '';
         if ($this->Events->assigned('isLogFile')) {
             $this->Events->fireEvent('isLogFile');
             $this->Events->destroyEvent('isLogFile');
         }
-        if (!isset($this->CIDRAM['LogPatterns']) || !is_array($this->CIDRAM['LogPatterns'])) {
+        if (!isset($this->CIDRAM['LogPatterns']) || !\is_array($this->CIDRAM['LogPatterns'])) {
             return false;
         }
         foreach ($this->CIDRAM['LogPatterns'] as $LogPattern) {
-            if (preg_match($LogPattern, $FileLC, $Matches)) {
+            if (\preg_match($LogPattern, $FileLC, $Matches)) {
                 if (isset($Matches['yyyy'])) {
                     $Normalised .= $Matches['yyyy'] . '.';
                 } elseif (isset($Matches['yy'])) {
@@ -1005,14 +1005,14 @@ trait FrontEndMethods
                     if (isset($Matches[$Double])) {
                         $Normalised .= $Matches[$Double] . '.';
                     } elseif (isset($Matches[$Unit])) {
-                        $Normalised .= (strlen($Matches[$Unit]) < 2 ? '0' : '') . $Matches[$Unit] . '.';
+                        $Normalised .= (\strlen($Matches[$Unit]) < 2 ? '0' : '') . $Matches[$Unit] . '.';
                     }
                 }
                 $Normalised .= "\xFF" . $File;
                 return true;
             }
         }
-        if (preg_match('~\.log(?:\.gz)?$~', strtolower($FileLC))) {
+        if (\preg_match('~\.log(?:\.gz)?$~', \strtolower($FileLC))) {
             $Normalised = "\xFF" . $File;
             return true;
         }
@@ -1029,7 +1029,7 @@ trait FrontEndMethods
      */
     private function generateConfirmation(string $Action, string $Form): string
     {
-        return 'javascript:confirm(\'' . $this->escapeJsInHTML(sprintf($this->L10N->getString('confirm.Action'), $Action)) . '\')&&document.getElementById(\'' . $Form . '\').submit()';
+        return 'javascript:confirm(\'' . $this->escapeJsInHTML(\sprintf($this->L10N->getString('confirm.Action'), $Action)) . '\')&&document.getElementById(\'' . $Form . '\').submit()';
     }
 
     /**
@@ -1055,10 +1055,10 @@ trait FrontEndMethods
         $Data .= ' - ' . $this->FE['DateTime'] . ' - "' . $User . '" - ' . $Message . "\n";
 
         $Truncate = $this->readBytes($this->Configuration['logging']['truncate']);
-        $WriteMode = (!file_exists($File) || $Truncate > 0 && filesize($File) >= $Truncate) ? 'wb' : 'ab';
-        $Handle = fopen($File, $WriteMode);
-        fwrite($Handle, $Data);
-        fclose($Handle);
+        $WriteMode = (!\file_exists($File) || $Truncate > 0 && \filesize($File) >= $Truncate) ? 'wb' : 'ab';
+        $Handle = \fopen($File, $WriteMode);
+        \fwrite($Handle, $Data);
+        \fclose($Handle);
         if ($WriteMode === 'wb') {
             $this->logRotation($this->Configuration['frontend']['frontend_log']);
         }
@@ -1072,9 +1072,9 @@ trait FrontEndMethods
     private function twoFactorNumber(): int
     {
         try {
-            $Key = random_int(self::TWO_FACTOR_MIN_INT, self::TWO_FACTOR_MAX_INT);
+            $Key = \random_int(self::TWO_FACTOR_MIN_INT, self::TWO_FACTOR_MAX_INT);
         } catch (\Exception $e) {
-            $Key = rand(self::TWO_FACTOR_MIN_INT, self::TWO_FACTOR_MAX_INT);
+            $Key = \rand(self::TWO_FACTOR_MIN_INT, self::TWO_FACTOR_MAX_INT);
         }
         return $Key;
     }
@@ -1096,7 +1096,7 @@ trait FrontEndMethods
             $NewArr = [];
             foreach ($Arr as $Key => $Value) {
                 $Matches = [];
-                if (preg_match('~^([^-]+)-(.+)$~', $Key, $Matches) && !isset($Arr[$Matches[1]])) {
+                if (\preg_match('~^([^-]+)-(.+)$~', $Key, $Matches) && !isset($Arr[$Matches[1]])) {
                     if (!isset($NewArr[$Matches[1]])) {
                         $NewArr[$Matches[1]] = [];
                         $this->CIDRAM['ListGroups'][$Matches[1]] = true;
@@ -1110,13 +1110,13 @@ trait FrontEndMethods
             unset($NewArr);
         }
         $Output = '';
-        $Count = count($Arr);
+        $Count = \count($Arr);
         foreach ($Arr as $Key => $Value) {
-            if ((is_string($Value) && !$this->Demojibakefier->checkConformity($Value)) || is_null($Value)) {
+            if ((\is_string($Value) && !$this->Demojibakefier->checkConformity($Value)) || \is_null($Value)) {
                 continue;
             }
             if ($Depth === 1 && isset($this->CIDRAM['ListGroups'][$ParentKey])) {
-                $Delete = sprintf(
+                $Delete = \sprintf(
                     ' – (<span onclick="javascript:%1$s(\'%2$s\'%3$s)"><code><span class="auxicon auxrd delete" title="%4$s"></span><span class="s auxicontxt">%4$s</span></code></span>)',
                     $DeleteKey,
                     $this->escapeJsInHTML($ParentKey . '-' . $Key),
@@ -1125,7 +1125,7 @@ trait FrontEndMethods
                 );
                 $Output .= '<span id="' . $this->escapeJsInHTML($ParentKey . '-' . $Key) . 'Container' . $ListSection . '">';
             } elseif ($Depth === 0) {
-                $Delete = sprintf(
+                $Delete = \sprintf(
                     ' – (<span onclick="javascript:%1$s(\'%2$s\'%3$s)"><code><span class="auxicon auxrd delete" title="%4$s"></span><span class="s auxicontxt">%4$s</span></code></span>)',
                     $DeleteKey,
                     (isset($this->CIDRAM['ListGroups'][$Key]) ? '^' : '') . $this->escapeJsInHTML($Key),
@@ -1137,46 +1137,46 @@ trait FrontEndMethods
                 $Delete = '';
             }
             $Output .= '<li>';
-            if (is_string($Value)) {
-                if (substr($Value, 0, 2) === '{"' && substr($Value, -2) === '"}') {
-                    $Try = json_decode($Value, true);
+            if (\is_string($Value)) {
+                if (\substr($Value, 0, 2) === '{"' && \substr($Value, -2) === '"}') {
+                    $Try = \json_decode($Value, true);
                     if ($Try !== null) {
                         $Value = $Try;
                     }
                 } elseif (
-                    preg_match('~\.ya?ml$~i', $Key) ||
-                    (preg_match('~^(?:Data|\d+)$~', $Key) && preg_match('~\.ya?ml$~i', $ParentKey))
+                    \preg_match('~\.ya?ml$~i', $Key) ||
+                    (\preg_match('~^(?:Data|\d+)$~', $Key) && \preg_match('~\.ya?ml$~i', $ParentKey))
                 ) {
                     $Try = [];
                     if ($this->YAML->process($Value, $Try) && !empty($Try)) {
                         $Value = $Try;
                     }
-                } elseif (substr($Value, 0, 2) === '["' && substr($Value, -2) === '"]' && strpos($Value, '","') !== false) {
-                    $Value = explode('","', substr($Value, 2, -2));
+                } elseif (\substr($Value, 0, 2) === '["' && \substr($Value, -2) === '"]' && \strpos($Value, '","') !== false) {
+                    $Value = \explode('","', \substr($Value, 2, -2));
                 }
             }
-            if (is_array($Value)) {
+            if (\is_array($Value)) {
                 if ($Depth === 0 || ($Depth === 1 && isset($this->CIDRAM['ListGroups'][$ParentKey]))) {
                     $SizeField = $this->L10N->getString('field.size.Total size') ?: 'Size';
-                    $Size = isset($Value['Data']) && is_string($Value['Data']) ? strlen($Value['Data']) : (
-                        isset($Value[0]) && is_string($Value[0]) ? strlen($Value[0]) : false
+                    $Size = isset($Value['Data']) && \is_string($Value['Data']) ? \strlen($Value['Data']) : (
+                        isset($Value[0]) && \is_string($Value[0]) ? \strlen($Value[0]) : false
                     );
                     if ($Size !== false) {
                         $this->formatFileSize($Size);
                         $Value[$SizeField] = $Size;
                     }
                 }
-                $Output .= '<span class="comCat"><code class="s">' . str_replace(['<', '>'], ['&lt;', '&gt;'], $Key) . '</code></span><span class="fixComCatBtnVert">' . $Delete . '</span><ul class="comSub">';
+                $Output .= '<span class="comCat"><code class="s">' . \str_replace(['<', '>'], ['&lt;', '&gt;'], $Key) . '</code></span><span class="fixComCatBtnVert">' . $Delete . '</span><ul class="comSub">';
                 $Output .= $this->arrayToClickableList($Value, $DeleteKey, $Depth + 1, $Key, $ListSection) . '</ul>';
-            } elseif (is_scalar($Value)) {
-                if ($Key === 'Time' && preg_match('~^\d+$~', $Value)) {
+            } elseif (\is_scalar($Value)) {
+                if ($Key === 'Time' && \preg_match('~^\d+$~', $Value)) {
                     $Key = $this->L10N->getString('label.Expires');
                     $Value = $this->timeFormat($Value, $this->Configuration['general']['time_format']);
                 }
                 $Class = ($Key === $this->L10N->getString('field.size.Total size') || $Key === $this->L10N->getString('label.Expires')) ? 'txtRd' : 's';
                 $Text = ($Count === 1 && $Key === 0) ? $Value : $Key . ($Class === 's' ? ' => ' : ' ') . $Value;
                 $Output .= '<code class="' . $Class . ' canBreak">' . $this->ltrInRtf(
-                    str_replace(['<', '>'], ['&lt;', '&gt;'], $Text)
+                    \str_replace(['<', '>'], ['&lt;', '&gt;'], $Text)
                 ) . '</code>' . $Delete;
             }
             $Output .= '</li>';
@@ -1204,7 +1204,7 @@ trait FrontEndMethods
     private function rgb(string $String = '', int $Mode = 0)
     {
         $Diff = [247, 127, 31];
-        if (is_string($String) && !empty($String)) {
+        if (\is_string($String) && !empty($String)) {
             $String = str_split($String);
             foreach ($String as $Char) {
                 $Char = ord($Char);
@@ -1218,7 +1218,7 @@ trait FrontEndMethods
             return $Diff;
         }
         for ($Hash = '', $Index = 0; $Index < 3; $Index++) {
-            $Hash .= str_pad(bin2hex(chr($Diff[$Index])), 2, '0', STR_PAD_LEFT);
+            $Hash .= \str_pad(\bin2hex(chr($Diff[$Index])), 2, '0', STR_PAD_LEFT);
         }
         if ($Mode === 2) {
             return $Hash;
@@ -1241,7 +1241,7 @@ trait FrontEndMethods
 
         /** Modify the string to better suit RTL directionality and return it. */
         while (true) {
-            $NewString = preg_replace(
+            $NewString = \preg_replace(
                 ['~^(.+)( +)-&gt;( +)(.+)$~i', '~^(.+)-&gt;(.+)$~i', '~^(.+)( +)➡( +)(.+)$~i', '~^(.+)➡(.+)$~i', '~^(.+)( +)=&gt;( +)(.+)$~i', '~^(.+)=&gt;(.+)$~i'],
                 ['\4\2&lt;-\3\1', '\2&lt;-\1', '\4\2⬅\3\1', '\2⬅\1', '\4\2&lt;=\3\1', '\2&lt;=\1'],
                 $String
@@ -1262,11 +1262,11 @@ trait FrontEndMethods
      */
     private function splitCidr(string $CIDR): array
     {
-        if (($Pos = strpos($CIDR, '/')) === false) {
+        if (($Pos = \strpos($CIDR, '/')) === false) {
             return [];
         }
-        $Base = substr($CIDR, 0, $Pos);
-        $Factor = substr($CIDR, $Pos + 1);
+        $Base = \substr($CIDR, 0, $Pos);
+        $Factor = \substr($CIDR, $Pos + 1);
         if ($CIDRs = $this->expandIpv4($Base, false, $Factor + 1)) {
             $Is = 4;
         } elseif ($CIDRs = $this->expandIpv6($Base, false, $Factor + 1)) {
@@ -1303,12 +1303,12 @@ trait FrontEndMethods
             $Intersect = '';
             foreach ([['B', 'Data'], ['Data', 'B']] as $Points) {
                 $LPos = 0;
-                while (($NPos = strpos(${$Points[0]}, "\n", $LPos)) !== false) {
-                    $Line = substr(${$Points[0]}, $LPos, $NPos - $LPos);
+                while (($NPos = \strpos(${$Points[0]}, "\n", $LPos)) !== false) {
+                    $Line = \substr(${$Points[0]}, $LPos, $NPos - $LPos);
                     $LPos = $NPos + 1;
-                    if (($DPos = strpos($Line, '/')) !== false) {
-                        $Range = substr($Line, $DPos + 1);
-                        $Base = substr($Line, 0, $DPos);
+                    if (($DPos = \strpos($Line, '/')) !== false) {
+                        $Range = \substr($Line, $DPos + 1);
+                        $Base = \substr($Line, 0, $DPos);
                     } else {
                         continue;
                     }
@@ -1318,7 +1318,7 @@ trait FrontEndMethods
                         }
                     }
                     foreach ($CIDRs as $Key => $Actual) {
-                        if (strpos(${$Points[1]}, "\n" . $Actual . "\n") === false) {
+                        if (\strpos(${$Points[1]}, "\n" . $Actual . "\n") === false) {
                             continue;
                         }
                         if (($Key + 1) > (int)$Range) {
@@ -1331,12 +1331,12 @@ trait FrontEndMethods
                 }
             }
             $Aggregator = new Aggregator($Format);
-            return trim($Aggregator->aggregate($Intersect));
+            return \trim($Aggregator->aggregate($Intersect));
         });
         $StrObject->iterateClosure(function (string $Data): string {
             return "\n" . $Data;
         }, true);
-        return trim($StrObject->recompile());
+        return \trim($StrObject->recompile());
     }
 
     /**
@@ -1353,12 +1353,12 @@ trait FrontEndMethods
         $StrObject = new \Maikuolan\Common\ComplexStringHandler("\n" . $Minuend . "\n", self::REGEX_TAGS, function (string $Minuend) use ($Subtrahend, $Format): string {
             $Minuend = "\n" . $this->CIDRAM['Aggregator']->aggregate($Minuend . "\n" . $Subtrahend) . "\n";
             $LPos = 0;
-            while (($NPos = strpos($Subtrahend, "\n", $LPos)) !== false) {
-                $Line = substr($Subtrahend, $LPos, $NPos - $LPos);
+            while (($NPos = \strpos($Subtrahend, "\n", $LPos)) !== false) {
+                $Line = \substr($Subtrahend, $LPos, $NPos - $LPos);
                 $LPos = $NPos + 1;
-                if (($DPos = strpos($Line, '/')) !== false) {
-                    $Range = substr($Line, $DPos + 1);
-                    $Base = substr($Line, 0, $DPos);
+                if (($DPos = \strpos($Line, '/')) !== false) {
+                    $Range = \substr($Line, $DPos + 1);
+                    $Base = \substr($Line, 0, $DPos);
                 } else {
                     continue;
                 }
@@ -1368,22 +1368,22 @@ trait FrontEndMethods
                     }
                 }
                 foreach ($CIDRs as $Key => $Actual) {
-                    if (strpos($Minuend, "\n" . $Actual . "\n") === false) {
+                    if (\strpos($Minuend, "\n" . $Actual . "\n") === false) {
                         continue;
                     }
                     if ($Range > ($Key + 1) && $Split = $this->splitCidr($Actual)) {
-                        $Minuend .= implode("\n", $Split) . "\n";
+                        $Minuend .= \implode("\n", $Split) . "\n";
                     }
-                    $Minuend = str_replace("\n" . $Actual . "\n", "\n", $Minuend);
+                    $Minuend = \str_replace("\n" . $Actual . "\n", "\n", $Minuend);
                 }
             }
             $Aggregator = new Aggregator($Format);
-            return trim($Aggregator->aggregate($Minuend));
+            return \trim($Aggregator->aggregate($Minuend));
         });
         $StrObject->iterateClosure(function (string $Data): string {
             return "\n" . $Data;
         }, true);
-        return trim($StrObject->recompile());
+        return \trim($StrObject->recompile());
     }
 
     /**
@@ -1399,83 +1399,83 @@ trait FrontEndMethods
         $Time -= $this->Now;
         if ($Time < -31536000) {
             $Time = (int)($Time / -31536000);
-            return sprintf(
+            return \sprintf(
                 $this->L10N->getPlural($Time, 'time_years_ago'),
                 $this->NumberFormatter->format($Time)
             );
         }
         if ($Time < -2629800) {
             $Time = (int)($Time / -2629800);
-            return sprintf(
+            return \sprintf(
                 $this->L10N->getPlural($Time, 'time_months_ago'),
                 $this->NumberFormatter->format($Time)
             );
         }
         if ($Time < -86400) {
             $Time = (int)($Time / -86400);
-            return sprintf(
+            return \sprintf(
                 $this->L10N->getPlural($Time, 'time_days_ago'),
                 $this->NumberFormatter->format($Time)
             );
         }
         if ($Time < -3600) {
             $Time = (int)($Time / -3600);
-            return sprintf(
+            return \sprintf(
                 $this->L10N->getPlural($Time, 'time_hours_ago'),
                 $this->NumberFormatter->format($Time)
             );
         }
         if ($Time < -60) {
             $Time = (int)($Time / -60);
-            return sprintf(
+            return \sprintf(
                 $this->L10N->getPlural($Time, 'time_minutes_ago'),
                 $this->NumberFormatter->format($Time)
             );
         }
         if ($Time < 0) {
             $Time = (int)($Time * -1);
-            return sprintf(
+            return \sprintf(
                 $this->L10N->getPlural($Time, 'time_seconds_ago'),
                 $this->NumberFormatter->format($Time)
             );
         }
         if ($Time > 31536000) {
             $Time = (int)($Time / 31536000);
-            return sprintf(
+            return \sprintf(
                 $this->L10N->getPlural($Time, 'time_years_from_now'),
                 $this->NumberFormatter->format($Time)
             );
         }
         if ($Time > 2629800) {
             $Time = (int)($Time / 2629800);
-            return sprintf(
+            return \sprintf(
                 $this->L10N->getPlural($Time, 'time_months_from_now'),
                 $this->NumberFormatter->format($Time)
             );
         }
         if ($Time > 86400) {
             $Time = (int)($Time / 86400);
-            return sprintf(
+            return \sprintf(
                 $this->L10N->getPlural($Time, 'time_days_from_now'),
                 $this->NumberFormatter->format($Time)
             );
         }
         if ($Time > 3600) {
             $Time = (int)($Time / 3600);
-            return sprintf(
+            return \sprintf(
                 $this->L10N->getPlural($Time, 'time_hours_from_now'),
                 $this->NumberFormatter->format($Time)
             );
         }
         if ($Time > 60) {
             $Time = (int)($Time / 60);
-            return sprintf(
+            return \sprintf(
                 $this->L10N->getPlural($Time, 'time_minutes_from_now'),
                 $this->NumberFormatter->format($Time)
             );
         }
         $Time = (int)$Time;
-        return sprintf(
+        return \sprintf(
             $this->L10N->getPlural($Time, 'time_seconds_from_now'),
             $this->NumberFormatter->format($Time)
         );
@@ -1484,25 +1484,25 @@ trait FrontEndMethods
     /**
      * Update the configuration.
      *
-     * @param ?int $BytesRemoved The number of bytes removed (only used when invoked by executor).
-     * @param ?int $BytesAdded The number of bytes added (only used when invoked by executor).
+     * @param int|null $BytesRemoved The number of bytes removed (only used when invoked by executor).
+     * @param int|null $BytesAdded The number of bytes added (only used when invoked by executor).
      * @return bool Whether succeeded or failed.
      */
     private function updateConfiguration(?int &$BytesRemoved = null, ?int &$BytesAdded = null): bool
     {
-        if (!is_file($this->FE['ActiveConfigFile']) || !is_writable($this->FE['ActiveConfigFile'])) {
+        if (!\is_file($this->FE['ActiveConfigFile']) || !\is_writable($this->FE['ActiveConfigFile'])) {
             return false;
         }
         $Reconstructed = $this->YAML->reconstruct($this->Configuration);
         if ($BytesRemoved !== null) {
-            $Size = strlen($Reconstructed) - filesize($this->FE['ActiveConfigFile']);
+            $Size = \strlen($Reconstructed) - \filesize($this->FE['ActiveConfigFile']);
         }
-        $Handle = fopen($this->FE['ActiveConfigFile'], 'wb');
-        if (!is_resource($Handle)) {
+        $Handle = \fopen($this->FE['ActiveConfigFile'], 'wb');
+        if (!\is_resource($Handle)) {
             return false;
         }
-        $Err = fwrite($Handle, $Reconstructed);
-        fclose($Handle);
+        $Err = \fwrite($Handle, $Reconstructed);
+        \fclose($Handle);
         if ($Err !== false && $BytesRemoved !== null) {
             if ($Size < 0) {
                 $BytesRemoved += $Size;
@@ -1547,28 +1547,28 @@ trait FrontEndMethods
     private function processRLUsage(string $Data): array
     {
         $Pos = 0;
-        $EoS = strlen($Data);
+        $EoS = \strlen($Data);
         $Out = [];
         while ($Pos < $EoS) {
-            $Time = substr($Data, $Pos, 4);
-            if (strlen($Time) !== 4) {
+            $Time = \substr($Data, $Pos, 4);
+            if (\strlen($Time) !== 4) {
                 break;
             }
-            $Time = unpack('l*', $Time);
+            $Time = \unpack('l*', $Time);
             $Pos += 4;
-            $Bandwidth = substr($Data, $Pos, 4);
-            if (strlen($Bandwidth) !== 4) {
+            $Bandwidth = \substr($Data, $Pos, 4);
+            if (\strlen($Bandwidth) !== 4) {
                 break;
             }
-            $Bandwidth = unpack('l*', $Bandwidth);
+            $Bandwidth = \unpack('l*', $Bandwidth);
             $Pos += 4;
-            $BlockSize = substr($Data, $Pos, 4);
-            if (strlen($BlockSize) !== 4) {
+            $BlockSize = \substr($Data, $Pos, 4);
+            if (\strlen($BlockSize) !== 4) {
                 break;
             }
-            $BlockSize = unpack('l*', $BlockSize);
+            $BlockSize = \unpack('l*', $BlockSize);
             $Pos += 4;
-            $Block = substr($Data, $Pos, $BlockSize[1]);
+            $Block = \substr($Data, $Pos, $BlockSize[1]);
             $Pos += $BlockSize[1];
             if (isset($Out[$Block])) {
                 $Out[$Block]['Bandwidth'] += $Bandwidth[1];
@@ -1589,19 +1589,19 @@ trait FrontEndMethods
      */
     private function processMinifiedFormData(string $MinifiedKey): void
     {
-        if (!isset($_POST[$MinifiedKey]) || !is_string($_POST[$MinifiedKey]) || substr($_POST[$MinifiedKey], 0, 1) !== '{' || substr($_POST[$MinifiedKey], -1) !== '}') {
+        if (!isset($_POST[$MinifiedKey]) || !\is_string($_POST[$MinifiedKey]) || \substr($_POST[$MinifiedKey], 0, 1) !== '{' || \substr($_POST[$MinifiedKey], -1) !== '}') {
             return;
         }
         $this->initialiseErrorHandler();
-        $MinifiedFormData = json_decode($this->desabotage($_POST[$MinifiedKey]), true);
+        $MinifiedFormData = \json_decode($this->desabotage($_POST[$MinifiedKey]), true);
         $this->restoreErrorHandler();
-        if (!is_array($MinifiedFormData)) {
+        if (!\is_array($MinifiedFormData)) {
             return;
         }
         $ToMerge = [];
         $ToBase = [];
         foreach ($MinifiedFormData as $Key => $Value) {
-            if (preg_match('~^(.+)\[(\d+)\]\[(?:New)?\d*\]$|^"(.+)\[(\d+)\]\[(?:New)?\d*\]"$~', $Key, $Index)) {
+            if (\preg_match('~^(.+)\[(\d+)\]\[(?:New)?\d*\]$|^"(.+)\[(\d+)\]\[(?:New)?\d*\]"$~', $Key, $Index)) {
                 if (!isset($ToMerge[$Index[1]])) {
                     $ToMerge[$Index[1]] = [];
                 }
@@ -1611,7 +1611,7 @@ trait FrontEndMethods
                 $ToMerge[$Index[1]][$Index[2]][] = $Value;
                 continue;
             }
-            if (preg_match('~^(.+)\[(?:New)?\d*\]$|^"(.+)\[(?:New)?\d*\]"$~', $Key, $Index)) {
+            if (\preg_match('~^(.+)\[(?:New)?\d*\]$|^"(.+)\[(?:New)?\d*\]"$~', $Key, $Index)) {
                 if (!isset($ToMerge[$Index[1]])) {
                     $ToMerge[$Index[1]] = [];
                 }
@@ -1620,7 +1620,7 @@ trait FrontEndMethods
             }
             $ToBase[$Key] = $Value;
         }
-        $MinifiedFormData = array_merge($ToBase, $ToMerge);
+        $MinifiedFormData = \array_merge($ToBase, $ToMerge);
         $_POST = array_replace($_POST, $MinifiedFormData);
         unset($_POST[$MinifiedKey]);
     }
@@ -1639,7 +1639,7 @@ trait FrontEndMethods
             if (!$Perform($Value, $Depth)) {
                 break;
             }
-            if (is_array($Value)) {
+            if (\is_array($Value)) {
                 $this->callableRecursive($Value, $Perform, $Depth + 1);
             }
         }
@@ -1649,23 +1649,23 @@ trait FrontEndMethods
      * Fetch an etaggable asset as requested by the client.
      *
      * @param string $Asset The path to the asset.
-     * @param ?callable $Callback An optional callback.
+     * @param callable|null $Callback An optional callback.
      * @return never
      */
     private function eTaggable(string $Asset, ?callable $Callback = null): void
     {
         $this->Events->fireEvent('final');
         header_remove('Cache-Control');
-        if ($this->pathSecurityCheck($Asset) && !preg_match('~[^\da-z._]~i', $Asset)) {
+        if ($this->pathSecurityCheck($Asset) && !\preg_match('~[^\da-z._]~i', $Asset)) {
             $ThisAsset = $this->getAssetPath($Asset, true);
-            if (strlen($ThisAsset) && is_readable($ThisAsset) && ($ThisAssetDel = strrpos($ThisAsset, '.')) !== false) {
+            if (\strlen($ThisAsset) && \is_readable($ThisAsset) && ($ThisAssetDel = \strrpos($ThisAsset, '.')) !== false) {
                 $Success = false;
                 $NoSniff = false;
-                $Type = strtolower(substr($ThisAsset, $ThisAssetDel + 1));
+                $Type = \strtolower(\substr($ThisAsset, $ThisAssetDel + 1));
                 if ($Type === 'jpeg') {
                     $Type = 'jpg';
                 }
-                if (preg_match('/^(?:gif|jpg|png|webp)$/', $Type)) {
+                if (\preg_match('/^(?:gif|jpg|png|webp)$/', $Type)) {
                     $MimeType = 'Content-Type: image/' . $Type;
                     $Success = true;
                 } elseif ($Type === 'svg') {
@@ -1685,15 +1685,15 @@ trait FrontEndMethods
                 }
                 if ($Success) {
                     $AssetData = $this->readFile($ThisAsset);
-                    if (is_callable($Callback)) {
+                    if (\is_callable($Callback)) {
                         $AssetData = $Callback($AssetData);
                     }
                     $OldETag = $_SERVER['HTTP_IF_NONE_MATCH'] ?? '';
-                    $NewETag = hash('sha256', $AssetData) . '-' . strlen($AssetData);
-                    header('Last-Modified: ' . gmdate('D, d M Y H:i:s T', filemtime($ThisAsset)));
+                    $NewETag = \hash('sha256', $AssetData) . '-' . \strlen($AssetData);
+                    header('Last-Modified: ' . \gmdate('D, d M Y H:i:s T', \filemtime($ThisAsset)));
                     header('ETag: "' . $NewETag . '"');
-                    header('Expires: ' . gmdate('D, d M Y H:i:s T', $this->Now + 15552000));
-                    if (preg_match('~(?:^|, )(?:"' . $NewETag . '"|' . $NewETag . ')(?:$|, )~', $OldETag)) {
+                    header('Expires: ' . \gmdate('D, d M Y H:i:s T', $this->Now + 15552000));
+                    if (\preg_match('~(?:^|, )(?:"' . $NewETag . '"|' . $NewETag . ')(?:$|, )~', $OldETag)) {
                         header('HTTP/1.0 304 Not Modified');
                         header('HTTP/1.1 304 Not Modified');
                         header('Status: 304 Not Modified');
@@ -1726,20 +1726,20 @@ trait FrontEndMethods
      */
     private function embedAssets(string $In): string
     {
-        if (preg_match_all('~\{Asset:([^{}]+)\}~', $In, $Matches)) {
-            $Matches = (isset($Matches[1]) && is_array($Matches[1])) ? array_unique($Matches[1]) : [];
+        if (\preg_match_all('~\{Asset:([^{}]+)\}~', $In, $Matches)) {
+            $Matches = (isset($Matches[1]) && \is_array($Matches[1])) ? \array_unique($Matches[1]) : [];
             foreach ($Matches as $AssetName) {
                 if (($AssetPath = $this->getAssetPath($AssetName, true)) !== '') {
                     if (($Value = $this->readFile($AssetPath)) !== '') {
-                        $In = str_replace('{Asset:' . $AssetName . '}', $Value, $In);
+                        $In = \str_replace('{Asset:' . $AssetName . '}', $Value, $In);
                     }
                 }
             }
         }
-        if (preg_match_all('~\{Base64Encode\}(.+?)\{/Base64Encode\}~s', $In, $Matches)) {
-            $Matches = (isset($Matches[1]) && is_array($Matches[1])) ? array_unique($Matches[1]) : [];
+        if (\preg_match_all('~\{Base64Encode\}(.+?)\{/Base64Encode\}~s', $In, $Matches)) {
+            $Matches = (isset($Matches[1]) && \is_array($Matches[1])) ? \array_unique($Matches[1]) : [];
             foreach ($Matches as $Data) {
-                $In = str_replace('{Base64Encode}' . $Data . '{/Base64Encode}', base64_encode($Data), $In);
+                $In = \str_replace('{Base64Encode}' . $Data . '{/Base64Encode}', \base64_encode($Data), $In);
             }
         }
         return $In;
@@ -1750,21 +1750,21 @@ trait FrontEndMethods
      *
      * @param string|array $Methods The list of methods or commands to execute.
      * @param bool $Queue Whether to queue the operation or perform immediately.
-     * @param ?int $BytesRemoved The number of bytes removed (optional).
-     * @param ?int $BytesAdded The number of bytes added (optional).
+     * @param int|null $BytesRemoved The number of bytes removed (optional).
+     * @param int|null $BytesAdded The number of bytes added (optional).
      * @return void
      */
     private function executor($Methods = '', bool $Queue = false, ?int &$BytesRemoved = null, ?int &$BytesAdded = null): void
     {
         if ($Queue && $Methods !== '') {
             /** Guard. */
-            if (!isset($this->CIDRAM['ExecutorQueue']) || !is_array($this->CIDRAM['ExecutorQueue'])) {
+            if (!isset($this->CIDRAM['ExecutorQueue']) || !\is_array($this->CIDRAM['ExecutorQueue'])) {
                 $this->CIDRAM['ExecutorQueue'] = [];
             }
 
             /** Add to the executor queue. */
-            if (is_array($Methods)) {
-                $this->CIDRAM['ExecutorQueue'] = array_merge($this->CIDRAM['ExecutorQueue'], $Methods);
+            if (\is_array($Methods)) {
+                $this->CIDRAM['ExecutorQueue'] = \array_merge($this->CIDRAM['ExecutorQueue'], $Methods);
             } else {
                 $this->CIDRAM['ExecutorQueue'][] = $Methods;
             }
@@ -1772,7 +1772,7 @@ trait FrontEndMethods
         }
 
         if ($Methods === '') {
-            if (isset($this->CIDRAM['ExecutorQueue']) && is_array($this->CIDRAM['ExecutorQueue'])) {
+            if (isset($this->CIDRAM['ExecutorQueue']) && \is_array($this->CIDRAM['ExecutorQueue'])) {
                 /** We'll iterate an array from the local scope to guard against infinite loops. */
                 $Items = $this->CIDRAM['ExecutorQueue'];
 
@@ -1791,7 +1791,7 @@ trait FrontEndMethods
         /** Recursively execute all methods in the current queue item. */
         foreach ($Methods as $Method) {
             /** Guard. */
-            if (is_array($Method)) {
+            if (\is_array($Method)) {
                 foreach ($Method as $Item) {
                     $this->executor($Item, false, $BytesRemoved, $BytesAdded);
                 }
@@ -1799,14 +1799,14 @@ trait FrontEndMethods
             }
 
             /** Foreach looping. */
-            if (preg_match('~^foreach \{(.+?)\} as ([^ ]+?) => ([^ ]+?) (.*)$~i', $Method, $Tokens)) {
+            if (\preg_match('~^foreach \{(.+?)\} as ([^ ]+?) => ([^ ]+?) (.*)$~i', $Method, $Tokens)) {
                 $Iterable = $this->OperationHandler->dataTraverse($this, $Tokens[1], true, true);
-                if (!is_iterable($Iterable)) {
+                if (!\is_iterable($Iterable)) {
                     continue;
                 }
                 $Arr = [];
                 foreach ($Iterable as $Key => $Value) {
-                    $Arr[] = str_replace(['{' . $Tokens[2] . '}', '{' . $Tokens[3] . '}'], [$Key, $Value], $Tokens[4]);
+                    $Arr[] = \str_replace(['{' . $Tokens[2] . '}', '{' . $Tokens[3] . '}'], [$Key, $Value], $Tokens[4]);
                 }
                 $this->executor($Arr, false, $BytesRemoved, $BytesAdded);
                 continue;
@@ -1815,19 +1815,19 @@ trait FrontEndMethods
             /** All logic, data traversal, dot notation, etc handled here. */
             $Method = $this->OperationHandler->ifCompare($this, $Method, true);
 
-            foreach (preg_split('~(?<!\\\\);~', $Method) as $Method) {
+            foreach (\preg_split('~(?<!\\\\);~', $Method) as $Method) {
                 if ($Method === '') {
                     continue;
                 }
-                if (method_exists($this, $Method)) {
+                if (\method_exists($this, $Method)) {
                     $this->{$Method}($BytesRemoved, $BytesAdded);
-                } elseif (($Pos = strpos($Method, ' ')) !== false) {
-                    $Method = preg_replace('~(?<!\\\\)\\\\;~', ';', $Method);
-                    $Params = substr($Method, $Pos + 1);
-                    $Method = substr($Method, 0, $Pos);
+                } elseif (($Pos = \strpos($Method, ' ')) !== false) {
+                    $Method = \preg_replace('~(?<!\\\\)\\\\;~', ';', $Method);
+                    $Params = \substr($Method, $Pos + 1);
+                    $Method = \substr($Method, 0, $Pos);
                     if ($Method === 'set') {
                         $this->OperationHandler->set($this, $Params, true);
-                    } elseif (method_exists($this, $Method)) {
+                    } elseif (\method_exists($this, $Method)) {
                         $Params = $this->OperationHandler->ifCompare($this, $Params, true);
                         $this->{$Method}($Params, $BytesRemoved, $BytesAdded);
                     }
@@ -1846,18 +1846,18 @@ trait FrontEndMethods
     {
         if (($Try = $this->L10N->getString($Message)) !== '') {
             $Message = $Try;
-        } elseif (($SPos = strpos($Message, ' ')) !== false) {
-            if (($Try = $this->L10N->getString(substr($Message, 0, $SPos))) !== '') {
-                $Params = substr($Message, $SPos + 1);
-                $FC = substr_count($Try, '%s');
+        } elseif (($SPos = \strpos($Message, ' ')) !== false) {
+            if (($Try = $this->L10N->getString(\substr($Message, 0, $SPos))) !== '') {
+                $Params = \substr($Message, $SPos + 1);
+                $FC = \substr_count($Try, '%s');
                 if ($FC === 1) {
-                    $Try = sprintf($Try, $Params);
+                    $Try = \sprintf($Try, $Params);
                 } elseif ($FC > 1) {
-                    $SC = substr_count($Params, ' ');
+                    $SC = \substr_count($Params, ' ');
                     if ($SC + 1 === $FC) {
-                        $Try = sprintf($Try, ...explode(' ', $Params));
+                        $Try = \sprintf($Try, ...\explode(' ', $Params));
                     } elseif ($SC >= $FC) {
-                        $Try = sprintf($Try, ...explode(' ', $Params, $FC));
+                        $Try = \sprintf($Try, ...\explode(' ', $Params, $FC));
                     }
                 }
                 $Message = $Try;
@@ -1888,7 +1888,7 @@ trait FrontEndMethods
      */
     private function escapeJsInHTML(string $In): string
     {
-        return str_replace(['"', '<', '>', '\\\\n'], ['&#34;', '&lt;', '&gt;', '\\n'], addslashes($In));
+        return \str_replace(['"', '<', '>', '\\\\n'], ['&#34;', '&lt;', '&gt;', '\\n'], addslashes($In));
     }
 
     /**
@@ -1900,7 +1900,7 @@ trait FrontEndMethods
      */
     private function desabotage($Data)
     {
-        if (is_array($Data)) {
+        if (\is_array($Data)) {
             foreach ($Data as &$Entry) {
                 $Entry = $this->desabotage($Entry);
             }
@@ -1915,7 +1915,7 @@ trait FrontEndMethods
          * @link https://core.trac.wordpress.org/ticket/18322
          * @link https://developer.wordpress.org/reference/functions/wp_unslash/
          */
-        if (is_string($Data) && $Data !== '' && function_exists('wp_unslash')) {
+        if (\is_string($Data) && $Data !== '' && \function_exists('wp_unslash')) {
             return wp_unslash($Data);
         }
 

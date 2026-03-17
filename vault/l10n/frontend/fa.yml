@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Farsi language data for the front (last modified: 2026.03.13).
+# This file: Farsi language data for the front (last modified: 2026.03.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,7 +24,7 @@
 # requests, ask. I can help.
 ##/
 
-Abuse category:
+Abuse category: !lazy
  Bad web bot: "ربات وب بد (خراش دادن برای آدرس های ایمیل و محتوا، خزنده هایی که به robots.txt احترام نمی گذارند، درخواست های بیش از حد، جعل های عامل کاربر، و غیره)."
  Brute-force attacks: "حملات brute-force (حملات اعتباری به ورود به صفحه وب، SMTP، RDP و غیره)."
  Categories (at least one is required): "دسته ها (حداقل یکی مورد نیاز است)"
@@ -50,7 +50,7 @@ Abuse category:
  VPN IP: "VPN IP."
  Web spam: "اسپم وب (اسپم نظر/تالار گفتمان، اسپم ارجاع دهنده HTTP، یا اسپم دیگر CMS)."
  Webapp attacks: "حملات وب اپلیکیشن (بررسی آسیب‌پذیری‌ها یا سوء استفاده‌ها، یا تلاش برای سوء استفاده از برنامه‌های وب نصب شده، CMS یا راه‌حل‌های تجارت الکترونیک، به عنوان مثال، وردپرس، دروپال، phpMyAdmin و غیره)."
-Extended Description:
+Extended Description: !lazy
  AbuseIPDB module: "درخواست های IP های فهرست شده در AbuseIPDB را مسدود می‌کند."
  BGPView module: "از API {{Links.BGPView}} برای ارائه تسهیلات جستجوی ASN و کد کشور برای CIDRAM استفاده می‌کند، این امکان را می دهد که ASN ها و کشورها از طریق پیکربندی CIDRAM مسدود یا در لیست سفید قرار گیرند و ابزاری برای تأیید شبکه های اجتماعی برای تأیید درخواست های فیس بوک فراهم شود. (اگر از این ماژول استفاده می‌کنید، نیازی به استفاده از ماژول IP-API نخواهید داشت، زیرا هدف آنها یکسان است)."
  Bad TLDs blocker module: "میزبان‌های متعلق به TLD‌ها را که اغلب توسط اسپمرها، هکرها و دیگر نهادهای شرور استفاده می‌شوند مسدود می‌کند."
@@ -77,7 +77,7 @@ Extended Description:
  Referrer spam module: "مسدود کردن بر اساس اسپم های ارجاع دهنده معمولاً هیچ مزیت امنیتی معنی داری ارائه نمی دهد، اما در برخی موارد می تواند برای برخی از کاربران مفید باشد، برای جمع آوری اطلاعات بیشتر در مورد درخواست ها و امکان گزارش آن."
  Stop Forum Spam module: "از صفحات ثبت نام و ورود به سیستم در برابر IP های لیست شده توسط SFS محافظت می‌کند."
  Tor blocker module: "دسترسی از گره های خروج Tor را از طریق جستجوهای DNSEL ممنوع می‌کند (از هر دو IPv4 و IPv6 پشتیبانی می‌کند)."
-Name:
+Name: !lazy
  AbuseIPDB module: "ماژول AbuseIPDB."
  BGPView module: "ماژول BGPView."
  BOBUAM: "ربات یا ماژول عامل های کاربر مرورگر (BOBUAM)."
@@ -129,7 +129,7 @@ checkbox:
  Test as sensitive request: "تست به عنوان درخواست حساس"
  Untrack positives: "ردیابی موارد مثبت متوقف شود؟"
  When blocked, suppress output template: "وقتی مسدود شد، الگوی خروجی را سرکوب کنید."
-config:
+config: !lazy
  abuseipdb: "پیکربندی ماژول AbuseIPDB."
  abuseipdb_api_key: &EnterAPIKey "لطفاً کلید API خود را در اینجا وارد کنید."
  abuseipdb_build_profiles_from_usage_type: "نمایه‌ها را با استفاده از نوع استفاده برگردانده شده توسط API بسازید؟ False = نکن. True = آره. پیش فرض = True."
@@ -816,7 +816,7 @@ link:
  Subtractor: "تفریق کننده"
  Updates: "به روز رسانی کننده"
  View mode: "حالت مشاهده"
-macro:
+macro: !lazy
  Description:
   activate_modules: &MayImpactPerformance "توصیه نمی شود، زیرا احتمالاً به همه آنها نیاز نخواهید داشت. نصب و فعال کردن قطعات در مواقعی که نیازی به آنها نیست می تواند بر عملکرد تأثیر منفی بگذارد."
   install_l10n_core: &RecommendKeepingCore "وقتی دستور پیکربندی <code dir="ltr">lang_override</code> فعال است، اگر مرورگر کاربر ترجیح زبان خاصی را مشخص کند، تا زمانی که داده های core L10N برای آن زبان نصب شده باشد، CIDRAM قادر است صفحه "دسترسی ممنوع" را به آن زبان مشخص شده نمایش دهد. بر این اساس، نصب تمام داده های core L10N توصیه می شود."
@@ -867,7 +867,7 @@ previewer:
  Seconds: "ثانیه ها"
  Weeks: "هفته ها"
  Years: "سال ها"
-purpose:
+purpose: !lazy
  3D graphics file: "فایل گرافیکی سه‌بعدی (مثلاً، CAD، مدل‌ها، مواد، بافت‌ها)"
  Audio file: "فایل صوتی"
  Card file: "فایل کارت"
@@ -986,7 +986,7 @@ response:
  _Yes: "آره"
  please_check_config: "لطفاً پیکربندی خود را بررسی کنید تا مطمئن شوید که ماژول تازه نصب شده همانطور که می خواهید رفتار می‌کند."
  release_notes: "<a href="%s"><span class="navicon link"></span>یادداشت های انتشار برای %s.</a>"
-stages:
+stages: !lazy
  Check whether banned: "بررسی کنید که آیا ممنوع شده است یا خیر"
  Deploy CAPTCHAs (blocked requests): "CAPTCHAها را نشان دهید (درخواست های مسدود شده)"
  Deploy CAPTCHAs (non-blocked requests): "CAPTCHAها را نشان دهید (درخواست های غیر مسدود)"

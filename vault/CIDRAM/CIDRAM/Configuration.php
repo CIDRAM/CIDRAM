@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used by the configuration page and configuration filters (last modified: 2025.08.14).
+ * This file: Methods used by the configuration page and configuration filters (last modified: 2026.03.17).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -24,7 +24,7 @@ trait Configuration
      */
     private function filterByDefined(string $ChoiceKey): bool
     {
-        return defined($ChoiceKey);
+        return \defined($ChoiceKey);
     }
 
     /**
@@ -36,7 +36,7 @@ trait Configuration
      */
     private function filterThemeCore(string $ChoiceKey): bool
     {
-        return ($ChoiceKey === 'default') ?: file_exists($this->AssetsPath . 'core/template_' . $ChoiceKey . '.html');
+        return ($ChoiceKey === 'default') ?: \file_exists($this->AssetsPath . 'core/template_' . $ChoiceKey . '.html');
     }
 
     /**
@@ -48,7 +48,7 @@ trait Configuration
      */
     private function filterThemeFrontEnd(string $ChoiceKey): bool
     {
-        return ($ChoiceKey === 'default') ?: file_exists($this->AssetsPath . 'frontend/' . $ChoiceKey . '/frontend.css');
+        return ($ChoiceKey === 'default') ?: \file_exists($this->AssetsPath . 'frontend/' . $ChoiceKey . '/frontend.css');
     }
 
     /**

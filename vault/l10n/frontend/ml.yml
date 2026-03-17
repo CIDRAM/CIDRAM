@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malayalam language data for the front-end (last modified: 2026.03.13).
+# This file: Malayalam language data for the front-end (last modified: 2026.03.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,7 +24,7 @@
 # requests, ask. I can help.
 ##/
 
-Abuse category:
+Abuse category: !lazy
  Bad web bot: "മോശം വെബ് ബോട്ട് (ഇമെയിൽ വിലാസങ്ങൾ, ഉള്ളടക്കം എന്നിവയ്ക്കായി സ്‌ക്രാപ്പ് ചെയ്യൽ, robots.txt-നെ മാനിക്കാത്ത ക്രാളറുകൾ എന്നിവയ്‌ക്കായി, അമിതമായ അഭ്യർത്ഥനകൾ, ഉപയോക്തൃ ഏജന്റിനെ കബളിപ്പിക്കൽ, മുതലായവ)."
  Brute-force attacks: "ബ്രൂട്ട്-ഫോഴ്‌സ് ആക്രമണങ്ങൾ (വെബ്‌പേജ് ലോഗിനുകൾ, SMTP, RDP, മുതലായവയിലെ ക്രെഡൻഷ്യൽ ബ്രൂട്ട്-ഫോഴ്‌സ് ആക്രമണങ്ങൾ)."
  Categories (at least one is required): "വിഭാഗങ്ങൾ (കുറഞ്ഞത് ഒന്നെങ്കിലും ആവശ്യമാണ്)"
@@ -50,7 +50,7 @@ Abuse category:
  VPN IP: "VPN IP."
  Web spam: "വെബ് സ്പാം (കമന്റ്/ഫോറം സ്പാം, HTTP റഫറർ സ്പാം, അല്ലെങ്കിൽ മറ്റ് CMS സ്പാം)."
  Webapp attacks: "വെബ്‌ആപ്പ് ആക്രമണങ്ങൾ (ദുർബലതകൾക്കോ ​​ചൂഷണങ്ങൾക്കോ ​​വേണ്ടിയുള്ള അന്വേഷണം, അല്ലെങ്കിൽ ഇൻസ്റ്റാൾ ചെയ്ത വെബ്‌ആപ്പുകൾ, CMS, അല്ലെങ്കിൽ ഇ-കൊമേഴ്‌സ് സൊല്യൂഷനുകൾ എന്നിവ ചൂഷണം ചെയ്യാൻ ശ്രമിക്കുന്നത്, ഉദാഹരണത്തിന്, വേർഡ്പ്രസ്സ്, ഡ്രൂപ്പൽ, പിഎച്ച്പിമൈഅഡ്മിൻ, തുടങ്ങിയവ)."
-Extended Description:
+Extended Description: !lazy
  AbuseIPDB module: "AbuseIPDB-യിൽ പട്ടികപ്പെടുത്തിയിരിക്കുന്ന IP-കളിൽ നിന്നുള്ള അഭ്യർത്ഥനകൾ തടയുന്നു."
  BGPView module: "ഇത് CIDRAM-ന് ഒരു ASN, രാജ്യ കോഡ് തിരയൽ സൗകര്യം നൽകുന്നതിന് {{Links.BGPView}} API-യെ സ്വാധീനിക്കുന്നു, CIDRAM കോൺഫിഗറേഷൻ വഴി ASN-കളെയും രാജ്യങ്ങളെയും തടയാനോ വൈറ്റ്‌ലിസ്റ്റ് ചെയ്യാനോ പ്രാപ്തമാക്കുന്നു, കൂടാതെ Facebook അഭ്യർത്ഥനകൾ പരിശോധിക്കുന്നതിന് സോഷ്യൽ നെറ്റ്‌വർക്കിംഗ് സ്ഥിരീകരണത്തിനുള്ള ഒരു മാർഗവും നൽകുന്നു. (നിങ്ങൾ ഈ മൊഡ്യൂൾ ഉപയോഗിക്കുകയാണെങ്കിൽ, IP-API മൊഡ്യൂൾ ഉപയോഗിക്കേണ്ടതില്ല, കാരണം അവ ഒരേ ഉദ്ദേശ്യം നിറവേറ്റുന്നു)."
  Bad TLDs blocker module: "സ്പാമർമാർ, ഹാക്കർമാർ, മറ്റ് ദുഷ്ട സ്ഥാപനങ്ങൾ എന്നിവർ പതിവായി ഉപയോഗിക്കുന്ന TLD-കളിൽ ഉൾപ്പെടുന്ന ഹോസ്റ്റുകളെ തടയുന്നു."
@@ -77,7 +77,7 @@ Extended Description:
  Referrer spam module: "റഫറർ സ്പാം അടിസ്ഥാനമാക്കി തടയുന്നത് സാധാരണയായി അർത്ഥവത്തായ സുരക്ഷാ ആനുകൂല്യങ്ങളൊന്നും നൽകില്ല, എന്നാൽ ചില സന്ദർഭങ്ങളിൽ, അഭ്യർത്ഥനകളെക്കുറിച്ചുള്ള കൂടുതൽ വിവരങ്ങൾ ശേഖരിക്കുന്നതിനും അത് റിപ്പോർട്ട് ചെയ്യാൻ കഴിയുന്നതിനും ചില ഉപയോക്താക്കൾക്ക് ഉപയോഗപ്രദമാകും."
  Stop Forum Spam module: "SFS പട്ടികപ്പെടുത്തിയിരിക്കുന്ന IP-കളിൽ നിന്ന് രജിസ്ട്രേഷൻ, ലോഗിൻ പേജുകളെ സംരക്ഷിക്കുന്നു."
  Tor blocker module: "DNSEL ലുക്കപ്പുകൾ വഴി ടോർ എക്സിറ്റ് നോഡുകളിൽ നിന്നുള്ള ആക്‌സസ് നിരോധിക്കുന്നു (IPv4, IPv6 എന്നിവയെ പിന്തുണയ്ക്കുന്നു)."
-Name:
+Name: !lazy
  AbuseIPDB module: "AbuseIPDB മൊഡ്യൂൾ."
  BGPView module: "BGPView മൊഡ്യൂൾ."
  BOBUAM: "ബോട്ട് അല്ലെങ്കിൽ ബ്രൗസർ ഉപയോക്തൃ ഏജന്റുകൾ മൊഡ്യൂൾ (BOBUAM)."
@@ -129,7 +129,7 @@ checkbox:
  Test as sensitive request: "സെൻസിറ്റീവ് അഭ്യർത്ഥനയായി പരിശോധിക്കുക"
  Untrack positives: "പോസിറ്റീവുകൾ ട്രാക്ക് ചെയ്യുന്നത് നിർത്തണോ?"
  When blocked, suppress output template: "തടയപ്പെടുമ്പോൾ, ഔട്ട്പുട്ട് ടെംപ്ലേറ്റ് ഓഫാക്കുക."
-config:
+config: !lazy
  abuseipdb: "AbuseIPDB മൊഡ്യൂളിനുള്ള കോൺഫിഗറേഷൻ."
  abuseipdb_api_key: &EnterAPIKey "ദയവായി നിങ്ങളുടെ API കീ ഇവിടെ നൽകുക."
  abuseipdb_build_profiles_from_usage_type: "API നൽകുന്ന ഉപയോഗ തരം ഉപയോഗിച്ച് പ്രൊഫൈലുകൾ നിർമ്മിക്കണോ? False = ഇല്ല. True = അതെ. സ്ഥിരസ്ഥിതി = True."
@@ -826,7 +826,7 @@ link:
  Subtractor: "കുറയ്ക്കൽ"
  Updates: "അപ്‌ഡേറ്റുകൾ"
  View mode: "കാഴ്ച മോഡ്"
-macro:
+macro: !lazy
  Description:
   activate_modules: &MayImpactPerformance "നിങ്ങൾക്ക് ആവശ്യമില്ലാത്ത ചിലത് ഉണ്ടാകാൻ സാധ്യതയുള്ളതിനാൽ, സാധാരണയായി ശുപാർശ ചെയ്യുന്നില്ല. ആവശ്യമില്ലാത്ത ഘടകങ്ങൾ ഇൻസ്റ്റാൾ ചെയ്യുന്നതും സജീവമാക്കുന്നതും പ്രകടനത്തെ പ്രതികൂലമായി ബാധിച്ചേക്കാം."
   install_l10n_core: &RecommendKeepingCore "<code>lang_override</code> കോൺഫിഗറേഷൻ നിർദ്ദേശം പ്രാപ്തമാക്കുമ്പോൾ, ഒരു ഉപയോക്താവിന്റെ ബ്രൗസർ ഒരു പ്രത്യേക ഭാഷാ മുൻഗണന വ്യക്തമാക്കിയിട്ടുണ്ടെങ്കിൽ, ആ ഭാഷയ്ക്കുള്ള കോർ L10N ഡാറ്റ ഇൻസ്റ്റാൾ ചെയ്തിട്ടുണ്ടെങ്കിൽ, CIDRAM-ന് ആ നിർദ്ദിഷ്ട ഭാഷയിൽ "പ്രവേശനം നിരസിച്ചു" പേജ് പ്രദർശിപ്പിക്കാൻ കഴിയും. അതനുസരിച്ച്, എല്ലാ കോർ L10N ഡാറ്റയും ഇൻസ്റ്റാൾ ചെയ്ത നിലയിൽ തന്നെ നിലനിർത്താൻ ശുപാർശ ചെയ്യുന്നു."
@@ -877,7 +877,7 @@ previewer:
  Seconds: "സെക്കൻഡുകൾ"
  Weeks: "ആഴ്ചകൾ"
  Years: "വർഷങ്ങൾ"
-purpose:
+purpose: !lazy
  3D graphics file: "3D ഗ്രാഫിക്സ് ഫയൽ (ഉദാ., CAD, മോഡലുകൾ, മെറ്റീരിയലുകൾ, ടെക്സ്ചറുകൾ)"
  Audio file: "ഓഡിയോ ഫയൽ"
  Card file: "കാർഡ് ഫയൽ"
@@ -998,7 +998,7 @@ response:
  _Yes: "അതെ"
  please_check_config: "പുതുതായി ഇൻസ്റ്റാൾ ചെയ്ത മൊഡ്യൂൾ നിങ്ങൾ ഉദ്ദേശിക്കുന്നതുപോലെ പ്രവർത്തിക്കുന്നുവെന്ന് ഉറപ്പാക്കാൻ ദയവായി നിങ്ങളുടെ കോൺഫിഗറേഷൻ പരിശോധിക്കുക."
  release_notes: "<a href="%s"><span class="navicon link"></span>%s-നുള്ള റിലീസ് കുറിപ്പുകൾ.</a>"
-stages:
+stages: !lazy
  Check whether banned: "നിരോധിച്ചിട്ടുണ്ടോ എന്ന് പരിശോധിക്കുക"
  Deploy CAPTCHAs (blocked requests): "CAPTCHA-കൾ വിന്യസിക്കുക (തടഞ്ഞ അഭ്യർത്ഥനകൾ)"
  Deploy CAPTCHAs (non-blocked requests): "CAPTCHA-കൾ വിന്യസിക്കുക (തടയാത്ത അഭ്യർത്ഥനകൾ)"

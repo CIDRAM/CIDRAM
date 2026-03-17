@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2026.02.22).
+ * This file: Protect traits (last modified: 2026.03.17).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -23,17 +23,17 @@ trait Protect
     public function protect()
     {
         /** Attach client-accepted L10N declaration. */
-        $this->CIDRAM['L10N-Lang-Attache'] = $this->L10NAccepted === $this->ClientL10NAccepted ? '' : sprintf(
+        $this->CIDRAM['L10N-Lang-Attache'] = $this->L10NAccepted === $this->ClientL10NAccepted ? '' : \sprintf(
             ' lang="%s" dir="%s"',
             $this->ClientL10NAccepted,
             $this->ClientL10N->Directionality
         );
 
         /** Initialise stages. */
-        $this->Stages = array_flip(explode("\n", $this->Configuration['general']['stages']));
+        $this->Stages = \array_flip(\explode("\n", $this->Configuration['general']['stages']));
 
         /** Initialise shorthand options. */
-        $this->Shorthand = array_flip(explode("\n", $this->Configuration['signatures']['shorthand']));
+        $this->Shorthand = \array_flip(\explode("\n", $this->Configuration['signatures']['shorthand']));
 
         /** Usable by events to determine which part of the output generator we're at. */
         $this->Stage = '';
@@ -45,10 +45,10 @@ trait Protect
         $this->initialiseErrorHandler();
 
         /** Initialise statistics tracked. */
-        $this->StatisticsTracked = array_flip(explode("\n", $this->Configuration['general']['statistics']));
+        $this->StatisticsTracked = \array_flip(\explode("\n", $this->Configuration['general']['statistics']));
 
         /** Initialise CAPTCHA statistics tracked. */
-        $this->StatisticsTrackedCAPTCHAs = array_flip(explode("\n", $this->Configuration['general']['statistics_captchas']));
+        $this->StatisticsTrackedCAPTCHAs = \array_flip(\explode("\n", $this->Configuration['general']['statistics_captchas']));
 
         /** Reset bypass flags. */
         $this->resetBypassFlags();
@@ -60,7 +60,7 @@ trait Protect
         $this->Profiles = [];
 
         /** Initialise verification adjustments. */
-        $this->VAdjust = array_flip(explode("\n", $this->Configuration['verification']['adjust']));
+        $this->VAdjust = \array_flip(\explode("\n", $this->Configuration['verification']['adjust']));
 
         /** Initialise statistics if necessary. */
         if (isset($this->Stages['Statistics:Enable'])) {
@@ -107,13 +107,13 @@ trait Protect
             $this->BlockInfo['Infractions'] = (int)$Try;
         }
         $AtRunTimeInfractions = $this->BlockInfo['Infractions'];
-        $this->BlockInfo['UALC'] = strtolower($this->BlockInfo['UA']);
+        $this->BlockInfo['UALC'] = \strtolower($this->BlockInfo['UA']);
         $this->BlockInfo['rURI'] = (
             (!empty($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') ||
             (!empty($_SERVER['HTTP_X_FORWARDED_SSL']) && $_SERVER['HTTP_X_FORWARDED_SSL'] === 'on') ||
             (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
         ) ? 'https://' : 'http://';
-        if (isset($_SERVER['SERVER_PORT']) && is_scalar($_SERVER['SERVER_PORT'])) {
+        if (isset($_SERVER['SERVER_PORT']) && \is_scalar($_SERVER['SERVER_PORT'])) {
             $Try = (int)$_SERVER['SERVER_PORT'];
             $Try = ($Try > 0 && (
                 ($this->BlockInfo['rURI'] === 'http://' && $Try !== 80) ||
@@ -125,8 +125,8 @@ trait Protect
         $this->BlockInfo['rURI'] .= $_SERVER['REQUEST_URI'] ?? '/';
 
         /** Tokenise secure user agent (if available; won't be available outside HTTPS). */
-        if ($this->BlockInfo['SEC_CH_UA'] !== '' && preg_match_all('~(?<=^|, )"([^"\n\r]+)";v="(\d+)"(?=$|, )~', $this->BlockInfo['SEC_CH_UA'], $Tokens)) {
-            $this->Tokens = array_merge($this->Tokens, array_combine($Tokens[1], $Tokens[2]));
+        if ($this->BlockInfo['SEC_CH_UA'] !== '' && \preg_match_all('~(?<=^|, )"([^"\n\r]+)";v="(\d+)"(?=$|, )~', $this->BlockInfo['SEC_CH_UA'], $Tokens)) {
+            $this->Tokens = \array_merge($this->Tokens, \array_combine($Tokens[1], $Tokens[2]));
             unset($Tokens);
         }
 
@@ -217,7 +217,7 @@ trait Protect
             if (!isset($this->CIDRAM['ModuleResCache'])) {
                 $this->CIDRAM['ModuleResCache'] = [];
             }
-            $Modules = explode("\n", $this->Configuration['components']['modules']);
+            $Modules = \explode("\n", $this->Configuration['components']['modules']);
             if (!$this->Configuration['signatures']['tracking_override']) {
                 $this->CIDRAM['Restore tracking options override'] = $this->CIDRAM['Tracking options override'] ?? '';
             }
@@ -226,16 +226,16 @@ trait Protect
              * Doing this with array_walk instead of foreach to ensure that modules
              * have their own scope and that superfluous data isn't preserved.
              */
-            array_walk($Modules, function ($Module): void {
+            \array_walk($Modules, function ($Module): void {
                 if (!empty($this->CIDRAM['Whitelisted'])) {
                     return;
                 }
                 $OK = true;
-                $Module = (strpos($Module, ':') === false) ? $Module : substr($Module, strpos($Module, ':') + 1);
+                $Module = (\strpos($Module, ':') === false) ? $Module : \substr($Module, \strpos($Module, ':') + 1);
                 $Before = $this->BlockInfo['SignatureCount'];
-                if (isset($this->CIDRAM['ModuleResCache'][$Module]) && is_object($this->CIDRAM['ModuleResCache'][$Module])) {
+                if (isset($this->CIDRAM['ModuleResCache'][$Module]) && \is_object($this->CIDRAM['ModuleResCache'][$Module])) {
                     $this->CIDRAM['ModuleResCache'][$Module]();
-                } elseif (!$this->isReserved($Module) && is_readable($this->ModulesPath . $Module)) {
+                } elseif (!$this->isReserved($Module) && \is_readable($this->ModulesPath . $Module)) {
                     try {
                         require $this->ModulesPath . $Module;
                     } catch (\Throwable $e) {
@@ -311,7 +311,7 @@ trait Protect
             /** Tracking options override. */
             if (!empty($this->CIDRAM['Tracking options override'])) {
                 if ($this->CIDRAM['Tracking options override'] === 'extended') {
-                    $TrackTime = floor($this->Configuration['signatures']['default_tracktime']->getAsSeconds() * 52.1428571428571);
+                    $TrackTime = \floor($this->Configuration['signatures']['default_tracktime']->getAsSeconds() * 52.1428571428571);
                     $TrackCount *= 1000;
                     if ($this->CIDRAM['Banned'] && $TrackCount >= 2000) {
                         $TrackCount -= 1000;
@@ -363,8 +363,8 @@ trait Protect
                 $this->Configuration['rate_limiting']['max_requests'] > 0 ||
                 $RLMaxBandwidth > 0
             ) && empty($this->CIDRAM['Whitelisted']) && isset($this->CIDRAM['Factors']) && (!$this->Configuration['rate_limiting']['exceptions'] || (
-                !($this->BlockInfo['Verified'] && preg_match('~(?:^|\n)Verified(?:\n|$)~', $this->Configuration['rate_limiting']['exceptions'])) &&
-                !(!empty($this->CIDRAM['Whitelisted']) && preg_match('~(?:^|\n)Whitelisted(?:\n|$)~', $this->Configuration['rate_limiting']['exceptions']))
+                !($this->BlockInfo['Verified'] && \preg_match('~(?:^|\n)Verified(?:\n|$)~', $this->Configuration['rate_limiting']['exceptions'])) &&
+                !(!empty($this->CIDRAM['Whitelisted']) && \preg_match('~(?:^|\n)Whitelisted(?:\n|$)~', $this->Configuration['rate_limiting']['exceptions']))
             ))) {
                 if (
                     $this->CIDRAM['LastTestIP'] === 4 &&
@@ -382,22 +382,22 @@ trait Protect
                     $this->CIDRAM['RL_Capture'] = $this->CIDRAM['Factors'][$this->Configuration['rate_limiting']['precision_ipv6'] - 1];
                 }
                 if (!empty($this->CIDRAM['RL_Capture'])) {
-                    $this->CIDRAM['RL_Capture'] = pack('l*', strlen($this->CIDRAM['RL_Capture'])) . $this->CIDRAM['RL_Capture'];
+                    $this->CIDRAM['RL_Capture'] = \pack('l*', \strlen($this->CIDRAM['RL_Capture'])) . $this->CIDRAM['RL_Capture'];
                     $this->rateLimitFetch();
-                    if (strlen($this->CIDRAM['RL_Data']) > 4) {
+                    if (\strlen($this->CIDRAM['RL_Data']) > 4) {
                         $this->CIDRAM['RL_Expired'] = $this->Now - $this->Configuration['rate_limiting']['allowance_period']->getAsSeconds();
-                        $this->CIDRAM['RL_Oldest'] = unpack('l*', substr($this->CIDRAM['RL_Data'], 0, 4));
+                        $this->CIDRAM['RL_Oldest'] = \unpack('l*', \substr($this->CIDRAM['RL_Data'], 0, 4));
                         if ($this->CIDRAM['RL_Oldest'][1] < $this->CIDRAM['RL_Expired']) {
                             $this->rateLimitClean();
                         }
                         $this->CIDRAM['RL_Usage'] = $this->rateGetUsage();
                         $RLFormatted = $this->rateGetOldest();
                         $RLRetryAfter = $RLFormatted['Time'] > 0 ? $this->Configuration['rate_limiting']['allowance_period']->getAsSeconds() - ($this->Now - $RLFormatted['Time']) : $this->Configuration['rate_limiting']['allowance_period']->getAsSeconds();
-                        $RLFormatted = sprintf($this->L10N->getPlural($RLRetryAfter, '%s seconds'), $this->NumberFormatter->format($RLRetryAfter));
+                        $RLFormatted = \sprintf($this->L10N->getPlural($RLRetryAfter, '%s seconds'), $this->NumberFormatter->format($RLRetryAfter));
                         if ($this->trigger((
                             ($RLMaxBandwidth > 0 && $this->CIDRAM['RL_Usage']['Bytes'] >= $RLMaxBandwidth) ||
                             ($this->Configuration['rate_limiting']['max_requests'] > 0 && $this->CIDRAM['RL_Usage']['Requests'] >= $this->Configuration['rate_limiting']['max_requests'])
-                        ), $this->L10N->getString('Short.RL'), sprintf($this->ClientL10N->getString('ReasonMessage.RL') ?: $this->L10N->getString('ReasonMessage.RL'), $RLFormatted))) {
+                        ), $this->L10N->getString('Short.RL'), \sprintf($this->ClientL10N->getString('ReasonMessage.RL') ?: $this->L10N->getString('ReasonMessage.RL'), $RLFormatted))) {
                             $this->enactOptions('', ['ForciblyDisableAll' => true]);
                             $this->CIDRAM['Other Status'] = $this->getStatusHTTP(429);
                             $this->CIDRAM['Other Status Code'] = 429;
@@ -409,11 +409,11 @@ trait Protect
                         unset($this->CIDRAM['RL_Usage'], $this->CIDRAM['RL_Oldest'], $this->CIDRAM['RL_Expired'], $RLFormatted);
                     }
                     $this->CIDRAM['RL_Size'] = 0;
-                    ob_start(function ($In) {
-                        $this->CIDRAM['RL_Size'] += strlen($In);
+                    \ob_start(function ($In) {
+                        $this->CIDRAM['RL_Size'] += \strlen($In);
                         return $In;
                     }, 1);
-                    register_shutdown_function(function () {
+                    \register_shutdown_function(function () {
                         $this->rateLimitWriteEvent($this->CIDRAM['RL_Capture'], $this->CIDRAM['RL_Size']);
                         if (ob_get_level() > 0) {
                             ob_end_flush();
@@ -441,7 +441,7 @@ trait Protect
                 if (
                     $this->Configuration['captcha'][$CAPTCHA[0]] !== '' &&
                     $this->Configuration['captcha'][$CAPTCHA[1]] !== '' &&
-                    class_exists($ClassName) &&
+                    \class_exists($ClassName) &&
                     empty($this->CIDRAM['ForciblyDisable' . $CAPTCHA[2]]) &&
                     (
                         $this->Configuration['captcha']['usemode'][$CAPTCHA[3]] === 1 ||
@@ -466,7 +466,7 @@ trait Protect
 
         /** Identify proxy connections (conjunctive reporting element). */
         if (
-            strpos($this->BlockInfo['WhyReason'], $this->L10N->getString('Short.Proxy')) !== false ||
+            \strpos($this->BlockInfo['WhyReason'], $this->L10N->getString('Short.Proxy')) !== false ||
             $this->hasProfile(['Open Proxy', 'Proxy', 'Tor endpoints here'])
         ) {
             $this->Reporter->report([9], [], $this->BlockInfo['IPAddr']);
@@ -570,7 +570,7 @@ trait Protect
         }
 
         /** Process webhooks. */
-        if (isset($this->Stages['Webhooks:Enable']) && (count($this->Webhooks) || !empty($this->Configuration['Webhook']['URL']))) {
+        if (isset($this->Stages['Webhooks:Enable']) && (\count($this->Webhooks) || !empty($this->Configuration['Webhook']['URL']))) {
             $this->Stage = 'Webhooks';
 
             /** Safety. */
@@ -581,7 +581,7 @@ trait Protect
             /** Merge webhooks defined by signature files with webhooks defined by auxiliary rules. */
             if (!empty($this->Configuration['Webhook']['URL'])) {
                 $this->arrayify($this->Configuration['Webhook']['URL']);
-                $this->Webhooks = array_merge($this->Webhooks, $this->Configuration['Webhook']['URL']);
+                $this->Webhooks = \array_merge($this->Webhooks, $this->Configuration['Webhook']['URL']);
             }
 
             /** Block information copied here to be further processed for sending with the request. */
@@ -589,7 +589,7 @@ trait Protect
 
             /** Some further processing. */
             foreach ($this->CIDRAM['ParsedToWebhook'] as &$this->CIDRAM['WebhookVar']) {
-                $this->CIDRAM['WebhookVar'] = urlencode($this->CIDRAM['WebhookVar']);
+                $this->CIDRAM['WebhookVar'] = \urlencode($this->CIDRAM['WebhookVar']);
             }
 
             /** Set timeout. */
@@ -610,7 +610,7 @@ trait Protect
             }
 
             /** Merge with block information. */
-            $this->CIDRAM['WebhookParams'] = array_merge($this->BlockInfo, $this->CIDRAM['WebhookParams']);
+            $this->CIDRAM['WebhookParams'] = \array_merge($this->BlockInfo, $this->CIDRAM['WebhookParams']);
 
             /** Remove useless parameters. */
             unset($this->CIDRAM['WebhookParams']['favicon'], $this->CIDRAM['WebhookParams']['favicon_extension']);
@@ -618,7 +618,7 @@ trait Protect
             /** Iterate through each webhook. */
             foreach ($this->Webhooks as $Webhook) {
                 /** Safety. */
-                if (!is_string($Webhook)) {
+                if (!\is_string($Webhook)) {
                     continue;
                 }
 
@@ -645,7 +645,7 @@ trait Protect
             $this->Stage = 'TriggerNotifications';
 
             $NotificationQueue = $this->Cache->getEntry('NotificationQueue');
-            if (!is_array($NotificationQueue)) {
+            if (!\is_array($NotificationQueue)) {
                 $NotificationQueue = [];
             }
             $ChangedState = false;
@@ -653,8 +653,8 @@ trait Protect
             /** Processed only when new trigger notifications are generated by the request at hand. */
             if (isset($this->CIDRAM['Trigger notifications'])) {
                 $Recipient = [
-                    'Name' => trim($this->Configuration['general']['email_notification_name']),
-                    'Address' => trim($this->Configuration['general']['email_notification_address'])
+                    'Name' => \trim($this->Configuration['general']['email_notification_name']),
+                    'Address' => \trim($this->Configuration['general']['email_notification_address'])
                 ];
                 if ($Recipient['Name'] !== '' && $Recipient['Address'] !== '') {
                     $ParsedToEmail = [
@@ -668,11 +668,11 @@ trait Protect
                         $this->L10N->getString('field.Signatures count') => $this->NumberFormatter->format($this->BlockInfo['SignatureCount'])
                     ];
                     $BlockInfoForEmailBody = '';
-                    $this->CIDRAM['Fields'] = array_flip(explode("\n", $this->Configuration['general']['fields']));
+                    $this->CIDRAM['Fields'] = \array_flip(\explode("\n", $this->Configuration['general']['fields']));
 
                     foreach ($ParsedToEmail as $FieldName => &$FieldData) {
                         /** Prevent dangerous HTML in outbound email. */
-                        $FieldData = str_replace(['<', '>', "\r", "\n"], ['&lt;', '&gt;', '&#13;', '&#10;'], $FieldData);
+                        $FieldData = \str_replace(['<', '>', "\r", "\n"], ['&lt;', '&gt;', '&#13;', '&#10;'], $FieldData);
 
                         if ($FieldData === '') {
                             $FieldData = '-';
@@ -682,10 +682,10 @@ trait Protect
                     unset($FieldData, $FieldName, $ParsedToEmail);
 
                     /** Prepare message body. */
-                    $Body = sprintf(
+                    $Body = \sprintf(
                         $this->L10N->getString('Trigger notification.Template'),
                         $Recipient['Name'],
-                        '"' . implode('"<br />"', $this->CIDRAM['Trigger notifications']) . '"<br /><br />' . $BlockInfoForEmailBody
+                        '"' . \implode('"<br />"', $this->CIDRAM['Trigger notifications']) . '"<br /><br />' . $BlockInfoForEmailBody
                     );
 
                     /** Prepare event data. */
@@ -706,7 +706,7 @@ trait Protect
             }
 
             /** Process the notification queue. */
-            if (count($NotificationQueue)) {
+            if (\count($NotificationQueue)) {
                 if ($this->Configuration['general']['email_notification_when'] !== 'ManuallyOnly') {
                     if (($NotificationQueueLast = $this->Cache->getEntry('NotificationQueueLast')) === false) {
                         $NotificationQueueLast = $this->Now;
@@ -725,10 +725,10 @@ trait Protect
                         }
                         foreach ($Bundles as $Address => $Notification) {
                             $Subject = $this->L10N->getString('Trigger notification.Subject');
-                            if (($HowMany = count($Notification['HTML'])) > 1) {
+                            if (($HowMany = \count($Notification['HTML'])) > 1) {
                                 $Subject .= ' (' . $HowMany . ')';
                             }
-                            $Notification = [[['Name' => $Notification['Name'], 'Address' => $Address]], $Subject, implode("<br />\n<br />\n---<br />\n", $Notification['HTML']), implode("\n\n---\n", $Notification['Text']), ''];
+                            $Notification = [[['Name' => $Notification['Name'], 'Address' => $Address]], $Subject, \implode("<br />\n<br />\n---<br />\n", $Notification['HTML']), \implode("\n\n---\n", $Notification['Text']), ''];
                             $this->Events->fireEvent('sendEmail', '', ...$Notification);
                         }
                         $this->Cache->setEntry('NotificationQueueLast', $this->Now, 604800);
@@ -780,7 +780,7 @@ trait Protect
 
                 /** Initialise fields. */
                 if (!isset($this->CIDRAM['Fields'])) {
-                    $this->CIDRAM['Fields'] = array_flip(explode("\n", $this->Configuration['general']['fields']));
+                    $this->CIDRAM['Fields'] = \array_flip(\explode("\n", $this->Configuration['general']['fields']));
                 }
 
                 $this->BlockInfo['Infractions'] = 0;
@@ -829,11 +829,11 @@ trait Protect
                 $this->Stage = 'Output';
 
                 /** Finalise fields. */
-                $this->CIDRAM['FieldTemplates']['Output'] = implode("\n        ", $this->CIDRAM['FieldTemplates']['Output']);
+                $this->CIDRAM['FieldTemplates']['Output'] = \implode("\n        ", $this->CIDRAM['FieldTemplates']['Output']);
 
                 /** Determine which template file to use, if this hasn't already been determined. */
                 if (!isset($this->CIDRAM['template_file'])) {
-                    $this->CIDRAM['template_file'] = sprintf(
+                    $this->CIDRAM['template_file'] = \sprintf(
                         'core/template_%s.html',
                         $this->CIDRAM['FieldTemplates']['css_url'] === '' ? $this->CIDRAM['FieldTemplates']['theme'] : 'custom'
                     );
@@ -843,14 +843,14 @@ trait Protect
                 if (
                     $this->CIDRAM['FieldTemplates']['theme'] !== 'default' &&
                     $this->CIDRAM['FieldTemplates']['css_url'] === '' &&
-                    !file_exists($this->AssetsPath . $this->CIDRAM['template_file'])
+                    !\file_exists($this->AssetsPath . $this->CIDRAM['template_file'])
                 ) {
                     $this->CIDRAM['template_file'] = 'core/template_default.html';
                 }
 
                 /** Prepare to process "more info" entries, if any exist. */
                 if (!empty($this->Configuration['More Info']) && !empty($this->BlockInfo['ReasonMessage'])) {
-                    $this->BlockInfo['ReasonMessage'] .= sprintf(
+                    $this->BlockInfo['ReasonMessage'] .= \sprintf(
                         '<br /><br /><span%s>%s</span>',
                         $this->CIDRAM['L10N-Lang-Attache'],
                         $this->ClientL10N->getString('label.For more information') ?: $this->L10N->getString('label.For more information')
@@ -859,9 +859,9 @@ trait Protect
 
                     /** Process entries. */
                     foreach ($this->Configuration['More Info'] as $this->CIDRAM['Info Name'] => $this->CIDRAM['Info Link']) {
-                        $this->BlockInfo['ReasonMessage'] .= !empty($this->CIDRAM['Info Name']) && is_string($this->CIDRAM['Info Name']) ? (
-                            sprintf('<br /><a href="%1$s">%2$s</a>', $this->CIDRAM['Info Link'], $this->CIDRAM['Info Name'])
-                        ) : sprintf('<br /><a href="%1$s">%1$s</a>', $this->CIDRAM['Info Link']);
+                        $this->BlockInfo['ReasonMessage'] .= !empty($this->CIDRAM['Info Name']) && \is_string($this->CIDRAM['Info Name']) ? (
+                            \sprintf('<br /><a href="%1$s">%2$s</a>', $this->CIDRAM['Info Link'], $this->CIDRAM['Info Name'])
+                        ) : \sprintf('<br /><a href="%1$s">%1$s</a>', $this->CIDRAM['Info Link']);
                     }
 
                     /** Cleanup. */
@@ -869,9 +869,9 @@ trait Protect
                 }
 
                 /** Parsed to the template file. */
-                $this->CIDRAM['Parsables'] = array_merge($this->CIDRAM['FieldTemplates'], $this->BlockInfo, [
+                $this->CIDRAM['Parsables'] = \array_merge($this->CIDRAM['FieldTemplates'], $this->BlockInfo, [
                     'L10N-Lang-Attache' => $this->CIDRAM['L10N-Lang-Attache'],
-                    'GeneratedBy' => isset($this->CIDRAM['Fields']['ScriptIdent:ShowInPageOutput']) ? sprintf(
+                    'GeneratedBy' => isset($this->CIDRAM['Fields']['ScriptIdent:ShowInPageOutput']) ? \sprintf(
                         $this->ClientL10N->getString('label.Generated by %s'),
                         '<div id="ScriptIdent" dir="ltr">' . $this->ScriptIdent . '</div>'
                     ) : '',
@@ -941,12 +941,12 @@ trait Protect
                         header('HTTP/1.1 ' . $this->CIDRAM['errCode'] . ' ' . $StatusHTTP);
                         header('Status: ' . $this->CIDRAM['errCode'] . ' ' . $StatusHTTP);
                     } else {
-                        $this->CIDRAM['errCode'] = function_exists('http_response_code') && ($Try = http_response_code()) ? $Try : 200;
+                        $this->CIDRAM['errCode'] = \function_exists('http_response_code') && ($Try = http_response_code()) ? $Try : 200;
                     }
 
                     if (!empty($this->CIDRAM['Suppress output template'])) {
                         $HTML = '';
-                    } elseif (!file_exists($this->AssetsPath . $this->CIDRAM['template_file'])) {
+                    } elseif (!\file_exists($this->AssetsPath . $this->CIDRAM['template_file'])) {
                         header('Content-Type: text/plain');
                         $HTML = '[CIDRAM] ' . $this->ClientL10N->getString('denied');
                     } else {
@@ -957,7 +957,7 @@ trait Protect
                             if ($this->Configuration['general']['emailaddr_display_style'] === 'default') {
                                 $this->BlockInfo['EmailAddr'] =
                                     '<a href="mailto:' . $this->Configuration['general']['emailaddr'] .
-                                    '?subject=CIDRAM%20Event&body=' . urlencode($this->parseVars(
+                                    '?subject=CIDRAM%20Event&body=' . \urlencode($this->parseVars(
                                         $this->CIDRAM['Parsables'],
                                         $this->CIDRAM['FieldTemplates']['Logs'] . "\n"
                                     )) . '"><strong>' . $this->ClientL10N->getString('click_here') . '</strong></a>';
@@ -966,7 +966,7 @@ trait Protect
                                 ], $this->ClientL10N->getString('Support_Email')) . '</p>';
                             } elseif ($this->Configuration['general']['emailaddr_display_style'] === 'noclick') {
                                 $this->BlockInfo['EmailAddr'] = "\n  <p class=\"detected\" dir=\"ltr\">" . $this->parseVars([
-                                    'EmailAddr' => str_replace(
+                                    'EmailAddr' => \str_replace(
                                         '@',
                                         '<img src="data:image/gif;base64,R0lGODdhCQAKAIABAAAAAP///ywAAAAACQAKAAACE4yPAcsG+ZR7kcp6pWY4Hb54SAEAOw==" alt="@" />',
                                         '<strong>' . $this->Configuration['general']['emailaddr'] . '</strong>'
@@ -976,7 +976,7 @@ trait Protect
                         }
 
                         /** Include privacy policy. */
-                        $this->CIDRAM['Parsables']['pp'] = empty($this->Configuration['legal']['privacy_policy']) ? '' : sprintf(
+                        $this->CIDRAM['Parsables']['pp'] = empty($this->Configuration['legal']['privacy_policy']) ? '' : \sprintf(
                             '<br /><a href="%s"%s>%s</a>',
                             $this->Configuration['legal']['privacy_policy'],
                             $this->CIDRAM['L10N-Lang-Attache'],
@@ -1040,12 +1040,12 @@ trait Protect
                     if (
                         $this->Configuration['captcha'][$CAPTCHA[0]] !== '' &&
                         $this->Configuration['captcha'][$CAPTCHA[1]] !== '' &&
-                        class_exists($ClassName) &&
+                        \class_exists($ClassName) &&
                         (
                             ($this->Configuration['captcha']['usemode'][$CAPTCHA[3]] >= 3 && $this->Configuration['captcha']['usemode'][$CAPTCHA[3]] <= 5) ||
                             ($this->Configuration['captcha']['usemode'][$CAPTCHA[3]] === 6 && (
                                 isset($this->BlockInfo['rURI']) &&
-                                $this->isSensitive(preg_replace('/\s/', '', strtolower($this->BlockInfo['rURI'])))
+                                $this->isSensitive(\preg_replace('/\s/', '', \strtolower($this->BlockInfo['rURI'])))
                             ))
                         )
                     ) {
@@ -1059,14 +1059,14 @@ trait Protect
 
                 if (
                     !empty($CaptchaDone) &&
-                    is_object($CaptchaDone) &&
+                    \is_object($CaptchaDone) &&
                     isset($CaptchaDone->Bypass) &&
                     $CaptchaDone->Bypass === false
                 ) {
                     /** Parsed to the CAPTCHA's HTML file. */
-                    $this->CIDRAM['Parsables'] = array_merge($this->CIDRAM['FieldTemplates'], $this->CIDRAM['FieldTemplates'], $this->BlockInfo);
+                    $this->CIDRAM['Parsables'] = \array_merge($this->CIDRAM['FieldTemplates'], $this->CIDRAM['FieldTemplates'], $this->BlockInfo);
                     $this->CIDRAM['Parsables']['L10N-Lang-Attache'] = $this->CIDRAM['L10N-Lang-Attache'];
-                    $this->CIDRAM['Parsables']['GeneratedBy'] = isset($this->CIDRAM['Fields']['ScriptIdent:ShowInPageOutput']) ? sprintf(
+                    $this->CIDRAM['Parsables']['GeneratedBy'] = isset($this->CIDRAM['Fields']['ScriptIdent:ShowInPageOutput']) ? \sprintf(
                         $this->ClientL10N->getString('label.Generated by %s'),
                         '<div id="ScriptIdent" dir="ltr">' . $this->ScriptIdent . '</div>'
                     ) : '';
@@ -1086,13 +1086,13 @@ trait Protect
                     /** Fallback for themes without CAPTCHA template files. */
                     if (
                         $this->CIDRAM['FieldTemplates']['theme'] !== 'default' &&
-                        !file_exists($this->AssetsPath . 'core/' . $this->CIDRAM['CaptchaTemplateFile'])
+                        !\file_exists($this->AssetsPath . 'core/' . $this->CIDRAM['CaptchaTemplateFile'])
                     ) {
                         $this->CIDRAM['CaptchaTemplateFile'] = 'captcha_default.html';
                     }
 
                     /** Include privacy policy. */
-                    $this->CIDRAM['Parsables']['pp'] = empty($this->Configuration['legal']['privacy_policy']) ? '' : sprintf(
+                    $this->CIDRAM['Parsables']['pp'] = empty($this->Configuration['legal']['privacy_policy']) ? '' : \sprintf(
                         '<br /><a href="%s"%s>%s</a>',
                         $this->Configuration['legal']['privacy_policy'],
                         $this->CIDRAM['L10N-Lang-Attache'],
@@ -1142,7 +1142,7 @@ trait Protect
             return;
         }
         $NotificationQueue = $this->Cache->getEntry('NotificationQueue');
-        if (!is_array($NotificationQueue) || count($NotificationQueue) === 0) {
+        if (!\is_array($NotificationQueue) || \count($NotificationQueue) === 0) {
             return;
         }
 
@@ -1156,10 +1156,10 @@ trait Protect
         }
         foreach ($Bundles as $Address => $Notification) {
             $Subject = $this->L10N->getString('Trigger notification.Subject');
-            if (($HowMany = count($Notification['HTML'])) > 1) {
+            if (($HowMany = \count($Notification['HTML'])) > 1) {
                 $Subject .= ' (' . $HowMany . ')';
             }
-            $Notification = [[['Name' => $Notification['Name'], 'Address' => $Address]], $Subject, implode("<br />\n<br />\n---<br />\n", $Notification['HTML']), implode("\n\n---\n", $Notification['Text']), ''];
+            $Notification = [[['Name' => $Notification['Name'], 'Address' => $Address]], $Subject, \implode("<br />\n<br />\n---<br />\n", $Notification['HTML']), \implode("\n\n---\n", $Notification['Text']), ''];
             $this->Events->fireEvent('sendEmail', '', ...$Notification);
         }
         $this->Cache->setEntry('NotificationQueueLast', $this->Now, 604800);
@@ -1184,7 +1184,7 @@ trait Protect
             }
             $FieldData = '-';
         }
-        $Prepared = $Sanitise ? str_replace(
+        $Prepared = $Sanitise ? \str_replace(
             ['<', '>', "\r", "\n"],
             ['&lt;', '&gt;', '&#13;', '&#10;'],
             $FieldData
@@ -1196,7 +1196,7 @@ trait Protect
             $this->CIDRAM['FieldTemplates']['Logs'] .= $InternalResolved . $Logged . "\n";
         }
         if ($ShowAtLabels && isset($this->CIDRAM['Fields'][$FieldInternal . ':ShowInPageOutput'])) {
-            $this->CIDRAM['FieldTemplates']['Output'][] = sprintf(
+            $this->CIDRAM['FieldTemplates']['Output'][] = \sprintf(
                 '<span class="textLabel"%s>%s%s</span>%s<br />',
                 $this->CIDRAM['L10N-Lang-Attache'],
                 $this->ClientL10N->getString($FieldName) ?: $this->L10N->getString($FieldName) ?: $FieldName,

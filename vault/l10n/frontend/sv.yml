@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2026.03.13).
+# This file: Swedish language data for the front-end (last modified: 2026.03.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,7 +24,7 @@
 # requests, ask. I can help.
 ##/
 
-Abuse category:
+Abuse category: !lazy
  Bad web bot: "Dålig webbbot (skrapa efter e-postadresser, innehåll, sökrobotar som inte respekterar robots.txt, överdrivna förfrågningar, förfalskning av användaragenter, osv)."
  Brute-force attacks: "Brute-force attacker (brute-force attacker på webbsidors inloggningar, SMTP, RDP, osv)."
  Categories (at least one is required): "Kategorier (minst en krävs)"
@@ -50,7 +50,7 @@ Abuse category:
  VPN IP: "VPN IP."
  Web spam: "Webbspam (kommentar/forum-spam, HTTP-hänvisningsspam, eller annan CMS-spam)."
  Webapp attacks: "Webapp attacker (söka efter sårbarheter eller utnyttjande, eller försöka utnyttja installerade webbappar, CMS, eller e-handelslösningar, t.ex., WordPress, Drupal, phpMyAdmin, osv)."
-Extended Description:
+Extended Description: !lazy
  AbuseIPDB module: "Blockerar förfrågningar från IP-adresser som listas på AbuseIPDB."
  BGPView module: "Utnyttjar {{Links.BGPView}} API för att tillhandahålla sökfunktioner för ASNer och landskoder för CIDRAM, så att ASNer och länder kan blockeras eller listas med vitlista via CIDRAM-konfigurationen, och tillhandahålla ett sätt för verifiering av socialt nätverk för att verifiera Facebook-förfrågningar. (Om du använder den här modulen, du inte behöver använda IP-API-modulen, eftersom de tjänar samma syfte)."
  Bad TLDs blocker module: "Blockerar värdar som tillhör toppdomäner som ofta används av spammare, hackare och andra skändlig enheter."
@@ -77,7 +77,7 @@ Extended Description:
  Referrer spam module: "Blockering baserat på referensspam ger i allmänhet ingen meningsfull säkerhetsfördel, men i vissa fall kan det vara användbart för vissa användare, för att samla in mer information om förfrågningar och för att kunna rapportera det."
  Stop Forum Spam module: "Skyddar registrerings och inloggningssidor mot IP-adresser som listas av SFS."
  Tor blocker module: "Förbjuder åtkomst från Tor-utgångsnoder genom DNSEL-uppslagningar (stöder både IPv4 och IPv6)."
-Name:
+Name: !lazy
  AbuseIPDB module: "AbuseIPDB modul."
  BGPView module: "BGPView modul."
  BOBUAM: "Modul för användaragenter för bots eller webbläsare (BOBUAM)."
@@ -129,7 +129,7 @@ checkbox:
  Test as sensitive request: "Testa som känslig begäran"
  Untrack positives: "Sluta spåra efter positiva?"
  When blocked, suppress output template: "När blockerad, undertryck utmatningsmallen."
-config:
+config: !lazy
  abuseipdb: "Konfiguration för AbuseIPDB-modulen."
  abuseipdb_api_key: &EnterAPIKey "Ange din API-nyckel här."
  abuseipdb_build_profiles_from_usage_type: "Bygga profiler med användningstypen som returneras av APIet? False = Nej. True = Ja. Standard = True."
@@ -823,7 +823,7 @@ link:
  Subtractor: "Subtraktor"
  Updates: "Uppdateringar"
  View mode: "Visningsläge"
-macro:
+macro: !lazy
  Description:
   activate_modules: &MayImpactPerformance "Rekommenderas inte generellt, eftersom det sannolikt finns några som du inte behöver. Att installera och aktivera komponenter när de inte behövs kan påverka prestandan negativt."
   install_l10n_core: &RecommendKeepingCore "När <code>lang_override</code>-konfigurationsdirektivet är aktiverat, om en användares webbläsare anger en viss språkpreferens, så länge L10N-data för det språket är installerad, kan CIDRAM visa sidan "åtkomst nekad" på det angivna språket. Följaktligen rekommenderas att ha all core L10N-data kvar installerad."
@@ -874,7 +874,7 @@ previewer:
  Seconds: "Sekunder"
  Weeks: "Veckor"
  Years: "År"
-purpose:
+purpose: !lazy
  3D graphics file: "3D-grafikfil (t.ex., CAD, modeller, material, texturer)"
  Audio file: "Ljudfil"
  Card file: "Kortfil"
@@ -995,7 +995,7 @@ response:
  _Yes: "Ja"
  please_check_config: "Kontrollera din konfiguration för att säkerställa att den nyligen installerade modulen fungerar som du tänker."
  release_notes: "<a href="%s"><span class="navicon link"></span>Utgivningsinformation för %s.</a>"
-stages:
+stages: !lazy
  Check whether banned: "Kontrollera om det är förbjudet"
  Deploy CAPTCHAs (blocked requests): "Visa CAPTCHAs (blockerade förfrågningar)"
  Deploy CAPTCHAs (non-blocked requests): "Visa CAPTCHAs (icke-blockerade förfrågningar)"

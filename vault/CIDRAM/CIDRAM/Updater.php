@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods for updating CIDRAM components (last modified: 2025.09.28).
+ * This file: Methods for updating CIDRAM components (last modified: 2026.03.17).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -19,15 +19,15 @@ trait Updater
      * Sometimes used by the updater to partially patch parts of files.
      *
      * @param string $Query The instruction to execute.
-     * @param ?int $BytesRemoved The number of bytes removed (optional).
-     * @param ?int $BytesAdded The number of bytes added (optional).
+     * @param int|null $BytesRemoved The number of bytes removed (optional).
+     * @param int|null $BytesAdded The number of bytes added (optional).
      * @return bool Success or failure.
      */
     private function in(string $Query, ?int &$BytesRemoved = null, ?int &$BytesAdded = null): bool
     {
         if (
             !isset($this->CIDRAM['Updater-IO']) ||
-            preg_match('~^\s*(.+?) +((?:preg_)?replace) +(.+?) +with +(.+?)\s*$~i', $Query, $QueryParts) === false
+            \preg_match('~^\s*(.+?) +((?:preg_)?replace) +(.+?) +with +(.+?)\s*$~i', $Query, $QueryParts) === false
         ) {
             return false;
         }
@@ -36,25 +36,25 @@ trait Updater
         /** Strip quotes. */
         foreach ($QueryParts as &$QueryPart) {
             if (
-                (substr($QueryPart, 0, 1) === '"' && substr($QueryPart, -1) === '"') ||
-                (substr($QueryPart, 0, 1) === "'" && substr($QueryPart, -1) === "'")
+                (\substr($QueryPart, 0, 1) === '"' && \substr($QueryPart, -1) === '"') ||
+                (\substr($QueryPart, 0, 1) === "'" && \substr($QueryPart, -1) === "'")
             ) {
-                $QueryPart = substr($QueryPart, 1, -1);
+                $QueryPart = \substr($QueryPart, 1, -1);
             }
         }
 
         /** Safety mechanism. */
-        if (!file_exists($this->Vault . $QueryParts[1]) || !is_readable($this->Vault . $QueryParts[1])) {
+        if (!\file_exists($this->Vault . $QueryParts[1]) || !\is_readable($this->Vault . $QueryParts[1])) {
             return false;
         }
 
         /** Fetch file content. */
         $Data = $this->CIDRAM['Updater-IO']->readFile($this->Vault . $QueryParts[1]);
-        $SizeDiff = strlen($Data);
+        $SizeDiff = \strlen($Data);
 
         /** Replace file content. */
-        $Data = strtolower($QueryParts[2]) === 'preg_replace' ? preg_replace($QueryParts[3], $QueryParts[4], $Data) : str_replace($QueryParts[3], $QueryParts[4], $Data);
-        $SizeDiff -= strlen($Data);
+        $Data = \strtolower($QueryParts[2]) === 'preg_replace' ? \preg_replace($QueryParts[3], $QueryParts[4], $Data) : \str_replace($QueryParts[3], $QueryParts[4], $Data);
+        $SizeDiff -= \strlen($Data);
 
         /** Calculate bytes. */
         if ($SizeDiff > 0) {
@@ -75,8 +75,8 @@ trait Updater
      * Wrapper to execute a macro from within another macro.
      *
      * @param string $Macro The macro to execute.
-     * @param ?int $BytesRemoved The number of bytes removed (only used when invoked by executor).
-     * @param ?int $BytesAdded The number of bytes added (only used when invoked by executor).
+     * @param int|null $BytesRemoved The number of bytes removed (only used when invoked by executor).
+     * @param int|null $BytesAdded The number of bytes added (only used when invoked by executor).
      * @return void
      */
     private function executeMacro(string $Macro, ?int &$BytesRemoved = null, ?int &$BytesAdded = null): void
@@ -91,19 +91,19 @@ trait Updater
      * Sometimes used by the updater to delete files via metadata commands.
      *
      * @param string $File The file to delete.
-     * @param ?int $BytesRemoved The number of bytes removed (optional).
+     * @param int|null $BytesRemoved The number of bytes removed (optional).
      * @return bool Success or failure.
      */
     private function delete(string $File, ?int &$BytesRemoved = null): bool
     {
-        if (preg_match('~^(\'.*\'|".*")$~', $File)) {
-            $File = substr($File, 1, -1);
+        if (\preg_match('~^(\'.*\'|".*")$~', $File)) {
+            $File = \substr($File, 1, -1);
         }
-        if ($File !== '' && file_exists($this->Vault . $File) && $this->freeFromTraversal($File)) {
+        if ($File !== '' && \file_exists($this->Vault . $File) && $this->freeFromTraversal($File)) {
             if ($BytesRemoved !== null) {
-                $Size = filesize($this->Vault . $File);
+                $Size = \filesize($this->Vault . $File);
             }
-            if (!unlink($this->Vault . $File)) {
+            if (!\unlink($this->Vault . $File)) {
                 return false;
             }
             if ($BytesRemoved !== null) {
@@ -123,8 +123,8 @@ trait Updater
      */
     private function touch(string $File): bool
     {
-        if (preg_match('~^(\'.*\'|".*")$~', $File)) {
-            $File = substr($File, 1, -1);
+        if (\preg_match('~^(\'.*\'|".*")$~', $File)) {
+            $File = \substr($File, 1, -1);
         }
         return $this->freeFromTraversal($File) ? touch($this->Vault . $File) : false;
     }
@@ -162,8 +162,8 @@ trait Updater
      */
     private function arrayFlatten(array $Arr): array
     {
-        return array_filter($Arr, function () {
-            return (!is_array(func_get_args()[0]));
+        return \array_filter($Arr, function () {
+            return (!\is_array(\func_get_args()[0]));
         });
     }
 
@@ -193,12 +193,12 @@ trait Updater
     private function sanityCheck(string $FileName, string $FileData): bool
     {
         /** A very simple, rudimentary check for unwanted, possibly maliciously inserted HTML. */
-        if ($FileData && preg_match('~<(?:html|body)~i', $FileData)) {
+        if ($FileData && \preg_match('~<(?:html|body)~i', $FileData)) {
             return false;
         }
 
         /** Check whether YAML is valid. */
-        if (preg_match('~\.ya?ml$~i', $FileName)) {
+        if (\preg_match('~\.ya?ml$~i', $FileName)) {
             $ThisYAML = new \Maikuolan\Common\YAML();
             if (!($ThisYAML->process($FileData, $ThisYAML->Data))) {
                 return false;
@@ -207,14 +207,14 @@ trait Updater
         }
 
         /** Check whether GIF is valid. */
-        if (strtolower(substr($FileName, -4)) === '.gif') {
-            $Sample = substr($FileData, 0, 6);
+        if (\strtolower(\substr($FileName, -4)) === '.gif') {
+            $Sample = \substr($FileData, 0, 6);
             return $Sample === 'GIF87a' || $Sample === 'GIF89a';
         }
 
         /** Check whether PNG is valid. */
-        if (strtolower(substr($FileName, -4)) === '.png') {
-            return substr($FileData, 0, 4) === "\x89PNG";
+        if (\strtolower(\substr($FileName, -4)) === '.png') {
+            return \substr($FileData, 0, 4) === "\x89PNG";
         }
 
         /** Passed. */
@@ -267,7 +267,7 @@ trait Updater
      */
     private function isInUse(array $Component): int
     {
-        if (isset($Component['Name']) && preg_match('~^l10n/(?:core|frontend)/' . preg_replace('~-.*$~', '', $this->Configuration['general']['lang']) . '$~', $Component['Name'])) {
+        if (isset($Component['Name']) && \preg_match('~^l10n/(?:core|frontend)/' . \preg_replace('~-.*$~', '', $this->Configuration['general']['lang']) . '$~', $Component['Name'])) {
             return 1;
         }
         $Files = $Component['Files'] ?? [];
@@ -277,19 +277,19 @@ trait Updater
             if ($UsedWith !== 'ipv4' && $UsedWith !== 'ipv6' && $UsedWith !== 'modules' && $UsedWith !== 'imports' && $UsedWith !== 'events') {
                 continue;
             }
-            if (($UsedWith === 'ipv4' || $UsedWith === 'ipv6') && substr($FileName, 0, 11) === 'signatures/') {
-                $FileNameSafe = preg_quote(substr($FileName, 11));
+            if (($UsedWith === 'ipv4' || $UsedWith === 'ipv6') && \substr($FileName, 0, 11) === 'signatures/') {
+                $FileNameSafe = \preg_quote(\substr($FileName, 11));
             } elseif (
-                ($UsedWith === 'modules' && substr($FileName, 0, 8) === 'modules/') ||
-                ($UsedWith === 'imports' && substr($FileName, 0, 8) === 'imports/')
+                ($UsedWith === 'modules' && \substr($FileName, 0, 8) === 'modules/') ||
+                ($UsedWith === 'imports' && \substr($FileName, 0, 8) === 'imports/')
             ) {
-                $FileNameSafe = preg_quote(substr($FileName, 8));
-            } elseif ($UsedWith === 'events' && substr($FileName, 0, 7) === 'events/') {
-                $FileNameSafe = preg_quote(substr($FileName, 7));
+                $FileNameSafe = \preg_quote(\substr($FileName, 8));
+            } elseif ($UsedWith === 'events' && \substr($FileName, 0, 7) === 'events/') {
+                $FileNameSafe = \preg_quote(\substr($FileName, 7));
             } else {
-                $FileNameSafe = preg_quote($FileName);
+                $FileNameSafe = \preg_quote($FileName);
             }
-            if (preg_match('~\n(?:[\w\d]+:)?' . $FileNameSafe . '\n~', "\n" . $this->Configuration['components'][$UsedWith] . "\n")) {
+            if (\preg_match('~\n(?:[\w\d]+:)?' . $FileNameSafe . '\n~', "\n" . $this->Configuration['components'][$UsedWith] . "\n")) {
                 $Out = (!isset($Out) || $Out === 1) ? 1 : -1;
             } else {
                 $Out = (!isset($Out) || $Out === 0) ? 0 : -1;
@@ -305,7 +305,7 @@ trait Updater
      */
     private function fetchRemotesData(): void
     {
-        $Remotes = explode("\n", $this->Configuration['frontend']['remotes']);
+        $Remotes = \explode("\n", $this->Configuration['frontend']['remotes']);
         if (!isset($this->Components['RemoteMeta'])) {
             $this->Components['RemoteMeta'] = [];
         }
@@ -332,7 +332,7 @@ trait Updater
                     }
                     $RemoteData = '-';
                 } else {
-                    if (strtolower(substr($ThisRemote, -2)) === 'gz' && substr($RemoteData, 0, 2) === "\x1F\x8B") {
+                    if (\strtolower(\substr($ThisRemote, -2)) === 'gz' && \substr($RemoteData, 0, 2) === "\x1F\x8B") {
                         $RemoteData = gzdecode($RemoteData);
                     }
                     if (empty($RemoteData)) {
@@ -398,7 +398,7 @@ trait Updater
             } else {
                 return;
             }
-            $Arr['Extended Description'] .= sprintf(
+            $Arr['Extended Description'] .= \sprintf(
                 '<br /><em>%s <span class="%s">%s</span></em>',
                 $this->L10N->getString('label.False positive risk'),
                 $Class,
@@ -429,8 +429,8 @@ trait Updater
      * copy of CIDRAM is running as a WordPress plugin.
      *
      * @param string $Versions Stable, minimum required, and tested against versions.
-     * @param ?int $BytesRemoved The number of bytes removed (optional).
-     * @param ?int $BytesAdded The number of bytes added (optional).
+     * @param int|null $BytesRemoved The number of bytes removed (optional).
+     * @param int|null $BytesAdded The number of bytes added (optional).
      * @return void
      */
     private function wpVer(string $Versions = '', ?int &$BytesRemoved = null, ?int &$BytesAdded = null): void
@@ -442,58 +442,58 @@ trait Updater
             return;
         }
         $PlugHead = "\x3C\x3Fphp\n/**\n * Plugin Name: CIDRAM\n * Version: ";
-        if (substr($ThisData, 0, 45) === $PlugHead) {
-            $PlugHeadEnd = strpos($ThisData, "\n", 45);
+        if (\substr($ThisData, 0, 45) === $PlugHead) {
+            $PlugHeadEnd = \strpos($ThisData, "\n", 45);
             $this->CIDRAM['Updater-IO']->writeFile(
                 $this->Vault . '../cidram.php',
-                $PlugHead . $this->Components['RemoteMeta']['CIDRAM Core']['Version'] . substr($ThisData, $PlugHeadEnd)
+                $PlugHead . $this->Components['RemoteMeta']['CIDRAM Core']['Version'] . \substr($ThisData, $PlugHeadEnd)
             );
         }
-        if (!file_exists($this->Vault . '../../.htaccess')) {
-            $Handle = fopen($this->Vault . '../../.htaccess', 'wb');
+        if (!\file_exists($this->Vault . '../../.htaccess')) {
+            $Handle = \fopen($this->Vault . '../../.htaccess', 'wb');
             $HTAccess = "<Files \"cidram-configuration.yml\">\n  Order Allow,Deny\n  Deny from all\n</Files>\n";
-            if (is_resource($Handle)) {
-                fwrite($Handle, $HTAccess);
-                fclose($Handle);
+            if (\is_resource($Handle)) {
+                \fwrite($Handle, $HTAccess);
+                \fclose($Handle);
             }
             if ($BytesAdded !== null) {
-                $BytesAdded += strlen($HTAccess);
+                $BytesAdded += \strlen($HTAccess);
             }
             unset($HTAccess, $Handle);
         }
         if (
             ($ThisData = $this->CIDRAM['Updater-IO']->readFile($this->Vault . '../readme.txt')) === '' ||
-            substr($ThisData, 0, 14) !== '=== CIDRAM ==='
+            \substr($ThisData, 0, 14) !== '=== CIDRAM ==='
         ) {
             return;
         }
-        $Versions = explode(' ', $Versions, 4);
+        $Versions = \explode(' ', $Versions, 4);
         $Labels = ['Requires at least', 'Tested up to', 'Stable tag', 'Requires PHP'];
         foreach ($Versions as $Version) {
-            if (!preg_match('~^\d+\.\d+(?:\.\d+)?$~', $Version)) {
+            if (!\preg_match('~^\d+\.\d+(?:\.\d+)?$~', $Version)) {
                 return;
             }
-            $Label = array_shift($Labels);
-            $ThisData = preg_replace('~([\r\n]' . $Label . ':) [^\r\n]+([\r\n])~', '\1 ' . $Version . '\2', $ThisData, 1);
+            $Label = \array_shift($Labels);
+            $ThisData = \preg_replace('~([\r\n]' . $Label . ':) [^\r\n]+([\r\n])~', '\1 ' . $Version . '\2', $ThisData, 1);
         }
         $this->CIDRAM['Updater-IO']->writeFile($this->Vault . '../readme.txt', $ThisData);
         $BaseFiles = $this->filesAsKeys($this->Vault . '../', false);
         unset($BaseFiles['cidram.php'], $BaseFiles['index.php'], $BaseFiles['LICENSE.txt'], $BaseFiles['readme.txt'], $BaseFiles['.htaccess']);
         foreach ($BaseFiles as $File => $Junk) {
-            $Size = filesize($this->Vault . '../' . $File);
-            if (unlink($this->Vault . '../' . $File) && $BytesRemoved !== null) {
+            $Size = \filesize($this->Vault . '../' . $File);
+            if (\unlink($this->Vault . '../' . $File) && $BytesRemoved !== null) {
                 $BytesRemoved += $Size;
             }
         }
-        if (is_dir($this->Vault . '../languages')) {
+        if (\is_dir($this->Vault . '../languages')) {
             $BaseFiles = $this->filesAsKeys($this->Vault . '../languages', false);
             unset($BaseFiles['cidram.pot']);
             foreach (['af', 'ar', 'bg_BG', 'de_DE', 'es_ES', 'es_PE', 'fa', 'fr_FR', 'hi_IN', 'id_ID', 'ja', 'lv', 'ms_MY', 'nb', 'pl_PL', 'pr_BR', 'pt_PT', 'ro', 'tr_TR', 'ur', 'vi'] as $Keep) {
                 unset($BaseFiles[$Keep . '.mo'], $BaseFiles[$Keep . '.po']);
             }
             foreach ($BaseFiles as $File => $Junk) {
-                $Size = filesize($this->Vault . '../' . $File);
-                if (unlink($this->Vault . '../' . $File) && $BytesRemoved !== null) {
+                $Size = \filesize($this->Vault . '../' . $File);
+                if (\unlink($this->Vault . '../' . $File) && $BytesRemoved !== null) {
                     $BytesRemoved += $Size;
                 }
             }
@@ -509,8 +509,8 @@ trait Updater
     private function sortComponents(array $Arr): string
     {
         $IDOrd = $Ord = 0;
-        $IDOrdRev = $OrdRev = (count($Arr) * 4) - 1;
-        ksort($Arr);
+        $IDOrdRev = $OrdRev = (\count($Arr) * 4) - 1;
+        \ksort($Arr);
         foreach ($Arr as $Key => &$Value) {
             $Vars = [
                 'OrdAZ0' => $Ord,
@@ -526,13 +526,13 @@ trait Updater
             $OrdRev -= 4;
             $Value = $this->parseVars($Vars, $Value);
         }
-        uksort($Arr, function (string $A, string $B) {
+        \uksort($Arr, function (string $A, string $B) {
             if ($A === $B) {
                 return 0;
             }
             $Priority = '~^(?:CIDRAM|Common Classes Package|IPv[46]|l10n/)~i';
-            $CheckA = preg_match($Priority, $A);
-            $CheckB = preg_match($Priority, $B);
+            $CheckA = \preg_match($Priority, $A);
+            $CheckB = \preg_match($Priority, $B);
             if ($CheckA && !$CheckB) {
                 return -1;
             }
@@ -557,7 +557,7 @@ trait Updater
             $IDOrdRev -= 4;
             $Value = $this->parseVars($Vars, $Value);
         }
-        return implode('', $Arr);
+        return \implode('', $Arr);
     }
 
     /**
@@ -572,15 +572,15 @@ trait Updater
     private function updatesHandler(string $Action, $ID = ''): void
     {
         /** Support for executor calls. */
-        if ($ID === '' && ($Pos = strpos($Action, ' ')) !== false) {
-            $ID = substr($Action, $Pos + 1);
-            $Action = trim(substr($Action, 0, $Pos));
-            $ID = (strpos($ID, ',') === false) ? trim($ID) : array_map('trim', explode(',', $ID));
+        if ($ID === '' && ($Pos = \strpos($Action, ' ')) !== false) {
+            $ID = \substr($Action, $Pos + 1);
+            $Action = \trim(\substr($Action, 0, $Pos));
+            $ID = (\strpos($ID, ',') === false) ? \trim($ID) : \array_map('trim', \explode(',', $ID));
         }
 
         /** Strip empty IDs. */
-        if (is_array($ID)) {
-            $ID = array_filter($ID, function ($Value) {
+        if (\is_array($ID)) {
+            $ID = \array_filter($ID, function ($Value) {
                 return $Value !== '';
             });
         }
@@ -666,16 +666,16 @@ trait Updater
         $this->arrayify($ID);
 
         /** Fetch dependency installation triggers. */
-        if ($NotUsed === null && !empty($_POST['InstallTogether']) && is_array($_POST['InstallTogether'])) {
-            $ID = array_merge($ID, $_POST['InstallTogether']);
+        if ($NotUsed === null && !empty($_POST['InstallTogether']) && \is_array($_POST['InstallTogether'])) {
+            $ID = \array_merge($ID, $_POST['InstallTogether']);
         }
 
         /** Iterate through all supplied component IDs. */
-        foreach (array_unique($ID) as $ThisTarget) {
+        foreach (\array_unique($ID) as $ThisTarget) {
             $StateMessage = '';
             $BytesAdded = 0;
             $BytesRemoved = 0;
-            $TimeRequired = microtime(true);
+            $TimeRequired = \microtime(true);
             $HasSigs = false;
             $Reactivate = isset($this->Components['Meta'][$ThisTarget]) && $this->isActivable($this->Components['Meta'][$ThisTarget]) ? $this->isInUse($this->Components['Meta'][$ThisTarget]) : 0;
             if ($Reactivate !== 0) {
@@ -697,7 +697,7 @@ trait Updater
                 $Rollback = false;
                 while (true) {
                     foreach ($this->Components['RemoteMeta'][$ThisTarget]['Files'] as $FileName => $FileMeta) {
-                        if (strlen($FileName) === 0) {
+                        if (\strlen($FileName) === 0) {
                             continue;
                         }
 
@@ -706,11 +706,11 @@ trait Updater
                             if (
                                 isset($RemoteFiles[$FileName]) &&
                                 !isset($IgnoredFiles[$FileName]) &&
-                                is_readable($this->Vault . $FileName)
+                                \is_readable($this->Vault . $FileName)
                             ) {
-                                $BytesAdded -= filesize($this->Vault . $FileName);
-                                unlink($this->Vault . $FileName);
-                                if (is_readable($this->Vault . $FileName . '.rollback')) {
+                                $BytesAdded -= \filesize($this->Vault . $FileName);
+                                \unlink($this->Vault . $FileName);
+                                if (\is_readable($this->Vault . $FileName . '.rollback')) {
                                     rename($this->Vault . $FileName . '.rollback', $this->Vault . $FileName);
                                 }
                             }
@@ -723,13 +723,13 @@ trait Updater
                             $IgnoredFiles[$FileName] = true;
                             continue;
                         }
-                        if (!isset($FileMeta['From']) || strlen($FileMeta['From']) === 0) {
-                            $StateMessage .= sprintf('<code>%s</code> – <code>%s</code> – %s<br />', $ThisTarget, $FileName, $this->L10N->getString('response.Can_t fetch the file') . $this->L10N->getString('pair_separator') . $this->L10N->getString('response.Source not specified'));
+                        if (!isset($FileMeta['From']) || \strlen($FileMeta['From']) === 0) {
+                            $StateMessage .= \sprintf('<code>%s</code> – <code>%s</code> – %s<br />', $ThisTarget, $FileName, $this->L10N->getString('response.Can_t fetch the file') . $this->L10N->getString('pair_separator') . $this->L10N->getString('response.Source not specified'));
                             $Rollback = true;
                             continue 2;
                         }
-                        if (strlen($ThisFile = $this->Request->request($FileMeta['From'])) === 0 || $this->Request->MostRecentStatusCode !== 200) {
-                            $StateMessage .= sprintf('<code>%s</code> – <code>%s</code> – %s', $ThisTarget, $FileName, $this->L10N->getString('response.Can_t fetch the file') . $this->L10N->getString('pair_separator'));
+                        if (\strlen($ThisFile = $this->Request->request($FileMeta['From'])) === 0 || $this->Request->MostRecentStatusCode !== 200) {
+                            $StateMessage .= \sprintf('<code>%s</code> – <code>%s</code> – %s', $ThisTarget, $FileName, $this->L10N->getString('response.Can_t fetch the file') . $this->L10N->getString('pair_separator'));
                             if ($this->Request->MostRecentStatusCode === 401 || $this->Request->MostRecentStatusCode === 403) {
                                 $StateMessage .= $this->L10N->getString('denied') . '<br />';
                                 if (!empty($this->Components['RemoteMeta'][$ThisTarget]['Upstream Access Denied'])) {
@@ -770,16 +770,16 @@ trait Updater
                             continue 2;
                         }
                         if (
-                            strtolower(substr($FileMeta['From'], -2)) === 'gz' &&
-                            strtolower(substr($FileName, -2)) !== 'gz' &&
-                            substr($ThisFile, 0, 2) === "\x1F\x8B"
+                            \strtolower(\substr($FileMeta['From'], -2)) === 'gz' &&
+                            \strtolower(\substr($FileName, -2)) !== 'gz' &&
+                            \substr($ThisFile, 0, 2) === "\x1F\x8B"
                         ) {
                             $ThisFile = gzdecode($ThisFile);
                         }
-                        if (isset($FileMeta['Checksum']) && strlen($FileMeta['Checksum'])) {
-                            $Actual = hash('sha256', $ThisFile) . ':' . strlen($ThisFile);
+                        if (isset($FileMeta['Checksum']) && \strlen($FileMeta['Checksum'])) {
+                            $Actual = \hash('sha256', $ThisFile) . ':' . \strlen($ThisFile);
                             if ($Actual !== $FileMeta['Checksum']) {
-                                $StateMessage .= sprintf(
+                                $StateMessage .= \sprintf(
                                     '<code>%s</code> – <code>%s</code> – %s<br />%s – <code class="txtRd">%s</code><br />%s – <code class="txtRd">%s</code><br />',
                                     $ThisTarget,
                                     $FileName,
@@ -797,10 +797,10 @@ trait Updater
                             }
                         }
                         if (
-                            preg_match('~\.(?:css|dat|gif|png|ya?ml)$~i', $FileName) &&
+                            \preg_match('~\.(?:css|dat|gif|png|ya?ml)$~i', $FileName) &&
                             !$this->sanityCheck($FileName, $ThisFile)
                         ) {
-                            $StateMessage .= sprintf(
+                            $StateMessage .= \sprintf(
                                 '<code>%s</code> – <code>%s</code> – %s<br />',
                                 $ThisTarget,
                                 $FileName,
@@ -813,17 +813,17 @@ trait Updater
                             continue 2;
                         }
                         $this->buildPath($this->Vault . $FileName);
-                        if (is_readable($this->Vault . $FileName)) {
-                            if (file_exists($this->Vault . $FileName . '.rollback')) {
-                                $BytesRemoved += filesize($this->Vault . $FileName . '.rollback');
-                                unlink($this->Vault . $FileName . '.rollback');
+                        if (\is_readable($this->Vault . $FileName)) {
+                            if (\file_exists($this->Vault . $FileName . '.rollback')) {
+                                $BytesRemoved += \filesize($this->Vault . $FileName . '.rollback');
+                                \unlink($this->Vault . $FileName . '.rollback');
                             }
                             rename($this->Vault . $FileName, $this->Vault . $FileName . '.rollback');
                         }
-                        $BytesAdded += strlen($ThisFile);
-                        if (($Handle = fopen($this->Vault . $FileName, 'wb')) !== false) {
-                            fwrite($Handle, $ThisFile);
-                            fclose($Handle);
+                        $BytesAdded += \strlen($ThisFile);
+                        if (($Handle = \fopen($this->Vault . $FileName, 'wb')) !== false) {
+                            \fwrite($Handle, $ThisFile);
+                            \fclose($Handle);
                         }
                         $RemoteFiles[$FileName] = true;
                         if (
@@ -840,10 +840,10 @@ trait Updater
                     /** Prune unwanted empty directories (update/install failure+rollback). */
                     if (
                         isset($this->Components['RemoteMeta'][$ThisTarget]['Files']) &&
-                        is_array($this->Components['RemoteMeta'][$ThisTarget]['Files'])
+                        \is_array($this->Components['RemoteMeta'][$ThisTarget]['Files'])
                     ) {
                         foreach ($this->Components['RemoteMeta'][$ThisTarget]['Files'] as $FileName => $FileMeta) {
-                            if (strlen($FileName) > 0 && $this->freeFromTraversal($FileName)) {
+                            if (\strlen($FileName) > 0 && $this->freeFromTraversal($FileName)) {
                                 $this->deleteDirectory($FileName);
                             }
                         }
@@ -854,21 +854,21 @@ trait Updater
                     if (isset($this->Components['Meta'][$ThisTarget]['Files'])) {
                         $this->arrayify($this->Components['Meta'][$ThisTarget]['Files']);
                         foreach ($this->Components['Meta'][$ThisTarget]['Files'] as $FileName => $FileMeta) {
-                            if (strlen($FileName) === 0 || !$this->freeFromTraversal($FileName)) {
+                            if (\strlen($FileName) === 0 || !$this->freeFromTraversal($FileName)) {
                                 continue;
                             }
-                            if (file_exists($this->Vault . $FileName . '.rollback')) {
-                                $BytesRemoved += filesize($this->Vault . $FileName . '.rollback');
-                                unlink($this->Vault . $FileName . '.rollback');
+                            if (\file_exists($this->Vault . $FileName . '.rollback')) {
+                                $BytesRemoved += \filesize($this->Vault . $FileName . '.rollback');
+                                \unlink($this->Vault . $FileName . '.rollback');
                             }
                             if (
                                 !isset($RemoteFiles[$FileName]) &&
                                 !isset($IgnoredFiles[$FileName]) &&
-                                file_exists($this->Vault . $FileName) &&
+                                \file_exists($this->Vault . $FileName) &&
                                 (empty($this->Components['Shared'][$FileName]) || $this->Components['Shared'][$FileName] < 2)
                             ) {
-                                $BytesRemoved += filesize($this->Vault . $FileName);
-                                unlink($this->Vault . $FileName);
+                                $BytesRemoved += \filesize($this->Vault . $FileName);
+                                \unlink($this->Vault . $FileName);
                                 $this->deleteDirectory($FileName);
                             }
                         }
@@ -925,11 +925,11 @@ trait Updater
             $this->rebalanceNumbers($BytesRemoved, $BytesAdded);
             $this->formatFileSize($BytesAdded);
             $this->formatFileSize($BytesRemoved);
-            $this->FE['state_msg'] .= $StateMessage . sprintf(
+            $this->FE['state_msg'] .= $StateMessage . \sprintf(
                 $this->FE['CronMode'] !== '' ? " « +%s | -%s | %s »\n" : ' <code><span class="txtGn">+%s</span> | <span class="txtRd">-%s</span> | <span class="txtOe">%s</span></code><br />',
                 $BytesAdded,
                 $BytesRemoved,
-                $this->NumberFormatter->format(microtime(true) - $TimeRequired, 3)
+                $this->NumberFormatter->format(\microtime(true) - $TimeRequired, 3)
             );
             if ($Reactivate !== 0) {
                 $this->updatesHandlerActivate($ThisTarget);
@@ -945,12 +945,12 @@ trait Updater
      */
     private function updatesHandlerUninstall($ID): void
     {
-        if (is_array($ID)) {
+        if (\is_array($ID)) {
             $ID = current($ID);
         }
         $InUse = $this->componentUpdatePrep($ID);
         $BytesRemoved = 0;
-        $TimeRequired = microtime(true);
+        $TimeRequired = \microtime(true);
         $StateMessage = '<code>' . $ID . '</code> – ';
         if (isset($this->Components['Meta'][$ID]) && $InUse === 0 && (!isset($this->Components['Meta'][$ID]['Uninstallable']) || $this->Components['Meta'][$ID]['Uninstallable'] !== false)) {
             if (!isset($this->Components['Meta'][$ID]['Files'])) {
@@ -960,19 +960,19 @@ trait Updater
 
             /** Iterate through and remove all the component's files. */
             foreach ($this->Components['Meta'][$ID]['Files'] as $FileName => $FileMeta) {
-                if (strlen($FileName) === 0 || !$this->freeFromTraversal($FileName)) {
+                if (\strlen($FileName) === 0 || !$this->freeFromTraversal($FileName)) {
                     continue;
                 }
-                if (file_exists($this->Vault . $FileName . '.rollback')) {
-                    $BytesRemoved += filesize($this->Vault . $FileName . '.rollback');
-                    unlink($this->Vault . $FileName . '.rollback');
+                if (\file_exists($this->Vault . $FileName . '.rollback')) {
+                    $BytesRemoved += \filesize($this->Vault . $FileName . '.rollback');
+                    \unlink($this->Vault . $FileName . '.rollback');
                 }
                 if (!empty($this->Components['Shared'][$FileName]) && $this->Components['Shared'][$FileName] > 1) {
                     continue;
                 }
-                if (file_exists($this->Vault . $FileName)) {
-                    $BytesRemoved += filesize($this->Vault . $FileName);
-                    unlink($this->Vault . $FileName);
+                if (\file_exists($this->Vault . $FileName)) {
+                    $BytesRemoved += \filesize($this->Vault . $FileName);
+                    \unlink($this->Vault . $FileName);
                 }
                 $this->deleteDirectory($FileName);
             }
@@ -994,10 +994,10 @@ trait Updater
             }
         }
         $this->formatFileSize($BytesRemoved);
-        $this->FE['state_msg'] .= $StateMessage . sprintf(
+        $this->FE['state_msg'] .= $StateMessage . \sprintf(
             $this->FE['CronMode'] !== '' ? " « -%s | %s »\n" : ' <code><span class="txtRd">-%s</span> | <span class="txtOe">%s</span></code><br />',
             $BytesRemoved,
-            $this->NumberFormatter->format(microtime(true) - $TimeRequired, 3)
+            $this->NumberFormatter->format(\microtime(true) - $TimeRequired, 3)
         );
     }
 
@@ -1009,7 +1009,7 @@ trait Updater
      */
     private function updatesHandlerActivate($ID): void
     {
-        if (is_array($ID)) {
+        if (\is_array($ID)) {
             $ID = current($ID);
         }
         $Activation = [
@@ -1021,11 +1021,11 @@ trait Updater
             'Modified' => false
         ];
         foreach (['ipv4', 'ipv6', 'modules', 'imports', 'events'] as $Type) {
-            $Activation[$Type] = array_unique(array_filter(
-                explode("\n", $Activation[$Type]),
+            $Activation[$Type] = \array_unique(\array_filter(
+                \explode("\n", $Activation[$Type]),
                 function ($Component) use ($Type) {
-                    $Component = (strpos($Component, ':') === false) ? $Component : substr($Component, strpos($Component, ':') + 1);
-                    return (strlen($Component) > 0 && file_exists($this->pathFromComponentType($Type) . $Component));
+                    $Component = (\strpos($Component, ':') === false) ? $Component : \substr($Component, \strpos($Component, ':') + 1);
+                    return (\strlen($Component) > 0 && \file_exists($this->pathFromComponentType($Type) . $Component));
                 }
             ));
         }
@@ -1044,20 +1044,20 @@ trait Updater
                     continue;
                 }
                 if ($FileMeta['Used with'] === 'modules' || $FileMeta['Used with'] === 'imports') {
-                    $FileName = substr($FileName, 8);
+                    $FileName = \substr($FileName, 8);
                 } elseif ($FileMeta['Used with'] === 'events') {
-                    $FileName = substr($FileName, 7);
+                    $FileName = \substr($FileName, 7);
                 } else {
-                    $FileName = substr($FileName, 11);
+                    $FileName = \substr($FileName, 11);
                 }
                 $Activation[$FileMeta['Used with']][] = $FileName;
             }
         }
         foreach (['ipv4', 'ipv6', 'modules', 'imports', 'events'] as $Type) {
-            if (count($Activation[$Type])) {
-                sort($Activation[$Type]);
+            if (\count($Activation[$Type])) {
+                \sort($Activation[$Type]);
             }
-            $Activation[$Type] = implode("\n", $Activation[$Type]);
+            $Activation[$Type] = \implode("\n", $Activation[$Type]);
             if ($Activation[$Type] !== $this->Configuration['components'][$Type]) {
                 $Activation['Modified'] = true;
             }
@@ -1092,7 +1092,7 @@ trait Updater
         if (
             !empty($Success) &&
             !empty($this->Components['Meta'][$ID]['Dependencies']) &&
-            is_array($this->Components['Meta'][$ID]['Dependencies'])
+            \is_array($this->Components['Meta'][$ID]['Dependencies'])
         ) {
             foreach ($this->Components['Meta'][$ID]['Dependencies'] as $Dependency => $Constraints) {
                 if (
@@ -1116,7 +1116,7 @@ trait Updater
      */
     private function updatesHandlerDeactivate($ID): void
     {
-        if (is_array($ID)) {
+        if (\is_array($ID)) {
             $ID = current($ID);
         }
         $this->CIDRAM['Deactivation'] = [
@@ -1128,16 +1128,16 @@ trait Updater
             'Modified' => false
         ];
         foreach (['ipv4', 'ipv6', 'modules', 'imports', 'events'] as $Type) {
-            $this->CIDRAM['Deactivation'][$Type] = array_unique(array_filter(
-                explode("\n", $this->CIDRAM['Deactivation'][$Type]),
+            $this->CIDRAM['Deactivation'][$Type] = \array_unique(\array_filter(
+                \explode("\n", $this->CIDRAM['Deactivation'][$Type]),
                 function ($Component) {
-                    return ($Component = (strpos($Component, ':') === false) ? $Component : substr($Component, strpos($Component, ':') + 1));
+                    return ($Component = (\strpos($Component, ':') === false) ? $Component : \substr($Component, \strpos($Component, ':') + 1));
                 }
             ));
-            if (count($this->CIDRAM['Deactivation'][$Type])) {
-                sort($this->CIDRAM['Deactivation'][$Type]);
+            if (\count($this->CIDRAM['Deactivation'][$Type])) {
+                \sort($this->CIDRAM['Deactivation'][$Type]);
             }
-            $this->CIDRAM['Deactivation'][$Type] = "\n" . implode("\n", $this->CIDRAM['Deactivation'][$Type]) . "\n";
+            $this->CIDRAM['Deactivation'][$Type] = "\n" . \implode("\n", $this->CIDRAM['Deactivation'][$Type]) . "\n";
         }
         $StateMessage = '<code>' . $ID . '</code> – ';
         if (!empty($this->Components['Meta'][$ID]['Files'])) {
@@ -1147,23 +1147,23 @@ trait Updater
                     continue;
                 }
                 if ($FileMeta['Used with'] === 'ipv4' || $FileMeta['Used with'] === 'ipv6') {
-                    $FileName = substr($FileName, 11);
+                    $FileName = \substr($FileName, 11);
                 } elseif ($FileMeta['Used with'] === 'modules' || $FileMeta['Used with'] === 'imports') {
-                    $FileName = substr($FileName, 8);
+                    $FileName = \substr($FileName, 8);
                 } elseif ($FileMeta['Used with'] === 'events') {
-                    $FileName = substr($FileName, 7);
+                    $FileName = \substr($FileName, 7);
                 } else {
                     continue;
                 }
-                $this->CIDRAM['Deactivation'][$FileMeta['Used with']] = preg_replace(
-                    '~\n(?:[\w\d]+:)?' . preg_quote($FileName) . '\n~',
+                $this->CIDRAM['Deactivation'][$FileMeta['Used with']] = \preg_replace(
+                    '~\n(?:[\w\d]+:)?' . \preg_quote($FileName) . '\n~',
                     "\n",
                     $this->CIDRAM['Deactivation'][$FileMeta['Used with']]
                 );
             }
         }
         foreach (['ipv4', 'ipv6', 'modules', 'imports', 'events'] as $Type) {
-            $this->CIDRAM['Deactivation'][$Type] = substr($this->CIDRAM['Deactivation'][$Type], 1, -1);
+            $this->CIDRAM['Deactivation'][$Type] = \substr($this->CIDRAM['Deactivation'][$Type], 1, -1);
         }
         if (
             $this->CIDRAM['Deactivation']['ipv4'] !== $this->Configuration['components']['ipv4'] ||
@@ -1213,7 +1213,7 @@ trait Updater
     private function updatesHandlerRepair($ID): void
     {
         $this->arrayify($ID);
-        $ID = array_unique($ID);
+        $ID = \array_unique($ID);
         foreach ($ID as $ThisTarget) {
             if (!isset($this->Components['Meta'][$ThisTarget])) {
                 continue;
@@ -1223,7 +1223,7 @@ trait Updater
             }
             $BytesAdded = 0;
             $BytesRemoved = 0;
-            $TimeRequired = microtime(true);
+            $TimeRequired = \microtime(true);
             $Touched = [];
             if (!isset($this->Components['RemoteMeta'][$ThisTarget]['Files'])) {
                 $RepairFailed = true;
@@ -1243,40 +1243,40 @@ trait Updater
                         $RepairFailed = true;
                         break;
                     }
-                    if (file_exists($this->Vault . $FileName . '.rollback')) {
-                        $BytesRemoved += filesize($this->Vault . $FileName . '.rollback');
-                        unlink($this->Vault . $FileName . '.rollback');
+                    if (\file_exists($this->Vault . $FileName . '.rollback')) {
+                        $BytesRemoved += \filesize($this->Vault . $FileName . '.rollback');
+                        \unlink($this->Vault . $FileName . '.rollback');
                     }
                     $LocalFile = $this->readFile($this->Vault . $FileName);
-                    $LocalFileSize = strlen($LocalFile);
-                    if (hash('sha256', $LocalFile) . ':' . $LocalFileSize === $FileMeta['Checksum']) {
+                    $LocalFileSize = \strlen($LocalFile);
+                    if (\hash('sha256', $LocalFile) . ':' . $LocalFileSize === $FileMeta['Checksum']) {
                         $Touched[$FileName] = true;
                         continue;
                     }
                     $RemoteFile = $this->Request->request($FileMeta['From']);
                     if (
-                        strtolower(substr($FileMeta['From'], -2)) === 'gz' &&
-                        strtolower(substr($FileName, -2)) !== 'gz' &&
-                        substr($RemoteFile, 0, 2) === "\x1F\x8B"
+                        \strtolower(\substr($FileMeta['From'], -2)) === 'gz' &&
+                        \strtolower(\substr($FileName, -2)) !== 'gz' &&
+                        \substr($RemoteFile, 0, 2) === "\x1F\x8B"
                     ) {
                         $RemoteFile = gzdecode($RemoteFile);
                     }
-                    $RemoteFileSize = strlen($RemoteFile);
-                    if (hash('sha256', $RemoteFile) . ':' . $RemoteFileSize !== $FileMeta['Checksum'] || (
-                        preg_match('~\.(?:css|dat|gif|png|ya?ml)$~i', $FileName) &&
+                    $RemoteFileSize = \strlen($RemoteFile);
+                    if (\hash('sha256', $RemoteFile) . ':' . $RemoteFileSize !== $FileMeta['Checksum'] || (
+                        \preg_match('~\.(?:css|dat|gif|png|ya?ml)$~i', $FileName) &&
                         !$this->sanityCheck($FileName, $RemoteFile)
                     )) {
                         $RepairFailed = true;
                         continue;
                     }
                     $this->buildPath($this->Vault . $FileName);
-                    if (file_exists($this->Vault . $FileName) && !is_writable($this->Vault . $FileName)) {
+                    if (\file_exists($this->Vault . $FileName) && !\is_writable($this->Vault . $FileName)) {
                         $RepairFailed = true;
                         continue;
                     }
-                    $Handle = fopen($this->Vault . $FileName, 'wb');
-                    fwrite($Handle, $RemoteFile);
-                    fclose($Handle);
+                    $Handle = \fopen($this->Vault . $FileName, 'wb');
+                    \fwrite($Handle, $RemoteFile);
+                    \fclose($Handle);
                     $BytesRemoved += $LocalFileSize;
                     $BytesAdded += $RemoteFileSize;
                     $Touched[$FileName] = true;
@@ -1284,27 +1284,27 @@ trait Updater
                 if (!$RepairFailed) {
                     foreach ($this->Components['Meta'][$ThisTarget]['Files'] as $FileName => $FileMeta) {
                         if (
-                            strlen($FileName) === 0 ||
+                            \strlen($FileName) === 0 ||
                             !$this->freeFromTraversal($this->Vault . $FileName) ||
                             !empty($Touched[$FileName]) ||
                             (!empty($this->Components['Shared'][$FileName]) && $this->Components['Shared'][$FileName] > 1)
                         ) {
                             continue;
                         }
-                        if (file_exists($this->Vault . $FileName . '.rollback')) {
-                            $BytesRemoved += filesize($this->Vault . $FileName . '.rollback');
-                            unlink($this->Vault . $FileName . '.rollback');
+                        if (\file_exists($this->Vault . $FileName . '.rollback')) {
+                            $BytesRemoved += \filesize($this->Vault . $FileName . '.rollback');
+                            \unlink($this->Vault . $FileName . '.rollback');
                         }
-                        if (file_exists($this->Vault . $FileName)) {
-                            $BytesRemoved += filesize($this->Vault . $FileName);
-                            unlink($this->Vault . $FileName);
+                        if (\file_exists($this->Vault . $FileName)) {
+                            $BytesRemoved += \filesize($this->Vault . $FileName);
+                            \unlink($this->Vault . $FileName);
                         }
                     }
                 }
             } else {
                 $RepairFailed = true;
             }
-            if (!$RepairFailed && is_writable($this->Vault . 'installed.yml')) {
+            if (!$RepairFailed && \is_writable($this->Vault . 'installed.yml')) {
                 /** Replace downstream meta with upstream meta. */
                 $this->Components['Meta'][$ThisTarget] = $this->Components['RemoteMeta'][$ThisTarget];
                 $this->settleMagic($this->Components['Meta'][$ThisTarget]);
@@ -1329,11 +1329,11 @@ trait Updater
             $this->rebalanceNumbers($BytesRemoved, $BytesAdded);
             $this->formatFileSize($BytesAdded);
             $this->formatFileSize($BytesRemoved);
-            $this->FE['state_msg'] .= $StateMessage . sprintf(
+            $this->FE['state_msg'] .= $StateMessage . \sprintf(
                 $this->FE['CronMode'] !== '' ? " « +%s | -%s | %s »\n" : ' <code><span class="txtGn">+%s</span> | <span class="txtRd">-%s</span> | <span class="txtOe">%s</span></code><br />',
                 $BytesAdded,
                 $BytesRemoved,
-                $this->NumberFormatter->format(microtime(true) - $TimeRequired, 3)
+                $this->NumberFormatter->format(\microtime(true) - $TimeRequired, 3)
             );
             if ($Reactivate !== 0) {
                 $this->updatesHandlerActivate($ThisTarget);
@@ -1350,7 +1350,7 @@ trait Updater
     private function updatesHandlerVerify($ID): void
     {
         $this->arrayify($ID);
-        $ID = array_unique($ID);
+        $ID = \array_unique($ID);
         foreach ($ID as $ThisID) {
             $Table = '<blockquote class="ng1 comSub">';
             if (empty($this->Components['Meta'][$ThisID]['Files'])) {
@@ -1363,41 +1363,41 @@ trait Updater
                 $ThisFileData = $this->readFile($this->Vault . $ThisFile);
 
                 /** Sanity check. */
-                if (preg_match('~\.(?:css|dat|gif|png|ya?ml)$~i', $ThisFile)) {
+                if (\preg_match('~\.(?:css|dat|gif|png|ya?ml)$~i', $ThisFile)) {
                     $Class = $this->sanityCheck($ThisFile, $ThisFileData) ? 'txtGn' : 'txtRd';
-                    $Sanity = sprintf('<span class="%s">%s</span>', $Class, $this->L10N->getString(
+                    $Sanity = \sprintf('<span class="%s">%s</span>', $Class, $this->L10N->getString(
                         $Class === 'txtGn' ? 'response.Passed' : 'response.Failed'
                     ));
                     if ($Class === 'txtRd') {
                         $Passed = false;
                     }
                 } else {
-                    $Sanity = sprintf('<span class="txtOe">%s</span>', $this->L10N->getString('response.Skipped'));
+                    $Sanity = \sprintf('<span class="txtOe">%s</span>', $this->L10N->getString('response.Skipped'));
                 }
 
                 $Checksum = $Metadata['Checksum'] ?? '';
-                $Len = strlen($ThisFileData);
-                $HashPartLen = strpos($Checksum, ':') ?: 64;
-                $Actual = hash('sha256', $ThisFileData) . ':' . $Len;
+                $Len = \strlen($ThisFileData);
+                $HashPartLen = \strpos($Checksum, ':') ?: 64;
+                $Actual = \hash('sha256', $ThisFileData) . ':' . $Len;
 
                 /** Integrity check. */
-                if (strlen($Checksum)) {
+                if (\strlen($Checksum)) {
                     if ($Actual !== $Checksum) {
                         $Class = 'txtRd';
                         $Passed = false;
                     } else {
                         $Class = 'txtGn';
                     }
-                    $Integrity = sprintf('<span class="%s">%s</span>', $Class, $this->L10N->getString(
+                    $Integrity = \sprintf('<span class="%s">%s</span>', $Class, $this->L10N->getString(
                         $Class === 'txtGn' ? 'response.Passed' : 'response.Failed'
                     ));
                 } else {
                     $Class = 's';
-                    $Integrity = sprintf('<span class="txtOe">%s</span>', $this->L10N->getString('response.Skipped'));
+                    $Integrity = \sprintf('<span class="txtOe">%s</span>', $this->L10N->getString('response.Skipped'));
                 }
 
                 /** Append results. */
-                $Table .= sprintf(
+                $Table .= \sprintf(
                     '<code>%1$s</code> – %7$s %8$s – %9$s %10$s<br />%2$s – <code class="%6$s">%3$s</code><br />%4$s – <code class="%6$s">%5$s</code><hr />',
                     $ThisFile,
                     $this->L10N->getString('label.Actual'),
@@ -1412,7 +1412,7 @@ trait Updater
                 );
             }
             $Table .= '</blockquote>';
-            $this->FE['state_msg'] .= sprintf(
+            $this->FE['state_msg'] .= \sprintf(
                 '<div><span class="comCat" style="cursor:pointer"><code>%s</code> – <span class="%s">%s</span></span>%s</div>',
                 $ThisID,
                 ($Passed ? 's' : 'txtRd'),
@@ -1437,7 +1437,7 @@ trait Updater
         if (!isset($ThisComponent['Dependencies']) && !empty($ThisComponent['Minimum Required'])) {
             $ThisComponent['Dependencies'] = ['CIDRAM Core' => '>=' . $ThisComponent['Minimum Required']];
         }
-        if (!isset($ThisComponent['Dependencies']) || !is_array($ThisComponent['Dependencies']) || (
+        if (!isset($ThisComponent['Dependencies']) || !\is_array($ThisComponent['Dependencies']) || (
             $Name && !isset($this->Components['Installed Versions'][$Name])
         )) {
             return;
@@ -1447,16 +1447,16 @@ trait Updater
         }
         $ThisComponent['Magic']['Dependencies'] = $ThisComponent['Dependencies'];
         foreach ($ThisComponent['Dependencies'] as $Dependency => $Constraints) {
-            $Dependency = str_replace('{lang}', $this->Configuration['general']['lang'], $Dependency);
+            $Dependency = \str_replace('{lang}', $this->Configuration['general']['lang'], $Dependency);
             if ($Constraints === 'Latest') {
                 if (isset($this->Components['Available Versions'][$Dependency])) {
                     $Constraints = '^' . $this->Components['Available Versions'][$Dependency];
                     $ThisComponent['Magic']['Dependencies'][$Dependency] = $Constraints;
                 }
             }
-            if ($Constraints === 'Latest' || strlen($Constraints) < 1) {
+            if ($Constraints === 'Latest' || \strlen($Constraints) < 1) {
                 $ThisComponent['All Constraints Met'] = false;
-                $ThisComponent['Dependency Status'] .= sprintf(
+                $ThisComponent['Dependency Status'] .= \sprintf(
                     '<span class="txtRd">%s – %s</span><br />',
                     $Dependency,
                     $this->L10N->getString('response.Not satisfied')
@@ -1469,7 +1469,7 @@ trait Updater
                 ($this->Components['Installed Versions'][$Dependency] = (new \ReflectionExtension($Dependency))->getVersion()) &&
                 $this->OperationHandler->singleCompare($this->Components['Installed Versions'][$Dependency], $Constraints)
             )) {
-                $ThisComponent['Dependency Status'] .= sprintf(
+                $ThisComponent['Dependency Status'] .= \sprintf(
                     '<span class="txtGn">%s%s – %s</span><br />',
                     $Dependency,
                     $Constraints === '*' ? '' : ' (' . $Constraints . ')',
@@ -1480,7 +1480,7 @@ trait Updater
                 isset($this->Components['Available Versions'][$Dependency]) &&
                 $this->OperationHandler->singleCompare($this->Components['Available Versions'][$Dependency], $Constraints)
             ) {
-                $ThisComponent['Dependency Status'] .= sprintf(
+                $ThisComponent['Dependency Status'] .= \sprintf(
                     '<span class="txtOe">%s%s – %s</span><br />',
                     $Dependency,
                     $Constraints === '*' ? '' : ' (' . $Constraints . ')',
@@ -1492,7 +1492,7 @@ trait Updater
                 $ThisComponent['Install Together'][] = $Dependency;
             } else {
                 $ThisComponent['All Constraints Met'] = false;
-                $ThisComponent['Dependency Status'] .= sprintf(
+                $ThisComponent['Dependency Status'] .= \sprintf(
                     '<span class="txtRd">%s%s – %s</span><br />',
                     $Dependency,
                     $Constraints === '*' ? '' : ' (' . $Constraints . ')',
@@ -1501,7 +1501,7 @@ trait Updater
             }
         }
         if ($ThisComponent['Dependency Status']) {
-            $ThisComponent['Dependency Status'] = sprintf(
+            $ThisComponent['Dependency Status'] = \sprintf(
                 '<hr /><small><span class="s">%s</span><br />%s</small>',
                 $this->L10N->getString('label.Dependencies'),
                 $ThisComponent['Dependency Status']
@@ -1522,8 +1522,8 @@ trait Updater
             if (
                 !empty($Component['Version']) &&
                 isset($Component['Files']) &&
-                is_array($Component['Files']) &&
-                count($Component['Files'])
+                \is_array($Component['Files']) &&
+                \count($Component['Files'])
             ) {
                 $To[$Key] = $Component['Version'];
             }
@@ -1539,7 +1539,7 @@ trait Updater
      */
     private function has($Haystack, $Needle): bool
     {
-        if (is_array($Haystack)) {
+        if (\is_array($Haystack)) {
             foreach ($Haystack as $ThisHaystack) {
                 if ($this->has($ThisHaystack, $Needle)) {
                     return true;
@@ -1547,7 +1547,7 @@ trait Updater
             }
             return false;
         }
-        if (is_array($Needle)) {
+        if (\is_array($Needle)) {
             foreach ($Needle as $ThisNeedle) {
                 if ($ThisNeedle === $Haystack) {
                     return true;
@@ -1593,14 +1593,14 @@ trait Updater
      *
      * @param array $Metadata What to update it with.
      * @param int $BytesRemoved The number of bytes removed.
-     * @param ?int $BytesAdded The number of bytes added (optional).
+     * @param int|null $BytesAdded The number of bytes added (optional).
      * @return void
      */
     private function updateComponentMetadataFile(array $Metadata, int &$BytesRemoved, ?int &$BytesAdded = null): void
     {
         /** Remove any temporary data that doesn't need to be stored. */
         foreach ($Metadata as $Key => &$Data) {
-            if (!is_array($Data)) {
+            if (!\is_array($Data)) {
                 continue;
             }
             unset(
@@ -1635,7 +1635,7 @@ trait Updater
         /** Reconstruct the metadata. */
         $Metadata = $this->YAML->reconstruct($Metadata);
 
-        $SizeDiff = strlen($Metadata) - strlen($this->CIDRAM['Updater-IO']->readFile($this->Vault . 'installed.yml'));
+        $SizeDiff = \strlen($Metadata) - \strlen($this->CIDRAM['Updater-IO']->readFile($this->Vault . 'installed.yml'));
         if ($SizeDiff < 0) {
             $BytesRemoved += $SizeDiff;
         } elseif ($BytesAdded === null) {
@@ -1656,7 +1656,7 @@ trait Updater
      */
     private function settleMagic(array &$Metadata): void
     {
-        if (!isset($Metadata['Magic']) || !is_array($Metadata['Magic'])) {
+        if (!isset($Metadata['Magic']) || !\is_array($Metadata['Magic'])) {
             return;
         }
         foreach ($Metadata['Magic'] as $Key => $Values) {

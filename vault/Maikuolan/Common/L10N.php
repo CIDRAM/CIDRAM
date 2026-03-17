@@ -1,6 +1,6 @@
 <?php
 /**
- * L10N handler (last modified: 2026.03.10).
+ * L10N handler (last modified: 2026.03.17).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -18,12 +18,12 @@ namespace Maikuolan\Common;
 class L10N extends CommonAbstract implements \Countable
 {
     /**
-     * @var array All relevant L10N data.
+     * @var array|\ArrayAccess All relevant L10N data.
      */
     public $Data = [];
 
     /**
-     * @var array|\Maikuolan\Common\L10N All relevant fallback L10N data.
+     * @var array|\ArrayAccess|\Maikuolan\Common\L10N All relevant fallback L10N data.
      */
     public $Fallback = [];
 
@@ -65,40 +65,45 @@ class L10N extends CommonAbstract implements \Countable
     /**
      * Constructor.
      *
-     * @param array $Data The L10N data.
-     * @param array|\Maikuolan\Common\L10N $Fallback The fallback L10N data (optional).
+     * @param array|\ArrayAccess $Data The L10N data.
+     * @param array|\ArrayAccess|\Maikuolan\Common\L10N $Fallback The fallback L10N data (optional).
+     * @throws InvalidArgumentException when an incorrect parameter type is supplied.
      * @return void
      */
-    public function __construct(array $Data = [], $Fallback = [])
+    public function __construct($Data = [], $Fallback = [])
     {
-        $this->Data = $Data;
-        if (is_array($Fallback) || $Fallback instanceof \Maikuolan\Common\L10N) {
-            $this->Fallback = $Fallback;
+        if (!(\is_array($Data) || $Data instanceof \ArrayAccess)) {
+            throw new \InvalidArgumentException('First parameter of __construct in \Maikuolan\Common\L10N must be an array, or an instance of \ArrayAccess. Parameter supplied was ' . gettype($Data));
         }
+        if (!(\is_array($Fallback) || $Fallback instanceof \ArrayAccess || $Fallback instanceof \Maikuolan\Common\L10N)) {
+            throw new \InvalidArgumentException('Second parameter of __construct in \Maikuolan\Common\L10N must be an array, an instance of \ArrayAccess, or an instance of \Maikuolan\Common\L10N. Parameter supplied was ' . gettype($Fallback));
+        }
+        $this->Data = $Data;
+        $this->Fallback = $Fallback;
         if (!empty($Data['IntegerRule'])) {
-            if (method_exists($this, $Data['IntegerRule'])) {
+            if (\method_exists($this, $Data['IntegerRule'])) {
                 $this->IntegerRule = $Data['IntegerRule'];
             } else {
                 $this->IntegerRule = $this->getIntegerRule($Data['IntegerRule']);
             }
         }
         if (!empty($Data['FractionRule'])) {
-            if (method_exists($this, $Data['FractionRule'])) {
+            if (\method_exists($this, $Data['FractionRule'])) {
                 $this->FractionRule = $Data['FractionRule'];
             } else {
                 $this->FractionRule = $this->getFractionRule($Data['FractionRule']);
             }
         }
-        if (is_array($Fallback)) {
+        if (\is_array($Fallback) || $Fallback instanceof \ArrayAccess) {
             if (!empty($Fallback['IntegerRule'])) {
-                if (method_exists($this, $Fallback['IntegerRule'])) {
+                if (\method_exists($this, $Fallback['IntegerRule'])) {
                     $this->FallbackIntegerRule = $Fallback['IntegerRule'];
                 } else {
                     $this->FallbackIntegerRule = $this->getIntegerRule($Fallback['IntegerRule']);
                 }
             }
             if (!empty($Fallback['FractionRule'])) {
-                if (method_exists($this, $Fallback['FractionRule'])) {
+                if (\method_exists($this, $Fallback['FractionRule'])) {
                     $this->FallbackFractionRule = $Fallback['FractionRule'];
                 } else {
                     $this->FallbackFractionRule = $this->getFractionRule($Fallback['FractionRule']);
@@ -116,7 +121,7 @@ class L10N extends CommonAbstract implements \Countable
      */
     public function getPlural($Number, string $String): string
     {
-        if (strpos($String, '.') === false) {
+        if (\strpos($String, '.') === false) {
             if (isset($this->Data[$String])) {
                 $Choices = $this->Data[$String];
                 $IntegerRule = $this->IntegerRule;
@@ -145,12 +150,12 @@ class L10N extends CommonAbstract implements \Countable
                 return '';
             }
         }
-        if (is_string($Choices)) {
+        if (\is_string($Choices)) {
             return $Choices;
         }
-        if (is_float($Number)) {
+        if (\is_float($Number)) {
             $Choice = $this->{$FractionRule}($Number);
-        } elseif (is_int($Number)) {
+        } elseif (\is_int($Number)) {
             $Choice = $this->{$IntegerRule}($Number);
         } else {
             $Choice = 0;
@@ -158,12 +163,12 @@ class L10N extends CommonAbstract implements \Countable
         if (isset($Choices[$Choice])) {
             $Out = $Choices[$Choice];
         } else {
-            $Out = $Number > 1 ? array_pop($Choices) : array_shift($Choices);
+            $Out = $Number > 1 ? \array_pop($Choices) : \array_shift($Choices);
         }
-        if (is_array($Out)) {
-            $Out = ($this->PreferredVariant !== '' && isset($Out[$this->PreferredVariant])) ? $Out[$this->PreferredVariant] : array_shift($Out);
+        if (\is_array($Out)) {
+            $Out = ($this->PreferredVariant !== '' && isset($Out[$this->PreferredVariant])) ? $Out[$this->PreferredVariant] : \array_shift($Out);
         }
-        return is_string($Out) ? $Out : '';
+        return \is_string($Out) ? $Out : '';
     }
 
     /**
@@ -174,7 +179,7 @@ class L10N extends CommonAbstract implements \Countable
      */
     public function getString(string $String): string
     {
-        if (strpos($String, '.') === false) {
+        if (\strpos($String, '.') === false) {
             if (isset($this->Data[$String])) {
                 $Out = $this->Data[$String];
             } elseif ($this->Fallback instanceof \Maikuolan\Common\L10N) {
@@ -185,10 +190,10 @@ class L10N extends CommonAbstract implements \Countable
         } elseif (($Out = $this->dataTraverse($this->Data, $String, true)) === '') {
             $Out = ($this->Fallback instanceof \Maikuolan\Common\L10N) ? $this->Fallback->getString($String) : $this->dataTraverse($this->Fallback, $String, true);
         }
-        if (is_array($Out)) {
-            $Out = ($this->PreferredVariant !== '' && isset($Out[$this->PreferredVariant])) ? $Out[$this->PreferredVariant] : array_shift($Out);
+        if (\is_array($Out)) {
+            $Out = ($this->PreferredVariant !== '' && isset($Out[$this->PreferredVariant])) ? $Out[$this->PreferredVariant] : \array_shift($Out);
         }
-        return is_string($Out) ? $Out : '';
+        return \is_string($Out) ? $Out : '';
     }
 
     /**
@@ -199,7 +204,7 @@ class L10N extends CommonAbstract implements \Countable
      */
     public function arrayFromL10nToArray($References): array
     {
-        if (!is_array($References)) {
+        if (!\is_array($References) && !($References instanceof \IteratorAggregate)) {
             $References = [$References];
         }
         $Out = [];
@@ -207,33 +212,33 @@ class L10N extends CommonAbstract implements \Countable
             $Try = '';
             if (isset($this->Data[$Reference])) {
                 $Try = $this->Data[$Reference];
-            } elseif (is_array($this->Fallback)) {
+            } elseif (\is_array($this->Fallback) || $this->Fallback instanceof \ArrayAccess) {
                 if (isset($this->Fallback[$Reference])) {
                     $Try = $this->Fallback[$Reference];
                 }
             } elseif ($this->Fallback instanceof \Maikuolan\Common\L10N) {
                 if (isset($this->Fallback->Data[$Reference])) {
                     $Try = $this->Fallback->Data[$Reference];
-                } elseif (is_array($this->Fallback->Fallback) && isset($this->Fallback->Fallback[$Reference])) {
+                } elseif ((\is_array($this->Fallback->Fallback) || $this->Fallback->Fallback instanceof \ArrayAccess) && isset($this->Fallback->Fallback[$Reference])) {
                     $Try = $this->Fallback->Fallback[$Reference];
                 }
             }
             if ($Try === '') {
-                if (($SPos = strpos($Reference, ' ')) !== '') {
-                    $Try = (($TryFrom = $this->getString(substr($Reference, 0, $SPos))) !== '' && strpos($TryFrom, '%s') !== false) ? sprintf($TryFrom, substr($Reference, $SPos + 1)) : $Reference;
+                if (($SPos = \strpos($Reference, ' ')) !== '') {
+                    $Try = (($TryFrom = $this->getString(\substr($Reference, 0, $SPos))) !== '' && \strpos($TryFrom, '%s') !== false) ? \sprintf($TryFrom, \substr($Reference, $SPos + 1)) : $Reference;
                 } else {
                     $Try = $Reference;
                 }
             }
-            $Reference = (!is_array($Try) || preg_match('~^[a-z]{2,3}(?:-[A-Z][A-Za-z]{1,3})?$~', key($Try))) ? [$Try] : $Try;
+            $Reference = (!\is_array($Try) || \preg_match('~^[a-z]{2,3}(?:-[A-Z][A-Za-z]{1,3})?$~', key($Try))) ? [$Try] : $Try;
             foreach ($Reference as $Key => $Value) {
-                if (is_array($Value)) {
-                    $Value = $this->PreferredVariant !== '' && isset($Value[$this->PreferredVariant]) ? $Value[$this->PreferredVariant] : array_shift($Value);
-                    if (!is_string($Value)) {
+                if (\is_array($Value)) {
+                    $Value = $this->PreferredVariant !== '' && isset($Value[$this->PreferredVariant]) ? $Value[$this->PreferredVariant] : \array_shift($Value);
+                    if (!\is_string($Value)) {
                         $Value = '';
                     }
                 }
-                if (!is_string($Key)) {
+                if (!\is_string($Key)) {
                     $Out[] = $Value;
                     continue;
                 }
@@ -761,24 +766,24 @@ class L10N extends CommonAbstract implements \Countable
     public function getIntegerRule(string $Code): string
     {
         /** For different rules based on region, country, or dialect. */
-        if (($Pos = strpos($Code, '-')) !== false) {
+        if (($Pos = \strpos($Code, '-')) !== false) {
             if ($Code === 'pt-BR') {
                 return 'int2Type3';
             }
 
             /** Try falling back to standard codes. */
-            $Code = substr($Code, 0, $Pos);
+            $Code = \substr($Code, 0, $Pos);
         }
 
-        if (in_array($Code, ['ceb', 'fil', 'tl'], true)) {
+        if (\in_array($Code, ['ceb', 'fil', 'tl'], true)) {
             return 'int2Type1';
         }
 
-        if (in_array($Code, ['is', 'mk'], true)) {
+        if (\in_array($Code, ['is', 'mk'], true)) {
             return 'int2Type2';
         }
 
-        if (in_array($Code, [
+        if (\in_array($Code, [
             'ak',
             'am',
             'as',
@@ -808,7 +813,7 @@ class L10N extends CommonAbstract implements \Countable
             return 'int2Type3';
         }
 
-        if (in_array($Code, [
+        if (\in_array($Code, [
             'af',
             'an',
             'asa',
@@ -935,15 +940,15 @@ class L10N extends CommonAbstract implements \Countable
             return 'int3Type1';
         }
 
-        if (in_array($Code, ['ksh', 'lag'], true)) {
+        if (\in_array($Code, ['ksh', 'lag'], true)) {
             return 'int3Type2';
         }
 
-        if (in_array($Code, ['fj', 'he', 'iu', 'naq', 'sat', 'se', 'sma', 'smj', 'smn', 'sms'], true)) {
+        if (\in_array($Code, ['fj', 'he', 'iu', 'naq', 'sat', 'se', 'sma', 'smj', 'smn', 'sms'], true)) {
             return 'int3Type3';
         }
 
-        if (in_array($Code, ['be', 'bs', 'hr', 'ru', 'sh', 'sr', 'uk'], true)) {
+        if (\in_array($Code, ['be', 'bs', 'hr', 'ru', 'sh', 'sr', 'uk'], true)) {
             return 'int3Type4';
         }
 
@@ -959,15 +964,15 @@ class L10N extends CommonAbstract implements \Countable
             return 'int3Type7';
         }
 
-        if (in_array($Code, ['ro', 'mo'], true)) {
+        if (\in_array($Code, ['ro', 'mo'], true)) {
             return 'int3Type8';
         }
 
-        if (in_array($Code, ['cs', 'sk'], true)) {
+        if (\in_array($Code, ['cs', 'sk'], true)) {
             return 'int3Type9';
         }
 
-        if (in_array($Code, ['qya', 'tkl'], true)) {
+        if (\in_array($Code, ['qya', 'tkl'], true)) {
             return 'int3Type10';
         }
 
@@ -983,7 +988,7 @@ class L10N extends CommonAbstract implements \Countable
             return 'int4Type3';
         }
 
-        if (in_array($Code, ['dsb', 'hsb', 'sl'], true)) {
+        if (\in_array($Code, ['dsb', 'hsb', 'sl'], true)) {
             return 'int4Type4';
         }
 
@@ -1025,20 +1030,20 @@ class L10N extends CommonAbstract implements \Countable
     public function getFractionRule(string $Code): string
     {
         /** For different rules based on region, country, or dialect. */
-        if (($Pos = strpos($Code, '-')) !== false) {
+        if (($Pos = \strpos($Code, '-')) !== false) {
             if ($Code === 'pt-BR') {
                 return 'fraction2Type1';
             }
 
             /** Try falling back to standard codes. */
-            $Code = substr($Code, 0, $Pos);
+            $Code = \substr($Code, 0, $Pos);
         }
 
-        if (in_array($Code, ['da', 'ff', 'fr', 'hy', 'kab', 'lag'], true)) {
+        if (\in_array($Code, ['da', 'ff', 'fr', 'hy', 'kab', 'lag'], true)) {
             return 'fraction2Type1';
         }
 
-        if (in_array($Code, ['am', 'as', 'bn', 'doi', 'fa', 'gu', 'he', 'hi', 'kn', 'shi', 'zu'], true)) {
+        if (\in_array($Code, ['am', 'as', 'bn', 'doi', 'fa', 'gu', 'he', 'hi', 'kn', 'shi', 'zu'], true)) {
             return 'fraction2Type2';
         }
 
@@ -1059,20 +1064,20 @@ class L10N extends CommonAbstract implements \Countable
             return 'rtl';
         }
 
-        if (($Pos = strpos($Code, '-')) !== false) {
+        if (($Pos = \strpos($Code, '-')) !== false) {
             /** @link https://en.wikipedia.org/wiki/ISO_15924 */
-            if (preg_match('~-([A-Z][a-z]{3}|\d{3})$~', $Code, $Script) && !preg_match('~^(0[5679]0|095|1(?:[034]3|20|45)|2(?:[029]1|[18]8|84|92)|3(?:31|80)|4(?:1[0-3]|99)|5(?:0[0-4]|[259]0)|6[12]0|9[0-49]\d)$~', $Script[1])) {
-                if (preg_match('~^(?:1\d+|305|4(?:03|38)|A(?:dlm|rab|rmi|vst)|C(?:hrs|prt)|Elym|Gara|H(?:atr|ebr|ung)|K(?:har|its)|Lydi|M(?:an[di]|end|er[co])|N(?:arb|bat|koo|shu)|Orkh|P(?:alm|hl[ip]|hnx|rti)|Rohg|S(?:amr|arb|idt|ogo|yrc)|T(?:haa|odr)|Yezi)$~', $Script[1])) {
+            if (\preg_match('~-([A-Z][a-z]{3}|\d{3})$~', $Code, $Script) && !\preg_match('~^(0[5679]0|095|1(?:[034]3|20|45)|2(?:[029]1|[18]8|84|92)|3(?:31|80)|4(?:1[0-3]|99)|5(?:0[0-4]|[259]0)|6[12]0|9[0-49]\d)$~', $Script[1])) {
+                if (\preg_match('~^(?:1\d+|305|4(?:03|38)|A(?:dlm|rab|rmi|vst)|C(?:hrs|prt)|Elym|Gara|H(?:atr|ebr|ung)|K(?:har|its)|Lydi|M(?:an[di]|end|er[co])|N(?:arb|bat|koo|shu)|Orkh|P(?:alm|hl[ip]|hnx|rti)|Rohg|S(?:amr|arb|idt|ogo|yrc)|T(?:haa|odr)|Yezi)$~', $Script[1])) {
                     return 'rtl';
                 }
                 return 'ltr';
             }
 
-            $Code = substr($Code, 0, $Pos);
+            $Code = \substr($Code, 0, $Pos);
         }
 
         /** Right-to-left. */
-        if (in_array($Code, ['ar', 'arc', 'arz', 'az', 'ckb', 'dv', 'fa', 'ha', 'he', 'khw', 'ks', 'ku', 'nqo', 'ps', 'sam', 'sd', 'syc', 'syr', 'ug', 'ur', 'uz', 'yi'], true)) {
+        if (\in_array($Code, ['ar', 'arc', 'arz', 'az', 'ckb', 'dv', 'fa', 'ha', 'he', 'khw', 'ks', 'ku', 'nqo', 'ps', 'sam', 'sd', 'syc', 'syr', 'ug', 'ur', 'uz', 'yi'], true)) {
             return 'rtl';
         }
 
@@ -1108,6 +1113,6 @@ class L10N extends CommonAbstract implements \Countable
      */
     public function count(): int
     {
-        return count($this->Data);
+        return \count($this->Data);
     }
 }

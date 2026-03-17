@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2026.03.11).
+ * This file: Functions file (last modified: 2026.03.16).
  */
 
 /**
@@ -1365,9 +1365,10 @@ $CIDRAM['ClearExpired'] = function (&$List, &$Check) use (&$CIDRAM) {
 };
 
 /**
- * If input isn't an array, make it so. Remove empty elements.
+ * Ensure input is an array and remove empty elements.
  *
  * @param mixed $Input
+ * @return void
  */
 $CIDRAM['Arrayify'] = function (&$Input) {
     if (!is_array($Input)) {

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The updates page (last modified: 2025.11.02).
+ * This file: The updates page (last modified: 2026.03.18).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -86,7 +86,7 @@ if (empty($this->Alternate) && $this->FE['FormTarget'] === 'updates') {
 
         /** Trigger signatures update log event. */
         if (!empty($this->CIDRAM['SignaturesUpdateEvent'])) {
-            $this->CIDRAM['SignaturesUpdateEvent'] = sprintf(
+            $this->CIDRAM['SignaturesUpdateEvent'] = \sprintf(
                 $this->L10N->getString('response.Signature files have been updated (%s)'),
                 $this->timeFormat(
                     $this->CIDRAM['SignaturesUpdateEvent'],
@@ -98,7 +98,7 @@ if (empty($this->Alternate) && $this->FE['FormTarget'] === 'updates') {
     }
 
     /** Macros. */
-    if (!empty($_POST['Macro']) && is_string($_POST['Macro'])) {
+    if (!empty($_POST['Macro']) && \is_string($_POST['Macro'])) {
         if (isset($this->Components['Macros'][$_POST['Macro']]['On Execute'])) {
             $this->executor($this->Components['Macros'][$_POST['Macro']]['On Execute']);
         } else {
@@ -162,7 +162,7 @@ foreach ($this->Components['Meta'] as $Key => &$this->Components['ThisComponent'
         if (!isset($this->Components['Install Together'][$Key])) {
             $this->Components['Install Together'][$Key] = [];
         }
-        $this->Components['Install Together'][$Key] = array_merge(
+        $this->Components['Install Together'][$Key] = \array_merge(
             $this->Components['Install Together'][$Key],
             $this->Components['RemoteMeta'][$Key]['Install Together']
         );
@@ -206,7 +206,7 @@ foreach ($this->Components['Meta'] as $Key => &$this->Components['ThisComponent'
             $this->Components['ThisComponent']['StatClass'] = 'txtGn';
             $this->Components['ThisComponent']['StatusOptions'] = $this->L10N->getString('response.Already up-to-date');
             if (isset($this->Components['RemoteMeta'][$Key]['Files'], $this->Components['ThisComponent']['Files']) && (
-                serialize(array_keys($this->Components['RemoteMeta'][$Key]['Files'])) === serialize(array_keys($this->Components['ThisComponent']['Files']))
+                \serialize(\array_keys($this->Components['RemoteMeta'][$Key]['Files'])) === \serialize(\array_keys($this->Components['ThisComponent']['Files']))
             )) {
                 $this->Components['Repairable'][] = $Key;
                 $this->Components['ThisComponent']['Options'] .= '<option value="repair-component">' . $this->L10N->getString('field.Repair') . '</option>';
@@ -216,7 +216,7 @@ foreach ($this->Components['Meta'] as $Key => &$this->Components['ThisComponent'
     if (!empty($this->Components['ThisComponent']['Files'])) {
         $Activable = $this->isActivable($this->Components['ThisComponent']);
         $this->Components['In Use'][$Key] = $this->isInUse($this->Components['ThisComponent']);
-        if (preg_match(sprintf(
+        if (\preg_match(\sprintf(
             '~^(?:theme/(?:%s|%s)|CIDRAM.*|Common Classes Package)$~i',
             preg_quote($this->Configuration['frontend']['theme']),
             preg_quote($this->Configuration['template_data']['theme'])
@@ -254,7 +254,7 @@ foreach ($this->Components['Meta'] as $Key => &$this->Components['ThisComponent'
             }
             if (
                 !empty($this->Components['ThisComponent']['Provisional']) ||
-                ($this->Configuration['general']['lang_override'] && preg_match('~^l10n/~', $this->Components['ThisComponent']['Name']))
+                ($this->Configuration['general']['lang_override'] && \preg_match('~^l10n/~', $this->Components['ThisComponent']['Name']))
             ) {
                 $this->appendToString(
                     $this->Components['ThisComponent']['StatusOptions'],
@@ -276,8 +276,8 @@ foreach ($this->Components['Meta'] as $Key => &$this->Components['ThisComponent'
     $this->Components['Verify'][] = $Key;
     if (isset($this->Components['ThisComponent']['Files'])) {
         foreach ($this->Components['ThisComponent']['Files'] as $ThisFile) {
-            if (isset($ThisFile['Checksum']) && strlen($ThisFile['Checksum'])) {
-                if (($Delimiter = strpos($ThisFile['Checksum'], ':')) !== false) {
+            if (isset($ThisFile['Checksum']) && \strlen($ThisFile['Checksum'])) {
+                if (($Delimiter = \strpos($ThisFile['Checksum'], ':')) !== false) {
                     $this->Components['ThisComponent']['VersionSize'] += (int)substr($ThisFile['Checksum'], $Delimiter + 1);
                 }
             }
@@ -285,7 +285,7 @@ foreach ($this->Components['Meta'] as $Key => &$this->Components['ThisComponent'
     }
     if ($this->Components['ThisComponent']['VersionSize'] > 0) {
         $this->formatFileSize($this->Components['ThisComponent']['VersionSize']);
-        $this->Components['ThisComponent']['VersionSize'] = sprintf(
+        $this->Components['ThisComponent']['VersionSize'] = \sprintf(
             '<br />%s %s',
             $this->L10N->getString('field.size.Total size'),
             $this->Components['ThisComponent']['VersionSize']
@@ -296,8 +296,8 @@ foreach ($this->Components['Meta'] as $Key => &$this->Components['ThisComponent'
     $this->Components['ThisComponent']['LatestSize'] = 0;
     if (isset($this->Components['RemoteMeta'][$Key]['Files'])) {
         foreach ($this->Components['RemoteMeta'][$Key]['Files'] as $ThisFile) {
-            if (isset($ThisFile['Checksum']) && strlen($ThisFile['Checksum'])) {
-                if (($Delimiter = strpos($ThisFile['Checksum'], ':')) !== false) {
+            if (isset($ThisFile['Checksum']) && \strlen($ThisFile['Checksum'])) {
+                if (($Delimiter = \strpos($ThisFile['Checksum'], ':')) !== false) {
                     $this->Components['ThisComponent']['LatestSize'] += (int)substr($ThisFile['Checksum'], $Delimiter + 1);
                 }
             }
@@ -305,7 +305,7 @@ foreach ($this->Components['Meta'] as $Key => &$this->Components['ThisComponent'
     }
     if ($this->Components['ThisComponent']['LatestSize'] > 0) {
         $this->formatFileSize($this->Components['ThisComponent']['LatestSize']);
-        $this->Components['ThisComponent']['LatestSize'] = sprintf(
+        $this->Components['ThisComponent']['LatestSize'] = \sprintf(
             '<br />%s %s',
             $this->L10N->getString('field.size.Total size'),
             $this->Components['ThisComponent']['LatestSize']
@@ -331,14 +331,14 @@ foreach ($this->Components['Meta'] as $Key => &$this->Components['ThisComponent'
     /** Append filename (downstream). */
     $this->Components['ThisComponent']['Filename'] = (
         empty($this->Components['ThisComponent']['Files']) ||
-        count($this->Components['ThisComponent']['Files']) !== 1
-    ) ? '' : '<br />' . $this->L10N->getString('field.Filename') . ' ' . key($this->Components['ThisComponent']['Files']);
+        \count($this->Components['ThisComponent']['Files']) !== 1
+    ) ? '' : '<br />' . $this->L10N->getString('field.Filename') . ' ' . \key($this->Components['ThisComponent']['Files']);
 
     /** Append filename (upstream). */
     $this->Components['ThisComponent']['RemoteFilename'] = (
         empty($this->Components['RemoteMeta'][$Key]['Files']) ||
-        count($this->Components['RemoteMeta'][$Key]['Files']) !== 1
-    ) ? '' : '<br />' . $this->L10N->getString('field.Filename') . ' ' . key($this->Components['RemoteMeta'][$Key]['Files']);
+        \count($this->Components['RemoteMeta'][$Key]['Files']) !== 1
+    ) ? '' : '<br />' . $this->L10N->getString('field.Filename') . ' ' . \key($this->Components['RemoteMeta'][$Key]['Files']);
 
     /** Finalise entry. */
     if (
@@ -355,12 +355,12 @@ foreach ($this->Components['Meta'] as $Key => &$this->Components['ThisComponent'
         }
         $this->FE['Indexes'][$this->Components['ThisComponent']['SortKey']] = '';
         if (isset($PreviousIndex)) {
-            if (substr($PreviousIndex, 0, 6) !== substr($this->Components['ThisComponent']['ID'], 0, 6)) {
+            if (\substr($PreviousIndex, 0, 6) !== \substr($this->Components['ThisComponent']['ID'], 0, 6)) {
                 $this->FE['Indexes'][$this->Components['ThisComponent']['SortKey']] .= '<br />';
             }
         }
         $PreviousIndex = $this->Components['ThisComponent']['ID'];
-        $this->FE['Indexes'][$this->Components['ThisComponent']['SortKey']] .= sprintf(
+        $this->FE['Indexes'][$this->Components['ThisComponent']['SortKey']] .= \sprintf(
             "<a href=\"#%s\">%s</a><br />\n      ",
             $this->Components['ThisComponent']['ID'],
             $this->Components['ThisComponent']['Name']
@@ -389,20 +389,20 @@ if (!empty($this->Alternate) && (
     $this->Components['Build'] = $this->Components[$BuildUse];
     foreach ($this->Components[$BuildUse] as $Key) {
         if (isset($this->Components['Install Together'][$Key])) {
-            $this->Components['Build'] = array_merge(
+            $this->Components['Build'] = \array_merge(
                 $this->Components['Build'],
                 $this->Components['Install Together'][$Key]
             );
         }
     }
-    $this->Components[$BuildUse] = array_unique($this->Components['Build']);
+    $this->Components[$BuildUse] = \array_unique($this->Components['Build']);
 
     /** Trigger updates handler. */
     $this->updatesHandler('update-component', $this->Components[$BuildUse]);
 
     /** Trigger signatures update log event. */
     if (!empty($this->CIDRAM['SignaturesUpdateEvent'])) {
-        $this->CIDRAM['SignaturesUpdateEvent'] = sprintf(
+        $this->CIDRAM['SignaturesUpdateEvent'] = \sprintf(
             $this->L10N->getString('response.Signature files have been updated (%s)'),
             $this->timeFormat(
                 $this->CIDRAM['SignaturesUpdateEvent'],
@@ -440,7 +440,7 @@ foreach ($this->Components['RemoteMeta'] as $Key => &$this->Components['ThisComp
         if (!isset($this->Components['Install Together'][$Key])) {
             $this->Components['Install Together'][$Key] = [];
         }
-        $this->Components['Install Together'][$Key] = array_merge(
+        $this->Components['Install Together'][$Key] = \array_merge(
             $this->Components['Install Together'][$Key],
             $this->Components['ThisComponent']['Install Together']
         );
@@ -457,8 +457,8 @@ foreach ($this->Components['RemoteMeta'] as $Key => &$this->Components['ThisComp
     $this->Components['ThisComponent']['LatestSize'] = 0;
     if (isset($this->Components['ThisComponent']['Files'])) {
         foreach ($this->Components['ThisComponent']['Files'] as $ThisFile) {
-            if (isset($ThisFile['Checksum']) && strlen($ThisFile['Checksum'])) {
-                if (($Delimiter = strpos($ThisFile['Checksum'], ':')) !== false) {
+            if (isset($ThisFile['Checksum']) && \strlen($ThisFile['Checksum'])) {
+                if (($Delimiter = \strpos($ThisFile['Checksum'], ':')) !== false) {
                     $this->Components['ThisComponent']['LatestSize'] += (int)substr($ThisFile['Checksum'], $Delimiter + 1);
                 }
             }
@@ -466,7 +466,7 @@ foreach ($this->Components['RemoteMeta'] as $Key => &$this->Components['ThisComp
     }
     if ($this->Components['ThisComponent']['LatestSize'] > 0) {
         $this->formatFileSize($this->Components['ThisComponent']['LatestSize']);
-        $this->Components['ThisComponent']['LatestSize'] = sprintf(
+        $this->Components['ThisComponent']['LatestSize'] = \sprintf(
             '<br />%s %s',
             $this->L10N->getString('field.size.Total size'),
             $this->Components['ThisComponent']['LatestSize']
@@ -498,8 +498,8 @@ foreach ($this->Components['RemoteMeta'] as $Key => &$this->Components['ThisComp
     /** Append filename (upstream). */
     $this->Components['ThisComponent']['RemoteFilename'] = (
         empty($this->Components['ThisComponent']['Files']) ||
-        count($this->Components['ThisComponent']['Files']) !== 1
-    ) ? '' : '<br />' . $this->L10N->getString('field.Filename') . ' ' . key($this->Components['ThisComponent']['Files']);
+        \count($this->Components['ThisComponent']['Files']) !== 1
+    ) ? '' : '<br />' . $this->L10N->getString('field.Filename') . ' ' . \key($this->Components['ThisComponent']['Files']);
 
     /** Finalise entry. */
     if (!$this->FE['hide-unused']) {
@@ -510,12 +510,12 @@ foreach ($this->Components['RemoteMeta'] as $Key => &$this->Components['ThisComp
         }
         $this->FE['Indexes'][$this->Components['ThisComponent']['SortKey']] = '';
         if (isset($PreviousIndex)) {
-            if (substr($PreviousIndex, 0, 6) !== substr($this->Components['ThisComponent']['ID'], 0, 6)) {
+            if (\substr($PreviousIndex, 0, 6) !== \substr($this->Components['ThisComponent']['ID'], 0, 6)) {
                 $this->FE['Indexes'][$this->Components['ThisComponent']['SortKey']] .= '<br />';
             }
         }
         $PreviousIndex = $this->Components['ThisComponent']['ID'];
-        $this->FE['Indexes'][$this->Components['ThisComponent']['SortKey']] .= sprintf(
+        $this->FE['Indexes'][$this->Components['ThisComponent']['SortKey']] .= \sprintf(
             "<a href=\"#%s\">%s</a><br />\n      ",
             $this->Components['ThisComponent']['ID'],
             $this->Components['ThisComponent']['Name']
@@ -531,10 +531,10 @@ foreach ($this->Components['RemoteMeta'] as $Key => &$this->Components['ThisComp
 $this->FE['Indexes'] = $this->sortComponents($this->FE['Indexes']);
 $this->FE['Components'] = $this->sortComponents($this->Components['Out']);
 
-$this->Components['CountOutdated'] = count($this->Components['Outdated']);
-$this->Components['CountOutdatedSignatureFiles'] = count($this->Components['OutdatedSignatureFiles']);
-$this->Components['CountVerify'] = count($this->Components['Verify']);
-$this->Components['CountRepairable'] = count($this->Components['Repairable']);
+$this->Components['CountOutdated'] = \count($this->Components['Outdated']);
+$this->Components['CountOutdatedSignatureFiles'] = \count($this->Components['OutdatedSignatureFiles']);
+$this->Components['CountVerify'] = \count($this->Components['Verify']);
+$this->Components['CountRepairable'] = \count($this->Components['Repairable']);
 
 /** Preparing the update all, verify all, repair all buttons. */
 $this->FE['UpdateAll'] = (
@@ -546,7 +546,7 @@ $this->FE['UpdateAll'] = (
 
 /** Instructions to update all signature files (but not necessarily everything). */
 if ($this->Components['CountOutdatedSignatureFiles']) {
-    $this->FE['UpdateAll'] .= sprintf($this->FE['CFBoilerplate'], $this->FE['UpdatesFormTarget'], 'update-component');
+    $this->FE['UpdateAll'] .= \sprintf($this->FE['CFBoilerplate'], $this->FE['UpdatesFormTarget'], 'update-component');
     foreach ($this->Components['OutdatedSignatureFiles'] as $this->Components['ThisOutdated']) {
         $this->FE['UpdateAll'] .= '<input name="ID[]" type="hidden" value="' . $this->Components['ThisOutdated'] . '" />';
     }
@@ -555,7 +555,7 @@ if ($this->Components['CountOutdatedSignatureFiles']) {
 
 /** Instructions to update everything at once. */
 if ($this->Components['CountOutdated'] && $this->Components['CountOutdated'] !== $this->Components['CountOutdatedSignatureFiles']) {
-    $this->FE['UpdateAll'] .= sprintf($this->FE['CFBoilerplate'], $this->FE['UpdatesFormTarget'], 'update-component');
+    $this->FE['UpdateAll'] .= \sprintf($this->FE['CFBoilerplate'], $this->FE['UpdatesFormTarget'], 'update-component');
     foreach ($this->Components['Outdated'] as $this->Components['ThisOutdated']) {
         $this->FE['UpdateAll'] .= '<input name="ID[]" type="hidden" value="' . $this->Components['ThisOutdated'] . '" />';
     }
@@ -564,7 +564,7 @@ if ($this->Components['CountOutdated'] && $this->Components['CountOutdated'] !==
 
 /** Instructions to repair everything at once. */
 if ($this->Components['CountRepairable']) {
-    $this->FE['UpdateAll'] .= sprintf($this->FE['CFBoilerplate'], $this->FE['UpdatesFormTarget'], 'repair-component');
+    $this->FE['UpdateAll'] .= \sprintf($this->FE['CFBoilerplate'], $this->FE['UpdatesFormTarget'], 'repair-component');
     foreach ($this->Components['Repairable'] as $this->Components['ThisRepairable']) {
         $this->FE['UpdateAll'] .= '<input name="ID[]" type="hidden" value="' . $this->Components['ThisRepairable'] . '" />';
     }
@@ -573,7 +573,7 @@ if ($this->Components['CountRepairable']) {
 
 /** Instructions to verify everything at once. */
 if ($this->Components['CountVerify']) {
-    $this->FE['UpdateAll'] .= sprintf($this->FE['CFBoilerplate'], $this->FE['UpdatesFormTarget'], 'verify-component');
+    $this->FE['UpdateAll'] .= \sprintf($this->FE['CFBoilerplate'], $this->FE['UpdatesFormTarget'], 'verify-component');
     foreach ($this->Components['Verify'] as $this->Components['ThisVerify']) {
         $this->FE['UpdateAll'] .= '<input name="ID[]" type="hidden" value="' . $this->Components['ThisVerify'] . '" />';
     }
@@ -601,11 +601,11 @@ $this->FE['FE_Content'] = $this->parseVars($this->FE, $this->readFile($this->get
 /** Process dependency installation triggers. */
 foreach ($this->Components['Install Together'] as $Key => $this->Components['ID']) {
     $this->Components['Build'] = '';
-    $this->Components['ID'] = array_unique($this->Components['ID']);
+    $this->Components['ID'] = \array_unique($this->Components['ID']);
     foreach ($this->Components['ID'] as $this->Components['ThisID']) {
         $this->Components['Build'] .= '<input name="InstallTogether[]" type="hidden" value="' . $this->Components['ThisID'] . '" />';
     }
-    $this->FE['FE_Content'] = str_replace(
+    $this->FE['FE_Content'] = \str_replace(
         '<input name="ID[]" type="hidden" value="' . $Key . '" />',
         $this->Components['Build'] . '<input name="ID[]" type="hidden" value="' . $Key . '" />',
         $this->FE['FE_Content']
@@ -618,14 +618,14 @@ if ($this->FE['CronMode'] === '') {
     echo $this->sendOutput();
 } elseif ($this->FE['CronType'] === 'localUpdate') {
     /** Returned state message for Cronable (updating locally). */
-    $GLOBALS['Results'] = ['state_msg' => str_ireplace(
+    $GLOBALS['Results'] = ['state_msg' => \str_ireplace(
         ['<code>', '</code>', '<br />', '<hr />'],
         ['[', ']', "\n", "\n---\n"],
         $this->FE['state_msg']
     )];
 } elseif (!empty($this->FE['state_msg'])) {
     /** Returned state message for Cronable. */
-    echo json_encode(['state_msg' => str_ireplace(
+    echo \json_encode(['state_msg' => \str_ireplace(
         ['<code>', '</code>', '<br />', '<hr />'],
         ['[', ']', "\n", "\n---\n"],
         $this->FE['state_msg']
@@ -635,8 +635,8 @@ if ($this->FE['CronMode'] === '') {
     $this->Components['CountOutdatedSignatureFiles'] > 0
 )) {
     /** Returned list of outdated components for Cronable. */
-    echo json_encode([
-        'state_msg' => str_ireplace(
+    echo \json_encode([
+        'state_msg' => \str_ireplace(
             ['<code>', '</code>', '<br />', '<hr />'],
             ['[', ']', "\n", "\n---\n"],
             $this->FE['state_msg']

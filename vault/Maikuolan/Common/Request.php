@@ -1,6 +1,6 @@
 <?php
 /**
- * Request handler (last modified: 2026.03.17).
+ * Request handler (last modified: 2026.03.18).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -105,10 +105,10 @@ class Request extends CommonAbstract
      * The main request method.
      *
      * @param string $URI The resource to request.
-     * @param mixed $Params If empty or omitted, CURLOPT_POST is false. Otherwise,
-     *      CURLOPT_POST is true, and the parameter is used to supply
-     *      CURLOPT_POSTFIELDS. Normally an associative array of key-value pairs,
-     *      but can be any kind of value supported by CURLOPT_POSTFIELDS. Optional.
+     * @param mixed $Params If empty or omitted, \CURLOPT_POST is false. Otherwise,
+     *      \CURLOPT_POST is true, and the parameter is used to supply
+     *      \CURLOPT_POSTFIELDS. Normally an associative array of key-value pairs,
+     *      but can be any kind of value supported by \CURLOPT_POSTFIELDS. Optional.
      * @param int $Timeout An optional timeout limit.
      * @param array $Headers An optional array of headers to send with the request.
      * @param int $Depth Recursion depth of the current closure instance.
@@ -140,7 +140,7 @@ class Request extends CommonAbstract
                     continue;
                 }
                 unset($Options[$TriggerName]);
-                if (empty($Options) || $this->inCsv(key($Options), $this->Disabled)) {
+                if (empty($Options) || $this->inCsv(\key($Options), $this->Disabled)) {
                     continue;
                 }
                 $AlternateURI = current($Options) . \substr($URI, $Len);
@@ -167,40 +167,40 @@ class Request extends CommonAbstract
         $LCURI = \strtolower($URI);
         $SSL = (\substr($LCURI, 0, 6) === 'https:');
 
-        \curl_setopt($Request, CURLOPT_FRESH_CONNECT, true);
-        \curl_setopt($Request, CURLOPT_HEADER, false);
+        \curl_setopt($Request, \CURLOPT_FRESH_CONNECT, true);
+        \curl_setopt($Request, \CURLOPT_HEADER, false);
         if (empty($Params)) {
-            \curl_setopt($Request, CURLOPT_POST, false);
+            \curl_setopt($Request, \CURLOPT_POST, false);
             $Post = false;
         } else {
-            \curl_setopt($Request, CURLOPT_POST, true);
-            \curl_setopt($Request, CURLOPT_POSTFIELDS, $Params);
+            \curl_setopt($Request, \CURLOPT_POST, true);
+            \curl_setopt($Request, \CURLOPT_POSTFIELDS, $Params);
             $Post = true;
         }
         if ($SSL) {
-            \curl_setopt($Request, CURLOPT_PROTOCOLS, CURLPROTO_HTTPS);
-            \curl_setopt($Request, CURLOPT_SSL_VERIFYPEER, (
+            \curl_setopt($Request, \CURLOPT_PROTOCOLS, \CURLPROTO_HTTPS);
+            \curl_setopt($Request, \CURLOPT_SSL_VERIFYPEER, (
                 isset($Overrides['CURLOPT_SSL_VERIFYPEER']) ? !empty($Overrides['CURLOPT_SSL_VERIFYPEER']) : false
             ));
         }
         if ($Method !== '') {
-            \curl_setopt($Request, CURLOPT_CUSTOMREQUEST, $Method);
+            \curl_setopt($Request, \CURLOPT_CUSTOMREQUEST, $Method);
             $DebugMethod = $Method;
         } else {
             $DebugMethod = $Post ? 'POST' : 'GET';
         }
         if ($this->Proxy !== '') {
-            \curl_setopt($Request, CURLOPT_PROXY, $this->Proxy);
+            \curl_setopt($Request, \CURLOPT_PROXY, $this->Proxy);
             if ($this->ProxyAuth !== '') {
-                \curl_setopt($Request, CURLOPT_PROXYUSERPWD, $this->ProxyAuth);
+                \curl_setopt($Request, \CURLOPT_PROXYUSERPWD, $this->ProxyAuth);
             }
         }
-        \curl_setopt($Request, CURLOPT_FOLLOWLOCATION, true);
-        \curl_setopt($Request, CURLOPT_MAXREDIRS, 1);
-        \curl_setopt($Request, CURLOPT_RETURNTRANSFER, true);
-        \curl_setopt($Request, CURLOPT_TIMEOUT, ($Timeout > 0 ? $Timeout : $this->DefaultTimeout));
-        \curl_setopt($Request, CURLOPT_USERAGENT, $this->UserAgent);
-        \curl_setopt($Request, CURLOPT_HTTPHEADER, $Headers ?: []);
+        \curl_setopt($Request, \CURLOPT_FOLLOWLOCATION, true);
+        \curl_setopt($Request, \CURLOPT_MAXREDIRS, 1);
+        \curl_setopt($Request, \CURLOPT_RETURNTRANSFER, true);
+        \curl_setopt($Request, \CURLOPT_TIMEOUT, ($Timeout > 0 ? $Timeout : $this->DefaultTimeout));
+        \curl_setopt($Request, \CURLOPT_USERAGENT, $this->UserAgent);
+        \curl_setopt($Request, \CURLOPT_HTTPHEADER, $Headers ?: []);
         $Time = \microtime(true);
 
         /** Execute and get the response. */

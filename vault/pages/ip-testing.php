@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The IP testing page (last modified: 2026.02.15).
+ * This file: The IP testing page (last modified: 2026.03.18).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -21,7 +21,7 @@ if (!isset($this->FE['Permissions'], $this->CIDRAM['QueryVars']['cidram-page']) 
 $this->initialPrepwork($this->L10N->getString('link.IP Testing'), $this->L10N->getString('tip.IP Testing'));
 
 /** Add flags CSS. */
-if ($this->FE['Flags'] = file_exists($this->AssetsPath . 'frontend/flags.css')) {
+if ($this->FE['Flags'] = \file_exists($this->AssetsPath . 'frontend/flags.css')) {
     $this->FE['OtherHead'] .= "\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"?cidram-page=flags\" />";
 }
 
@@ -58,7 +58,7 @@ $this->FE['SensitiveSwitch'] = $this->CIDRAM['isSensitive'] ? ' checked' : '';
 
 /** Fetch and repopulate all fields. */
 foreach (['ip-addr', 'ip-addr-focus', 'custom-query', 'custom-query-focus', 'custom-referrer', 'custom-ua', 'custom-ua-focus'] as $Field) {
-    $this->FE[$Field] = isset($_POST[$Field]) ? str_replace(['&', '<', '>', '"'], ['&amp;', '&lt;', '&gt;', '&quot;'], $this->desabotage($_POST[$Field])) : '';
+    $this->FE[$Field] = isset($_POST[$Field]) ? \str_replace(['&', '<', '>', '"'], ['&amp;', '&lt;', '&gt;', '&quot;'], $this->desabotage($_POST[$Field])) : '';
 }
 unset($Field);
 
@@ -109,13 +109,13 @@ if ($Focus === 'Query' && $this->FE['custom-query-focus'] !== '') {
 /** Data has been submitted for testing. */
 if (isset($_POST['ip-addr-focus'])) {
     if ($this->CIDRAM['TestMode'] === 3) {
-        $Working = explode("\n", str_replace("\r", '', $this->FE['custom-query-focus']));
+        $Working = \explode("\n", \str_replace("\r", '', $this->FE['custom-query-focus']));
     } elseif ($this->CIDRAM['TestMode'] === 2) {
-        $Working = explode("\n", str_replace("\r", '', $this->FE['custom-ua-focus']));
+        $Working = \explode("\n", \str_replace("\r", '', $this->FE['custom-ua-focus']));
     } else {
-        $Working = array_unique(array_map(function ($IP) {
+        $Working = \array_unique(array_map(function ($IP) {
             $New = $this->correctFieldInput($IP);
-            if ($New !== '' && strlen($IP) < 128) {
+            if ($New !== '' && \strlen($IP) < 128) {
                 if (isset($this->CIDRAM['Assumptions'][$New])) {
                     $this->CIDRAM['Assumptions'][$New] .= ', ' . $IP;
                 } else {
@@ -123,13 +123,13 @@ if (isset($_POST['ip-addr-focus'])) {
                 }
             }
             return $New;
-        }, explode("\n", str_replace("\r", '', $this->FE['ip-addr-focus'] ?: $this->FE['ip-addr']))));
+        }, \explode("\n", \str_replace("\r", '', $this->FE['ip-addr-focus'] ?: $this->FE['ip-addr']))));
     }
     natsort($Working);
     $this->CIDRAM['ThisIP'] = [];
 
     /** Initialise shorthand options. */
-    $this->Shorthand = array_flip(explode("\n", $this->Configuration['signatures']['shorthand']));
+    $this->Shorthand = \array_flip(\explode("\n", $this->Configuration['signatures']['shorthand']));
 
     /** Iterate through the addresses given to test. */
     foreach ($Working as $this->CIDRAM['ThisIP']['IPAddress']) {
@@ -160,9 +160,9 @@ if (isset($_POST['ip-addr-focus'])) {
                         $this->CIDRAM['AuxErrorCounts'][$this->CIDRAM['AuxError'][2]] = 1;
                     }
                 }
-                arsort($this->CIDRAM['AuxErrorCounts']);
+                \arsort($this->CIDRAM['AuxErrorCounts']);
                 foreach ($this->CIDRAM['AuxErrorCounts'] as $this->CIDRAM['AuxName'] => $this->CIDRAM['AuxError']) {
-                    $this->CIDRAM['ThisIP']['YesNo'] .= sprintf(
+                    $this->CIDRAM['ThisIP']['YesNo'] .= \sprintf(
                         ' – %s (%s)',
                         $this->CIDRAM['AuxName'],
                         $this->NumberFormatter->format($this->CIDRAM['AuxError'])
@@ -181,15 +181,15 @@ if (isset($_POST['ip-addr-focus'])) {
                         $this->CIDRAM['ModuleErrorCounts'][$this->CIDRAM['ModuleError'][2]] = [[$this->CIDRAM['ModuleError'][1]], 1];
                     }
                 }
-                arsort($this->CIDRAM['ModuleErrorCounts']);
+                \arsort($this->CIDRAM['ModuleErrorCounts']);
                 $ErrorText = $this->L10N->getString('response.Error');
                 foreach ($this->CIDRAM['ModuleErrorCounts'] as $this->CIDRAM['ModuleName'] => $this->CIDRAM['ModuleError']) {
-                    $this->CIDRAM['ThisIP']['YesNo'] .= sprintf(
+                    $this->CIDRAM['ThisIP']['YesNo'] .= \sprintf(
                         '<br />%s – %s (x%s):<em><br />– %s</em>',
                         $ErrorText,
                         $this->CIDRAM['ModuleName'],
                         $this->NumberFormatter->format($this->CIDRAM['ModuleError'][1]),
-                        implode(',<br />– ', $this->CIDRAM['ModuleError'][0])
+                        \implode(',<br />– ', $this->CIDRAM['ModuleError'][0])
                     );
                 }
                 unset($this->CIDRAM['ModuleName'], $this->CIDRAM['ModuleError'], $this->CIDRAM['ModuleErrorCounts'], $this->CIDRAM['ModuleErrors']);
@@ -207,9 +207,9 @@ if (isset($_POST['ip-addr-focus'])) {
                         $this->CIDRAM['RunErrorCounts'][$this->CIDRAM['RunError'][2]] = 1;
                     }
                 }
-                arsort($this->CIDRAM['RunErrorCounts']);
+                \arsort($this->CIDRAM['RunErrorCounts']);
                 foreach ($this->CIDRAM['RunErrorCounts'] as $this->CIDRAM['RunName'] => $this->CIDRAM['RunError']) {
-                    $this->CIDRAM['ThisIP']['YesNo'] .= sprintf(
+                    $this->CIDRAM['ThisIP']['YesNo'] .= \sprintf(
                         ' – %s (%s)',
                         $this->CIDRAM['RunName'],
                         $this->NumberFormatter->format($this->CIDRAM['RunError'])
@@ -220,16 +220,16 @@ if (isset($_POST['ip-addr-focus'])) {
             $HasError = true;
             $this->CIDRAM['ThisIP']['Assumption'] = '';
         } elseif ($this->BlockInfo['SignatureCount']) {
-            $this->BlockInfo['WhyReason'] = preg_replace('~(?<=</span>\\),|]\\),)( )(?=[\dA-Za-z])~', '<br />', $this->BlockInfo['WhyReason']);
+            $this->BlockInfo['WhyReason'] = \preg_replace('~(?<=</span>\\),|]\\),)( )(?=[\dA-Za-z])~', '<br />', $this->BlockInfo['WhyReason']);
             $this->CIDRAM['ThisIP']['YesNo'] = $this->L10N->getString('field.Blocked') . $this->L10N->getString('pair_separator') . $this->L10N->getString('response._Yes') . ' – ' . $this->BlockInfo['WhyReason'];
             $this->CIDRAM['ThisIP']['StatClass'] = 'txtRd';
             if (
                 $this->FE['Flags'] &&
-                preg_match_all('~\[([A-Z]{2})\]~', $this->CIDRAM['ThisIP']['YesNo'], $this->CIDRAM['ThisIP']['Matches']) &&
+                \preg_match_all('~\[([A-Z]{2})\]~', $this->CIDRAM['ThisIP']['YesNo'], $this->CIDRAM['ThisIP']['Matches']) &&
                 !empty($this->CIDRAM['ThisIP']['Matches'][1])
             ) {
                 foreach ($this->CIDRAM['ThisIP']['Matches'][1] as $this->CIDRAM['ThisIP']['ThisMatch']) {
-                    $this->CIDRAM['ThisIP']['YesNo'] = str_replace(
+                    $this->CIDRAM['ThisIP']['YesNo'] = \str_replace(
                         '[' . $this->CIDRAM['ThisIP']['ThisMatch'] . ']',
                         '<span class="flag ' . $this->CIDRAM['ThisIP']['ThisMatch'] . '"><span></span></span>',
                         $this->CIDRAM['ThisIP']['YesNo']
@@ -237,7 +237,7 @@ if (isset($_POST['ip-addr-focus'])) {
                 }
             }
             if ($this->BlockInfo['Ignored']) {
-                $this->CIDRAM['ThisIP']['YesNo'] .= sprintf(
+                $this->CIDRAM['ThisIP']['YesNo'] .= \sprintf(
                     ', +%s (%s)',
                     $this->L10N->getString('field.Ignored'),
                     $this->BlockInfo['Ignored']
@@ -267,7 +267,7 @@ if (isset($_POST['ip-addr-focus'])) {
         }
         if ($this->CIDRAM['TestMode'] === 1 && !$HasError) {
             if ($this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddr']] > 0) {
-                $this->CIDRAM['ThisIP']['YesNo'] .= sprintf(
+                $this->CIDRAM['ThisIP']['YesNo'] .= \sprintf(
                     '<br /><span class="%1$s">%2$s%3$s%4$s (%5$s%3$s %6$s)',
                     $this->CIDRAM['Banned'] ? 'txtRd' : 'txtOe',
                     $this->L10N->getString('field.Tracking'),
@@ -277,7 +277,7 @@ if (isset($_POST['ip-addr-focus'])) {
                     $this->NumberFormatter->format($this->BlockInfo['Infractions'])
                 );
             } else {
-                $this->CIDRAM['ThisIP']['YesNo'] .= sprintf(
+                $this->CIDRAM['ThisIP']['YesNo'] .= \sprintf(
                     '<br /><span class="txtGn">%s%s%s',
                     $this->L10N->getString('field.Tracking'),
                     $this->L10N->getString('pair_separator'),
@@ -326,27 +326,27 @@ if (isset($_POST['ip-addr-focus'])) {
                 $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++' . $this->L10N->getString('label.aux.Enforce default IP tracking options');
             }
         }
-        if (is_array($this->Profiles) && count($this->Profiles)) {
+        if (\is_array($this->Profiles) && \count($this->Profiles)) {
             foreach ($this->Profiles as $Profile) {
                 $this->CIDRAM['ThisIP']['YesNo'] .= '<br />++&lt;' . $Profile . '&gt;';
             }
         }
-        $this->CIDRAM['ThisIP']['ID'] = preg_replace('~[^\dA-Za-z]~', '_', $this->CIDRAM['ThisIP']['IPAddress']);
-        $this->CIDRAM['ThisIP']['IPAddressLink'] = (!empty($this->FE['CachedLogsLink']) && strpos($this->FE['CachedLogsLink'], 'logfile=') !== false) ? sprintf(
+        $this->CIDRAM['ThisIP']['ID'] = \preg_replace('~[^\dA-Za-z]~', '_', $this->CIDRAM['ThisIP']['IPAddress']);
+        $this->CIDRAM['ThisIP']['IPAddressLink'] = (!empty($this->FE['CachedLogsLink']) && \strpos($this->FE['CachedLogsLink'], 'logfile=') !== false) ? \sprintf(
             '<a href="%s&search=%s">%s</a>',
             $this->FE['CachedLogsLink'],
             $this->preparePartForSearchLink($this->CIDRAM['ThisIP']['IPAddress']),
             $this->CIDRAM['ThisIP']['IPAddress']
         ) : $this->CIDRAM['ThisIP']['IPAddress'];
-        $this->CIDRAM['ThisIP']['IPAddressQuoted'] = str_replace('\'', '\\\'', $this->CIDRAM['ThisIP']['IPAddress']);
+        $this->CIDRAM['ThisIP']['IPAddressQuoted'] = \str_replace('\'', '\\\'', $this->CIDRAM['ThisIP']['IPAddress']);
         $this->FE['IPTestResults'] .= $this->parseVars($this->CIDRAM['ThisIP'], $this->FE['IPTestRow'], true);
     }
     unset($this->CIDRAM['ThisIP'], $Working, $this->CIDRAM['TestMode']);
 }
 
 /** Calculate page load time (useful for debugging). */
-$this->FE['ProcessTime'] = microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'];
-$this->FE['state_msg'] .= sprintf(
+$this->FE['ProcessTime'] = \microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'];
+$this->FE['state_msg'] .= \sprintf(
     $this->L10N->getPlural($this->FE['ProcessTime'], 'label.Page request completed in %s seconds'),
     '<span class="txtRd">' . $this->NumberFormatter->format($this->FE['ProcessTime'], 3) . '</span>'
 );

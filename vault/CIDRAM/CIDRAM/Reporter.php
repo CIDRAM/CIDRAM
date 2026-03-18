@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Report orchestrator (last modified: 2026.03.17).
+ * This file: Report orchestrator (last modified: 2026.03.18).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -111,7 +111,7 @@ class Reporter
                 }
 
                 /** Don't duplicate categories. */
-                $Report['Categories'] = \array_unique($Report['Categories'], SORT_NUMERIC);
+                $Report['Categories'] = \array_unique($Report['Categories'], \SORT_NUMERIC);
 
                 /** Prepare comments. */
                 $Report['Comments'] = \sprintf('Automated report (%s). %s', $DateTime, \implode(' ', $Report['Comments']));

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2026.03.17).
+ * This file: The CIDRAM core (last modified: 2026.03.18).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -264,22 +264,22 @@ class Core
     public function __construct(string $ConfigurationPath = '', string $CachePath = '')
     {
         /** Vault directory. */
-        $this->Vault = $this->canonical(__DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR);
+        $this->Vault = $this->canonical(__DIR__ . \DIRECTORY_SEPARATOR . '..' . \DIRECTORY_SEPARATOR . '..' . \DIRECTORY_SEPARATOR);
 
         /** Signatures path. */
-        $this->SignaturesPath = $this->Vault . 'signatures' . DIRECTORY_SEPARATOR;
+        $this->SignaturesPath = $this->Vault . 'signatures' . \DIRECTORY_SEPARATOR;
 
         /** Modules path. */
-        $this->ModulesPath = $this->Vault . 'modules' . DIRECTORY_SEPARATOR;
+        $this->ModulesPath = $this->Vault . 'modules' . \DIRECTORY_SEPARATOR;
 
         /** Imports path. */
-        $this->ImportsPath = $this->Vault . 'imports' . DIRECTORY_SEPARATOR;
+        $this->ImportsPath = $this->Vault . 'imports' . \DIRECTORY_SEPARATOR;
 
         /** Events path. */
-        $this->EventsPath = $this->Vault . 'events' . DIRECTORY_SEPARATOR;
+        $this->EventsPath = $this->Vault . 'events' . \DIRECTORY_SEPARATOR;
 
         /** Assets path. */
-        $this->AssetsPath = $this->Vault . 'assets' . DIRECTORY_SEPARATOR;
+        $this->AssetsPath = $this->Vault . 'assets' . \DIRECTORY_SEPARATOR;
 
         /** Instantiate YAML object for accessing data reconstruction and processing various YAML files. */
         $this->YAML = new \Maikuolan\Common\YAML();
@@ -387,7 +387,7 @@ class Core
          */
         if (!empty($_SERVER['QUERY_STRING'])) {
             $this->CIDRAM['Query'] = $_SERVER['QUERY_STRING'];
-            parse_str($_SERVER['QUERY_STRING'], $this->CIDRAM['QueryVars']);
+            \parse_str($_SERVER['QUERY_STRING'], $this->CIDRAM['QueryVars']);
         } else {
             $this->CIDRAM['Query'] = '';
             $this->CIDRAM['QueryVars'] = [];
@@ -396,7 +396,7 @@ class Core
         /** Set default hashing algorithm. */
         $this->DefaultAlgo = (
             !empty($this->Configuration['general']['default_algo']) && \defined($this->Configuration['general']['default_algo'])
-        ) ? constant($this->Configuration['general']['default_algo']) : PASSWORD_DEFAULT;
+        ) ? constant($this->Configuration['general']['default_algo']) : \PASSWORD_DEFAULT;
 
         /** Instantiate the request class. */
         $this->Request = new \Maikuolan\Common\Request();
@@ -426,7 +426,7 @@ class Core
         }
 
         /** Load CIDRAM core L10N data. */
-        $this->loadL10N($this->Vault . 'l10n' . DIRECTORY_SEPARATOR . 'core' . DIRECTORY_SEPARATOR);
+        $this->loadL10N($this->Vault . 'l10n' . \DIRECTORY_SEPARATOR . 'core' . \DIRECTORY_SEPARATOR);
 
         $this->NumberFormatter = new \Maikuolan\Common\NumberFormatter($this->Configuration['general']['numbers']);
         $this->Demojibakefier = new \Maikuolan\Common\Demojibakefier();
@@ -626,7 +626,7 @@ class Core
                     $LastCIDR = "\n" . $Factors[127] . ' ';
                 }
             }
-            if (stripos($Files[$FileIndex], $NoCIDR) !== false) {
+            if (\stripos($Files[$FileIndex], $NoCIDR) !== false) {
                 $Files[$FileIndex] = \str_ireplace($NoCIDR, $LastCIDR, $Files[$FileIndex]);
             }
             if ($SigFormat === 'CSV') {
@@ -650,7 +650,7 @@ class Core
             for ($FactorIndex = 0; $FactorIndex < $Counts['Factors']; $FactorIndex++) {
                 $PosB = -1;
                 while (true) {
-                    $PosA = stripos($Files[$FileIndex], "\n" . $Factors[$FactorIndex] . ' ', ($PosB + 1));
+                    $PosA = \stripos($Files[$FileIndex], "\n" . $Factors[$FactorIndex] . ' ', ($PosB + 1));
                     if ($PosA === false) {
                         break;
                     }
@@ -732,7 +732,7 @@ class Core
                             require_once $this->Vault . $Signature;
                         } else {
                             $this->CIDRAM['ExtraErrorInfo'] = $Signature;
-                            \trigger_error($this->L10N->getString('response.Required files are missing'), E_USER_WARNING);
+                            \trigger_error($this->L10N->getString('response.Required files are missing'), \E_USER_WARNING);
                         }
                     }
                     if ($RunExitCode === 4) {
@@ -1105,10 +1105,10 @@ class Core
         )) {
             /** The IP address is IPv4. */
             $Lookup =
-                chr(\strlen($Octets[4])) . $Octets[4] .
-                chr(\strlen($Octets[3])) . $Octets[3] .
-                chr(\strlen($Octets[2])) . $Octets[2] .
-                chr(\strlen($Octets[1])) . $Octets[1] .
+                \chr(\strlen($Octets[4])) . $Octets[4] .
+                \chr(\strlen($Octets[3])) . $Octets[3] .
+                \chr(\strlen($Octets[2])) . $Octets[2] .
+                \chr(\strlen($Octets[1])) . $Octets[1] .
                 "\7in-addr\4arpa\0\0\x0c\0\1";
         } elseif (\strpos($Addr, '.') === false && \strpos($Addr, ':') !== false && $this->expandIpv6($Addr, true)) {
             /** The IP address is IPv6. */
@@ -1124,7 +1124,7 @@ class Core
                     $Lookup
                 );
             }
-            $Lookup = strrev(\preg_replace(['/:/', '/(.)/'], ['', "\\1\1"], $Lookup)) . "\3ip6\4arpa\0\0\x0c\0\1";
+            $Lookup = \strrev(\preg_replace(['/:/', '/(.)/'], ['', "\\1\1"], $Lookup)) . "\3ip6\4arpa\0\0\x0c\0\1";
         } else {
             /** The IP address is.. wrong. Let's exit the method. */
             return $Addr;
@@ -1142,7 +1142,7 @@ class Core
 
         /** Some safety mechanisms. */
         if (!isset($this->CIDRAM['_allow_url_fopen'])) {
-            $this->CIDRAM['_allow_url_fopen'] = ini_get('allow_url_fopen');
+            $this->CIDRAM['_allow_url_fopen'] = \ini_get('allow_url_fopen');
             $this->CIDRAM['_allow_url_fopen'] = !(!$this->CIDRAM['_allow_url_fopen'] || $this->CIDRAM['_allow_url_fopen'] === 'Off');
         }
         if (!$this->CIDRAM['Root'] || empty($Lookup) || !\function_exists('fsockopen') || !$this->CIDRAM['_allow_url_fopen']) {
@@ -1158,18 +1158,18 @@ class Core
         $DNS = \explode("\n", $this->Configuration['general']['default_dns']);
 
         /** UDP padding. */
-        $LeftPad = \str_pad(\rand(0, 99), 2, '0', STR_PAD_LEFT) . "\1\0\0\1\0\0\0\0\0\0";
+        $LeftPad = \str_pad(\rand(0, 99), 2, '0', \STR_PAD_LEFT) . "\1\0\0\1\0\0\0\0\0\0";
 
         /** Perform the lookup. */
         foreach ($DNS as $Server) {
             if (!empty($Response) || !$Server) {
                 break;
             }
-            $Handle = fsockopen('udp://' . $Server, 53);
+            $Handle = \fsockopen('udp://' . $Server, 53);
             if ($Handle !== false) {
                 \fwrite($Handle, $LeftPad . $Lookup);
-                stream_set_timeout($Handle, $Timeout);
-                stream_set_blocking($Handle, true);
+                \stream_set_timeout($Handle, $Timeout);
+                \stream_set_blocking($Handle, true);
                 $Response = \fread($Handle, 1024);
                 \fclose($Handle);
             }
@@ -1208,11 +1208,11 @@ class Core
      * Fallback for failed lookups.
      *
      * @param string $Addr The IP address to look up.
-     * @return string The results of gethostbyaddr(), or the IP address verbatim.
+     * @return string The results of \gethostbyaddr(), or the IP address verbatim.
      */
     public function dnsReverseFallback(string $Addr): string
     {
-        $this->CIDRAM['DnsReverses-' . $Addr] = ['Host' => \preg_replace('/[^:\da-z._~-]/i', '', gethostbyaddr($Addr)) ?: $Addr];
+        $this->CIDRAM['DnsReverses-' . $Addr] = ['Host' => \preg_replace('/[^:\da-z._~-]/i', '', \gethostbyaddr($Addr)) ?: $Addr];
         $this->Cache->setEntry('DnsReverses-' . $Addr, $this->CIDRAM['DnsReverses-' . $Addr], 21600);
         return $this->CIDRAM['DnsReverses-' . $Addr]['Host'];
     }
@@ -1261,7 +1261,7 @@ class Core
         }
         while ($PadLen > 0) {
             $PadLen--;
-            $URI .= str_shuffle(self::PAD_FOR_DNS)[0];
+            $URI .= \str_shuffle(self::PAD_FOR_DNS)[0];
         }
         $Results = \json_decode($this->Request->request($URI, [], $Timeout), true);
         if (empty($Results) || empty($Results['Answer'][0]['data'])) {
@@ -1340,7 +1340,6 @@ class Core
                     \preg_match('~, L\d+:F\d+,| Lookup~', $this->BlockInfo['WhyReason'])
                 ), $this->L10N->getString('why_single_hit_bypass'));
 
-                /** Exit. */
                 return;
             }
 
@@ -1378,7 +1377,6 @@ class Core
                     \preg_match('~, L\d+:F\d+,| Lookup~', $this->BlockInfo['WhyReason'])
                 ), $this->L10N->getString('why_single_hit_bypass'));
 
-                /** Exit. */
                 return;
             }
         }
@@ -1500,7 +1498,7 @@ class Core
         if ($this->Stage === 'Aux') {
             $this->BlockInfo['Signatures'] .= 'auxiliary.yml:' . $ReasonShort;
         } else {
-            $Debug = \debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT | DEBUG_BACKTRACE_IGNORE_ARGS, 1)[0];
+            $Debug = \debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT | \DEBUG_BACKTRACE_IGNORE_ARGS, 1)[0];
             $Source = basename($Debug['file']);
             $this->BlockInfo['Signatures'] .= $Source . ':L' . $Debug['line'];
         }
@@ -1551,7 +1549,7 @@ class Core
         if ($this->Stage === 'Aux') {
             $this->BlockInfo['Signatures'] .= 'auxiliary.yml:' . $ReasonShort;
         } else {
-            $Debug = \debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT | DEBUG_BACKTRACE_IGNORE_ARGS, 1)[0];
+            $Debug = \debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT | \DEBUG_BACKTRACE_IGNORE_ARGS, 1)[0];
             $Source = basename($Debug['file']);
             $this->BlockInfo['Signatures'] .= $Source . ':L' . $Debug['line'];
         }
@@ -1610,12 +1608,12 @@ class Core
         if (!\strlen($Salt)) {
             try {
                 for ($Index = 0; $Index < $Length; $Index++) {
-                    $Salt .= chr(\random_int(self::GENERATE_SALT_MIN_CHR, self::GENERATE_SALT_MAX_CHR));
+                    $Salt .= \chr(\random_int(self::GENERATE_SALT_MIN_CHR, self::GENERATE_SALT_MAX_CHR));
                 }
             } catch (\Exception $e) {
                 $Salt = '';
                 for ($Index = 0; $Index < $Length; $Index++) {
-                    $Salt .= chr(\rand(self::GENERATE_SALT_MIN_CHR, self::GENERATE_SALT_MAX_CHR));
+                    $Salt .= \chr(\rand(self::GENERATE_SALT_MIN_CHR, self::GENERATE_SALT_MAX_CHR));
                 }
             }
         }
@@ -1697,8 +1695,8 @@ class Core
 
         /** Teredo. */
         if ($Parts[0] === '2001' && empty($Parts[1])) {
-            $Parts = array_reverse($Parts);
-            $Bits = ($Parts[1] ?: '') . \str_pad(($Parts[0] ?: ''), 4, '0', STR_PAD_LEFT);
+            $Parts = \array_reverse($Parts);
+            $Bits = ($Parts[1] ?: '') . \str_pad(($Parts[0] ?: ''), 4, '0', \STR_PAD_LEFT);
             if (\preg_match('~[^\da-f]~i', $Bits)) {
                 return '';
             }
@@ -1871,10 +1869,10 @@ class Core
         $Path = $this->timeFormat($this->Now, $Path);
 
         /** We'll skip is_dir/mkdir calls if open_basedir is populated (to avoid PHP bug #69240). */
-        $Restrictions = \strlen(ini_get('open_basedir')) > 0;
+        $Restrictions = \strlen(\ini_get('open_basedir')) > 0;
 
         /** Split path into steps. */
-        $Steps = \preg_split('~[\\\\/]~', $Path, -1, PREG_SPLIT_NO_EMPTY);
+        $Steps = \preg_split('~[\\\\/]~', $Path, -1, \PREG_SPLIT_NO_EMPTY);
 
         /** Separate file from path. */
         $File = $PointsToFile ? \array_pop($Steps) : '';
@@ -1882,9 +1880,9 @@ class Core
         /** Build directories. */
         foreach ($Steps as $Step) {
             if (!isset($Rebuilt)) {
-                $Rebuilt = \preg_match('~^[\\\\/]~', $Path) ? DIRECTORY_SEPARATOR . $Step : $Step;
+                $Rebuilt = \preg_match('~^[\\\\/]~', $Path) ? \DIRECTORY_SEPARATOR . $Step : $Step;
             } else {
-                $Rebuilt .= DIRECTORY_SEPARATOR . $Step;
+                $Rebuilt .= \DIRECTORY_SEPARATOR . $Step;
             }
             if (\preg_match('~^\.+$~', $Step)) {
                 continue;
@@ -1906,7 +1904,7 @@ class Core
 
         /** Append file. */
         if ($File) {
-            $Rebuilt .= ($Rebuilt ? DIRECTORY_SEPARATOR : '') . $File;
+            $Rebuilt .= ($Rebuilt ? \DIRECTORY_SEPARATOR : '') . $File;
         }
 
         /** Return the final rebuilt path. */
@@ -2045,7 +2043,7 @@ class Core
         $Count = \count($Arr);
         $Err = 0;
         if ($Count > $Limit) {
-            \asort($Arr, SORT_NUMERIC);
+            \asort($Arr, \SORT_NUMERIC);
             $StageRestore = $this->Stage ?? '';
             $this->Stage = '';
             foreach ($Arr as $Item => $Modified) {
@@ -2147,7 +2145,7 @@ class Core
             $Criteria = [$Criteria];
         }
 
-        $ActualType = gettype($Actual);
+        $ActualType = \gettype($Actual);
 
         /** Iterate conditions. */
         foreach ($Criteria as $TestCase) {
@@ -2194,7 +2192,7 @@ class Core
 
             /** Perform a match using direct string comparison. */
             if ($Operator === '≠' || $Operator === '=') {
-                if ($ActualType !== gettype($TestCase)) {
+                if ($ActualType !== \gettype($TestCase)) {
                     if ($ActualType === 'integer') {
                         $TestCase = (int)\preg_replace('~^\D*~', '', $TestCase);
                     } elseif ($ActualType === 'double') {
@@ -2322,7 +2320,7 @@ class Core
             } elseif (!$this->isReserved($Run) && \is_readable($this->Vault . $Run)) {
                 require_once $this->Vault . $Run;
             } else {
-                \trigger_error($this->L10N->getString('response.Required files are missing'), E_USER_WARNING);
+                \trigger_error($this->L10N->getString('response.Required files are missing'), \E_USER_WARNING);
             }
         }
 
@@ -2373,7 +2371,6 @@ class Core
             $this->addProfileEntry($Name);
         }
 
-        /** Exit. */
         return false;
     }
 
@@ -2384,7 +2381,6 @@ class Core
      */
     public function aux(): void
     {
-        /** Exit procedure early if the rules don't exist. */
         if (!\file_exists($this->Vault . 'auxiliary.yml')) {
             return;
         }
@@ -2924,7 +2920,7 @@ class Core
             $this->CIDRAM['Errors'][] = [$errno, $errstr, $errfile, $errline, $ExtraErrorInfo];
             $this->CIDRAM['ExtraErrorInfo'] = '';
             if ($this->Events->assigned('error')) {
-                $this->Events->fireEvent('error', serialize([$errno, $errstr, $errfile, $errline]));
+                $this->Events->fireEvent('error', \serialize([$errno, $errstr, $errfile, $errline]));
             }
             return true;
         });
@@ -3000,7 +2996,7 @@ class Core
         foreach (\explode(';', $Entries) as $Profile) {
             $this->Profiles[] = $Profile;
         }
-        \sort($this->Profiles, SORT_STRING);
+        \sort($this->Profiles, \SORT_STRING);
         $this->Profiles = \array_unique($this->Profiles);
     }
 
@@ -3345,7 +3341,6 @@ class Core
                     \preg_match('~, L\d+:F\d+,| Lookup~', $this->BlockInfo['WhyReason'])
                 ), $this->L10N->getString('why_single_hit_bypass'));
 
-                /** Exit. */
                 return;
             }
         }

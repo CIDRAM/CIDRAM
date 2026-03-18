@@ -10,7 +10,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Tor blocker module (last modified: 2024.06.11).
+ * This file: Tor blocker module (last modified: 2026.03.18).
  *
  * False positive risk (an approximate, rough estimate only): « [x]Low [ ]Medium [ ]High »
  */
@@ -28,19 +28,19 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     }
 
     /** Don't waste time by looking up invalid, private, or reserved ranges. */
-    if (filter_var($this->BlockInfo['IPAddr'], FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE) === false) {
+    if (filter_var($this->BlockInfo['IPAddr'], \FILTER_VALIDATE_IP, \FILTER_FLAG_NO_PRIV_RANGE | \FILTER_FLAG_NO_RES_RANGE) === false) {
         return;
     }
 
     $IsTor = false;
-    if (strpos($this->BlockInfo['IPAddr'], ':') !== false) {
-        $Packed = unpack('H*hex', inet_pton($this->BlockInfo['IPAddr']));
-        $LookupName = implode('.', array_reverse(str_split($Packed['hex']))) . '.torexit.dan.me.uk';
+    if (\strpos($this->BlockInfo['IPAddr'], ':') !== false) {
+        $Packed = unpack('H*hex', \inet_pton($this->BlockInfo['IPAddr']));
+        $LookupName = \implode('.', \array_reverse(str_split($Packed['hex']))) . '.torexit.dan.me.uk';
         if (!isset($this->CIDRAM['Tor-' . $LookupName])) {
             if (($Try = $this->Cache->getEntry('Tor-' . $LookupName)) !== false) {
                 $this->CIDRAM['Tor-' . $LookupName] = $Try;
             } else {
-                $this->CIDRAM['Tor-' . $LookupName] = gethostbyname($LookupName);
+                $this->CIDRAM['Tor-' . $LookupName] = \gethostbyname($LookupName);
                 $this->Cache->setEntry('Tor-' . $LookupName, $this->CIDRAM['Tor-' . $LookupName], 21600);
             }
         }
@@ -53,13 +53,13 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         )) {
             $IsTor = true;
         }
-    } elseif (strpos($this->BlockInfo['IPAddr'], '.') !== false) {
-        $LookupName = implode('.', array_reverse(explode('.', $this->BlockInfo['IPAddr']))) . '.torexit.dan.me.uk';
+    } elseif (\strpos($this->BlockInfo['IPAddr'], '.') !== false) {
+        $LookupName = \implode('.', \array_reverse(\explode('.', $this->BlockInfo['IPAddr']))) . '.torexit.dan.me.uk';
         if (!isset($this->CIDRAM['Tor-' . $LookupName])) {
             if (($Try = $this->Cache->getEntry('Tor-' . $LookupName)) !== false) {
                 $this->CIDRAM['Tor-' . $LookupName] = $Try;
             } else {
-                $this->CIDRAM['Tor-' . $LookupName] = gethostbyname($LookupName);
+                $this->CIDRAM['Tor-' . $LookupName] = \gethostbyname($LookupName);
                 $this->Cache->setEntry('Tor-' . $LookupName, $this->CIDRAM['Tor-' . $LookupName], 21600);
             }
         }
@@ -81,7 +81,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         }
 
         if ($this->trigger(
-            preg_match('%(?i)^(?:tor(?:\d?\.|[-_]?(?:exit|node|cloud|[a-z]{3}\.))|.*\.(?:gtor|tor[-]?(?:relays|servers|proxy))\.|exit\d*\.tor)%', $this->CIDRAM['Hostname']),
+            \preg_match('%(?i)^(?:tor(?:\d?\.|[-_]?(?:exit|node|cloud|[a-z]{3}\.))|.*\.(?:gtor|tor[-]?(?:relays|servers|proxy))\.|exit\d*\.tor)%', $this->CIDRAM['Hostname']),
             'Looks like Tor exit node',
             $this->L10N->getString('why_tor_project_exit_node')
         )) {
@@ -94,7 +94,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         $this->addProfileEntry('Tor endpoints here');
 
         /** Fetch options. */
-        $this->enactOptions('', array_flip(explode("\n", $this->Configuration['tor']['options'])));
+        $this->enactOptions('', \array_flip(\explode("\n", $this->Configuration['tor']['options'])));
     }
 };
 

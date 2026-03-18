@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The file manager page (last modified: 2025.09.22).
+ * This file: The file manager page (last modified: 2026.03.18).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -25,12 +25,12 @@ if (empty($this->CIDRAM['QueryVars']['show'])) {
     $this->FE['ChartJSPath'] = '';
     $DoughnutFile = '';
 } else {
-    $this->FE['ChartJSPath'] = file_exists($this->AssetsPath . 'frontend/chart.min.js') ? '?cidram-asset=chart.min.js' : '';
+    $this->FE['ChartJSPath'] = \file_exists($this->AssetsPath . 'frontend/chart.min.js') ? '?cidram-asset=chart.min.js' : '';
     $DoughnutFile = $this->readFile($this->AssetsPath . 'frontend/_chartjs.html') ?: '<tr><td class="h4f" colspan="2"><div class="s">{DoughnutHTML}</div></td></tr>';
 }
 
 /** Set vault path for doughnut display. */
-$this->FE['VaultPath'] = str_replace('\\', '/', $this->Vault) . '*';
+$this->FE['VaultPath'] = \str_replace('\\', '/', $this->Vault) . '*';
 
 /** Prepare components metadata working array. */
 $this->Components = ['Files' => [], 'Components' => [], 'ComponentFiles' => [], 'Names' => []];
@@ -58,7 +58,7 @@ foreach ($this->Components['Components'] as $ComponentName => $ComponentData) {
         }
     }
 
-    if (isset($ComponentData['Files']) && is_array($ComponentData['Files'])) {
+    if (isset($ComponentData['Files']) && \is_array($ComponentData['Files'])) {
         foreach ($ComponentData['Files'] as $ThisFile => $FileData) {
             $ThisFile = $this->canonical($ThisFile);
             $this->Components['Files'][$ThisFile] = $ComponentData['Name'] ?: $ComponentName;
@@ -82,13 +82,13 @@ if (isset($_POST['do'], $_FILES['upload-file']['name']) && $_POST['do'] === 'upl
         basename($_FILES['upload-file']['name']) === $_FILES['upload-file']['name'] &&
         $this->pathSecurityCheck($_FILES['upload-file']['name']) &&
         isset($_FILES['upload-file']['tmp_name'], $_FILES['upload-file']['error']) &&
-        $_FILES['upload-file']['error'] === UPLOAD_ERR_OK &&
+        $_FILES['upload-file']['error'] === \UPLOAD_ERR_OK &&
         is_uploaded_file($_FILES['upload-file']['tmp_name']) &&
         !is_link($this->Vault . $_FILES['upload-file']['name'])
     );
 
     /** If the filename already exists, delete the old file before moving the new file. */
-    if ($SafeToContinue && is_readable($this->Vault . $_FILES['upload-file']['name'])) {
+    if ($SafeToContinue && \is_readable($this->Vault . $_FILES['upload-file']['name'])) {
         if (is_dir($this->Vault . $_FILES['upload-file']['name'])) {
             if ($this->isDirEmpty($this->Vault . $_FILES['upload-file']['name'])) {
                 rmdir($this->Vault . $_FILES['upload-file']['name']);
@@ -113,7 +113,7 @@ if (isset($_POST['do'], $_FILES['upload-file']['name']) && $_POST['do'] === 'upl
     } else {
         $this->FE['state_msg'] = $this->L10N->getString('response.Failed to upload');
     }
-} elseif (isset($FMData['filename'], $_POST['do']) && is_readable($this->Vault . $FMData['filename']) && $this->pathSecurityCheck($FMData['filename'])) {
+} elseif (isset($FMData['filename'], $_POST['do']) && \is_readable($this->Vault . $FMData['filename']) && $this->pathSecurityCheck($FMData['filename'])) {
     /** Delete a file. */
     if ($_POST['do'] === 'delete-file') {
         if (is_dir($this->Vault . $FMData['filename'])) {
@@ -148,8 +148,8 @@ if (isset($_POST['do'], $_FILES['upload-file']['name']) && $_POST['do'] === 'upl
             /** If the destination already exists, delete it before renaming the new file. */
             if (
                 $SafeToContinue &&
-                file_exists($this->Vault . $FMData['filename_new']) &&
-                is_readable($this->Vault . $FMData['filename_new'])
+                \file_exists($this->Vault . $FMData['filename_new']) &&
+                \is_readable($this->Vault . $FMData['filename_new'])
             ) {
                 if (is_dir($this->Vault . $FMData['filename_new'])) {
                     if (
@@ -199,15 +199,15 @@ if (isset($_POST['do'], $_FILES['upload-file']['name']) && $_POST['do'] === 'upl
     /** Edit a file. */
     if ($_POST['do'] === 'edit-file') {
         if (isset($FMData['content'])) {
-            $FMData['content'] = str_replace("\r", '', $FMData['content']);
+            $FMData['content'] = \str_replace("\r", '', $FMData['content']);
             $this->CIDRAM['OldData'] = $this->readFile($this->Vault . $FMData['filename']);
-            if (strpos($this->CIDRAM['OldData'], "\r\n") !== false && strpos($this->CIDRAM['OldData'], "\n\n") === false) {
-                $FMData['content'] = str_replace("\n", "\r\n", $FMData['content']);
+            if (\strpos($this->CIDRAM['OldData'], "\r\n") !== false && \strpos($this->CIDRAM['OldData'], "\n\n") === false) {
+                $FMData['content'] = \str_replace("\n", "\r\n", $FMData['content']);
             }
 
-            $Handle = fopen($this->Vault . $FMData['filename'], 'wb');
-            fwrite($Handle, $FMData['content']);
-            fclose($Handle);
+            $Handle = \fopen($this->Vault . $FMData['filename'], 'wb');
+            \fwrite($Handle, $FMData['content']);
+            \fclose($Handle);
 
             $this->FE['state_msg'] = $this->L10N->getString('response.File successfully modified');
         } else {
@@ -220,7 +220,7 @@ if (isset($_POST['do'], $_FILES['upload-file']['name']) && $_POST['do'] === 'upl
                 if ($this->FE['state_msg'] !== '') {
                     $this->FE['state_msg'] .= '<br />';
                 }
-                $this->FE['state_msg'] = sprintf($this->L10N->getString('warning.Likely to be overwritten'), $this->Components['Files'][$FMData['filename']]);
+                $this->FE['state_msg'] = \sprintf($this->L10N->getString('warning.Likely to be overwritten'), $this->Components['Files'][$FMData['filename']]);
             }
 
             /** File corruption warning. */
@@ -232,10 +232,10 @@ if (isset($_POST['do'], $_FILES['upload-file']['name']) && $_POST['do'] === 'upl
             }
 
             /** Ensure safe for textarea display. */
-            $this->FE['content'] = htmlentities($this->FE['content']);
+            $this->FE['content'] = \htmlentities($this->FE['content']);
 
             /** PHP file warning. */
-            if (preg_match('~\.php$~i', $FMData['filename'])) {
+            if (\preg_match('~\.php$~i', $FMData['filename'])) {
                 $this->FE['JS'] .= "\nfunction wfp(d){};";
                 if ($this->FE['state_msg'] !== '') {
                     $this->FE['state_msg'] .= '<br />';
@@ -290,7 +290,7 @@ if (!$DoughnutFile) {
     $this->FE['Doughnut'] = '';
 } else {
     /** Sort doughnut values. */
-    arsort($this->Components['Components']);
+    \arsort($this->Components['Components']);
 
     /** Initialise doughnut values. */
     $this->FE['DoughnutValues'] = [];
@@ -311,22 +311,22 @@ if (!$DoughnutFile) {
         $Listed = '';
         if (!empty($this->Components['ComponentFiles'][$ComponentName])) {
             $ThisComponentFiles = &$this->Components['ComponentFiles'][$ComponentName];
-            arsort($ThisComponentFiles);
+            \arsort($ThisComponentFiles);
             $Listed .= '<ul class="comSub">';
             foreach ($ThisComponentFiles as $ThisFile => $ThisFileSize) {
                 $this->formatFileSize($ThisFileSize);
-                $Listed .= sprintf('<li><span class="txtBl" style="font-size:0.9em">%s – %s</span></li>', $ThisFile, $ThisFileSize);
+                $Listed .= \sprintf('<li><span class="txtBl" style="font-size:0.9em">%s – %s</span></li>', $ThisFile, $ThisFileSize);
             }
             $Listed .= '</ul>';
         }
         $ComponentName .= ' – ' . $ComponentSize;
         $this->FE['DoughnutValues'][] = $ComponentData;
         $this->FE['DoughnutLabels'][] = $ComponentName;
-        if (strlen($this->FE['ChartJSPath'])) {
+        if (\strlen($this->FE['ChartJSPath'])) {
             $ThisColour = $this->rgb($ComponentName);
-            $RGB = implode(',', $ThisColour['Values']);
+            $RGB = \implode(',', $ThisColour['Values']);
             $this->FE['DoughnutColours'][] = '#' . $ThisColour['Hash'];
-            $this->FE['DoughnutHTML'] .= sprintf(
+            $this->FE['DoughnutHTML'] .= \sprintf(
                 '<li style="background:linear-gradient(90deg,rgba(%1$s,%5$s),rgba(%1$s,%6$s));color:#%2$s"><span class="comCat"><span class="txtBl">%3$s</span></span>%4$s</li>',
                 $RGB,
                 $ThisColour['Hash'],
@@ -336,7 +336,7 @@ if (!$DoughnutFile) {
                 $this->FE['FE_Align'] === 'left' ? '0' : '.3'
             ) . "\n";
         } else {
-            $this->FE['DoughnutHTML'] .= sprintf('<li><span class="comCat">%1$s</span>%2$s</li>', $ComponentName, $Listed) . "\n";
+            $this->FE['DoughnutHTML'] .= \sprintf('<li><span class="comCat">%1$s</span>%2$s</li>', $ComponentName, $Listed) . "\n";
         }
     }
 
@@ -344,31 +344,31 @@ if (!$DoughnutFile) {
     $this->FE['DoughnutHTML'] .= '</ul>' . $this->CIDRAM['MenuToggle'];
 
     /** Finalise doughnut values. */
-    $this->FE['DoughnutValues'] = '[' . implode(', ', $this->FE['DoughnutValues']) . ']';
+    $this->FE['DoughnutValues'] = '[' . \implode(', ', $this->FE['DoughnutValues']) . ']';
 
     /** Finalise doughnut labels. */
-    $this->FE['DoughnutLabels'] = '["' . implode('", "', $this->FE['DoughnutLabels']) . '"]';
+    $this->FE['DoughnutLabels'] = '["' . \implode('", "', $this->FE['DoughnutLabels']) . '"]';
 
     /** Finalise doughnut colours. */
-    $this->FE['DoughnutColours'] = '["' . implode('", "', $this->FE['DoughnutColours']) . '"]';
+    $this->FE['DoughnutColours'] = '["' . \implode('", "', $this->FE['DoughnutColours']) . '"]';
 
     /** Finalise doughnut. */
     $this->FE['Doughnut'] = $this->parseVars($this->FE, $DoughnutFile, true);
 }
 
 /** Process files data. */
-array_walk($Files, function ($ThisFile): void {
+\array_walk($Files, function ($ThisFile): void {
     $Base = '<option value="%s"%s>%s</option>';
     $ThisFile['ThisOptions'] = '';
     if (!$ThisFile['Directory'] || $this->isDirEmpty($this->Vault . $ThisFile['Filename'])) {
-        $ThisFile['ThisOptions'] .= sprintf($Base, 'delete-file', ' class="txtRd"', $this->L10N->getString('field.Delete'));
-        $ThisFile['ThisOptions'] .= sprintf($Base, 'rename-file', $ThisFile['Directory'] && !$ThisFile['CanEdit'] ? ' selected' : '', $this->L10N->getString('field.Rename'));
+        $ThisFile['ThisOptions'] .= \sprintf($Base, 'delete-file', ' class="txtRd"', $this->L10N->getString('field.Delete'));
+        $ThisFile['ThisOptions'] .= \sprintf($Base, 'rename-file', $ThisFile['Directory'] && !$ThisFile['CanEdit'] ? ' selected' : '', $this->L10N->getString('field.Rename'));
     }
     if ($ThisFile['CanEdit']) {
-        $ThisFile['ThisOptions'] .= sprintf($Base, 'edit-file', ' selected', $this->L10N->getString('field.Edit'));
+        $ThisFile['ThisOptions'] .= \sprintf($Base, 'edit-file', ' selected', $this->L10N->getString('field.Edit'));
     }
     if (!$ThisFile['Directory']) {
-        $ThisFile['ThisOptions'] .= sprintf($Base, 'download-file', $ThisFile['CanEdit'] ? '' : ' selected', $this->L10N->getString('field.Download'));
+        $ThisFile['ThisOptions'] .= \sprintf($Base, 'download-file', $ThisFile['CanEdit'] ? '' : ' selected', $this->L10N->getString('field.Download'));
     }
     if ($ThisFile['ThisOptions']) {
         $ThisFile['ThisOptions'] =

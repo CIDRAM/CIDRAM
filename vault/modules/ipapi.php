@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: IP-API module (last modified: 2025.07.27).
+ * This file: IP-API module (last modified: 2026.03.18).
  *
  * False positive risk (an approximate, rough estimate only): « [x]Low [ ]Medium [ ]High »
  */
@@ -20,10 +20,10 @@ if (!isset($this->CIDRAM['ModuleResCache'])) {
 
 /** Initialise ip-api module information. */
 $this->CIDRAM['IPAPIConfig'] = [
-    'blocked_asns' => array_flip(preg_split('~[\s,]~', $this->Configuration['ipapi']['blocked_asns'], -1, PREG_SPLIT_NO_EMPTY)),
-    'whitelisted_asns' => array_flip(preg_split('~[\s,]~', $this->Configuration['ipapi']['whitelisted_asns'], -1, PREG_SPLIT_NO_EMPTY)),
-    'blocked_ccs' => array_flip(preg_split('~[\s,]~', $this->Configuration['ipapi']['blocked_ccs'], -1, PREG_SPLIT_NO_EMPTY)),
-    'whitelisted_ccs' => array_flip(preg_split('~[\s,]~', $this->Configuration['ipapi']['whitelisted_ccs'], -1, PREG_SPLIT_NO_EMPTY))
+    'blocked_asns' => \array_flip(\preg_split('~[\s,]~', $this->Configuration['ipapi']['blocked_asns'], -1, \PREG_SPLIT_NO_EMPTY)),
+    'whitelisted_asns' => \array_flip(\preg_split('~[\s,]~', $this->Configuration['ipapi']['whitelisted_asns'], -1, \PREG_SPLIT_NO_EMPTY)),
+    'blocked_ccs' => \array_flip(\preg_split('~[\s,]~', $this->Configuration['ipapi']['blocked_ccs'], -1, \PREG_SPLIT_NO_EMPTY)),
+    'whitelisted_ccs' => \array_flip(\preg_split('~[\s,]~', $this->Configuration['ipapi']['whitelisted_ccs'], -1, \PREG_SPLIT_NO_EMPTY))
 ];
 
 /** Defining as closure for later recall (no params; no return value). */
@@ -48,18 +48,18 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
      */
     if (
         $this->CIDRAM['IPAPI-429'] ||
-        filter_var($this->BlockInfo['IPAddr'], FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE) === false
+        filter_var($this->BlockInfo['IPAddr'], \FILTER_VALIDATE_IP, \FILTER_FLAG_NO_PRIV_RANGE | \FILTER_FLAG_NO_RES_RANGE) === false
     ) {
         return;
     }
 
-    $BlockLookup = ($this->Configuration['ipapi']['lookup_strategy'] !== 1 && !$this->isSensitive(preg_replace('/\s/', '', strtolower($this->BlockInfo['rURI']))));
+    $BlockLookup = ($this->Configuration['ipapi']['lookup_strategy'] !== 1 && !$this->isSensitive(\preg_replace('/\s/', '', \strtolower($this->BlockInfo['rURI']))));
 
     /** Expand factors for this origin. */
     $Expanded = [$this->expandIpv4($this->BlockInfo['IPAddr']), $this->expandIpv6($this->BlockInfo['IPAddr'])];
-    if (is_array($Expanded[0]) && count($Expanded[0]) === 32) {
+    if (\is_array($Expanded[0]) && \count($Expanded[0]) === 32) {
         $ToCheck = $Expanded[0][23];
-    } elseif (is_array($Expanded[1]) && count($Expanded[1]) === 128) {
+    } elseif (\is_array($Expanded[1]) && \count($Expanded[1]) === 128) {
         $ToCheck = $Expanded[1][47];
     }
 
@@ -87,19 +87,19 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             return;
         }
 
-        $Lookup = (substr($Lookup, 0, 21) === '{"status":"success","' && substr($Lookup, -1) === '}') ? json_decode($Lookup, true) : false;
+        $Lookup = (\substr($Lookup, 0, 21) === '{"status":"success","' && \substr($Lookup, -1) === '}') ? \json_decode($Lookup, true) : false;
         $CC = 'XX';
         $ASN = 0;
         $Profiles = [];
 
-        if (is_array($Lookup)) {
+        if (\is_array($Lookup)) {
             if (isset($Lookup['countryCode'])) {
                 $CC = $Lookup['countryCode'];
             }
-            if (isset($Lookup['as']) && substr($Lookup['as'], 0, 2) === 'AS') {
-                $ASN = substr($Lookup['as'], 2);
-                if (($SPos = strpos($ASN, ' ')) !== false) {
-                    $ASN = substr($ASN, 0, $SPos);
+            if (isset($Lookup['as']) && \substr($Lookup['as'], 0, 2) === 'AS') {
+                $ASN = \substr($Lookup['as'], 2);
+                if (($SPos = \strpos($ASN, ' ')) !== false) {
+                    $ASN = \substr($ASN, 0, $SPos);
                 }
                 $ASN = (int)$ASN;
             }
@@ -141,7 +141,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             if (!empty($this->BlockInfo['WhyReason'])) {
                 $this->BlockInfo['WhyReason'] .= ', ';
             }
-            $this->BlockInfo['WhyReason'] .= sprintf(
+            $this->BlockInfo['WhyReason'] .= \sprintf(
                 '%s (IP-API, "%d")',
                 $this->L10N->getString('Short.Generic'),
                 $this->CIDRAM['IPAPI-' . $ToCheck]['ASN']
@@ -170,14 +170,14 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
         /** Origin is blocked. */
         if (isset($this->CIDRAM['IPAPIConfig']['blocked_ccs'][$this->CIDRAM['IPAPI-' . $ToCheck]['CC']])) {
-            $this->BlockInfo['ReasonMessage'] = sprintf(
+            $this->BlockInfo['ReasonMessage'] = \sprintf(
                 $this->L10N->getString('why_no_access_allowed_from'),
                 $this->CIDRAM['IPAPI-' . $ToCheck]['CC']
             );
             if (!empty($this->BlockInfo['WhyReason'])) {
                 $this->BlockInfo['WhyReason'] .= ', ';
             }
-            $this->BlockInfo['WhyReason'] .= sprintf('CC (IP-API, "%s")', $this->CIDRAM['IPAPI-' . $ToCheck]['CC']);
+            $this->BlockInfo['WhyReason'] .= \sprintf('CC (IP-API, "%s")', $this->CIDRAM['IPAPI-' . $ToCheck]['CC']);
             if (!empty($this->BlockInfo['Signatures'])) {
                 $this->BlockInfo['Signatures'] .= ', ';
             }
@@ -196,7 +196,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
     /** Fetch options. */
     if ($DoOpt) {
-        $this->enactOptions('', array_flip(explode("\n", $this->Configuration['ipapi']['options'])));
+        $this->enactOptions('', \array_flip(\explode("\n", $this->Configuration['ipapi']['options'])));
     }
 };
 

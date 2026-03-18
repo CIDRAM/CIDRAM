@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The statistics page (last modified: 2024.03.18).
+ * This file: The statistics page (last modified: 2026.03.18).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -64,7 +64,7 @@ foreach ([
         $this->FE[$TheseStats[1]] = 0;
     }
     $Try = $this->Cache->getEntry('Statistics-' . $TheseStats[0]);
-    if (!is_int($Try) || $Try < 1) {
+    if (!\is_int($Try) || $Try < 1) {
         $Try = (int)$Try;
     }
     $this->FE[$TheseStats[1]] += $Try;
@@ -87,8 +87,8 @@ foreach ($this->CIDRAM['AuxData'] as $AuxRuleName => $AuxRuleData) {
     if (empty($AuxRuleData['Track this rule'])) {
         continue;
     }
-    if (preg_match('~\\\\(\d+)~', $AuxRuleName)) {
-        $Try = $this->Cache->getAllEntriesWhere('~^Statistics-Aux-(' . preg_replace('~\\\\\\\\(\d+)~', '.*', preg_quote($AuxRuleName)). ')(?<!-Most-Recent)$~', '\1');
+    if (\preg_match('~\\\\(\d+)~', $AuxRuleName)) {
+        $Try = $this->Cache->getAllEntriesWhere('~^Statistics-Aux-(' . \preg_replace('~\\\\\\\\(\d+)~', '.*', preg_quote($AuxRuleName)). ')(?<!-Most-Recent)$~', '\1');
         foreach ($Try as $AuxRuleName => $EntryData) {
             $AuxRulesTracked[] = $AuxRuleName;
         }
@@ -99,12 +99,12 @@ foreach ($this->CIDRAM['AuxData'] as $AuxRuleName => $AuxRuleData) {
 }
 
 /** Process auxiliary rules statistics. */
-if (count($AuxRulesTracked) === 0) {
+if (\count($AuxRulesTracked) === 0) {
     $this->FE['AuxStats'] = '';
     $this->FE['AuxStatsForClipboard'] = '';
 } else {
     $AuxRulesTotal = 0;
-    $this->FE['AuxStats'] = sprintf(
+    $this->FE['AuxStats'] = \sprintf(
         "\n      <tr><td class=\"center h4f\" colspan=\"2\"><div class=\"s\">%s</div></td></tr>",
         $this->L10N->getString('label.aux.Auxiliary rules triggered')
     );
@@ -112,18 +112,18 @@ if (count($AuxRulesTracked) === 0) {
     $MostRecent = $this->L10N->getString('label.Most recent') . $this->L10N->getString('pair_separator');
     foreach ($AuxRulesTracked as $AuxRuleName) {
         $Try = $this->Cache->getEntry('Statistics-Aux-' . $AuxRuleName);
-        if (!is_int($Try) || $Try < 1) {
+        if (!\is_int($Try) || $Try < 1) {
             $Try = (int)$Try;
         }
         $AuxRulesTotal += $Try;
         $Date = $this->Cache->getEntry('Statistics-Aux-' . $AuxRuleName . '-Most-Recent');
-        if (!is_int($Date) || $Date < 1) {
+        if (!\is_int($Date) || $Date < 1) {
             $Date = (int)$Date;
         }
         $Date = $MostRecent . $this->timeFormat($Date, $this->Configuration['general']['time_format']) . ' (' . $this->relativeTime($Date) . ')';
-        $this->FE['AuxStats'] .= sprintf(
+        $this->FE['AuxStats'] .= \sprintf(
             "\n      <tr>\n        <td class=\"h3\"><div class=\"s\">%s</div></td>\n        <td class=\"h3f\"><div class=\"s canBreak\">%s%s</div></td>\n      </tr>",
-            str_replace(['<', '>'], ['&lt;', '&gt;'], $AuxRuleName),
+            \str_replace(['<', '>'], ['&lt;', '&gt;'], $AuxRuleName),
             $this->NumberFormatter->format($Try),
             $Try === 0 ? '' : '<br />' . $Date
         );
@@ -134,7 +134,7 @@ if (count($AuxRulesTracked) === 0) {
         $this->FE['AuxStatsForClipboard'] .= '\n';
     }
     $AuxRulesTotal = $this->NumberFormatter->format($AuxRulesTotal);
-    $this->FE['AuxStats'] .= sprintf(
+    $this->FE['AuxStats'] .= \sprintf(
         "\n      <tr>\n        <td class=\"h3\"><div class=\"s\">%s</div></td>\n        <td class=\"h3f\"><div class=\"s\">%s</div></td>\n      </tr>",
         $this->L10N->getString('label.Total'),
         $AuxRulesTotal
@@ -162,8 +162,8 @@ foreach ([
     } else {
         $this->FE[$TheseStats[1]] = 0;
         $Path = $this->pathFromComponentType($TheseStats[0]);
-        foreach (explode("\n", $this->Configuration['components'][$TheseStats[0]]) as $StatWorking) {
-            if (strlen($StatWorking) && is_readable($Path . $StatWorking)) {
+        foreach (\explode("\n", $this->Configuration['components'][$TheseStats[0]]) as $StatWorking) {
+            if (\strlen($StatWorking) && \is_readable($Path . $StatWorking)) {
                 $this->FE[$TheseStats[1]]++;
             }
         }

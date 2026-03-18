@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: BunnyCDN compatibility module (last modified: 2023.12.01).
+ * This file: BunnyCDN compatibility module (last modified: 2026.03.18).
  *
  * False positive risk (an approximate, rough estimate only): « [x]Low [ ]Medium [ ]High »
  */
@@ -35,14 +35,14 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     }
 
     /** Converts the raw data from the BunnyCDN API to an array. */
-    $IPList = (substr($this->CIDRAM['BunnyCDN'], 0, 1) === '<') ? array_filter(
-        explode('<>', preg_replace('~<[^<>]+>~', '<>', $this->CIDRAM['BunnyCDN']))
+    $IPList = (\substr($this->CIDRAM['BunnyCDN'], 0, 1) === '<') ? array_filter(
+        \explode('<>', \preg_replace('~<[^<>]+>~', '<>', $this->CIDRAM['BunnyCDN']))
     ) : (array_filter(
-        explode(',', preg_replace('~["\'\\[\\]]~', '', $this->CIDRAM['BunnyCDN']))
+        \explode(',', \preg_replace('~["\'\\[\\]]~', '', $this->CIDRAM['BunnyCDN']))
     ) ?: '');
 
     /** Execute configured action for positive matches against the BunnyCDN IP list. */
-    if (is_array($IPList) && in_array($this->BlockInfo['IPAddr'], $IPList, true)) {
+    if (\is_array($IPList) && \in_array($this->BlockInfo['IPAddr'], $IPList, true)) {
         /** Prevents search engine and social media verification. */
         $this->CIDRAM['SkipVerification'] = true;
 

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Project Honeypot module (last modified: 2025.07.27).
+ * This file: Project Honeypot module (last modified: 2026.03.18).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -19,7 +19,7 @@ if (!isset($this->CIDRAM['ModuleResCache'])) {
 }
 
 /** Project Honeypot type of visitor controls. */
-$this->CIDRAM['PHVC'] = array_flip(explode("\n", $this->Configuration['projecthoneypot']['type_of_visitor']));
+$this->CIDRAM['PHVC'] = \array_flip(\explode("\n", $this->Configuration['projecthoneypot']['type_of_visitor']));
 
 /** Defining as closure for later recall (no params; no return value). */
 $this->CIDRAM['ModuleResCache'][$Module] = function () {
@@ -41,7 +41,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
      * We can't perform lookups without an API key, so we should check for
      * that, too.
      */
-    if (!strlen($this->Configuration['projecthoneypot']['api_key'])) {
+    if (!\strlen($this->Configuration['projecthoneypot']['api_key'])) {
         return;
     }
 
@@ -49,7 +49,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
      * Normalised, lower-cased request URI; Used to determine whether the
      * module needs to do anything for the request.
      */
-    $LCURI = preg_replace('/\s/', '', strtolower($this->BlockInfo['rURI']));
+    $LCURI = \preg_replace('/\s/', '', \strtolower($this->BlockInfo['rURI']));
 
     /**
      * If the request isn't attempting to access a sensitive page (login,
@@ -72,7 +72,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     if (
         $this->CIDRAM['Project Honeypot-429'] ||
         !$this->honourLookup() ||
-        filter_var($this->BlockInfo['IPAddr'], FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE) === false
+        filter_var($this->BlockInfo['IPAddr'], \FILTER_VALIDATE_IP, \FILTER_FLAG_NO_PRIV_RANGE | \FILTER_FLAG_NO_RES_RANGE) === false
     ) {
         return;
     }
@@ -85,7 +85,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         $this->CIDRAM['Project Honeypot-' . $this->BlockInfo['IPAddr']] = $this->Cache->getEntry('Project Honeypot-' . $this->BlockInfo['IPAddr']);
         if ($this->CIDRAM['Project Honeypot-' . $this->BlockInfo['IPAddr']] === false) {
             /** Build the lookup query. */
-            $Lookup = preg_replace(
+            $Lookup = \preg_replace(
                 '~^(\d+)\.(\d+)\.(\d+)\.(\d+)$~',
                 $this->Configuration['projecthoneypot']['api_key'] . '.\4.\3.\2.\1.dnsbl.httpbl.org',
                 $this->BlockInfo['IPAddr']
@@ -106,8 +106,8 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
              *
              * @link https://www.projecthoneypot.org/httpbl_api.php
              */
-            if (preg_match('~^127\.\d+\.\d+\.\d+$~', $Data)) {
-                $Data = explode('.', $Data);
+            if (\preg_match('~^127\.\d+\.\d+\.\d+$~', $Data)) {
+                $Data = \explode('.', $Data);
                 $this->CIDRAM['Project Honeypot-' . $this->BlockInfo['IPAddr']] = [
                     'Days since last activity' => $Data[1],
                     'Threat score' => $Data[2],
@@ -180,13 +180,13 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             )
         ),
         'Project Honeypot Lookup',
-        $this->L10N->getString('ReasonMessage.Generic') . '<br />' . sprintf(
+        $this->L10N->getString('ReasonMessage.Generic') . '<br />' . \sprintf(
             $this->L10N->getString('request_removal'),
             'https://www.projecthoneypot.org/ip_' . $this->BlockInfo['IPAddr']
         )
     )) {
         /** Fetch options. */
-        $this->enactOptions('', array_flip(explode("\n", $this->Configuration['projecthoneypot']['options'])));
+        $this->enactOptions('', \array_flip(\explode("\n", $this->Configuration['projecthoneypot']['options'])));
     }
 };
 

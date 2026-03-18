@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2026.03.17).
+ * This file: Protect traits (last modified: 2026.03.18).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -700,7 +700,7 @@ trait Protect
                     );
 
                     /** Prepare event data. */
-                    $EventData = [[$Recipient], $this->L10N->getString('Trigger notification.Subject'), $Body, strip_tags($Body), ''];
+                    $EventData = [[$Recipient], $this->L10N->getString('Trigger notification.Subject'), $Body, \strip_tags($Body), ''];
 
                     if ($this->Configuration['general']['email_notification_when'] === 'Immediately') {
                         /** Send the email immediately. */

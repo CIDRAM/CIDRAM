@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The range tables page (last modified: 2023.12.29).
+ * This file: The range tables page (last modified: 2026.03.18).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -24,7 +24,7 @@ $this->initialPrepwork($this->L10N->getString('link.Range Tables'), $this->L10N-
 $this->FE['JS'] .= $this->numberJs() . "\n";
 
 /** Add flags CSS. */
-if ($this->FE['Flags'] = file_exists($this->AssetsPath . 'frontend/flags.css')) {
+if ($this->FE['Flags'] = \file_exists($this->AssetsPath . 'frontend/flags.css')) {
     $this->FE['OtherHead'] .= "\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"?cidram-page=flags\" />";
 }
 
@@ -36,23 +36,23 @@ $this->FE['Matrix-Data'] = '';
 
 /** Process signature files and fetch returned JavaScript stuff. */
 $this->FE['JSFOOT'] = $this->rangeTablesHandler(
-    array_unique(explode("\n", $this->Configuration['components']['ipv4'])),
-    array_unique(explode("\n", $this->Configuration['components']['ipv6']))
+    \array_unique(\explode("\n", $this->Configuration['components']['ipv4'])),
+    \array_unique(\explode("\n", $this->Configuration['components']['ipv6']))
 );
 
 /** Process matrix data. */
 if ($this->FE['Matrix-Data']) {
-    $this->FE['Matrix'] = sprintf(
+    $this->FE['Matrix'] = \sprintf(
         '<br /><table><tr><td class="spanner"><img src="data:image/png;base64,%s" alt="CIDRAM signature file analysis" /></td></tr></table>',
-        base64_encode($this->matrixCreate($this->FE['Matrix-Data']))
+        \base64_encode($this->matrixCreate($this->FE['Matrix-Data']))
     );
 } else {
     $this->FE['Matrix'] = '';
 }
 
 /** Calculate and append page load time, and append totals. */
-$this->FE['ProcTime'] = microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'];
-$this->FE['ProcTime'] = '<div class="s">' . sprintf(
+$this->FE['ProcTime'] = \microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'];
+$this->FE['ProcTime'] = '<div class="s">' . \sprintf(
     $this->L10N->getPlural($this->FE['ProcTime'], 'label.Page request completed in %s seconds'),
     '<span class="txtRd">' . $this->NumberFormatter->format($this->FE['ProcTime'], 3) . '</span>'
 ) . '</div>' . $this->FE['Matrix'];

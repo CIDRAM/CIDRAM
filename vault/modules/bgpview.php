@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: BGPView module (last modified: 2025.07.27).
+ * This file: BGPView module (last modified: 2026.03.18).
  *
  * False positive risk (an approximate, rough estimate only): « [x]Low [ ]Medium [ ]High »
  */
@@ -20,10 +20,10 @@ if (!isset($this->CIDRAM['ModuleResCache'])) {
 
 /** Initialise BGPView module information. */
 $this->CIDRAM['BGPConfig'] = [
-    'blocked_asns' => array_flip(preg_split('~[\s,]~', $this->Configuration['bgpview']['blocked_asns'], -1, PREG_SPLIT_NO_EMPTY)),
-    'whitelisted_asns' => array_flip(preg_split('~[\s,]~', $this->Configuration['bgpview']['whitelisted_asns'], -1, PREG_SPLIT_NO_EMPTY)),
-    'blocked_ccs' => array_flip(preg_split('~[\s,]~', $this->Configuration['bgpview']['blocked_ccs'], -1, PREG_SPLIT_NO_EMPTY)),
-    'whitelisted_ccs' => array_flip(preg_split('~[\s,]~', $this->Configuration['bgpview']['whitelisted_ccs'], -1, PREG_SPLIT_NO_EMPTY))
+    'blocked_asns' => \array_flip(\preg_split('~[\s,]~', $this->Configuration['bgpview']['blocked_asns'], -1, \PREG_SPLIT_NO_EMPTY)),
+    'whitelisted_asns' => \array_flip(\preg_split('~[\s,]~', $this->Configuration['bgpview']['whitelisted_asns'], -1, \PREG_SPLIT_NO_EMPTY)),
+    'blocked_ccs' => \array_flip(\preg_split('~[\s,]~', $this->Configuration['bgpview']['blocked_ccs'], -1, \PREG_SPLIT_NO_EMPTY)),
+    'whitelisted_ccs' => \array_flip(\preg_split('~[\s,]~', $this->Configuration['bgpview']['whitelisted_ccs'], -1, \PREG_SPLIT_NO_EMPTY))
 ];
 
 /** Defining as closure for later recall (no params; no return value). */
@@ -48,21 +48,21 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
      */
     if (
         $this->CIDRAM['BGPView-429'] ||
-        filter_var($this->BlockInfo['IPAddr'], FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE) === false
+        filter_var($this->BlockInfo['IPAddr'], \FILTER_VALIDATE_IP, \FILTER_FLAG_NO_PRIV_RANGE | \FILTER_FLAG_NO_RES_RANGE) === false
     ) {
         return;
     }
 
-    $BlockLookup = ($this->Configuration['bgpview']['lookup_strategy'] !== 1 && !$this->isSensitive(preg_replace('/\s/', '', strtolower($this->BlockInfo['rURI']))));
+    $BlockLookup = ($this->Configuration['bgpview']['lookup_strategy'] !== 1 && !$this->isSensitive(\preg_replace('/\s/', '', \strtolower($this->BlockInfo['rURI']))));
 
     /** Expand factors for this origin. */
     $Expanded = [$this->expandIpv4($this->BlockInfo['IPAddr']), $this->expandIpv6($this->BlockInfo['IPAddr'])];
     $ToCheck = [];
-    if (is_array($Expanded[0]) && count($Expanded[0]) === 32) {
-        $ToCheck[] = array_slice($Expanded[0], 23);
+    if (\is_array($Expanded[0]) && \count($Expanded[0]) === 32) {
+        $ToCheck[] = \array_slice($Expanded[0], 23);
     }
-    if (is_array($Expanded[1]) && count($Expanded[1]) === 128) {
-        $ToCheck[] = array_slice($Expanded[1], 47);
+    if (\is_array($Expanded[1]) && \count($Expanded[1]) === 128) {
+        $ToCheck[] = \array_slice($Expanded[1], 47);
     }
 
     /** Check whether we've already performed a lookup for this origin. */
@@ -95,23 +95,23 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         }
 
         $Lookup = (
-            substr($Lookup, 0, 63) === '{"status":"ok","status_message":"Query was successful","data":{' &&
-            substr($Lookup, -2) === '}}'
-        ) ? json_decode($Lookup, true) : false;
-        $Low = strpos($this->BlockInfo['IPAddr'], ':') !== false ? 128 : 32;
+            \substr($Lookup, 0, 63) === '{"status":"ok","status_message":"Query was successful","data":{' &&
+            \substr($Lookup, -2) === '}}'
+        ) ? \json_decode($Lookup, true) : false;
+        $Low = \strpos($this->BlockInfo['IPAddr'], ':') !== false ? 128 : 32;
         $this->Cache->setEntry('BGPView-' . $this->BlockInfo['IPAddr'] . '/' . $Low, ['ASN' => 0, 'CC' => 'XX'], $this->Configuration['bgpview']['expire_bad']->getAsSeconds());
 
         /** Lookup failed. */
-        if (!is_array($Lookup) || !isset($Lookup['data'])) {
+        if (!\is_array($Lookup) || !isset($Lookup['data'])) {
             return;
         }
 
         $TryForRir = (
             isset($Lookup['data']['rir_allocation']) &&
-            is_array($Lookup['data']['rir_allocation']) &&
+            \is_array($Lookup['data']['rir_allocation']) &&
             isset($Lookup['data']['rir_allocation']['prefix'])
         ) ? $Lookup['data']['rir_allocation']['prefix'] : '';
-        if (isset($Lookup['data']['prefixes']) && is_array($Lookup['data']['prefixes'])) {
+        if (isset($Lookup['data']['prefixes']) && \is_array($Lookup['data']['prefixes'])) {
             foreach ($Lookup['data']['prefixes'] as $Prefix) {
                 $Factor = $Prefix['prefix'] ?? '';
                 $ASN = $Prefix['asn']['asn'] ?? '';
@@ -134,7 +134,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
     /** Process lookup results for this origin and act as per configured. */
     foreach ($Expanded as $Factors) {
-        if (!is_array($Factors)) {
+        if (!\is_array($Factors)) {
             continue;
         }
         foreach ($Factors as $Factor) {
@@ -164,7 +164,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
                     if (!empty($this->BlockInfo['WhyReason'])) {
                         $this->BlockInfo['WhyReason'] .= ', ';
                     }
-                    $this->BlockInfo['WhyReason'] .= sprintf(
+                    $this->BlockInfo['WhyReason'] .= \sprintf(
                         '%s (BGPView, "%d")',
                         $this->L10N->getString('Short.Generic'),
                         $this->CIDRAM['BGPView-' . $Factor]['ASN']
@@ -194,14 +194,14 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
                 /** Origin is blocked. */
                 if (isset($this->CIDRAM['BGPConfig']['blocked_ccs'][$this->CIDRAM['BGPView-' . $Factor]['CC']])) {
-                    $this->BlockInfo['ReasonMessage'] = sprintf(
+                    $this->BlockInfo['ReasonMessage'] = \sprintf(
                         $this->L10N->getString('why_no_access_allowed_from'),
                         $this->CIDRAM['BGPView-' . $Factor]['CC']
                     );
                     if (!empty($this->BlockInfo['WhyReason'])) {
                         $this->BlockInfo['WhyReason'] .= ', ';
                     }
-                    $this->BlockInfo['WhyReason'] .= sprintf('CC (BGPView, "%s")', $this->CIDRAM['BGPView-' . $Factor]['CC']);
+                    $this->BlockInfo['WhyReason'] .= \sprintf('CC (BGPView, "%s")', $this->CIDRAM['BGPView-' . $Factor]['CC']);
                     if (!empty($this->BlockInfo['Signatures'])) {
                         $this->BlockInfo['Signatures'] .= ', ';
                     }
@@ -215,7 +215,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
     /** Fetch options. */
     if ($DoOpt) {
-        $this->enactOptions('', array_flip(explode("\n", $this->Configuration['bgpview']['options'])));
+        $this->enactOptions('', \array_flip(\explode("\n", $this->Configuration['bgpview']['options'])));
     }
 };
 

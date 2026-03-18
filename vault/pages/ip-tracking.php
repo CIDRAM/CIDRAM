@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The IP tracking page (last modified: 2025.09.26).
+ * This file: The IP tracking page (last modified: 2026.03.18).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -38,7 +38,7 @@ if (!$this->FE['ASYNC']) {
     $this->initialPrepwork($this->L10N->getString('link.IP Tracking'), $this->L10N->getString('tip.IP Tracking'));
 
     /** Add flags CSS. */
-    if ($this->FE['Flags'] = file_exists($this->AssetsPath . 'frontend/flags.css')) {
+    if ($this->FE['Flags'] = \file_exists($this->AssetsPath . 'frontend/flags.css')) {
         $this->FE['OtherHead'] .= "\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"?cidram-page=flags\" />";
     }
 
@@ -46,14 +46,14 @@ if (!$this->FE['ASYNC']) {
     $this->FE['TrackingRow'] = $this->readFile($this->getAssetPath('_ip_tracking_row.html'));
 
     $this->FE['ExtraSvgIcons'] = '';
-    if (isset($this->CIDRAM['Extra SVG Icons']) && is_array($this->CIDRAM['Extra SVG Icons'])) {
-        $Timestamp = date('Y-m-d\TH:i', $this->Now);
+    if (isset($this->CIDRAM['Extra SVG Icons']) && \is_array($this->CIDRAM['Extra SVG Icons'])) {
+        $Timestamp = \date('Y-m-d\TH:i', $this->Now);
         foreach ($this->CIDRAM['Extra SVG Icons'] as $ExtraSvgIcon) {
-            $this->FE['ExtraSvgIcons'] .= substr_count($ExtraSvgIcon, '%s') > 1 ? sprintf($ExtraSvgIcon, '{IPAddr}', $Timestamp) : sprintf($ExtraSvgIcon, '{IPAddr}');
+            $this->FE['ExtraSvgIcons'] .= \substr_count($ExtraSvgIcon, '%s') > 1 ? \sprintf($ExtraSvgIcon, '{IPAddr}', $Timestamp) : \sprintf($ExtraSvgIcon, '{IPAddr}');
         }
         unset($ExtraSvgIcon, $Timestamp);
     }
-    $this->FE['TrackingRow'] = str_replace('{ExtraSvgIcons}', $this->FE['ExtraSvgIcons'], $this->FE['TrackingRow']);
+    $this->FE['TrackingRow'] = \str_replace('{ExtraSvgIcons}', $this->FE['ExtraSvgIcons'], $this->FE['TrackingRow']);
 }
 
 /** Initialise variables. */
@@ -76,7 +76,7 @@ if (isset($_POST['IPAddr'])) {
         $this->FE['state_msg'] = $this->L10N->getString('response.Tracking cleared');
     } elseif ($this->Cache->deleteEntry('Tracking-' . $_POST['IPAddr'])) {
         $this->Cache->deleteEntry('Tracking-' . $_POST['IPAddr'] . '-MinimumTime');
-        $this->FE['state_msg'] = sprintf($this->L10N->getString('response.Removed %s from tracking'), $_POST['IPAddr']);
+        $this->FE['state_msg'] = \sprintf($this->L10N->getString('response.Removed %s from tracking'), $_POST['IPAddr']);
     }
 }
 
@@ -95,7 +95,7 @@ if (isset($_POST['addNewAddress'], $_POST['addNewInfractions'], $_POST['addNewEx
         }
         $this->Cache->setEntry('Tracking-' . $_POST['addNewAddress'], $_POST['addNewInfractions'], $TrackTime);
         $this->Cache->setEntry('Tracking-' . $_POST['addNewAddress'] . '-MinimumTime', $TrackTime, $TrackTime);
-        $this->FE['state_msg'] .= sprintf($this->L10N->getString('response.Added %s to tracking'), $_POST['addNewAddress']);
+        $this->FE['state_msg'] .= \sprintf($this->L10N->getString('response.Added %s to tracking'), $_POST['addNewAddress']);
     } else {
         $this->FE['state_msg'] .= $this->L10N->getString('Short.BadIP') . '!';
     }
@@ -105,14 +105,14 @@ if (!$this->FE['ASYNC']) {
     $ThisTracking = [];
 
     /** Initialise shorthand options. */
-    $this->Shorthand = array_flip(explode("\n", $this->Configuration['signatures']['shorthand']));
+    $this->Shorthand = \array_flip(\explode("\n", $this->Configuration['signatures']['shorthand']));
 
     /** Get all IP tracking entries. */
     $Entries = $this->Cache->getAllEntriesWhere('~^Tracking-(.+)(?<!-MinimumTime)$~', '\1', function ($A, $B): int {
-        if (!is_array($A) || !isset($A['Time'])) {
-            return is_array($B) && isset($B['Time']) ? -1 : 0;
+        if (!\is_array($A) || !isset($A['Time'])) {
+            return \is_array($B) && isset($B['Time']) ? -1 : 0;
         }
-        if (!is_array($B) || !isset($B['Time'])) {
+        if (!\is_array($B) || !isset($B['Time'])) {
             return 1;
         }
         if ($A['Time'] === $B['Time']) {
@@ -122,8 +122,8 @@ if (!$this->FE['ASYNC']) {
     });
 
     /** Count currently tracked IPs. */
-    $this->FE['TrackingCount'] = count($Entries);
-    $this->FE['TrackingCount'] = sprintf(
+    $this->FE['TrackingCount'] = \count($Entries);
+    $this->FE['TrackingCount'] = \sprintf(
         $this->L10N->getPlural($this->FE['TrackingCount'], 'state_tracking'),
         '<span class="txtRd">' . $this->NumberFormatter->format($this->FE['TrackingCount']) . '</span>'
     );
@@ -131,12 +131,12 @@ if (!$this->FE['ASYNC']) {
     /** Iterate through all addresses being currently tracked. */
     foreach ($Entries as $ThisTracking['IPAddr'] => $ThisTrackingArray) {
         /** Normalise in case of cache mechanism type which doesn't support returning expiries. */
-        if (!is_array($ThisTrackingArray)) {
+        if (!\is_array($ThisTrackingArray)) {
             $ThisTrackingArray = ['Time' => 0, 'Data' => $ThisTrackingArray];
         }
 
         /** Guard. */
-        if (!isset($ThisTrackingArray['Time'], $ThisTrackingArray['Data']) || !is_scalar($ThisTrackingArray['Time']) || !is_scalar($ThisTrackingArray['Data'])) {
+        if (!isset($ThisTrackingArray['Time'], $ThisTrackingArray['Data']) || !\is_scalar($ThisTrackingArray['Time']) || !\is_scalar($ThisTrackingArray['Data'])) {
             continue;
         }
 
@@ -154,10 +154,10 @@ if (!$this->FE['ASYNC']) {
         )) {
             continue;
         }
-        $ThisTracking['IPID'] = bin2hex($ThisTracking['IPAddr']);
+        $ThisTracking['IPID'] = \bin2hex($ThisTracking['IPAddr']);
 
         /** Set clearing option. */
-        $ThisTracking['Options'] = sprintf(
+        $ThisTracking['Options'] = \sprintf(
             '<input type="button" class="auto" onclick="javascript:{window[\'IPAddr\']=\'%s\';' .
             '$(\'POST\',\'\',[\'IPAddr\'],function(){w(\'stateMsg\',\'%s\')},function(e){w(\'stateMsg\',e);' .
             'hideid(\'%s\')},function(e){w(\'stateMsg\',e)})}" value="%s" />',
@@ -168,7 +168,7 @@ if (!$this->FE['ASYNC']) {
         );
 
         /** When the entry expires. */
-        if (!is_numeric($ThisTrackingArray['Time']) || $ThisTrackingArray['Time'] < 1) {
+        if (!\is_numeric($ThisTrackingArray['Time']) || $ThisTrackingArray['Time'] < 1) {
             $ThisTracking['Expiry'] = $this->L10N->getString('label.No data available');
         } else {
             $ThisTracking['Expiry'] = $this->timeFormat(
@@ -193,7 +193,7 @@ if (!$this->FE['ASYNC']) {
         }
         $ThisTracking['Status'] .= ' – ' . $this->NumberFormatter->format($ThisTrackingArray['Data'], 0);
         $ThisTracking['TrackingFilter'] = $this->FE['TrackingFilter'];
-        $ThisTracking['IPAddrLink'] = (!empty($this->FE['CachedLogsLink']) && strpos($this->FE['CachedLogsLink'], 'logfile=') !== false) ? sprintf(
+        $ThisTracking['IPAddrLink'] = (!empty($this->FE['CachedLogsLink']) && \strpos($this->FE['CachedLogsLink'], 'logfile=') !== false) ? \sprintf(
             '<a href="%s&search=%s">%s</a>',
             $this->FE['CachedLogsLink'],
             $this->preparePartForSearchLink($ThisTracking['IPAddr']),
@@ -201,16 +201,16 @@ if (!$this->FE['ASYNC']) {
         ) : $ThisTracking['IPAddr'];
         if (
             isset($this->BlockInfo['SignatureCount'], $this->BlockInfo['WhyReason']) &&
-            strlen($this->BlockInfo['WhyReason'])
+            \strlen($this->BlockInfo['WhyReason'])
         ) {
             $ThisTracking['Status'] .= '<hr /><em>' . $this->BlockInfo['WhyReason'] . '</em>';
             if (
                 $this->FE['Flags'] &&
-                preg_match_all('~\[([A-Z]{2})\]~', $ThisTracking['Status'], $ThisTracking['Matches']) &&
+                \preg_match_all('~\[([A-Z]{2})\]~', $ThisTracking['Status'], $ThisTracking['Matches']) &&
                 !empty($ThisTracking['Matches'][1])
             ) {
                 foreach ($ThisTracking['Matches'][1] as $ThisTracking['ThisMatch']) {
-                    $ThisTracking['Status'] = str_replace(
+                    $ThisTracking['Status'] = \str_replace(
                         '[' . $ThisTracking['ThisMatch'] . ']',
                         '<span class="flag ' . $ThisTracking['ThisMatch'] . '"><span></span></span>',
                         $ThisTracking['Status']
@@ -219,7 +219,7 @@ if (!$this->FE['ASYNC']) {
             }
             unset($ThisTracking['Matches'], $ThisTracking['ThisMatch']);
         }
-        $ThisTracking['ID'] = preg_replace('~[^\dA-Za-z]~', '_', $ThisTracking['IPAddr']);
+        $ThisTracking['ID'] = \preg_replace('~[^\dA-Za-z]~', '_', $ThisTracking['IPAddr']);
         $this->FE['TrackingData'] .= $this->parseVars($ThisTracking, $this->FE['TrackingRow'], true);
     }
     unset($ThisTrackingArray, $ThisTracking);
@@ -235,8 +235,8 @@ if ($this->FE['TrackingCount']) {
 }
 
 /** Calculate page load time (useful for debugging). */
-$this->FE['ProcessTime'] = microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'];
-$this->FE['TrackingCount'] .= sprintf(
+$this->FE['ProcessTime'] = \microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'];
+$this->FE['TrackingCount'] .= \sprintf(
     $this->L10N->getPlural($this->FE['ProcessTime'], 'label.Page request completed in %s seconds'),
     '<span class="txtRd">' . $this->NumberFormatter->format($this->FE['ProcessTime'], 3) . '</span>'
 );

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: AbuseIPDB event handlers (last modified: 2024.09.15).
+ * This file: AbuseIPDB event handlers (last modified: 2026.03.18).
  */
 
 /**
@@ -31,11 +31,11 @@ $this->Events->addHandler('reporterFinished', function (): void {
     $Keep = '';
     $Try = [];
     $Count = 0;
-    foreach (explode('||', $this->CIDRAM['AbuseIPDB-Report Queue']) as $Line) {
+    foreach (\explode('||', $this->CIDRAM['AbuseIPDB-Report Queue']) as $Line) {
         if ($Line === '') {
             continue;
         }
-        $Entry = explode('|', $Line, 4);
+        $Entry = \explode('|', $Line, 4);
         if (count($Entry) !== 4) {
             continue;
         }
@@ -76,7 +76,7 @@ $this->Events->addHandler('reporterFinished', function (): void {
     }
     $OK = false;
     $TryBulk = false;
-    if ($Count > 4 && class_exists('\CURLStringFile')) {
+    if ($Count > 4 && \class_exists('\CURLStringFile')) {
         if (!isset($this->CIDRAM['AbuseIPDB-Daily Bulk Quota'])) {
             $this->CIDRAM['AbuseIPDB-Daily Bulk Quota'] = $this->Cache->getEntry('AbuseIPDB-Daily Bulk Quota');
         }
@@ -88,14 +88,14 @@ $this->Events->addHandler('reporterFinished', function (): void {
         $this->Cache->incEntry('AbuseIPDB-Daily Bulk Quota', 1, 86400);
         $Bulk = "IP,Categories,ReportDate,Comment\n";
         foreach ($Try as $Entry) {
-            $Bulk .= $Entry[1] . ',"' . $Entry[2] . '",' . date('c', $Entry[0]) . ',"' . $Entry[3] . "\"\n";
+            $Bulk .= $Entry[1] . ',"' . $Entry[2] . '",' . \date('c', $Entry[0]) . ',"' . $Entry[3] . "\"\n";
         }
         $Bulk = new \CURLStringFile($Bulk, 'report.csv', 'text/csv');
         $Status = $this->Request->request('https://api.abuseipdb.com/api/v2/bulk-report', ['csv' => $Bulk], $this->Configuration['abuseipdb']['timeout_limit'], [
             'Key: ' . $this->Configuration['abuseipdb']['api_key'],
             'Accept: application/json'
         ]);
-        if (preg_match('~"savedReports":(\d+)~', $Status, $Success) && isset($Success[1])) {
+        if (\preg_match('~"savedReports":(\d+)~', $Status, $Success) && isset($Success[1])) {
             if ($Success[1] > 0) {
                 $OK = true;
             }
@@ -104,7 +104,7 @@ $this->Events->addHandler('reporterFinished', function (): void {
             }
             $this->CIDRAM['Report OK'] += $Success[1];
         }
-        if (($Failure = substr_count($Status, '"error":')) > 0) {
+        if (($Failure = \substr_count($Status, '"error":')) > 0) {
             if (!isset($this->CIDRAM['Report Failed'])) {
                 $this->CIDRAM['Report Failed'] = 0;
             }
@@ -121,12 +121,12 @@ $this->Events->addHandler('reporterFinished', function (): void {
             'ip' => $Entry[1],
             'categories' => $Entry[2],
             'comment' => $Entry[3],
-            'timestamp' => date('c', $Entry[0])
+            'timestamp' => \date('c', $Entry[0])
         ], $this->Configuration['abuseipdb']['timeout_limit'], [
             'Key: ' . $this->Configuration['abuseipdb']['api_key'],
             'Accept: application/json'
         ]);
-        if (strpos($Status, '"ipAddress":"' . $Report['IP'] . '"') !== false && strpos($Status, '"errors":') === false) {
+        if (\strpos($Status, '"ipAddress":"' . $Report['IP'] . '"') !== false && \strpos($Status, '"errors":') === false) {
             if (!isset($this->CIDRAM['Report OK'])) {
                 $this->CIDRAM['Report OK'] = 0;
             }
@@ -144,8 +144,8 @@ $this->Events->addHandler('reporterFinished', function (): void {
             $ToLog = $this->L10N->getString('response.Multiple IP addresses (bulk reporting)');
             $this->Events->fireEvent('writeToReportLog', $ToLog, $ToLog);
         } else {
-            if (substr($Entry[3], 0, 18) === 'Automated report (' && substr($Entry[3], 43, 2) === ').') {
-                $Entry[3] = substr($Entry[3], 46);
+            if (\substr($Entry[3], 0, 18) === 'Automated report (' && \substr($Entry[3], 43, 2) === ').') {
+                $Entry[3] = \substr($Entry[3], 46);
             }
             $this->Events->fireEvent('writeToReportLog', $Entry[3], $Entry[1]);
         }

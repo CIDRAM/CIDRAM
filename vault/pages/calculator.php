@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The calculator page (last modified: 2023.12.13).
+ * This file: The calculator page (last modified: 2026.03.18).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -27,7 +27,7 @@ $this->FE['CalcRow'] = $this->parseVars([], $this->readFile($this->getAssetPath(
 $this->FE['Ranges'] = '';
 
 /** Process the IP address entered for range calculation. */
-if (isset($_POST['address']) && strlen($_POST['address'])) {
+if (isset($_POST['address']) && \strlen($_POST['address'])) {
     $this->FE['address'] = $_POST['address'];
     if (!$CIDRs = $this->expandIpv4($_POST['address'])) {
         $CIDRs = $this->expandIpv6($_POST['address']);
@@ -39,9 +39,9 @@ if (isset($_POST['address']) && strlen($_POST['address'])) {
 /** Process CIDRs. */
 if (!empty($CIDRs)) {
     $Aggregator = new Aggregator(1);
-    $Factors = count($CIDRs);
+    $Factors = \count($CIDRs);
     foreach ($CIDRs as $Key => $CIDR) {
-        $First = substr($CIDR, 0, strlen($CIDR) - strlen($Key + 1) - 1);
+        $First = \substr($CIDR, 0, \strlen($CIDR) - \strlen($Key + 1) - 1);
         if ($Factors === 32) {
             $Last = $this->ipv4GetLast($First, $Key + 1);
         } elseif ($Factors === 128) {
@@ -51,7 +51,7 @@ if (!empty($CIDRs)) {
         }
         $Netmask = $CIDR;
         $Aggregator->convertToNetmasks($Netmask);
-        $Arr = ['CIDR' => $CIDR, 'Netmask' => $Netmask, 'ID' => preg_replace('~[^\dA-fa-f]~', '_', $CIDR), 'Range' => $First . ' – ' . $Last];
+        $Arr = ['CIDR' => $CIDR, 'Netmask' => $Netmask, 'ID' => \preg_replace('~[^\dA-fa-f]~', '_', $CIDR), 'Range' => $First . ' – ' . $Last];
         $this->FE['Ranges'] .= $this->parseVars($Arr, $this->FE['CalcRow']);
     }
     unset($Aggregator);

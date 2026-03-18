@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The auxiliary rules edit mode page (last modified: 2025.10.07).
+ * This file: The auxiliary rules edit mode page (last modified: 2026.03.18).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -27,10 +27,10 @@ $this->populateMethodsActions();
 $this->processMinifiedFormData('minifiedFormData');
 
 /** Update auxiliary rules. */
-if (isset($_POST['rulePriority']) && is_array($_POST['rulePriority'])) {
+if (isset($_POST['rulePriority']) && \is_array($_POST['rulePriority'])) {
     $NewAuxArr = [];
     foreach ($_POST['rulePriority'] as $Iterant => $Priority) {
-        if (!isset($_POST['ruleName'][$Iterant]) || !strlen($_POST['ruleName'][$Iterant]) || $_POST['ruleName'][$Iterant] === ' ') {
+        if (!isset($_POST['ruleName'][$Iterant]) || !\strlen($_POST['ruleName'][$Iterant]) || $_POST['ruleName'][$Iterant] === ' ') {
             continue;
         }
         $RuleName = $this->desabotage($_POST['ruleName'][$Iterant]);
@@ -82,7 +82,7 @@ if (isset($_POST['rulePriority']) && is_array($_POST['rulePriority'])) {
                 if (!isset($FlagData['Label'])) {
                     continue;
                 }
-                $FlagKey = preg_replace('~[^A-Za-z]~', '_', $FlagName) . '_' . $Iterant;
+                $FlagKey = \preg_replace('~[^A-Za-z]~', '_', $FlagName) . '_' . $Iterant;
                 if (!empty($_POST[$FlagKey])) {
                     $NewAuxArr[$RuleName][$FlagName] = true;
                 }
@@ -95,15 +95,15 @@ if (isset($_POST['rulePriority']) && is_array($_POST['rulePriority'])) {
         }
     }
     unset($FlagKey, $FlagData, $FlagName, $FlagSet, $FlagSetName, $RuleName);
-    uasort($NewAuxArr, function ($A, $B): int {
+    \uasort($NewAuxArr, function ($A, $B): int {
         if ($A['Priority'] === $B['Priority']) {
             return 0;
         }
-        if (!strlen($A['Priority'])) {
-            return strlen($B['Priority']) ? -1 : 0;
+        if (!\strlen($A['Priority'])) {
+            return \strlen($B['Priority']) ? -1 : 0;
         }
-        if (!strlen($B['Priority'])) {
-            return strlen($A['Priority']) ? 1 : 0;
+        if (!\strlen($B['Priority'])) {
+            return \strlen($A['Priority']) ? 1 : 0;
         }
         return $A['Priority'] < $B['Priority'] ? -1 : 1;
     });
@@ -123,7 +123,7 @@ if (isset($_POST['rulePriority']) && is_array($_POST['rulePriority'])) {
         } elseif ($ThisAuxData['Action'] === 'actPro') {
             $ThisAuxData['Action'] = 'Profile';
         }
-        if (is_array($ThisAuxData['SourceType'])) {
+        if (\is_array($ThisAuxData['SourceType'])) {
             foreach ($ThisAuxData['SourceType'] as $IterantInner => $DataInner) {
                 if (!isset(
                     $ThisAuxData['IfOrNot'][$IterantInner],
@@ -159,12 +159,12 @@ if (isset($_POST['rulePriority']) && is_array($_POST['rulePriority'])) {
     /** Reconstruct and update auxiliary rules data. */
     if ($NewAuxArr = $this->YAML->reconstruct($NewAuxArr)) {
         $Success = false;
-        $Handle = fopen($this->Vault . 'auxiliary.yml', 'wb');
-        if (is_resource($Handle)) {
-            if (fwrite($Handle, $NewAuxArr) !== false) {
+        $Handle = \fopen($this->Vault . 'auxiliary.yml', 'wb');
+        if (\is_resource($Handle)) {
+            if (\fwrite($Handle, $NewAuxArr) !== false) {
                 $Success = true;
             }
-            fclose($Handle);
+            \fclose($Handle);
         }
         $this->FE['state_msg'] = $this->L10N->getString($Success ? 'response.Auxiliary rules successfully updated' : 'response.Failed to update auxiliary rules') . '<br />';
     }
@@ -175,8 +175,8 @@ if (isset($_POST['rulePriority']) && is_array($_POST['rulePriority'])) {
 $this->FE['Data'] = '        ' . $this->generateRules(true);
 
 /** Calculate page load time (useful for debugging). */
-$this->FE['ProcessTime'] = microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'];
-$this->FE['state_msg'] .= sprintf(
+$this->FE['ProcessTime'] = \microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'];
+$this->FE['state_msg'] .= \sprintf(
     $this->L10N->getPlural($this->FE['ProcessTime'], 'label.Page request completed in %s seconds'),
     '<span class="txtRd">' . $this->NumberFormatter->format($this->FE['ProcessTime'], 3) . '</span>'
 );
@@ -185,11 +185,11 @@ $this->FE['state_msg'] .= sprintf(
 if (isset($this->CIDRAM['QueryVars']['do'])) {
     if ($this->CIDRAM['QueryVars']['do'] === 'disable' && isset($this->Stages['Aux:Enable'])) {
         unset($this->Stages['Aux:Enable']);
-        $this->Configuration['general']['stages'] = implode("\n", array_keys($this->Stages));
+        $this->Configuration['general']['stages'] = \implode("\n", \array_keys($this->Stages));
         $this->updateConfiguration();
     } elseif ($this->CIDRAM['QueryVars']['do'] === 'enable' && !isset($this->Stages['Aux:Enable'])) {
         $this->Stages['Aux:Enable'] = true;
-        $this->Configuration['general']['stages'] = implode("\n", array_keys($this->Stages));
+        $this->Configuration['general']['stages'] = \implode("\n", \array_keys($this->Stages));
         $this->updateConfiguration();
     }
 }

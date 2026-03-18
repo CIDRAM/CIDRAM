@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods for updating CIDRAM components (last modified: 2026.03.17).
+ * This file: Methods for updating CIDRAM components (last modified: 2026.03.18).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -333,7 +333,7 @@ trait Updater
                     $RemoteData = '-';
                 } else {
                     if (\strtolower(\substr($ThisRemote, -2)) === 'gz' && \substr($RemoteData, 0, 2) === "\x1F\x8B") {
-                        $RemoteData = gzdecode($RemoteData);
+                        $RemoteData = \gzdecode($RemoteData);
                     }
                     if (empty($RemoteData)) {
                         $RemoteData = '-';
@@ -774,7 +774,7 @@ trait Updater
                             \strtolower(\substr($FileName, -2)) !== 'gz' &&
                             \substr($ThisFile, 0, 2) === "\x1F\x8B"
                         ) {
-                            $ThisFile = gzdecode($ThisFile);
+                            $ThisFile = \gzdecode($ThisFile);
                         }
                         if (isset($FileMeta['Checksum']) && \strlen($FileMeta['Checksum'])) {
                             $Actual = \hash('sha256', $ThisFile) . ':' . \strlen($ThisFile);
@@ -1259,7 +1259,7 @@ trait Updater
                         \strtolower(\substr($FileName, -2)) !== 'gz' &&
                         \substr($RemoteFile, 0, 2) === "\x1F\x8B"
                     ) {
-                        $RemoteFile = gzdecode($RemoteFile);
+                        $RemoteFile = \gzdecode($RemoteFile);
                     }
                     $RemoteFileSize = \strlen($RemoteFile);
                     if (\hash('sha256', $RemoteFile) . ':' . $RemoteFileSize !== $FileMeta['Checksum'] || (
@@ -1465,7 +1465,7 @@ trait Updater
                 isset($this->Components['Installed Versions'][$Dependency]) &&
                 $this->OperationHandler->singleCompare($this->Components['Installed Versions'][$Dependency], $Constraints)
             ) || (
-                extension_loaded($Dependency) &&
+                \extension_loaded($Dependency) &&
                 ($this->Components['Installed Versions'][$Dependency] = (new \ReflectionExtension($Dependency))->getVersion()) &&
                 $this->OperationHandler->singleCompare($this->Components['Installed Versions'][$Dependency], $Constraints)
             )) {

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The backup page (last modified: 2025.11.02).
+ * This file: The backup page (last modified: 2026.03.18).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -20,9 +20,9 @@ if (!isset($this->FE['Permissions'], $this->CIDRAM['QueryVars']['cidram-page']) 
 /** Page initial prepwork. */
 $this->initialPrepwork($this->L10N->getString('link.Backup'), $this->L10N->getString('tip.Backup'));
 
-$this->FE['size_config'] = filesize($this->FE['ActiveConfigFile']) ?: 0;
-$this->FE['size_aux'] = filesize($this->Vault . 'auxiliary.yml') ?: 0;
-$this->FE['size_metadata'] = filesize($this->Vault . 'installed.yml') ?: 0;
+$this->FE['size_config'] = \filesize($this->FE['ActiveConfigFile']) ?: 0;
+$this->FE['size_aux'] = \filesize($this->Vault . 'auxiliary.yml') ?: 0;
+$this->FE['size_metadata'] = \filesize($this->Vault . 'installed.yml') ?: 0;
 $this->formatFileSize($this->FE['size_config']);
 $this->formatFileSize($this->FE['size_aux']);
 $this->formatFileSize($this->FE['size_metadata']);
@@ -60,7 +60,7 @@ if (isset($_POST['bckpAct'])) {
         if (isset($_POST['doMetadata']) && $_POST['doMetadata'] === 'on') {
             $Arr = [];
             $this->readInstalledMetadata($Arr);
-            $Export['Components'] = array_keys($Arr);
+            $Export['Components'] = \array_keys($Arr);
         }
 
         /** Export IP tracking data. */
@@ -75,9 +75,9 @@ if (isset($_POST['bckpAct'])) {
 
         /** Build output. */
         $Export = $this->YAML->reconstruct($Export);
-        $Filename = 'CIDRAM-v' . $this->ScriptVersion . '-Exported-' . date('Y-m-d-H-i-s', $this->Now) . '.yml';
+        $Filename = 'CIDRAM-v' . $this->ScriptVersion . '-Exported-' . \date('Y-m-d-H-i-s', $this->Now) . '.yml';
         if (isset($_POST['doCompress']) && $_POST['doCompress'] === 'on' && $Export !== '') {
-            $Export = gzencode($Export);
+            $Export = \gzencode($Export);
             $Filename .= '.gz';
         }
         header('Content-Type: application/octet-stream');
@@ -93,16 +93,16 @@ if (isset($_POST['bckpAct'])) {
     if ($_POST['bckpAct'] === 'import') {
         if (
             isset($_FILES['importFile']['name'], $_FILES['importFile']['tmp_name'], $_FILES['importFile']['error']) &&
-            $_FILES['importFile']['error'] === UPLOAD_ERR_OK &&
+            $_FILES['importFile']['error'] === \UPLOAD_ERR_OK &&
             is_uploaded_file($_FILES['importFile']['tmp_name'])
         ) {
             $this->initialiseErrorHandler();
             $Try = $this->readFile($_FILES['importFile']['tmp_name']);
-            if (substr($Try, 0, 2) === "\x1F\x8B") {
-                $Try = gzdecode($Try);
+            if (\substr($Try, 0, 2) === "\x1F\x8B") {
+                $Try = \gzdecode($Try);
             }
             $Import = [];
-            if (substr($Try, 0, 6) === 'CIDRAM') {
+            if (\substr($Try, 0, 6) === 'CIDRAM') {
                 $this->YAML->process($Try, $Import);
             }
             $Try = false;
@@ -112,11 +112,11 @@ if (isset($_POST['bckpAct'])) {
                 /** Import configuration. */
                 if (isset($_POST['doConfig']) && $_POST['doConfig'] === 'on') {
                     if ($this->OperationHandler->singleCompare($Import['CIDRAM Version'], '<1.23|>=2 <2.10|>=5')) {
-                        $this->FE['state_msg'] .= sprintf(
+                        $this->FE['state_msg'] .= \sprintf(
                             $this->L10N->getString('response.Can_t import from v%s data'),
                             $Import['CIDRAM Version']
                         ) . ' ' . $this->L10N->getString('response.Failed to update configuration') . '<br />';
-                    } elseif (isset($Import['Configuration']) && is_array($Import['Configuration'])) {
+                    } elseif (isset($Import['Configuration']) && \is_array($Import['Configuration'])) {
                         if ($this->OperationHandler->singleCompare($Import['CIDRAM Version'], '<3')) {
                             /** Renamed configuration directives (v1->v2->v3). */
                             foreach ([
@@ -162,7 +162,7 @@ if (isset($_POST['bckpAct'])) {
                             }
 
                             /** Moved configuration directives (v2->v3). */
-                            $Import['Configuration'] = array_replace_recursive($Import['Configuration'], ['logging' => [
+                            $Import['Configuration'] = \array_replace_recursive($Import['Configuration'], ['logging' => [
                                 'standard_log' => $Import['Configuration']['general']['logfile'] ?? $this->Configuration['logging']['standard_log'],
                                 'apache_style_log' => $Import['Configuration']['general']['logfile_apache'] ?? $this->Configuration['logging']['apache_style_log'],
                                 'serialised_log' => $Import['Configuration']['general']['logfile_serialized'] ?? $this->Configuration['logging']['serialised_log'],
@@ -213,7 +213,7 @@ if (isset($_POST['bckpAct'])) {
                             foreach (['general' => ['default_dns'], 'components' => ['ipv4', 'ipv6', 'modules', 'imports', 'events'], 'frontend' => ['remotes'], 'bypasses' => ['used']] as $CatKey => $Cat) {
                                 foreach ($Cat as $Pair) {
                                     if (isset($Import['Configuration'][$CatKey][$Pair])) {
-                                        $Import['Configuration'][$CatKey][$Pair] = preg_replace(['~(?<=^|,)[\r\t ]+|[\r\t ]+(?=,|$)~', '~,~'], ['', "\n"], $Import['Configuration'][$CatKey][$Pair]);
+                                        $Import['Configuration'][$CatKey][$Pair] = \preg_replace(['~(?<=^|,)[\r\t ]+|[\r\t ]+(?=,|$)~', '~,~'], ['', "\n"], $Import['Configuration'][$CatKey][$Pair]);
                                     }
                                 }
                             }
@@ -258,7 +258,7 @@ if (isset($_POST['bckpAct'])) {
 
                             /** Normalisation of CAPTCHA matrices (v3->v4). */
                             foreach (['usemode', 'nonblocked_status_code', 'api'] as $Matrix) {
-                                if (isset($Import['Configuration']['captcha'][$Matrix]) && !is_array($Import['Configuration']['captcha'][$Matrix])) {
+                                if (isset($Import['Configuration']['captcha'][$Matrix]) && !\is_array($Import['Configuration']['captcha'][$Matrix])) {
                                     $Import['Configuration']['captcha'][$Matrix] = ['hcaptcha' => $Import['Configuration']['captcha'][$Matrix]];
                                 }
                             }
@@ -266,14 +266,14 @@ if (isset($_POST['bckpAct'])) {
                             /** Normalisation of other matrices (v3->v4). */
                             foreach (['general' => ['http_response_header_code' => 'default']] as $CatKey => $Cat) {
                                 foreach ($Cat as $Matrix => $DefaultVector) {
-                                    if (isset($Import['Configuration'][$CatKey][$Matrix]) && !is_array($Import['Configuration'][$CatKey][$Matrix])) {
+                                    if (isset($Import['Configuration'][$CatKey][$Matrix]) && !\is_array($Import['Configuration'][$CatKey][$Matrix])) {
                                         $Import['Configuration'][$CatKey][$Matrix] = [$DefaultVector => $Import['Configuration'][$CatKey][$Matrix]];
                                     }
                                 }
                             }
                         }
                         unset($DefaultVector, $Matrix, $NewCat, $OldCat, $Pair, $Cat, $CatKey, $Import['Configuration']['Config Defaults'], $Import['Configuration']['Provide'], $Import['Configuration']['Links']);
-                        $this->Configuration = array_replace_recursive($this->Configuration, $Import['Configuration']);
+                        $this->Configuration = \array_replace_recursive($this->Configuration, $Import['Configuration']);
                         $this->FE['state_msg'] .= $this->L10N->getString($this->updateConfiguration() ? 'response.Configuration successfully updated' : 'response.Failed to update configuration') . '<br />';
                     } else {
                         $this->FE['state_msg'] .= $this->L10N->getString('response.Failed to update configuration') . '<br />';
@@ -282,7 +282,7 @@ if (isset($_POST['bckpAct'])) {
 
                 /** Import auxiliary rules. */
                 if (isset($_POST['doAux']) && $_POST['doAux'] === 'on') {
-                    if (isset($Import['Auxiliary Rules']) && is_array($Import['Auxiliary Rules'])) {
+                    if (isset($Import['Auxiliary Rules']) && \is_array($Import['Auxiliary Rules'])) {
                         if (!isset($this->CIDRAM['AuxData'])) {
                             $this->CIDRAM['AuxData'] = [];
                             $this->YAML->process($this->readFile($this->Vault . 'auxiliary.yml'), $this->CIDRAM['AuxData']);
@@ -310,17 +310,17 @@ if (isset($_POST['bckpAct'])) {
                                 return ($Depth < 1);
                             });
                         }
-                        $this->CIDRAM['AuxData'] = array_replace($this->CIDRAM['AuxData'], $Import['Auxiliary Rules']);
+                        $this->CIDRAM['AuxData'] = \array_replace($this->CIDRAM['AuxData'], $Import['Auxiliary Rules']);
                         if (
                             ($NewAuxData = $this->YAML->reconstruct($this->CIDRAM['AuxData'])) !== '' &&
-                            ($Handle = fopen($this->Vault . 'auxiliary.yml', 'wb')) !== false
+                            ($Handle = \fopen($this->Vault . 'auxiliary.yml', 'wb')) !== false
                         ) {
-                            if ((fwrite($Handle, $NewAuxData)) !== false) {
+                            if ((\fwrite($Handle, $NewAuxData)) !== false) {
                                 $this->FE['state_msg'] .= $this->L10N->getString('response.Auxiliary rules successfully updated') . '<br />';
                             } else {
                                 $this->FE['state_msg'] .= $this->L10N->getString('response.Failed to update auxiliary rules') . '<br />';
                             }
-                            fclose($Handle);
+                            \fclose($Handle);
                         } else {
                             $this->FE['state_msg'] .= $this->L10N->getString('response.Failed to update auxiliary rules') . '<br />';
                         }
@@ -333,11 +333,11 @@ if (isset($_POST['bckpAct'])) {
                 /** Import component updates metadata. */
                 if (isset($_POST['doMetadata']) && $_POST['doMetadata'] === 'on') {
                     if ($this->OperationHandler->singleCompare($Import['CIDRAM Version'], '<3')) {
-                        $this->FE['state_msg'] .= sprintf(
+                        $this->FE['state_msg'] .= \sprintf(
                             $this->L10N->getString('response.Can_t import from v%s data'),
                             $Import['CIDRAM Version']
                         ) . ' ' . $this->L10N->getString('response.Failed to install') . '<br />';
-                    } elseif (isset($Import['Components']) && is_array($Import['Components'])) {
+                    } elseif (isset($Import['Components']) && \is_array($Import['Components'])) {
                         $this->Components = ['Meta' => [], 'Installed Versions' => ['PHP' => \PHP_VERSION], 'Available Versions' => []];
                         $this->fetchRemotesData();
                         $this->readInstalledMetadata($this->Components['Meta']);
@@ -346,7 +346,7 @@ if (isset($_POST['bckpAct'])) {
                         $this->calculateShared();
                         $Try = [];
                         foreach ($Import['Components'] as $Component) {
-                            if (!is_string($Component)) {
+                            if (!\is_string($Component)) {
                                 continue;
                             }
                             if (!isset($this->Components['Available Versions'][$Component])) {
@@ -366,7 +366,7 @@ if (isset($_POST['bckpAct'])) {
 
                         /** Trigger signatures update log event. */
                         if (!empty($this->CIDRAM['SignaturesUpdateEvent'])) {
-                            $this->CIDRAM['SignaturesUpdateEvent'] = sprintf(
+                            $this->CIDRAM['SignaturesUpdateEvent'] = \sprintf(
                                 $this->L10N->getString('response.Signature files have been updated (%s)'),
                                 $this->timeFormat(
                                     $this->CIDRAM['SignaturesUpdateEvent'],
@@ -383,11 +383,11 @@ if (isset($_POST['bckpAct'])) {
                 /** Import IP tracking data. */
                 if (isset($_POST['doTracking']) && $_POST['doTracking'] === 'on') {
                     if ($this->OperationHandler->singleCompare($Import['CIDRAM Version'], '<3.3')) {
-                        $this->FE['state_msg'] .= sprintf(
+                        $this->FE['state_msg'] .= \sprintf(
                             $this->L10N->getString('response.Can_t import from v%s data'),
                             $Import['CIDRAM Version']
                         ) . ' ' . $this->L10N->getString('response.Failed to update tracking') . '<br />';
-                    } elseif (isset($Import['IP Tracking']) && is_array($Import['IP Tracking'])) {
+                    } elseif (isset($Import['IP Tracking']) && \is_array($Import['IP Tracking'])) {
                         $Success = false;
                         $Response = $this->L10N->getString('response.Added %s to tracking');
                         foreach ($Import['IP Tracking'] as $Key => $Value) {
@@ -396,8 +396,8 @@ if (isset($_POST['bckpAct'])) {
                             }
                             if ($this->Cache->setEntry('Tracking-' . $Key, $Value['Data'], $Value['Time'] - $this->Now)) {
                                 $Success = true;
-                                if (substr($Key, -12) !== '-MinimumTime') {
-                                    $this->FE['state_msg'] .= sprintf($Response, $Key) . '<br />';
+                                if (\substr($Key, -12) !== '-MinimumTime') {
+                                    $this->FE['state_msg'] .= \sprintf($Response, $Key) . '<br />';
                                 }
                             }
                         }
@@ -412,11 +412,11 @@ if (isset($_POST['bckpAct'])) {
                 /** Import statistics. */
                 if (isset($_POST['doStatistics']) && $_POST['doStatistics'] === 'on') {
                     if ($this->OperationHandler->singleCompare($Import['CIDRAM Version'], '<3.3')) {
-                        $this->FE['state_msg'] .= sprintf(
+                        $this->FE['state_msg'] .= \sprintf(
                             $this->L10N->getString('response.Can_t import from v%s data'),
                             $Import['CIDRAM Version']
                         ) . ' ' . $this->L10N->getString('response.Failed to update statistics') . '<br />';
-                    } elseif (isset($Import['Statistics']) && is_array($Import['Statistics'])) {
+                    } elseif (isset($Import['Statistics']) && \is_array($Import['Statistics'])) {
                         if ($this->OperationHandler->singleCompare($Import['CIDRAM Version'], '<4')) {
                             /** Renamed keys. */
                             foreach ([
@@ -470,8 +470,8 @@ if (isset($_POST['bckpAct'])) {
 }
 
 /** Calculate page load time (useful for debugging). */
-$this->FE['ProcessTime'] = microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'];
-$this->FE['state_msg'] .= sprintf(
+$this->FE['ProcessTime'] = \microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'];
+$this->FE['state_msg'] .= \sprintf(
     $this->L10N->getPlural($this->FE['ProcessTime'], 'label.Page request completed in %s seconds'),
     '<span class="txtRd">' . $this->NumberFormatter->format($this->FE['ProcessTime'], 3) . '</span>'
 );

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2026.03.17).
+ * This file: The CIDRAM front-end (last modified: 2026.03.18).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -74,13 +74,13 @@ class FrontEnd extends Core
     public function view(): void
     {
         /** Pages path. */
-        $this->PagesPath = $this->Vault . 'pages' . DIRECTORY_SEPARATOR;
+        $this->PagesPath = $this->Vault . 'pages' . \DIRECTORY_SEPARATOR;
 
         /** Checks whether we're calling CIDRAM through an alternative pathway (e.g., Cronable). */
         $this->Alternate = \class_exists('\Maikuolan\Cronable\Cronable');
 
         /** Load CIDRAM front-end L10N data. */
-        $this->loadL10N($this->Vault . 'l10n' . DIRECTORY_SEPARATOR . 'frontend' . DIRECTORY_SEPARATOR);
+        $this->loadL10N($this->Vault . 'l10n' . \DIRECTORY_SEPARATOR . 'frontend' . \DIRECTORY_SEPARATOR);
 
         /** Initialise stages. */
         if ($this->Stages === []) {
@@ -245,7 +245,7 @@ class FrontEnd extends Core
         /** Trace to determine the type of cron operation. */
         if ($this->FE['CronMode'] !== '') {
             $this->FE['CronType'] = 'update';
-            $this->CIDRAM['CronDebug'] = \debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT | DEBUG_BACKTRACE_IGNORE_ARGS, 4);
+            $this->CIDRAM['CronDebug'] = \debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT | \DEBUG_BACKTRACE_IGNORE_ARGS, 4);
             foreach ($this->CIDRAM['CronDebug'] as $this->CIDRAM['ThisCronDebug']) {
                 if (
                     isset($this->CIDRAM['ThisCronDebug']['function'], $this->CIDRAM['ThisCronDebug']['class']) &&
@@ -488,7 +488,7 @@ class FrontEnd extends Core
                                         [['Name' => $this->FE['LP']['TwoFactorState']['Name'], 'Address' => $this->FE['LP']['TwoFactorState']['Address']]],
                                         $this->FE['LP']['TwoFactorSubject'],
                                         $this->FE['LP']['TwoFactorState']['Template'],
-                                        strip_tags($this->FE['LP']['TwoFactorState']['Template']),
+                                        \strip_tags($this->FE['LP']['TwoFactorState']['Template']),
                                         ''
                                     ];
                                     $this->Events->fireEvent('sendEmail', '', ...$EventData);
@@ -823,7 +823,7 @@ class FrontEnd extends Core
                 ['Lib' => 'redis', 'Name' => 'Redis'],
                 ['Lib' => 'pdo', 'Name' => 'PDO', 'Drivers' => (\class_exists('\PDO') ? \PDO::getAvailableDrivers() : [])]
             ] as $this->CIDRAM['ThisExtension']) {
-                if (extension_loaded($this->CIDRAM['ThisExtension']['Lib'])) {
+                if (\extension_loaded($this->CIDRAM['ThisExtension']['Lib'])) {
                     $this->CIDRAM['ExtVer'] = (new \ReflectionExtension($this->CIDRAM['ThisExtension']['Lib']))->getVersion();
                     $this->CIDRAM['ThisResponse'] = $this->L10N->getString('response._Yes') . ' (' . $this->CIDRAM['ExtVer'] . ')';
                     if (!empty($this->CIDRAM['ThisExtension']['Drivers'])) {

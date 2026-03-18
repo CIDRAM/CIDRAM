@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The accounts page (last modified: 2025.10.11).
+ * This file: The accounts page (last modified: 2026.03.18).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -23,7 +23,7 @@ if ($this->FE['FormTarget'] === 'accounts' && !empty($_POST['do'])) {
     if ($_POST['do'] === 'create-account' && !empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['permissions'])) {
         $Accounts = [
             'TryPath' => 'user.' . $this->desabotage($_POST['username']),
-            'TryPass' => password_hash($_POST['password'], $this->DefaultAlgo),
+            'TryPass' => \password_hash($_POST['password'], $this->DefaultAlgo),
             'TryPermissions' => (int)$_POST['permissions']
         ];
         if (isset($this->Configuration[$Accounts['TryPath']])) {
@@ -59,7 +59,7 @@ if ($this->FE['FormTarget'] === 'accounts' && !empty($_POST['do'])) {
     if ($_POST['do'] === 'update-password' && !empty($_POST['username']) && !empty($_POST['password'])) {
         $Accounts = [
             'TryPath' => 'user.' . $this->desabotage($_POST['username']),
-            'TryPass' => password_hash($_POST['password'], $this->DefaultAlgo)
+            'TryPass' => \password_hash($_POST['password'], $this->DefaultAlgo)
         ];
         if (!isset($this->Configuration[$Accounts['TryPath']])) {
             $this->FE['state_msg'] = $this->L10N->getString('response.That account doesn_t exist');
@@ -80,7 +80,7 @@ if (!$this->FE['ASYNC']) {
     $this->initialPrepwork($this->L10N->getString('link.Accounts'), $this->L10N->getString('tip.Accounts'));
 
     /** Append async globals. */
-    $this->FE['JS'] .= sprintf(
+    $this->FE['JS'] .= \sprintf(
         'window[%3$s]=\'accounts\';function acc(e,d,i,t){var o=function(e){%4$se)' .
         '},a=function(){%4$s\'%1$s\')};window.username=%2$s(e).value,window.passw' .
         'ord=%2$s(d).value,window.do=%2$s(t).value,\'delete-account\'==window.do&' .
@@ -104,8 +104,8 @@ if (!$this->FE['ASYNC']) {
         if (isset($LI['KeyData']['Time']) && $LI['KeyData']['Time'] > 0 && $LI['KeyData']['Time'] < $this->Now) {
             continue;
         }
-        if (strlen($LI['KeyName']) > 64) {
-            $LI['Try'] = substr($LI['KeyName'], 0, -64);
+        if (\strlen($LI['KeyName']) > 64) {
+            $LI['Try'] = \substr($LI['KeyName'], 0, -64);
             if (isset($this->Configuration['user.' . $LI['Try']])) {
                 $LI['Possible'][$LI['Try']] = true;
             }
@@ -114,11 +114,11 @@ if (!$this->FE['ASYNC']) {
     $LI = $LI['Possible'];
 
     foreach ($this->Configuration as $CatKey => $this->CIDRAM['CatValues']) {
-        if (substr($CatKey, 0, 5) !== 'user.' || !is_array($this->CIDRAM['CatValues'])) {
+        if (\substr($CatKey, 0, 5) !== 'user.' || !\is_array($this->CIDRAM['CatValues'])) {
             continue;
         }
         $RowInfo = [
-            'AccUsername' => substr($CatKey, 5),
+            'AccUsername' => \substr($CatKey, 5),
             'AccPassword' => $this->CIDRAM['CatValues']['password'] ?? '',
             'AccPermissions' => $this->CIDRAM['CatValues']['permissions'] ?? 0,
             'AccWarnings' => ''
@@ -137,18 +137,18 @@ if (!$this->FE['ASYNC']) {
         if ($RowInfo['AccPassword'] === $this->FE['DefaultPassword']) {
             $RowInfo['AccWarnings'] .= '<br /><div class="txtRd">' . $this->L10N->getString('warning.Using the default password') . '</div>';
         } elseif ((
-            strlen($RowInfo['AccPassword']) !== 60 &&
-            strlen($RowInfo['AccPassword']) !== 96 &&
-            strlen($RowInfo['AccPassword']) !== 97
+            \strlen($RowInfo['AccPassword']) !== 60 &&
+            \strlen($RowInfo['AccPassword']) !== 96 &&
+            \strlen($RowInfo['AccPassword']) !== 97
         ) || (
-            strlen($RowInfo['AccPassword']) === 60 &&
-            !preg_match('/^\$2.\$\d\d\$/', $RowInfo['AccPassword'])
+            \strlen($RowInfo['AccPassword']) === 60 &&
+            !\preg_match('/^\$2.\$\d\d\$/', $RowInfo['AccPassword'])
         ) || (
-            strlen($RowInfo['AccPassword']) === 96 &&
-            !preg_match('/^\$argon2i\$/', $RowInfo['AccPassword'])
+            \strlen($RowInfo['AccPassword']) === 96 &&
+            !\preg_match('/^\$argon2i\$/', $RowInfo['AccPassword'])
         ) || (
-            strlen($RowInfo['AccPassword']) === 97 &&
-            !preg_match('/^\$argon2id\$/', $RowInfo['AccPassword'])
+            \strlen($RowInfo['AccPassword']) === 97 &&
+            !\preg_match('/^\$argon2id\$/', $RowInfo['AccPassword'])
         )) {
             $RowInfo['AccWarnings'] .= '<br /><div class="txtRd">' . $this->L10N->getString('warning.This account is not using a valid password') . '</div>';
         }
@@ -158,8 +158,8 @@ if (!$this->FE['ASYNC']) {
             $RowInfo['AccWarnings'] .= '<br /><div class="txtGn">' . $this->L10N->getString('label.Logged in') . '</div>';
         }
 
-        $RowInfo['AccID'] = bin2hex($RowInfo['AccUsername']);
-        $RowInfo['AccUsername'] = htmlentities($RowInfo['AccUsername']);
+        $RowInfo['AccID'] = \bin2hex($RowInfo['AccUsername']);
+        $RowInfo['AccUsername'] = \htmlentities($RowInfo['AccUsername']);
         $this->FE['Accounts'] .= $this->parseVars($RowInfo, $this->FE['AccountsRow'], true);
     }
     unset($RowInfo, $this->CIDRAM['CatValues'], $CatKey, $LI);

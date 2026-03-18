@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CIDRAM CLI mode (last modified: 2026.03.17).
+ * This file: CIDRAM CLI mode (last modified: 2026.03.18).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -33,7 +33,7 @@ trait CLI
         $this->NoColor = !empty(getenv('NO_COLOR'));
 
         /** Load CIDRAM front-end L10N data. */
-        $this->loadL10N($this->Vault . 'l10n' . DIRECTORY_SEPARATOR . 'frontend' . DIRECTORY_SEPARATOR);
+        $this->loadL10N($this->Vault . 'l10n' . \DIRECTORY_SEPARATOR . 'frontend' . \DIRECTORY_SEPARATOR);
 
         $this->FE = ['DateTime' => $this->timeFormat($this->Now, $this->Configuration['general']['time_format'])];
         if ($this->Stages === []) {

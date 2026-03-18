@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The subtractor page (last modified: 2023.12.13).
+ * This file: The subtractor page (last modified: 2026.03.18).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -24,7 +24,7 @@ $this->initialPrepwork($this->L10N->getString('link.Subtractor'), $this->L10N->g
 $OutputFormat = (isset($_POST['format']) && $_POST['format'] === 'Netmask') ? 1 : 0;
 
 /** Output format menu. */
-$this->FE['OutputFormat'] = sprintf(
+$this->FE['OutputFormat'] = \sprintf(
     '%1$sCIDR" value="CIDR"%2$s%6$sformatCIDR">%3$s</label><br />%1$sNetmask" value="Netmask"%4$s%6$sformatNetmask">%5$s</label>',
     '<input type="radio" class="auto" name="format" id="format',
     $OutputFormat !== 1 ? ' checked' : '',
@@ -44,8 +44,8 @@ $this->FE['Subtractor_AB'] = '';
 /** Data was submitted for subtraction. */
 if (isset($_POST['A'], $_POST['B'])) {
     $Subtraction = [
-        'A' => str_replace("\r", '', trim($_POST['A'])),
-        'B' => str_replace("\r", '', trim($_POST['B']))
+        'A' => \str_replace("\r", '', \trim($_POST['A'])),
+        'B' => \str_replace("\r", '', \trim($_POST['B']))
     ];
 
     /**
@@ -70,8 +70,8 @@ if (isset($_POST['A'], $_POST['B'])) {
 }
 
 /** Calculate page load time (useful for debugging). */
-$this->FE['ProcessTime'] = microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'];
-$this->FE['state_msg'] .= sprintf(
+$this->FE['ProcessTime'] = \microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'];
+$this->FE['state_msg'] .= \sprintf(
     $this->L10N->getPlural($this->FE['ProcessTime'], 'label.Page request completed in %s seconds'),
     '<span class="txtRd">' . $this->NumberFormatter->format($this->FE['ProcessTime'], 3) . '</span>'
 );
@@ -81,11 +81,11 @@ $this->FE['FE_Content'] = $this->parseVars($this->FE, $this->readFile($this->get
 
 /** Strip output row if input doesn't exist. */
 if ($this->FE['Subtractor_AB'] !== '') {
-    $this->FE['FE_Content'] = str_replace(['<!-- Output Begin -->', '<!-- Output End -->'], '', $this->FE['FE_Content']);
+    $this->FE['FE_Content'] = \str_replace(['<!-- Output Begin -->', '<!-- Output End -->'], '', $this->FE['FE_Content']);
 } else {
     $this->FE['FE_Content'] =
-        substr($this->FE['FE_Content'], 0, strpos($this->FE['FE_Content'], '<!-- Output Begin -->')) .
-        substr($this->FE['FE_Content'], strpos($this->FE['FE_Content'], '<!-- Output End -->') + 19);
+        \substr($this->FE['FE_Content'], 0, \strpos($this->FE['FE_Content'], '<!-- Output Begin -->')) .
+        \substr($this->FE['FE_Content'], \strpos($this->FE['FE_Content'], '<!-- Output End -->') + 19);
 }
 
 /** Send output. */

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Report to AbuseIPDB page (last modified: 2025.08.27).
+ * This file: Report to AbuseIPDB page (last modified: 2026.03.18).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -30,12 +30,12 @@ if (!isset($_POST['apikey']) && isset($this->Configuration['abuseipdb']['api_key
 
 /** Populate inputs and textareas. */
 foreach (['address', 'comment', 'apikey', 'endpoint'] as $Field) {
-    $this->FE[$Field] = isset($_POST[$Field]) ? str_replace(['&', '<', '>', '"'], ['&amp;', '&lt;', '&gt;', '&quot;'], $this->desabotage($_POST[$Field])) : '';
+    $this->FE[$Field] = isset($_POST[$Field]) ? \str_replace(['&', '<', '>', '"'], ['&amp;', '&lt;', '&gt;', '&quot;'], $this->desabotage($_POST[$Field])) : '';
 }
 
 /** Populate timezones. */
 $this->FE['timezones'] = [];
-foreach (array_unique(\DateTimeZone::listIdentifiers()) as $Timezone) {
+foreach (\array_unique(\DateTimeZone::listIdentifiers()) as $Timezone) {
     $this->FE['timezones'][$Timezone] = '<option value="'. $Timezone . '">' . $Timezone . '</option>';
 }
 unset($Timezone);
@@ -45,7 +45,7 @@ if (isset($_POST['timezone'], $this->FE['timezones'][$_POST['timezone']])) {
     $this->FE['timezone'] = isset($this->Configuration['general']['timezone']) && $this->Configuration['general']['timezone'] !== 'SYSTEM' ? $this->Configuration['general']['timezone'] : date_default_timezone_get();
 }
 $this->FE['timezones'][$this->FE['timezone']] = '<option value="'. $this->FE['timezone'] . '" selected>' . $this->FE['timezone'] . '</option>';
-$this->FE['timezones'] = implode('', $this->FE['timezones']);
+$this->FE['timezones'] = \implode('', $this->FE['timezones']);
 
 /** Prepare the time of attack timestamps. */
 if (isset($_POST['timestamp'])) {
@@ -53,8 +53,8 @@ if (isset($_POST['timestamp'])) {
     $this->FE['timestamp'] = $DateTime->format('Y-m-d\TH:i');
     $DateTime = $DateTime->format('c');
 } else {
-    $this->FE['timestamp'] = date('Y-m-d\TH:i', $this->Now);
-    $DateTime = date('c', $this->Now);
+    $this->FE['timestamp'] = \date('Y-m-d\TH:i', $this->Now);
+    $DateTime = \date('c', $this->Now);
 }
 
 /** Populate categories. */
@@ -94,10 +94,10 @@ if (!isset($_POST['populate']) && $this->FE['address'] !== '' && $this->FE['apik
                 $Categories[] = $Iterator;
             }
         }
-        if (!count($Categories)) {
+        if (!\count($Categories)) {
             $this->FE['state_msg'] = $this->L10N->getString('response.Please select at least one category');
         } else {
-            $Categories = implode(',', $Categories);
+            $Categories = \implode(',', $Categories);
             $Queue = true;
             $Status = $this->Request->request('https://api.abuseipdb.com/api/v2/report', [
                 'ip' => $this->FE['address'],
@@ -107,8 +107,8 @@ if (!isset($_POST['populate']) && $this->FE['address'] !== '' && $this->FE['apik
             ], $this->Configuration['abuseipdb']['timeout_limit'], ['Key: ' . $this->FE['apikey'], 'Accept: application/json']);
             $this->Cache->setEntry('AbuseIPDB-Recently Reported-' . $this->FE['address'], true, 900);
             $this->CIDRAM['AbuseIPDB-Recently Reported-' . $this->FE['address']] = true;
-            if (strpos($Status, '"ipAddress":"' . $this->FE['address'] . '"') !== false && strpos($Status, '"errors":') === false) {
-                $this->FE['state_msg'] = sprintf($this->L10N->getString('response.The IP address, %s, successfully reported'), $LookupLink);
+            if (\strpos($Status, '"ipAddress":"' . $this->FE['address'] . '"') !== false && \strpos($Status, '"errors":') === false) {
+                $this->FE['state_msg'] = \sprintf($this->L10N->getString('response.The IP address, %s, successfully reported'), $LookupLink);
                 $Queue = false;
                 if ($this->CIDRAM['LastTestIP'] === 4) {
                     $this->Cache->incEntry('Statistics-ReportOK:IPv4');
@@ -116,18 +116,18 @@ if (!isset($_POST['populate']) && $this->FE['address'] !== '' && $this->FE['apik
                     $this->Cache->incEntry('Statistics-ReportOK:IPv6');
                 }
             } else {
-                $this->FE['state_msg'] = sprintf($this->L10N->getString('response.Failed to report the IP address, %s'), $LookupLink);
-                if (strpos($Status, 'once in 15 minutes') !== false) {
+                $this->FE['state_msg'] = \sprintf($this->L10N->getString('response.Failed to report the IP address, %s'), $LookupLink);
+                if (\strpos($Status, 'once in 15 minutes') !== false) {
                     $this->FE['state_msg'] .= ' ' . $this->L10N->getString('response.The same IP address can be reported only once every 15 minutes');
-                } elseif (strpos($Status, 'Authentication failed') !== false || $this->Request->MostRecentStatusCode === 401) {
+                } elseif (\strpos($Status, 'Authentication failed') !== false || $this->Request->MostRecentStatusCode === 401) {
                     $Queue = false;
                     $this->FE['state_msg'] .= ' ' . $this->L10N->getString('response.Invalid API key') . ' ' . $this->L10N->getString('response.The report has not been enqueued');
-                } elseif (strpos($Status, 'Invalid timestamp') !== false || $this->Request->MostRecentStatusCode === 422) {
+                } elseif (\strpos($Status, 'Invalid timestamp') !== false || $this->Request->MostRecentStatusCode === 422) {
                     $Queue = false;
                     $this->FE['state_msg'] .= ' ' . $this->L10N->getString('response.Invalid timestamp') . ' ' . $this->L10N->getString('response.The report has not been enqueued');
                 } elseif ($this->Request->MostRecentStatusCode === 429) {
                     $Queue = false;
-                    $this->FE['state_msg'] .= ' ' . $this->L10N->getString('response.The report has not been enqueued') . ' ' . sprintf($this->L10N->getString('warning.API_Rate_Limited'), 'REPORT');
+                    $this->FE['state_msg'] .= ' ' . $this->L10N->getString('response.The report has not been enqueued') . ' ' . \sprintf($this->L10N->getString('warning.API_Rate_Limited'), 'REPORT');
                 } else {
                     $Queue = false;
                     $this->FE['state_msg'] .= ' ' . $this->L10N->getString('response.The report has not been enqueued');
@@ -142,29 +142,29 @@ if (!isset($_POST['populate']) && $this->FE['address'] !== '' && $this->FE['apik
                 if (!isset($this->CIDRAM['AbuseIPDB-Report Queue'])) {
                     $this->CIDRAM['AbuseIPDB-Report Queue'] = $this->Cache->getEntry('AbuseIPDB-Report Queue');
                 }
-                if (!is_string($this->CIDRAM['AbuseIPDB-Report Queue'])) {
+                if (!\is_string($this->CIDRAM['AbuseIPDB-Report Queue'])) {
                     $this->CIDRAM['AbuseIPDB-Report Queue'] = '';
                 }
-                if (substr_count($this->CIDRAM['AbuseIPDB-Report Queue'], '|' . $this->FE['address'] . '|') < 10) {
+                if (\substr_count($this->CIDRAM['AbuseIPDB-Report Queue'], '|' . $this->FE['address'] . '|') < 10) {
                     $this->CIDRAM['AbuseIPDB-Report Queue'] .= $this->Now . '|' . $this->FE['address'] . '|' . $Categories . '|' . $this->FE['comment'] . '||';
                 }
             }
         }
     } elseif ($this->FE['endpoint'] === 'delete') {
-        $Status = $this->Request->request('https://api.abuseipdb.com/api/v2/clear-address?ipAddress=' . urlencode($this->FE['address']), '', $this->Configuration['abuseipdb']['timeout_limit'], ['Key: ' . $this->FE['apikey'], 'Accept: application/json'], 0, 'DELETE');
-        if (preg_match('~\{"numReportsDeleted":(\d+)\}~', $Status, $Matches)) {
+        $Status = $this->Request->request('https://api.abuseipdb.com/api/v2/clear-address?ipAddress=' . \urlencode($this->FE['address']), '', $this->Configuration['abuseipdb']['timeout_limit'], ['Key: ' . $this->FE['apikey'], 'Accept: application/json'], 0, 'DELETE');
+        if (\preg_match('~\{"numReportsDeleted":(\d+)\}~', $Status, $Matches)) {
             $Matches = (int)$Matches[1];
-            $this->FE['state_msg'] = sprintf(
+            $this->FE['state_msg'] = \sprintf(
                 $this->L10N->getPlural($Matches, 'response.Successfully deleted %s reports for %s'),
                 '<span class="txtRd">' . $this->NumberFormatter->format($Matches) . '</span>',
                 $LookupLink
             );
         } else {
-            $this->FE['state_msg'] = sprintf($this->L10N->getString('response.Failed to delete any reports for %s'), $LookupLink);
-            if (strpos($Status, 'Authentication failed') !== false || $this->Request->MostRecentStatusCode === 401) {
+            $this->FE['state_msg'] = \sprintf($this->L10N->getString('response.Failed to delete any reports for %s'), $LookupLink);
+            if (\strpos($Status, 'Authentication failed') !== false || $this->Request->MostRecentStatusCode === 401) {
                 $this->FE['state_msg'] .= ' ' . $this->L10N->getString('response.Invalid API key');
             } elseif ($this->Request->MostRecentStatusCode === 429) {
-                $this->FE['state_msg'] .= ' ' . sprintf($this->L10N->getString('warning.API_Rate_Limited'), 'DELETE');
+                $this->FE['state_msg'] .= ' ' . \sprintf($this->L10N->getString('warning.API_Rate_Limited'), 'DELETE');
             }
         }
         $this->Cache->deleteEntry('AbuseIPDB-Recently Reported-' . $this->FE['address']);
@@ -172,11 +172,11 @@ if (!isset($_POST['populate']) && $this->FE['address'] !== '' && $this->FE['apik
         if (!isset($this->CIDRAM['AbuseIPDB-Report Queue'])) {
             $this->CIDRAM['AbuseIPDB-Report Queue'] = $this->Cache->getEntry('AbuseIPDB-Report Queue');
         }
-        if (!is_string($this->CIDRAM['AbuseIPDB-Report Queue'])) {
+        if (!\is_string($this->CIDRAM['AbuseIPDB-Report Queue'])) {
             $this->CIDRAM['AbuseIPDB-Report Queue'] = '';
         }
         if ($this->CIDRAM['AbuseIPDB-Report Queue'] !== '') {
-            $this->CIDRAM['AbuseIPDB-Report Queue'] = preg_replace('~\d+\|' . preg_quote($this->FE['address']) . '\|[\d,]+\|.*?\|\|~', '', $this->CIDRAM['AbuseIPDB-Report Queue']);
+            $this->CIDRAM['AbuseIPDB-Report Queue'] = \preg_replace('~\d+\|' . preg_quote($this->FE['address']) . '\|[\d,]+\|.*?\|\|~', '', $this->CIDRAM['AbuseIPDB-Report Queue']);
         }
     } else {
         $this->FE['state_msg'] = $this->L10N->getString('response.Wrong endpoint');

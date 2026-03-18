@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: AbuseIPDB module (last modified: 2025.07.27).
+ * This file: AbuseIPDB module (last modified: 2026.03.18).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -37,7 +37,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
      * Normalised, lower-cased request URI; Used to determine whether the
      * module needs to do anything for the request.
      */
-    $LCURI = preg_replace('/\s/', '', strtolower($this->BlockInfo['rURI']));
+    $LCURI = \preg_replace('/\s/', '', \strtolower($this->BlockInfo['rURI']));
 
     /**
      * If the request isn't attempting to access a sensitive page (login,
@@ -60,7 +60,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     if (
         $this->CIDRAM['AbuseIPDB-429'] ||
         !$this->honourLookup() ||
-        filter_var($this->BlockInfo['IPAddr'], FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE) === false
+        filter_var($this->BlockInfo['IPAddr'], \FILTER_VALIDATE_IP, \FILTER_FLAG_NO_PRIV_RANGE | \FILTER_FLAG_NO_RES_RANGE) === false
     ) {
         return;
     }
@@ -74,7 +74,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         if ($this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']] === false) {
             /** Perform AbuseIPDB lookup. */
             $Lookup = $this->Request->request(
-                'https://api.abuseipdb.com/api/v2/check?ipAddress=' . urlencode($this->BlockInfo['IPAddr']) . '&maxAgeInDays=' . $this->Configuration['abuseipdb']['max_age_in_days'],
+                'https://api.abuseipdb.com/api/v2/check?ipAddress=' . \urlencode($this->BlockInfo['IPAddr']) . '&maxAgeInDays=' . $this->Configuration['abuseipdb']['max_age_in_days'],
                 [],
                 $this->Configuration['abuseipdb']['timeout_limit'],
                 ['Key: ' . $this->Configuration['abuseipdb']['api_key'], 'Accept: application/json']
@@ -88,7 +88,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             }
 
             /** Validate or substitute. */
-            $Lookup = strpos($Lookup, '"abuseConfidenceScore":') !== false ? (json_decode($Lookup, true) ?: []) : [];
+            $Lookup = \strpos($Lookup, '"abuseConfidenceScore":') !== false ? (\json_decode($Lookup, true) ?: []) : [];
 
             /** Generate local AbuseIPDB cache entry. */
             $this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']] = $Lookup['data'] ?? [];
@@ -118,7 +118,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     /** Guard. */
     if (
         !isset($this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']]) ||
-        !is_array($this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']])
+        !\is_array($this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']])
     ) {
         return;
     }
@@ -136,10 +136,10 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']]['totalReports'] >= $this->Configuration['abuseipdb']['minimum_total_reports']
         ),
         'AbuseIPDB Lookup',
-        $this->L10N->getString('ReasonMessage.Generic') . '<br />' . sprintf($this->L10N->getString('request_removal'), 'https://www.abuseipdb.com/takedown/' . $this->BlockInfo['IPAddr'])
+        $this->L10N->getString('ReasonMessage.Generic') . '<br />' . \sprintf($this->L10N->getString('request_removal'), 'https://www.abuseipdb.com/takedown/' . $this->BlockInfo['IPAddr'])
     )) {
         /** Fetch options. */
-        $this->enactOptions('', array_flip(explode("\n", $this->Configuration['abuseipdb']['options'])));
+        $this->enactOptions('', \array_flip(\explode("\n", $this->Configuration['abuseipdb']['options'])));
     }
 
     /** Build profiles. */
@@ -166,10 +166,10 @@ if ($this->Configuration['abuseipdb']['report_back'] && $this->Configuration['ab
                 $Categories[] = $Category;
             }
         }
-        if (!count($Categories)) {
+        if (!\count($Categories)) {
             return;
         }
-        $Categories = implode(',', $Categories);
+        $Categories = \implode(',', $Categories);
         $Queue = true;
         if ($this->CIDRAM['AbuseIPDB-Recently Reported-' . $Report['IP']] === false) {
             $Status = $this->Request->request('https://api.abuseipdb.com/api/v2/report', [
@@ -183,7 +183,7 @@ if ($this->Configuration['abuseipdb']['report_back'] && $this->Configuration['ab
             ]);
             $this->Cache->setEntry('AbuseIPDB-Recently Reported-' . $Report['IP'], true, 900);
             $this->CIDRAM['AbuseIPDB-Recently Reported-' . $Report['IP']] = true;
-            if (strpos($Status, '"ipAddress":"' . $Report['IP'] . '"') !== false && strpos($Status, '"errors":') === false) {
+            if (\strpos($Status, '"ipAddress":"' . $Report['IP'] . '"') !== false && \strpos($Status, '"errors":') === false) {
                 if (!isset($this->CIDRAM['Report OK'])) {
                     $this->CIDRAM['Report OK'] = 0;
                 }
@@ -200,10 +200,10 @@ if ($this->Configuration['abuseipdb']['report_back'] && $this->Configuration['ab
             if (!isset($this->CIDRAM['AbuseIPDB-Report Queue'])) {
                 $this->CIDRAM['AbuseIPDB-Report Queue'] = $this->Cache->getEntry('AbuseIPDB-Report Queue');
             }
-            if (!is_string($this->CIDRAM['AbuseIPDB-Report Queue'])) {
+            if (!\is_string($this->CIDRAM['AbuseIPDB-Report Queue'])) {
                 $this->CIDRAM['AbuseIPDB-Report Queue'] = '';
             }
-            if (substr_count($this->CIDRAM['AbuseIPDB-Report Queue'], '|' . $Report['IP'] . '|') < 10) {
+            if (\substr_count($this->CIDRAM['AbuseIPDB-Report Queue'], '|' . $Report['IP'] . '|') < 10) {
                 $this->CIDRAM['AbuseIPDB-Report Queue'] .= $this->Now . '|' . $Report['IP'] . '|' . $Categories . '|' . $Report['Comments'] . '||';
             }
         }

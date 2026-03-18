@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used by the logs page (last modified: 2026.03.17).
+ * This file: Methods used by the logs page (last modified: 2026.03.18).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -72,7 +72,7 @@ trait Logs
         $Timestamp = \date('Y-m-d\TH:i', $this->Now);
         while ($Caret < $Len) {
             $Remainder = $Len - $Caret;
-            if ($Remainder < self::MAX_BLOCKSIZE && $Remainder < ini_get('pcre.backtrack_limit')) {
+            if ($Remainder < self::MAX_BLOCKSIZE && $Remainder < \ini_get('pcre.backtrack_limit')) {
                 $Section = \substr($In, $Caret) . $this->CIDRAM['BlockSeparator'];
                 $Caret = $Len;
             } else {
@@ -262,7 +262,7 @@ trait Logs
         $Timestamp = \date('Y-m-d\TH:i', $this->Now);
         for ($A = 65; $A < 91; $A++) {
             for ($B = 65; $B < 91; $B++) {
-                $Code = '[' . chr($A) . chr($B) . ']';
+                $Code = '[' . \chr($A) . \chr($B) . ']';
                 if ($Count = \substr_count($In, $Code)) {
                     $Data['Origin'][$Code] = $Count;
                 }
@@ -274,9 +274,9 @@ trait Logs
         $Out = '';
         foreach ($Data as $Field => $Entries) {
             if ($this->FE['SortOrder'] === 'descending') {
-                \arsort($Entries, SORT_NUMERIC);
+                \arsort($Entries, \SORT_NUMERIC);
             } else {
-                \asort($Entries, SORT_NUMERIC);
+                \asort($Entries, \SORT_NUMERIC);
             }
             if (\count($Entries)) {
                 $Out .= '</div><div class="col h2f s">' . $Field . '</div><div class="duo">';

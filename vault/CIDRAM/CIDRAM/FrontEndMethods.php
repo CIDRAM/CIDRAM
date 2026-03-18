@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2026.03.17).
+ * This file: General methods used by the front-end (last modified: 2026.03.18).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -535,7 +535,7 @@ trait FrontEndMethods
         if (\preg_match('~(?://|[^!\d\w\._-]$)~i', $Path) || !$this->freeFromTraversal($Path)) {
             return false;
         }
-        $Path = \preg_split('@/@', $Path, -1, PREG_SPLIT_NO_EMPTY);
+        $Path = \preg_split('@/@', $Path, -1, \PREG_SPLIT_NO_EMPTY);
         $Valid = true;
         \array_walk($Path, function ($Segment) use (&$Valid): void {
             if (empty($Segment) || \preg_match('/(?:[\x00-\x1F\x7F]+|^\.+$)/i', $Segment)) {
@@ -648,18 +648,18 @@ trait FrontEndMethods
         }
 
         /** Non-default theme assets. */
-        if (\file_exists($this->AssetsPath . 'frontend' . DIRECTORY_SEPARATOR . $this->Configuration['frontend']['theme'] . DIRECTORY_SEPARATOR . $Asset)) {
-            return $this->AssetsPath . 'frontend' . DIRECTORY_SEPARATOR . $this->Configuration['frontend']['theme'] . DIRECTORY_SEPARATOR . $Asset;
+        if (\file_exists($this->AssetsPath . 'frontend' . \DIRECTORY_SEPARATOR . $this->Configuration['frontend']['theme'] . \DIRECTORY_SEPARATOR . $Asset)) {
+            return $this->AssetsPath . 'frontend' . \DIRECTORY_SEPARATOR . $this->Configuration['frontend']['theme'] . \DIRECTORY_SEPARATOR . $Asset;
         }
 
         /** Default theme assets. */
-        if (\file_exists($this->AssetsPath . 'frontend' . DIRECTORY_SEPARATOR . 'default' . DIRECTORY_SEPARATOR . $Asset)) {
-            return $this->AssetsPath . 'frontend' . DIRECTORY_SEPARATOR . 'default' . DIRECTORY_SEPARATOR . $Asset;
+        if (\file_exists($this->AssetsPath . 'frontend' . \DIRECTORY_SEPARATOR . 'default' . \DIRECTORY_SEPARATOR . $Asset)) {
+            return $this->AssetsPath . 'frontend' . \DIRECTORY_SEPARATOR . 'default' . \DIRECTORY_SEPARATOR . $Asset;
         }
 
         /** Front-end assets base directory assets. */
-        if (\file_exists($this->AssetsPath . 'frontend' . DIRECTORY_SEPARATOR . $Asset)) {
-            return $this->AssetsPath . 'frontend' . DIRECTORY_SEPARATOR . $Asset;
+        if (\file_exists($this->AssetsPath . 'frontend' . \DIRECTORY_SEPARATOR . $Asset)) {
+            return $this->AssetsPath . 'frontend' . \DIRECTORY_SEPARATOR . $Asset;
         }
 
         /** Failure. */
@@ -1205,9 +1205,9 @@ trait FrontEndMethods
     {
         $Diff = [247, 127, 31];
         if (\is_string($String) && !empty($String)) {
-            $String = str_split($String);
+            $String = \str_split($String);
             foreach ($String as $Char) {
-                $Char = ord($Char);
+                $Char = \ord($Char);
                 $Diff[0] = ($Diff[0] >> 1) + (($Diff[2] & 1) === 1 ? 128 : 0);
                 $Diff[1] = ($Diff[1] >> 1) + (($Diff[0] & 1) === 1 ? 128 : 0);
                 $Diff[2] = ($Diff[2] >> 1) + (($Diff[1] & 1) === 1 ? 128 : 0);
@@ -1218,7 +1218,7 @@ trait FrontEndMethods
             return $Diff;
         }
         for ($Hash = '', $Index = 0; $Index < 3; $Index++) {
-            $Hash .= \str_pad(\bin2hex(chr($Diff[$Index])), 2, '0', STR_PAD_LEFT);
+            $Hash .= \str_pad(\bin2hex(\chr($Diff[$Index])), 2, '0', \STR_PAD_LEFT);
         }
         if ($Mode === 2) {
             return $Hash;
@@ -1621,7 +1621,7 @@ trait FrontEndMethods
             $ToBase[$Key] = $Value;
         }
         $MinifiedFormData = \array_merge($ToBase, $ToMerge);
-        $_POST = array_replace($_POST, $MinifiedFormData);
+        $_POST = \array_replace($_POST, $MinifiedFormData);
         unset($_POST[$MinifiedKey]);
     }
 
@@ -1888,7 +1888,7 @@ trait FrontEndMethods
      */
     private function escapeJsInHTML(string $In): string
     {
-        return \str_replace(['"', '<', '>', '\\\\n'], ['&#34;', '&lt;', '&gt;', '\\n'], addslashes($In));
+        return \str_replace(['"', '<', '>', '\\\\n'], ['&#34;', '&lt;', '&gt;', '\\n'], \addslashes($In));
     }
 
     /**

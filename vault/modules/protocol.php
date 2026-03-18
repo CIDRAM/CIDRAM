@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protocol blocker module (last modified: 2026.02.22).
+ * This file: Protocol blocker module (last modified: 2026.03.18).
  *
  * False positive risk (an approximate, rough estimate only): « [x]Low [ ]Medium [ ]High »
  */
@@ -19,7 +19,7 @@ if (!isset($this->CIDRAM['ModuleResCache'])) {
 }
 
 /** Protocol blocker module blocked protocols. */
-$this->CIDRAM['ProtocolBlocker'] = ['blocked' => array_flip(explode("\n", $this->Configuration['protocol']['blocked']))];
+$this->CIDRAM['ProtocolBlocker'] = ['blocked' => \array_flip(\explode("\n", $this->Configuration['protocol']['blocked']))];
 
 /** Defining as closure for later recall (no params; no return value). */
 $this->CIDRAM['ModuleResCache'][$Module] = function () {
@@ -28,12 +28,12 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         return;
     }
 
-    if (($Split = strpos($this->BlockInfo['Protocol'], '/')) !== false) {
-        $Protocol = strtoupper(preg_replace('~[^A-Za-z]~', '', substr($this->BlockInfo['Protocol'], 0, $Split)));
-        $Version = explode('.', preg_replace('~[^\d.]~', '', substr($this->BlockInfo['Protocol'], $Split + 1)), 2);
+    if (($Split = \strpos($this->BlockInfo['Protocol'], '/')) !== false) {
+        $Protocol = \strtoupper(\preg_replace('~[^A-Za-z]~', '', \substr($this->BlockInfo['Protocol'], 0, $Split)));
+        $Version = \explode('.', \preg_replace('~[^\d.]~', '', \substr($this->BlockInfo['Protocol'], $Split + 1)), 2);
     } else {
-        $Protocol = strtoupper(preg_replace('~[^A-Za-z]~', '', $this->BlockInfo['Protocol']));
-        $Version = explode('.', preg_replace('~[^\d.]~', '', $this->BlockInfo['Protocol']), 2);
+        $Protocol = \strtoupper(\preg_replace('~[^A-Za-z]~', '', $this->BlockInfo['Protocol']));
+        $Version = \explode('.', \preg_replace('~[^\d.]~', '', $this->BlockInfo['Protocol']), 2);
     }
     $Major = (int)$Version[0];
     $Minor = isset($Version[1]) ? (int)$Version[1] : 0;
@@ -41,8 +41,8 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     $Hit = false;
 
     /** Account for different protocols used through proxying. */
-    if ($Protocol === 'HTTP' && $Major === 1 && isset($_SERVER['X_SPDY']) && substr($_SERVER['X_SPDY'], 0, 4) === 'HTTP') {
-        $Version = explode('.', preg_replace('~[^\d.]~', '', substr($_SERVER['X_SPDY'], 4)), 2);
+    if ($Protocol === 'HTTP' && $Major === 1 && isset($_SERVER['X_SPDY']) && \substr($_SERVER['X_SPDY'], 0, 4) === 'HTTP') {
+        $Version = \explode('.', \preg_replace('~[^\d.]~', '', \substr($_SERVER['X_SPDY'], 4)), 2);
         $Major = (int)$Version[0];
         $Minor = isset($Version[1]) ? (int)$Version[1] : 0;
     }

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The auxiliary rules view mode page (last modified: 2025.10.07).
+ * This file: The auxiliary rules view mode page (last modified: 2026.03.18).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -40,7 +40,7 @@ if (isset($_POST['ruleName'], $_POST['conSourceType'], $_POST['conIfOrNot'], $_P
     }
 
     /** Construct new rule notes. */
-    if (isset($_POST['Notes']) && strlen($_POST['Notes'])) {
+    if (isset($_POST['Notes']) && \strlen($_POST['Notes'])) {
         $this->CIDRAM['AuxData'][$RuleName]['Notes'] = $this->desabotage($_POST['Notes']);
     }
 
@@ -63,10 +63,10 @@ if (isset($_POST['ruleName'], $_POST['conSourceType'], $_POST['conIfOrNot'], $_P
     /** Process webhooks. */
     if (!empty($this->CIDRAM['AuxData'][$RuleName]['Webhooks'])) {
         $this->arrayify($this->CIDRAM['AuxData'][$RuleName]['Webhooks']);
-        $this->CIDRAM['AuxData'][$RuleName]['Webhooks'] = array_unique(
+        $this->CIDRAM['AuxData'][$RuleName]['Webhooks'] = \array_unique(
             array_filter($this->CIDRAM['AuxData'][$RuleName]['Webhooks'])
         );
-        if (!count($this->CIDRAM['AuxData'][$RuleName]['Webhooks'])) {
+        if (!\count($this->CIDRAM['AuxData'][$RuleName]['Webhooks'])) {
             unset($this->CIDRAM['AuxData'][$RuleName]['Webhooks']);
         }
     }
@@ -77,7 +77,7 @@ if (isset($_POST['ruleName'], $_POST['conSourceType'], $_POST['conIfOrNot'], $_P
             if (!isset($FlagData['Label'])) {
                 continue;
             }
-            $FlagKey = preg_replace('~[^A-Za-z]~', '_', $FlagName);
+            $FlagKey = \preg_replace('~[^A-Za-z]~', '_', $FlagName);
             if (!empty($_POST[$FlagKey])) {
                 $this->CIDRAM['AuxData'][$RuleName][$FlagName] = true;
             }
@@ -106,7 +106,7 @@ if (isset($_POST['ruleName'], $_POST['conSourceType'], $_POST['conIfOrNot'], $_P
     }
 
     /** Determine number of new rule conditions to construct. */
-    $AuxConditions = count($_POST['conSourceType']);
+    $AuxConditions = \count($_POST['conSourceType']);
 
     /** Construct new rule conditions. */
     for ($Iteration = 0; $Iteration < $AuxConditions; $Iteration++) {
@@ -144,7 +144,7 @@ if (isset($_POST['ruleName'], $_POST['conSourceType'], $_POST['conIfOrNot'], $_P
     }
 
     /** Construct additional instructions. */
-    if (isset($_POST['AdditionalInstructions']) && strlen($_POST['AdditionalInstructions'])) {
+    if (isset($_POST['AdditionalInstructions']) && \strlen($_POST['AdditionalInstructions'])) {
         $this->CIDRAM['AuxData'][$RuleName]['Additional instructions'] = $this->desabotage($_POST['AdditionalInstructions']);
     }
 
@@ -152,17 +152,17 @@ if (isset($_POST['ruleName'], $_POST['conSourceType'], $_POST['conIfOrNot'], $_P
 
     /** Reconstruct and update auxiliary rules data. */
     if ($NewAuxData = $this->YAML->reconstruct($this->CIDRAM['AuxData'])) {
-        $Handle = fopen($this->Vault . 'auxiliary.yml', 'wb');
-        if (is_resource($Handle)) {
-            if (fwrite($Handle, $NewAuxData) !== false) {
+        $Handle = \fopen($this->Vault . 'auxiliary.yml', 'wb');
+        if (\is_resource($Handle)) {
+            if (\fwrite($Handle, $NewAuxData) !== false) {
                 $Success = true;
             }
-            fclose($Handle);
+            \fclose($Handle);
         }
     }
 
     /** Update state message. */
-    $this->FE['state_msg'] = $Success ? sprintf(
+    $this->FE['state_msg'] = $Success ? \sprintf(
         $this->L10N->getString('response.New auxiliary rule, %s, created successfully'),
         $RuleName
     ) . '<br />' : $this->L10N->getString('response.Failed to update auxiliary rules') . '<br />';
@@ -181,13 +181,13 @@ if (!$this->FE['ASYNC']) {
 
     /** Process auxiliary rules. */
     $this->FE['Data'] = '      ' . (
-        file_exists($this->Vault . 'auxiliary.yml') ?
+        \file_exists($this->Vault . 'auxiliary.yml') ?
         $this->generateRules() :
         '<span class="s">' . $this->L10N->getString('response.There aren_t currently any auxiliary rules') . '<br /><br /></span>'
     );
 
     /** Priority information about auxiliary rules. */
-    $this->FE['Priority_Aux'] = sprintf(
+    $this->FE['Priority_Aux'] = \sprintf(
         '%2$s%1$s%7$s%1$s(%8$s🔄%3$s🔄%4$s🔄%5$s)%1$s%6$s',
         $this->L10N->Directionality !== 'rtl' ? '➡' : '⬅',
         $this->L10N->getString('label.aux.whitelist the request'),
@@ -202,17 +202,17 @@ if (!$this->FE['ASYNC']) {
     /** Display flags for creating a new rule (view mode). */
     $this->FE['AuxFlagsProvides'] = '';
     foreach ($this->CIDRAM['Provide']['Auxiliary Rules']['Flags'] as $FlagSetName => $FlagSet) {
-        if (isset($FlagSet['Label']) && is_string($FlagSet['Label'])) {
+        if (isset($FlagSet['Label']) && \is_string($FlagSet['Label'])) {
             $FlagSetName = $this->L10N->getString($FlagSet['Label']) ?: $FlagSetName;
         }
-        $this->FE['AuxFlagsProvides'] .= sprintf('%s<div class="iLabl s"><fieldset><legend>%s</legend>', "\n            ", $FlagSetName);
+        $this->FE['AuxFlagsProvides'] .= \sprintf('%s<div class="iLabl s"><fieldset><legend>%s</legend>', "\n            ", $FlagSetName);
         foreach ($FlagSet as $FlagName => $FlagData) {
             if (!isset($FlagData['Label'])) {
                 continue;
             }
-            $this->FE['AuxFlagsProvides'] .= sprintf(
+            $this->FE['AuxFlagsProvides'] .= \sprintf(
                 '<label><input type="checkbox" class="auto" id="%1$s" name="%1$s" /> %2$s%3$s</label><br />',
-                preg_replace('~[^A-Za-z]~', '_', $FlagName),
+                \preg_replace('~[^A-Za-z]~', '_', $FlagName),
                 isset($FlagData['Icon']) ? $FlagData['Icon'] . ' ' : '',
                 $this->L10N->getString($FlagData['Label']) ?: $FlagName
             );
@@ -225,8 +225,8 @@ if (!$this->FE['ASYNC']) {
     unset($Hint, $FlagData, $FlagName, $FlagSet, $FlagSetName);
 
     /** Calculate page load time (useful for debugging). */
-    $this->FE['ProcessTime'] = microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'];
-    $this->FE['state_msg'] .= sprintf(
+    $this->FE['ProcessTime'] = \microtime(true) - $_SERVER['REQUEST_TIME_FLOAT'];
+    $this->FE['state_msg'] .= \sprintf(
         $this->L10N->getPlural($this->FE['ProcessTime'], 'label.Page request completed in %s seconds'),
         '<span class="txtRd">' . $this->NumberFormatter->format($this->FE['ProcessTime'], 3) . '</span>'
     );
@@ -235,11 +235,11 @@ if (!$this->FE['ASYNC']) {
     if (isset($this->CIDRAM['QueryVars']['do'])) {
         if ($this->CIDRAM['QueryVars']['do'] === 'disable' && isset($this->Stages['Aux:Enable'])) {
             unset($this->Stages['Aux:Enable']);
-            $this->Configuration['general']['stages'] = implode("\n", array_keys($this->Stages));
+            $this->Configuration['general']['stages'] = \implode("\n", \array_keys($this->Stages));
             $this->updateConfiguration();
         } elseif ($this->CIDRAM['QueryVars']['do'] === 'enable' && !isset($this->Stages['Aux:Enable'])) {
             $this->Stages['Aux:Enable'] = true;
-            $this->Configuration['general']['stages'] = implode("\n", array_keys($this->Stages));
+            $this->Configuration['general']['stages'] = \implode("\n", \array_keys($this->Stages));
             $this->updateConfiguration();
         }
     }
@@ -261,13 +261,13 @@ if (!$this->FE['ASYNC']) {
     unset($this->CIDRAM['AuxData'][$_POST['auxD']]);
 
     /** Reconstruct and update auxiliary rules data. */
-    if (!$this->updateAuxData() && file_exists($this->Vault . 'auxiliary.yml')) {
+    if (!$this->updateAuxData() && \file_exists($this->Vault . 'auxiliary.yml')) {
         /** If auxiliary rules data reconstruction fails, or if it's empty, delete the file. */
         unlink($this->Vault . 'auxiliary.yml');
     }
 
     /** Confirm successful deletion. */
-    echo sprintf($this->L10N->getString('response.Auxiliary rule, %s, deleted successfully'), $_POST['auxD']);
+    echo \sprintf($this->L10N->getString('response.Auxiliary rule, %s, deleted successfully'), $_POST['auxD']);
 } elseif (isset($_POST['auxT'])) {
     /** Move an auxiliary rule to the top of the list. */
     $this->CIDRAM['AuxData'] = $this->swapAssociativeArrayElements($this->CIDRAM['AuxData'], $this->desabotage($_POST['auxT']), false);
@@ -292,7 +292,7 @@ if (!$this->FE['ASYNC']) {
 
     /** Remove temporary elements. */
     foreach ($this->CIDRAM['AuxData'] as $Name => $Rule) {
-        if (!is_array($Rule) || count($Rule) === 0) {
+        if (!\is_array($Rule) || \count($Rule) === 0) {
             unset($this->CIDRAM['AuxData'][$Name]);
         }
     }

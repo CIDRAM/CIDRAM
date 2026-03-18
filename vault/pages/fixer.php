@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The signature file fixer page (last modified: 2025.09.19).
+ * This file: The signature file fixer page (last modified: 2026.03.18).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -27,7 +27,7 @@ $PreferredSource = $_POST['preferredSource'] ?? '';
 $this->FE['DirectInput'] = $_POST['DirectInput'] ?? '';
 
 /** Preferred source menu. */
-$this->FE['PreferredSource'] = sprintf(
+$this->FE['PreferredSource'] = \sprintf(
     '%1$sList" value="List"%2$s %7$s%6$spreferredSourceList">%3$s</label><br />%1$sInput" value="Input"%4$s %7$s%6$spreferredSourceInput">%5$s</label>',
     '<input type="radio" class="auto" name="preferredSource" id="preferredSource',
     $PreferredSource === 'List' ? ' checked' : '',
@@ -46,10 +46,10 @@ $this->FE['submitButtonVisibility'] = empty($PreferredSource) ? ' style="display
 /** Generate a list of currently active signature files. */
 $this->FE['ActiveSignatureFiles'] = '<div style="display:grid;margin:auto 38px;grid-template-columns:19px auto">';
 $GIClass = 'B';
-foreach (explode("\n", $this->Configuration['components']['ipv4'] . "\n" . $this->Configuration['components']['ipv6']) as $SigSource) {
+foreach (\explode("\n", $this->Configuration['components']['ipv4'] . "\n" . $this->Configuration['components']['ipv6']) as $SigSource) {
     $GIClass = $GIClass !== 'A' ? 'A' : 'B';
-    $SigSourceID = preg_replace('~[^\da-z]~i', '_', $SigSource);
-    $this->FE['ActiveSignatureFiles'] .= sprintf(
+    $SigSourceID = \preg_replace('~[^\da-z]~i', '_', $SigSource);
+    $this->FE['ActiveSignatureFiles'] .= \sprintf(
         '<div class="gridboxitem gridVA gridH%4$s"><span class="s gridlabel"><input type="radio" class="auto" name="sigFile" id="%1$s" value="%2$s" %3$s/></div><div class="gridboxitem gridH%4$s s"><label for="%1$s">%2$s</label></span></div>',
         $SigSourceID,
         $SigSource,
@@ -84,18 +84,18 @@ if ($PreferredSource === 'Input' && !empty($_POST['DirectInput'])) {
 /** Process (validate; attempt to fix) data. */
 if ($this->FE['FixerOutput']) {
     $Fixer = [
-        'Time' => microtime(true),
+        'Time' => \microtime(true),
         'Changes' => 0,
         'Aggregator' => new Aggregator(),
-        'Before' => hash('sha256', $this->FE['FixerOutput']) . ':' . strlen($this->FE['FixerOutput'])
+        'Before' => \hash('sha256', $this->FE['FixerOutput']) . ':' . \strlen($this->FE['FixerOutput'])
     ];
     $Fixer['Aggregator']->Results = true;
-    if (strpos($this->FE['FixerOutput'], "\r") !== false) {
-        $this->FE['FixerOutput'] = str_replace("\r", '', $this->FE['FixerOutput']);
+    if (\strpos($this->FE['FixerOutput'], "\r") !== false) {
+        $this->FE['FixerOutput'] = \str_replace("\r", '', $this->FE['FixerOutput']);
         $Fixer['Changes']++;
     }
     $Fixer['StrObject'] = new \Maikuolan\Common\ComplexStringHandler("\n" . $this->FE['FixerOutput'] . "\n", self::REGEX_TAGS, function (string $Data) use (&$Fixer): string {
-        if (!$Data = trim($Data)) {
+        if (!$Data = \trim($Data)) {
             return '';
         }
         $Output = '';
@@ -103,14 +103,14 @@ if ($this->FE['FixerOutput']) {
         while ($NEoLPos !== false) {
             $Set = $Previous = '';
             while (true) {
-                if (($NEoLPos = strpos($Data, "\n", $EoLPos)) === false) {
-                    $Line = trim(substr($Data, $EoLPos));
+                if (($NEoLPos = \strpos($Data, "\n", $EoLPos)) === false) {
+                    $Line = \trim(\substr($Data, $EoLPos));
                 } else {
-                    $Line = trim(substr($Data, $EoLPos, $NEoLPos - $EoLPos));
+                    $Line = \trim(\substr($Data, $EoLPos, $NEoLPos - $EoLPos));
                     $NEoLPos++;
                 }
-                $Param = (($Pos = strpos($Line, ' ')) !== false) ? substr($Line, $Pos + 1) : 'Deny Generic';
-                $Param = preg_replace(['~^\s+|\s+$~', '~(\S+)\s+(\S+)~'], ['', '\1 \2'], $Param);
+                $Param = (($Pos = \strpos($Line, ' ')) !== false) ? \substr($Line, $Pos + 1) : 'Deny Generic';
+                $Param = \preg_replace(['~^\s+|\s+$~', '~(\S+)\s+(\S+)~'], ['', '\1 \2'], $Param);
                 if ($Previous === '') {
                     $Previous = $Param;
                 }
@@ -126,30 +126,30 @@ if ($this->FE['FixerOutput']) {
                 }
                 $EoLPos = $NEoLPos;
             }
-            if ($Set = $Fixer['Aggregator']->aggregate(trim($Set))) {
-                $Set = preg_replace('~$~m', ' ' . $Previous, $Set);
+            if ($Set = $Fixer['Aggregator']->aggregate(\trim($Set))) {
+                $Set = \preg_replace('~$~m', ' ' . $Previous, $Set);
                 $Output .= $Set . "\n";
             }
             $Fixer['Changes'] += $Fixer['Aggregator']->NumberRejected;
             $Fixer['Changes'] += $Fixer['Aggregator']->NumberMerged;
         }
-        return trim($Output);
+        return \trim($Output);
     });
     $Fixer['StrObject']->iterateClosure(function (string $Data) use (&$Fixer) {
-        if (($Pos = strpos($Data, "---\n")) !== false && substr($Data, $Pos - 1, 1) === "\n") {
-            $YAML = substr($Data, $Pos + 4);
-            if (($HPos = strpos($YAML, "\n#")) !== false) {
-                $After = substr($YAML, $HPos);
-                $YAML = substr($YAML, 0, $HPos + 1);
+        if (($Pos = \strpos($Data, "---\n")) !== false && \substr($Data, $Pos - 1, 1) === "\n") {
+            $YAML = \substr($Data, $Pos + 4);
+            if (($HPos = \strpos($YAML, "\n#")) !== false) {
+                $After = \substr($YAML, $HPos);
+                $YAML = \substr($YAML, 0, $HPos + 1);
             } else {
                 $After = '';
             }
-            $BeforeCount = substr_count($YAML, "\n");
+            $BeforeCount = \substr_count($YAML, "\n");
             $Arr = [];
             $this->YAML->process($YAML, $Arr);
-            $NewData = substr($Data, 0, $Pos + 4) . $this->YAML->reconstruct($Arr);
-            if (($Add = $BeforeCount - substr_count($NewData, "\n") + 1) > 0) {
-                $NewData .= str_repeat("\n", $Add);
+            $NewData = \substr($Data, 0, $Pos + 4) . $this->YAML->reconstruct($Arr);
+            if (($Add = $BeforeCount - \substr_count($NewData, "\n") + 1) > 0) {
+                $NewData .= \str_repeat("\n", $Add);
             }
             $NewData .= $After;
             if ($Data !== $NewData) {
@@ -159,27 +159,27 @@ if ($this->FE['FixerOutput']) {
         }
         return "\n" . $Data;
     }, true);
-    $this->FE['FixerOutput'] = trim($Fixer['StrObject']->recompile()) . "\n";
-    $Fixer['After'] = hash('sha256', $this->FE['FixerOutput']) . ':' . strlen($this->FE['FixerOutput']);
+    $this->FE['FixerOutput'] = \trim($Fixer['StrObject']->recompile()) . "\n";
+    $Fixer['After'] = \hash('sha256', $this->FE['FixerOutput']) . ':' . \strlen($this->FE['FixerOutput']);
     if ($Fixer['Before'] !== $Fixer['After'] && !$Fixer['Changes']) {
         $Fixer['Changes']++;
     }
-    $Fixer['Time'] = microtime(true) - $Fixer['Time'];
-    $Fixer = '<div class="s">' . sprintf($this->L10N->getString('state_fixer'), sprintf(
+    $Fixer['Time'] = \microtime(true) - $Fixer['Time'];
+    $Fixer = '<div class="s">' . \sprintf($this->L10N->getString('state_fixer'), \sprintf(
         $this->L10N->getPlural($Fixer['Changes'], 'state_fixer_changed'),
         '<span class="txtRd">' . $this->NumberFormatter->format($Fixer['Changes']) . '</span>'
-    ), sprintf(
+    ), \sprintf(
         $this->L10N->getPlural($Fixer['Time'], 'state_fixer_seconds'),
         '<span class="txtRd">' . $this->NumberFormatter->format($Fixer['Time'], 3) . '</span>'
     )) . '<br /><blockquote><code>' . $Fixer['Before'] . '</code><br />↪️<code>' . $Fixer['After'] . '</code></blockquote></div>';
-    $this->FE['FixerOutput'] = '</div><div class="ng1">' . $Fixer . '<br /><textarea name="FixerOutput" id="fixerOutput">' . str_replace(
+    $this->FE['FixerOutput'] = '</div><div class="ng1">' . $Fixer . '<br /><textarea name="FixerOutput" id="fixerOutput">' . \str_replace(
         ['&', '<', '>'],
         ['&amp;', '&lt;', '&gt;'],
         $this->FE['FixerOutput']
     ) . '</textarea>';
 
     /** Copy SVG. */
-    $this->FE['FixerOutput'] .= '<div class="clipMar">' . sprintf(
+    $this->FE['FixerOutput'] .= '<div class="clipMar">' . \sprintf(
         '<span class="navicon clipboard" id="fxOS" onclick="javascript:if(navigat' .
         'or.clipboard){navigator.clipboard.writeText(getElementById(\'fixerOutput' .
         '\').value);getElementById(\'fxOS_copied\').className=\'sFade\'}else{getE' .

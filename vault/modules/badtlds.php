@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bad TLDs blocker module (last modified: 2022.06.04).
+ * This file: Bad TLDs blocker module (last modified: 2026.03.18).
  *
  * False positive risk (an approximate, rough estimate only): « [x]Low [ ]Medium [ ]High »
  */
@@ -26,7 +26,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     }
 
     /** Don't continue if compatibility indicators exist. */
-    if (strpos($this->BlockInfo['Signatures'], 'bunnycdn.php') !== false) {
+    if (\strpos($this->BlockInfo['Signatures'], 'bunnycdn.php') !== false) {
         return;
     }
 
@@ -39,19 +39,19 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     if (
         !$this->CIDRAM['Hostname'] ||
         $this->CIDRAM['Hostname'] === $this->BlockInfo['IPAddr'] ||
-        preg_match('~^b\.in-addr-servers\.nstld~', $this->CIDRAM['Hostname'])
+        \preg_match('~^b\.in-addr-servers\.nstld~', $this->CIDRAM['Hostname'])
     ) {
         return;
     }
 
-    $this->trigger(preg_match(
+    $this->trigger(\preg_match(
         '~\.(?:bid|click|club?|country|cricket|date|diet|domain|download|fai' .
         'th|gdn|gq|kim|link|men|museum|party|racing|review|science|stream|to' .
         'kyo|top|webcam|website|win|work|xyz|yokohama|zip)$~i',
         $this->CIDRAM['Hostname']
     ), 'Disreputable TLD'); // 2018.04.08
 
-    $this->trigger(preg_match('~\.onion$~i', $this->CIDRAM['Hostname']), 'Anonymous/Unroutable TLD'); // 2017.12.28
+    $this->trigger(\preg_match('~\.onion$~i', $this->CIDRAM['Hostname']), 'Anonymous/Unroutable TLD'); // 2017.12.28
 };
 
 /** Execute closure. */

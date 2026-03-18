@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Stop Forum Spam module (last modified: 2025.07.27).
+ * This file: Stop Forum Spam module (last modified: 2026.03.18).
  *
  * False positive risk (an approximate, rough estimate only): « [x]Low [ ]Medium [ ]High »
  */
@@ -29,7 +29,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
      * Normalised, lower-cased request URI; Used to determine whether the
      * module needs to do anything for the request.
      */
-    $LCURI = preg_replace('/\s/', '', strtolower($this->BlockInfo['rURI']));
+    $LCURI = \preg_replace('/\s/', '', \strtolower($this->BlockInfo['rURI']));
 
     /**
      * If the request isn't attempting to access a sensitive page (login,
@@ -52,7 +52,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     if (
         $this->CIDRAM['SFS-429'] ||
         !$this->honourLookup() ||
-        filter_var($this->BlockInfo['IPAddr'], FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE) === false
+        filter_var($this->BlockInfo['IPAddr'], \FILTER_VALIDATE_IP, \FILTER_FLAG_NO_PRIV_RANGE | \FILTER_FLAG_NO_RES_RANGE) === false
     ) {
         return;
     }
@@ -79,8 +79,8 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             }
 
             /** Generate local SFS cache entry. */
-            if ((strpos($Lookup, 's:7:"success";') !== false) && (strpos($Lookup, 's:2:"ip";') !== false)) {
-                $Frequency = preg_match('~"frequency";i:(\d+);~', $Lookup, $Frequency) ? (int)$Frequency[1] : 0;
+            if ((\strpos($Lookup, 's:7:"success";') !== false) && (\strpos($Lookup, 's:2:"ip";') !== false)) {
+                $Frequency = \preg_match('~"frequency";i:(\d+);~', $Lookup, $Frequency) ? (int)$Frequency[1] : 0;
                 $this->CIDRAM['SFS-' . $this->BlockInfo['IPAddr']] = $Frequency;
                 $Expiry = $this->Configuration['sfs']['expire_good']->getAsSeconds();
             } else {
@@ -101,14 +101,14 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     if ($this->trigger(
         (
             isset($this->CIDRAM['SFS-' . $this->BlockInfo['IPAddr']]) &&
-            is_numeric($this->CIDRAM['SFS-' . $this->BlockInfo['IPAddr']]) &&
+            \is_numeric($this->CIDRAM['SFS-' . $this->BlockInfo['IPAddr']]) &&
             $this->CIDRAM['SFS-' . $this->BlockInfo['IPAddr']] > 0
         ),
         'SFS Lookup',
-        $this->L10N->getString('ReasonMessage.Spam') . '<br />' . sprintf($this->L10N->getString('request_removal'), 'https://www.stopforumspam.com/removal')
+        $this->L10N->getString('ReasonMessage.Spam') . '<br />' . \sprintf($this->L10N->getString('request_removal'), 'https://www.stopforumspam.com/removal')
     )) {
         /** Fetch options. */
-        $this->enactOptions('', array_flip(explode("\n", $this->Configuration['sfs']['options'])));
+        $this->enactOptions('', \array_flip(\explode("\n", $this->Configuration['sfs']['options'])));
     }
 };
 

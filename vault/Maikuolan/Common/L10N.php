@@ -1,6 +1,6 @@
 <?php
 /**
- * L10N handler (last modified: 2026.03.17).
+ * L10N handler (last modified: 2026.03.18).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -73,10 +73,10 @@ class L10N extends CommonAbstract implements \Countable
     public function __construct($Data = [], $Fallback = [])
     {
         if (!(\is_array($Data) || $Data instanceof \ArrayAccess)) {
-            throw new \InvalidArgumentException('First parameter of __construct in \Maikuolan\Common\L10N must be an array, or an instance of \ArrayAccess. Parameter supplied was ' . gettype($Data));
+            throw new \InvalidArgumentException('First parameter of __construct in \Maikuolan\Common\L10N must be an array, or an instance of \ArrayAccess. Parameter supplied was ' . \gettype($Data));
         }
         if (!(\is_array($Fallback) || $Fallback instanceof \ArrayAccess || $Fallback instanceof \Maikuolan\Common\L10N)) {
-            throw new \InvalidArgumentException('Second parameter of __construct in \Maikuolan\Common\L10N must be an array, an instance of \ArrayAccess, or an instance of \Maikuolan\Common\L10N. Parameter supplied was ' . gettype($Fallback));
+            throw new \InvalidArgumentException('Second parameter of __construct in \Maikuolan\Common\L10N must be an array, an instance of \ArrayAccess, or an instance of \Maikuolan\Common\L10N. Parameter supplied was ' . \gettype($Fallback));
         }
         $this->Data = $Data;
         $this->Fallback = $Fallback;
@@ -230,7 +230,7 @@ class L10N extends CommonAbstract implements \Countable
                     $Try = $Reference;
                 }
             }
-            $Reference = (!\is_array($Try) || \preg_match('~^[a-z]{2,3}(?:-[A-Z][A-Za-z]{1,3})?$~', key($Try))) ? [$Try] : $Try;
+            $Reference = (!\is_array($Try) || \preg_match('~^[a-z]{2,3}(?:-[A-Z][A-Za-z]{1,3})?$~', \key($Try))) ? [$Try] : $Try;
             foreach ($Reference as $Key => $Value) {
                 if (\is_array($Value)) {
                     $Value = $this->PreferredVariant !== '' && isset($Value[$this->PreferredVariant]) ? $Value[$this->PreferredVariant] : \array_shift($Value);

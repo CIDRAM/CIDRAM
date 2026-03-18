@@ -1,6 +1,6 @@
 <?php
 /**
- * YAML handler (last modified: 2026.03.17).
+ * YAML handler (last modified: 2026.03.18).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -252,7 +252,7 @@ class YAML extends CommonAbstract implements \Countable
                     if (
                         $Attempt === false ||
                         !$this->Demojibakefier->checkConformity($Attempt, 'UTF-8') ||
-                        strcmp(iconv('UTF-8', $this->LastInputEncoding, $Attempt), $In) !== 0
+                        \strcmp(iconv('UTF-8', $this->LastInputEncoding, $Attempt), $In) !== 0
                     ) {
                         return false;
                     }
@@ -674,9 +674,9 @@ class YAML extends CommonAbstract implements \Countable
         } elseif (\preg_match('~^0x[\dA-Fa-f]+$~', $Value)) {
             $Value = \hexdec(\str_replace('_', '', \substr($Value, 2)));
         } elseif (\preg_match('~^0o[0-8]+$~', $Value)) {
-            $Value = octdec(\str_replace('_', '', \substr($Value, 2)));
+            $Value = \octdec(\str_replace('_', '', \substr($Value, 2)));
         } elseif (\preg_match('~^0b[01]+$~', $Value)) {
-            $Value = bindec(\str_replace('_', '', \substr($Value, 2)));
+            $Value = \bindec(\str_replace('_', '', \substr($Value, 2)));
         } elseif (\preg_match('~^\d+$~', $Value)) {
             $Value = (int)\str_replace('_', '', $Value);
         } elseif (\preg_match('~^(?:\d+\.\d+|\d+(?:\.\d+)?[Ee][-+]\d+)$~', $Value)) {
@@ -921,7 +921,7 @@ class YAML extends CommonAbstract implements \Countable
                 $Value = $Value->Data;
             }
             if (\is_array($Value)) {
-                if ($Sequential && key($Value) !== 0 && $Depth < $this->FlowRebuildDepth - 2) {
+                if ($Sequential && \key($Value) !== 0 && $Depth < $this->FlowRebuildDepth - 2) {
                     $Append = '';
                     $this->processInner($Value, $Append, $Depth + 2);
                     $Out .= \substr($Append, $Depth + 1);
@@ -1070,14 +1070,14 @@ class YAML extends CommonAbstract implements \Countable
                     return $Captured[0];
                 }
                 $Reversed = ($Attempt = iconv('UTF-16BE', 'UTF-8', $Decoded)) === false ? '' : iconv('UTF-8', 'UTF-16BE', $Attempt);
-                return $Captured[1] . (($Attempt !== false && strcmp($Reversed, $Decoded) === 0) ? $Attempt : $Decoded);
+                return $Captured[1] . (($Attempt !== false && \strcmp($Reversed, $Decoded) === 0) ? $Attempt : $Decoded);
             }, $Value);
             $Value = \preg_replace_callback('~(?<!\\\\)\\\\((?:\\\\{2})*)U([\dA-Fa-f]{8})~', function ($Captured) {
                 if (($Decoded = \hex2bin($Captured[2])) === false) {
                     return $Captured[0];
                 }
                 $Reversed = ($Attempt = iconv('UTF-32BE', 'UTF-8', $Decoded)) === false ? '' : iconv('UTF-8', 'UTF-32BE', $Attempt);
-                return $Captured[1] . (($Attempt !== false && strcmp($Reversed, $Decoded) === 0) ? $Attempt : $Decoded);
+                return $Captured[1] . (($Attempt !== false && \strcmp($Reversed, $Decoded) === 0) ? $Attempt : $Decoded);
             }, $Value);
             $Value = \str_replace('\\\\', '\\', $Value);
             restore_error_handler();
@@ -1194,7 +1194,7 @@ class YAML extends CommonAbstract implements \Countable
 
             /** Unserialising a PHP object. */
             if ($Tag === 'php/object') {
-                return $this->AllowObjectUnserialize && \is_string($Value) && $Value !== '' ? unserialize($Value) : $Value;
+                return $this->AllowObjectUnserialize && \is_string($Value) && $Value !== '' ? \unserialize($Value) : $Value;
             }
 
             /** For extending with other non-scalar coercion. */
@@ -1607,7 +1607,7 @@ class YAML extends CommonAbstract implements \Countable
         }
         if (\is_object($In)) {
             if ($this->AllowObjectSerialize) {
-                return '!php/object ' . $this->Quotes . $this->escape(serialize($In)) . $this->Quotes;
+                return '!php/object ' . $this->Quotes . $this->escape(\serialize($In)) . $this->Quotes;
             } elseif (\method_exists($In, '__toString')) {
                 return $this->Quotes . $this->escape((string)$In) . $this->Quotes;
             }

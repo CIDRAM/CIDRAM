@@ -1,6 +1,6 @@
 <?php
 /**
- * A simple, unified cache handler (last modified: 2026.03.17).
+ * A simple, unified cache handler (last modified: 2026.03.18).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -277,7 +277,7 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
                     }
                 }
                 if ($Locked) {
-                    \fwrite($Handle, serialize($this->WorkingData));
+                    \fwrite($Handle, \serialize($this->WorkingData));
                     \flock($Handle, LOCK_UN);
                 }
                 \fclose($Handle);
@@ -293,18 +293,18 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
      */
     public function connect(): bool
     {
-        if ($this->EnableAPCu && extension_loaded('apcu') && ini_get('apc.enabled')) {
+        if ($this->EnableAPCu && \extension_loaded('apcu') && \ini_get('apc.enabled')) {
             $this->Using = 'APCu';
             return true;
         }
-        if ($this->EnableMemcached && extension_loaded('memcached')) {
+        if ($this->EnableMemcached && \extension_loaded('memcached')) {
             try {
                 $this->WorkingData = new \Memcached();
                 if ($this->WorkingData->addServer($this->MemcachedHost, $this->MemcachedPort)) {
                     $this->Using = 'Memcached';
                     $Indexes = $this->getEntry('__Indexes');
                     if (\is_string($Indexes)) {
-                        $this->Indexes = array_fill_keys(\explode("\n", $Indexes), true);
+                        $this->Indexes = \array_fill_keys(\explode("\n", $Indexes), true);
                     }
                     return true;
                 }
@@ -313,7 +313,7 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
                 $this->Exceptions[] = $Exception->getMessage();
             }
         }
-        if ($this->EnableRedis && extension_loaded('redis')) {
+        if ($this->EnableRedis && \extension_loaded('redis')) {
             try {
                 $this->WorkingData = new \Redis();
                 if ($this->WorkingData->connect($this->RedisHost, $this->RedisPort, $this->RedisTimeout)) {
@@ -331,7 +331,7 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
                 $this->Exceptions[] = $Exception->getMessage();
             }
         }
-        if ($this->EnablePDO && extension_loaded('pdo')) {
+        if ($this->EnablePDO && \extension_loaded('pdo')) {
             try {
                 $PDO = new \PDO($this->PDOdsn, $this->PDOusername, $this->PDOpassword);
                 if (\is_object($PDO)) {
@@ -363,7 +363,7 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
                 return $this->Modified = true;
             }
             $Data = \file_get_contents($this->FFDefault);
-            $Data = (\is_string($Data) && $Data !== '') ? unserialize($Data) : [];
+            $Data = (\is_string($Data) && $Data !== '') ? \unserialize($Data) : [];
             $this->WorkingData = \is_array($Data) ? $Data : [];
             return true;
         }
@@ -392,16 +392,16 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
         /** Try to determine which kind of query to build. */
         if (\preg_match('~^sqlite:[^:]~i', $this->PDOdsn)) {
             /** SQLite (excluding usage for in-memory and temporary tables). */
-            $Check = 'SELECT count(*) FROM `sqlite_master` WHERE `type` = \'table\' AND `name` = \'Cache\'';
+            $Check = 'SELECT COUNT(*) FROM `sqlite_master` WHERE `type` = \'table\' AND `name` = \'Cache\'';
         } elseif (\preg_match('~^informix:~i', $this->PDOdsn)) {
             /** Informix. */
-            $Check = 'SELECT count(*) FROM `systables` WHERE `tabname` = \'Cache\'';
+            $Check = 'SELECT COUNT(*) FROM `systables` WHERE `tabname` = \'Cache\'';
         } elseif (\preg_match('~^firebird:~i', $this->PDOdsn)) {
             /** Firebird/Interbase. */
             $Check = 'SELECT 1 FROM RDB$RELATIONS WHERE RDB$RELATION_NAME = \'Cache\'';
         } else {
             /** Standard fallback for everything else (MySQL, Oracle, PostgreSQL, etc). */
-            $Check = 'SELECT count(*) FROM `information_schema`.`tables` WHERE `TABLE_NAME` = \'Cache\'';
+            $Check = 'SELECT COUNT(*) FROM `information_schema`.`tables` WHERE `TABLE_NAME` = \'Cache\'';
         }
 
         /** Try to build the query. Fail if exceptions are generated. */
@@ -471,7 +471,7 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
                     return false;
                 }
                 if (\substr($Data['Data'], 0, 3) === 'gz:') {
-                    $Data['Data'] = gzdecode(\base64_decode(\substr($Data['Data'], 3)));
+                    $Data['Data'] = \gzdecode(\base64_decode(\substr($Data['Data'], 3)));
                 }
                 return $this->unserializeEntry($Data['Data']);
             }
@@ -542,7 +542,7 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
                 $TTL += \time();
             }
             if (\strlen($Value) > 65536) {
-                $Value = 'gz:' . \base64_encode(gzencode($Value, 9));
+                $Value = 'gz:' . \base64_encode(\gzencode($Value, 9));
             }
             if ($PDO !== false && $PDO->execute([':key' => $Key, ':data' => $Value, ':time' => $TTL])) {
                 return ($PDO->rowCount() > 0 && $this->Modified = true);
@@ -587,7 +587,7 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
                 $Value = $this->serializeEntry($Value);
                 $Working[$TTL][$Key] = $Value;
             }
-            \ksort($Working, SORT_NUMERIC);
+            \ksort($Working, \SORT_NUMERIC);
             foreach ($Working as $TTL => $Values) {
                 if (apcu_store($Values, null, $TTL)) {
                     $Success = $this->Modified = true;
@@ -616,7 +616,7 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
                 $Value = $this->serializeEntry($Value);
                 $Working[$TTL][$Key] = $Value;
             }
-            \ksort($Working, SORT_NUMERIC);
+            \ksort($Working, \SORT_NUMERIC);
             foreach ($Working as $TTL => $Values) {
                 if ($this->WorkingData->setMulti($Values, $TTL)) {
                     if (!isset($this->Indexes[$Index])) {
@@ -645,7 +645,7 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
                 $Value = $this->serializeEntry($Value);
                 $Working[$TTL][$Key] = $Value;
             }
-            \ksort($Working, SORT_NUMERIC);
+            \ksort($Working, \SORT_NUMERIC);
             foreach ($Working as $TTL => $Values) {
                 if ($TTL < 1) {
                     if ($this->WorkingData->mset($Values)) {
@@ -677,7 +677,7 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
                         $TTL += \time();
                     }
                     if (\strlen($Value) > 65536) {
-                        $Value = 'gz:' . \base64_encode(gzencode($Value, 9));
+                        $Value = 'gz:' . \base64_encode(\gzencode($Value, 9));
                     }
                     if ($PDO !== false && $PDO->execute([':key' => $Key, ':data' => $Value, ':time' => $TTL]) && $PDO->rowCount() > 0) {
                         $Success = $this->Modified = true;
@@ -1082,7 +1082,7 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
                     }
                     $Key = \substr($Entry['Key'], $PrefixLen);
                     if (\substr($Entry['Data'], 0, 3) === 'gz:') {
-                        $Entry['Data'] = gzdecode(\base64_decode(\substr($Entry['Data'], 3)));
+                        $Entry['Data'] = \gzdecode(\base64_decode(\substr($Entry['Data'], 3)));
                     }
                     $Entry['Data'] = $this->unserializeEntry($Entry['Data']);
                     $Output[$Key] = $Entry['Time'] > 0 ? ['Data' => $Entry['Data'], 'Time' => $Entry['Time']] : $Entry['Data'];
@@ -1206,7 +1206,7 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
                         continue;
                     }
                     if (\substr($Entry['Data'], 0, 3) === 'gz:') {
-                        $Entry['Data'] = gzdecode(\base64_decode(\substr($Entry['Data'], 3)));
+                        $Entry['Data'] = \gzdecode(\base64_decode(\substr($Entry['Data'], 3)));
                     }
                     $Entry['Data'] = $this->unserializeEntry($Entry['Data']);
                     $Set[$Key] = $Entry['Time'] > 0 ? ['Data' => $Entry['Data'], 'Time' => $Entry['Time']] : $Entry['Data'];
@@ -1308,7 +1308,7 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
         if (!\is_string($Entry) || !\preg_match('~^a:\d+:\{.*\}$~s', $Entry)) {
             return $Entry;
         }
-        $Arr = unserialize($Entry);
+        $Arr = \unserialize($Entry);
         if (\is_array($Arr)) {
             $this->clearExpired($Arr);
             return $Arr;
@@ -1324,7 +1324,7 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
      */
     public function serializeEntry($Entry)
     {
-        return \is_array($Entry) ? (serialize($Entry) ?: $Entry) : $Entry;
+        return \is_array($Entry) ? (\serialize($Entry) ?: $Entry) : $Entry;
     }
 
     /**

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: IP aggregator (last modified: 2026.03.17).
+ * This file: IP aggregator (last modified: 2026.03.18).
  */
 
 namespace CIDRAM\Aggregator;
@@ -199,7 +199,7 @@ class Aggregator
             if ($AType !== $BType) {
                 return $AType < $BType ? -1 : 1;
             }
-            $Compare = strcmp($A, $B);
+            $Compare = \strcmp($A, $B);
             if ($Compare === 0) {
                 if ($ASize === $BSize) {
                     return 0;

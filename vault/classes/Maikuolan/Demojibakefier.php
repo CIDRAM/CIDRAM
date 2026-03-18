@@ -1,6 +1,6 @@
 <?php
 /**
- * Demojibakefier (last modified: 2026.03.17).
+ * Demojibakefier (last modified: 2026.03.18).
  *
  * Intended to normalise the character encoding of a given string to a
  * preferred character encoding when the given string's byte sequences don't
@@ -367,7 +367,7 @@ class Demojibakefier extends CommonAbstract
             if ($Attempt === false || !$this->checkConformity($Attempt, $this->NormaliseTo)) {
                 continue;
             }
-            if (strcmp(iconv($this->NormaliseTo, $Encoding, $Attempt), $String) === 0) {
+            if (\strcmp(iconv($this->NormaliseTo, $Encoding, $Attempt), $String) === 0) {
                 $Valid[$Encoding] = $Attempt;
                 if ($Encoding === $this->NormaliseTo) {
                     break;
@@ -600,7 +600,7 @@ class Demojibakefier extends CommonAbstract
 
         /** If both UTF-16BE and UTF-16LE seem thus far valid and equally weighted, we'll try to dig a little deeper. */
         if (isset($Arr['UTF-16BE']['Weight'], $Arr['UTF-16LE']['Weight']) && $Arr['UTF-16BE']['Weight'] === $Arr['UTF-16LE']['Weight'] && $this->Len < 65536) {
-            $Split = str_split($String, 2);
+            $Split = \str_split($String, 2);
             $WeightBE = 0;
             $WeightLE = 0;
             foreach ($Split as $Pair) {
@@ -653,7 +653,7 @@ class Demojibakefier extends CommonAbstract
 
         /** If both UTF-32BE and UTF-32LE seem thus far valid and equally weighted, we'll try to dig a little deeper. */
         if (isset($Arr['UTF-32BE']['Weight'], $Arr['UTF-32LE']['Weight']) && $Arr['UTF-32BE']['Weight'] === $Arr['UTF-32LE']['Weight'] && $this->Len < 65536) {
-            $Split = str_split($String, 4);
+            $Split = \str_split($String, 4);
             $WeightBE = 0;
             $WeightLE = 0;
             foreach ($Split as $Pair) {

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2026.03.16).
+ * This file: Functions file (last modified: 2026.03.18).
  */
 
 /**
@@ -1031,7 +1031,6 @@ $CIDRAM['DNS-Reverse-Forward'] = function ($Domains, $Friendly, array $Options =
                 preg_match('~, L\d+:F\d+,| Lookup~', $CIDRAM['BlockInfo']['WhyReason'])
             ), $CIDRAM['L10N']->getString('why_single_hit_bypass'));
 
-            /** Exit. */
             return;
         }
 
@@ -1061,7 +1060,6 @@ $CIDRAM['DNS-Reverse-Forward'] = function ($Domains, $Friendly, array $Options =
                 preg_match('~, L\d+:F\d+,| Lookup~', $CIDRAM['BlockInfo']['WhyReason'])
             ), $CIDRAM['L10N']->getString('why_single_hit_bypass'));
 
-            /** Exit. */
             return;
         }
     }
@@ -2157,7 +2155,6 @@ $CIDRAM['AuxAction'] = function ($Action, $Name, $Reason = '', $Target = '', $St
         $CIDRAM['AddProfileEntry']($Name);
     }
 
-    /** Exit. */
     return false;
 };
 
@@ -2167,7 +2164,6 @@ $CIDRAM['AuxAction'] = function ($Action, $Name, $Reason = '', $Target = '', $St
  * @return void
  */
 $CIDRAM['Aux'] = function () use (&$CIDRAM) {
-    /** Exit procedure early if the rules don't exist. */
     if (!file_exists($CIDRAM['Vault'] . 'auxiliary.yaml')) {
         return;
     }

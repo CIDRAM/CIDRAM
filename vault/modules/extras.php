@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2026.03.18).
+ * This file: Optional security extras module (last modified: 2026.03.19).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -156,6 +156,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         if (
             $this->trigger(\preg_match('~(?:^|[/?])Telerik\.Web\.UI\.WebResource\.axd(?:$|[/?])~i', $LCNrURI), $Exploit = 'CVE-2019-18935') || // 2024.10.30 mod 2025.08.07
             $this->trigger(\preg_match('~(?:^|[/?])assets/images/accesson\.php[57]?(?:$|[/?])~', $LCNrURI), $Exploit = 'CVE-2025-54068') || // 2026.03.11
+            $this->trigger(\preg_match('~(?:^|[/?])cgi-bin/php5(?:$|[/?])~i', $LCNrURI), $Exploit = 'CVE-2012-1823') || // 2026.03.19
             $this->trigger(\preg_match('~(?:^|[/?])civicrm/packages/openflashchart/php-ofc-library/ofc_upload_image\.php[57]?(?:$|[/?])~', $LCNrURI), $Exploit = 'CIVI-SA-2013-001') || // 2025.07.05 mod 2025.08.07
             $this->trigger(\preg_match('~(?:^|[/?])dup-installer/main\.installer\.php[57]?(?:$|[/?])~', $LCNrURI), $Exploit = 'CVE-2022-2551') || // 2024.09.05 mod 2025.08.07
             $this->trigger(\preg_match('~(?:^|[/?])ecp/current/exporttool/microsoft.exchange.ediscovery.exporttool.application(?:$|[/?])~', $LCNrURI), $Exploit = 'CVE-2021-28481') || // 2025.07.17 mod 2025.08.07
@@ -229,9 +230,12 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         } // 2022.06.05 mod 2023.09.04
 
         /** Probing for exposed AWS credentials. */
-        if ($this->trigger(\preg_match('~(?:^|[/?])(?:\.?aws_?/(?:config(?:uration)?|credentials?)(?:\.yml)?|\.?aws\.yml|aws[_-]secrets?\.ya?ml|config/aws\.json|\.?aws-credentials\.(?:json|php|ya?ml)?|\.awsvault)(?:$|[/?])~', $LCNrURI), 'Probing for exposed AWS credentials')) {
+        if ($this->trigger(
+            \preg_match('~(?:^|[/?])(?:\.?aws_?/(?:config(?:uration)?|credentials?)(?:\.yml)?|\.?aws\.yml|aws[_-]secrets?\.ya?ml|config/aws\.json|\.?aws-credentials\.(?:json|php|ya?ml)?|\.awsvault|metadata/security-credentials)(?:$|[/?])~', $LCNrURI),
+            'Probing for exposed AWS credentials')
+        ) {
             $this->Reporter->report([15, 21], ['Caught probing for exposed AWS credentials.'], $this->BlockInfo['IPAddr']);
-        } // 2023.09.04 mod 2025.09.22
+        } // 2023.09.04 mod 2026.03.19
 
         /** Probing for exposed FTP credentials. */
         if ($this->trigger(\preg_match('~(?:^|[/?])\.?s?ftp-(?:config|sync)\.json(?:$|[/?])~', $LCNrURI), 'Probing for exposed FTP credentials')) {
@@ -244,7 +248,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         } // 2025.07.17
 
         /** Probing for exposed server private keys. */
-        if ($this->trigger(\preg_match('~(?:^|[/?])private/server\.\key(?:$|[/?])~', $LCNrURI), 'Probing for exposed server private keys')) {
+        if ($this->trigger(\preg_match('~(?:^|[/?])private/server\.key(?:$|[/?])~', $LCNrURI), 'Probing for exposed server private keys')) {
             $this->Reporter->report([15], ['Caught probing for exposed server private keys.'], $this->BlockInfo['IPAddr']);
         } // 2025.07.17
 
@@ -529,7 +533,42 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         /** Mozi botnet requests. */
         if ($this->trigger(\preg_match('~/mozi.a[;+]~', $LCNrURI), 'Mozi botnet detected')) {
             $this->Reporter->report([15, 20], ['Mozi botnet detected. Host is likely compromised.'], $this->BlockInfo['IPAddr']);
-        }
+        } // 2025.11.13
+
+        /** Probing for exposed Terraform configuration metadata. */
+        if ($this->trigger(\preg_match('~(?:^|[/?])terraform\.tf(?:state|vars)(?:$|[/?])~', $LCNrURI), 'Probing for exposed Terraform configuration metadata')) {
+            $this->Reporter->report([15, 21], ['Caught probing for exposed Terraform configuration metadata.'], $this->BlockInfo['IPAddr']);
+        } // 2026.03.18
+
+        /** Probing for exposed Netlify configuration file. */
+        if ($this->trigger(\preg_match('~(?:^|[/?])netlify\.toml(?:$|[/?])~', $LCNrURI), 'Probing for exposed Netlify configuration file')) {
+            $this->Reporter->report([15, 21], ['Caught probing for exposed Netlify configuration file.'], $this->BlockInfo['IPAddr']);
+        } // 2026.03.18
+
+        /** Probing for exposed Vercel configuration file. */
+        if ($this->trigger(\preg_match('~(?:^|[/?])vercel\.json(?:$|[/?])~', $LCNrURI), 'Probing for exposed Vercel configuration file')) {
+            $this->Reporter->report([15, 21], ['Caught probing for exposed Vercel configuration file.'], $this->BlockInfo['IPAddr']);
+        } // 2026.03.18
+
+        /** Probing for exposed Boto configuration file. */
+        if ($this->trigger(\preg_match('%(?:^|[/?])~/\.boto(?:$|[/?])%', $LCNrURI), 'Probing for exposed Boto configuration file')) {
+            $this->Reporter->report([15, 21], ['Caught probing for exposed Boto configuration file.'], $this->BlockInfo['IPAddr']);
+        } // 2026.03.18
+
+        /** Probing for exposed netrc credentials file. */
+        if ($this->trigger(\preg_match('%(?:^|[/?])~/\.netrc(?:$|[/?])%', $LCNrURI), 'Probing for exposed netrc credentials file')) {
+            $this->Reporter->report([15], ['Caught probing for exposed netrc credentials file.'], $this->BlockInfo['IPAddr']);
+        } // 2026.03.18
+
+        /** Probing for exposed Mailcow configuration file. */
+        if ($this->trigger(\preg_match('~(?:^|[/?])mailcow\.conf(?:$|[/?])~', $LCNrURI), 'Probing for exposed Mailcow configuration file')) {
+            $this->Reporter->report([15, 21], ['Caught probing for exposed Mailcow configuration file.'], $this->BlockInfo['IPAddr']);
+        } // 2026.03.19
+
+        /** Proc hack detected. */
+        if ($this->trigger(\preg_match('~(?:^|[/?])proc/self/cmdline(?:$|[/?])~', $LCNrURI), 'Proc hack detected')) {
+            $this->Reporter->report([15], ['Proc hack detected.'], $this->BlockInfo['IPAddr']);
+        } // 2026.03.19
     }
 
     /**

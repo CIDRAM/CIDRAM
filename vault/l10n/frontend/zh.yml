@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese language data for the front-end (last modified: 2026.03.17).
+# This file: Chinese language data for the front-end (last modified: 2026.03.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -531,7 +531,7 @@ hints_time_format:
 hints_usemode:
  0: {"zh-Hans": "注意：列入白名单或已验证且未阻止的请求永远不需要完成验证码。", "zh-Hant": "注意：列入白名單或已驗證且未阻止的請求永遠不需要完成驗證碼。"}
  1: {"zh-Hans": "另请注意：验证码可以提供有用的保护层，防止机器人和各种恶意自动请求，但不会提供任何针对恶意人类的保护。", "zh-Hant": "另請注意：驗證碼可以提供有用的保護層，防止機器人和各種惡意自動請求，但不會提供任何針對惡意人類的保護。"}
- 2: {"zh-Hans": "可以通过辅助规则将请求“标记为使用”。", "zh-Hant": "可以透過輔助規則將請求「標記為使用」。"}
+ 2: {"zh-Hans": "可以通过辅助规则将请求“标记为使用”。", "zh-Hant": "可以透過輔助規則將請求「標記為使用』。"}
  3: {"zh-Hans": "请求是否被视为“敏感”取决于{{Links.ConfigRef.sensitive}}。", "zh-Hant": "請求是否被視為『敏感』取決於{{Links.ConfigRef.sensitive}}。"}
 hints_verification:
  zh-Hans: "<strong>什么是“阳性”和“阴性”？</strong> 在验证请求提供的身份时，成功的结果可以描述为“阳性”或“阴性”。​当所呈现的身份被确认为真实身份时，将被描述为“阳性”。​当所提供的身份被证实为伪造时，将被描述为“阴性”。​但是，不成功的结果（例如，验证失败，或无法确定所提供身份的真实性）不会被描述为“阳性”或“阴性”。​相反，不成功的结果将被简单地描述为未验证。​当没有尝试验证请求提供的身份时，该请求同样会被描述为未验证。​这些术语仅在请求提供的身份被识别的情况下才有意义，因此，在可以进行验证的情况下。​如果提供的身份与上面提供的选项不匹配，或者没有提供身份，则上面提供的选项变得无关。<br /><br /><strong>什么是“一击绕过”？</strong> 在某些情况下，由于签名文件、模块、或请求的其他条件，可能仍会阻止经过肯定验证的请求，为了避免假阳性，可能需要绕过。​在绕过旨在处理仅一项违规行为的情况下，这样的绕过可以被描述为“一击绕过”。"
@@ -1218,6 +1218,9 @@ tip:
  How many infractions to incur: {"zh-Hans": "有多少违规行为。", "zh-Hant": "有多少違規行為。"}
  IP Testing: {"zh-Hans": "IP测试页面允许您测试是否IP地址被阻止通过当前安装的签名。", "zh-Hant": "IP測試頁面允許您測試是否IP位址被阻止通過當前安裝的簽名。"}
  IP Tracking: {"zh-Hans": "IP跟踪页面允许您检查IP地址跟踪状态，​检查哪些IP已被禁止，​而如果您想这样做，​对撤消他们的跟踪。", "zh-Hant": "IP跟踪頁面允許您檢查IP位址跟踪狀態，​檢查哪些IP已被禁止，​而如果您想這樣做，​對撤消他們的跟踪。"}
+ If a request connects from an IPv6 address belonging to a range used by an IPv6 transition mechanism:
+  zh-Hans: "如果请求来自IPv6地址，而该地址属于IPv6过渡机制（例如，6to4、Teredo、ISATAP、等等）使用的地址范围，则“IP地址（解决）”字段将填充根据该IPv6转换机制转换的IPv4地址（例如，如果“IP地址”为“2002:c0a8:1::”，则“IP地址（解决）”将为“192.168.0.1”）。​在其他所有情况下，“IP地址（解决）”和“IP地址”字段将相同。"
+  zh-Hant: "如果請求來自IPv6位址，而該位址屬於IPv6過渡機制（例如，6to4、Teredo、ISATAP、等等）使用的位址範圍，則『IP位址（解決）』欄位將填入根據該IPv6轉換機制轉換的IPv4位址（例如，如果『IP位址』為『2002:c0a8:1::』，則『IP位址（解決）』將為『192.168.0.1』）。​在其他所有情況下，『IP位址（解決）』和『IP位址』欄位將相同。"
  Intersector: {"zh-Hans": "相交仪可用于从两组范围确定公共因子。", "zh-Hant": "相交儀可用於從兩組範圍確定公共因子。"}
  Logs: {"zh-Hans": "选择一个日志从下面的列表以查看那个日志的内容。", "zh-Hant": "選擇一個日誌從下面的列表以查看那個日誌的內容。"}
  Number of seconds until it expires: {"zh-Hans": "直到它过期的秒数。", "zh-Hant": "直到它過期的秒數。"}

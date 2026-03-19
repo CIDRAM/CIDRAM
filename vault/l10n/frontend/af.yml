@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Afrikaans language data for the front-end (last modified: 2026.03.17).
+# This file: Afrikaans language data for the front-end (last modified: 2026.03.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -406,9 +406,7 @@ field:
  log_rotation_delete: "Vee die oudste loglêers uit totdat die limiet nie meer oorskry word nie."
  size:
   Total size: "Totale grootte:"
-  bytes:
-   - "greep"
-   - "grepe"
+  bytes: ["greep", "grepe"]
 hints_asnlookup: "** Vereis ASN-opsoekfasiliteit (bv., via die IP-API of BGPView module)."
 hints_aux_stats: "Kennis neem: Of om statistieke vir bykomende reëls na te spoor, kan vanaf die bykomende reëls bladsy beheer word."
 hints_cause_fp: "*!! Hoë waarskynlikheid om vals positiewe te veroorsaak as gevolg van %s."
@@ -1071,6 +1069,7 @@ tip:
  How many infractions to incur: "Hoeveel oortredings om aan te gaan."
  IP Testing: "Die IP-toetsingbladsy laat jou toe om te toets of IP-adresse deur die tans geïnstalleerde handtekeninge geblokkeer word."
  IP Tracking: "Die IP-nasporingsbladsy laat jou toe om die nasporingstatus van IP-adresse na te gaan, om te kyk watter van hulle verban is, en om hulle te ontban/ontspoor as jy dit wil doen."
+ If a request connects from an IPv6 address belonging to a range used by an IPv6 transition mechanism: "Indien 'n versoek vanaf 'n IPv6-adres verbind wat behoort aan 'n reeks wat deur 'n IPv6-oorgangsmeganisme gebruik word (bv., 6to4, Teredo, ISATAP, ens), sal die veld "IP-adres (opgelos)" gevul word deur die IPv4-adres waarna daardie IPv6-adres onder daardie IPv6-oorgangsmeganisme vertaal word (bv., as die "IP-adres" "2002:c0a8:1::" is, sal die "IP-adres (opgelos)" "192.168.0.1" wees). In alle ander gevalle sal die velde "IP-adres (opgelos)" en "IP-adres" dieselfde wees."
  Intersector: "Die intersektor kan gebruik word om die gemeenskaplike faktore uit twee stelle reekse te bepaal."
  Logs: "Kies 'n loglêer uit die lys hieronder om die inhoud van daardie loglêer te sien."
  Number of seconds until it expires: "Aantal sekondes totdat dit verval."

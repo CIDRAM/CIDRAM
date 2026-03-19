@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2026.03.17).
+# This file: French language data for the front-end (last modified: 2026.03.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -218,7 +218,7 @@ config: !lazy
  general_fields: "Contrôles des champs lors d'un événement de bloc (lorsqu'une requête est bloquée)."
  general_force_hostname_lookup: "Forcer les recherches de nom d'hôte\_? True = Oui\_; False = Non [Défaut]. Les recherches de nom d'hôte sont normalement effectuées «\_au besoin\_», mais peuvent être forcées pour toutes les requêtes. Cela peut être utile pour fournir des informations plus détaillées dans les fichiers journaux, mais peut également avoir un effet légèrement négatif sur les performances."
  general_http_response_header_code: "Quel message d'état HTTP devrait être envoyé par CIDRAM lors du blocage des requêtes\_?"
- general_ipaddr: "Où trouver l'adresse IP de requêtes\_? (Utile pour services tels que Cloudflare). Par Défaut = REMOTE_ADDR. AVERTISSEMENT\_: Ne pas changer si vous ne sais pas ce que vous faites\_!"
+ general_ipaddr: "Où trouver l'adresse IP des requêtes\_? (Utile pour services tels que Cloudflare). Par Défaut = REMOTE_ADDR. AVERTISSEMENT\_: Ne pas changer si vous ne sais pas ce que vous faites\_!"
  general_lang: "Spécifiez la langue défaut pour CIDRAM."
  general_lang_override: "Localiser selon HTTP_ACCEPT_LANGUAGE autant que possible\_? True = Oui [Défaut]\_; False = Non."
  general_numbers: "Comment préférez-vous que les nombres soient affichés\_? Sélectionnez l'exemple qui vous paraît le plus approprié."
@@ -1134,6 +1134,7 @@ tip:
  How many infractions to incur: "Combien d'infractions encourir."
  IP Testing: "La page des tests IP vous permet de tester si les adresses IP sont bloquées par les signatures actuellement installées."
  IP Tracking: "La page de surveillance IP vous permet de vérifier l'état de surveillance des adresses IP, pour vérifier lesquels d'entre eux ont été interdits, et d'annuler la surveillance si vous voulez le faire."
+ If a request connects from an IPv6 address belonging to a range used by an IPv6 transition mechanism: "Si une requête est établie à partir d'une adresse IPv6 appartenant à une plage utilisée par un mécanisme de transition IPv6 (par exemple, 6to4, Teredo, ISATAP, etc), le champ «\_adresse IP (résolue)\_» sera renseigné par l'adresse IPv4 vers laquelle cette adresse IPv6 est traduite par ce mécanisme de transition IPv6 (par exemple, si l'adresse IP est «\_2002:c0a8:1::\_», l'adresse IP (résolue) sera «\_192.168.0.1\_»). Dans tous les autres cas, les champs «\_adresse IP (résolue)\_» et «\_adresse IP\_» seront identiques."
  Intersector: "L'intersecteur peut être utilisé pour déterminer les facteurs communs à partir de deux ensembles de gammes."
  Logs: "Sélectionnez un fichier journal dans la liste ci-dessous pour afficher le contenu de ce fichier journal."
  Number of seconds until it expires: "Nombre de secondes jusqu'à son expiration."

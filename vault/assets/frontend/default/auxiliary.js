@@ -201,35 +201,38 @@ var langResSuggestions = ['af-ZA','ar','ar-SA','bg-BG','bn-BD','bs-BA','ca-ES','
 var ignoreSuggestions = {ignoreSuggestions};
 
 function getInputSuggestions(e) {
-  if (e.value=='ASNLookup') {
+  if (e.value==='ASNLookup') {
     e.parentElement.nextElementSibling.innerHTML='<small>{hints_asnlookup}</small>';
     e.parentElement.nextElementSibling.className='suggestsActive';
-  } else if (e.value=='CCLookup') {
+  } else if (e.value==='CCLookup') {
     e.parentElement.nextElementSibling.innerHTML='<small>{hints_cclookup}</small>';
     e.parentElement.nextElementSibling.className='suggestsActive';
-  } else if (e.value=='Request_Method') {
-    e.parentElement.nextElementSibling.innerHTML='<small>{label.Suggestions}{pair_separator}'+methodSuggestions+'</small>';
-    e.parentElement.nextElementSibling.className='suggestsActive';
-  } else if (e.value=='Profiles') {
-    e.parentElement.nextElementSibling.innerHTML='<small>{label.Suggestions}{pair_separator}'+profileSuggestions+'</small>';
-    e.parentElement.nextElementSibling.className='suggestsActive';
-  } else if (e.value=='Protocol') {
-    e.parentElement.nextElementSibling.innerHTML='<small>{label.Suggestions}{pair_separator}'+protocolSuggestions+'</small>';
-    e.parentElement.nextElementSibling.className='suggestsActive';
-  } else if (e.value=='Verified') {
-    e.parentElement.nextElementSibling.innerHTML='<small>{label.Suggestions}{pair_separator}'+verifiedSuggestions+'</small>';
-    e.parentElement.nextElementSibling.className='suggestsActive';
-  } else if (e.value=='SEC_CH_UA_PLATFORM' || e.value=='SEC_CH_UA_MOBILE' || e.value=='SEC_CH_UA') {
-    e.parentElement.nextElementSibling.innerHTML='<small>{hints_client_hints}</small>';
-    e.parentElement.nextElementSibling.className='suggestsActive';
-  } else if (e.value=='ClientL10NAccepted') {
+  } else if (e.value==='ClientL10NAccepted') {
     e.parentElement.nextElementSibling.innerHTML='<small>{label.Suggestions}{pair_separator}'+langResSuggestions+'</small>';
     e.parentElement.nextElementSibling.className='suggestsActive';
-  } else if (e.value=='Factors') {
+  } else if (e.value==='Factors') {
     e.parentElement.nextElementSibling.innerHTML='<small>{tip.An accepted value is any CIDR with a range that covers the IP address of the request}</small>';
     e.parentElement.nextElementSibling.className='suggestsActive';
-  } else if (e.value=='Ignored'&&ignoreSuggestions!=='') {
+  } else if (e.value==='Ignored'&&ignoreSuggestions!=='') {
     e.parentElement.nextElementSibling.innerHTML='<small>{label.Suggestions}{pair_separator}'+ignoreSuggestions+'</small>';
+    e.parentElement.nextElementSibling.className='suggestsActive';
+  } else if (e.value==='IPAddrResolved') {
+    e.parentElement.nextElementSibling.innerHTML='<small>{tip.If a request connects from an IPv6 address belonging to a range used by an IPv6 transition mechanism}</small>';
+    e.parentElement.nextElementSibling.className='suggestsActive';
+  } else if (e.value==='Profiles') {
+    e.parentElement.nextElementSibling.innerHTML='<small>{label.Suggestions}{pair_separator}'+profileSuggestions+'</small>';
+    e.parentElement.nextElementSibling.className='suggestsActive';
+  } else if (e.value==='Protocol') {
+    e.parentElement.nextElementSibling.innerHTML='<small>{label.Suggestions}{pair_separator}'+protocolSuggestions+'</small>';
+    e.parentElement.nextElementSibling.className='suggestsActive';
+  } else if (e.value==='Request_Method') {
+    e.parentElement.nextElementSibling.innerHTML='<small>{label.Suggestions}{pair_separator}'+methodSuggestions+'</small>';
+    e.parentElement.nextElementSibling.className='suggestsActive';
+  } else if (e.value==='SEC_CH_UA_PLATFORM' || e.value==='SEC_CH_UA_MOBILE' || e.value==='SEC_CH_UA') {
+    e.parentElement.nextElementSibling.innerHTML='<small>{hints_client_hints}</small>';
+    e.parentElement.nextElementSibling.className='suggestsActive';
+  } else if (e.value==='Verified') {
+    e.parentElement.nextElementSibling.innerHTML='<small>{label.Suggestions}{pair_separator}'+verifiedSuggestions+'</small>';
     e.parentElement.nextElementSibling.className='suggestsActive';
   } else {
     e.parentElement.nextElementSibling.innerHTML='';

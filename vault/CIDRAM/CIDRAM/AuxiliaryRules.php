@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used for auxiliary rules (last modified: 2026.03.17).
+ * This file: Methods used for auxiliary rules (last modified: 2026.03.18).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -730,13 +730,14 @@ trait AuxiliaryRules
 
         /** Append JavaScript specific to the auxiliary rules page. */
         $this->FE['JS'] .= $this->parseVars([
-            'tip.Specify a value, or leave blank to disregard' => \str_replace('\'', '\\\'', $this->L10N->getString('tip.Specify a value, or leave blank to disregard')),
-            'tip.Specify a URL, or leave blank to disregard' => \str_replace('\'', '\\\'', $this->L10N->getString('tip.Specify a URL, or leave blank to disregard')),
-            'tip.An accepted value is any CIDR with a range that covers the IP address of the request' => \str_replace('\'', '\\\'', $this->L10N->getString('tip.An accepted value is any CIDR with a range that covers the IP address of the request')),
             'hints_asnlookup' => \str_replace('\'', '\\\'', $this->L10N->getString('hints_asnlookup')),
             'hints_cclookup' => \str_replace('\'', '\\\'', $this->L10N->getString('hints_cclookup')),
             'hints_client_hints' => \str_replace('\'', '\\\'', $this->L10N->getString('hints_client_hints')),
             'label.Suggestions' => \str_replace('\'', '\\\'', $this->L10N->getString('label.Suggestions')),
+            'tip.An accepted value is any CIDR with a range that covers the IP address of the request' => \str_replace('\'', '\\\'', $this->L10N->getString('tip.An accepted value is any CIDR with a range that covers the IP address of the request')),
+            'tip.If a request connects from an IPv6 address belonging to a range used by an IPv6 transition mechanism' => \str_replace('\'', '\\\'', $this->L10N->getString('tip.If a request connects from an IPv6 address belonging to a range used by an IPv6 transition mechanism')),
+            'tip.Specify a URL, or leave blank to disregard' => \str_replace('\'', '\\\'', $this->L10N->getString('tip.Specify a URL, or leave blank to disregard')),
+            'tip.Specify a value, or leave blank to disregard' => \str_replace('\'', '\\\'', $this->L10N->getString('tip.Specify a value, or leave blank to disregard')),
             'pair_separator' => $this->L10N->getString('pair_separator'),
             'ignoreSuggestions' => $IgnoreSuggestions
         ], $this->readFile($this->getAssetPath('auxiliary.js')));

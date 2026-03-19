@@ -546,4 +546,5 @@
 - [2026.02.28]: Refactored some of the L10N data.
 - [2026.03.13]: Added the ability to duplicate cache data across different cache mechanisms at the front-end cache data page.
 - [2026.03.17]: Various minor performance improvements.
+- [2026.03.19]: Added a hint at the auxiliary rules page for "IP address (resolved)".
 - *Plus all the regular signature updates.*

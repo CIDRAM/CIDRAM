@@ -327,7 +327,7 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
                     return true;
                 }
                 $this->WorkingData = null;
-            } catch (\Exception $Exception) {
+            } catch (\RedisException $Exception) {
                 $this->Exceptions[] = $Exception->getMessage();
             }
         }

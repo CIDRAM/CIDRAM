@@ -1,6 +1,6 @@
 <?php
 /**
- * A simple, unified cache handler (last modified: 2024.05.30).
+ * A simple, unified cache handler (last modified: 2026.03.18).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -296,7 +296,7 @@ class Cache
                     return true;
                 }
                 $this->WorkingData = null;
-            } catch (\Exception $Exception) {
+            } catch (\RedisException $Exception) {
                 $this->Exceptions[] = $Exception->getMessage();
             }
         }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Request handler (last modified: 2026.03.18).
+ * Request handler (last modified: 2026.03.20).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -105,10 +105,10 @@ class Request extends CommonAbstract
      * The main request method.
      *
      * @param string $URI The resource to request.
-     * @param mixed $Params If empty or omitted, \CURLOPT_POST is false. Otherwise,
-     *      \CURLOPT_POST is true, and the parameter is used to supply
-     *      \CURLOPT_POSTFIELDS. Normally an associative array of key-value pairs,
-     *      but can be any kind of value supported by \CURLOPT_POSTFIELDS. Optional.
+     * @param mixed $Params If empty or omitted, CURLOPT_POST is false. Otherwise,
+     *      CURLOPT_POST is true, and the parameter is used to supply
+     *      CURLOPT_POSTFIELDS. Normally an associative array of key-value pairs,
+     *      but can be any kind of value supported by CURLOPT_POSTFIELDS. Optional.
      * @param int $Timeout An optional timeout limit.
      * @param array $Headers An optional array of headers to send with the request.
      * @param int $Depth Recursion depth of the current closure instance.

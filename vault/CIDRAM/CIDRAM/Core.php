@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2026.03.18).
+ * This file: The CIDRAM core (last modified: 2026.03.20).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1506,7 +1506,7 @@ class Core
         if ($this->Stage === 'Aux') {
             $this->BlockInfo['Signatures'] .= 'auxiliary.yml:' . $ReasonShort;
         } else {
-            $Debug = \debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT | \DEBUG_BACKTRACE_IGNORE_ARGS, 1)[0];
+            $Debug = \debug_backtrace(\DEBUG_BACKTRACE_PROVIDE_OBJECT | \DEBUG_BACKTRACE_IGNORE_ARGS, 1)[0];
             $Source = basename($Debug['file']);
             $this->BlockInfo['Signatures'] .= $Source . ':L' . $Debug['line'];
         }
@@ -1557,7 +1557,7 @@ class Core
         if ($this->Stage === 'Aux') {
             $this->BlockInfo['Signatures'] .= 'auxiliary.yml:' . $ReasonShort;
         } else {
-            $Debug = \debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT | \DEBUG_BACKTRACE_IGNORE_ARGS, 1)[0];
+            $Debug = \debug_backtrace(\DEBUG_BACKTRACE_PROVIDE_OBJECT | \DEBUG_BACKTRACE_IGNORE_ARGS, 1)[0];
             $Source = basename($Debug['file']);
             $this->BlockInfo['Signatures'] .= $Source . ':L' . $Debug['line'];
         }

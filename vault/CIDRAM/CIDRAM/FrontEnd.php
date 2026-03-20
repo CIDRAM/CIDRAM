@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2026.03.18).
+ * This file: The CIDRAM front-end (last modified: 2026.03.20).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -245,7 +245,7 @@ class FrontEnd extends Core
         /** Trace to determine the type of cron operation. */
         if ($this->FE['CronMode'] !== '') {
             $this->FE['CronType'] = 'update';
-            $this->CIDRAM['CronDebug'] = \debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT | \DEBUG_BACKTRACE_IGNORE_ARGS, 4);
+            $this->CIDRAM['CronDebug'] = \debug_backtrace(\DEBUG_BACKTRACE_PROVIDE_OBJECT | \DEBUG_BACKTRACE_IGNORE_ARGS, 4);
             foreach ($this->CIDRAM['CronDebug'] as $this->CIDRAM['ThisCronDebug']) {
                 if (
                     isset($this->CIDRAM['ThisCronDebug']['function'], $this->CIDRAM['ThisCronDebug']['class']) &&

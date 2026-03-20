@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2026.02.24).
+ * This file: Front-end handler (last modified: 2026.03.20).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -145,7 +145,7 @@ $CIDRAM['ViewCalled'] = true;
 /** Trace to determine the type of cron operation. */
 if ($CIDRAM['FE']['CronMode'] !== '') {
     $CIDRAM['FE']['CronType'] = 'update';
-    $CIDRAM['CronDebug'] = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT | DEBUG_BACKTRACE_IGNORE_ARGS, 4);
+    $CIDRAM['CronDebug'] = debug_backtrace(\DEBUG_BACKTRACE_PROVIDE_OBJECT | \DEBUG_BACKTRACE_IGNORE_ARGS, 4);
     foreach ($CIDRAM['CronDebug'] as $CIDRAM['ThisCronDebug']) {
         if (
             isset($CIDRAM['ThisCronDebug']['function'], $CIDRAM['ThisCronDebug']['class']) &&

@@ -1,6 +1,6 @@
 <?php
 /**
- * Complex string handler (last modified: 2024.05.30).
+ * Complex string handler (last modified: 2026.03.17).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -49,11 +49,11 @@ class ComplexStringHandler
      */
     public function __construct($Data = '', $Pattern = '', $Closure = null)
     {
-        if (!empty($Data) && is_string($Data)) {
+        if (!empty($Data) && \is_string($Data)) {
             $this->Input = $Data;
-            if (!empty($Pattern) && is_string($Pattern)) {
+            if (!empty($Pattern) && \is_string($Pattern)) {
                 $this->generateMarkers($Pattern);
-                if (is_callable($Closure)) {
+                if (\is_callable($Closure)) {
                     $this->iterateClosure($Closure);
                 }
             }
@@ -78,17 +78,17 @@ class ComplexStringHandler
      */
     public function generateMarkers($Pattern)
     {
-        preg_match_all($Pattern, $this->Input, $this->Markers, PREG_OFFSET_CAPTURE | PREG_SET_ORDER);
+        \preg_match_all($Pattern, $this->Input, $this->Markers, PREG_OFFSET_CAPTURE | PREG_SET_ORDER);
         $Start = 0;
         $this->Working = [];
         foreach ($this->Markers as $Marker) {
-            if (!is_array($Marker[0]) || !isset($Marker[0][0]) || is_array($Marker[0][0]) || !isset($Marker[0][1])) {
+            if (!\is_array($Marker[0]) || !isset($Marker[0][0]) || \is_array($Marker[0][0]) || !isset($Marker[0][1])) {
                 break;
             }
-            $this->Working[] = substr($this->Input, $Start, $Marker[0][1] - $Start);
-            $Start = $Marker[0][1] + strlen($Marker[0][0]);
+            $this->Working[] = \substr($this->Input, $Start, $Marker[0][1] - $Start);
+            $Start = $Marker[0][1] + \strlen($Marker[0][0]);
         }
-        $this->Working[] = substr($this->Input, $Start);
+        $this->Working[] = \substr($this->Input, $Start);
     }
 
     /**
@@ -110,7 +110,7 @@ class ComplexStringHandler
             return;
         }
         foreach ($this->Markers as &$Segment) {
-            if (isset($Segment[0][0]) && !is_array($Segment[0][0])) {
+            if (isset($Segment[0][0]) && !\is_array($Segment[0][0])) {
                 $Segment[0][0] = $Closure($Segment[0][0]);
             }
         }
@@ -126,8 +126,14 @@ class ComplexStringHandler
         $Output = '';
         $Glue = 0;
         foreach ($this->Working as $Segment) {
+            if (!\is_string($Segment)) {
+                $Segment = \is_scalar($Segment) ? (string)$Segment : '';
+            }
             $Output .= $Segment;
-            if (isset($this->Markers[$Glue][0][0]) && !is_array($this->Markers[$Glue][0][0])) {
+            if (isset($this->Markers[$Glue][0][0]) && !\is_array($this->Markers[$Glue][0][0])) {
+                if (!\is_string($this->Markers[$Glue][0][0])) {
+                    $this->Markers[$Glue][0][0] = \is_scalar($this->Markers[$Glue][0][0]) ? (string)$this->Markers[$Glue][0][0] : '';
+                }
                 $Output .= $this->Markers[$Glue][0][0];
                 $Glue++;
             }

@@ -1,6 +1,6 @@
 <?php
 /**
- * YAML handler (last modified: 2023.12.29).
+ * YAML handler (last modified: 2026.03.20).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -227,11 +227,11 @@ class YAML
                         return;
                     });
 
-                    $Attempt = iconv($this->LastInputEncoding, 'UTF-8', $In);
+                    $Attempt = \iconv($this->LastInputEncoding, 'UTF-8', $In);
                     if (
                         $Attempt === false ||
                         !$this->Demojibakefier->checkConformity($Attempt, 'UTF-8') ||
-                        strcmp(iconv('UTF-8', $this->LastInputEncoding, $Attempt), $In) !== 0
+                        \strcmp(\iconv('UTF-8', $this->LastInputEncoding, $Attempt), $In) !== 0
                     ) {
                         return false;
                     }
@@ -243,19 +243,19 @@ class YAML
             }
 
             /** Attempt to capture header comments. */
-            if (preg_match('~^(##\\\\(?:\n#[^\n]*)+\n##/\n\n|(?:#[^\n]*\n)+\n)~m', $In, $Captured)) {
+            if (\preg_match('~^(##\\\\(?:\n#[^\n]*)+\n##/\n\n|(?:#[^\n]*\n)+\n)~m', $In, $Captured)) {
                 $this->CapturedHeader = $Captured[0];
             }
         }
 
-        $In = str_replace("\r", '', $Depth === 0 ? trim($In) : $In);
+        $In = \str_replace("\r", '', $Depth === 0 ? \trim($In) : $In);
         $Key = '';
         $Value = '';
         $SendTo = '';
 
         /** In case of processing JSON data, or YAML data contained entirely by flow collections. */
         foreach ([['[', ']'], ['{', '}']] as $Braces) {
-            if (substr($In, 0, 1) === $Braces[0] && substr($In, -1) === $Braces[1]) {
+            if (\substr($In, 0, 1) === $Braces[0] && \substr($In, -1) === $Braces[1]) {
                 return $this->flowControl($In, $Arr, $Braces[0]);
             }
         }
@@ -491,16 +491,16 @@ class YAML
     {
         if (
             empty($this->Refs) ||
-            !is_string($Data) ||
-            !preg_match_all('~\{\{ ?([^\r\n{}]+) ?\}\}~', $Data, $VarMatches) ||
+            !\is_string($Data) ||
+            !\preg_match_all('~\{\{ ?([^\r\n{}]+) ?\}\}~', $Data, $VarMatches) ||
             !isset($VarMatches[0][0], $VarMatches[1][0])
         ) {
             return;
         }
-        $MatchCount = count($VarMatches[0]);
+        $MatchCount = \count($VarMatches[0]);
         for ($Index = 0; $Index < $MatchCount; $Index++) {
-            if (($Extracted = $this->dataTraverse($this->Refs, $VarMatches[1][$Index])) && is_string($Extracted)) {
-                $Data = str_replace($VarMatches[0][$Index], $Extracted, $Data);
+            if (($Extracted = $this->dataTraverse($this->Refs, $VarMatches[1][$Index])) && \is_string($Extracted)) {
+                $Data = \str_replace($VarMatches[0][$Index], $Extracted, $Data);
             }
         }
     }
@@ -946,14 +946,14 @@ class YAML
                 if (($Decoded = hex2bin($Captured[2])) === false) {
                     return $Captured[0];
                 }
-                $Reversed = ($Attempt = iconv('UTF-16BE', 'UTF-8', $Decoded)) === false ? '' : iconv('UTF-8', 'UTF-16BE', $Attempt);
+                $Reversed = ($Attempt = \iconv('UTF-16BE', 'UTF-8', $Decoded)) === false ? '' : iconv('UTF-8', 'UTF-16BE', $Attempt);
                 return $Captured[1] . (($Attempt !== false && strcmp($Reversed, $Decoded) === 0) ? $Attempt : $Decoded);
             }, $Value);
             $Value = preg_replace_callback('~(?<!\\\\)\\\\((?:\\\\{2})*)U([\dA-Fa-f]{8})~', function ($Captured) {
                 if (($Decoded = hex2bin($Captured[2])) === false) {
                     return $Captured[0];
                 }
-                $Reversed = ($Attempt = iconv('UTF-32BE', 'UTF-8', $Decoded)) === false ? '' : iconv('UTF-8', 'UTF-32BE', $Attempt);
+                $Reversed = ($Attempt = \iconv('UTF-32BE', 'UTF-8', $Decoded)) === false ? '' : iconv('UTF-8', 'UTF-32BE', $Attempt);
                 return $Captured[1] . (($Attempt !== false && strcmp($Reversed, $Decoded) === 0) ? $Attempt : $Decoded);
             }, $Value);
             $Value = str_replace('\\\\', '\\', $Value);

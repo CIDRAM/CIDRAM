@@ -1,6 +1,6 @@
 <?php
 /**
- * IP header class (last modified: 2023.12.29).
+ * IP header class (last modified: 2026.03.17).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -79,7 +79,7 @@ class IPHeader
      */
     public function isValidIpv4($IP)
     {
-        return is_string($IP) && preg_match(
+        return \is_string($IP) && \preg_match(
             '/^([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])\.([01]?\d{1,2}|2[0-4]\d|25[0-5])$/',
             $IP
         );
@@ -97,7 +97,7 @@ class IPHeader
          * This regular expression adapted from that found at:
          * @link https://sroze.io/regex-ip-v4-et-ipv6-6cc005cabe8c
          */
-        return is_string($IP) && preg_match(
+        return \is_string($IP) && \preg_match(
             '/^((([\da-f]{1,4}:){7}[\da-f]{1,4})|(([\da-f]{1,4}:){6}:[\da-f]{1,4})' .
             '|(([\da-f]{1,4}:){5}:([\da-f]{1,4}:)?[\da-f]{1,4})|(([\da-f]{1,4}:){4' .
             '}:([\da-f]{1,4}:){0,2}[\da-f]{1,4})|(([\da-f]{1,4}:){3}:([\da-f]{1,4}' .
@@ -123,7 +123,7 @@ class IPHeader
     public function trySource($Source)
     {
         /** Fail immediately if the source isn't available. */
-        if (!isset($_SERVER[$Source]) || strlen($_SERVER[$Source]) === 0) {
+        if (!isset($_SERVER[$Source]) || !\is_string($_SERVER[$Source]) || \strlen($_SERVER[$Source]) === 0) {
             return '';
         }
 
@@ -131,15 +131,18 @@ class IPHeader
         $Matches = [];
 
         /** Ensure that we're working with a string. */
-        if (is_array($Try)) {
-            $Try = array_shift($Try);
+        if (\is_array($Try)) {
+            $Try = \array_shift($Try);
+            if (!\is_string($Try)) {
+                return '';
+            }
         }
 
         /**
          * Check for "Forwarded"-like syntax.
          * @link https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Forwarded
          */
-        if (preg_match_all('~for="?\[?([\da-f.:]+)(?:[\]";,]|$)~i', $Try, $Matches) && isset($Matches[1])) {
+        if (\preg_match_all('~for="?\[?([\da-f.:]+)(?:[\]";,]|$)~i', $Try, $Matches) && isset($Matches[1])) {
             foreach ($Matches[1] as $Match) {
                 if ($this->isValidIpv4($Match)) {
                     $this->Type = 4;
@@ -157,7 +160,7 @@ class IPHeader
          * Check for "X-Forwarded-For"-like syntax.
          * @link https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Forwarded-For
          */
-        if (preg_match_all('~([\da-f.:]+)(?:,|$)~i', $Try, $Matches) && isset($Matches[1])) {
+        if (\preg_match_all('~([\da-f.:]+)(?:,|$)~i', $Try, $Matches) && isset($Matches[1])) {
             foreach ($Matches[1] as $Match) {
                 if ($this->isValidIpv4($Match)) {
                     $this->Type = 4;

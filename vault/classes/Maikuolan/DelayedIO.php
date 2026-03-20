@@ -1,6 +1,6 @@
 <?php
 /**
- * Delayed file IO class (last modified: 2023.12.29).
+ * Delayed file IO class (last modified: 2026.03.17).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -60,26 +60,26 @@ class DelayedIO
             if ($NewData === $this->OldData[$File]) {
                 continue;
             }
-            $Handle = fopen($File, 'wb');
-            if (!is_resource($Handle)) {
+            $Handle = \fopen($File, 'wb');
+            if (!\is_resource($Handle)) {
                 continue;
             }
             if ($this->Locked[$File]) {
                 $Locked = false;
-                $Time = time();
+                $Time = \time();
                 while (!$Locked) {
-                    $Locked = flock($Handle, $this->Locked[$File]);
-                    if (!$Locked && (time() - $Time) >= self::LOCK_TIMEOUT) {
+                    $Locked = \flock($Handle, $this->Locked[$File]);
+                    if (!$Locked && (\time() - $Time) >= self::LOCK_TIMEOUT) {
                         break;
                     }
                 }
                 if (!$Locked) {
-                    fclose($Handle);
+                    \fclose($Handle);
                     continue;
                 }
             }
-            fwrite($Handle, $NewData);
-            fclose($Handle);
+            \fwrite($Handle, $NewData);
+            \fclose($Handle);
         }
     }
 
@@ -92,57 +92,57 @@ class DelayedIO
      */
     public function readFile($File = '', $Lock = 0)
     {
-        if ($File === '' || !is_string($File) || !is_int($Lock)) {
+        if ($File === '' || !\is_string($File) || !\is_int($Lock)) {
             return '';
         }
         if (isset($this->NewData[$File])) {
             return $this->NewData[$File];
         }
-        if (!is_file($File) || !is_readable($File)) {
+        if (!\is_file($File) || !\is_readable($File)) {
             return '';
         }
-        if (filesize($File) === 0) {
+        if (\filesize($File) === 0) {
             $this->Locked[$File] = 0;
             return $this->NewData[$File] = $this->OldData[$File] = '';
         }
         if ($Lock === 0) {
-            $Data = file_get_contents($File);
+            $Data = \file_get_contents($File);
             $this->Locked[$File] = 0;
-            return $this->NewData[$File] = $this->OldData[$File] = is_string($Data) ? $Data : '';
+            return $this->NewData[$File] = $this->OldData[$File] = \is_string($Data) ? $Data : '';
         }
-        $Handle = fopen($File, 'rb');
-        if (!is_resource($Handle)) {
+        $Handle = \fopen($File, 'rb');
+        if (!\is_resource($Handle)) {
             return '';
         }
         $Locked = false;
         if ($Lock !== 0) {
-            $Time = time();
+            $Time = \time();
             while (!$Locked) {
-                $Locked = flock($Handle, $Lock);
-                if (!$Locked && (time() - $Time) >= self::LOCK_TIMEOUT) {
+                $Locked = \flock($Handle, $Lock);
+                if (!$Locked && (\time() - $Time) >= self::LOCK_TIMEOUT) {
                     break;
                 }
             }
             if (!$Locked) {
-                fclose($Handle);
+                \fclose($Handle);
                 return '';
             }
         }
         $Data = '';
-        while (!feof($Handle)) {
-            $Data .= fread($Handle, self::BLOCKSIZE);
+        while (!\feof($Handle)) {
+            $Data .= \fread($Handle, self::BLOCKSIZE);
         }
         if ($Locked) {
-            $Time = time();
+            $Time = \time();
             $Unlocked = false;
             while (!$Unlocked) {
-                $Unlocked = flock($Handle, LOCK_UN);
-                if (!$Unlocked && (time() - $Time) >= self::LOCK_TIMEOUT) {
+                $Unlocked = \flock($Handle, LOCK_UN);
+                if (!$Unlocked && (\time() - $Time) >= self::LOCK_TIMEOUT) {
                     break;
                 }
             }
         }
-        fclose($Handle);
+        \fclose($Handle);
         $this->Locked[$File] = 0;
         return $this->NewData[$File] = $this->OldData[$File] = $Data;
     }
@@ -157,7 +157,7 @@ class DelayedIO
      */
     public function writeFile($File = '', $Data = '', $Lock = 0)
     {
-        if (empty($File) || !is_string($File) || !is_writable($File) || !is_string($Data) || !is_int($Lock)) {
+        if (empty($File) || !\is_string($File) || !\is_writable($File) || !\is_string($Data) || !\is_int($Lock)) {
             return false;
         }
         $this->NewData[$File] = $Data;

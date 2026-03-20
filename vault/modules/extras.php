@@ -155,6 +155,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         /** Probing for common vulnerabilities and exploits. */
         if (
             $this->trigger(\preg_match('~(?:^|[/?])Telerik\.Web\.UI\.WebResource\.axd(?:$|[/?])~i', $LCNrURI), $Exploit = 'CVE-2019-18935') || // 2024.10.30 mod 2025.08.07
+            $this->trigger(\preg_match('~(?:^|[/?])_ignition/execute-solution(?:$|[/?])~i', $LCNrURI), $Exploit = 'CVE-2021-3129') || // 2026.03.20
             $this->trigger(\preg_match('~(?:^|[/?])assets/images/accesson\.php[57]?(?:$|[/?])~', $LCNrURI), $Exploit = 'CVE-2025-54068') || // 2026.03.11
             $this->trigger(\preg_match('~(?:^|[/?])cgi-bin/php5(?:$|[/?])~i', $LCNrURI), $Exploit = 'CVE-2012-1823') || // 2026.03.19
             $this->trigger(\preg_match('~(?:^|[/?])civicrm/packages/openflashchart/php-ofc-library/ofc_upload_image\.php[57]?(?:$|[/?])~', $LCNrURI), $Exploit = 'CIVI-SA-2013-001') || // 2025.07.05 mod 2025.08.07
@@ -165,6 +166,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $this->trigger(\preg_match('~(?:^|[/?])includes/openflashchart/php-ofc-library/ofc_upload_image\.php[57]?(?:$|[/?])~', $LCNrURI), $Exploit = 'SA53428') || // 2025.07.10 mod 2025.08.07
             $this->trigger(\preg_match('~(?:^|[/?])ipfs/bafkreicyqcbhpicbos7ev4mrxofwqx6hvvge7pahpta6xuspr44crai5by(?:$|[/?])~i', $LCNrURI), $Exploit = 'CVE-2016-10563') || // 2025.11.13
             $this->trigger(\preg_match('~(?:^|[/?])library/openflashchart/php-ofc-library/ofc_upload_image\.php[57]?(?:$|[/?])~', $LCNrURI), $Exploit = 'ZSL-2013-5126') || // 2025.07.10 mod 2025.08.07
+            $this->trigger(\preg_match('~(?:^|[/?])modules/mod_footer/tmpl$~i', $LCNrURI), $Exploit = 'CVE-2021-26035') || // 2026.03.20
             $this->trigger(\preg_match('~(?:^|[/?])modules/mod_simplefileuploadv1\.3/elements(?:$|[/?])~', $LCNrURI), $Exploit = 'CVE-2011-5148') || // 2025.07.20 mod 2025.08.07
             $this->trigger(\preg_match('~(?:^|[/?])tinymce/plugins/filemanager/dialog\.php[57]?(?:$|[/?])~', $LCNrURI), $Exploit = 'TinyMCE Filemanager') || // 2025.07.07 mod 2025.08.07
             $this->trigger(\preg_match('~(?:^|[/?])util/php/eval-stdin\.php[57]?(?:$|[/?])~', $LCNrURI), $Exploit = 'CVE-2017-9841') // 2025.07.16 mod 2025.08.07
@@ -569,6 +571,16 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         if ($this->trigger(\preg_match('~(?:^|[/?])proc/self/cmdline(?:$|[/?])~', $LCNrURI), 'Proc hack detected')) {
             $this->Reporter->report([15], ['Proc hack detected.'], $this->BlockInfo['IPAddr']);
         } // 2026.03.19
+
+        /** Shell command substitution attack detected. */
+        if ($this->trigger(\preg_match('~(?:^|[/?])\\$\\([\da-z_]+\\)(?:$|[/?])~', $LCNrURI), 'Shell command substitution attack detected')) {
+            $this->Reporter->report([15, 21], ['Shell command substitution attack detected.'], $this->BlockInfo['IPAddr']);
+        } // 2026.03.20
+
+        /** Probing for exposed Serverless Framework configuration file. */
+        if ($this->trigger(\preg_match('~(?:^|[/?])serverless\.ya?ml(?:$|[/?])~', $LCNrURI), 'Probing for exposed Serverless Framework configuration file')) {
+            $this->Reporter->report([15, 21], ['Caught probing for exposed Serverless Framework configuration file.'], $this->BlockInfo['IPAddr']);
+        } // 2026.03.20
     }
 
     /**

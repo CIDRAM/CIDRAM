@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data for the front-end (last modified: 2026.02.28).
+# This file: Bangla language data for the front-end (last modified: 2026.03.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -143,8 +143,8 @@ config_general_truncate: "একটি নির্দিষ্ট আকার�
 config_hcaptcha: "HCaptcha জন্য কনফিগারেশন (যখন অবরুদ্ধ থাকে তখন মানুষের অ্যাক্সেস ফিরে পাওয়ার জন্য একটি উপায় সরবরাহ করে)।"
 config_hcaptcha_api: &CaptchaAPI "API ব্যবহার করতে?"
 config_hcaptcha_expiry: &CaptchaExpiry "ক্যাপচা দৃষ্টান্তগুলি মনে রাখার জন্য ঘন্টাগুলির সংখ্যা। ডিফল্ট = 720 (1 মাস)।"
-config_hcaptcha_lockip: &CaptchaLockIP "ক্যাপচা আইপি অ্যাড্রেসগুলি লক করুন?"
-config_hcaptcha_lockuser: &CaptchaLockUser "ক্যাপচা ব্যবহারকারীদের লক করুন?"
+config_hcaptcha_lockip: &CaptchaLockIP "ক্যাপচা কি আইপি ঠিকানার সাথে লক করুন?"
+config_hcaptcha_lockuser: &CaptchaLockUser "ক্যাপচা কি ব্যবহারকারীদের লক করুন?"
 config_hcaptcha_logfile: &CaptchaLogfile "সব ক্যাপচা প্রচেষ্টা লগ ইন করুন? যদি তাই, লগ ফাইলে ব্যবহারের জন্য নামটি উল্লেখ করুন। যদি না, এই পরিবর্তনশীল খালি রাখুন।"
 config_hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "অবরুদ্ধ নয় অনুরোধগুলিতে ক্যাপচা প্রদর্শন করার সময় কোন স্থিতি কোড ব্যবহার করা উচিত?"
 config_hcaptcha_secret: &CaptchaDashboard "আপনার ক্যাপচা পরিষেবাটির জন্য এই মানটি ড্যাশবোর্ডে পাওয়া যাবে।"
@@ -158,7 +158,7 @@ config_legal_omit_hostname: "লগগুলি থেকে হোস্টন�
 config_legal_omit_ip: "লগগুলি থেকে আইপি ঠিকানাগুলি বাদ দিন? True = হাঁ; False = না [ডিফল্ট]। দ্রষ্টব্য: "pseudonymise_ip_addresses" অপ্রয়োজনীয় হয় যখন "omit_ip" হল "true"।"
 config_legal_omit_ua: "লগগুলি থেকে ব্যবহারকারী এজেন্ট বাদ দিন? True = হাঁ; False = না [ডিফল্ট]।"
 config_legal_privacy_policy: "কোন প্রযোজ্য পৃষ্ঠাগুলির পাদলেখ প্রদর্শিত একটি প্রাসঙ্গিক গোপনীয়তা নীতির ঠিকানা। একটি URL উল্লেখ করুন, বা অক্ষম করতে ফাঁকা রাখুন।"
-config_legal_pseudonymise_ip_addresses: "লগ লেখার সময় আইপি ঠিকানাগুলি pseudonymize? True = হাঁ [ডিফল্ট]; False = না।"
+config_legal_pseudonymise_ip_addresses: "লগ লেখার সময় আইপি ঠিকানার জন্য ছদ্মনামকরণ ব্যবহার করুন? True = হাঁ [ডিফল্ট]; False = না।"
 config_rate_limiting: "হার সীমাবদ্ধ করার জন্য কনফিগারেশন (সাধারণ ব্যবহারের জন্য প্রস্তাবিত নয়)।"
 config_rate_limiting_allowance_period: "ব্যবহারের ট্র্যাক কত ঘন্টা। ডিফল্ট = "0"।"
 config_rate_limiting_exceptions: "ব্যতিক্রম (অনুরোধগুলি যা হার সীমাবদ্ধ করা উচিত নয়)। হার সীমাবদ্ধ সক্ষম থাকলেই প্রাসঙ্গিক।"
@@ -289,7 +289,7 @@ field_status: "অবস্থা"
 field_system_timezone: "সিস্টেম ডিফল্ট টাইমজোন ব্যবহার করুন।"
 field_tracking: "ট্র্যাকিং"
 field_true: "True (সত্য)"
-field_ualc: "User agent (ছোট হাতের)"
+field_ualc: "ব্যবহারকারী এজেন্ট (ছোট হাতের)"
 field_uninstall: "আনইনস্টল করুন"
 field_update: "আপডেট করুন"
 field_update_all: "সব আপডেট করুন"
@@ -671,7 +671,7 @@ tip_aux_priority: "অগ্রাধিকার (সর্বোচ্চ➡(�
 tip_aux_webhooks: "যখন একটি নিয়ম ট্রিগার করা হয়, CIDRAM ইভেন্টটি সম্পর্কিত কোনও সংযুক্ত ওয়েবহুককে অবহিত করার চেষ্টা করবে।"
 tip_backup: "হ্যালো, {username}।<br />এই পৃষ্ঠাটি আপনার কনফিগারেশন, অক্সিলিয়ারি নিয়ম, ইত্যাদি আমদানি/রপ্তানি করতে ব্যবহার করা যেতে পারে। আপনি যদি বিভিন্ন ইনস্টলেশন বা বিভিন্ন প্রধান সংস্করণে ডেটা স্থানান্তর করতে চান তবে এটি কার্যকর হতে পারে।"
 tip_cache_data: "হ্যালো, {username}।<br />এখানে আপনি ক্যাশের বিষয়বস্তু পর্যালোচনা করতে পারেন।"
-tip_cidr_calc: "হ্যালো, {username}।<br />আপনি এখানে আইপি অ্যাড্রেসকে গুণনীয়ক নির্ণয় করা করতে পারেন (যে CIDRগুলি আইপি অ্যাড্রেস এর সদস্য)।"
+tip_cidr_calc: "হ্যালো, {username}।<br />আপনি এখানে আইপি ঠিকানাকে গুণনীয়ক নির্ণয় করা করতে পারেন (যে CIDRগুলি আইপি ঠিকানা এর সদস্য)।"
 tip_click_the_component: "আরো বিস্তারিত জানার জন্য কম্পোনেন্ট নাম ক্লিক করুন।"
 tip_condition_placeholder: "একটি মান উল্লেখ করুন, অথবা উপেক্ষা করার জন্য ফাঁকা রাখুন।"
 tip_config: "হ্যালো, {username}।<br />আপনি এই পৃষ্ঠা থেকে CIDRAM কনফিগারেশন পরিবর্তন করতে।"
@@ -679,15 +679,15 @@ tip_custom_query: "এখানে কোয়েরি লিখুন (ঐচ
 tip_custom_referrer: "এখানে রেফারার লিখুন (ঐচ্ছিক)।"
 tip_custom_ua: "এখানে ব্যবহারকারী এজেন্ট লিখুন (ঐচ্ছিক)।"
 tip_enter_input_here: "এখানে ইনপুট লিখুন।"
-tip_enter_ip_here: "এখানে IP ঠিকানা লিখুন।"
-tip_enter_ips_here: "এখানে IP ঠিকানা লিখুন।"
+tip_enter_ip_here: "এখানে আইপি ঠিকানা লিখুন।"
+tip_enter_ips_here: "এখানে আইপি ঠিকানা লিখুন।"
 tip_expiry_placeholder: "মেয়াদ শেষ না হওয়া পর্যন্ত সেকেন্ডের সংখ্যা।"
 tip_fe_cookie_warning: "নোট: লগইনগুলির প্রমাণীকরণের জন্য CIDRAM একটি কুকি ব্যবহার করে। লগ ইন করে, আপনি আপনার ব্রাউজার দ্বারা তৈরি এবং সংরক্ষিত একটি কুকি জন্য আপনার অনুমতি দিন।"
 tip_file_manager: "হ্যালো, {username}।<br />ফাইল ম্যানেজার ব্যবহার করে আপনি ফাইলগুলি মুছে, সম্পাদনা, আপলোড এবং ডাউনলোড করতে পারেন। সতর্কতার সাথে ব্যবহার করুন (আপনি এই সঙ্গে আপনার ইনস্টলেশন বিরতি হতে পারে)।"
 tip_fixer: "হ্যালো, {username}।<br />এখানে আপনি স্বাক্ষর ফাইল সম্ভাব্য সমস্যা সনাক্ত এবং ঠিক করতে পারেন।"
 tip_home: "হ্যালো, {username}।<br />এটা CIDRAM ফ্রন্ট-এন্ড হোম পেজ হয়। চালিয়ে যেতে বাম দিকে নেভিগেশন মেনু থেকে একটি লিঙ্ক নির্বাচন করুন।"
-tip_ip_aggregator: "হ্যালো, {username}।<br />IP এগ্রিগেটর আপনাকে ক্ষুদ্রতম সম্ভাব্য পদ্ধতিতে আইপিগুলি এবং CIDRগুলি প্রকাশ করতে দেয়। একত্রিত হওয়ার জন্য তথ্য সন্নিবেশ করান এবং "OK" টিপুন।"
-tip_ip_test: "হ্যালো, {username}।<br />IP পরীক্ষা পৃষ্ঠা আপনাকে বর্তমানে ইনস্টল করা স্বাক্ষর দ্বারা আইপি অ্যাড্রেসগুলিকে ব্লক করে কিনা তা পরীক্ষা করতে দেয়।"
+tip_ip_aggregator: "হ্যালো, {username}।<br />আইপি এগ্রিগেটর আপনাকে ক্ষুদ্রতম সম্ভাব্য পদ্ধতিতে আইপিগুলি এবং CIDRগুলি প্রকাশ করতে দেয়। একত্রিত হওয়ার জন্য তথ্য সন্নিবেশ করান এবং "OK" টিপুন।"
+tip_ip_test: "হ্যালো, {username}।<br />আইপি পরীক্ষা পৃষ্ঠা আপনাকে বর্তমানে ইনস্টল করা স্বাক্ষর দ্বারা আইপি ঠিকানাগুলিকে ব্লক করে কিনা তা পরীক্ষা করতে দেয়।"
 tip_ip_test_switches: "(নির্বাচিত না হলে শুধুমাত্র স্বাক্ষর ফাইলগুলি পরীক্ষা করা হবে)।"
 tip_ip_tracking: "হ্যালো, {username}।<br />আইপি ট্র্যাকিং পৃষ্ঠা আপনাকে আইপি ঠিকানাগুলির নিরীক্ষণ করা হচ্ছে তা পরীক্ষা করার অনুমতি দেয়, যাদেরকে নিষিদ্ধ করা হয়েছে তা দেখতে, এবং যদি আপনি চান, নিষিদ্ধ অপসারণ।"
 tip_logs: "হ্যালো, {username}।<br />যে লগ ফাইল এর বিষয়বস্তু দেখতে নীচের তালিকা থেকে একটি লগ ফাইল নির্বাচন করুন।"

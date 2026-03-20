@@ -1,6 +1,6 @@
 <?php
 /**
- * Demojibakefier (last modified: 2026.03.18).
+ * Demojibakefier (last modified: 2026.03.20).
  *
  * Intended to normalise the character encoding of a given string to a
  * preferred character encoding when the given string's byte sequences don't
@@ -329,7 +329,7 @@ class Demojibakefier extends CommonAbstract
         }
         $Total = 0;
         foreach ($Chars as $Char) {
-            $Total += abs(($Char / $Len) * log(($Char / $Len), 2));
+            $Total += \abs(($Char / $Len) * \log(($Char / $Len), 2));
         }
         return $Total;
     }
@@ -363,11 +363,11 @@ class Demojibakefier extends CommonAbstract
             if (!$this->checkConformity($String, $Encoding)) {
                 continue;
             }
-            $Attempt = iconv($Encoding, $this->NormaliseTo, $String);
+            $Attempt = \iconv($Encoding, $this->NormaliseTo, $String);
             if ($Attempt === false || !$this->checkConformity($Attempt, $this->NormaliseTo)) {
                 continue;
             }
-            if (\strcmp(iconv($this->NormaliseTo, $Encoding, $Attempt), $String) === 0) {
+            if (\strcmp(\iconv($this->NormaliseTo, $Encoding, $Attempt), $String) === 0) {
                 $Valid[$Encoding] = $Attempt;
                 if ($Encoding === $this->NormaliseTo) {
                     break;
@@ -563,7 +563,7 @@ class Demojibakefier extends CommonAbstract
         }
 
         $RateAZ = \preg_match_all('~[\x41-\x5A\x61-\x7A]~', $String) / $this->Len;
-        $EntrAZ = \round(abs($RateAZ * log($RateAZ, 2)), 2);
+        $EntrAZ = \round(\abs($RateAZ * \log($RateAZ, 2)), 2);
 
         /** More common versus less common byte sequences in 1-byte encodings. */
         foreach ([
@@ -591,7 +591,7 @@ class Demojibakefier extends CommonAbstract
         ] as $Encoding => $Bytes) {
             if (isset($Arr[$Encoding]['Weight'])) {
                 $RateThis = \preg_match_all('~' . $Bytes . '~', $String) / $this->Len;
-                $EntrThis = \round(abs($RateThis * log($RateThis, 2)), 2);
+                $EntrThis = \round(\abs($RateThis * \log($RateThis, 2)), 2);
                 if ($EntrThis !== $EntrAZ) {
                     $Arr[$Encoding]['Weight'] += ($EntrThis > $EntrAZ) ? 0.5 : -0.5;
                 }

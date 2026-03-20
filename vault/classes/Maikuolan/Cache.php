@@ -1,6 +1,6 @@
 <?php
 /**
- * A simple, unified cache handler (last modified: 2026.03.18).
+ * A simple, unified cache handler (last modified: 2026.03.20).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -272,7 +272,7 @@ class Cache extends CommonAbstract implements \ArrayAccess, \Countable
                 }
                 $Locked = false;
                 while (true) {
-                    if ($Locked = \flock($Handle, LOCK_EX | LOCK_NB) || (\time() - $Start) > self::FLOCK_TIMEOUT) {
+                    if ($Locked = \flock($Handle, \LOCK_EX | \LOCK_NB) || (\time() - $Start) > self::FLOCK_TIMEOUT) {
                         break;
                     }
                 }

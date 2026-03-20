@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2026.03.18).
+ * This file: Functions file (last modified: 2026.03.20).
  */
 
 /**
@@ -442,7 +442,7 @@ $CIDRAM['CheckFactors'] = function (array $Files, array $Factors) use (&$CIDRAM)
                         require_once $CIDRAM['Vault'] . $Signature;
                     } else {
                         $CIDRAM['ExtraErrorInfo'] = $Signature;
-                        trigger_error($CIDRAM['L10N']->getString('Error_MissingRequire'), E_USER_WARNING);
+                        trigger_error($CIDRAM['L10N']->getString('Error_MissingRequire'), \E_USER_WARNING);
                     }
                 }
                 if ($RunExitCode === 4) {
@@ -1223,7 +1223,7 @@ $CIDRAM['Trigger'] = function ($Condition, $ReasonShort, $ReasonLong = '', array
     if ($CIDRAM['Stage'] === 'Aux') {
         $CIDRAM['BlockInfo']['Signatures'] .= 'auxiliary.yaml:' . $ReasonShort;
     } else {
-        $Debug = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT | DEBUG_BACKTRACE_IGNORE_ARGS, 1)[0];
+        $Debug = debug_backtrace(\DEBUG_BACKTRACE_PROVIDE_OBJECT | \DEBUG_BACKTRACE_IGNORE_ARGS, 1)[0];
         $Source = basename($Debug['file']);
         $CIDRAM['BlockInfo']['Signatures'] .= $Source . ':L' . $Debug['line'];
     }
@@ -1272,7 +1272,7 @@ $CIDRAM['Bypass'] = function ($Condition, $ReasonShort, array $DefineOptions = [
     if ($CIDRAM['Stage'] === 'Aux') {
         $CIDRAM['BlockInfo']['Signatures'] .= 'auxiliary.yaml:' . $ReasonShort;
     } else {
-        $Debug = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT | DEBUG_BACKTRACE_IGNORE_ARGS, 1)[0];
+        $Debug = debug_backtrace(\DEBUG_BACKTRACE_PROVIDE_OBJECT | \DEBUG_BACKTRACE_IGNORE_ARGS, 1)[0];
         $Source = basename($Debug['file']);
         $CIDRAM['BlockInfo']['Signatures'] .= $Source . ':L' . $Debug['line'];
     }
@@ -2104,7 +2104,7 @@ $CIDRAM['AuxAction'] = function ($Action, $Name, $Reason = '', $Target = '', $St
         } elseif (!$CIDRAM['isReserved']($Run) && is_readable($CIDRAM['Vault'] . $Run)) {
             require_once $CIDRAM['Vault'] . $Run;
         } else {
-            trigger_error($CIDRAM['L10N']->getString('Error_MissingRequire'), E_USER_WARNING);
+            trigger_error($CIDRAM['L10N']->getString('Error_MissingRequire'), \E_USER_WARNING);
         }
     }
 

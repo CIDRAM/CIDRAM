@@ -1,6 +1,6 @@
 <?php
 /**
- * A simple, unified cache handler (last modified: 2026.03.20).
+ * A simple, unified cache handler (last modified: 2026.03.22).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -141,7 +141,7 @@ class Cache
     /**
      * @var string Prepared get query for PDO.
      */
-    const GET_QUERY = 'SELECT `Data` FROM `Cache` WHERE `Key` = :key LIMIT 1';
+    const GET_QUERY = 'SELECT * FROM `Cache` WHERE `Key` = :key LIMIT 1';
 
     /**
      * @var string Prepared delete query for PDO.
@@ -219,38 +219,35 @@ class Cache
             $this->WorkingData->close();
             return;
         }
-        if ($this->Using === 'PDO') {
-            $this->clearExpiredPDO();
+        if (!\is_array($this->WorkingData)) {
             return;
         }
-        if (\is_array($this->WorkingData)) {
-            if ($this->clearExpired($this->WorkingData)) {
-                $this->Modified = true;
+        if ($this->clearExpired($this->WorkingData)) {
+            $this->Modified = true;
+        }
+        if ($this->FFDefault && $this->Modified && $this->Using === 'FF') {
+            $Handle = false;
+            $Start = \time();
+            while (true) {
+                $Handle = \fopen($this->FFDefault, 'wb');
+                if ($Handle !== false || (\time() - $Start) > self::FLOCK_TIMEOUT) {
+                    break;
+                }
             }
-            if ($this->FFDefault && $this->Modified && $this->Using === 'FF') {
-                $Handle = false;
-                $Start = \time();
-                while (true) {
-                    $Handle = \fopen($this->FFDefault, 'wb');
-                    if ($Handle !== false || (\time() - $Start) > self::FLOCK_TIMEOUT) {
-                        break;
-                    }
-                }
-                if ($Handle === false) {
-                    return;
-                }
-                $Locked = false;
-                while (true) {
-                    if ($Locked = \flock($Handle, \LOCK_EX | \LOCK_NB) || (\time() - $Start) > self::FLOCK_TIMEOUT) {
-                        break;
-                    }
-                }
-                if ($Locked) {
-                    \fwrite($Handle, \serialize($this->WorkingData));
-                    \flock($Handle, LOCK_UN);
-                }
-                \fclose($Handle);
+            if ($Handle === false) {
+                return;
             }
+            $Locked = false;
+            while (true) {
+                if ($Locked = \flock($Handle, \LOCK_EX | \LOCK_NB) || (\time() - $Start) > self::FLOCK_TIMEOUT) {
+                    break;
+                }
+            }
+            if ($Locked) {
+                \fwrite($Handle, \serialize($this->WorkingData));
+                \flock($Handle, \LOCK_UN);
+            }
+            \fclose($Handle);
         }
     }
 
@@ -432,11 +429,14 @@ class Cache
             return $this->unserializeEntry($this->WorkingData->get($Entry));
         }
         if ($this->Using === 'PDO') {
-            $this->clearExpiredPDO();
             $PDO = $this->WorkingData->prepare(self::GET_QUERY);
             if ($PDO !== false && $PDO->execute([':key' => $Entry])) {
                 $Data = $PDO->fetch(\PDO::FETCH_ASSOC);
-                if (!isset($Data['Data'])) {
+                if (!isset($Data['Data'], $Data['Time'])) {
+                    return false;
+                }
+                if ($Data['Time'] > 0 && $Data['Time'] < \time()) {
+                    $this->clearExpiredPDO();
                     return false;
                 }
                 if (\substr($Data['Data'], 0, 3) === 'gz:') {

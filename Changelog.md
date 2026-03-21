@@ -530,4 +530,5 @@
 - [2026.03.19]: Added a hint at the auxiliary rules page for "IP address (resolved)".
 - [2026.03.20]: Use RedisException for failed Redis connections (#388).
 - [2026.03.20]: Ensure language resolution produces the correct capitalisation (e.g., xx-XX or xx-Xxxx).
+- [2026.03.22]: Optimised the logic for when clearExpiredPDO triggers, which should improve performance a little for those using PDO for caching (#393).
 - *Plus all the regular signature updates.*

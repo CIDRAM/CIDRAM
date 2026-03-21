@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malay language data for the front-end (last modified: 2026.03.18).
+# This file: Malay language data for the front-end (last modified: 2026.03.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -463,45 +463,46 @@ hints_verification:
  "Apakah "positif" dan "negatif"?": "Apabila mengesahkan identiti yang dibentangkan oleh permintaan, hasil yang berjaya boleh digambarkan sebagai "positif" atau "negatif". Sekiranya identiti yang dibentangkan disahkan sebagai identiti sebenar, ia akan disifatkan sebagai "positif". Sekiranya identiti yang dibentangkan disahkan sebagai dipalsukan, ia akan disifatkan sebagai "negatif". Walau bagaimanapun, hasil yang tidak berjaya (cth., pengesahan gagal, atau kesahihan identiti yang dibentangkan tidak dapat ditentukan) tidak akan digambarkan sebagai "positif" atau "negatif". Sebaliknya, hasil yang tidak berjaya akan digambarkan hanya sebagai tidak disahkan. Apabila tiada percubaan untuk mengesahkan identiti yang dibentangkan oleh permintaan, permintaan tersebut juga akan disifatkan sebagai tidak disahkan. Istilah tersebut masuk akal hanya dalam konteks dimana identiti yang dibentangkan oleh permintaan diiktiraf, dan jadi, dimana pengesahan kemungkinan. Dalam kes dimana identiti yang dibentangkan tidak sepadan dengan pilihan yang disediakan di atas, atau dimana tiada identiti dibentangkan, pilihan yang disediakan di atas menjadi tidak relevan."
  "Apakah "pintasan satu pukulan"?": "Dalam sesetengah kes, permintaan yang disahkan sebagai positif mungkin masih disekat akibat daripada fail tandatangan, modul, atau syarat lain daripada permintaan, dan pintasan mungkin diperlukan untuk mengelakkan positif palsu. Dalam kes dimana pintasan bertujuan menangani tepat satu pelanggaran, tidak lebih dan tidak kurang, pintasan sedemikian boleh digambarkan sebagai "pintasan satu pukulan"."
 hints_want_to_block: "!! Kebanyakan pengguna mungkin mahu ini disekat, tidak kira sama ada ia benar atau dipalsukan. Ini boleh dicapai dengan tidak memilih "cuba untuk mengesahkan" dan memilih "sekat permintaan yang tidak disahkan". Walau bagaimanapun, kerana sesetengah pengguna mungkin mahu dapat mengesahkan permintaan sedemikian (untuk menyekat negatif sambil membenarkan yang positif), bukannya menyekat permintaan tersebut melalui modul, pilihan untuk mengendalikan permintaan sedemikian disediakan disini."
-info_cli_by_default_ips: |
- Sebagai standard, IP akan diuji terhadap semua fail tandatangan, semua modul,
- semua peraturan tambahan, serta pengesahan media sosial dan enjin carian.
- --no-sig    Menghalang ujian terhadap fail tandatangan.
- --no-mod    Menghalang ujian terhadap modul.
- --no-sev    Menghalang pengesahan enjin carian.
- --no-smv    Menghalang pengesahan media sosial.
- --no-ov     Menghalang pengesahan lain.
- --no-aux    Menghalang ujian terhadap peraturan tambahan.
-info_cli_cidram_cli_mod: "CIDRAM mod CLI."
-info_cli_ipv4_ipv6_are_: |
- IPv4/IPv6 kedua-duanya disokong. Input berbilang baris disokong untuk semua
- operasi dalam mod CLI (cth., untuk menguji berbilang alamat IP dalam satu
- operasi) dengan menggunakan petikan, seperti berikut:
-info_cli_or_depending_o: |
- Atau, bergantung pada sama ada anda lebih suka merangkai pertama kepada
- terakhir, atau terakhir kepada pertama:
-info_cli_or_to_aggregat: "Atau, untuk mengagregatkannya sebagai topeng jaring:"
-info_cli_or_using_comma: |
- Atau, menggunakan koma dan bukannya berbilang baris (melakukan perkara yang
- sama):
-info_cli_the_signature_: "Pembetul tandatangan boleh digunakan melalui CLI juga:"
-info_cli_to_calculate_c: "Untuk mengira CIDR daripada alamat IP:"
-info_cli_to_test_whethe: "Untuk menguji sama ada alamat IP disekat oleh CIDRAM:"
-info_cli_to_quit_type_q: "Untuk berhenti, taip "q", "quit", atau "exit", kemudian tekan enter."
-info_cli_you_can_also_a: "Anda juga boleh mengagregatkan IP dan CIDR seperti berikut:"
-info_cli_you_can_also_c: |
- Anda juga boleh merantai perintah bersama-sama (contoh dibaca daripada
- beberapa fail, mengagregat kandungannya, kemudian menulis data diagregat ke
- output.dat):
-info_cli_you_can_also_r: "Anda juga boleh membaca daripada fail seperti berikut:"
-info_cli_you_can_also_u: |
- Anda juga boleh menggunakan koma sebaliknya jika anda mahu (ini dianggap sama
- seperti menggunakan berbilang baris, tetapi anda tidak perlu menggunakan
- petikan dan jangan campurkan kedua-duanya bersama-sama):
-info_cli_you_can_also_w: "Anda juga boleh menulis ke fail seperti berikut:"
-info_cli_you_can_print_: |
- Anda boleh mencetak data ke skrin seperti berikut (kadang-kadang berguna
- apabila merantai perintah):
+info_cli: !lazy
+ by_default_ips: |
+  Sebagai standard, IP akan diuji terhadap semua fail tandatangan, semua modul,
+  semua peraturan tambahan, serta pengesahan media sosial dan enjin carian.
+  --no-sig    Menghalang ujian terhadap fail tandatangan.
+  --no-mod    Menghalang ujian terhadap modul.
+  --no-sev    Menghalang pengesahan enjin carian.
+  --no-smv    Menghalang pengesahan media sosial.
+  --no-ov     Menghalang pengesahan lain.
+  --no-aux    Menghalang ujian terhadap peraturan tambahan.
+ cidram_cli_mod: "CIDRAM mod CLI."
+ ipv4_ipv6_are_: |
+  IPv4/IPv6 kedua-duanya disokong. Input berbilang baris disokong untuk semua
+  operasi dalam mod CLI (cth., untuk menguji berbilang alamat IP dalam satu
+  operasi) dengan menggunakan petikan, seperti berikut:
+ or_depending_o: |
+  Atau, bergantung pada sama ada anda lebih suka merangkai pertama kepada
+  terakhir, atau terakhir kepada pertama:
+ or_to_aggregat: "Atau, untuk mengagregatkannya sebagai topeng jaring:"
+ or_using_comma: |
+  Atau, menggunakan koma dan bukannya berbilang baris (melakukan perkara yang
+  sama):
+ the_signature_: "Pembetul tandatangan boleh digunakan melalui CLI juga:"
+ to_calculate_c: "Untuk mengira CIDR daripada alamat IP:"
+ to_test_whethe: "Untuk menguji sama ada alamat IP disekat oleh CIDRAM:"
+ to_quit_type_q: "Untuk berhenti, taip "q", "quit", atau "exit", kemudian tekan enter."
+ you_can_also_a: "Anda juga boleh mengagregatkan IP dan CIDR seperti berikut:"
+ you_can_also_c: |
+  Anda juga boleh merantai perintah bersama-sama (contoh dibaca daripada
+  beberapa fail, mengagregat kandungannya, kemudian menulis data diagregat ke
+  output.dat):
+ you_can_also_r: "Anda juga boleh membaca daripada fail seperti berikut:"
+ you_can_also_u: |
+  Anda juga boleh menggunakan koma sebaliknya jika anda mahu (ini dianggap sama
+  seperti menggunakan berbilang baris, tetapi anda tidak perlu menggunakan
+  petikan dan jangan campurkan kedua-duanya bersama-sama):
+ you_can_also_w: "Anda juga boleh menulis ke fail seperti berikut:"
+ you_can_print_: |
+  Anda boleh mencetak data ke skrin seperti berikut (kadang-kadang berguna
+  apabila merantai perintah):
 Some useful links: |+
  Beberapa pautan yang berguna:<br />
      <ul class="pieul">
@@ -1053,7 +1054,7 @@ tip:
  Statistics: "Halaman ini menunjukkan beberapa statistik penggunaan asas mengenai pemasangan CIDRAM anda."
  Subtractor: "Penolakan boleh digunakan untuk menolak satu julat IP/CIDR/netmask daripada yang lain."
  Updates: "Halaman kemas kini membolehkan anda memasang, menyahpasang, dan mengemas kini pelbagai komponen CIDRAM (pakej teras, tandatangan, fail L10N, dll)."
-warning:
+warning: !lazy
  API_Rate_Limited: "Amaran: Akses kepada %s API nampaknya pada masa ini adalah kadar terhad."
  Cookies: "Nota: CIDRAM menggunakan kuki untuk mengesahkan log masuk. Apabila anda log masuk, anda memberikan persetujuan anda untuk kuki dibuat dan disimpan oleh penyemak imbas anda."
  Editing PHP files: "Amaran: Beberapa penyelesaian keselamatan pengehosan web diketahui melarang alamat IP secara automatik apabila mengesan teg PHP dalam permintaan (cth., apabila mengedit fail PHP melalui penyemak imbas). CIDRAM tidak mempunyai cara untuk mengetahui sama ada perkhidmatan pengehosan web anda menggunakan penyelesaian keselamatan sedemikian. Untuk mengelakkan masalah sedemikian, disyorkan jangan mengedit fail PHP dengan cara sedemikian apabila boleh."

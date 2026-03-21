@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Catalan language data for the front-end (last modified: 2026.03.18).
+# This file: Catalan language data for the front-end (last modified: 2026.03.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -461,39 +461,40 @@ hints_verification:
  "Què són els "positius" i els "negatius"?": "Quan es verifica la identitat presentada per una sol·licitud, un resultat exitós es podria descriure com a "positiu" o "negatiu". En el cas que es confirmi que la identitat presentada és la veritable identitat, es descriuria com a "positiu". En el cas que es confirmi que la identitat presentada està falsificada, es descriuria com a "negatiu". D'altra banda, un resultat sense èxit (per exemple, la verificació falla, o no es pot determinar la veracitat de la identitat presentada) no es descriuria com a "positiu" o "negatiu". En canvi, un resultat sense èxit es descriuria simplement com a no verificat. Quan no s'intenta verificar la identitat presentada per una sol·licitud, la sol·licitud també es descriuria como a no verificada. Els termes només tenen sentit en el context on es reconeix la identitat presentada per una sol·licitud i, per tant, on la verificació és possible. En els casos en què la identitat presentada no coincideix amb les opcions proporcionades anteriorment, o en què no es presenta cap identitat, les opcions proporcionades anteriorment seran irrellevants."
  "Què són els "bypasses d'un sol cop"?": "En alguns casos, una sol·licitud verificada positivament encara es pot bloquejar com a resultat dels fitxers de signatura, mòduls, o altres condicions de la sol·licitud, i pot ser que calgui els bypasses per evitar falsos positius. En el cas que un bypass tracti exactament d'una infracció, ni més ni menys, aquest bypass es podria descriure com un "bypass d'un sol cop"."
 hints_want_to_block: "!! És probable que la majoria dels usuaris vulguin que es bloquegi, independentment de si és real o falsificat. Això es pot aconseguir si no se selecciona "intentar verificar" i es selecciona "bloquejar les sol·licituds no verificades". Tanmateix, com que alguns usuaris volen poder verificar aquestes sol·licituds (per tal de bloquejar els negatius alhora que permeten els positius), en comptes de bloquejar aquestes sol·licituds mitjançant mòduls, aquí es proporcionen opcions per gestionar aquestes sol·licituds."
-info_cli_by_default_ips: |
- Normalment, les adreces IP es comproven amb tots els fitxers de signatura,
- tots els mòduls, totes les regles auxiliars, i amb la verificació de les
- xarxes socials i del motor de cerca.
- --no-sig    Impedeix les proves amb fitxers de signatura.
- --no-mod    Impedeix les proves amb mòduls.
- --no-sev    Impedeix la verificació dels motors de cerca.
- --no-smv    Impedeix la verificació de les xarxes socials.
- --no-ov     Impedeix altres verificacions.
- --no-aux    Impedeix les proves amb regles auxiliars.
-info_cli_cidram_cli_mod: "Mode CLI de CIDRAM."
-info_cli_ipv4_ipv6_are_: |
- Es pot utilitzar IPv4 o IPv6. L'entrada multilínia és possible per a *totes*
- les operacions en mode CLI (per exemple, per provar diverses adreces IP en una
- sola operació) utilitzant cometes, com ara:
-info_cli_or_depending_o: "O, depenent de si preferiu encadenar el primer a l'últim o l'últim al primer:"
-info_cli_or_to_aggregat: "O, per agregar-los com a màscares de xarxa:"
-info_cli_or_using_comma: "O, utilitzant comes en lloc de multilínies (fa exactament el mateix):"
-info_cli_the_signature_: "El fixador de signatures també es pot utilitzar mitjançant la CLI:"
-info_cli_to_calculate_c: "Per calcular els CIDR a partir d'una adreça IP:"
-info_cli_to_test_whethe: "Per provar si una adreça IP està bloquejada per CIDRAM:"
-info_cli_to_quit_type_q: "Per sortir, escriviu "q", "quit", o "exit" i, a continuació, premeu Intro."
-info_cli_you_can_also_a: "També podeu agregar IP i CIDR de la següent manera:"
-info_cli_you_can_also_c: |
- També podeu encadenar ordres (l'exemple llegeix d'alguns fitxers, n'agrega el
- contingut, i després escriu les dades agregades a output.dat):
-info_cli_you_can_also_r: "També podeu llegir fitxers com aquest:"
-info_cli_you_can_also_u: |
- També podeu utilitzar comes si voleu (això es tracta de la mateixa manera que
- utilitzar multilínies, però no cal que utilitzeu cometes, i no barregis tots
- dos junts):
-info_cli_you_can_also_w: "També podeu escriure als fitxers com aquest:"
-info_cli_you_can_print_: "Podeu imprimir dades a la pantalla així (de vegades útil quan encadeneu ordres):"
+info_cli: !lazy
+ by_default_ips: |
+  Normalment, les adreces IP es comproven amb tots els fitxers de signatura,
+  tots els mòduls, totes les regles auxiliars, i amb la verificació de les
+  xarxes socials i del motor de cerca.
+  --no-sig    Impedeix les proves amb fitxers de signatura.
+  --no-mod    Impedeix les proves amb mòduls.
+  --no-sev    Impedeix la verificació dels motors de cerca.
+  --no-smv    Impedeix la verificació de les xarxes socials.
+  --no-ov     Impedeix altres verificacions.
+  --no-aux    Impedeix les proves amb regles auxiliars.
+ cidram_cli_mod: "Mode CLI de CIDRAM."
+ ipv4_ipv6_are_: |
+  Es pot utilitzar IPv4 o IPv6. L'entrada multilínia és possible per a *totes*
+  les operacions en mode CLI (per exemple, per provar diverses adreces IP en una
+  sola operació) utilitzant cometes, com ara:
+ or_depending_o: "O, depenent de si preferiu encadenar el primer a l'últim o l'últim al primer:"
+ or_to_aggregat: "O, per agregar-los com a màscares de xarxa:"
+ or_using_comma: "O, utilitzant comes en lloc de multilínies (fa exactament el mateix):"
+ the_signature_: "El fixador de signatures també es pot utilitzar mitjançant la CLI:"
+ to_calculate_c: "Per calcular els CIDR a partir d'una adreça IP:"
+ to_test_whethe: "Per provar si una adreça IP està bloquejada per CIDRAM:"
+ to_quit_type_q: "Per sortir, escriviu "q", "quit", o "exit" i, a continuació, premeu Intro."
+ you_can_also_a: "També podeu agregar IP i CIDR de la següent manera:"
+ you_can_also_c: |
+  També podeu encadenar ordres (l'exemple llegeix d'alguns fitxers, n'agrega el
+  contingut, i després escriu les dades agregades a output.dat):
+ you_can_also_r: "També podeu llegir fitxers com aquest:"
+ you_can_also_u: |
+  També podeu utilitzar comes si voleu (això es tracta de la mateixa manera que
+  utilitzar multilínies, però no cal que utilitzeu cometes, i no barregis tots
+  dos junts):
+ you_can_also_w: "També podeu escriure als fitxers com aquest:"
+ you_can_print_: "Podeu imprimir dades a la pantalla així (de vegades útil quan encadeneu ordres):"
 Some useful links: |+
  Alguns enllaços útils:<br />
      <ul class="pieul">
@@ -1083,7 +1084,7 @@ tip:
  Statistics: "Aquesta pàgina mostra algunes estadístiques bàsiques d'ús relacionades amb la vostra instal·lació de CIDRAM."
  Subtractor: "El restador es pot utilitzar per restar un rang d'IP/CIDR/màscares de xarxa d'un altre."
  Updates: "La pàgina d'actualitzacions us permet instal·lar, desinstal·lar, i actualitzar els diferents components de CIDRAM (el paquet bàsic, signatures, fitxers de L10N, etc)."
-warning:
+warning: !lazy
  API_Rate_Limited: "Avís: Sembla que actualment l'accés a l'API %s està limitat."
  Cookies: "Nota: CIDRAM utilitza una cookie per autenticar els inicis de sessió. En iniciar sessió, doneu el vostre consentiment perquè el vostre navegador creï i emmagatzemi una cookie."
  Editing PHP files: "Avís: S'ha conegut que algunes solucions de seguretat d'allotjament web prohibeixen automàticament les adreces IP en detectar etiquetes PHP a les sol·licituds (per exemple, quan s'intenta modificar fitxers PHP mitjançant un navegador). CIDRAM no té cap mitjà per saber si el vostre servei d'allotjament web utilitza aquesta solució de seguretat. Per evitar aquests problemes, es recomana no editar els fitxers PHP d'aquesta manera quan sigui possible."

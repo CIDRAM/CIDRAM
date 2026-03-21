@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese language data for the front-end (last modified: 2026.03.18).
+# This file: Chinese language data for the front-end (last modified: 2026.03.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -539,58 +539,59 @@ hints_verification:
 hints_want_to_block:
  zh-Hans: "!! 大多数用户可能希望将其阻止，无论它是真实的还是伪造的。​这可以通过不选择“尝试验证”并选择“阻止未验证的请求”来实现。​但是，由于某些用户可能希望能够验证此类请求（以便阻止阴性请求同时允许阳性请求），因此此处提供了处理此类请求的选项，而不是通过模块阻止此类请求。"
  zh-Hant: "!! 大多數用戶可能希望將其阻止，無論它是真實的還是偽造的。​這可以通過不選擇『嘗試驗證』並選擇『阻止未驗證的請求』來實現。​但是，由於某些用戶可能希望能夠驗證此類請求（以便阻止陰性請求同時允許陽性請求），因此此處提供了處理此類請求的選項，而不是通過模組阻止此類請求。"
-info_cli_by_default_ips:
- zh-Hans: |
-  IP地址针对所有签名文件、所有模块、所有辅助规则、以及社交媒体和搜索引擎验证进行
-  测试。
-  --no-sig    防止针对签名文件进行测试。
-  --no-mod    防止针对模块进行测试。
-  --no-sev    防止搜索引擎验证。
-  --no-smv    防止社交媒体验证。
-  --no-ov     防止其他验证。
-  --no-aux    防止针对辅助规则进行测试。
- zh-Hant: |
-  IP位址針對所有簽名檔案、所有模組、所有輔助規則、以及社交媒體和搜尋引擎驗證進行
-  測試。
-  --no-sig    防止針對簽名檔案進行測試。
-  --no-mod    防止針對模組進行測試。
-  --no-sev    防止搜尋引擎驗證。
-  --no-smv    防止社交媒體驗證。
-  --no-ov     防止其他驗證。
-  --no-aux    防止針對輔助規則進行測試。
-info_cli_cidram_cli_mod: "CIDRAM CLI模式。"
-info_cli_ipv4_ipv6_are_:
- zh-Hans: |
-  IPv4/IPv6均受支持。通过使用引号，所有CLI模式操作（例如，
-  在单个操作中测试多个IP地址）都可以进行多行输入：
- zh-Hant: |
-  IPv4/IPv6均受支持。通過使用引號，所有CLI模式操作（例如，
-  在單個操作中測試多個IP位址）都可以進行多行輸入：
-info_cli_or_depending_o: {"zh-Hans": "取决于您是喜欢从头到尾，还是从尾到头：", "zh-Hant": "取決於您是喜歡從頭到尾，還是從尾到頭："}
-info_cli_or_to_aggregat: {"zh-Hans": "为了将它们聚合为网络掩码：", "zh-Hant": "為了將它們聚合為網絡掩碼："}
-info_cli_or_using_comma: {"zh-Hans": "使用逗号而不是多行（它做同样的事情）：", "zh-Hant": "使用逗號而不是多行（它做同樣的事情）："}
-info_cli_the_signature_: {"zh-Hans": "可以通过CLI使用签名修复工具：", "zh-Hant": "可以通過CLI使用簽名修復工具："}
-info_cli_to_calculate_c: {"zh-Hans": "为了从IP地址计算CIDR：", "zh-Hant": "為了從IP位址計算CIDR："}
-info_cli_to_test_whethe: {"zh-Hans": "为了测试是否IP地址被CIDRAM阻止：", "zh-Hant": "為了測試是否IP位址被CIDRAM阻止："}
-info_cli_to_quit_type_q: {"zh-Hans": "为了退出，请键入“q”、“quit”、或“exit”，然后按Enter。", "zh-Hant": "為了退出，請鍵入『q』、『quit』、或『exit』，然後按Enter。"}
-info_cli_you_can_also_a: {"zh-Hans": "您可以聚合IP和CIDR：", "zh-Hant": "您可以聚合IP和CIDR："}
-info_cli_you_can_also_c:
- zh-Hans: |
-  您可以将命令链接在一起（该示例从一些文件中读取，聚合它们的内容，
-  然后将聚合的数据写入output.dat）：
- zh-Hant: |
-  您可以將命令鏈接在一起（該示例從一些文件中讀取，聚合它們的內容，
-  然後將聚合的數據寫入output.dat）：
-info_cli_you_can_also_r: {"zh-Hans": "您可以从文件中读取：", "zh-Hant": "您可以從文件中讀取："}
-info_cli_you_can_also_u:
- zh-Hans: |
-  如果您想，您可以使用逗号代替（与多行相同，但您不需要使用引号，
-  并且不要将两者混合在一起）：
- zh-Hant: |
-  如果您想，您可以使用逗號代替（與多行相同，但您不需要使用引號，
-  並且不要將兩者混合在一起）：
-info_cli_you_can_also_w: {"zh-Hans": "您可以写入文件：", "zh-Hant": "您可以寫入文件："}
-info_cli_you_can_print_: {"zh-Hans": "您可以将数据打印到屏幕上（有时在链接命令时有用）：", "zh-Hant": "您可以將數據打印到屏幕上（有時在鏈接命令時有用）："}
+info_cli: !lazy
+ by_default_ips:
+  zh-Hans: |
+   IP地址针对所有签名文件、所有模块、所有辅助规则、以及社交媒体和搜索引擎验证进行
+   测试。
+   --no-sig    防止针对签名文件进行测试。
+   --no-mod    防止针对模块进行测试。
+   --no-sev    防止搜索引擎验证。
+   --no-smv    防止社交媒体验证。
+   --no-ov     防止其他验证。
+   --no-aux    防止针对辅助规则进行测试。
+  zh-Hant: |
+   IP位址針對所有簽名檔案、所有模組、所有輔助規則、以及社交媒體和搜尋引擎驗證進行
+   測試。
+   --no-sig    防止針對簽名檔案進行測試。
+   --no-mod    防止針對模組進行測試。
+   --no-sev    防止搜尋引擎驗證。
+   --no-smv    防止社交媒體驗證。
+   --no-ov     防止其他驗證。
+   --no-aux    防止針對輔助規則進行測試。
+ cidram_cli_mod: "CIDRAM CLI模式。"
+ ipv4_ipv6_are_:
+  zh-Hans: |
+   IPv4/IPv6均受支持。通过使用引号，所有CLI模式操作（例如，
+   在单个操作中测试多个IP地址）都可以进行多行输入：
+  zh-Hant: |
+   IPv4/IPv6均受支持。通過使用引號，所有CLI模式操作（例如，
+   在單個操作中測試多個IP位址）都可以進行多行輸入：
+ or_depending_o: {"zh-Hans": "取决于您是喜欢从头到尾，还是从尾到头：", "zh-Hant": "取決於您是喜歡從頭到尾，還是從尾到頭："}
+ or_to_aggregat: {"zh-Hans": "为了将它们聚合为网络掩码：", "zh-Hant": "為了將它們聚合為網絡掩碼："}
+ or_using_comma: {"zh-Hans": "使用逗号而不是多行（它做同样的事情）：", "zh-Hant": "使用逗號而不是多行（它做同樣的事情）："}
+ the_signature_: {"zh-Hans": "可以通过CLI使用签名修复工具：", "zh-Hant": "可以通過CLI使用簽名修復工具："}
+ to_calculate_c: {"zh-Hans": "为了从IP地址计算CIDR：", "zh-Hant": "為了從IP位址計算CIDR："}
+ to_test_whethe: {"zh-Hans": "为了测试是否IP地址被CIDRAM阻止：", "zh-Hant": "為了測試是否IP位址被CIDRAM阻止："}
+ to_quit_type_q: {"zh-Hans": "为了退出，请键入“q”、“quit”、或“exit”，然后按Enter。", "zh-Hant": "為了退出，請鍵入『q』、『quit』、或『exit』，然後按Enter。"}
+ you_can_also_a: {"zh-Hans": "您可以聚合IP和CIDR：", "zh-Hant": "您可以聚合IP和CIDR："}
+ you_can_also_c:
+  zh-Hans: |
+   您可以将命令链接在一起（该示例从一些文件中读取，聚合它们的内容，
+   然后将聚合的数据写入output.dat）：
+  zh-Hant: |
+   您可以將命令鏈接在一起（該示例從一些文件中讀取，聚合它們的內容，
+   然後將聚合的數據寫入output.dat）：
+ you_can_also_r: {"zh-Hans": "您可以从文件中读取：", "zh-Hant": "您可以從文件中讀取："}
+ you_can_also_u:
+  zh-Hans: |
+   如果您想，您可以使用逗号代替（与多行相同，但您不需要使用引号，
+   并且不要将两者混合在一起）：
+  zh-Hant: |
+   如果您想，您可以使用逗號代替（與多行相同，但您不需要使用引號，
+   並且不要將兩者混合在一起）：
+ you_can_also_w: {"zh-Hans": "您可以写入文件：", "zh-Hant": "您可以寫入文件："}
+ you_can_print_: {"zh-Hans": "您可以将数据打印到屏幕上（有时在链接命令时有用）：", "zh-Hant": "您可以將數據打印到屏幕上（有時在鏈接命令時有用）："}
 Some useful links:
  zh-Hans: |+
   一些有用的链接：<br />
@@ -1243,7 +1244,7 @@ tip:
  Statistics: {"zh-Hans": "此页面显示了有关CIDRAM安装的一些基本使用统计信息。", "zh-Hant": "此頁面顯示了有關CIDRAM安裝的一些基本使用統計信息。"}
  Subtractor: {"zh-Hans": "减法仪可用于从另一个范围中减去IP/CIDR/网络掩码范围。", "zh-Hant": "減法儀可用於從另一個範圍中減去IP/CIDR/網絡掩碼範圍。"}
  Updates: {"zh-Hans": "更新页面允许您安装，卸载，和更新CIDRAM的各种组件（核心包、签名、L10N文件、等等）。", "zh-Hant": "更新頁面允許您安裝，卸載，和更新CIDRAM的各種組件（核心包、簽名、L10N文件、等等）。"}
-warning:
+warning: !lazy
  API_Rate_Limited:
   zh-Hans: "警告：对%s API的访问目前似乎受到速率限制。"
   zh-Hant: "警告：對%s API的訪問目前似乎受到速率限制。"

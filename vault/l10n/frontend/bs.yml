@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bosnian language data for the front-end (last modified: 2026.03.18).
+# This file: Bosnian language data for the front-end (last modified: 2026.03.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -466,46 +466,47 @@ hints_verification:
  "Šta su "pozitivi" i "negativi"?": "Prilikom provjere identiteta predstavljenog zahtjevom, uspješan ishod bi se mogao opisati kao "pozitivan" ili "negativan". U slučaju da se potvrdi da je predstavljeni identitet pravi identitet, on bi bio opisan kao "pozitivan". U slučaju da se potvrdi da je predstavljeni identitet falsifikovan, on bi bio opisan kao "negativan". Međutim, neuspješan ishod (npr., provjera ne uspije, ili se ne može utvrditi istinitost predstavljenog identiteta) ne bi se opisali kao "pozitivan" ili "negativan". Umjesto toga, neuspješan ishod bi se jednostavno opisao kao neprovjeren. Kada se ne pokuša provjeriti identitet predstavljen u zahtjevu, zahtjev bi također bio opisan kao neprovjeren. Termini imaju smisla samo u kontekstu u kojem se prepoznaje identitet predstavljen u zahtjevu, a samim tim i gdje je verifikacija moguća. U slučajevima kada predstavljeni identitet ne odgovara gore navedenim opcijama, ili kada identitet nije predstavljen, gore navedene opcije postaju nevažne."
  "Šta su "zaobilaženje jednim pogotkom"?": "U nekim slučajevima, pozitivno verificiran zahtjev može i dalje biti blokiran zbog datoteka potpisa, modula, ili drugih uvjeta zahtjeva, a zaobilaženje može biti potrebno kako bi se izbjegli lažno pozitivni. U slučaju kada je zaobilaženje namijenjeno rješavanju tačno jednog prekršaja, ni više ni manje, takvo zaobilaženje bi se moglo opisati kao "zaobilaženje jednim pogotkom"."
 hints_want_to_block: "!! Većina korisnika će vjerovatno htjeti da se ovo blokira, bez obzira na to da li je stvarno ili lažno. To se može postići tako da se ne odabere "pokušati provjeriti", već da se odabere "blokirati neprovjerene zahtjeve". Međutim, budući da neki korisnici možda žele moći provjeriti takve zahtjeve (kako bi blokirali negativne, a dozvolili pozitivne), umjesto blokiranja takvih zahtjeva putem modula, ovdje su date opcije za rukovanje takvim zahtjevima."
-info_cli_by_default_ips: |
- Standardno, IP adrese se testiraju u odnosu na sve datoteke potpisa, sve
- module, sva pomoćna pravila, i u odnosu na verifikaciju na društvenim
- mrežama i pretraživačima.
- --no-sig    Sprečava testiranje u odnosu na datoteke potpisa.
- --no-mod    Sprečava testiranje na modulima.
- --no-sev    Sprečava verifikaciju pretraživača.
- --no-smv    Sprečava verifikaciju na društvenim mrežama.
- --no-ov     Sprečava druge verifikacije.
- --no-aux    Sprečava testiranje prema pomoćnim pravilima.
-info_cli_cidram_cli_mod: "CIDRAM CLI režim."
-info_cli_ipv4_ipv6_are_: |
- IPv4/IPv6 su oba podržana. Višelinijski unos je moguć za *sve* operacije u
- CLI režimu (npr., za testiranje više IP adresa u jednoj operaciji)
- korištenjem navodnika, ovako:
-info_cli_or_depending_o: |
- U zavisnosti od toga da li biste radije povezali od prvog do posljednjeg
- ili od posljednjeg do prvog:
-info_cli_or_to_aggregat: "Ili, da ih agregiramo kao mrežne maske:"
-info_cli_or_using_comma: |
- Korištenje zareza umjesto višelinijskih razdjelnika (radi potpuno istu
- stvar):
-info_cli_the_signature_: "Alat za ispravljanje potpisa može se koristiti i putem CLI-ja:"
-info_cli_to_calculate_c: "Da biste izračunali CIDR-ove iz IP adrese:"
-info_cli_to_test_whethe: "Da biste provjerili da li CIDRAM blokira IP adresu:"
-info_cli_to_quit_type_q: "Da biste izašli, ukucajte "q", "quit", ili "exit", a zatim pritisnite enter."
-info_cli_you_can_also_a: "Također možete agregirati IP adrese i CIDR-ove:"
-info_cli_you_can_also_c: |
- Također možete povezati naredbe u lanac (primjer čita iz nekih datoteka,
- agregira njihov sadržaj, a zatim zapisuje agregirane podatke u
- output.dat):
-info_cli_you_can_also_r: "Također možete čitati iz datoteka poput:"
-info_cli_you_can_also_u: |
- Možete koristiti zareze umjesto toga ako želite (ovo se tretira isto kao i
- korištenje višelinijsko, ali nećete morati koristiti navodnike, i ne
- miješajte oboje zajedno):
-info_cli_you_can_also_w: "Također možete pisati u datoteke ovako:"
-info_cli_you_can_print_: |
- Možete ispisati podatke na ekran ovako (ponekad korisno pri lančanom
- povezivanju naredbi):
+info_cli: !lazy
+ by_default_ips: |
+  Standardno, IP adrese se testiraju u odnosu na sve datoteke potpisa, sve
+  module, sva pomoćna pravila, i u odnosu na verifikaciju na društvenim
+  mrežama i pretraživačima.
+  --no-sig    Sprečava testiranje u odnosu na datoteke potpisa.
+  --no-mod    Sprečava testiranje na modulima.
+  --no-sev    Sprečava verifikaciju pretraživača.
+  --no-smv    Sprečava verifikaciju na društvenim mrežama.
+  --no-ov     Sprečava druge verifikacije.
+  --no-aux    Sprečava testiranje prema pomoćnim pravilima.
+ cidram_cli_mod: "CIDRAM CLI režim."
+ ipv4_ipv6_are_: |
+  IPv4/IPv6 su oba podržana. Višelinijski unos je moguć za *sve* operacije u
+  CLI režimu (npr., za testiranje više IP adresa u jednoj operaciji)
+  korištenjem navodnika, ovako:
+ or_depending_o: |
+  U zavisnosti od toga da li biste radije povezali od prvog do posljednjeg
+  ili od posljednjeg do prvog:
+ or_to_aggregat: "Ili, da ih agregiramo kao mrežne maske:"
+ or_using_comma: |
+  Korištenje zareza umjesto višelinijskih razdjelnika (radi potpuno istu
+  stvar):
+ the_signature_: "Alat za ispravljanje potpisa može se koristiti i putem CLI-ja:"
+ to_calculate_c: "Da biste izračunali CIDR-ove iz IP adrese:"
+ to_test_whethe: "Da biste provjerili da li CIDRAM blokira IP adresu:"
+ to_quit_type_q: "Da biste izašli, ukucajte "q", "quit", ili "exit", a zatim pritisnite enter."
+ you_can_also_a: "Također možete agregirati IP adrese i CIDR-ove:"
+ you_can_also_c: |
+  Također možete povezati naredbe u lanac (primjer čita iz nekih datoteka,
+  agregira njihov sadržaj, a zatim zapisuje agregirane podatke u
+  output.dat):
+ you_can_also_r: "Također možete čitati iz datoteka poput:"
+ you_can_also_u: |
+  Možete koristiti zareze umjesto toga ako želite (ovo se tretira isto kao i
+  korištenje višelinijsko, ali nećete morati koristiti navodnike, i ne
+  miješajte oboje zajedno):
+ you_can_also_w: "Također možete pisati u datoteke ovako:"
+ you_can_print_: |
+  Možete ispisati podatke na ekran ovako (ponekad korisno pri lančanom
+  povezivanju naredbi):
 Some useful links: |+
  Neki korisni linkovi:<br />
      <ul class="pieul">
@@ -1109,7 +1110,7 @@ tip:
  Statistics: "Ova stranica prikazuje neke osnovne statistike upotrebe u vezi sa vašom instalacijom CIDRAM-a."
  Subtractor: "Subtractor se može koristiti za oduzimanje jednog raspona IP-ova/CIDR-ova/mrežnih maski od drugog."
  Updates: "Stranica za ažuriranje vam omogućava da instalirate, deinstalirate, i ažurirate različite komponente CIDRAM-a (osnovni paket, potpise, L10N datoteke, itd)."
-warning:
+warning: !lazy
  API_Rate_Limited: "Upozorenje: Čini se da je pristup %s API-ju trenutno ograničen stopom."
  Cookies: "Bilješka: CIDRAM koristi kolačić za provjeru autentičnosti prijava. Prijavom dajete pristanak da vaš pretraživač kreira i pohrani kolačić."
  Editing PHP files: "Upozorenje: Poznato je da neka sigurnosna rješenja za web hosting automatski zabranjuju IP adrese nakon otkrivanja PHP tagova unutar zahtjeva (npr., kada pokušavate modificirati PHP datoteke putem pretraživača). CIDRAM nema načina da sazna da li vaš webhosting servis koristi takvo sigurnosno rješenje. Kako bi se izbjegli ovakvi problemi, preporučuje se ne uređivanje PHP datoteka na takav način kada je to moguće."

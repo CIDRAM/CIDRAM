@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The accounts page (last modified: 2026.03.18).
+ * This file: The accounts page (last modified: 2026.03.22).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -124,14 +124,14 @@ if (!$this->FE['ASYNC']) {
     }
     $LI = $LI['Possible'];
 
-    foreach ($this->Configuration as $CatKey => $this->CIDRAM['CatValues']) {
-        if (\substr($CatKey, 0, 5) !== 'user.' || !\is_array($this->CIDRAM['CatValues'])) {
+    foreach ($this->Configuration as $CatKey => $CatValues) {
+        if (\substr($CatKey, 0, 5) !== 'user.' || !\is_array($CatValues)) {
             continue;
         }
         $RowInfo = [
             'AccUsername' => \substr($CatKey, 5),
-            'AccPassword' => $this->CIDRAM['CatValues']['password'] ?? '',
-            'AccPermissions' => $this->CIDRAM['CatValues']['permissions'] ?? 0,
+            'AccPassword' => $CatValues['password'] ?? '',
+            'AccPermissions' => $CatValues['permissions'] ?? 0,
             'AccWarnings' => ''
         ];
         if ($RowInfo['AccPermissions'] === 1) {
@@ -173,7 +173,7 @@ if (!$this->FE['ASYNC']) {
         $RowInfo['AccUsername'] = \htmlentities($RowInfo['AccUsername']);
         $this->FE['Accounts'] .= $this->parseVars($RowInfo, $this->FE['AccountsRow'], true);
     }
-    unset($RowInfo, $this->CIDRAM['CatValues'], $CatKey, $LI);
+    unset($RowInfo, $CatValues, $CatKey, $LI);
 }
 
 if ($this->FE['ASYNC']) {

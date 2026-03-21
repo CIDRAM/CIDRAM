@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2026.03.18).
+# This file: Latvian language data for the front-end (last modified: 2026.03.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -465,41 +465,42 @@ hints_verification:
  "Kas ir “pozitīvie” un “negatīvie”?": "Pārbaudot pieprasījuma sniegto identitāti, veiksmīgu rezultātu var raksturot kā “pozitīvu” vai “negatīvu”. Kad uzrādītā identitāte tiek apstiprināta kā patiesā identitāte, tā tiks raksturota kā “pozitīva”. Kad tiek apstiprināts, ka uzrādītā identitāte ir viltota, tā tiks raksturota kā “negatīva”. Tomēr, neveiksmīgs iznākums (piemēram, verifikācija neizdodas, vai uzrādītās identitātes patiesumu nevar noteikt) netiks raksturota kā “pozitīvu” vai “negatīvu”. Tā vietā neveiksmīgs rezultāts tiktu raksturots vienkārši kā nepārbaudīts. Ja netiek mēģināts pārbaudīt pieprasījumā norādīto identitāti, pieprasījums tāpat tiks raksturots kā nepārbaudīts. Terminiem ir jēga tikai kontekstā, kurā tiek atpazīta pieprasījumā norādītā identitāte un līdz ar to, ja ir iespējama pārbaude. Ja uzrādītā identitāte neatbilst iepriekš sniegtajām opcijām, vai ja identitāte nav uzrādīta, iepriekš sniegtās iespējas kļūst nepiemērojams."
  "Kas ir “apiešanu ar vienu trāpījumu”?": "Dažos gadījumos pozitīvi pārbaudīts pieprasījums joprojām var tikt bloķēts paraksta failu, moduļu, vai citu pieprasījuma nosacījumu dēļ, un var būt nepieciešami apiešanas, lai izvairītos no viltus pozitīviem rezultātiem. Gadījumā, ja apiešana ir paredzēta tieši viena pārkāpuma novēršanai, ne vairāk un ne mazāk, šādu apiešanu varētu raksturot kā “viena trāpījuma apiešanu”."
 hints_want_to_block: "!! Lielākā daļa lietotāju, visticamāk, vēlēsies lai tas tiktu bloķēts neatkarīgi no tā, vai tas ir īsts vai viltots. To var panākt, neatlasot “vai mēģināt pārbaudīt” un izvēloties “vai bloķēt nepārbaudītus pieprasījumus”. Tomēr, tā kā daži lietotāji var vēlēties pārbaudīt šādus pieprasījumus (lai bloķētu negatīvos, vienlaikus pieļaujot pozitīvus), nevis izmantot moduļus pieprasījumu bloķēšanai, šeit ir sniegtas šādu pieprasījumu apstrādes iespējas."
-info_cli_by_default_ips: |
- Pēc noklusējuma IP tiek pārbaudīti attiecībā pret visiem paraksta failiem,
- visiem moduļiem, visiem palīgnoteikumiem, kā arī sociālo mediju un
- meklētājprogrammu verifikāciju.
- --no-sig    Novērš testēšanu pret paraksta failiem.
- --no-mod    Novērš testēšanu pret moduļiem.
- --no-sev    Novērš meklētājprogrammas verifikāciju.
- --no-smv    Novērš sociālo mediju verifikāciju.
- --no-ov     Novērš citu verifikāciju.
- --no-aux    Novērš testēšanu pret palīgnoteikumiem.
-info_cli_cidram_cli_mod: "CIDRAM CLI režīms."
-info_cli_ipv4_ipv6_are_: |
- Tiek atbalstīti abi IPv4/IPv6. Daudzrindu ievade ir iespējama visām CLI režīma
- darbībām (piemēram, lai pārbaudītu vairākas IP adreses vienā darbībā),
- izmantojot pēdiņas, piemēram:
-info_cli_or_depending_o: |
- Vai arī atkarībā no vai vēlaties izveidot ķēdi no pirmā līdz pēdējam vai
- pēdējo līdz pirmajam:
-info_cli_or_to_aggregat: "Vai, lai tās apkopotu kā tīkla maskas:"
-info_cli_or_using_comma: "Vai, izmantojot komatus daudzrindu vietā (dara tieši to pašu):"
-info_cli_the_signature_: "Paraksta faila fiksētājs var izmantot arī, izmantojot CLI:"
-info_cli_to_calculate_c: "Lai aprēķinātu CIDR no IP adreses:"
-info_cli_to_test_whethe: "Lai pārbaudītu, vai CIDRAM bloķē IP adresi:"
-info_cli_to_quit_type_q: "Lai beigtu, ierakstiet "q", "quit", vai "exit", un pēc tam nospiediet enter."
-info_cli_you_can_also_a: "Varat arī apkopot IP un CIDR, piemēram:"
-info_cli_you_can_also_c: |
- Varat arī apvienot komandas (piemērs nolasa dažus failus, apkopo to saturu, un
- pēc tam ieraksta apkopotos datus failā output.dat):
-info_cli_you_can_also_r: "Varat arī lasīt no failiem, piemēram:"
-info_cli_you_can_also_u: |
- Ja vēlaties, tā vietā varat izmantot komatus arī (tas tiek uzskatīts tāpat kā
- daudzrindu lietošana, taču jums nav jāizmanto pēdiņas, un nevajag jaukt abus
- kopā):
-info_cli_you_can_also_w: "Varat arī rakstīt failos, piemēram:"
-info_cli_you_can_print_: "Varat drukāt datus ekrānā šādi (dažreiz tas ir noderīgi, savienojot komandas):"
+info_cli: !lazy
+ by_default_ips: |
+  Pēc noklusējuma IP tiek pārbaudīti attiecībā pret visiem paraksta failiem,
+  visiem moduļiem, visiem palīgnoteikumiem, kā arī sociālo mediju un
+  meklētājprogrammu verifikāciju.
+  --no-sig    Novērš testēšanu pret paraksta failiem.
+  --no-mod    Novērš testēšanu pret moduļiem.
+  --no-sev    Novērš meklētājprogrammas verifikāciju.
+  --no-smv    Novērš sociālo mediju verifikāciju.
+  --no-ov     Novērš citu verifikāciju.
+  --no-aux    Novērš testēšanu pret palīgnoteikumiem.
+ cidram_cli_mod: "CIDRAM CLI režīms."
+ ipv4_ipv6_are_: |
+  Tiek atbalstīti abi IPv4/IPv6. Daudzrindu ievade ir iespējama visām CLI režīma
+  darbībām (piemēram, lai pārbaudītu vairākas IP adreses vienā darbībā),
+  izmantojot pēdiņas, piemēram:
+ or_depending_o: |
+  Vai arī atkarībā no vai vēlaties izveidot ķēdi no pirmā līdz pēdējam vai
+  pēdējo līdz pirmajam:
+ or_to_aggregat: "Vai, lai tās apkopotu kā tīkla maskas:"
+ or_using_comma: "Vai, izmantojot komatus daudzrindu vietā (dara tieši to pašu):"
+ the_signature_: "Paraksta faila fiksētājs var izmantot arī, izmantojot CLI:"
+ to_calculate_c: "Lai aprēķinātu CIDR no IP adreses:"
+ to_test_whethe: "Lai pārbaudītu, vai CIDRAM bloķē IP adresi:"
+ to_quit_type_q: "Lai beigtu, ierakstiet "q", "quit", vai "exit", un pēc tam nospiediet enter."
+ you_can_also_a: "Varat arī apkopot IP un CIDR, piemēram:"
+ you_can_also_c: |
+  Varat arī apvienot komandas (piemērs nolasa dažus failus, apkopo to saturu, un
+  pēc tam ieraksta apkopotos datus failā output.dat):
+ you_can_also_r: "Varat arī lasīt no failiem, piemēram:"
+ you_can_also_u: |
+  Ja vēlaties, tā vietā varat izmantot komatus arī (tas tiek uzskatīts tāpat kā
+  daudzrindu lietošana, taču jums nav jāizmanto pēdiņas, un nevajag jaukt abus
+  kopā):
+ you_can_also_w: "Varat arī rakstīt failos, piemēram:"
+ you_can_print_: "Varat drukāt datus ekrānā šādi (dažreiz tas ir noderīgi, savienojot komandas):"
 Some useful links: |+
  Dažas noderīgas saites:<br />
      <ul class="pieul">
@@ -1089,7 +1090,7 @@ tip:
  Statistics: "Šī lapa parāda dažus pamata statistikas datus par jūsu CIDRAM instalēšanu."
  Subtractor: "Atdalītāju var izmantot, lai atņemtu vienu IP/CIDR/tīkla maskas diapazonu no cita."
  Updates: "Atjauninājumu lapa ļauj instalēt, atinstalēt un atjaunināt dažādus CIDRAM komponentus (pamata pakete, paraksti, L10N faili, utt)."
-warning:
+warning: !lazy
  API_Rate_Limited: "Brīdinājums: Šķiet, ka piekļuve %s API pašlaik ir ierobežota."
  Cookies: "Piezīme: CIDRAM izmanto sīkfailu, lai autentificētu ielogošanās informāciju. Ielogoties, jūs dodat piekrišanu sīkdatnes izveidošanai un saglabāšanai jūsu pārlūkprogrammā."
  Editing PHP files: "Brīdinājums: Ir zināms, ka daži tīmekļa mitināšanas drošības risinājumi automātiski aizliedz IP adreses, kad pieprasījumos tiek atklāti PHP tagi (piemēram, mēģinot modificēt PHP failus, izmantojot pārlūkprogrammu). CIDRAM nevar zināt, vai jūsu tīmekļa mitināšanas pakalpojums izmanto šādu drošības risinājumu. Lai izvairītos no šādām problēmām, pēc iespējas ieteicams nerediģēt PHP failus šādā veidā."

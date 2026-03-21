@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2026.03.18).
+# This file: Vietnamese language data for the front-end (last modified: 2026.03.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -463,44 +463,45 @@ hints_verification:
  ""Tích cực" và "tiêu cực" là gì?": "Khi xác minh danh tính được trình bày bởi một yêu cầu, kết quả thành công có thể được mô tả là "tích cực" hoặc "tiêu cực". Trong trường hợp danh tính được trình bày được xác nhận là danh tính thực, danh tính đó sẽ được mô tả là "tích cực". Trong trường hợp danh tính được trình bày được xác nhận là giả mạo, danh tính đó sẽ được mô tả là "tiêu cực". Tuy nhiên, kết quả không thành công (v.d., xác minh không thành công, hoặc không thể xác định tính xác thực của danh tính được trình bày) sẽ không được mô tả là "tích cực" hoặc "tiêu cực". Thay vào đó, một kết quả không thành công sẽ được mô tả đơn giản là chưa được xác minh. Khi không có nỗ lực xác minh danh tính mà một yêu cầu đưa ra được thực hiện, thì yêu cầu đó cũng sẽ được mô tả là chưa được xác minh. Các điều khoản chỉ có ý nghĩa trong bối cảnh mà danh tính được trình bày bởi một yêu cầu được công nhận và do đó, khi có thể xác minh. Trong trường hợp danh tính được trình bày không khớp với các tùy chọn được cung cấp ở trên, hoặc khi không có danh tính nào được trình bày, các tùy chọn được cung cấp ở trên trở nên không liên quan."
  ""Đường tránh một cú đánh" là gì?": "Trong một số trường hợp, yêu cầu đã được xác minh tích cực vẫn có thể bị chặn do tập tin chữ ký, mô-đun, hoặc các điều kiện khác của yêu cầu, và đường tránh có thể cần thiết để tránh sai tích cực. Trong trường hợp sai tích cực gây ra chính xác một vi phạm, một đường tránh như vậy có thể được mô tả là "đường tránh một cú đánh"."
 hints_want_to_block: "!! Hầu hết người dùng có thể sẽ muốn điều này bị chặn, bất kể đó là thật hay giả mạo. Điều đó có thể đạt được bằng cách không chọn "cố gắng xác minh" và chọn "chặn các yêu cầu chưa được xác minh". Tuy nhiên, vì một số người dùng có thể muốn xác minh các yêu cầu đó (để chặn các yêu cầu tiêu cực trong khi cho phép các yêu cầu tích cực), thay vì chặn các yêu cầu đó thông qua các mô-đun, các tùy chọn để xử lý các yêu cầu đó được cung cấp tại đây."
-info_cli_by_default_ips: |
- Theo mặc định, các IP được kiểm tra dựa trên tất cả các tập tin chữ ký, tất cả
- các mô-đun, tất cả các quy tắc phụ trợ, cũng như xác minh truyền thông xã hội
- và máy tìm kiếm.
- --no-sig    Ngăn chặn thử nghiệm đối với các tập tin chữ ký.
- --no-mod    Ngăn chặn thử nghiệm đối với các mô-đun.
- --no-sev    Ngăn chặn xác minh máy tìm kiếm.
- --no-smv    Ngăn chặn xác minh truyền thông xã hội.
- --no-ov     Ngăn chặn xác minh khác.
- --no-aux    Ngăn chặn thử nghiệm đối với các quy tắc phụ trợ.
-info_cli_cidram_cli_mod: "CIDRAM chế độ CLI."
-info_cli_ipv4_ipv6_are_: |
- IPv4/IPv6 đều được hỗ trợ. Có thể có nhiều dòng đầu vào cho tất cả các
- hoạt động của chế độ CLI (v.d., để kiểm tra nhiều địa chỉ IP trong một
- hoạt động) bằng cách sử dụng dấu ngoặc kép, như vậy:
-info_cli_or_depending_o: |
- Hoặc, tùy thuộc vào việc bạn muốn xâu chuỗi đầu tiên đến cuối cùng, hay
- cuối cùng đến đầu tiên:
-info_cli_or_to_aggregat: "Hoặc, để tổng hợp chúng dưới dạng mặt nạ mạng:"
-info_cli_or_using_comma: "Hoặc, để sử dụng dấu phẩy thay vì nhiều dòng (nó làm điều tương tự):"
-info_cli_the_signature_: "Sửa chữa tập tin chữ ký cũng có thể được sử dụng thông qua CLI:"
-info_cli_to_calculate_c: "Để tính toán CIDR từ địa chỉ IP:"
-info_cli_to_test_whethe: "Để kiểm tra xem một địa chỉ IP có bị chặn bởi CIDRAM hay không:"
-info_cli_to_quit_type_q: "Để thoát, hãy nhập "q", "thoát", hoặc "thoát", sau đó nhấn enter."
-info_cli_you_can_also_a: "Bạn cũng có thể tổng hợp các IP và CIDR như vậy:"
-info_cli_you_can_also_c: |
- Bạn cũng có thể xâu chuỗi các lệnh lại với nhau (ví dụ này đọc từ một số
- tập tin, tổng hợp nội dung của chúng, sau đó ghi dữ liệu tổng hợp vào
- output.dat):
-info_cli_you_can_also_r: "Bạn cũng có thể đọc từ các tập tin như vậy:"
-info_cli_you_can_also_u: |
- Bạn cũng có thể sử dụng dấu phẩy thay vì nếu bạn muốn (điều này được xử lý
- giống như sử dụng nhiều dòng, nhưng bạn sẽ không cần sử dụng dấu ngoặc kép, và
- không kết hợp cả hai với nhau):
-info_cli_you_can_also_w: "Bạn cũng có thể ghi vào các tập tin như vậy:"
-info_cli_you_can_print_: |
- Bạn có thể in dữ liệu ra màn hình như vậy (đôi khi hữu ích khi xâu chuỗi các
- lệnh):
+info_cli: !lazy
+ by_default_ips: |
+  Theo mặc định, các IP được kiểm tra dựa trên tất cả các tập tin chữ ký, tất cả
+  các mô-đun, tất cả các quy tắc phụ trợ, cũng như xác minh truyền thông xã hội
+  và máy tìm kiếm.
+  --no-sig    Ngăn chặn thử nghiệm đối với các tập tin chữ ký.
+  --no-mod    Ngăn chặn thử nghiệm đối với các mô-đun.
+  --no-sev    Ngăn chặn xác minh máy tìm kiếm.
+  --no-smv    Ngăn chặn xác minh truyền thông xã hội.
+  --no-ov     Ngăn chặn xác minh khác.
+  --no-aux    Ngăn chặn thử nghiệm đối với các quy tắc phụ trợ.
+ cidram_cli_mod: "CIDRAM chế độ CLI."
+ ipv4_ipv6_are_: |
+  IPv4/IPv6 đều được hỗ trợ. Có thể có nhiều dòng đầu vào cho tất cả các
+  hoạt động của chế độ CLI (v.d., để kiểm tra nhiều địa chỉ IP trong một
+  hoạt động) bằng cách sử dụng dấu ngoặc kép, như vậy:
+ or_depending_o: |
+  Hoặc, tùy thuộc vào việc bạn muốn xâu chuỗi đầu tiên đến cuối cùng, hay
+  cuối cùng đến đầu tiên:
+ or_to_aggregat: "Hoặc, để tổng hợp chúng dưới dạng mặt nạ mạng:"
+ or_using_comma: "Hoặc, để sử dụng dấu phẩy thay vì nhiều dòng (nó làm điều tương tự):"
+ the_signature_: "Sửa chữa tập tin chữ ký cũng có thể được sử dụng thông qua CLI:"
+ to_calculate_c: "Để tính toán CIDR từ địa chỉ IP:"
+ to_test_whethe: "Để kiểm tra xem một địa chỉ IP có bị chặn bởi CIDRAM hay không:"
+ to_quit_type_q: "Để thoát, hãy nhập "q", "thoát", hoặc "thoát", sau đó nhấn enter."
+ you_can_also_a: "Bạn cũng có thể tổng hợp các IP và CIDR như vậy:"
+ you_can_also_c: |
+  Bạn cũng có thể xâu chuỗi các lệnh lại với nhau (ví dụ này đọc từ một số
+  tập tin, tổng hợp nội dung của chúng, sau đó ghi dữ liệu tổng hợp vào
+  output.dat):
+ you_can_also_r: "Bạn cũng có thể đọc từ các tập tin như vậy:"
+ you_can_also_u: |
+  Bạn cũng có thể sử dụng dấu phẩy thay vì nếu bạn muốn (điều này được xử lý
+  giống như sử dụng nhiều dòng, nhưng bạn sẽ không cần sử dụng dấu ngoặc kép, và
+  không kết hợp cả hai với nhau):
+ you_can_also_w: "Bạn cũng có thể ghi vào các tập tin như vậy:"
+ you_can_print_: |
+  Bạn có thể in dữ liệu ra màn hình như vậy (đôi khi hữu ích khi xâu chuỗi các
+  lệnh):
 Some useful links: |+
  Một số liên kết hữu ích:<br />
      <ul class="pieul">
@@ -1052,7 +1053,7 @@ tip:
  Statistics: "Trang này cho thấy một số thống kê của sử dụng cơ bản liên quan đến cài đặt CIDRAM của bạn."
  Subtractor: "Phép trừ có thể được sử dụng để trừ phạm vi IP/CIDR/mặt nạ mạng từ một phạm vi khác."
  Updates: "Trang cập nhật cho phép bạn cài đặt, gỡ bỏ cài đặt, và cập nhật các gói khác nhau cho CIDRAM (các gói cốt lõi, chữ ký, bổ sung, các tập tin L10N, vv)."
-warning:
+warning: !lazy
  API_Rate_Limited: "Cảnh báo: Quyền truy cập vào %s API hiện có vẻ bị giới hạn tốc độ."
  Cookies: "Lưu ý: CIDRAM sử dụng một cookie để xác thực đăng nhập. Bằng cách đăng nhập, bạn đồng ý cho cookie được tạo và lưu trữ bởi trình duyệt của bạn."
  Editing PHP files: "Cảnh báo: Một số giải pháp bảo mật webhosting đã được biết là tự động cấm địa chỉ IP khi phát hiện các thẻ PHP trong các yêu cầu (ví dụ, khi cố gắng chỉnh sửa tập tin PHP thông qua trình duyệt). CIDRAM không có cách nào để biết liệu dịch vụ webhosting của bạn có sử dụng giải pháp bảo mật như vậy hay không. Để tránh những vấn đề như vậy, khuyến khích không chỉnh sửa tập tin PHP theo cách như vậy khi có thể."

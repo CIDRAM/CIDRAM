@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Romanian language data for the front-end (last modified: 2026.03.18).
+# This file: Romanian language data for the front-end (last modified: 2026.03.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -471,42 +471,43 @@ hints_verification:
  "Ce sunt „pozitive” și „negative”?": "Atunci când se verifică identitatea prezentată de o solicităre, un rezultat de succes poate fi descris drept „pozitiv” sau „negativ”. În cazul în care identitatea prezentată este confirmată a fi adevărata identitate, aceasta ar fi descrisă ca fiind „pozitivă”. În cazul în care se confirmă că identitatea prezentată este falsificată, aceasta ar fi descrisă ca fiind „negativă”. Cu toate acestea, un rezultat nereușit (de exemplu, verificarea eșuează, sau veridicitatea identității prezentate nu poate fi determinată) nu ar fi descris drept „pozitiv” sau „negativ”. În schimb, un rezultat nereușit ar fi descris pur și simplu ca neverificat. Atunci când nu se face nicio încercare de verificare a identității prezentate de o solicitare, solicitărea va fi, de asemenea, descrisă ca neverificată. Termenii au sens numai în contextul în care identitatea prezentată printr-o solicităre este recunoscută și, prin urmare, în care verificarea este posibilă. În cazurile în care identitatea prezentată nu se potrivește cu opțiunile prevăzute mai sus sau în care nu este prezentată nicio identitate, opțiunile furnizate mai sus devin irelevante."
  "Ce sunt „bypassuri cu o singură lovitură”?": "În unele cazuri, o solicitare verificată pozitiv poate fi blocată în continuare ca urmare a fișierelor de semnătură, modulelor, sau a altor condiții ale solicitării, iar bypassuri pot fi necesare pentru a evita fals pozitive. În cazul în care o bypass este destinată să rezolve exact o infracțiune, nici mai mult, nici mai puțin, o astfel de bypass ar putea fi descrisă ca o „bypass cu o singură lovitură”."
 hints_want_to_block: "!! Majoritatea utilizatorilor vor dori probabil ca acest lucru să fie blocat, indiferent dacă este real sau falsificat. Acest lucru poate fi realizat selectând „încercare de verificare” și deselectând „blochează solicitările neverificate”. Cu toate acestea, deoarece unii utilizatori ar putea dori să poată verifica astfel de solicitări (pentru a bloca negative în timp ce le permit pozitive), în loc să blocheze astfel de solicitări prin module, aici sunt furnizate opțiuni pentru gestionarea unor astfel de solicitări."
-info_cli_by_default_ips: |
- În mod implicit, IP-urile sunt testate împotriva tuturor fișierelor de
- semnătură, a tuturor modulelor, a tuturor regulilor auxiliare, *și* împotriva
- verificării rețelelor sociale și a motorului de căutare.
- --no-sig    Previne testarea împotriva fișierelor de semnătură.
- --no-mod    Previne testarea împotriva modulelor.
- --no-sev    Previne verificarea motorului de căutare.
- --no-smv    Previne verificarea rețelelor sociale.
- --no-ov     Previne alte verificări.
- --no-aux    Previne testarea împotriva regulilor auxiliare.
-info_cli_cidram_cli_mod: "CIDRAM CLI-mod."
-info_cli_ipv4_ipv6_are_: |
- IPv4/IPv6 sunt ambele acceptate. Intrarea pe mai multe linii este posibilă
- pentru *toate* operațiunile în modul CLI (de exemplu, pentru a testa mai multe
- adrese IP într-o singură operațiune) folosind ghilimele, ca astfel:
-info_cli_or_depending_o: |
- Sau, în funcție de dacă preferați să înlănțuiți primul până la ultimul, sau
- ultimul până la primul:
-info_cli_or_to_aggregat: "Sau, pentru a le agrega ca măști de rețea:"
-info_cli_or_using_comma: "Sau, folosind virgule în loc de mai multe linii (face exact același lucru):"
-info_cli_the_signature_: "Fixatorul de semnături poate fi folosit și prin CLI:"
-info_cli_to_calculate_c: "Pentru a calcula CIDR-urile de la o adresă IP:"
-info_cli_to_test_whethe: "Pentru a testa dacă o adresă IP este blocată de CIDRAM:"
-info_cli_to_quit_type_q: "Pentru a ieși, tastați „q”, „quit”, sau „exit”, apoi apăsați Enter."
-info_cli_you_can_also_a: "De asemenea, puteți agrega IP-uri și CIDR-uri ca astfel:"
-info_cli_you_can_also_c: |
- De asemenea, puteți înlănțui comenzi împreună (exemplul citește din unele
- fișiere, agregează conținutul acestora, apoi scrie datele agregate în
- output.dat):
-info_cli_you_can_also_r: "De asemenea, puteți citi din fișiere ca astfel:"
-info_cli_you_can_also_u: |
- Puteți folosi virgule în schimb, dacă doriți (aceasta este tratată la fel ca și
- utilizarea mai multor linii, dar nu va trebui să utilizați ghilimele, și nu le
- amestecați pe amândouă împreună):
-info_cli_you_can_also_w: "De asemenea, puteți scrie în fișiere ca astfel:"
-info_cli_you_can_print_: "Puteți imprima date pe ecran ca astfel (uneori util la înlănțuirea comenzilor):"
+info_cli: !lazy
+ by_default_ips: |
+  În mod implicit, IP-urile sunt testate împotriva tuturor fișierelor de
+  semnătură, a tuturor modulelor, a tuturor regulilor auxiliare, *și* împotriva
+  verificării rețelelor sociale și a motorului de căutare.
+  --no-sig    Previne testarea împotriva fișierelor de semnătură.
+  --no-mod    Previne testarea împotriva modulelor.
+  --no-sev    Previne verificarea motorului de căutare.
+  --no-smv    Previne verificarea rețelelor sociale.
+  --no-ov     Previne alte verificări.
+  --no-aux    Previne testarea împotriva regulilor auxiliare.
+ cidram_cli_mod: "CIDRAM CLI-mod."
+ ipv4_ipv6_are_: |
+  IPv4/IPv6 sunt ambele acceptate. Intrarea pe mai multe linii este posibilă
+  pentru *toate* operațiunile în modul CLI (de exemplu, pentru a testa mai multe
+  adrese IP într-o singură operațiune) folosind ghilimele, ca astfel:
+ or_depending_o: |
+  Sau, în funcție de dacă preferați să înlănțuiți primul până la ultimul, sau
+  ultimul până la primul:
+ or_to_aggregat: "Sau, pentru a le agrega ca măști de rețea:"
+ or_using_comma: "Sau, folosind virgule în loc de mai multe linii (face exact același lucru):"
+ the_signature_: "Fixatorul de semnături poate fi folosit și prin CLI:"
+ to_calculate_c: "Pentru a calcula CIDR-urile de la o adresă IP:"
+ to_test_whethe: "Pentru a testa dacă o adresă IP este blocată de CIDRAM:"
+ to_quit_type_q: "Pentru a ieși, tastați „q”, „quit”, sau „exit”, apoi apăsați Enter."
+ you_can_also_a: "De asemenea, puteți agrega IP-uri și CIDR-uri ca astfel:"
+ you_can_also_c: |
+  De asemenea, puteți înlănțui comenzi împreună (exemplul citește din unele
+  fișiere, agregează conținutul acestora, apoi scrie datele agregate în
+  output.dat):
+ you_can_also_r: "De asemenea, puteți citi din fișiere ca astfel:"
+ you_can_also_u: |
+  Puteți folosi virgule în schimb, dacă doriți (aceasta este tratată la fel ca și
+  utilizarea mai multor linii, dar nu va trebui să utilizați ghilimele, și nu le
+  amestecați pe amândouă împreună):
+ you_can_also_w: "De asemenea, puteți scrie în fișiere ca astfel:"
+ you_can_print_: "Puteți imprima date pe ecran ca astfel (uneori util la înlănțuirea comenzilor):"
 Some useful links: |+
  Link-uri utile:<br />
      <ul class="pieul">
@@ -1115,7 +1116,7 @@ tip:
  Statistics: "Această pagină prezintă câteva statistici de utilizare de bază referitoare la instalarea dvs. CIDRAM."
  Subtractor: "Scădetorul poate fi folosit pentru a scădea un interval de IP-uri/CIDR-uri/măști de rețea dintr-un altul."
  Updates: "Pagina de actualizări vă permite să instalați, să dezinstalați, și să actualizați diferitele componente ale CIDRAM (pachetul de bază, semnături, fișiere L10N, etc)."
-warning:
+warning: !lazy
  API_Rate_Limited: "Avertizare: Accesul la API-ul %s pare să fie în prezent limitat."
  Cookies: "Notă: CIDRAM folosește un cookie pentru a autentifica conectarea. Conectându-vă, vă dați acordul ca un cookie să fie creat și stocat de browserul dvs."
  Editing PHP files: "Avertizare: Se știe că unele soluții de securitate pentru găzduire web interzic automat adresele IP la detectarea etichetelor PHP în cadrul solicitărilor (de exemplu, când încercați să modificați fișierele PHP printr-un browser). CIDRAM nu are mijloace de a ști dacă serviciul dvs. de găzduire web folosește o astfel de soluție de securitate. Pentru a evita astfel de probleme, se recomandă să nu editați fișierele PHP în acest mod atunci când este posibil."

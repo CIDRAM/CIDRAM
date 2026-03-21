@@ -1,6 +1,6 @@
 <?php
 /**
- * Delayed file IO class (last modified: 2026.03.17).
+ * Delayed file IO class (last modified: 2026.03.20).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -129,7 +129,7 @@ class DelayedIO extends CommonAbstract implements \Countable
             $Time = \time();
             $Unlocked = false;
             while (!$Unlocked) {
-                $Unlocked = \flock($Handle, LOCK_UN);
+                $Unlocked = \flock($Handle, \LOCK_UN);
                 if (!$Unlocked && (\time() - $Time) >= self::LOCK_TIMEOUT) {
                     break;
                 }

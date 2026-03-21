@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CIDRAM CLI mode (last modified: 2026.03.18).
+ * This file: CIDRAM CLI mode (last modified: 2026.03.21).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -60,22 +60,22 @@ trait CLI
             $this->cliColour("\033[0;33m") . "%s\n" . $this->cliColour("\033[0;92m") . '>>' . $this->cliColour("\033[0m") . " fwrite=output.dat<aggregate<fread \"input1.dat\n" . $this->cliColour("\033[0;92m") . '>>' . $this->cliColour("\033[0m") . " input2.dat\n" . $this->cliColour("\033[0;92m") . '>>' . $this->cliColour("\033[0m") . " input3.dat\"\n\n" .
             $this->cliColour("\033[0;33m") . "%s\n" . $this->cliColour("\033[0;92m") . '>>' . $this->cliColour("\033[0m") . " fread>aggregate>fwrite=output.dat input1.dat,input2.dat,input3.dat\n\n" .
             $this->cliColour("\033[0;33m") . "%s\n" . $this->cliColour("\033[0;92m") . '>>' . $this->cliColour("\033[0m") . " print Hello World\n\n" . $this->cliColour("\033[0;33m") . "%s\n" . $this->cliColour("\033[0;92m") . '>>' . $this->cliColour("\033[0m") . " fread>fix>fwrite=fixed.dat broken.dat\n\n" . $this->cliColour("\033[0;33m") . "%s\n\n",
-            $this->L10N->getString('info_cli_cidram_cli_mod'),
-            $this->L10N->getString('info_cli_to_test_whethe'),
-            $this->L10N->getString('info_cli_to_calculate_c'),
-            $this->L10N->getString('info_cli_ipv4_ipv6_are_'),
-            $this->L10N->getString('info_cli_you_can_also_u'),
-            $this->L10N->getString('info_cli_by_default_ips'),
-            $this->L10N->getString('info_cli_you_can_also_r'),
-            $this->L10N->getString('info_cli_you_can_also_w'),
-            $this->L10N->getString('info_cli_you_can_also_a'),
-            $this->L10N->getString('info_cli_or_to_aggregat'),
-            $this->L10N->getString('info_cli_you_can_also_c'),
-            $this->L10N->getString('info_cli_or_depending_o'),
-            $this->L10N->getString('info_cli_or_using_comma'),
-            $this->L10N->getString('info_cli_you_can_print_'),
-            $this->L10N->getString('info_cli_the_signature_'),
-            $this->L10N->getString('info_cli_to_quit_type_q')
+            $this->L10N->getString('info_cli.cidram_cli_mod'),
+            $this->L10N->getString('info_cli.to_test_whethe'),
+            $this->L10N->getString('info_cli.to_calculate_c'),
+            $this->L10N->getString('info_cli.ipv4_ipv6_are_'),
+            $this->L10N->getString('info_cli.you_can_also_u'),
+            $this->L10N->getString('info_cli.by_default_ips'),
+            $this->L10N->getString('info_cli.you_can_also_r'),
+            $this->L10N->getString('info_cli.you_can_also_w'),
+            $this->L10N->getString('info_cli.you_can_also_a'),
+            $this->L10N->getString('info_cli.or_to_aggregat'),
+            $this->L10N->getString('info_cli.you_can_also_c'),
+            $this->L10N->getString('info_cli.or_depending_o'),
+            $this->L10N->getString('info_cli.or_using_comma'),
+            $this->L10N->getString('info_cli.you_can_print_'),
+            $this->L10N->getString('info_cli.the_signature_'),
+            $this->L10N->getString('info_cli.to_quit_type_q')
         );
 
         $this->initialiseCache();

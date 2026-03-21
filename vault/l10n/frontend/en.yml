@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2026.03.18).
+# This file: English language data for the front-end (last modified: 2026.03.21).
 ##/
 
 Abuse category: !lazy
@@ -491,39 +491,40 @@ hints_verification:
   [en-CA, en-US]: "When verifying the identity presented by a request, a successful outcome could be described as "positive" or "negative". In the case that the identity presented is confirmed to be the true identity, it would be described as "positive". In the case that the identity presented is confirmed to be falsified, it would be described as "negative". However, an unsuccessful outcome (e.g., verification fails, or the veracity of the identity presented isn't able to be determined) would not be described as "positive" or "negative". Instead, an unsuccessful outcome would be described simply as non-verified. When no attempt to verify the identity presented by a request is made, the request would likewise be described as non-verified. The terms make sense only in the context where the identity presented by a request is recognized, and therefore, where verification is possible. In cases where the identity presented doesn't match the options provided above, or where no identity is presented, the options provided above become irrelevant."
  "What are "single-hit bypasses"?": "In some cases, a positive-verified request may still blocked as a result of the signature files, modules, or other conditions of the request, and bypasses may be necessary in order to avoid false positives. In the case where a bypass is intended to deal with exactly one infraction, no more and no less, such a bypass could be described as a "single-hit bypass"."
 hints_want_to_block: "!! Most users will likely want this to be blocked, regardless of whether it's real or falsified. That can be achieved by having "attempt to verify" be not selected and "block non-verified requests" be selected. However, because some users may want to be able to verify such requests (in order to block negatives while allowing positives), instead of blocking such requests via modules, options for handling such requests are provided here."
-info_cli_by_default_ips: |
- By default, IPs are tested against all signature files, all modules, all
- auxiliary rules, *and* against social media and search engine verification.
- --no-sig    Prevents testing against signature files.
- --no-mod    Prevents testing against modules.
- --no-sev    Prevents search engine verification.
- --no-smv    Prevents social media verification.
- --no-ov     Prevents other verification.
- --no-aux    Prevents testing against auxiliary rules.
-info_cli_cidram_cli_mod: "CIDRAM CLI mode."
-info_cli_ipv4_ipv6_are_: |
- IPv4/IPv6 are both supported. Multiline input is possible for *all* CLI mode
- operations (e.g., to test multiple IP addresses in a single operation) by
- using quotes, like so:
-info_cli_or_depending_o: "Or, depending on whether you'd prefer to chain first to last, or last to first:"
-info_cli_or_to_aggregat: "Or, to aggregate them as netmasks:"
-info_cli_or_using_comma: "Or, using commas instead of multilines (does exactly the same thing):"
-info_cli_the_signature_: "The signature fixer can be used via CLI, too:"
-info_cli_to_calculate_c: "To calculate CIDRs from an IP address:"
-info_cli_to_test_whethe: "To test whether an IP address is blocked by CIDRAM:"
-info_cli_to_quit_type_q: "To quit, type "q", "quit", or "exit", then press enter."
-info_cli_you_can_also_a: "You can also aggregate IPs and CIDRs like so:"
-info_cli_you_can_also_c: |
- You can also chain commands together (the example reads from some files,
- aggregates their content, then writes the aggregated data to output.dat):
-info_cli_you_can_also_r: "You can also read from files like so:"
-info_cli_you_can_also_u: |
- You can also use commas instead if you want (this is treated the same as using
- multilines, but you won't need to use quotes, and don't mix both together):
-info_cli_you_can_also_w: "You can also write to files like so:"
-info_cli_you_can_print_: |
- You can print data to the screen like so (sometimes useful when chaining
- commands):
+info_cli: !lazy
+ by_default_ips: |
+  By default, IPs are tested against all signature files, all modules, all
+  auxiliary rules, *and* against social media and search engine verification.
+  --no-sig    Prevents testing against signature files.
+  --no-mod    Prevents testing against modules.
+  --no-sev    Prevents search engine verification.
+  --no-smv    Prevents social media verification.
+  --no-ov     Prevents other verification.
+  --no-aux    Prevents testing against auxiliary rules.
+ cidram_cli_mod: "CIDRAM CLI mode."
+ ipv4_ipv6_are_: |
+  IPv4/IPv6 are both supported. Multiline input is possible for *all* CLI mode
+  operations (e.g., to test multiple IP addresses in a single operation) by
+  using quotes, like so:
+ or_depending_o: "Or, depending on whether you'd prefer to chain first to last, or last to first:"
+ or_to_aggregat: "Or, to aggregate them as netmasks:"
+ or_using_comma: "Or, using commas instead of multilines (does exactly the same thing):"
+ the_signature_: "The signature fixer can be used via CLI, too:"
+ to_calculate_c: "To calculate CIDRs from an IP address:"
+ to_test_whethe: "To test whether an IP address is blocked by CIDRAM:"
+ to_quit_type_q: "To quit, type "q", "quit", or "exit", then press enter."
+ you_can_also_a: "You can also aggregate IPs and CIDRs like so:"
+ you_can_also_c: |
+  You can also chain commands together (the example reads from some files,
+  aggregates their content, then writes the aggregated data to output.dat):
+ you_can_also_r: "You can also read from files like so:"
+ you_can_also_u: |
+  You can also use commas instead if you want (this is treated the same as using
+  multilines, but you won't need to use quotes, and don't mix both together):
+ you_can_also_w: "You can also write to files like so:"
+ you_can_print_: |
+  You can print data to the screen like so (sometimes useful when chaining
+  commands):
 Some useful links: |+
  Some useful links:<br />
      <ul class="pieul">
@@ -1115,7 +1116,7 @@ tip:
  Statistics: "This page shows some basic usage statistics regarding your CIDRAM installation."
  Subtractor: "The subtractor can be used to subtract one range of IPs/CIDRs/netmasks from another."
  Updates: "The updates page allows you to install, uninstall, and update the various components of CIDRAM (the core package, signatures, L10N files, etc)."
-warning:
+warning: !lazy
  API_Rate_Limited: "Warning: Access to the %s API appears to currently be rate limited."
  Cookies: "Note: CIDRAM uses a cookie to authenticate logins. By logging in, you give your consent for a cookie to be created and stored by your browser."
  Editing PHP files: "Warning: Some webhosting security solutions have been known to automatically ban IP addresses upon detecting PHP tags within requests (e.g., when attempting to modify PHP files through a browser). CIDRAM has no means of knowing whether your webhosting service uses such a security solution. In order to avoid such problems, not editing PHP files in such a way is recommended when possible."

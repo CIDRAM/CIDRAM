@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Galician language data for the front-end (last modified: 2026.03.18).
+# This file: Galician language data for the front-end (last modified: 2026.03.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -461,41 +461,42 @@ hints_verification:
  "Que son "positivos" e "negativos"?": "Ao verificar a identidade presentada por unha solicitude, un resultado exitoso podería describirse como "positivo" ou "negativo". No caso de que se confirme que a identidade presentada é a verdadeira identidade, se describiría como "positiva". No caso de que se confirme que a identidade presentada está falsificada, se describiría como "negativa". Por outra banda, un resultado infructuoso (por exemplo, a verificación falla, ou non se pode determinar a veracidade da identidade presentada) non se describiría como "positivo" ou "negativo". En cambio, un resultado infructuoso describiríase simplemente como non verificado. Cando non se realice ningún intento de verificar a identidade presentada por unha solicitude, a solicitude tamén se describiría como non verificada. Os termos só teñen sentido no contexto onde se recoñece a identidade presentada por unha solicitude e, polo tanto, onde a verificación é posible. Nos casos en que a identidade presentada non coincide coas opcións indicadas anteriormente, ou nos que non se presenta ningunha identidade, as opcións indicadas anteriormente non serán relevantes."
  "Que son os "bypasses dun só golpe"?": "Nalgúns casos, unha solicitude verificada positivamente aínda pode bloquearse como resultado dos ficheiros de sinatura, módulos, ou outras condicións da solicitude, e é posible que poden ser necesarios bypasses para evitar falsos positivos. No caso de que un bypass teña como finalidade tratar exactamente unha infracción, nin máis nin menos, tal bypass poderíase describir como un "bypass dun só golpe"."
 hints_want_to_block: "!! Probablemente, a maioría dos usuarios queren que se bloquee isto, independentemente de se é real ou falsificado. Isto pódese conseguir por non seleccionar "tentar verificar" e seleccionar "bloquear solicitudes non verificadas". Non obstante, debido a que algúns usuarios poden querer verificar tales solicitudes (para bloquear os negativos mentres se permiten os positivos), en lugar de bloquealas mediante módulos, aquí ofrécense opcións para xestionar tales solicitudes."
-info_cli_by_default_ips: |
- Os enderezos IP adoitan probarse con todos os ficheiros de sinatura, todos
- os módulos, todas as regras auxiliares, e a verificación de redes sociais
- e buscadores.
- --no-sig    Evita as probas con ficheiros de sinatura.
- --no-mod    Evita as probas con módulos.
- --no-sev    Evita a verificación dos buscadores.
- --no-smv    Evita a verificación das redes sociais.
- --no-ov     Evita outras verificacións.
- --no-aux    Evita as probas con regras auxiliares.
-info_cli_cidram_cli_mod: "Modo CLI de CIDRAM."
-info_cli_ipv4_ipv6_are_: |
- Pódese usar IPv4 ou IPv6. A entrada multiliña é posible para *todas* as
- operacións do modo CLI (por exemplo, para probar varios enderezos IP nunha
- única operación) usando comiñas, así:
-info_cli_or_depending_o: |
- Ou, dependendo de se prefires encadear o primeiro ao último ou o último ao
- primeiro:
-info_cli_or_to_aggregat: "Ou, para agregalos como máscaras de rede:"
-info_cli_or_using_comma: "Ou, usando comas en lugar de multiliñas (fai exactamente o mesmo):"
-info_cli_the_signature_: "O fixador de sinatura tamén se pode usar a través da CLI:"
-info_cli_to_calculate_c: "Para calcular CIDR a partir dun enderezo IP:"
-info_cli_to_test_whethe: "Para probar se un enderezo IP está bloqueado por CIDRAM:"
-info_cli_to_quit_type_q: "Para saír, escriba "q", "quit", ou "exit" e, a continuación, prema Intro."
-info_cli_you_can_also_a: "Tamén podes agregar IPs e CIDRs así:"
-info_cli_you_can_also_c: |
- Tamén pode encadear comandos xuntos (o exemplo le dalgúns ficheiros, agrega o
- seu contido, e despois escribe os datos agregados en output.dat):
-info_cli_you_can_also_r: "Tamén podes ler desde ficheiros así:"
-info_cli_you_can_also_u: |
- Tamén podes usar comas no seu lugar se queres (isto trátase do mesmo xeito que
- usar multiliñas, pero non necesitarás usar comiñas, e non mesturar ambos
- xuntos):
-info_cli_you_can_also_w: "Tamén podes escribir nos ficheiros así:"
-info_cli_you_can_print_: "Podes imprimir datos na pantalla así (ás veces é útil ao encadear comandos):"
+info_cli: !lazy
+ by_default_ips: |
+  Os enderezos IP adoitan probarse con todos os ficheiros de sinatura, todos
+  os módulos, todas as regras auxiliares, e a verificación de redes sociais
+  e buscadores.
+  --no-sig    Evita as probas con ficheiros de sinatura.
+  --no-mod    Evita as probas con módulos.
+  --no-sev    Evita a verificación dos buscadores.
+  --no-smv    Evita a verificación das redes sociais.
+  --no-ov     Evita outras verificacións.
+  --no-aux    Evita as probas con regras auxiliares.
+ cidram_cli_mod: "Modo CLI de CIDRAM."
+ ipv4_ipv6_are_: |
+  Pódese usar IPv4 ou IPv6. A entrada multiliña é posible para *todas* as
+  operacións do modo CLI (por exemplo, para probar varios enderezos IP nunha
+  única operación) usando comiñas, así:
+ or_depending_o: |
+  Ou, dependendo de se prefires encadear o primeiro ao último ou o último ao
+  primeiro:
+ or_to_aggregat: "Ou, para agregalos como máscaras de rede:"
+ or_using_comma: "Ou, usando comas en lugar de multiliñas (fai exactamente o mesmo):"
+ the_signature_: "O fixador de sinatura tamén se pode usar a través da CLI:"
+ to_calculate_c: "Para calcular CIDR a partir dun enderezo IP:"
+ to_test_whethe: "Para probar se un enderezo IP está bloqueado por CIDRAM:"
+ to_quit_type_q: "Para saír, escriba "q", "quit", ou "exit" e, a continuación, prema Intro."
+ you_can_also_a: "Tamén podes agregar IPs e CIDRs así:"
+ you_can_also_c: |
+  Tamén pode encadear comandos xuntos (o exemplo le dalgúns ficheiros, agrega o
+  seu contido, e despois escribe os datos agregados en output.dat):
+ you_can_also_r: "Tamén podes ler desde ficheiros así:"
+ you_can_also_u: |
+  Tamén podes usar comas no seu lugar se queres (isto trátase do mesmo xeito que
+  usar multiliñas, pero non necesitarás usar comiñas, e non mesturar ambos
+  xuntos):
+ you_can_also_w: "Tamén podes escribir nos ficheiros así:"
+ you_can_print_: "Podes imprimir datos na pantalla así (ás veces é útil ao encadear comandos):"
 Some useful links: |+
  Algunhas ligazóns útiles:<br />
      <ul class="pieul">
@@ -1085,7 +1086,7 @@ tip:
  Statistics: "Esta páxina mostra algunhas estatísticas básicas de uso sobre a súa instalación de CIDRAM."
  Subtractor: "O restador pódese usar para restar un rango de IP/CIDR/máscara de rede doutro."
  Updates: "A páxina de actualizacións permítelle instalar, desinstalar, e actualizar os distintos compoñentes de CIDRAM (o paquete principal, sinaturas, ficheiros de L10N, etc)."
-warning:
+warning: !lazy
  API_Rate_Limited: "Aviso: Parece que o acceso á API %s está actualmente limitado."
  Cookies: "Nota: CIDRAM usa unha cookie para autenticar os inicios de sesión. Ao iniciar sesión, dás o teu consentimento para que o teu navegador cree e almacene unha cookie."
  Editing PHP files: "Aviso: Sábese que algunhas solucións de seguridade de aloxamento web prohiben automaticamente os enderezos IP ao detectar as etiquetas PHP nas solicitudes (por exemplo, ao tentar modificar ficheiros PHP a través dun navegador). CIDRAM non ten medios para saber se o teu servizo de hospedaxe web utiliza unha solución de seguridade deste tipo. Para evitar tales problemas, recoméndase non editar os ficheiros PHP dese xeito cando sexa posible."

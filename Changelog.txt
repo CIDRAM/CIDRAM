@@ -14,6 +14,9 @@ Detailed version release guidelines for CIDRAM can be found at:
 
 - [2026.03.20]: Use RedisException for failed Redis connections (#388).
 
+- [2026.03.22]: Optimised the logic for when clearExpiredPDO triggers, which
+  should improve performance a little for those using PDO for caching (#393).
+
 === Version/Release 2.17.3 ===
 PATCH RELEASE.
 

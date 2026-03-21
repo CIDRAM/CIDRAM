@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The cache data page (last modified: 2026.03.18).
+ * This file: The cache data page (last modified: 2026.03.22).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -80,7 +80,7 @@ if ($this->FE['ASYNC']) {
     $this->FE['JS'] .=
         "function cdd(d,x){window.cdi=d,window.csrc=x,window.do='delete',$('POST" .
         "','',['cidram-form-target','cdi','csrc','do'],null,function(o){'__'===d" .
-        "?window.location.reload():'^'===d.substring(0,1)&&(d=d.\substr(1)),hidei" .
+        "?window.location.reload():'^'===d.substring(0,1)&&(d=d.substr(1)),hidei" .
         "d(d+'Container'+x)})};function cdp(d,x){window.csrc=d,window.ctrg=x,win" .
         "dow.do='duplicate',$('POST','',['cidram-form-target','csrc','ctrg','do'" .
         "],null,function(o){window.location.reload()})}window['cidram-form-targe" .

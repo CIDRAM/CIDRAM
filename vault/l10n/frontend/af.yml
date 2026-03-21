@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Afrikaans language data for the front-end (last modified: 2026.03.18).
+# This file: Afrikaans language data for the front-end (last modified: 2026.03.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -465,43 +465,44 @@ hints_verification:
  "Wat is "positiewe" en "negatiewe"?": "Wanneer die identiteit wat deur 'n versoek aangebied word geverifieer word, kan 'n suksesvolle uitkoms beskryf word as "positief" of "negatief". In die geval dat die identiteit wat aangebied word as die ware identiteit bevestig word, sal dit as "positief" beskryf word. In die geval dat bevestig word dat die identiteit wat aangebied is vervals is, sal dit as "negatief" beskryf word. Onsuksesvolle uitkomste (bv., verifikasie misluk, of die waarheid van die identiteit wat aangebied word kan nie bepaal word nie) sal egter nie as "positief" of "negatief" beskryf word nie. In plaas daarvan sal onsuksesvolle uitkomste bloot as nie-geverifieer beskryf word. Wanneer geen poging aangewend word om die identiteit wat deur 'n versoek aangebied word te verifieer nie, sal die versoek eweneens as nie-geverifieer beskryf word. Die terme maak slegs sin in die konteks waar die identiteit wat deur 'n versoek aangebied word erken word, en dus waar verifikasie moontlik is. In gevalle waar die identiteit wat aangebied word nie ooreenstem met die opsies hierbo verskaf nie, of waar geen identiteit aangebied word nie, word die opsies hierbo verskaf irrelevant."
  "Wat is "enkeltreffer-omleidings"?": "In sommige gevalle kan 'n positief-geverifieerde versoek steeds geblokkeer word as gevolg van die handtekeninglêers, modules, of ander voorwaardes van die versoek, en omleidings kan nodig wees om vals positiewe te vermy. In die geval waar 'n omleiding bedoel is om presies een oortreding te hanteer, nie meer of nie minder nie, kan so 'n omleiding beskryf word as 'n "enkeltreffer-omleiding"."
 hints_want_to_block: "!! Die meeste gebruikers sal waarskynlik wil hê dit moet geblokkeer word, ongeag of dit werklik of vervals is. Dit kan bereik word deur "poging om te verifieer" nie gekies te word nie en "blokkeer nie-geverifieerde versoeke" te kies. Maar, omdat sommige gebruikers dalk wil hê dat sulke versoeke geverifieer moet word (om negatiewes te blokkeer terwyl positiewes toegelaat word), in plaas daarvan om sulke versoeke via modules te blokkeer, word opsies vir die hantering van sulke versoeke hier verskaf."
-info_cli_by_default_ips: |
- IP's word standaard getoets teen alle handtekeninglêers, alle modules, alle
- bykomende reëls, *en* teen verifikasie vir sosiale media en soekenjins.
- --no-ban    Voorkom kontrolering of dit verbode is.
- --no-sig    Voorkom toetsing teen handtekeninglêers.
- --no-mod    Voorkom toetsing teen modules.
- --no-sev    Voorkom verifikasie van soekenjins.
- --no-smv    Voorkom verifikasie van sosiale media.
- --no-ov     Voorkom ander verifikasie.
- --no-aux    Voorkom toetsing teen bykomende reëls.
-info_cli_cidram_cli_mod: "CIDRAM CLI-modus."
-info_cli_ipv4_ipv6_are_: |
- IPv4/IPv6 word albei ondersteun. Multilyn-invoer is moontlik vir *alle*
- CLI-modus-bewerkings (bv., om verskeie IP-adresse in 'n enkele bewerking te
- toets) deur aanhalings te gebruik, soos so:
-info_cli_or_depending_o: |
- Of, afhangende van of jy verkies om eerste tot laaste, of laaste tot eerste te
- ketting:
-info_cli_or_to_aggregat: "Of, om hulle as netmaskers saam te aggregeer:"
-info_cli_or_using_comma: "Of, om kommas in plaas van multilyne te gebruik (doen presies dieselfde ding):"
-info_cli_the_signature_: "Die handtekeningregstelling kan ook via CLI gebruik word:"
-info_cli_to_calculate_c: "Om CIDR's vanaf 'n IP-adres te bereken:"
-info_cli_to_test_whethe: "Om te toets of 'n IP-adres deur CIDRAM geblokkeer word:"
-info_cli_to_quit_type_q: "Om uit te gaan, tik "q", "quit", of "exit", en druk dan enter."
-info_cli_you_can_also_a: "Jy kan ook IP's en CIDR's aggregeer soos so:"
-info_cli_you_can_also_c: |
- Jy kan ook opdragte ketting (die voorbeeld lees uit sommige lêers, aggregeer
- hul inhoud, en skryf dan die geaggregeerde data na output.dat):
-info_cli_you_can_also_r: "Jy kan ook lees uit lêers soos so:"
-info_cli_you_can_also_u: |
- Jy kan ook eerder kommas gebruik as jy wil (dit word dieselfde behandel as om
- multilyne te gebruik, maar jy hoef nie aanhalingstekens te gebruik nie, en
- moenie albei saam meng nie):
-info_cli_you_can_also_w: "Jy kan ook na lêers skryf soos so:"
-info_cli_you_can_print_: |
- Jy kan data na die skerm druk soos so (soms nuttig wanneer opdragte geketting
- word):
+info_cli: !lazy
+ by_default_ips: |
+  IP's word standaard getoets teen alle handtekeninglêers, alle modules, alle
+  bykomende reëls, *en* teen verifikasie vir sosiale media en soekenjins.
+  --no-ban    Voorkom kontrolering of dit verbode is.
+  --no-sig    Voorkom toetsing teen handtekeninglêers.
+  --no-mod    Voorkom toetsing teen modules.
+  --no-sev    Voorkom verifikasie van soekenjins.
+  --no-smv    Voorkom verifikasie van sosiale media.
+  --no-ov     Voorkom ander verifikasie.
+  --no-aux    Voorkom toetsing teen bykomende reëls.
+ cidram_cli_mod: "CIDRAM CLI-modus."
+ ipv4_ipv6_are_: |
+  IPv4/IPv6 word albei ondersteun. Multilyn-invoer is moontlik vir *alle*
+  CLI-modus-bewerkings (bv., om verskeie IP-adresse in 'n enkele bewerking te
+  toets) deur aanhalings te gebruik, soos so:
+ or_depending_o: |
+  Of, afhangende van of jy verkies om eerste tot laaste, of laaste tot eerste te
+  ketting:
+ or_to_aggregat: "Of, om hulle as netmaskers saam te aggregeer:"
+ or_using_comma: "Of, om kommas in plaas van multilyne te gebruik (doen presies dieselfde ding):"
+ the_signature_: "Die handtekeningregstelling kan ook via CLI gebruik word:"
+ to_calculate_c: "Om CIDR's vanaf 'n IP-adres te bereken:"
+ to_test_whethe: "Om te toets of 'n IP-adres deur CIDRAM geblokkeer word:"
+ to_quit_type_q: "Om uit te gaan, tik "q", "quit", of "exit", en druk dan enter."
+ you_can_also_a: "Jy kan ook IP's en CIDR's aggregeer soos so:"
+ you_can_also_c: |
+  Jy kan ook opdragte ketting (die voorbeeld lees uit sommige lêers, aggregeer
+  hul inhoud, en skryf dan die geaggregeerde data na output.dat):
+ you_can_also_r: "Jy kan ook lees uit lêers soos so:"
+ you_can_also_u: |
+  Jy kan ook eerder kommas gebruik as jy wil (dit word dieselfde behandel as om
+  multilyne te gebruik, maar jy hoef nie aanhalingstekens te gebruik nie, en
+  moenie albei saam meng nie):
+ you_can_also_w: "Jy kan ook na lêers skryf soos so:"
+ you_can_print_: |
+  Jy kan data na die skerm druk soos so (soms nuttig wanneer opdragte geketting
+  word):
 Some useful links: |+
  Nuttige skakels:<br />
      <ul class="pieul">
@@ -1115,7 +1116,7 @@ tip:
  Statistics: "Hierdie bladsy wys basiese gebruikstatistieke rakende jou CIDRAM-installasie."
  Subtractor: "Die aftrekker kan gebruik word om een reeks IP's/CIDR's/netmaskers van 'n ander af te trek."
  Updates: "Die opdateringsbladsy laat jou toe om die verskillende komponente van CIDRAM te installeer, te deïnstalleer, en op te dateer (die core-pakket, handtekeninge, L10N-lêers, ens)."
-warning:
+warning: !lazy
  API_Rate_Limited: "Waarskuwing: Toegang tot die %s API blyk tans tariefbeperk te wees."
  Cookies: "Kennis neem: CIDRAM gebruik 'n koekie vir die verifikasie van intekeninge. Deur in te teken, gee jy jou toestemming dat 'n koekie deur jou blaaier geskep en gestoor word."
  Editing PHP files: "Waarskuwing: Dit is bekend dat sommige sekuriteitsoplossings vir webgasheer outomaties IP-adresse verbied wanneer PHP-etikette binne versoeke opgespoor word (bv., wanneer jy probeer om PHP-lêers deur 'n blaaier te wysig). CIDRAM het geen manier om te weet of jou webgasheerdiens so 'n sekuriteitsoplossing gebruik nie. Om sulke probleme te vermy, word dit aanbeveel om nie PHP-lêers op so 'n manier te redigeer wanneer moontlik nie."

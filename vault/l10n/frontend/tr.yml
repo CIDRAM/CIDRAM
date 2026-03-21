@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2026.03.18).
+# This file: Turkish language data for the front-end (last modified: 2026.03.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -465,44 +465,45 @@ hints_verification:
  ""Pozitifleri" ve "negatifleri" nedir?": "Bir talep tarafından sunulan kimliği doğrularken, başarılı bir sonuç "pozitif" veya "negatif" olarak tanımlanabilir. Sunulan kimliğin gerçek kimlik olduğu teyit edildiğinde, "pozitif" olarak tanımlanacaktır. Sunulan kimliğin sahte olduğu onaylandığında, "negatif" olarak tanımlanacaktır. Ancak, başarısız bir sonuç (örneğin, doğrulama başarısız olur, veya sunulan kimliğin doğruluğu belirlenemez) "pozitif" veya "negatif" olarak tanımlanmaz. Bunun yerine, başarısız bir sonuç basitçe doğrulanmamış olarak tanımlanır. Bir talep tarafından sunulan kimliği doğrulamak için hiçbir girişimde bulunulmadığında, talep de aynı şekilde doğrulanmamış olarak tanımlanır. Terimler, yalnızca bir talep tarafından sunulan kimliğin tanındığı ve dolayısıyla doğrulamanın mümkün olduğu bağlamda anlamlıdır. Sunulan kimlik, yukarıda belirtilen seçeneklerle eşleşmiyorsa veya herhangi bir kimlik sunulmuyorsa, yukarıda verilen seçenekler alakasız hale gelir."
  ""Tek vuruşlu bypasslari" nedir?": "Bazı durumlarda, imza dosyaları, modüller, veya isteğin diğer koşulları nedeniyle olumlu doğrulanmış bir istek yine de engellenebilir, ve yanlış pozitifleri önlemek için bypasslar gerekli olabilir. Bir bypass, tam olarak bir ihlalle başa çıkmak için amaçlandığında, ne eksik ne fazla, böyle bir bypass "tek vuruşlu bypass" olarak tanımlanabilir."
 hints_want_to_block: "!! Çoğu kullanıcı, ister gerçek ister sahte olsun, büyük olasılıkla bunun engellenmesini isteyecektir. Bu, "doğrulamayı dene" seçeneğinin seçili olmaması ve "doğrulanmamış istekler engelle" seçeneğinin seçilmesiyle elde edilebilir. Ancak, bazı kullanıcılar bu tür istekleri doğrulayabilmek isteyebilir (olumsuzları engelleyip olumlulara izin vermek için), bu nedenle, bu tür istekleri modüller aracılığıyla engellemek yerine, bu tür isteklerin işlenmesi için seçenekler burada sunulmaktadır."
-info_cli_by_default_ips: |
- Varsayılan olarak, IP'ler tüm imza dosyalarına, tüm modüllere, tüm yardımcı
- kurallara, ve ayrıca sosyal medya ve arama motoru doğrulamasına karşı test
- edilir.
- --no-ban    Yasak olup olmadığının kontrol edilmesini önler.
- --no-sig    İmza dosyalarına karşı test yapılmasını önler.
- --no-mod    Modüllere karşı test yapılmasını önler.
- --no-sev    Arama motoru doğrulamasını önler.
- --no-smv    Sosyal medya doğrulamasını önler.
- --no-ov     Diğer doğrulamasını önler.
- --no-aux    Yardımcı kurallara karşı test yapılmasını önler.
-info_cli_cidram_cli_mod: "CIDRAM CLI modu."
-info_cli_ipv4_ipv6_are_: |
- IPv4/IPv6 her ikisi de desteklenir. Tüm CLI modu işlemleri için (örneğin, tek
- bir işlemde birden fazla IP adresini test etmek için) tırnak işaretleri
- kullanarak çok satırlı giriş mümkündür:
-info_cli_or_depending_o: |
- Veya, ilkten sona mı yoksa sondan birinciye mi zincirlemeyi tercih ettiğinize
- bağlı olarak:
-info_cli_or_to_aggregat: "Veya, bunları ağ maskesi olarak toplamak için:"
-info_cli_or_using_comma: "Veya, çok satırlı yerine virgül kullanmak (tamamen aynı şeyi yapar):"
-info_cli_the_signature_: "İmza dosya tamircisi, CLI aracılığıyla da kullanılabilir:"
-info_cli_to_calculate_c: "Bir IP adresinden CIDR'leri hesaplamak için:"
-info_cli_to_test_whethe: "Bir IP adresinin CIDRAM tarafından engellenip engellenmediğini test etmek için:"
-info_cli_to_quit_type_q: "Çıkmak için, "q", "quit", veya "exit" yazıp enter tuşuna basın."
-info_cli_you_can_also_a: "IP'leri ve CIDR'leri şu şekilde de toplayabilirsiniz:"
-info_cli_you_can_also_c: |
- Ayrıca komutları birlikte zincirleyebilirsiniz (örnek bazı dosyalardan okur,
- içeriklerini toplar, ve ardından toplanan verileri output.dat'a yazar):
-info_cli_you_can_also_r: "Ayrıca aşağıdaki gibi dosyalardan da okuyabilirsiniz:"
-info_cli_you_can_also_u: |
- İsterseniz bunun yerine virgül de kullanabilirsiniz (bu, çok satırlı
- kullanmakla aynı şekilde değerlendirilir, ancak tırnak işaretleri kullanmanıza
- gerek yoktur, ve ikisini birlikte karıştırmayın):
-info_cli_you_can_also_w: "Ayrıca aşağıdaki gibi dosyalara da yazabilirsiniz:"
-info_cli_you_can_print_: |
- Verileri ekrana şu şekilde yazdırabilirsiniz (bazen komutları zincirlerken
- kullanışlıdır):
+info_cli: !lazy
+ by_default_ips: |
+  Varsayılan olarak, IP'ler tüm imza dosyalarına, tüm modüllere, tüm yardımcı
+  kurallara, ve ayrıca sosyal medya ve arama motoru doğrulamasına karşı test
+  edilir.
+  --no-ban    Yasak olup olmadığının kontrol edilmesini önler.
+  --no-sig    İmza dosyalarına karşı test yapılmasını önler.
+  --no-mod    Modüllere karşı test yapılmasını önler.
+  --no-sev    Arama motoru doğrulamasını önler.
+  --no-smv    Sosyal medya doğrulamasını önler.
+  --no-ov     Diğer doğrulamasını önler.
+  --no-aux    Yardımcı kurallara karşı test yapılmasını önler.
+ cidram_cli_mod: "CIDRAM CLI modu."
+ ipv4_ipv6_are_: |
+  IPv4/IPv6 her ikisi de desteklenir. Tüm CLI modu işlemleri için (örneğin, tek
+  bir işlemde birden fazla IP adresini test etmek için) tırnak işaretleri
+  kullanarak çok satırlı giriş mümkündür:
+ or_depending_o: |
+  Veya, ilkten sona mı yoksa sondan birinciye mi zincirlemeyi tercih ettiğinize
+  bağlı olarak:
+ or_to_aggregat: "Veya, bunları ağ maskesi olarak toplamak için:"
+ or_using_comma: "Veya, çok satırlı yerine virgül kullanmak (tamamen aynı şeyi yapar):"
+ the_signature_: "İmza dosya tamircisi, CLI aracılığıyla da kullanılabilir:"
+ to_calculate_c: "Bir IP adresinden CIDR'leri hesaplamak için:"
+ to_test_whethe: "Bir IP adresinin CIDRAM tarafından engellenip engellenmediğini test etmek için:"
+ to_quit_type_q: "Çıkmak için, "q", "quit", veya "exit" yazıp enter tuşuna basın."
+ you_can_also_a: "IP'leri ve CIDR'leri şu şekilde de toplayabilirsiniz:"
+ you_can_also_c: |
+  Ayrıca komutları birlikte zincirleyebilirsiniz (örnek bazı dosyalardan okur,
+  içeriklerini toplar, ve ardından toplanan verileri output.dat'a yazar):
+ you_can_also_r: "Ayrıca aşağıdaki gibi dosyalardan da okuyabilirsiniz:"
+ you_can_also_u: |
+  İsterseniz bunun yerine virgül de kullanabilirsiniz (bu, çok satırlı
+  kullanmakla aynı şekilde değerlendirilir, ancak tırnak işaretleri kullanmanıza
+  gerek yoktur, ve ikisini birlikte karıştırmayın):
+ you_can_also_w: "Ayrıca aşağıdaki gibi dosyalara da yazabilirsiniz:"
+ you_can_print_: |
+  Verileri ekrana şu şekilde yazdırabilirsiniz (bazen komutları zincirlerken
+  kullanışlıdır):
 Some useful links: |+
  Bazı kullanışlı bağlantılar:<br />
      <ul class="pieul">
@@ -1084,7 +1085,7 @@ tip:
  Statistics: "Bu sayfada, CIDRAM kurulumunuzla ilgili bazı temel kullanım istatistikleri gösterilmektedir."
  Subtractor: "Çıkarıcı, bir IP/CIDR/ağ maskeleri aralığını bir diğerinden çıkarmak için kullanılabilir."
  Updates: "Güncellemeler sayfası, CIDRAM'ın çeşitli bileşenlerini (çekirdek paket, imzalar, L10N dosyaları, vb) yüklemenizi, kaldırmanızı ve güncellemenizi sağlar."
-warning:
+warning: !lazy
  API_Rate_Limited: "Uyarı: %s API'ye erişimin şu anda hız sınırlaması olduğu görülüyor."
  Cookies: "Not: CIDRAM, oturum açma kimlik doğrulamasında çerez kullanır. Oturum açarak, tarayıcınız tarafından oluşturulacak ve saklanacak bir çerez için onayınızı verirsiniz."
  Editing PHP files: "Uyarı: Bazı web barındırma güvenlik çözümlerinin, istekler içinde PHP etiketlerini algıladıktan sonra IP adreslerini otomatik olarak yasakladığı bilinmektedir (örneğin, bir tarayıcı aracılığıyla PHP dosyalarını değiştirmeye çalışırken). CIDRAM, web barındırma hizmetinizin böyle bir güvenlik çözümü kullanıp kullanmadığını bilmenin hiçbir yoluna sahip değildir. Bu tür sorunlardan kaçınmak için PHP dosyalarını mümkün olduğunca bu şekilde düzenlememeniz önerilir."

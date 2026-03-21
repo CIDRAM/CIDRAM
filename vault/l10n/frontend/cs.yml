@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Czech language data for the front-end (last modified: 2026.03.18).
+# This file: Czech language data for the front-end (last modified: 2026.03.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -468,42 +468,43 @@ hints_verification:
  "Co jsou „pozitiva“ a „negativa“?": "Při ověřování identity předložené žádostí lze úspěšný výsledek popsat jako „pozitivní“ nebo „negativní“. Když se potvrdí, že prezentovaná identita je pravou identitou, byla by popsána jako „pozitivní“. Když se potvrdí, že předložená identita je zfalšovaná, bude popsána jako „negativní“. Neúspěšný výsledek (např., selže ověření, nebo nelze určit pravdivost předložené identity) by však nebyl popsán jako „pozitivní“ nebo „negativní“. Místo toho by byl neúspěšný výsledek popsán jednoduše jako neověřený. Pokud nedojde k žádnému pokusu o ověření identity předložené požadavkem, bude požadavek rovněž popsána jako neověřený. Termíny mají smysl pouze v kontextu, kdy je rozpoznána identita předložená žádostí, a tedy tam, kde je možné ověření. Pokud prezentovaná identita neodpovídá výše uvedeným možnostem, nebo pokud není uvedena žádná identita, výše uvedené možnosti se stanou irelevantními."
  "Co jsou „bypassace s jedním zásahem“?": "V některých případech může být pozitivně ověřený požadavek stále blokován v důsledku podpisových souborů, modulů, nebo jiných podmínek požadavku a může být nutné bypassovat, aby se zabránilo falešným poplachům. V případě, kdy má bypassace řešit přesně jeden přestupek, nic více a nic méně, lze takový bypassace označit jako „bypassace s jedním zásahem“."
 hints_want_to_block: "!! Většina uživatelů bude pravděpodobně chtít aby to bylo zablokováno, bez ohledu na to, zda je to skutečné nebo zfalšované. Toho lze dosáhnout tím, že nebude vybráno „pokus o ověření“ a bude vybráno „blokovat neověřené požadavky“. Protože však někteří uživatelé mohou chtít mít možnost ověřovat takové požadavky (za účelem blokování negativních a zároveň povolení pozitivních), místo blokování takových požadavků prostřednictvím modulů, jsou zde uvedeny možnosti pro zpracování takových požadavků."
-info_cli_by_default_ips: |
- Standardně jsou IP adresy testovány proti všem podpisovým souborům, všem
- modulům, všem pomocným pravidlům, a proti ověření na sociálních sítích a
- vyhledávačích.
- --no-ban    Zabraňuje kontrole zda je zakázáno.
- --no-sig    Zabraňuje testování proti souborům podpisů.
- --no-mod    Zabraňuje testování proti modulům.
- --no-sev    Zabraňuje ověření vyhledávačem.
- --no-smv    Zabraňuje ověřování na sociálních sítích.
- --no-ov     Zabraňuje jinému ověření.
- --no-aux    Zabraňuje testování proti pomocných pravidel.
-info_cli_cidram_cli_mod: "Režim CLI CIDRAM."
-info_cli_ipv4_ipv6_are_: |
- Podporovány jsou oba protokoly IPv4/IPv6. Víceřádkový vstup je možný pro
- *všechny* operace v režimu CLI (např., pro testování více IP adres v jedné
- operaci) pomocí uvozovek:
-info_cli_or_depending_o: |
- Nebo, podle toho, zda chcete řetězit od prvního k poslednímu nebo od posledního
- k prvnímu:
-info_cli_or_to_aggregat: "Nebo, agregovat je jako síťové masky:"
-info_cli_or_using_comma: "Nebo, použití čárek místo víceřádků (dělá přesně to samé):"
-info_cli_the_signature_: "Opravář podpisů lze také použít prostřednictvím CLI:"
-info_cli_to_calculate_c: "Výpočet CIDR z IP adresy:"
-info_cli_to_test_whethe: "Testování, zda je IP adresa blokováno CIDRAM:"
-info_cli_to_quit_type_q: "Pro ukončení zadejte „q“, „quit“, nebo „exit“, a poté stiskněte enter."
-info_cli_you_can_also_a: "Můžete také agregovat IP a CIDR:"
-info_cli_you_can_also_c: |
- Příkazy můžete také spojit dohromady (příklad čte z některých souborů, agreguje
- jejich obsah, a poté zapisuje agregovaná data do output.dat):
-info_cli_you_can_also_r: "Můžete také číst ze souborů:"
-info_cli_you_can_also_u: |
- Pokud chcete, můžete místo toho použít čárky (s tím se zachází stejně jako s
- použitím víceřádků, ale nebudete muset používat uvozovky, a nemíchejte obojí
- dohromady):
-info_cli_you_can_also_w: "Můžete také zapisovat do souborů:"
-info_cli_you_can_print_: "Data můžete vytisknout na obrazovku (někdy užitečné při řetězení příkazů):"
+info_cli: !lazy
+ by_default_ips: |
+  Standardně jsou IP adresy testovány proti všem podpisovým souborům, všem
+  modulům, všem pomocným pravidlům, a proti ověření na sociálních sítích a
+  vyhledávačích.
+  --no-ban    Zabraňuje kontrole zda je zakázáno.
+  --no-sig    Zabraňuje testování proti souborům podpisů.
+  --no-mod    Zabraňuje testování proti modulům.
+  --no-sev    Zabraňuje ověření vyhledávačem.
+  --no-smv    Zabraňuje ověřování na sociálních sítích.
+  --no-ov     Zabraňuje jinému ověření.
+  --no-aux    Zabraňuje testování proti pomocných pravidel.
+ cidram_cli_mod: "Režim CLI CIDRAM."
+ ipv4_ipv6_are_: |
+  Podporovány jsou oba protokoly IPv4/IPv6. Víceřádkový vstup je možný pro
+  *všechny* operace v režimu CLI (např., pro testování více IP adres v jedné
+  operaci) pomocí uvozovek:
+ or_depending_o: |
+  Nebo, podle toho, zda chcete řetězit od prvního k poslednímu nebo od posledního
+  k prvnímu:
+ or_to_aggregat: "Nebo, agregovat je jako síťové masky:"
+ or_using_comma: "Nebo, použití čárek místo víceřádků (dělá přesně to samé):"
+ the_signature_: "Opravář podpisů lze také použít prostřednictvím CLI:"
+ to_calculate_c: "Výpočet CIDR z IP adresy:"
+ to_test_whethe: "Testování, zda je IP adresa blokováno CIDRAM:"
+ to_quit_type_q: "Pro ukončení zadejte „q“, „quit“, nebo „exit“, a poté stiskněte enter."
+ you_can_also_a: "Můžete také agregovat IP a CIDR:"
+ you_can_also_c: |
+  Příkazy můžete také spojit dohromady (příklad čte z některých souborů, agreguje
+  jejich obsah, a poté zapisuje agregovaná data do output.dat):
+ you_can_also_r: "Můžete také číst ze souborů:"
+ you_can_also_u: |
+  Pokud chcete, můžete místo toho použít čárky (s tím se zachází stejně jako s
+  použitím víceřádků, ale nebudete muset používat uvozovky, a nemíchejte obojí
+  dohromady):
+ you_can_also_w: "Můžete také zapisovat do souborů:"
+ you_can_print_: "Data můžete vytisknout na obrazovku (někdy užitečné při řetězení příkazů):"
 Some useful links: |+
  Některé užitečné odkazy:<br />
      <ul class="pieul">
@@ -1136,7 +1137,7 @@ tip:
  Statistics: "Tato stránka zobrazuje některé základní statistiky používání týkající se vaší instalace CIDRAM."
  Subtractor: "Odečítač lze použít k odečtení jednoho rozsahu IP/CIDR/síťových masek od jiného."
  Updates: "Stránka aktualizací umožňuje instalovat, odinstalovat, a aktualizovat různé komponenty CIDRAM (základní balíček, podpisy, soubory L10N, atd)."
-warning:
+warning: !lazy
  API_Rate_Limited: "Varování: Zdá se, že přístup k %s API je v současné době omezen."
  Cookies: "Poznámka: CIDRAM používá cookie k ověření přihlášení. Přihlášením souhlasíte s tím, aby váš prohlížeč vytvořil a uložil soubor cookie."
  Editing PHP files: "Varování: Některá bezpečnostní řešení webhostingu jsou známá tím, že automaticky zakazují IP adresy při detekci PHP tagů v požadavcích (např., při pokusu o úpravu souborů PHP prostřednictvím prohlížeče). CIDRAM nemá žádný způsob, jak zjistit, zda vaše webhostingová služba používá takové bezpečnostní řešení. Abyste se vyhnuli těmto problémům, doporučuje se pokud možno neupravovat soubory PHP tímto způsobem."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2026.03.18).
+# This file: Dutch language data for the front-end (last modified: 2026.03.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -464,44 +464,45 @@ hints_verification:
  "Wat zijn "positieven" en "negatieven"?": "Bij het verifiëren van de identiteit die door een verzoek wordt gepresenteerd, een succesvol resultaat kan worden omschreven als "positief" of "negatief". In het geval dat wordt bevestigd dat de gepresenteerde identiteit de ware identiteit is, deze als "positief" beschreven wordt. In het geval dat wordt bevestigd dat de gepresenteerde identiteit vervalst is, deze als "negatief" beschreven wordt. Een onsuccesvolle uitkomst (b.v., verificatie mislukt, of de juistheid van de gepresenteerde identiteit kan niet worden vastgesteld) wordt echter niet als "positief" of "negatief" beschreven. In plaats daarvan zou een mislukte uitkomst eenvoudigweg als niet-geverifieerd worden beschreven. Als er geen poging wordt gedaan om de identiteit van het verzoek te verifiëren, het verzoek wordt eveneens als niet-geverifieerd beschreven. De termen hebben alleen zin in de context waarin de identiteit van het verzoek wordt herkend, en dus waar verificatie mogelijk is. In gevallen waarin de gepresenteerde identiteit niet overeenkomt met de bovenstaande opties, of waar geen identiteit wordt gepresenteerd, worden de bovenstaande opties irrelevant."
  "Wat zijn "enkele-treffer bypasses"?": "In sommige gevallen kan een positief-geverifieerd verzoek nog steeds worden geblokkeerd als gevolg van de signatuurbestanden, modules, of andere voorwaarden van het verzoek, en bypasses kunnen nodig zijn om valse positieven te voorkomen. In het geval dat een bypass bedoeld is om precies één overtreding af te handelen, niet meer en niet minder, dergelijke een bypass zou kunnen worden omschreven als een "enkele-treffer bypass"."
 hints_want_to_block: "!! De meeste gebruikers zullen waarschijnlijk willen dat dit wordt geblokkeerd, ongeacht of het echt of vervalst is. Dat kan worden bereikt door "proberen te verifiëren" niet te selecteren en "niet-geverifieerde verzoeken blokkeren" te selecteren. Omdat sommige gebruikers dergelijke verzoeken echter willen kunnen verifiëren (om negatieven te blokkeren en positieven toe te staan), in plaats van dergelijke verzoeken via modules te blokkeren, worden hier opties geboden voor het afhandelen van dergelijke verzoeken."
-info_cli_by_default_ips: |
- Standaard worden IP's getest tegen alle signatuurbestanden, alle modules, alle
- aanvullende regels, evenals verificatie van sociale media en zoekmachines.
- --no-ban    Voorkomt controleren of het verbannen is.
- --no-sig    Voorkomt testen tegen signatuurbestanden.
- --no-mod    Voorkomt testen tegen modules.
- --no-sev    Voorkomt verificatie van zoekmachines.
- --no-smv    Voorkomt verificatie van sociale media.
- --no-ov     Voorkomt andere verificatie.
- --no-aux    Voorkomt testen tegen aanvullende regels.
-info_cli_cidram_cli_mod: "CIDRAM CLI-modus."
-info_cli_ipv4_ipv6_are_: |
- IPv4/IPv6 worden beide ondersteund. Multilijnen-invoer is mogelijk voor alle
- bewerkingen in de CLI-modus (b.v., om meerdere IP-adressen in één bewerking te
- testen) door aanhalingstekens te gebruiken:
-info_cli_or_depending_o: |
- Of, afhankelijk van of u de voorkeur geeft aan de eerste aan de laatste, of de
- laatste aan de eerste:
-info_cli_or_to_aggregat: "Of, om ze samen te aggregeren als netmaskers:"
-info_cli_or_using_comma: "Of, komma's gebruiken in plaats van multilijnen (doet precies hetzelfde):"
-info_cli_the_signature_: "De signatuurbestanden-fixeer kan ook via CLI worden gebruikt:"
-info_cli_to_calculate_c: "Om te CIDR's berekenen vanaf een IP-adres:"
-info_cli_to_test_whethe: "Om te testen of een IP-adres wordt geblokkeerd door CIDRAM:"
-info_cli_to_quit_type_q: "Om te stoppen, typt u "q", "quit", of "exit", en drukt u vervolgens op enter."
-info_cli_you_can_also_a: "U kunt ook IP's en CIDR's als volgt aggregeren:"
-info_cli_you_can_also_c: |
- U kunt ook koppel de commando's aan elkaar (het voorbeeld leest uit sommige
- bestanden, aggregeert hun inhoud, en schrijft vervolgens de geaggregeerde
- gegevens naar output.dat):
-info_cli_you_can_also_r: "U kunt ook als volgt uit bestanden lezen:"
-info_cli_you_can_also_u: |
- U kunt ook in plaats daarvan komma's gebruiken als u wilt (dit wordt op
- dezelfde manier behandeld als het gebruik van multilijnen, maar u hoeft geen
- aanhalingstekens te gebruiken, en meng beide niet door elkaar):
-info_cli_you_can_also_w: "U kunt ook als volgt naar bestanden schrijven:"
-info_cli_you_can_print_: |
- U kunt als volgt gegevens naar het scherm afdrukken (soms handig bij het
- koppelen van commando's):
+info_cli: !lazy
+ by_default_ips: |
+  Standaard worden IP's getest tegen alle signatuurbestanden, alle modules, alle
+  aanvullende regels, evenals verificatie van sociale media en zoekmachines.
+  --no-ban    Voorkomt controleren of het verbannen is.
+  --no-sig    Voorkomt testen tegen signatuurbestanden.
+  --no-mod    Voorkomt testen tegen modules.
+  --no-sev    Voorkomt verificatie van zoekmachines.
+  --no-smv    Voorkomt verificatie van sociale media.
+  --no-ov     Voorkomt andere verificatie.
+  --no-aux    Voorkomt testen tegen aanvullende regels.
+ cidram_cli_mod: "CIDRAM CLI-modus."
+ ipv4_ipv6_are_: |
+  IPv4/IPv6 worden beide ondersteund. Multilijnen-invoer is mogelijk voor alle
+  bewerkingen in de CLI-modus (b.v., om meerdere IP-adressen in één bewerking te
+  testen) door aanhalingstekens te gebruiken:
+ or_depending_o: |
+  Of, afhankelijk van of u de voorkeur geeft aan de eerste aan de laatste, of de
+  laatste aan de eerste:
+ or_to_aggregat: "Of, om ze samen te aggregeren als netmaskers:"
+ or_using_comma: "Of, komma's gebruiken in plaats van multilijnen (doet precies hetzelfde):"
+ the_signature_: "De signatuurbestanden-fixeer kan ook via CLI worden gebruikt:"
+ to_calculate_c: "Om te CIDR's berekenen vanaf een IP-adres:"
+ to_test_whethe: "Om te testen of een IP-adres wordt geblokkeerd door CIDRAM:"
+ to_quit_type_q: "Om te stoppen, typt u "q", "quit", of "exit", en drukt u vervolgens op enter."
+ you_can_also_a: "U kunt ook IP's en CIDR's als volgt aggregeren:"
+ you_can_also_c: |
+  U kunt ook koppel de commando's aan elkaar (het voorbeeld leest uit sommige
+  bestanden, aggregeert hun inhoud, en schrijft vervolgens de geaggregeerde
+  gegevens naar output.dat):
+ you_can_also_r: "U kunt ook als volgt uit bestanden lezen:"
+ you_can_also_u: |
+  U kunt ook in plaats daarvan komma's gebruiken als u wilt (dit wordt op
+  dezelfde manier behandeld als het gebruik van multilijnen, maar u hoeft geen
+  aanhalingstekens te gebruiken, en meng beide niet door elkaar):
+ you_can_also_w: "U kunt ook als volgt naar bestanden schrijven:"
+ you_can_print_: |
+  U kunt als volgt gegevens naar het scherm afdrukken (soms handig bij het
+  koppelen van commando's):
 Some useful links: |+
  Enkele nuttige links:<br />
      <ul class="pieul">
@@ -1107,7 +1108,7 @@ tip:
  Statistics: "Deze pagina bevat een aantal basisgebruiksstatistieken voor uw CIDRAM-installatie."
  Subtractor: "De aftrekker kan worden gebruikt om het een bereik van IP's/CIDR's/netmaskers van het andere af te trekken."
  Updates: "De updates pagina stelt u in staat om de verschillende CIDRAM componenten te installeren, verwijderen, en actualiseren (de core pakket, signatures, L10N bestanden, enz)."
-warning:
+warning: !lazy
  API_Rate_Limited: "Waarschuwing: Toegang tot de %s API lijkt momenteel beperkt te zijn."
  Cookies: "Notitie: CIDRAM gebruikt een cookie om aanmeldingen te verifiëren. Door in te loggen, geeft u uw toestemming voor het maken en opslaan van een cookie door uw browser."
  Editing PHP files: "Waarschuwing: Van sommige webhosting-beveiligingsoplossingen is bekend dat ze IP-adressen automatisch verbieden bij het detecteren van PHP-tags in verzoeken (b.v., bij een poging om PHP-bestanden te wijzigen via een browser). CIDRAM kan niet weten of uw webhosting service een dergelijke beveiligingsoplossing gebruikt. Om dergelijke problemen te voorkomen, wordt aangeraden om PHP-bestanden waar mogelijk niet op een dergelijke manier te bewerken."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2026.03.18).
+# This file: Portuguese language data for the front-end (last modified: 2026.03.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -622,64 +622,65 @@ hints_verification:
 hints_want_to_block:
  pt-BR: "!! A maioria dos usuários provavelmente deseja que isso seja bloqueado, independentemente de ser real ou falsificado. Ao não selecionar "tente verificar" e selecionar "bloquear solicitações não verificados", isso pode ser alcançado. Mas, devido alguns usuários podem querer verificar tais solicitações (a fim de bloquear os negativos enquanto permitem os positivos), em vez de bloquear tais solicitações por meio de módulos, as opções para lidar com essas solicitações são fornecidas aqui."
  pt-PT: "!! A maioria dos utilizadores provavelmente deseja que isso seja bloqueado, independentemente de ser real ou falsificado. Ao não selecionar "tente verificar" e selecionar "bloquear solicitações não verificados", isso pode ser alcançado. Mas, devido alguns utilizadores podem querer verificar tais solicitações (a fim de bloquear os negativos enquanto permitem os positivos), em vez de bloquear tais solicitações por meio de módulos, as opções para lidar com essas solicitações são fornecidas aqui."
-info_cli_by_default_ips:
- pt-BR: |
-  Por padrão, os IPs são testados contras todos os arquivos de assinatura, todos
-  os módulos, todas as regras auxiliares, bem como a verificação de mídia social
-  e mecanismo de pesquisa.
-  --no-ban    Evita a verificação se foi banido.
-  --no-sig    Evita testes contra os arquivos de assinatura.
-  --no-mod    Evita testes contra os módulos.
-  --no-sev    Evita a verificação do mecanismo de pesquisa.
-  --no-smv    Evita a verificação de mídia social.
-  --no-ov     Evita outra verificação.
-  --no-aux    Evita testes contra regras auxiliares.
- pt-PT: |
-  Por padrão, os IPs são testados contras todos os arquivos de assinatura, todos
-  os módulos, todas as regras auxiliares, bem como a verificação de media social
-  e mecanismo de pesquisa.
-  --no-ban    Evita a verificação se foi banido.
-  --no-sig    Evita testes contra os arquivos de assinatura.
-  --no-mod    Evita testes contra os módulos.
-  --no-sev    Evita a verificação do mecanismo de pesquisa.
-  --no-smv    Evita a verificação de media social.
-  --no-ov     Evita outra verificação.
-  --no-aux    Evita testes contra regras auxiliares.
-info_cli_cidram_cli_mod: "CIDRAM modo CLI."
-info_cli_ipv4_ipv6_are_:
- pt-BR: |
-  IPv4/IPv6 são ambos suportados. A entrada multilinha é possível para todas as
-  operações do modo CLI (por exemplo, para testar vários endereços IP em uma
-  única operação) usando aspas, como segue:
- pt-PT: |
-  IPv4/IPv6 são ambos suportados. A entrada multilinha é possível para todas as
-  operações do modo CLI (por exemplo, para testar vários endereços IP numa única
-  operação) utilizando aspas, como segue:
-info_cli_or_depending_o: |
- Ou, dependendo se você prefere encadear do primeiro ao último, ou do último ao
- primeiro:
-info_cli_or_to_aggregat: "Ou, para agregá-los como máscaras de rede:"
-info_cli_or_using_comma: "Ou, usando vírgulas em vez de multilinhas (faz exatamente a mesma coisa):"
-info_cli_the_signature_: "O fixador de assinatura também pode ser usado via CLI:"
-info_cli_to_calculate_c: "Para calcular CIDRs de um endereço IP:"
-info_cli_to_test_whethe: "Para testar se um endereço IP está bloqueado pelo CIDRAM:"
-info_cli_to_quit_type_q: "Para sair, digite "q", "quit", ou "exit", e pressione enter."
-info_cli_you_can_also_a: "Você também pode agregar IPs e CIDRs:"
-info_cli_you_can_also_c:
- pt-BR: |
-  Você também pode encadear comandos juntos (o exemplo lê alguns arquivos,
-  agrega seu conteúdo, e grava os dados agregados em output.dat):
- pt-PT: |
-  Você também pode encadear comandos juntos (o exemplo lê alguns arquivos,
-  agrega o seu conteúdo, e grava os dados agregados em output.dat):
-info_cli_you_can_also_r: "Você também pode ler a partir de arquivos:"
-info_cli_you_can_also_u: |
- Você também pode usar vírgulas se quiser (isso é tratado da mesma forma que
- usar várias linhas, mas você não precisará usar aspas, e não misturar os dois):
-info_cli_you_can_also_w: "Você também pode gravar em arquivos:"
-info_cli_you_can_print_:
- pt-BR: "Você pode imprimir dados na tela (às vezes útil ao encadear comandos):"
- pt-PT: "Você pode imprimir dados na ecrã (às vezes útil ao encadear comandos):"
+info_cli: !lazy
+ by_default_ips:
+  pt-BR: |
+   Por padrão, os IPs são testados contras todos os arquivos de assinatura, todos
+   os módulos, todas as regras auxiliares, bem como a verificação de mídia social
+   e mecanismo de pesquisa.
+   --no-ban    Evita a verificação se foi banido.
+   --no-sig    Evita testes contra os arquivos de assinatura.
+   --no-mod    Evita testes contra os módulos.
+   --no-sev    Evita a verificação do mecanismo de pesquisa.
+   --no-smv    Evita a verificação de mídia social.
+   --no-ov     Evita outra verificação.
+   --no-aux    Evita testes contra regras auxiliares.
+  pt-PT: |
+   Por padrão, os IPs são testados contras todos os arquivos de assinatura, todos
+   os módulos, todas as regras auxiliares, bem como a verificação de media social
+   e mecanismo de pesquisa.
+   --no-ban    Evita a verificação se foi banido.
+   --no-sig    Evita testes contra os arquivos de assinatura.
+   --no-mod    Evita testes contra os módulos.
+   --no-sev    Evita a verificação do mecanismo de pesquisa.
+   --no-smv    Evita a verificação de media social.
+   --no-ov     Evita outra verificação.
+   --no-aux    Evita testes contra regras auxiliares.
+ cidram_cli_mod: "CIDRAM modo CLI."
+ ipv4_ipv6_are_:
+  pt-BR: |
+   IPv4/IPv6 são ambos suportados. A entrada multilinha é possível para todas as
+   operações do modo CLI (por exemplo, para testar vários endereços IP em uma
+   única operação) usando aspas, como segue:
+  pt-PT: |
+   IPv4/IPv6 são ambos suportados. A entrada multilinha é possível para todas as
+   operações do modo CLI (por exemplo, para testar vários endereços IP numa única
+   operação) utilizando aspas, como segue:
+ or_depending_o: |
+  Ou, dependendo se você prefere encadear do primeiro ao último, ou do último ao
+  primeiro:
+ or_to_aggregat: "Ou, para agregá-los como máscaras de rede:"
+ or_using_comma: "Ou, usando vírgulas em vez de multilinhas (faz exatamente a mesma coisa):"
+ the_signature_: "O fixador de assinatura também pode ser usado via CLI:"
+ to_calculate_c: "Para calcular CIDRs de um endereço IP:"
+ to_test_whethe: "Para testar se um endereço IP está bloqueado pelo CIDRAM:"
+ to_quit_type_q: "Para sair, digite "q", "quit", ou "exit", e pressione enter."
+ you_can_also_a: "Você também pode agregar IPs e CIDRs:"
+ you_can_also_c:
+  pt-BR: |
+   Você também pode encadear comandos juntos (o exemplo lê alguns arquivos,
+   agrega seu conteúdo, e grava os dados agregados em output.dat):
+  pt-PT: |
+   Você também pode encadear comandos juntos (o exemplo lê alguns arquivos,
+   agrega o seu conteúdo, e grava os dados agregados em output.dat):
+ you_can_also_r: "Você também pode ler a partir de arquivos:"
+ you_can_also_u: |
+  Você também pode usar vírgulas se quiser (isso é tratado da mesma forma que
+  usar várias linhas, mas você não precisará usar aspas, e não misturar os dois):
+ you_can_also_w: "Você também pode gravar em arquivos:"
+ you_can_print_:
+  pt-BR: "Você pode imprimir dados na tela (às vezes útil ao encadear comandos):"
+  pt-PT: "Você pode imprimir dados na ecrã (às vezes útil ao encadear comandos):"
 Some useful links:
  pt-BR: |+
   Alguns links úteis:<br />
@@ -1412,7 +1413,7 @@ tip:
   pt-BR: "O subtrator pode ser usado para subtrair um alcance de IPs/CIDRs/máscaras de rede de outro."
   pt-PT: "O subtrator pode ser utilizado para subtrair um alcance de IPs/CIDRs/máscaras de rede de outro."
  Updates: "A página de atualizações permite que você instale, desinstale, e atualize os vários componentes do CIDRAM (o pacote principal, assinaturas, arquivos de L10N, etc)."
-warning:
+warning: !lazy
  API_Rate_Limited: "Atenção: O acesso à API %s parece ser atualmente limitado por taxa."
  Cookies: "Nota: CIDRAM usa um cookie para autenticar logins. Ao efetuar o login, você dá seu consentimento para que um cookie seja criado e armazenado pelo seu navegador."
  Editing PHP files:

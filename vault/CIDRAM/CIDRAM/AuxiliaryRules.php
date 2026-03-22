@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used for auxiliary rules (last modified: 2026.03.18).
+ * This file: Methods used for auxiliary rules (last modified: 2026.03.22).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -705,7 +705,7 @@ trait AuxiliaryRules
         /** Append JavaScript specific to the auxiliary rules page. */
         $this->FE['JS'] .= $this->parseVars([
             'hints_asnlookup' => \str_replace('\'', '\\\'', $this->L10N->getString('hints_asnlookup')),
-            'hints_cclookup' => \str_replace('\'', '\\\'', $this->L10N->getString('hints_cclookup')),
+            'hints_cclookup' => \str_replace('\'', '\\\'', $this->L10N->getString('tip.When available, the value of the country code lookup') . '<br />' . $this->L10N->getString('hints_cclookup')),
             'hints_client_hints' => \str_replace('\'', '\\\'', $this->L10N->getString('hints_client_hints')),
             'label.Suggestions' => \str_replace('\'', '\\\'', $this->L10N->getString('label.Suggestions')),
             'tip.An accepted value is any CIDR with a range that covers the IP address of the request' => \str_replace('\'', '\\\'', $this->L10N->getString('tip.An accepted value is any CIDR with a range that covers the IP address of the request')),

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The auxiliary rules view mode page (last modified: 2026.03.18).
+ * This file: The auxiliary rules view mode page (last modified: 2026.03.24).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -64,7 +64,7 @@ if (isset($_POST['ruleName'], $_POST['conSourceType'], $_POST['conIfOrNot'], $_P
     if (!empty($this->CIDRAM['AuxData'][$RuleName]['Webhooks'])) {
         $this->arrayify($this->CIDRAM['AuxData'][$RuleName]['Webhooks']);
         $this->CIDRAM['AuxData'][$RuleName]['Webhooks'] = \array_unique(
-            array_filter($this->CIDRAM['AuxData'][$RuleName]['Webhooks'])
+            \array_filter($this->CIDRAM['AuxData'][$RuleName]['Webhooks'])
         );
         if (!\count($this->CIDRAM['AuxData'][$RuleName]['Webhooks'])) {
             unset($this->CIDRAM['AuxData'][$RuleName]['Webhooks']);

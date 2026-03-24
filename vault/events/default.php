@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Default event handlers (last modified: 2026.03.18).
+ * This file: Default event handlers (last modified: 2026.03.24).
  */
 
 /**
@@ -104,7 +104,7 @@ $this->Events->addHandler('writeToLog', function (): void {
     unset($BlockInfo['EmailAddr'], $BlockInfo['UALC'], $BlockInfo['favicon']);
 
     /** Remove empty entries prior to serialising. */
-    $BlockInfo = array_filter($BlockInfo, function ($Value): bool {
+    $BlockInfo = \array_filter($BlockInfo, function ($Value): bool {
         return !(\is_string($Value) && empty($Value));
     });
 

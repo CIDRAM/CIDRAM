@@ -1,10 +1,10 @@
 CIDRAM Core:
  Name: "CIDRAM Core"
- Version: "4.1.0-DEV+260781"
+ Version: "4.1.0-DEV+260820"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Front-End: "Latest"
-  Common Classes Package: "^2.16.0-DEV"
+  Common Classes Package: "^2.16"
   l10n/core/{lang}: ">=2025.237"
  Changelog: "https://github.com/CIDRAM/CIDRAM/blob/v4/Changelog.md"
  Release Notes For: ["4.0.0", "4.0.1", "4.1.0"]
@@ -53,7 +53,7 @@ CIDRAM Core:
    Checksum: "c375863fac3d30db985da46f3f8663fdaacc4e07de1335f0d489f0460482c19e:3938"
   events/default.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/events/default.php"
-   Checksum: "e33c856aff5091cf3cce6d1840b78bacaa63f11a6587564b6f9ba79e3cb5abb7:13738"
+   Checksum: "eedcb01f540d3f3edea0bc581a66af1ca34308cc275bd56ea3671396d0299020:13739"
   channels.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/channels.yml"
    Checksum: "7ed15a1df7f789514ba354edfa9275447eddd63b2f4ee6da51396bada2693a08:1384"
@@ -68,11 +68,11 @@ CIDRAM Core:
    Checksum: "23fbd9783d6c1a6358a4390543f2e06d160127cfbebc5c4294a1cf5a1917f9a3:19077"
 CIDRAM Front-End:
  Name: "CIDRAM Front-End"
- Version: "4.1.0-DEV+260810"
+ Version: "4.1.0-DEV+260820"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "Latest"
-  Common Classes Package: "^2.16.0-DEV"
+  Common Classes Package: "^2.16"
   l10n/core/{lang}: ">=2025.237"
   l10n/frontend/{lang}: ">=2026.71"
  Changelog: "https://github.com/CIDRAM/CIDRAM/blob/v4/Changelog.md"
@@ -532,7 +532,7 @@ CIDRAM Front-End:
    Checksum: "83c5747434a035b879159324e02ecb84912dd5b277b03de38b8a4cf1b0936344:10252"
   pages/aux-view.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/pages/aux-view.php"
-   Checksum: "6d5c81bc73127ba287d0ef3b6fe7f4eb6307e2f7799240c8bfadc1845453c15f:14004"
+   Checksum: "5e3a9b6e2b2e354dfca63a088eee21b17020652923f0f9f1c9e6ff4ca230fe51:14005"
   pages/backup.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/pages/backup.php"
    Checksum: "4fcabd67f9763c2d0e4071e39772ad15e3fded0bb4213a0d053002c91dcedd29:31375"
@@ -583,7 +583,7 @@ CIDRAM Front-End:
    Checksum: "aa23b294fc296f9bef20bec762b13a57733712c62fc425279f2eeb9e7d537a53:31187"
 Common Classes Package:
  Name: "Common Classes Package"
- Version: "2.16.0-DEV+260800"
+ Version: "2.16.0"
  Dependencies:
   PHP: "^7.2|^8"
  Release Notes For: ["2.14.1", "2.14.2", "2.15.0", "2.16.0"]
@@ -1393,7 +1393,7 @@ Bot user agents module:
    Used with: "modules"
 BunnyCDN compatibility module:
  False Positive Risk: "Low"
- Version: "2026.76.0"
+ Version: "2026.82.0"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "^4"
@@ -1405,7 +1405,7 @@ BunnyCDN compatibility module:
    Used with: "imports"
   modules/bunnycdn.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/modules/bunnycdn.php"
-   Checksum: "0f6f618546e7b798f5997a6810c603130304faed5bba4bcc3f32a64a645dde09:2569"
+   Checksum: "d216f01014cfe1185c6f94df4b237e0ba4e3910d5b1dd8a78d7d89f0ce51e666:2571"
    Used with: "modules"
 Cookie scanner module:
  False Positive Risk: "Low"
@@ -1502,7 +1502,7 @@ Stop Forum Spam module:
    Used with: "modules"
 Quic cloud compatibility module:
  False Positive Risk: "Low"
- Version: "2026.76.0"
+ Version: "2026.82.0"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "^4"
@@ -1514,7 +1514,7 @@ Quic cloud compatibility module:
    Used with: "imports"
   modules/quic.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/modules/quic.php"
-   Checksum: "264790470c232928df933bcccd05320205a83e2cfe4e77585fcdceb9f851d0f7:2301"
+   Checksum: "8fa356ec604cc29975d3070aee51f4e61194930b8419c519a8e0a14070805f29:2302"
    Used with: "modules"
 Tor blocker module:
  False Positive Risk: "Low"

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Quic cloud compatibility module (last modified: 2026.03.18).
+ * This file: Quic cloud compatibility module (last modified: 2026.03.24).
  *
  * False positive risk (an approximate, rough estimate only): « [x]Low [ ]Medium [ ]High »
  */
@@ -35,7 +35,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     }
 
     /** Converts the raw data from the Quic cloud API to an array. */
-    $IPList = array_filter(\explode("\n", $this->CIDRAM['Quic']));
+    $IPList = \array_filter(\explode("\n", $this->CIDRAM['Quic']));
 
     /** Execute configured action for positive matches against the Quic cloud IP list. */
     if (\is_array($IPList) && \in_array($this->BlockInfo['IPAddr'], $IPList, true)) {

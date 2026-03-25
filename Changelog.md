@@ -551,4 +551,5 @@
 - [2026.03.20]: Ensure language resolution produces the correct capitalisation (e.g., xx-XX or xx-Xxxx).
 - [2026.03.22]: Optimised the logic for when clearExpiredPDO triggers, which should improve performance a little for those using PDO for caching (#393).
 - [2026.03.22]: Extended the hint at the auxiliary rules page for country code lookups to properly explain what they look like.
+- [2026.03.25]: Aesthetic patch.
 - *Plus all the regular signature updates.*

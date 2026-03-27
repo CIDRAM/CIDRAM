@@ -1461,7 +1461,7 @@ IP-API module:
    Used with: "modules"
 Optional security extras module:
  False Positive Risk: "Medium"
- Version: "2026.78.0"
+ Version: "2026.86.0"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "^3.10.1-DEV+252480"
@@ -1477,7 +1477,7 @@ Optional security extras module:
    Used with: "imports"
   modules/extras.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/extras.php"
-   Checksum: "a50833d98ae0cff8632335c218b7e8504e6f756d47fb14159354522a10a065c1:61385"
+   Checksum: "8eb8fa0024f3f63a80d27e13fe98f0eb030daf7309aeb904ae89f1db0415f267:62735"
    Used with: "modules"
 Project Honeypot module:
  False Positive Risk: "Medium"
@@ -1558,7 +1558,7 @@ Quic cloud compatibility module:
    Used with: "modules"
 Tor blocker module:
  False Positive Risk: "Low"
- Version: "2026.76.0"
+ Version: "2026.86.0"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "^3.6"
@@ -1572,14 +1572,14 @@ Tor blocker module:
    Used with: "imports"
   modules/tor.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/tor.php"
-   Checksum: "38177d5ab5571abc4e99a4b49bbb544261c314ccaf319c30cd7937c280d72e2c:3811"
+   Checksum: "06197c6bdd1f685625bbef5d2f0f20e58abf69cf28f94d07567cf737405012b3:3813"
    Used with: "modules"
 BOBUAM:
  Extended Description: >
   Optional module which detects unwanted bots, old browsers, and performs some sanity checks.<br />Contains some data from
   the Wordpress plugin "Stop Bad Bots" by William "Bill" Minozzi.<br />(A few webservices bots might need bypasses).
  False Positive Risk: "Medium"
- Version: "2026.76.0"
+ Version: "2026.86.0"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "^3.7"
@@ -1592,7 +1592,7 @@ BOBUAM:
  Files:
   imports/bobuam.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/imports/bobuam.yml"
-   Checksum: "a681faaf1356c571c241bdd19eb5f84f28d5732ad106e099a0c87baf3fd6c9c7:4087"
+   Checksum: "650f34d26c5440e3bbd49ae2b0bcf3dd0bb32f4021cf9f86fae1e3fa20f2853d:4089"
    Used with: "imports"
   modules/bobuam.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/bobuam.php"

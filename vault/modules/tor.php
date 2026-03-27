@@ -10,7 +10,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Tor blocker module (last modified: 2026.03.18).
+ * This file: Tor blocker module (last modified: 2026.03.26).
  *
  * False positive risk (an approximate, rough estimate only): « [x]Low [ ]Medium [ ]High »
  */
@@ -34,8 +34,8 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
     $IsTor = false;
     if (\strpos($this->BlockInfo['IPAddr'], ':') !== false) {
-        $Packed = unpack('H*hex', \inet_pton($this->BlockInfo['IPAddr']));
-        $LookupName = \implode('.', \array_reverse(str_split($Packed['hex']))) . '.torexit.dan.me.uk';
+        $Packed = \unpack('H*hex', \inet_pton($this->BlockInfo['IPAddr']));
+        $LookupName = \implode('.', \array_reverse(\str_split($Packed['hex']))) . '.torexit.dan.me.uk';
         if (!isset($this->CIDRAM['Tor-' . $LookupName])) {
             if (($Try = $this->Cache->getEntry('Tor-' . $LookupName)) !== false) {
                 $this->CIDRAM['Tor-' . $LookupName] = $Try;

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2026.03.20).
+ * This file: Optional security extras module (last modified: 2026.03.27).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -581,6 +581,26 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         if ($this->trigger(\preg_match('~(?:^|[/?])serverless\.ya?ml(?:$|[/?])~', $LCNrURI), 'Probing for exposed Serverless Framework configuration file')) {
             $this->Reporter->report([15, 21], ['Caught probing for exposed Serverless Framework configuration file.'], $this->BlockInfo['IPAddr']);
         } // 2026.03.20
+
+        /** Probing for exposed credentials. */
+        if ($this->trigger(\preg_match('~(?:^|[/?])credentials\.(?:ya?ml)(?:$|[/?])~', $LCNrURI), 'Probing for exposed credentials')) {
+            $this->Reporter->report([15, 21], ['Caught probing for exposed credentials.'], $this->BlockInfo['IPAddr']);
+        } // 2026.03.27
+
+        /** Probing for exposed Plesk update endpoint. */
+        if ($this->trigger(\preg_match('~(?:^|[/?])package-updates/perform\.cgi(?:$|[/?])~', $LCNrURI), 'Probing for exposed Plesk update endpoint')) {
+            $this->Reporter->report([15, 21], ['Caught probing for exposed Plesk update endpoint.'], $this->BlockInfo['IPAddr']);
+        } // 2026.03.27
+
+        /** Probing for exposed s3cfg file. */
+        if ($this->trigger(\preg_match('~(?:^|[/?])\.s3cfg(?:$|[/?])~', $LCNrURI), 'Probing for exposed s3cfg file')) {
+            $this->Reporter->report([15, 21], ['Caught probing for exposed s3cfg file.'], $this->BlockInfo['IPAddr']);
+        } // 2026.03.27
+
+        /** Probing for exposed Azure configuration. */
+        if ($this->trigger(\preg_match('~(?:^|[/?])\.azure/config(?:$|[/?])~', $LCNrURI), 'Probing for exposed Azure configuration')) {
+            $this->Reporter->report([15, 21], ['Caught probing for exposed Azure configuration.'], $this->BlockInfo['IPAddr']);
+        } // 2026.03.27
     }
 
     /**

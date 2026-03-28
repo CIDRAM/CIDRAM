@@ -1,6 +1,6 @@
 CIDRAM Core:
  Name: "CIDRAM Core"
- Version: "3.11.0-DEV+260820"
+ Version: "3.11.0"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Front-End: "Latest"
@@ -9,7 +9,7 @@ CIDRAM Core:
  Changelog: "https://github.com/CIDRAM/CIDRAM/blob/v3/Changelog.md"
  Release Notes For: ["3.8.0", "3.8.1", "3.9.0", "3.9.1", "3.10.0", "3.10.1", "3.10.2", "3.11.0"]
  When Update Succeeds:
-  - "wpVer 4.8 6.9.4 3.10.2 7.2"
+  - "wpVer 4.8 6.9.4 3.11.0 7.2"
   - "foreach {Components.RemoteMeta.CIDRAM Core.Release Notes For} as Key => Value if {Components.Meta.CIDRAM Core.Version}<{Value}&&{Components.RemoteMeta.CIDRAM Core.Version}>={Value} then queue message response.release_notes https://github.com/CIDRAM/CIDRAM/releases/tag/v{Value} CIDRAM v{Value}"
   - "if {Components.Meta.CIDRAM Core.Version}<3.10.3-DEV+260440&&{Components.RemoteMeta.CIDRAM Core.Version}>=3.10.3-DEV+260440 then queue message <span dir="ltr" lang="en-AU">[CIDRAM Core 3.10.3-DEV+260440] UptimeRobot's default signature bypass has been replaced with full verification support. Pressing <span class="txtRd">↺ Reset</span> on <code class="s">verification➡other</code> at the configuration page and then update is recommended.</span>"
  Uninstallable: false
@@ -28,7 +28,7 @@ CIDRAM Core:
    Checksum: "b7951b8f04a2f4b0a2fd989ca084528e9f51aaf24a0cb276914a9ad3f7469482:5567"
   CIDRAM/CIDRAM/Core.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Core.php"
-   Checksum: "30d75c628966394c6a2cff8c2488c4c44a63436b5a818c1d1efc33c6c40133e7:147558"
+   Checksum: "443112c97fff73f02384de94ea4c628798a42041418fc8364fe41b4360c83108:147560"
   CIDRAM/CIDRAM/Duration.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Duration.php"
    Checksum: "1f6bc22975326486947b7e36028e1546304c1604698b8ff11357e7f005dc057c:11664"
@@ -64,7 +64,7 @@ CIDRAM Core:
    Checksum: "23fbd9783d6c1a6358a4390543f2e06d160127cfbebc5c4294a1cf5a1917f9a3:19077"
 CIDRAM Front-End:
  Name: "CIDRAM Front-End"
- Version: "3.11.0-DEV+260830"
+ Version: "3.11.0"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "Latest"
@@ -448,7 +448,7 @@ CIDRAM Front-End:
    Checksum: "4306f49eb964e45528639d77b73492ba7ed709bbb2e8b1cf64f2cfbabf929b6b:48566"
   CIDRAM/CIDRAM/FrontEndMethods.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/FrontEndMethods.php"
-   Checksum: "68df03c1eaf9ffc19434b6cdedd57c75d2b9219ed66fadad51c0c7081e3d4131:68576"
+   Checksum: "bf9b0d0a11780d0696c5e59261071212188c7955c9e0e8f09efd81b4e278e856:68442"
   CIDRAM/CIDRAM/Logs.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Logs.php"
    Checksum: "5938026ca5abfaa785063be877e26aea08ed001d59b04b2b47d4ae7ab0c9b5aa:24378"

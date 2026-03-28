@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2026.03.20).
+ * This file: The CIDRAM core (last modified: 2026.03.26).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -2908,7 +2908,7 @@ class Core
          * @param int $errline
          * @return bool True to end further processing; False to defer processing.
          */
-        $this->CIDRAM['PreviousErrorHandler'] = set_error_handler(function ($errno, $errstr, $errfile, $errline) {
+        $this->CIDRAM['PreviousErrorHandler'] = \set_error_handler(function ($errno, $errstr, $errfile, $errline) {
             $VaultLen = \strlen($this->Vault);
             if (
                 \strlen($errfile) > $VaultLen &&
@@ -2937,7 +2937,7 @@ class Core
         $this->CIDRAM['Errors'] = [];
 
         /** Restore previous error handler. */
-        restore_error_handler();
+        \restore_error_handler();
     }
 
     /**

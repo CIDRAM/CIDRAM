@@ -507,7 +507,7 @@
 - [2026.01.16]: Added a default signature bypass for UptimeRobot (#656).
 - *Plus all the regular signature updates.*
 
-### v3.10.3
+### v3.11.0
 
 #### Bugs fixed.
 - [2026.01.25]: The page request's query parameters weren't being properly retained when submitting CAPTCHA forms; Fixed (#663).

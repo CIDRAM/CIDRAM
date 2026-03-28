@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2026.03.18).
+ * This file: General methods used by the front-end (last modified: 2026.03.28).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1603,16 +1603,12 @@ trait FrontEndMethods
             return;
         }
         if ($A < 0) {
-            $A *= 1;
-        } elseif ($B < 0) {
-            $B *= 1;
+            $B -= $A;
+            $A -= $A;
         }
-        if ($A > $B) {
-            [$A, $B] = [$A - $B, 0];
-        } elseif ($A < $B) {
-            [$A, $B] = [0, $A - $B];
-        } else {
-            [$A, $B] = [0, 0];
+        if ($B < 0) {
+            $A -= $B;
+            $B -= $B;
         }
     }
 }

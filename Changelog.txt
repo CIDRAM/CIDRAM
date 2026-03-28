@@ -8,15 +8,6 @@ about SemVer, please refer to:
 Detailed version release guidelines for CIDRAM can be found at:
 - https://github.com/CIDRAM/.github/blob/master/CONTRIBUTING.md#cidram-version-release-guidelines
 
-=== Changes made since last versioned release ===
-
-- [2026.03.17]: Various minor performance improvements.
-
-- [2026.03.20]: Use RedisException for failed Redis connections (#388).
-
-- [2026.03.22]: Optimised the logic for when clearExpiredPDO triggers, which
-  should improve performance a little for those using PDO for caching (#393).
-
 === Version/Release 1.29.6 ===
 PATCH RELEASE.
 
@@ -39,6 +30,16 @@ PATCH RELEASE.
   the correct language; Fixed (#666).
 
 - [2026.02.28]: Refactored some of the L10N data.
+
+- [2026.03.17]: Various minor performance improvements.
+
+- [2026.03.20]: Use RedisException for failed Redis connections (#388).
+
+- [2026.03.22]: Optimised the logic for when clearExpiredPDO triggers, which
+  should improve performance a little for those using PDO for caching (#393).
+
+Caleb M (Maikuolan),
+28 March, 2026.
 
 === Version/Release 1.29.5 ===
 PATCH RELEASE.

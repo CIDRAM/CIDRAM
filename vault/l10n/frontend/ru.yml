@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2026.03.22).
+# This file: Russian language data for the front-end (last modified: 2026.03.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -62,10 +62,10 @@ Extended Description: !lazy
  HTTP version checker module: "Дает возможность блокировать определенные протоколы и версии HTTP через конфигурацию CIDRAM."
  IP-API module: "Использует API {{Links.IP-API}} для предоставления средства поиска для ASN и коды страны для CIDRAM, таким образом, позволяя блокировать или вносить белый список ASN и стран через конфигурацию CIDRAM, и предоставление средств для проверки в социальных сетях для проверки запросов Facebook. (Если вы используете этот модуль, вам не нужно будет использовать модуль BGPView, так как они служат той же цели)."
  IPv4: &ExtDesCloud "Блокирует нежелательные облачные сервисы и нечеловеческие конечные точки."
- IPv4-Bogons: &ExtDesBogons "Блокирует bogon/марсианин CIDRы."
+ IPv4-Bogons: &ExtDesBogons "Блокирует bogon/марсианин CIDR-ы."
  IPv4-ISPs: &ExtDesISPs "Блокирует опасно и спам-склонным интернет-провайдеры (включает multiplay сети, которые могут содержать человеческие и нечеловеческие конечные точки)."
  IPv4-Nonblocking: &ExtDesNonblocking "Полезно для профилирования, но сам по себе ничего не блокирует."
- IPv4-Other: &ExtDesOther "Блокирует CIDRы для прокси-серверов, виртуальных частных сетей и различных других нежелательных услуг."
+ IPv4-Other: &ExtDesOther "Блокирует CIDR-ы для прокси-серверов, виртуальных частных сетей и различных других нежелательных услуг."
  IPv6: *ExtDesCloud
  IPv6-Bogons: *ExtDesBogons
  IPv6-ISPs: *ExtDesISPs
@@ -147,7 +147,7 @@ config: !lazy
  bobuam_chrome: "Самая низкая разрешенная версия токена «Chrome/Chromium». Рекомендуемые: {{BOBUAM Token.Chrome}}."
  bobuam_edge: "Самая низкая разрешенная версия токена «Edg/Edge». Рекомендуемые: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "Самая низкая разрешенная версия токена «Firefox». Рекомендуемые: {{BOBUAM Token.Firefox}}."
- bobuam_firefox_esr: "Разрешенная версия токена «Firefox» для версии ESR. Рекомендуемые: {{BOBUAM Token.Firefox ESR}}."
+ bobuam_firefox_esr: "Самая низкая разрешенная версия токена «Firefox» для версии ESR. Рекомендуемые: {{BOBUAM Token.Firefox ESR}}."
  bobuam_opera: "Самая низкая разрешенная версия токена «OPR». Рекомендуемые: {{BOBUAM Token.Opera}}."
  bobuam_reason_ambiguous: "Причина блокировки, отображаемая при обнаружении неоднозначной строки пользовательского агента."
  bobuam_reason_bot: "Причина блокировки показана для блокировки бота."
@@ -531,10 +531,10 @@ Some useful links: |+
        <li><span class="comCat" role="region" aria-controls="menuOUTRS" aria-expanded="false">Другие полезные инструменты, ресурсы, услуги и т.д.</span>
          <ul class="comSub" id="menuOUTRS">
            <li>{{Links.SFS}} – Поддерживает базу данных известных спамеров форума. Полезно для защиты сайтов и форумов от спамеров.</li>
-           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Получить CIDRы от ASNs, определить ASN отношения, обнаружить ASNs основанный на сетевых имен, и т.д.</li>
-           <li>{{Links.BGPView}} – Получить CIDRы от ASNs, определить ASN отношения, обнаружить ASNs основанный на сетевых имен, и т.д.</li>
-           <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar от Qrator</a> – Полезный инструмент для проверки связности ASNs а также для различных других сведений о ASNs.</li>
-           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Проект Spamhaus</a> – Отображает отчеты о ботнет ставок инфекции для ASNs.</li>
+           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Получить CIDR-ы от ASN-и, определить ASN отношения, обнаружить ASN-и основанный на сетевых имен, и т.д.</li>
+           <li>{{Links.BGPView}} – Получить CIDR-ы от ASN-и, определить ASN отношения, обнаружить ASN-и основанный на сетевых имен, и т.д.</li>
+           <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar от Qrator</a> – Полезный инструмент для проверки связности ASN-и а также для различных других сведений о ASN-и.</li>
+           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Проект Spamhaus</a> – Отображает отчеты о ботнет ставок инфекции для ASN-и.</li>
            <li>{{Links.AbuseIPDB}} – Ведение базы данных известных оскорбительных IP-адресов; Предоставляет API для проверки и отчетности IP-адресов.</li>
            <li>{{Links.IP-API}} – Получите информацию об IP-адресах или именах хостов, такую как код страны, название региона, долгота, широта, название организации, и т.д.</li>
          </ul>
@@ -1081,7 +1081,7 @@ tip:
  Auxiliary Rules: "Вы можете использовать эту страницу для создания, удаления и изменения вспомогательных правил для CIDRAM."
  Backup: "Эту страницу можно использовать для импорта/экспорта вашей конфигурации, вспомогательных правил, и т.д. Это может быть полезно, если вам нужно перенести данные между разными инсталляциями или разными основными версиями."
  Cache Data: "Здесь вы можете просмотреть содержимое кэша."
- Calculator: "Калькулятор позволяет рассчитать CIDRы и сетевые маски IP-адреса."
+ Calculator: "Калькулятор позволяет рассчитать CIDR-ы и сетевые маски IP-адреса."
  Click the component name for more details: "Нажмите на название компонента для получения более подробной информации."
  Configuration: "Конфигурация страница позволяет изменять конфигурацию для CIDRAM от фронтенд."
  Enter IP address here: "Введите IP-адрес здесь."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2026.03.26).
+# This file: German language data for the front-end (last modified: 2026.03.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -147,7 +147,7 @@ config: !lazy
  bobuam_chrome: "Niedrigste zulässige Version des „Chrome/Chromium“-Tokens. Empfohlen: {{BOBUAM Token.Chrome}}."
  bobuam_edge: "Niedrigste zulässige Version des „Edg/Edge“-Tokens. Empfohlen: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "Niedrigste zulässige Version des „Firefox“-Tokens. Empfohlen: {{BOBUAM Token.Firefox}}."
- bobuam_firefox_esr: "Zulässige Version des „Firefox“-Tokens für die ESR-Version. Empfohlen: {{BOBUAM Token.Firefox ESR}}."
+ bobuam_firefox_esr: "Niedrigste zulässige Version des „Firefox“-Tokens für die ESR-Version. Empfohlen: {{BOBUAM Token.Firefox ESR}}."
  bobuam_opera: "Niedrigste zulässige Version des „OPR“-Tokens. Empfohlen: {{BOBUAM Token.Opera}}."
  bobuam_reason_ambiguous: "Der Blockierungsgrund der angezeigt wird wenn eine mehrdeutige Benutzeragenten erkannt wird."
  bobuam_reason_bot: "Der Blockierungsgrund der angezeigt wird wenn Bots blockiert werden."
@@ -195,7 +195,7 @@ config: !lazy
  general_email_notification_address: "Wenn Sie Benachrichtigungen von CIDRAM per E-Mail wünschen, z.B., wenn bestimmte Hilfsregeln ausgelöst werden, hier können Sie die Empfängeradresse für diese Benachrichtigungen angeben."
  general_email_notification_name: "Wenn Sie Benachrichtigungen von CIDRAM per E-Mail wünschen, z.B., wenn bestimmte Hilfsregeln ausgelöst werden, hier können Sie den Empfängernamen für diese Benachrichtigungen angeben."
  general_email_notification_when: "Wann sollen Benachrichtigungen nach der Generierung gesendet werden."
- general_emailaddr: "Wenn Sie möchten, können Sie hier eine E-Mail-Adresse angeben, geben auf den Benutzern wenn sie blockiert, für Unterstützung für den Fall dass sie ist blockiert versehentlich oder im fehler. WARNUNG: Jede E-Mail-Adresse die Sie hier angeben wird sicherlich durch Spambots erworben werden im Zuge ihrer Verwendung hier, und so, es wird dringend empfohlen, wenn Sie hier eine E-Mail-Adresse angeben, dass die E-Mail-Adresse die Sie hier angeben, eine Einwegadresse ist, und/oder eine Adresse die Sie nichts dagegen haben Spam (mit anderen Worten, möchten Sie wahrscheinlich nicht Ihre primären persönlichen oder primären geschäftlichen E-Mail-Adressen verwenden)."
+ general_emailaddr: "Wenn Sie möchten, können Sie hier eine E-Mail-Adresse angeben, um den Benutzern zu geben wenn sie blockiert sind, für Unterstützung im Falle dass sie versehentlich oder im Fehler blockiert sind. WARNUNG: Jede E-Mail-Adresse die Sie hier angeben wird sicherlich durch Spambots erworben werden im Zuge ihrer Verwendung hier, und so, es wird dringend empfohlen, wenn Sie hier eine E-Mail-Adresse angeben, dass die E-Mail-Adresse die Sie hier angeben, eine Einwegadresse ist, und/oder eine Adresse die Sie nichts dagegen haben Spam (mit anderen Worten, möchten Sie wahrscheinlich nicht Ihre primären persönlichen oder primären geschäftlichen E-Mail-Adressen verwenden)."
  general_emailaddr_display_style: "Wie möchten Sie die E-Mail-Adresse für die Nutzer anzeigen?"
  general_fields: "Kontrollen für die Felder während Blockereignissen (wenn eine Anfrage blockiert wird)."
  general_force_hostname_lookup: "Hostnamen-Suchen werden normalerweise auf einer „wie benötigt“-Basis durchgeführt, können jedoch für alle Anforderungen erzwungen werden. Dies kann nützlich sein, um detailliertere Informationen in der Protokolldateien bereitzustellen, aber auch kann sich leicht negativ auf die Performance auswirken. Erzwinge Hostnamen-Suche? True = Ja; False = Nein [Standardeinstellung]."

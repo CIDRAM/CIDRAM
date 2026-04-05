@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2026.03.22).
+# This file: Italian language data for the front-end (last modified: 2026.03.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -62,10 +62,10 @@ Extended Description: !lazy
  HTTP version checker module: "Permette di bloccare protocolli specifici e versioni HTTP tramite la configurazione CIDRAM."
  IP-API module: "Sfrutta l'API {{Links.IP-API}} per fornire funzionalità di ricerca di ASN e codici paese per CIDRAM, abilitando a ASN e paesi di essere bloccati o autorizzati nella configurazione CIDRAM, e fornire un mezzo per la verifica dei social network per verificare le richieste di Facebook. (Se utilizzi questo modulo, non avrai bisogno di utilizzare il modulo BGPView, poiché hanno lo stesso scopo)."
  IPv4: &ExtDesCloud "Blocca servizi cloud indesiderate e punti finali non umani."
- IPv4-Bogons: &ExtDesBogons "Blocca bogon/marziano CIDRs."
+ IPv4-Bogons: &ExtDesBogons "Blocca CIDR bogon/marziani."
  IPv4-ISPs: &ExtDesISPs "Blocca ISP pericolosi e spam incline (include reti multiplay, che possono contenere endpoint sia umani che non umani)."
  IPv4-Nonblocking: &ExtDesNonblocking "Utile per la profilazione, ma non blocca nulla di per sé."
- IPv4-Other: &ExtDesOther "Blocca CIDRs per i proxy, VPN e altri vari servizi indesiderati."
+ IPv4-Other: &ExtDesOther "Blocca CIDR per i proxy, VPN e altri vari servizi indesiderati."
  IPv6: *ExtDesCloud
  IPv6-Bogons: *ExtDesBogons
  IPv6-ISPs: *ExtDesISPs
@@ -147,7 +147,7 @@ config: !lazy
  bobuam_chrome: "Versione minima consentita del token "Chrome/Chromium". Consigliato: {{BOBUAM Token.Chrome}}."
  bobuam_edge: "Versione minima consentita del token "Edg/Edge". Consigliato: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "Versione minima consentita del token "Firefox". Consigliato: {{BOBUAM Token.Firefox}}."
- bobuam_firefox_esr: "Versione consentita del token "Firefox" per la versione ESR. Consigliato: {{BOBUAM Token.Firefox ESR}}."
+ bobuam_firefox_esr: "Versione minima consentita del token "Firefox" per la versione ESR. Consigliato: {{BOBUAM Token.Firefox ESR}}."
  bobuam_opera: "Versione minima consentita del token "OPR". Consigliato: {{BOBUAM Token.Opera}}."
  bobuam_reason_ambiguous: "Il motivo del blocco mostrato quando viene rilevata una stringa agente utente ambigua."
  bobuam_reason_bot: "Il motivo del blocco mostrato quando i bot sono bloccati."
@@ -524,8 +524,8 @@ Some useful links: |+
        <li><span class="comCat" role="region" aria-controls="menuOUTRS" aria-expanded="false">Altri strumenti, risorse, servizi, ecc che sono utili.</span>
          <ul class="comSub" id="menuOUTRS">
            <li>{{Links.SFS}} – Mantiene un database di spammer di forum noti. Utile per proteggere siti Web e forum dagli spammer.</li>
-           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Ottenere CIDRs da ASNs, determinare le relazioni di ASNs, scopri ASNs basata su nomi di rete, ecc.</li>
-           <li>{{Links.BGPView}} – Ottenere CIDRs da ASNs, determinare le relazioni di ASNs, scopri ASNs basata su nomi di rete, ecc.</li>
+           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Ottenere CIDR da ASN, determinare le relazioni di ASNs, scopri ASNs basata su nomi di rete, ecc.</li>
+           <li>{{Links.BGPView}} – Ottenere CIDR da ASN, determinare le relazioni di ASNs, scopri ASNs basata su nomi di rete, ecc.</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar da Qrator</a> – Strumento utile per verificare la connettività di ASN nonché per varie altre informazioni utili riguardo ASNs.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Il progetto Spamhaus</a> – Visualizza i rapporti per quanto riguarda ai tassi di infezione di botnet per ASN.</li>
            <li>{{Links.AbuseIPDB}} – Mantiene un database di conosciuti indirizzi IP abusivi; Fornisce un API per il controllo e la rapporta di IP.</li>

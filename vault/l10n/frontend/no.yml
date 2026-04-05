@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2026.03.22).
+# This file: Norwegian language data for the front-end (last modified: 2026.03.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -147,7 +147,7 @@ config: !lazy
  bobuam_chrome: "Laveste tillatte versjon av «Chrome/Chromium»-tokenet. Anbefalt: {{BOBUAM Token.Chrome}}."
  bobuam_edge: "Laveste tillatte versjon av «Edg/Edge»-tokenet. Anbefalt: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "Laveste tillatte versjon av «Firefox»-tokenet. Anbefalt: {{BOBUAM Token.Firefox}}."
- bobuam_firefox_esr: "Tillatt versjon av «Firefox»-tokenet for ESR-versjonen. Anbefalt: {{BOBUAM Token.Firefox ESR}}."
+ bobuam_firefox_esr: "Laveste tillatte versjon av «Firefox»-tokenet for ESR-versjonen. Anbefalt: {{BOBUAM Token.Firefox ESR}}."
  bobuam_opera: "Laveste tillatte versjon av «OPR»-tokenet. Anbefalt: {{BOBUAM Token.Opera}}."
  bobuam_reason_ambiguous: "Årsaken til blokkering vises når en tvetydig brukeragentstreng oppdages."
  bobuam_reason_bot: "Blokkeringsårsaken vist for botblokker."
@@ -1042,7 +1042,7 @@ tip:
  Accounts: "Du kan kontrollere hvem som kan få tilgang til CIDRAM-frontenden ved hjelp av kontosiden."
  Actions menu: "Blokkere legger til 1 til antallet signaturer. Bypassere trekker 1 fra antallet signaturer. Hvitliste setter antallet signaturer til 0 og avslutter behandlingen, og hopper dermed over alle påfølgende regler helt. Gråliste setter antallet signaturer til 0, men avslutter ikke behandlingen. Profilere påvirker ikke antallet signaturer, men er nyttig når det kan være nødvendig med mer kompleks logikk for å avgjøre om andre typer handlinger skal utføres, ettersom genererte profiler kan være knyttet til betingelsene i påfølgende regler. Hvis antallet signaturer er 1 eller høyere etter behandling, vil forespørselen bli blokkert."
  Aggregator: "Aggregatoren lar deg uttrykke IPer, CIDRer, og nettmasker på den minste mulige måten. Skriv inn dataene som skal aggregeres og trykk «OK»."
- An accepted value is any CIDR with a range that covers the IP address of the request: "En akseptert verdi er en CIDR med et område som dekker IP-adressen til forespørselen. F.eks., vil 1.2.3.0/24, 1.2.0.0/16, 1.0.0.0/8, osv bli akseptert for 1.2.3.4. For å unngå falske positiver er smalere områder (f.eks., 1.2.3.4/32) generelt å foretrekke fremfor bredere områder (f.eks., 0.0.0.0/1). Kalkulatoren kan brukes til å finne hvilke CIDR-er som har områder som dekker en spesifisert IP-adresse."
+ An accepted value is any CIDR with a range that covers the IP address of the request: "En akseptert verdi er en CIDR med et område som dekker IP-adressen til forespørselen. F.eks., vil 1.2.3.0/24, 1.2.0.0/16, 1.0.0.0/8, osv bli akseptert for 1.2.3.4. For å unngå falske positiver er smalere områder (f.eks., 1.2.3.4/32) generelt å foretrekke fremfor bredere områder (f.eks., 0.0.0.0/1). Kalkulatoren kan brukes til å finne hvilke CIDRer som har områder som dekker en spesifisert IP-adresse."
  Auxiliary Rules Modes: "Visningsmodus viser tilleggsregler som en kompakt liste for enkel lesning. Regler i listen kan utvides og ytterligere detaljer vises ved å klikke på dem. Alternativer for å eksportere eller slette en regel vises når du klikker på trigrammet (☰). Regler kan endre rekkefølgen ved å dra og slippe, ved å dra en regel fra den eksisterende posisjonen og til ønsket posisjon. Redigeringsmodus er nødvendig for å endre tilleggsregler, redigerbare felt og alternativer for å legge til nye betingelser, webhooks, eller annen logikk i reglene etter behov som er angitt på siden. New auxiliary rules can be created via either mode."
  Auxiliary Rules Priority: "Prioritet (høyeste➡(lik🔄tilsvarende)➡lavest):"
  Auxiliary Rules Webhooks: "Når en regel utløses, CIDRAM vil prøve å varsle eventuelle tilkoblede nettkroker om hendelsen. En webhook er en URL som kan motta POST-data, og kan være nyttig hvis det finnes en ekstern tjeneste, app, skript osv som ligger på et helt annet nettverk enn CIDRAM, og du vil at dataene som genereres av CIDRAM om forespørselen skal håndtere."

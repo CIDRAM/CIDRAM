@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data for the front-end (last modified: 2026.03.22).
+# This file: Hindi language data for the front-end (last modified: 2026.04.02).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -77,6 +77,15 @@ Extended Description: !lazy
  Referrer spam module: "रेफरल स्पैम पर आधारित ब्लॉकिंग आम तौर पर कोई सार्थक सुरक्षा लाभ प्रदान नहीं करेगा, लेकिन कुछ मामलों में, कुछ उपयोगकर्ताओं के लिए उपयोगी हो सकता है, अनुरोधों के बारे में अधिक जानकारी इकट्ठा करने के लिए, और इसे रिपोर्ट करने में सक्षम होने के लिए।"
  Stop Forum Spam module: "एसएफएस द्वारा सूचीबद्ध IP पते से पंजीकरण और लॉगिन पृष्ठ की सुरक्षा करता है।"
  Tor blocker module: "DNSEL लुकअप के जरिए टोर एग्जिट नोड्स से पहुंच को प्रतिबंधित करता है (IPv4 और IPv6 दोनों का समर्थन करता है)।"
+Glossary: !lazy
+ Entries:
+  CIDR: |
+   "CIDR" का मतलब है "Classless Inter-Domain Routing", और यहीं से "CIDRAM" में "CIDR" आया है। "CIDRAM" का मतलब है Classless Inter-Domain Routing Access Manager"।
+   CIDRAM के संदर्भ में, "CIDR" का मतलब खास तौर पर CIDR नोटेशन का इस्तेमाल करके बताए गए सबनेट से है।
+ Refs:
+  False positive:
+   झूठी सकारात्मक और झूठी नकारात्मक - विकिपीडिया: "https://hi.wikipedia.org/wiki/%E0%A4%9D%E0%A5%82%E0%A4%A0%E0%A5%80_%E0%A4%B8%E0%A4%95%E0%A4%BE%E0%A4%B0%E0%A4%BE%E0%A4%A4%E0%A5%8D%E0%A4%AE%E0%A4%95_%E0%A4%94%E0%A4%B0_%E0%A4%9D%E0%A5%82%E0%A4%A0%E0%A5%80_%E0%A4%A8%E0%A4%95%E0%A4%BE%E0%A4%B0%E0%A4%BE%E0%A4%A4%E0%A5%8D%E0%A4%AE%E0%A4%95"
+   Issues · CIDRAM/CIDRAM: "https://github.com/CIDRAM/CIDRAM/issues"
 Name: !lazy
  AbuseIPDB module: "AbuseIPDB मॉड्यूल।"
  BGPView module: "BGPView मॉड्यूल।"
@@ -147,7 +156,7 @@ config: !lazy
  bobuam_chrome: ""Chrome/Chromium" टोकन का निम्नतम अनुमत संस्करण। अनुशंसित: "{{BOBUAM Token.Chrome}}"।"
  bobuam_edge: ""Edg/Edge" टोकन का निम्नतम अनुमत संस्करण। अनुशंसित: "{{BOBUAM Token.Edge}}"।"
  bobuam_firefox: ""Firefox" टोकन का निम्नतम अनुमत संस्करण। अनुशंसित: "{{BOBUAM Token.Firefox}}"।"
- bobuam_firefox_esr: "ESR संस्करण के लिए "Firefox" टोकन का अनुमत संस्करण। अनुशंसित: "{{BOBUAM Token.Firefox ESR}}"।"
+ bobuam_firefox_esr: "ESR संस्करण के लिए "Firefox" टोकन का निम्नतम अनुमत संस्करण। अनुशंसित: "{{BOBUAM Token.Firefox ESR}}"।"
  bobuam_opera: ""OPR" टोकन का निम्नतम अनुमत संस्करण। अनुशंसित: "{{BOBUAM Token.Opera}}"।"
  bobuam_reason_ambiguous: "अस्पष्ट उपयोगकर्ता एजेंट स्ट्रिंग का पता चलने पर दिखाया गया ब्लॉक कारण।"
  bobuam_reason_bot: "बॉट्स के ब्लॉक होने पर जो कारण दिखाया गया है।"
@@ -808,6 +817,7 @@ link:
  Edit mode: "संपादन मोड"
  File Manager: "फाइल प्रबंधक"
  Get API key: "यदि आपके पास पहले से API कुंजी नहीं है, तो उसे प्राप्त करने के लिए यहां क्लिक करें।"
+ Glossary: "शब्दकोष"
  Home: "होमपेज"
  IP Testing: "IP परीक्षण"
  IP Tracking: "IP ट्रैकिंग"
@@ -1067,6 +1077,7 @@ tip:
  Enter user agent here (optional): "उपयोगकर्ता एजेंट यहाँ दर्ज करें (यह वैकल्पिक है)।"
  Enter user agents here: "उपयोगकर्ता एजेंट यहाँ दर्ज करें।"
  File Manager: "फाइल प्रबंधक आपको फाइलों को हटाने, संपादित करने, अपलोड करने और डाउनलोड करने की अनुमति देता है। सावधानी से प्रयोग करें (आप इस के साथ अपनी इंस्टॉल को तोड़ सकते हैं)।"
+ Glossary: "इस शब्दकोष में CIDRAM द्वारा इस्तेमाल की जाने वाली कुछ शब्दावली के बारे में बताया गया है, ताकि इस्तेमाल किए गए कॉन्टेक्स्ट में उसका मतलब साफ़ हो सके।"
  Greeting: "नमस्ते, %s।"
  Home: "यह CIDRAM सामने के अंत के होमपेज है। जारी रखने के लिए बाईं ओर नेविगेशन मेनू से एक लिंक का चयन करें।"
  How many infractions to incur: "कितने उल्लंघन लागू करने के लिए।"

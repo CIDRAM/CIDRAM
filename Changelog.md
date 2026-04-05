@@ -553,3 +553,7 @@
 - [2026.03.22]: Extended the hint at the auxiliary rules page for country code lookups to properly explain what they look like.
 - [2026.03.25]: Aesthetic patch.
 - *Plus all the regular signature updates.*
+
+### v4.2.0
+
+- [2026.04.02]: Added a glossary page to the front-end.

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese language data for the front-end (last modified: 2026.03.22).
+# This file: Chinese language data for the front-end (last modified: 2026.04.02).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -85,6 +85,21 @@ Extended Description: !lazy
  Referrer spam module: {"zh-Hans": "基于引荐来源垃圾邮件阻止通常不会提供任何有意义的安全利益，但在某些情况下，对某些用户可能有用，用于收集有关请求的更多信息，以及能够报告它。", "zh-Hant": "基於引薦來源垃圾郵件阻止通常不會提供任何有意義的安全利益，但在某些情況下，對某些用戶可能有用，用於收集有關請求的更多信息，以及能夠報告它。"}
  Stop Forum Spam module: {"zh-Hans": "防止通过SFS列出的IP地址访问注册和登录页面。", "zh-Hant": "防止通過SFS列出的IP位址訪問註冊和登錄頁面。"}
  Tor blocker module: {"zh-Hans": "禁止通过DNSEL查找从Tor出口节点进行访问（支持IPv4和IPv6）。", "zh-Hant": "禁止通過DNSEL查找從Tor出口節點進行訪問（支持IPv4和IPv6）。"}
+Glossary: !lazy
+ Entries:
+  CIDR:
+   zh-Hans: |
+    “CIDR”是“Classless Inter-Domain Routing（无类别域间路由）”的缩写，“CIDRAM”中的“CIDR”就是由此而来。 “CIDRAM”是“Classless Inter-Domain Routing Access Manager（无类别域间路由访问管理器）”的缩写。
+    在CIDRAM的上下文中，“CIDR”特指以CIDR符号表示的子网。
+   zh-Hant: |
+    「CIDR」是「Classless Inter-Domain Routing（無類別域間路由）」的縮寫，「CIDRAM」中的「CIDR」就是由此而來。 「CIDRAM」是「Classless Inter-Domain Routing Access Manager（無類別域間路由存取管理員）」的縮寫。
+    在CIDRAM的上下文中，「CIDR」特別指以CIDR符號表示的子網路。
+ Refs:
+  CIDR:
+   无类别域间路由 - 维基百科，自由的百科全书: "https://zh.wikipedia.org/wiki/%E6%97%A0%E7%B1%BB%E5%88%AB%E5%9F%9F%E9%97%B4%E8%B7%AF%E7%94%B1"
+  False positive:
+   偽陽性和偽陰性 - 维基百科，自由的百科全书: "https://zh.wikipedia.org/wiki/%E5%81%BD%E9%99%BD%E6%80%A7%E5%92%8C%E5%81%BD%E9%99%B0%E6%80%A7"
+   Issues · CIDRAM/CIDRAM: "https://github.com/CIDRAM/CIDRAM/issues"
 Name: !lazy
  AbuseIPDB module: {"zh-Hans": "AbuseIPDB模块。", "zh-Hant": "AbuseIPDB模組。"}
  BGPView module: {"zh-Hans": "BGPView模块。", "zh-Hant": "BGPView模組。"}
@@ -155,7 +170,7 @@ config: !lazy
  bobuam_chrome: {"zh-Hans": "“Chrome/Chromium”令牌的最低允许版本。 推荐的：“{{BOBUAM Token.Chrome}}”。", "zh-Hant": "『Chrome/Chromium』令牌的最低允許版本。 推薦的：『{{BOBUAM Token.Chrome}}』。"}
  bobuam_edge: {"zh-Hans": "“Edg/Edge”令牌的最低允许版本。 推荐的：“{{BOBUAM Token.Edge}}”。", "zh-Hant": "『Edg/Edge』令牌的最低允許版本。 推薦的：『{{BOBUAM Token.Edge}}』。"}
  bobuam_firefox: {"zh-Hans": "“Firefox”令牌的最低允许版本。 推荐的：“{{BOBUAM Token.Firefox}}”。", "zh-Hant": "『Firefox』令牌的最低允許版本。 推薦的：『{{BOBUAM Token.Firefox}}』。"}
- bobuam_firefox_esr: {"zh-Hans": "ESR版本的“Firefox”令牌的允许版本。 推荐的：“{{BOBUAM Token.Firefox ESR}}”。", "zh-Hant": "ESR版本的『Firefox』令牌的允許版本。 推薦的：『{{BOBUAM Token.Firefox ESR}}』。"}
+ bobuam_firefox_esr: {"zh-Hans": "ESR版本的“Firefox”令牌的最低允许版本。 推荐的：“{{BOBUAM Token.Firefox ESR}}”。", "zh-Hant": "ESR版本的『Firefox』令牌的最低允許版本。 推薦的：『{{BOBUAM Token.Firefox ESR}}』。"}
  bobuam_opera: {"zh-Hans": "“OPR”令牌的最低允许版本。 推荐的：“{{BOBUAM Token.Opera}}”。", "zh-Hant": "『OPR』令牌的最低允許版本。 推薦的：『{{BOBUAM Token.Opera}}』。"}
  bobuam_reason_ambiguous: {"zh-Hans": "检测到模糊的用户代理字符串时显示的阻止原因。", "zh-Hant": "檢測到模糊的用戶代理字符串時顯示的阻止原因。"}
  bobuam_reason_bot: {"zh-Hans": "为被阻止的机器人显示的阻止原因。", "zh-Hant": "為被阻止的機器人顯示的阻止原因。"}
@@ -991,6 +1006,7 @@ link:
  Edit mode: {"zh-Hans": "编辑模式", "zh-Hant": "編輯模式"}
  File Manager: "文件管理器"
  Get API key: {"zh-Hans": "如果您还没有API密钥，请单击此处获取。", "zh-Hant": "如果您還沒有API金鑰，請單擊此處獲取。"}
+ Glossary: {"zh-Hans": "词汇表", "zh-Hant": "詞彙表"}
  Home: {"zh-Hans": "主页", "zh-Hant": "主頁"}
  IP Testing: {"zh-Hans": "IP测试", "zh-Hant": "IP測試"}
  IP Tracking: "IP跟踪"
@@ -1264,6 +1280,9 @@ tip:
  Enter user agent here (optional): {"zh-Hans": "在这里时输入用户代理（可选的）。", "zh-Hant": "在這裡時輸入用戶代理（可選的）。"}
  Enter user agents here: {"zh-Hans": "在这里时输入用户代理。", "zh-Hant": "在這裡時輸入用戶代理。"}
  File Manager: {"zh-Hans": "文件管理器允许您删除，​编辑，​上传和下载文件。​小心使用（您可以用这个破坏您的安装）。", "zh-Hant": "檔案管理器允許您刪除，​編輯，​上傳和下載文件。​小心使用（您可以用這個破壞您的安裝）。"}
+ Glossary:
+  zh-Hans: "该词汇表描述了CIDRAM使用的一些术语，以帮助澄清其在上下文中的预期含义。"
+  zh-Hant: "該詞彙表描述了CIDRAM使用的一些術語，以幫助澄清其在上下文中的預期含義。"
  Greeting: "你好，%s。"
  Home: {"zh-Hans": "这是CIDRAM的前端主页。​从左侧的导航菜单中选择一个链接以继续。", "zh-Hant": "這是CIDRAM的前端主頁。​從左側的導航菜單中選擇一個鏈接以繼續。"}
  How many infractions to incur: {"zh-Hans": "有多少违规行为。", "zh-Hant": "有多少違規行為。"}

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2026.03.22).
+# This file: Indonesian language data for the front-end (last modified: 2026.04.02).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -77,6 +77,29 @@ Extended Description: !lazy
  Referrer spam module: "Memblokir berdasarkan spam pengarah umumnya tidak akan memberikan manfaat keamanan yang berarti, tetapi dalam beberapa kasus, dapat bermanfaat bagi beberapa pengguna, untuk mengumpulkan lebih banyak informasi tentang permintaan, dan untuk dapat melaporkannya."
  Stop Forum Spam module: "Melindungi halaman pendaftaran dan login terhadap IP yang terdaftar oleh SFS."
  Tor blocker module: "Melarang akses dari simpul keluar Tor melalui pencarian DNSEL (mendukung keduanya IPv4 dan IPv6)."
+Glossary: !lazy
+ Entries:
+  CIDR: |
+   "CIDR" adalah akronim dari "Classless Inter-Domain Routing" (Perutean Antar-Domain Tanpa Kelas), yang merupakan asal "CIDR" dalam "CIDRAM", dimana "CIDRAM" sendiri merupakan akronim dari "Classless Inter-Domain Routing Access Manager" (Manajer Akses Perutean Antar-Domain Tanpa Kelas).
+   Dalam konteks CIDRAM, "CIDR" secara khusus merujuk pada subnet yang diungkapkan menggunakan notasi CIDR.
+  Positif palsu: |
+   Secara umum, ketika melakukan pengujian, jika hasil pengujian "positif" (yaitu, kondisi pengujian terbukti benar), tetapi diharapkan (atau seharusnya) "negatif" (yaitu, hasil pengujian salah), hal itu disebut sebagai "positif palsu". <em>Bahasa inggris: "false positive". Atau alternatifnya: "kesalahan positif palsu"; "alarm palsu".</em>
+   Beberapa istilah terkait adalah "positif benar", "negatif benar", dan "negatif palsu". <em>Bahasa inggris: "true positive", "true negative", "false negative".</em> "Positif benar" merujuk pada kondisi dimana hasil pengujian dan kondisi sebenarnya sama-sama benar (atau "positif"), sedangkan "negatif benar" merujuk pada kondisi dimana hasil pengujian dan kondisi sebenarnya sama-sama salah (atau "negatif"). "Positif benar" atau "negatif benar" dianggap sebagai "inferensi benar".
+   Kebalikan dari "positif palsu" adalah "negatif palsu". Ketika hasil pengujian "negatif", padahal seharusnya "positif", hasil tersebut disebut sebagai "negatif palsu".
+   Dalam konteks CIDRAM, istilah-istilah ini biasanya merujuk pada saat CIDRAM memblokir sesuatu yang seharusnya tidak diblokir, atau ketika CIDRAM gagal memblokir sesuatu yang seharusnya diblokir. Ketika CIDRAM memblokir permintaan yang seharusnya tidak diblokir (misalnya, karena tanda tangan yang buruk, usang, atau salah), atau ketika hal itu dilakukan karena alasan yang salah, maka hal tersebut disebut "positif palsu". Ketika CIDRAM gagal memblokir permintaan yang seharusnya diblokir (misalnya, karena ancaman yang tidak terduga, tanda tangan yang hilang, modul yang rusak, atau kekurangan dalam proses), hal itu disebut "negatif palsu" (meskipun biasanya digambarkan sebagai "deteksi yang terlewatkan"). <em>Bahasa inggris: "missed detection".</em>
+   | | Permintaan TIDAK seharusnya diblokir | Permintaan SEHARUSNYA diblokir |
+   | Permintaan TIDAK diblokir | Negatif benar (inferensi benar) | Deteksi yang terlewatkan (atau negatif palsu) |
+   | Permintaan diblokir | Positif palsu | Positif benar (inferensi benar) |
+   Jika Anda menemukan positif palsu, pertama-tama periksa halaman pembaruan, dan jika ada sesuatu yang ditandai sebagai tidak terbaru, perbarui. Setelah ini, jika masalah masih berlanjut, Anda dapat melaporkan masalah tersebut di pelacak masalah CIDRAM.
+ Indexes:
+  CIDR: "cidr"
+  [Negatif palsu, Positif palsu, Negatif benar, Positif benar]: "false_positive"
+ Refs:
+  CIDR:
+   Classless Inter-Domain Routing - Wikipedia bahasa Indonesia, ensiklopedia bebas: "https://id.wikipedia.org/wiki/Classless_Inter-Domain_Routing"
+  Positif palsu:
+   Positif palsu dan negatif palsu - Wikipedia bahasa Indonesia, ensiklopedia bebas: "https://id.wikipedia.org/wiki/Positif_palsu_dan_negatif_palsu"
+   Issues · CIDRAM/CIDRAM: "https://github.com/CIDRAM/CIDRAM/issues"
 Name: !lazy
  AbuseIPDB module: "Modul AbuseIPDB."
  BGPView module: "Modul BGPView."
@@ -147,7 +170,7 @@ config: !lazy
  bobuam_chrome: "Versi token "Chrome/Chromium" terendah yang diizinkan. Direkomendasikan: {{BOBUAM Token.Chrome}}."
  bobuam_edge: "Versi token "Edg/Edge" terendah yang diizinkan. Direkomendasikan: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "Versi token "Firefox" terendah yang diizinkan. Direkomendasikan: {{BOBUAM Token.Firefox}}."
- bobuam_firefox_esr: "Versi token "Firefox" yang diizinkan untuk versi ESR. Direkomendasikan: {{BOBUAM Token.Firefox ESR}}."
+ bobuam_firefox_esr: "Versi token "Firefox" terendah yang diizinkan untuk versi ESR. Direkomendasikan: {{BOBUAM Token.Firefox ESR}}."
  bobuam_opera: "Versi token "OPR" terendah yang diizinkan. Direkomendasikan: {{BOBUAM Token.Opera}}."
  bobuam_reason_ambiguous: "Alasan pemblokiran ditampilkan saat string agen pengguna yang ambigu terdeteksi."
  bobuam_reason_bot: "Alasan pemblokiran ditampilkan untuk pemblokiran bot."
@@ -797,8 +820,9 @@ link:
  Discussions: "Diskusi"
  Documentation: "Dokumentasi"
  Edit mode: "Modus edit"
- File Manager: "File manager"
+ File Manager: "Manajer file"
  Get API key: "Jika Anda belum memiliki kunci API, klik disini untuk mendapatkannya."
+ Glossary: "Glosarium"
  Home: "Halaman utama"
  IP Testing: "Pengujian IP"
  IP Tracking: "Pelacakan IP"
@@ -937,7 +961,7 @@ response:
  New auxiliary rule, %s, created successfully: "Aturan tambahan baru, "%s", berhasil dibuat."
  Not available at the upstream for legal reasons: "Tidak tersedia di hulu karena alasan hukum."
  Not available at the upstream: "Tidak tersedia di hulu."
- Outdated: "Tidak yang terbaru!"
+ Outdated: "Tidak terbaru!"
  Parse: "Penguraian"
  Passed: "Lulus"
  Password field empty: "Kata sandi yang kosong!"
@@ -994,7 +1018,7 @@ stages: !lazy
  Execute rate limiting: "Jalankan pembatasan laju"
  Execute reporting: "Jalankan pelaporan"
  Execute search engine verification: "Jalankan verifikasi mesin pencari"
- Execute signature files tests: "Jalankan tes untuk file tanda tangan"
+ Execute signature files tests: "Jalankan pengujian untuk file tanda tangan"
  Execute social media verification: "Jalankan verifikasi media sosial"
  Execute webhooks: "Jalankan webhook"
  Generate output (blocked requests): "Menghasilkan keluaran (permintaan yang diblokir)"
@@ -1051,7 +1075,8 @@ tip:
  Enter referrer here (optional): "Masukkan pengacu disini (opsional)."
  Enter user agent here (optional): "Masukkan agen pengguna disini (opsional)."
  Enter user agents here: "Masukkan agen pengguna disini."
- File Manager: "File manager memungkinkan Anda untuk menghapus, mengedit, mengupload, dan mendownload file. Gunakan dengan hati-hati (Anda bisa istirahat instalasi Anda dengan ini)."
+ File Manager: "Manajer file memungkinkan Anda untuk menghapus, mengedit, mengupload, dan mendownload file. Gunakan dengan hati-hati (Anda bisa istirahat instalasi Anda dengan ini)."
+ Glossary: "Glosarium ini menjelaskan beberapa terminologi yang digunakan oleh CIDRAM, untuk membantu memperjelas makna yang dimaksud dalam konteks penggunaannya."
  Greeting: "Salam, %s."
  Home: "Ini adalah halaman utama untuk CIDRAM bagian depan. Pilih link dari menu navigasi di sisi kiri untuk melanjutkan."
  How many infractions to incur: "Berapa banyak pelanggaran yang harus dilakukan."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2026.03.22).
+# This file: Japanese language data for the front-end (last modified: 2026.04.02).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -77,6 +77,16 @@ Extended Description: !lazy
  Referrer spam module: "リファラー・スパムに基づくブロックは、通常、有意義なセキュリティ上の利点を提供しません、ただし、場合によっては、リクエストに関する詳細情報の収集、およびレポートの作成に役立つ可能性があります。"
  Stop Forum Spam module: "ＳＦＳによってリストされたＩＰに対して登録ページとログインページを保護します。"
  Tor blocker module: "ＤＮＳＥＬルックアップによるＴｏｒ出口ノードからのアクセスを禁止します（ＩＰｖ４とＩＰｖ６の両方をサポートします）。"
+Glossary: !lazy
+ Entries:
+  CIDR: |
+   「CIDR」は「Classless Inter-Domain Routing」の頭文字をとった略語で、「CIDRAM」の「CIDR」はこの略語に由来しています。 「CIDRAM」は「Classless Inter-Domain Routing Access Manager」の略称です。
+   CIDRAMの文脈において、「CIDR」とは、具体的にはCIDR表記を用いて表現されたサブネットを指します。
+ Refs:
+  CIDR:
+   Classless Inter-Domain Routing - Wikipedia: "https://ja.wikipedia.org/wiki/Classless_Inter-Domain_Routing"
+  False positive:
+   Issues · CIDRAM/CIDRAM: "https://github.com/CIDRAM/CIDRAM/issues"
 Name: !lazy
  AbuseIPDB module: "AbuseIPDB モジュール。"
  BGPView module: "BGPView モジュール。"
@@ -147,7 +157,7 @@ config: !lazy
  bobuam_chrome: "「Chrome/Chromium」トークンの許可されている最低バージョン。 おすすめされた： {{BOBUAM Token.Chrome}}。"
  bobuam_edge: "「Edg/Edge」トークンの許可されている最低バージョン。 おすすめされた： {{BOBUAM Token.Edge}}。"
  bobuam_firefox: "「Firefox」トークンの許可されている最低バージョン。 おすすめされた： {{BOBUAM Token.Firefox}}。"
- bobuam_firefox_esr: "ＥＳＲため「Firefox」トークンの許可されたバージョン。 おすすめされた： {{BOBUAM Token.Firefox ESR}}。"
+ bobuam_firefox_esr: "ＥＳＲため「Firefox」トークンの許可されている最低バージョン。 おすすめされた： {{BOBUAM Token.Firefox ESR}}。"
  bobuam_opera: "「OPR」トークンの許可されている最低バージョン。 おすすめされた： {{BOBUAM Token.Opera}}。"
  bobuam_reason_ambiguous: "あいまいなユーザー・エージェント文字列が検出されたときに表示されるブロックの理由。"
  bobuam_reason_bot: "ブロックされたボットに表示されるブロック理由。"
@@ -800,6 +810,7 @@ link:
  Edit mode: "変更モード"
  File Manager: "ファイル・マネージャー"
  Get API key: "ＡＰＩキーをまだお持ちでない場合は、ここをクリックして取得してください。"
+ Glossary: "用語集"
  Home: "ホーム"
  IP Testing: "ＩＰテスト"
  IP Tracking: "ＩＰトラッキング"
@@ -1053,6 +1064,7 @@ tip:
  Enter user agent here (optional): "ここに、ユーザー・エージェントを入力してください（オプションです）。"
  Enter user agents here: "ここに、ユーザー・エージェントを入力してください。"
  File Manager: "ファイル・マネージャを使用する、ファイルを削除、編集、アップロード、ダウンロードができます。​慎重に使用する（これを使って、インストールを壊すことができます）。"
+ Glossary: "用語集では、CIDRAMで使用される用語の一部を説明し、使用されている文脈における意図された意味を明確にするのに役立ちます。"
  Greeting: "こんにちは、%s。"
  Home: "これはCIDRAMフロントエンドのホームページです。​続行するには、左側のナビゲーションメニューからリンクを選択します。"
  How many infractions to incur: "発生する違反の数。"

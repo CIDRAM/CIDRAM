@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2026.03.22).
+# This file: Swedish language data for the front-end (last modified: 2026.04.02).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -77,6 +77,16 @@ Extended Description: !lazy
  Referrer spam module: "Blockering baserat på referensspam ger i allmänhet ingen meningsfull säkerhetsfördel, men i vissa fall kan det vara användbart för vissa användare, för att samla in mer information om förfrågningar och för att kunna rapportera det."
  Stop Forum Spam module: "Skyddar registrerings och inloggningssidor mot IP-adresser som listas av SFS."
  Tor blocker module: "Förbjuder åtkomst från Tor-utgångsnoder genom DNSEL-uppslagningar (stöder både IPv4 och IPv6)."
+Glossary: !lazy
+ Entries:
+  CIDR: |
+   "CIDR" är en förkortning för "Classless Inter-Domain Routing", vilket är varifrån "CIDR" i "CIDRAM" kommer. "CIDRAM" är en förkortning för "Classless Inter-Domain Routing Access Manager".
+   I samband med CIDRAM hänvisar "CIDR" (eller "CIDRer") specifikt till delnät uttryckta med CIDR-notation.
+ Refs:
+  CIDR:
+   Classless Inter-Domain Routing – Wikipedia: "https://sv.wikipedia.org/wiki/Classless_Inter-Domain_Routing"
+  False positive:
+   Issues · CIDRAM/CIDRAM: "https://github.com/CIDRAM/CIDRAM/issues"
 Name: !lazy
  AbuseIPDB module: "AbuseIPDB modul."
  BGPView module: "BGPView modul."
@@ -147,7 +157,7 @@ config: !lazy
  bobuam_chrome: "Lägsta tillåtna version av "Chrome/Chromium"-token. Rekommenderad: {{BOBUAM Token.Chrome}}."
  bobuam_edge: "Lägsta tillåtna version av "Edg/Edge"-token. Rekommenderad: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "Lägsta tillåtna version av "Firefox"-token. Rekommenderad: {{BOBUAM Token.Firefox}}."
- bobuam_firefox_esr: "Tillåten version av "Firefox"-token för ESR-versionen. Rekommenderad: {{BOBUAM Token.Firefox ESR}}."
+ bobuam_firefox_esr: "Lägsta tillåtna version av "Firefox"-token för ESR-versionen. Rekommenderad: {{BOBUAM Token.Firefox ESR}}."
  bobuam_opera: "Lägsta tillåtna version av "OPR"-token. Rekommenderad: {{BOBUAM Token.Opera}}."
  bobuam_reason_ambiguous: "Blockorsaken som visas när en tvetydig användaragentsträng upptäcks."
  bobuam_reason_bot: "Blockorsaken som visas för botblockeringar."
@@ -810,6 +820,7 @@ link:
  Edit mode: "Redigeringsläge"
  File Manager: "Filhanterare"
  Get API key: "Om du inte redan har en API-nyckel, klicka här för att få en."
+ Glossary: "Ordlista"
  Home: "Hem"
  IP Testing: "IP-test"
  IP Tracking: "IP-spårning"
@@ -1069,14 +1080,14 @@ tip:
  Accounts: "Du kan styra vem som har tillgång till CIDRAM front-end på kontosidan."
  Actions menu: "Blockera lägger till 1 till antalet signaturer. Bypassera drar av 1 från antalet signaturer. Vitlista ställer in antalet signaturer till 0 och avslutar bearbetningen, vilket hoppar över alla efterföljande regler helt. Grålista ställer in antalet signaturer till 0, men avslutar inte bearbetningen. Profilera påverkar inte antalet signaturer, men är användbar när mer komplex logik kan behövas för att avgöra om andra typer av åtgärder ska utföras, eftersom genererade profiler kan vara kopplade till villkoren i efterföljande regler. Om antalet signaturer är 1 eller högre efter bearbetning kommer begäran att blockeras."
  Aggregator: "Du kan aggregera IP-adresser, subnät, och nätmasker till deras minsta möjliga uttryck med hjälp av aggregatorn. Ange data som ska aggregeras och tryck på "OK"."
- An accepted value is any CIDR with a range that covers the IP address of the request: "Ett godkänt värde är valfri CIDR med ett intervall som täcker begäranens IP-adress. T.ex., skulle 1.2.3.0/24, 1.2.0.0/16, 1.0.0.0/8, etc accepteras för 1.2.3.4. För att undvika falska positivat är smalare intervall (t.ex., 1.2.3.4/32) i allmänhet att föredra framför bredare intervall (t.ex., 0.0.0.0/1). Kalkylatorn kan användas för att hitta vilka CIDR-er som har intervall som täcker en specifik IP-adress."
+ An accepted value is any CIDR with a range that covers the IP address of the request: "Ett godkänt värde är valfri CIDR med ett intervall som täcker begäranens IP-adress. T.ex., skulle 1.2.3.0/24, 1.2.0.0/16, 1.0.0.0/8, etc accepteras för 1.2.3.4. För att undvika falska positivat är smalare intervall (t.ex., 1.2.3.4/32) i allmänhet att föredra framför bredare intervall (t.ex., 0.0.0.0/1). Kalkylatorn kan användas för att hitta vilka CIDRer som har intervall som täcker en specifik IP-adress."
  Auxiliary Rules Modes: "I visningsläget visas hjälpregler som en kompakt lista för enkel läsning. Regler i listan kan utökas och ytterligare detaljer visas genom att klicka på dem. Alternativ för att exportera eller ta bort en regel visas när du klickar på trigrammet (☰). Regler kan ändra ordning via dra-och-släpp, genom att dra en regel från dess befintliga position till önskad position. Redigeringsläge krävs för att modifiera hjälpregler, redigerbara fält och alternativ för att lägga till nya villkor, webhooks, eller annan logik till reglerna efter behov som anges på sidan. Nya hjälpregler kan skapas via båda lägena."
  Auxiliary Rules Priority: "Prioritet (högsta➡(likvärdig🔄ekvivalent)➡lägst):"
  Auxiliary Rules Webhooks: "När en regel utlöses, CIDRAM kommer att försöka meddela alla anslutna webhooks om händelsen. En webhook är en URL som kan ta emot POST-data, och kan vara användbar om det finns en extern tjänst, app, skript osv som finns på ett helt annat nätverk än CIDRAM, och där du vill att data som genereras av CIDRAM om begäran ska hanteras."
  Auxiliary Rules: "Du kan använda den här sidan för att skapa, ta bort och ändra hjälpregler för CIDRAM."
  Backup: "Den här sidan kan användas för att importera/exportera din konfiguration, hjälpregler, osv. Detta kan vara användbart om du behöver migrera data över olika installationer eller olika större versioner."
  Cache Data: "Här kan du granska innehållet i cacheminnet."
- Calculator: "Kalkylatorn låter dig beräkna CIDR-er och nätmasker för en IP-adress."
+ Calculator: "Kalkylatorn låter dig beräkna CIDRer och nätmasker för en IP-adress."
  Click the component name for more details: "Klicka på komponentnamnet för mer information."
  Configuration: "Du kan ändra konfigurationen för CIDRAM från front-enden konfigurationssida."
  Enter IP address here: "Ange IP-adress här."
@@ -1089,6 +1100,7 @@ tip:
  Enter user agent here (optional): "Ange användaragent här (valfritt)."
  Enter user agents here: "Ange användaragenter här."
  File Manager: "Du kan radera, redigera, ladda upp och ladda ner filer med hjälp av filhanteraren. Använd med försiktighet (du kan bryta din installation med detta)."
+ Glossary: "Ordlistan beskriver en del av den terminologi som används av CIDRAM, för att förtydliga den avsedda betydelsen i det sammanhang där den används."
  Greeting: "Hallå, %s."
  Home: "Detta är hemsidan för CIDRAM front-end. Välj en länk från navigeringsmenyn till vänster för att fortsätta."
  How many infractions to incur: "Hur många överträdelser som ska tillämpas."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2026.03.22).
+# This file: Portuguese language data for the front-end (last modified: 2026.04.02).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -58,7 +58,7 @@ Extended Description: !lazy
  AbuseIPDB module: "Bloqueia solicitações de IPs listados no AbuseIPDB."
  BGPView module:
   pt-BR: "Aproveita a API {{Links.BGPView}} para fornecer funcionalidade de pesquisa para ASNs e códigos de país para o CIDRAM, permitindo que ASNs e países sejam bloqueados ou incluídos na lista branca por meio da configuração da CIDRAM, e fornecer um meio de verificação de rede social para verificar solicitações do Facebook. (Se você usar este módulo, não precisará usar o módulo IP-API, pois eles têm a mesma propósito)."
-  pt-PT: "Aproveita a API {{Links.BGPView}} para fornecer funcionalidade de pesquisa para ASNs e códigos de país para o CIDRAM, a permitir que ASNs e países sejam bloqueados ou incluídos na lista branca por meio da configuração da CIDRAM, e fornecer um meio de verificação de rede social para verificar solicitações do Facebook. (Se você usar este módulo, não precisará usar o módulo IP-API, pois eles têm a mesma propósito)."
+  pt-PT: "Aproveita a API {{Links.BGPView}} para fornecer funcionalidade de pesquisa para ASNs e códigos de país para o CIDRAM, a permitir que ASNs e países sejam bloqueados ou incluídos na lista branca por meio da configuração da CIDRAM, e fornecer um meio de verificação de rede social para verificar solicitações do Facebook. (Se utilizar este módulo, não terá de utilizar o módulo IP-API, pois têm a mesma finalidade)."
  Bad TLDs blocker module: "Bloqueia hosts pertencentes a ISPs freqüentemente usados por spammers, hackers e outras entidades nefastas."
  Bad hosts blocker module: "Bloqueia hosts frequentemente usados por spammers, hackers e outras entidades nefastas."
  Bot user agents module:
@@ -69,7 +69,7 @@ Extended Description: !lazy
  HTTP version checker module: "Possibilita o bloqueio de protocolos específicos e versões HTTP por meio da configuração CIDRAM."
  IP-API module:
   pt-BR: "Aproveita a API {{Links.IP-API}} para fornecer funcionalidade de pesquisa para ASNs e códigos de país para o CIDRAM, permitindo que ASNs e países sejam bloqueados ou incluídos na lista branca por meio da configuração da CIDRAM, e fornecer um meio de verificação de rede social para verificar solicitações do Facebook. (Se você usar este módulo, não precisará usar o módulo BGPView, pois eles têm a mesma propósito)."
-  pt-PT: "Aproveita a API {{Links.IP-API}} para fornecer funcionalidade de pesquisa para ASNs e códigos de país para o CIDRAM, a permitir que ASNs e países sejam bloqueados ou incluídos na lista branca por meio da configuração da CIDRAM, e fornecer um meio de verificação de rede social para verificar solicitações do Facebook. (Se você usar este módulo, não precisará usar o módulo BGPView, pois eles têm a mesma propósito)."
+  pt-PT: "Aproveita a API {{Links.IP-API}} para fornecer funcionalidade de pesquisa para ASNs e códigos de país para o CIDRAM, a permitir que ASNs e países sejam bloqueados ou incluídos na lista branca por meio da configuração da CIDRAM, e fornecer um meio de verificação de rede social para verificar solicitações do Facebook. (Se utilizar este módulo, não terá de utilizar o módulo BGPView, pois têm a mesma finalidade)."
  IPv4: &ExtDesCloud "Bloqueia serviços em nuvem indesejados e pontos de extremidade não-humanos."
  IPv4-Bogons: &ExtDesBogons "Bloqueia bogon/marciano CIDRs."
  IPv4-ISPs: &ExtDesISPs "Bloqueia ISPs perigosos e propensos a spam (inclui redes multijogos, que podem conter endpoints humanos e não humanos)."
@@ -89,6 +89,42 @@ Extended Description: !lazy
   pt-PT: "O bloqueio baseado em spam de referência geralmente não fornece nenhum benefício de segurança significativo, mas, em alguns casos, pode ser útil para alguns utilizadores, para coletar mais informações sobre solicitações e para relatá-las."
  Stop Forum Spam module: "Protege as páginas de registro e login contra IPs listados pelo SFS."
  Tor blocker module: "Proíbe o acesso de nós de saída do Tor por meio de pesquisas DNSEL (suporta IPv4 e IPv6 ambas)."
+Glossary: !lazy
+ Entries:
+  CIDR:
+   pt-BR: |
+    "CIDR" é uma sigla para "Classless Inter-Domain Routing" (Roteamento Interdomínio Sem Classes), que é de onde vem o "CIDR" em "CIDRAM". "CIDRAM" é uma sigla para "Classless Inter-Domain Routing Access Manager" (Gerenciador de Acesso de Roteamento Interdomínio Sem Classes).
+    No contexto do CIDRAM, "CIDR" (ou "CIDRs") refere-se especificamente a sub-redes expressas usando a notação CIDR.
+   pt-PT: |
+    "CIDR" é uma sigla para "Classless Inter-Domain Routing" (Roteamento Interdomínio Sem Classes), que é de onde vem o "CIDR" em "CIDRAM". "CIDRAM" é uma sigla para "Classless Inter-Domain Routing Access Manager" (Gerenciador de Acesso de Roteamento Interdomínio Sem Classes).
+    No contexto do CIDRAM, "CIDR" (ou "CIDRs") refere-se especificamente a sub-redes expressas utilizando a notação CIDR.
+  Falso positivo:
+   pt-BR: |
+    Em geral, ao realizar um teste, quando os resultados são "positivos" (ou seja, as condições do teste são verdadeiras), mas o esperado (ou deveria ter sido) "negativo" (ou seja, os resultados do teste são errôneos), isso é chamado de "falso positivo". <em>Inglês: "false positive". Ou, em alternativa: "erro falso positivo"; "falso alarme".</em>
+    Alguns termos relacionados são "verdadeiro positivo", "verdadeiro negativo", e "falso negativo". <em>Inglês: "true positive", "true negative", "false negative".</em> Um "verdadeiro positivo" ocorre quando os resultados do teste e o estado real da condição são ambos verdadeiros (ou "positivos"), e um "verdadeiro negativo" ocorre quando os resultados do teste e o estado real da condição são ambos falsos (ou "negativos"). Um "verdadeiro positivo" ou um "verdadeiro negativo" é considerado uma "inferência correta".
+    O inverso de um "falso positivo" é um "falso negativo". Quando o resultado do teste é "negativo", mas o esperado (ou deveria ter sido) "positivo", o resultado é chamado de "falso negativo".
+    No contexto do CIDRAM, esses termos normalmente se referem a quando o CIDRAM bloqueia algo que não deveria, ou quando não consegue bloquear algo que deveria. Quando o CIDRAM bloqueia uma solicitação que não deveria ter sido bloqueada (por exemplo, devido a assinaturas deficientes, desatualizadas, ou incorretas), ou quando o faz por motivos errados, isso é um "falso positivo". Quando o CIDRAM não consegue bloquear uma solicitação que deveria ter sido bloqueada (por exemplo, devido a ameaças imprevistas, assinaturas ausentes, módulos defeituosos, ou deficiências no processo), isso é um "falso negativo" (embora normalmente descrito como uma "detecção perdida"). <em>Inglês: "missed detection".</em>
+    | | A solicitação NÃO deve ser bloqueada | A solicitação DEVE ser bloqueada |
+    | A solicitação NÃO está bloqueada | Verdadeiro negativo (inferência correta) | Detecção perdida (ou falso negativo) |
+    | A solicitação ESTÁ bloqueada | Falso positivo | Verdadeiro positivo (inferência correta) |
+    Se você encontrar falsos positivos, primeiro verifique a página de atualizações e, se algo estiver marcado como desatualizado, atualize. Depois disso, se o problema persistir, você poderá relatá-lo no sistema de rastreamento de problemas do CIDRAM.
+   pt-PT: |
+    Em geral, ao realizar um teste, quando os resultados são "positivos" (ou seja, as condições do teste são verdadeiras), mas o esperado (ou deveria ter sido) "negativo" (ou seja, os resultados do teste são erróneos), isto é designado por "falso positivo". <em>Inglês: "false positive". Ou, em alternativa: "erro falso positivo"; "falso alarme".</em>
+    Alguns termos relacionados são "verdadeiro positivo", "verdadeiro negativo", e "falso negativo". <em>Inglês: "true positive", "true negative", "false negative".</em> Um "verdadeiro positivo" ocorre quando os resultados do teste e o estado real da condição são ambos verdadeiros (ou "positivos"), e um "verdadeiro negativo" ocorre quando os resultados do teste e o estado real da condição são ambos falsos (ou "negativos"). Um "verdadeiro positivo" ou um "verdadeiro negativo" é considerado uma "inferência correta".
+    O inverso de um "falso positivo" é um "falso negativo". Quando o resultado do teste é "negativo", mas o esperado (ou deveria ter sido) "positivo", o resultado é designado por "falso negativo".
+    No contexto do CIDRAM, estes termos referem-se normalmente a quando o CIDRAM bloqueia algo que não deveria, ou quando não consegue bloquear algo que deveria. Quando o CIDRAM bloqueia um solicitação que não deveria ter sido bloqueado (por exemplo, devido a assinaturas deficientes, desatualizadas, ou incorretas), ou quando o faz por motivos errados, isto é um "falso positivo". Quando o CIDRAM não consegue bloquear um solicitação que deveria ter sido bloqueado (por exemplo, devido a ameaças imprevistas, assinaturas ausentes, módulos defeituosos, ou deficiências no processo), isto é um "falso negativo" (embora normalmente descrito como uma "deteção perdida"). <em>Inglês: "missed detection".</em>
+    | | A solicitação NÃO deve ser bloqueada | A solicitação DEVE ser bloqueada |
+    | A solicitação NÃO está bloqueada | Verdadeiro negativo (inferência correta) | Deteção perdida (ou falso negativo) |
+    | A solicitação ESTÁ bloqueada | Falso positivo | Verdadeiro positivo (inferência correta) |
+    Se encontrar falsos positivos, primeiro verifique a página de atualizações e, se algo estiver marcado como desatualizado, atualize. Depois disso, se o problema persistir, pode comunicá-lo no sistema de rastreio de problemas do CIDRAM.
+ Indexes:
+  CIDR: "cidr"
+  [Falso negativo, Falso positivo, Verdadeiro negativo, Verdadeiro positivo]: "false_positive"
+ Refs:
+  CIDR:
+   Roteamento Interdomínio Sem Classes – Wikipédia, a enciclopédia livre: "https://pt.wikipedia.org/wiki/Roteamento_Interdom%C3%ADnio_Sem_Classes"
+  Falso positivo:
+   Issues · CIDRAM/CIDRAM: "https://github.com/CIDRAM/CIDRAM/issues"
 Name: !lazy
  AbuseIPDB module: "Módulo AbuseIPDB."
  BGPView module: "Módulo BGPView."
@@ -173,7 +209,7 @@ config: !lazy
  bobuam_chrome: "Versão mais baixa permitida do token "Chrome/Chromium". Recomendado: {{BOBUAM Token.Chrome}}."
  bobuam_edge: "Versão mais baixa permitida do token "Edg/Edge". Recomendado: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "Versão mais baixa permitida do token "Firefox". Recomendado: {{BOBUAM Token.Firefox}}."
- bobuam_firefox_esr: "Versão permitida do token "Firefox" para a versão ESR. Recomendado: {{BOBUAM Token.Firefox ESR}}."
+ bobuam_firefox_esr: "Versão mais baixa permitida do token "Firefox" para a versão ESR. Recomendado: {{BOBUAM Token.Firefox ESR}}."
  bobuam_opera: "Versão mais baixa permitida do token "OPR". Recomendado: {{BOBUAM Token.Opera}}."
  bobuam_reason_ambiguous:
   pt-BR: "O motivo do bloqueio mostrado quando um agente de usuário ambígua é detectado."
@@ -228,8 +264,10 @@ config: !lazy
  frontend: "Configuração para o front-end."
  frontend_custom_footer:
   pt-BR: "Inserido como HTML no final de todas as páginas do front-end. Isso pode ser útil caso você queira incluir um aviso legal, link de contato, informações comerciais, ou similares em todas essas páginas."
-  pt-PT: "Inserido como HTML no final de todas as páginas do front-end. Isto pode ser útil caso você queira incluir um aviso legal, link de contacto, informações comerciais, ou similares em todas essas páginas."
- frontend_custom_header: "Inserido como HTML no início de todas as páginas do front-end. Isso pode ser útil caso você queira incluir um logotipo de site, cabeçalho personalizado, scripts, ou similares em todas essas páginas."
+  pt-PT: "Inserido como HTML no final de todas as páginas do front-end. Isto pode ser útil no caso de querer incluir um aviso legal, link de contacto, informações comerciais, ou similares em todas estas páginas."
+ frontend_custom_header:
+  pt-BR: "Inserido como HTML no início de todas as páginas do front-end. Isso pode ser útil caso você queira incluir um logotipo de site, cabeçalho personalizado, scripts, ou similares em todas essas páginas."
+  pt-PT: "Inserido como HTML no início de todas as páginas do front-end. Isto pode ser útil no caso de querer incluir um logótipo de site, cabeçalho personalizado, scripts, ou similares em todas estas páginas."
  frontend_enable_two_factor: "Esta diretiva determina se deve usar 2FA para contas front-end."
  frontend_frontend_log:
   pt-BR: "Arquivo para registrar tentativas de login ao front-end. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
@@ -258,17 +296,23 @@ config: !lazy
  general_disabled_channels:
   pt-BR: "Isso pode ser usado para impedir que o CIDRAM use canais específicos ao enviar solicitações (por exemplo, ao atualizar, ao buscar metadados de componentes, etc)."
   pt-PT: "Isto pode ser utilizado para impedir que o CIDRAM utilize canais específicos ao enviar solicitações (por exemplo, ao atualizar, ao procurar metadados de componentes, etc)."
- general_email_notification_address: "Se você optou por receber notificações do CIDRAM por e-mail, por exemplo, quando regras auxiliares específicas são desencadeadas, você pode especificar o endereço do destinatário dessas notificações aqui."
- general_email_notification_name: "Se você optou por receber notificações do CIDRAM por e-mail, por exemplo, quando regras auxiliares específicas são desencadeadas, você pode especificar o nome do destinatário dessas notificações aqui."
+ general_email_notification_address:
+  pt-BR: "Se você optou por receber notificações do CIDRAM por e-mail, por exemplo, quando regras auxiliares específicas são desencadeadas, você pode especificar o endereço do destinatário dessas notificações aqui."
+  pt-PT: "Se optou por receber notificações do CIDRAM por e-mail, por exemplo, quando são desencadeadas regras auxiliares específicas, pode especificar aqui o endereço do destinatário dessas notificações."
+ general_email_notification_name:
+  pt-BR: "Se você optou por receber notificações do CIDRAM por e-mail, por exemplo, quando regras auxiliares específicas são desencadeadas, você pode especificar o nome do destinatário dessas notificações aqui."
+  pt-PT: "Se optou por receber notificações do CIDRAM por e-mail, por exemplo, quando são desencadeadas regras auxiliares específicas, pode especificar aqui o nome do destinatário dessas notificações."
  general_email_notification_when: "Quando enviar notificações após serem geradas."
  general_emailaddr:
   pt-BR: "Se você desejar, você pode fornecer um endereço de e-mail aqui a ser dado para os usuários quando eles estão bloqueadas, para eles para usar como um ponto de contato para suporte e/ou assistência no caso de eles serem bloqueados por engano ou em erro. AVISO: Qualquer endereço de e-mail que você fornecer aqui certamente vai ser adquirido por robôs de spam e raspadores/scrapers durante o curso de seu ser usada aqui, e assim, é fortemente recomendado que, se você optar por fornecer um endereço de e-mail aqui, que você garantir que o endereço de e-mail você fornecer aqui é um endereço descartável e/ou um endereço que você não é importante (em outras palavras, você provavelmente não quer usar seu pessoal principal ou negócio principal endereço de e-mail)."
-  pt-PT: "Se você desejar, você pode fornecer um endereço de e-mail aqui a ser dado para os utilizadores quando eles estão bloqueadas, para eles para usar como um ponto de contacto para suporte e/ou assistência no caso de eles serem bloqueados por engano ou em erro. AVISO: Qualquer endereço de e-mail que você fornecer aqui certamente vai ser adquirido por robôs de spam e raspadores/scrapers durante o curso de seu ser usada aqui, e assim, é fortemente recomendado que, se você optar por fornecer um endereço de e-mail aqui, que você garantir que o endereço de e-mail você fornecer aqui é um endereço descartável e/ou um endereço que você não é importante (em outras palavras, você provavelmente não quer usar seu pessoal principal ou negócio principal endereço de e-mail)."
+  pt-PT: "Se desejar, pode fornecer um endereço de e-mail aqui a ser dado para os utilizadores quando eles estão bloqueadas, para eles para usar como um ponto de contacto para suporte e/ou assistência no caso de eles serem bloqueados por engano ou em erro. AVISO: Qualquer endereço de e-mail que você fornecer aqui certamente vai ser adquirido por robôs de spam e raspadores/scrapers durante o curso de seu ser usada aqui, e assim, é fortemente recomendado que, se optar por fornecer um endereço de e-mail aqui, que você garantir que o endereço de e-mail você fornecer aqui é um endereço descartável e/ou um endereço que você não é importante (em outras palavras, você provavelmente não quer usar seu pessoal principal ou negócio principal endereço de e-mail)."
  general_emailaddr_display_style:
   pt-BR: "Como você prefere que o endereço de e-mail seja apresentado aos usuários?"
   pt-PT: "Como você prefere que o endereço de e-mail seja apresentado aos utilizadores?"
  general_fields: "Controles para os campos durante eventos de bloqueio (quando uma solicitação é bloqueada)."
- general_force_hostname_lookup: "Forçar pesquisas de nome de anfitrião? True = Sim; False = Não [Padrão]. As pesquisas de nome de anfitrião normalmente são realizadas com base na necessidade, mas pode ser forçado para todos os solicitações. Isso pode ser útil como forma de fornecer informações mais detalhadas nos arquivos de log, mas também pode ter um efeito ligeiramente negativo sobre o desempenho."
+ general_force_hostname_lookup:
+  pt-BR: "Forçar pesquisas de nome de anfitrião? True = Sim; False = Não [Padrão]. As pesquisas de nome de anfitrião normalmente são realizadas com base na necessidade, mas pode ser forçado para todos os solicitações. Isso pode ser útil como forma de fornecer informações mais detalhadas nos arquivos de log, mas também pode ter um efeito ligeiramente negativo sobre o desempenho."
+  pt-PT: "Forçar pesquisas de nome de anfitrião? True = Sim; False = Não [Padrão]. As pesquisas de nome de anfitrião normalmente são realizadas com base na necessidade, mas pode ser forçado para todos os solicitações. Isto pode ser útil como forma de fornecer informações mais detalhadas nos arquivos de log, mas também pode ter um efeito ligeiramente negativo no desempenho."
  general_http_response_header_code:
   pt-BR: "Qual mensagem de status HTTP deve enviar o CIDRAM ao bloquear solicitações?"
   pt-PT: "Qual mensagem de estado HTTP deve enviar o CIDRAM ao bloquear solicitações?"
@@ -321,7 +365,7 @@ config: !lazy
  logging_log_rotation_limit: "A rotação de log limita o número de arquivos de log que devem existir a qualquer momento. Quando novos arquivos de log são criados, se o número total de arquivos de log exceder o limite especificado, a ação especificada será executada. Você pode especificar o limite desejado aqui. Um valor de 0 desativará a rotação de log."
  logging_log_sanitisation:
   pt-BR: "Ao usar o front-end página para os arquivos de log para exibir dados de log, o CIDRAM sanitiza os dados de log antes de exibi-los, para proteger os usuários contra ataques XSS e outras ameaças potenciais que os dados de log podem conter. No entanto, por padrão, os dados não são sanitizados durante o registro. Isso é para assegurar que os dados de log sejam preservados com precisão, para auxiliar qualquer análise heurística ou forense que possa ser necessária no futuro. No entanto, no caso de um usuário tentar ler dados de log usando ferramentas externas, e se essas ferramentas externas não realizarem seu próprio processo de sanitização, o usuário pode estar exposto a ataques XSS. Se necessário, você pode alterar o comportamento padrão usando esta diretiva de configuração. True = Sanitize dados ao registrá-lo (os dados são preservados com menos precisão, mas o risco de XSS é menor). False = Não sanitize dados ao registrá-lo (os dados são preservados com mais precisão, mas o risco de XSS é maior) [Padrão]."
-  pt-PT: "Ao usar o front-end página para os arquivos de log para exibir dados de log, o CIDRAM sanitiza os dados de log antes de exibi-los, para proteger os utilizadores contra ataques XSS e outras ameaças potenciais que os dados de log podem conter. No entanto, por padrão, os dados não são sanitizados durante o registro. Isso é para assegurar que os dados de log sejam preservados com precisão, para auxiliar qualquer análise heurística ou forense que possa ser necessária no futuro. No entanto, no caso de um utilizador tentar ler dados de log utilizando ferramentas externas, e se essas ferramentas externas não realizarem o seu próprio processo de sanitização, o usuário pode estar exposto a ataques XSS. Se necessário, você pode alterar o comportamento padrão utilizando esta diretiva de configuração. True = Sanitize dados ao registrá-lo (os dados são preservados com menos precisão, mas o risco de XSS é menor). False = Não sanitize dados ao registrá-lo (os dados são preservados com mais precisão, mas o risco de XSS é maior) [Padrão]."
+  pt-PT: "Ao usar o front-end página para os arquivos de log para exibir dados de log, o CIDRAM sanitiza os dados de log antes de exibi-los, para proteger os utilizadores contra ataques XSS e outras ameaças potenciais que os dados de log podem conter. No entanto, por padrão, os dados não são sanitizados durante o registro. Isso é para assegurar que os dados de log sejam preservados com precisão, para auxiliar qualquer análise heurística ou forense que possa ser necessária no futuro. No entanto, no caso de um utilizador tentar ler dados de log utilizando ferramentas externas, e se essas ferramentas externas não realizarem o seu próprio processo de sanitização, o usuário pode estar exposto a ataques XSS. Se necessário, pode alterar o comportamento padrão utilizando esta diretiva de configuração. True = Sanitize dados ao registrá-lo (os dados são preservados com menos precisão, mas o risco de XSS é menor). False = Não sanitize dados ao registrá-lo (os dados são preservados com mais precisão, mas o risco de XSS é maior) [Padrão]."
  logging_outbound_request_log:
   pt-BR: "Um arquivo para registrar os resultados de quaisquer solicitações de saída. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
   pt-PT: "Um arquivo para registar os resultados de quaisquer solicitações de saída. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
@@ -380,7 +424,7 @@ config: !lazy
  rate_limiting_exceptions: "Exceções (ou seja, solicitações que não devem ser limitadas à taxa). Relevante apenas quando a limitação de taxa está ativada."
  rate_limiting_hint:
   pt-BR: "Tenha em mente que, assim como todos os outros funcionalidades do CIDRAM, a funcionalidade de limitação de taxa do CIDRAM só pode ser aplicado às páginas e recursos aos quais o CIDRAM está conectado. Isso tipicamente significa que recursos não PHP não seriam cobertos, exceto quando explicitamente servidos por recursos PHP conectados. Se você puder usar um módulo de servidor, cPanel, ou alguma outra ferramenta de rede para impor a limitação de taxa, seria melhor usar isso em vez da funcionalidade de limitação de taxa do CIDRAM. Tenha também em mente que um usuário motivado e determinado poderia facilmente contornar a limitação de taxa girando seu endereço IP ou mudando para um provedor de proxy ou VPN do qual o CIDRAM ainda não tem conhecimento, e tenha em mente que a limitação de taxa pode ser muito irritante para usuários finais reais. Às vezes pode ser necessário, mas raramente é desejável."
-  pt-PT: "Tenha em mente que, assim como todos os outros funcionalidades do CIDRAM, a funcionalidade de limitação de taxa do CIDRAM só pode ser aplicado às páginas e recursos aos quais o CIDRAM está conectado. Isso tipicamente significa que recursos não PHP não seriam cobertos, exceto quando explicitamente servidos por recursos PHP conectados. Se você puder usar um módulo de servidor, cPanel, ou alguma outra ferramenta de rede para impor a limitação de taxa, seria melhor usar isso em vez da funcionalidade de limitação de taxa do CIDRAM. Tenha também em mente que um utilizador motivado e determinado poderia facilmente contornar a limitação de taxa rodando o seu endereço IP ou mudando para um provedor de proxy ou VPN do qual o CIDRAM ainda não tem conhecimento, e tenha em mente que a limitação de taxa pode ser muito irritante para os utilizadores finais reais. Às vezes pode ser necessário, mas raramente é desejável."
+  pt-PT: "Tenha em mente que, assim como todos os outros funcionalidades do CIDRAM, a funcionalidade de limitação de taxa do CIDRAM só pode ser aplicado às páginas e recursos aos quais o CIDRAM está conectado. Isso tipicamente significa que recursos não PHP não seriam cobertos, exceto quando explicitamente servidos por recursos PHP conectados. Se puder usar um módulo de servidor, cPanel, ou alguma outra ferramenta de rede para impor a limitação de taxa, seria melhor usar isso em vez da funcionalidade de limitação de taxa do CIDRAM. Tenha também em mente que um utilizador motivado e determinado poderia facilmente contornar a limitação de taxa rodando o seu endereço IP ou mudando para um provedor de proxy ou VPN do qual o CIDRAM ainda não tem conhecimento, e tenha em mente que a limitação de taxa pode ser muito irritante para os utilizadores finais reais. Às vezes pode ser necessário, mas raramente é desejável."
  rate_limiting_max_bandwidth: "A quantidade máxima de largura de banda permitida dentro do período de tolerância antes de ativar a limitação de taxa para solicitações futuras. Um valor de 0 desativa esse tipo de limitação de taxa. Padrão = 0KB."
  rate_limiting_max_requests: "O número máximo de solicitações permitido dentro do período de tolerância antes de ativar a limitação de taxa para solicitações futuras. Um valor de 0 desativa esse tipo de limitação de taxa. Padrão = 0."
  rate_limiting_precision_ipv4: "A precisão a ser usada ao monitorar o uso do IPv4. Valor espelha o tamanho do bloco CIDR. Defina para 32 para melhor precisão. Padrão = 32."
@@ -428,8 +472,10 @@ config: !lazy
  template_data_css_url: "URL de arquivo CSS para temas personalizados."
  template_data_custom_footer:
   pt-BR: "Inserido como HTML no final de todas as páginas de "acesso negado". Isso pode ser útil caso você queira incluir um aviso legal, link de contato, informações comerciais, ou similares em todas essas páginas."
-  pt-PT: "Inserido como HTML no final de todas as páginas de "acesso negado". Isto pode ser útil caso você queira incluir um aviso legal, link de contacto, informações comerciais, ou similares em todas essas páginas."
- template_data_custom_header: "Inserido como HTML no início de todas as páginas de "acesso negado". Isso pode ser útil caso você queira incluir um logotipo de site, cabeçalho personalizado, scripts, ou similares em todas essas páginas."
+  pt-PT: "Inserido como HTML no final de todas as páginas de "acesso negado". Isto pode ser útil no caso de querer incluir um aviso legal, link de contacto, informações comerciais, ou similares em todas estas páginas."
+ template_data_custom_header:
+  pt-BR: "Inserido como HTML no início de todas as páginas de "acesso negado". Isso pode ser útil caso você queira incluir um logotipo de site, cabeçalho personalizado, scripts, ou similares em todas essas páginas."
+  pt-PT: "Inserido como HTML no início de todas as páginas de "acesso negado". Isto pode ser útil no caso de querer incluir um logótipo de site, cabeçalho personalizado, scripts, ou similares em todas estas páginas."
  template_data_magnification: *MagnifDesc
  template_data_theme:
   pt-BR: "O tema a ser usado para eventos de bloqueio e solicitações CAPTCHA."
@@ -578,13 +624,13 @@ hints_sensitive_pages: "Nota: O que constitui uma "página confidencial" é dete
 hints_shorthand:
  0.:
   pt-BR: "Se seu site precisar de acesso via LAN ou localhost, não bloqueie isso. Caso contrário, você pode bloquear isso."
-  pt-PT: "Se o seu site precisar de acesso via LAN ou localhost, não bloqueie isso. Caso contrário, você pode bloquear isso."
+  pt-PT: "Se o seu site precisar de acesso via LAN ou localhost, não bloqueie isso. Caso contrário, pode bloquear isso."
  1.:
   pt-BR: "Nenhum dos arquivos de assinatura padrão usa isso, mas é suportado mesmo assim, caso possa ser útil para alguns usuários."
   pt-PT: "Nenhum dos arquivos de assinatura padrão usa isso, mas é suportado mesmo assim, caso possa ser útil para alguns utilizadores."
  2.:
   pt-BR: "Se você precisar que os usuários possam acessar seu site por meio de proxies, não bloqueie isso. Caso contrário, você pode bloquear isso."
-  pt-PT: "Se você precisar que os utilizadores possam aceder ao seu site por meio de proxies, não bloqueie isso. Caso contrário, você pode bloquear isso."
+  pt-PT: "Se precisar que os utilizadores possam aceder ao seu site por meio de proxies, não bloqueie isso. Caso contrário, pode bloquear isso."
  3.: "O uso direto em assinaturas não é suportado, mas pode ser invocado por outros meios em circunstâncias específicas."
  4.: "Refere-se aos casos em que as palavras curtas não são usadas, ou não são reconhecidas pelo CIDRAM."
  Um por assinatura.: "Uma assinatura pode invocar vários perfis, mas pode usar apenas uma palavra curta. É possível que várias palavras curtas podem ser adequadas, mas como apenas uma pode ser usada, procuramos sempre usar apenas a mais adequada."
@@ -621,7 +667,7 @@ hints_verification:
  "O que são "bypasses de acerto único"?": "Em alguns casos, uma solicitação com verificação positiva ainda pode ser bloqueada como resultado dos arquivos de assinatura, módulos, ou outras condições da solicitação, e bypasses podem ser necessários para evitar falsos positivos. No caso em que um bypass se destina a lidar com exatamente uma infração, nem mais nem menos, tal bypass pode ser descrito como um "bypass de acerto único"."
 hints_want_to_block:
  pt-BR: "!! A maioria dos usuários provavelmente deseja que isso seja bloqueado, independentemente de ser real ou falsificado. Ao não selecionar "tente verificar" e selecionar "bloquear solicitações não verificados", isso pode ser alcançado. Mas, devido alguns usuários podem querer verificar tais solicitações (a fim de bloquear os negativos enquanto permitem os positivos), em vez de bloquear tais solicitações por meio de módulos, as opções para lidar com essas solicitações são fornecidas aqui."
- pt-PT: "!! A maioria dos utilizadores provavelmente deseja que isso seja bloqueado, independentemente de ser real ou falsificado. Ao não selecionar "tente verificar" e selecionar "bloquear solicitações não verificados", isso pode ser alcançado. Mas, devido alguns utilizadores podem querer verificar tais solicitações (a fim de bloquear os negativos enquanto permitem os positivos), em vez de bloquear tais solicitações por meio de módulos, as opções para lidar com essas solicitações são fornecidas aqui."
+ pt-PT: "!! A maioria dos utilizadores provavelmente deseja que isso seja bloqueado, independentemente de ser real ou falsificado. Ao não selecionar "tente verificar" e selecionar "bloquear solicitações não verificados", isto pode ser conseguido. Mas, devido alguns utilizadores podem querer verificar tais solicitações (a fim de bloquear os negativos enquanto permitem os positivos), em vez de bloquear tais solicitações por meio de módulos, as opções para lidar com essas solicitações são fornecidas aqui."
 info_cli: !lazy
  by_default_ips:
   pt-BR: |
@@ -680,7 +726,7 @@ info_cli: !lazy
  you_can_also_w: "Você também pode gravar em arquivos:"
  you_can_print_:
   pt-BR: "Você pode imprimir dados na tela (às vezes útil ao encadear comandos):"
-  pt-PT: "Você pode imprimir dados na ecrã (às vezes útil ao encadear comandos):"
+  pt-PT: "Pode imprimir dados no ecrã (por vezes útil ao encadear comandos):"
 Some useful links:
  pt-BR: |+
   Alguns links úteis:<br />
@@ -926,7 +972,9 @@ label:
  Show API message:
   pt-BR: "Mostrar mensagem API?\nInstruções ao usuário, adequadas à API utilizada, sobre a completando do CAPTCHA."
   pt-PT: "Mostrar mensagem API?\nInstruções ao utilizador, adequadas à API utilizada, sobre a completando do CAPTCHA."
- Show cookie warning: "Mostrar aviso de cookie?\nDependendo das leis de privacidade do seu país ou estado (por exemplo, GDPR/DSGVO na UE, LGPD no Brasil, etc), isso pode ser legalmente exigido."
+ Show cookie warning:
+  pt-BR: "Mostrar aviso de cookie?\nDependendo das leis de privacidade do seu país ou estado (por exemplo, GDPR/DSGVO na UE, LGPD no Brasil, etc), isso pode ser legalmente exigido."
+  pt-PT: "Mostrar aviso de cookie?\nDependendo das leis de privacidade do seu país ou estado (por exemplo, GDPR/DSGVO na UE, LGPD no Brasil, etc), isto pode ser legalmente exigido."
  Show: "Mostrar"
  Signature type: "Tipo de assinatura:"
  Simple: "Simples"
@@ -1048,6 +1096,7 @@ link:
  Edit mode: "Modo de edição"
  File Manager: "Gerenciador de arquivos"
  Get API key: "Se você ainda não tiver uma chave de API, clique aqui para obter uma."
+ Glossary: "Glossário"
  Home: "Página principal"
  IP Testing: "Teste IP"
  IP Tracking: {"pt-BR": "Monitoração IP", "pt-PT": "Monitorização IP"}
@@ -1341,11 +1390,15 @@ tip:
  Auxiliary Rules Webhooks:
   pt-BR: "Quando uma regra é desencadeada, o CIDRAM tentará notificar quaisquer webhooks conectados sobre o evento. Um webhook é uma URL capaz de receber dados POST e pode ser útil se houver um serviço externo, aplicativo, script, etc hospedado em uma rede totalmente diferente da CIDRAM, na qual você deseja manipular os dados gerados pela CIDRAM sobre a solicitação."
   pt-PT: "Quando uma regra é desencadeada, o CIDRAM tentará notificar quaisquer webhooks conectados sobre o evento. Um webhook é um URL capaz de receber dados POST e pode ser útil se existir um serviço externo, aplicativo, script, etc alojado numa rede totalmente diferente da CIDRAM, na qual pretende manipular os dados gerados pela CIDRAM sobre o solicitação."
- Auxiliary Rules: "Você pode usar esta página para criar, deletar e modificar regras auxiliares para o CIDRAM."
+ Auxiliary Rules:
+  pt-BR: "Você pode usar esta página para criar, deletar e modificar regras auxiliares para o CIDRAM."
+  pt-PT: "Pode utilizar esta página para criar, deletar e modificar regras auxiliares para o CIDRAM."
  Backup:
   pt-BR: "Esta página pode ser usada para importar/exportar sua configuração, regras auxiliares, etc. Isso pode ser útil se você precisar migrar dados entre diferentes instalações ou diferentes versões principais."
-  pt-PT: "Esta página pode ser usada para importar/exportar a sua configuração, regras auxiliares, etc. Isto pode ser útil se você precisar migrar dados entre diferentes instalações ou diferentes versões principais."
- Cache Data: "Aqui você pode rever o conteúdo do cache."
+  pt-PT: "Esta página pode ser usada para importar/exportar a sua configuração, regras auxiliares, etc. Isto pode ser útil se precisar de migrar dados entre diferentes instalações ou diferentes versões principais."
+ Cache Data:
+  pt-BR: "Aqui você pode rever o conteúdo do cache."
+  pt-PT: "Aqui pode rever o conteúdo da cache."
  Calculator: "A calculadora permite calcular os CIDRs e máscaras de rede de um endereço IP."
  Click the component name for more details: "Clique no nome do componente para mais detalhes."
  Configuration: "A página de configuração permite que você modifique a configuração do CIDRAM a partir do front-end."
@@ -1364,7 +1417,10 @@ tip:
   pt-PT: "Insira os agentes do utilizador aqui."
  File Manager:
   pt-BR: "O gerenciador de arquivos permite deletar, editar, carregar e descarregar arquivos. Use com cuidado (você poderia quebrar sua instalação com este)."
-  pt-PT: "O gerenciador de arquivos permite deletar, editar, carregar e descarregar arquivos. Use com cuidado (você poderia quebrar a sua instalação com este)."
+  pt-PT: "O gerenciador de arquivos permite deletar, editar, carregar e descarregar arquivos. Use com cuidado (poderia quebrar a sua instalação com este)."
+ Glossary:
+  pt-BR: "O glossário descreve alguns dos termos usados ​​pelo CIDRAM, para ajudar a esclarecer o significado pretendido no contexto em que são usados."
+  pt-PT: "O glossário descreve alguns dos termos utilizados pelo CIDRAM, para ajudar a esclarecer o significado pretendido no contexto em que são utilizados."
  Greeting: "Olá, %s."
  Home: "Esta é a página principal do CIDRAM front-end. Selecione um link no menu de navegação à esquerda para continuar."
  How many infractions to incur: "Quantas infrações incorrer."
@@ -1446,7 +1502,7 @@ warning: !lazy
  Page termination is disabled: "Atenção: O encerramento da página está desativado! As solicitações não podem ser bloqueadas corretamente até que isso seja resolvido."
  Proceeding will log out all users:
   pt-BR: "Atenção: Todos os usuários serão saíram se você continuar."
-  pt-PT: "Atenção: Todos os utilizadores serão saíram se você continuar."
+  pt-PT: "Atenção: Todos os utilizadores serão saíram se continuar."
  The auxiliary rules execution stage is currently disabled: "Atenção: O etapa de execução das regras auxiliares está atualmente desativado."
  This account is not using a valid password:
   pt-BR: "Atenção: Esta conta não está usando uma senha válida!"

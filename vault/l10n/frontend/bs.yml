@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bosnian language data for the front-end (last modified: 2026.03.22).
+# This file: Bosnian language data for the front-end (last modified: 2026.04.02).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -77,6 +77,15 @@ Extended Description: !lazy
  Referrer spam module: "Blokiranje zasnovano na neželjenoj e-pošti preporuke generalno neće pružiti nikakvu značajnu sigurnosnu prednost, ali u nekim slučajevima može biti korisno za neke korisnike, za prikupljanje više informacija o zahtjevima i mogućnost prijaviti."
  Stop Forum Spam module: "IP adresama koje navodi SFS biće onemogućen pristup stranicama za prijavu i registraciju."
  Tor blocker module: "Zabranjuje pristup iz Tor izlaznih čvorova putem DNSEL pretraživanja (IPv4 i IPv6 oba podržana)."
+Glossary: !lazy
+ Entries:
+  CIDR: |
+   "CIDR" je akronim za "Classless Inter-Domain Routing", odakle potiče "CIDR" u "CIDRAM", pri čemu je "CIDRAM" akronim za "Classless Inter-Domain Routing Access Manager".
+   U kontekstu CIDRAM-a, "CIDR" (ili "CIDR-ovi") se posebno odnosi na podmreže izražene korištenjem CIDR notacije.
+ Refs:
+  False positive:
+   Lažna pozitivnost i lažna negativnost - Wikipedia: "https://bs.wikipedia.org/wiki/La%C5%BEna_pozitivnost_i_la%C5%BEna_negativnost"
+   Issues · CIDRAM/CIDRAM: "https://github.com/CIDRAM/CIDRAM/issues"
 Name: !lazy
  AbuseIPDB module: "AbuseIPDB modul."
  BGPView module: "BGPView modul."
@@ -147,7 +156,7 @@ config: !lazy
  bobuam_chrome: "Najniža dozvoljena verzija tokena "Chrome/Chromium". Preporučeno: {{BOBUAM Token.Chrome}}."
  bobuam_edge: "Najniža dozvoljena verzija tokena "Edg/Edge". Preporučeno: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "Najniža dozvoljena verzija tokena "Firefox". Preporučeno: {{BOBUAM Token.Firefox}}."
- bobuam_firefox_esr: "Dozvoljena verzija tokena "Firefox" za verziju ESR. Preporučeno: {{BOBUAM Token.Firefox ESR}}."
+ bobuam_firefox_esr: "Najniža dozvoljena verzija tokena "Firefox" za verziju ESR. Preporučeno: {{BOBUAM Token.Firefox ESR}}."
  bobuam_opera: "Najniža dozvoljena verzija tokena "OPR". Preporučeno: {{BOBUAM Token.Opera}}."
  bobuam_reason_ambiguous: "Razlog blokiranja koji se prikazuje kada se otkrije dvosmislen niz korisničkog agenta."
  bobuam_reason_bot: "Razlog blokiranja prikazan je za blokirane botove."
@@ -816,6 +825,7 @@ link:
  Edit mode: "Režim uređivanja"
  File Manager: "Upravitelj datoteka"
  Get API key: "Ako već nemate API ključ, kliknite ovdje da biste ga dobili."
+ Glossary: "Glosar"
  Home: "Početna stranica"
  IP Testing: "IP testiranje"
  IP Tracking: "IP praćenje"
@@ -1111,6 +1121,7 @@ tip:
  Enter user agent here (optional): "Ovdje unesite korisničkog agenta (opcionalno)."
  Enter user agents here: "Ovdje unesite korisničke agente."
  File Manager: "Upravitelj datoteka vam omogućava brisanje, uređivanje, otpremanje, i preuzimanje datoteka. Koristite oprezno (ovim možete pokvariti instalaciju)."
+ Glossary: "Glosar opisuje neke od termina koje koristi CIDRAM, kako bi se razjasnilo namjeravano značenje u kontekstu gdje se koristi."
  Greeting: "Zdravo, %s."
  Home: "Ovo je početna stranica za CIDRAM front-end. Odaberite vezu iz navigacijskog menija na lijevoj strani da nastavite."
  How many infractions to incur: "Koliko prekršaja treba napraviti."

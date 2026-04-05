@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2026.03.22).
+# This file: English language data for the front-end (last modified: 2026.04.02).
 ##/
 
 Abuse category: !lazy
@@ -67,6 +67,30 @@ Extended Description: !lazy
  Referrer spam module: "Blocking based on referrer spam won't generally provide any meaningful security benefit, but in some cases, could be useful for some users, for gathering more information about requests, and for being able to report it."
  Stop Forum Spam module: "Protects registration and login pages against IPs listed by SFS."
  Tor blocker module: "Prohibits access from Tor exit nodes through DNSEL lookups (supports both IPv4 and IPv6)."
+Glossary: !lazy
+ Entries:
+  CIDR: |
+   "CIDR" is an acronym for "Classless Inter-Domain Routing", which is where the "CIDR" in "CIDRAM" comes from, "CIDRAM" being an acronym for "Classless Inter-Domain Routing Access Manager".
+   In the context of CIDRAM, "CIDR" (or "CIDRs") refers specifically to subnets expressed using CIDR notation.
+  False positive: |
+   In general, when performing a test, when the results of the test are "positive" (i.e., conditions of the test are found to be true), but were expected to be (or should've been) "negative" (i.e., the results of the test are erroneous), it's referred to as a "false positive". <em>Alternatively: "false positive error"; "false alarm".</em>
+   Some related terms are "true positive", "true negative", and "false negative". A "true positive" refers to when the results of the test and the actual state of the condition are both true (or "positive"), and a "true negative" refers to when the results of the test and the actual state of the condition are both false (or "negative"). A "true positive" or a "true negative" is considered to be a "correct inference".
+   The inverse of a "false positive" is a "false negative". When the results of the test are "negative", but were expected to be (or should've been) "positive", the results are referred to as a "false negative".
+   In the context of CIDRAM, these terms typically refer to when CIDRAM blocks something it shouldn't, or when it fails to block something it should. When CIDRAM blocks a request which shouldn't have been blocked (e.g., due to bad, outdated, or incorrect signatures), or when it does so for the wrong reasons, such is a "false positive". When CIDRAM fails to block a request which should've been blocked (e.g., due to unforeseen threats, missing signatures, faulty modules, or shortcomings in the process), such is "false negative" (though typically described as a "missed detection").
+   | | The request should NOT be blocked | The request SHOULD be blocked |
+   | The request is NOT blocked | True negative (correct inference) | Missed detection (or false negative) |
+   | The request IS blocked | False positive | True positive (correct inference) |
+   If you encounter false positives, first check the updates page, and if anything is marked as outdated, update it. After that, if the problem still persists, you can report the problem at CIDRAM's issue tracker.
+ Indexes:
+  CIDR: "cidr"
+  [False negative, False positive, True negative, True positive]: "false_positive"
+ Refs:
+  CIDR:
+   Classless Inter-Domain Routing - Wikipedia: "https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing"
+   "CIDR Notation\x3A A Beginner's Guide to IP Addressing": "https://whatismyipaddress.com/cidr"
+  False positive:
+   False positives and false negatives - Wikipedia: "https://en.wikipedia.org/wiki/False_positives_and_false_negatives"
+   Issues · CIDRAM/CIDRAM: "https://github.com/CIDRAM/CIDRAM/issues"
 Name: !lazy
  AbuseIPDB module: "AbuseIPDB module."
  BGPView module: "BGPView module."
@@ -139,7 +163,7 @@ config: !lazy
  bobuam_chrome: "Lowest allowed version of the "Chrome/Chromium" token. Recommended: {{BOBUAM Token.Chrome}}."
  bobuam_edge: "Lowest allowed version of the "Edg/Edge" token. Recommended: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "Lowest allowed version of the "Firefox" token. Recommended: {{BOBUAM Token.Firefox}}."
- bobuam_firefox_esr: "Allowed version of the "Firefox" token for the ESR version. Recommended: {{BOBUAM Token.Firefox ESR}}."
+ bobuam_firefox_esr: "Lowest allowed version of the "Firefox" token for the ESR version. Recommended: {{BOBUAM Token.Firefox ESR}}."
  bobuam_opera: "Lowest allowed version of the "OPR" token. Recommended: {{BOBUAM Token.Opera}}."
  bobuam_reason_ambiguous: "The block reason shown when an ambiguous user agent string is detected."
  bobuam_reason_bot: "The block reason shown for blocked bots."
@@ -832,6 +856,7 @@ link:
  Edit mode: "Edit mode"
  File Manager: "File Manager"
  Get API key: "If you don't already have an API key, click here to get one."
+ Glossary: "Glossary"
  Home: "Home"
  IP Testing: "IP Testing"
  IP Tracking: "IP Tracking"
@@ -1117,6 +1142,7 @@ tip:
  Enter user agent here (optional): "Enter user agent here (optional)."
  Enter user agents here: "Enter user agents here."
  File Manager: "The file manager allows you to delete, edit, upload, and download files. Use with caution (you could break your installation with this)."
+ Glossary: "The glossary describes some of the terminology used by CIDRAM, to help clarify the intended meaning in the context where used."
  Greeting: "Hello, %s."
  Home: "This is the homepage for the CIDRAM front-end. Select a link from the navigation menu on the left to continue."
  How many infractions to incur: "How many infractions to incur."

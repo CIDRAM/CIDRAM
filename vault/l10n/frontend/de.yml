@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2026.03.26).
+# This file: German language data for the front-end (last modified: 2026.04.02).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -77,6 +77,16 @@ Extended Description: !lazy
  Referrer spam module: "Das Blockieren auf der Basis von Referrer-Spam bietet im Allgemeinen keinen bedeutenden Sicherheitsvorteil, jedoch in einigen Fällen kann dies für einige Benutzer hilfreich sein, um weitere Informationen zur Anfragen zu sammeln und um sie zu melden."
  Stop Forum Spam module: "Schützt die Registrierung und die Einloggen-Seiten vor den von SFS aufgelisteten IPs."
  Tor blocker module: "Verbietet den Zugriff von Tor-Ausgangsknoten über DNSEL-Lookups (unterstützt IPv4 und IPv6 beide)."
+Glossary: !lazy
+ Entries:
+  CIDR: |
+   „CIDR“ ist ein Akronym für „Classless Inter-Domain Routing“, daher stammt auch das „CIDR“ in „CIDRAM“, wobei „CIDRAM“ ein Akronym für „Classless Inter-Domain Routing Access Manager“ ist.
+   Im Kontext von CIDRAM bezieht sich „CIDR“ (oder „CIDRs“) speziell auf Subnetze die in CIDR-Notation ausgedrückt werden.
+ Refs:
+  CIDR:
+   Classless Inter-Domain Routing – Wikipedia: "https://de.wikipedia.org/wiki/Classless_Inter-Domain_Routing"
+  False positive:
+   Issues · CIDRAM/CIDRAM: "https://github.com/CIDRAM/CIDRAM/issues"
 Name: !lazy
  AbuseIPDB module: "AbuseIPDB-Modul."
  BGPView module: "BGPView-Modul."
@@ -147,7 +157,7 @@ config: !lazy
  bobuam_chrome: "Niedrigste zulässige Version des „Chrome/Chromium“-Tokens. Empfohlen: {{BOBUAM Token.Chrome}}."
  bobuam_edge: "Niedrigste zulässige Version des „Edg/Edge“-Tokens. Empfohlen: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "Niedrigste zulässige Version des „Firefox“-Tokens. Empfohlen: {{BOBUAM Token.Firefox}}."
- bobuam_firefox_esr: "Zulässige Version des „Firefox“-Tokens für die ESR-Version. Empfohlen: {{BOBUAM Token.Firefox ESR}}."
+ bobuam_firefox_esr: "Niedrigste zulässige Version des „Firefox“-Tokens für die ESR-Version. Empfohlen: {{BOBUAM Token.Firefox ESR}}."
  bobuam_opera: "Niedrigste zulässige Version des „OPR“-Tokens. Empfohlen: {{BOBUAM Token.Opera}}."
  bobuam_reason_ambiguous: "Der Blockierungsgrund der angezeigt wird wenn eine mehrdeutige Benutzeragenten erkannt wird."
  bobuam_reason_bot: "Der Blockierungsgrund der angezeigt wird wenn Bots blockiert werden."
@@ -209,7 +219,7 @@ config: !lazy
  general_email_notification_address: "Wenn Sie Benachrichtigungen von CIDRAM per E-Mail wünschen, z.B., wenn bestimmte Hilfsregeln ausgelöst werden, hier können Sie die Empfängeradresse für diese Benachrichtigungen angeben."
  general_email_notification_name: "Wenn Sie Benachrichtigungen von CIDRAM per E-Mail wünschen, z.B., wenn bestimmte Hilfsregeln ausgelöst werden, hier können Sie den Empfängernamen für diese Benachrichtigungen angeben."
  general_email_notification_when: "Wann sollen Benachrichtigungen nach der Generierung gesendet werden."
- general_emailaddr: "Wenn Sie möchten, können Sie hier eine E-Mail-Adresse angeben, geben auf den Benutzern wenn sie blockiert, für Unterstützung für den Fall dass sie ist blockiert versehentlich oder im fehler. WARNUNG: Jede E-Mail-Adresse die Sie hier angeben wird sicherlich durch Spambots erworben werden im Zuge ihrer Verwendung hier, und so, es wird dringend empfohlen, wenn Sie hier eine E-Mail-Adresse angeben, dass die E-Mail-Adresse die Sie hier angeben, eine Einwegadresse ist, und/oder eine Adresse die Sie nichts dagegen haben Spam (mit anderen Worten, möchten Sie wahrscheinlich nicht Ihre primären persönlichen oder primären geschäftlichen E-Mail-Adressen verwenden)."
+ general_emailaddr: "Wenn Sie möchten, können Sie hier eine E-Mail-Adresse angeben, um den Benutzern zu geben wenn sie blockiert sind, für Unterstützung im Falle dass sie versehentlich oder im Fehler blockiert sind. WARNUNG: Jede E-Mail-Adresse die Sie hier angeben wird sicherlich durch Spambots erworben werden im Zuge ihrer Verwendung hier, und so, es wird dringend empfohlen, wenn Sie hier eine E-Mail-Adresse angeben, dass die E-Mail-Adresse die Sie hier angeben, eine Einwegadresse ist, und/oder eine Adresse die Sie nichts dagegen haben Spam (mit anderen Worten, möchten Sie wahrscheinlich nicht Ihre primären persönlichen oder primären geschäftlichen E-Mail-Adressen verwenden)."
  general_emailaddr_display_style: "Wie möchten Sie die E-Mail-Adresse für die Nutzer anzeigen?"
  general_fields: "Kontrollen für die Felder während Blockereignissen (wenn eine Anfrage blockiert wird)."
  general_force_hostname_lookup: "Hostnamen-Suchen werden normalerweise auf einer „wie benötigt“-Basis durchgeführt, können jedoch für alle Anforderungen erzwungen werden. Dies kann nützlich sein, um detailliertere Informationen in der Protokolldateien bereitzustellen, aber auch kann sich leicht negativ auf die Performance auswirken. Erzwinge Hostnamen-Suche? True = Ja; False = Nein [Standardeinstellung]."
@@ -810,6 +820,7 @@ link:
  Edit mode: "Bearbeitungsmodus"
  File Manager: "Dateimanager"
  Get API key: "Wenn Sie noch keinen API-Schlüssel haben, klicken Sie hier um einen zu erhalten."
+ Glossary: "Glossar"
  Home: "Startseite"
  IP Testing: "IP-Test"
  IP Tracking: "IP-Tracking"
@@ -1093,6 +1104,7 @@ tip:
  Enter user agent here (optional): "Geben Sie hier der Benutzeragent (optional)."
  Enter user agents here: "Geben Sie hier die Benutzeragenten."
  File Manager: "Mit dem Dateimanager können Sie Dateien löschen, bearbeiten, hochladen und herunterladen. Mit Vorsicht verwenden (können Sie Ihre Installation mit diesem brechen)."
+ Glossary: "Das Glossar beschreibt einige der von CIDRAM verwendeten Begriffe, um die beabsichtigte Bedeutung im jeweiligen Kontext zu verdeutlichen."
  Greeting: "Hallo, %s."
  Home: "Dies ist die Homepage der CIDRAM Frontend. Wählen Sie einen Link aus dem Navigationsmenü auf der linken um fortzufahren."
  How many infractions to incur: "Wie viele Verstöße zu gelten."

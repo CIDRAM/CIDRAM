@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Marathi language data for the front-end (last modified: 2026.03.22).
+# This file: Marathi language data for the front-end (last modified: 2026.04.02).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -77,6 +77,14 @@ Extended Description: !lazy
  Referrer spam module: "रेफरर स्पॅमवर आधारित ब्लॉक केल्याने सहसा कोणताही अर्थपूर्ण सुरक्षा लाभ मिळत नाही, परंतु काही प्रकरणांमध्ये, काही वापरकर्त्यांसाठी, विनंत्यांबद्दल अधिक माहिती गोळा करण्यासाठी आणि ती अहवाल करण्यास सक्षम होण्यासाठी उपयुक्त ठरू शकते."
  Stop Forum Spam module: "SFS द्वारे सूचीबद्ध केलेल्या IP पत्त्यांपासून नोंदणी आणि लॉगिन पृष्ठांचे संरक्षण करते."
  Tor blocker module: "DNSEL लुकअपद्वारे टोर एक्झिट नोड्समधून प्रवेश प्रतिबंधित करते (IPv4 आणि IPv6 दोन्हींना समर्थन देते)."
+Glossary: !lazy
+ Entries:
+  CIDR: |
+   "CIDR" हे "Classless Inter-Domain Routing" चे संक्षिप्त रूप आहे, आणि "CIDRAM" मधील "CIDR" हे नाव येथूनच आले आहे. "CIDRAM" हे "Classless Inter-Domain Routing Access Manager" चे संक्षिप्त रूप आहे.
+   CIDRAM च्या संदर्भात, "CIDR" म्हणजे विशेषतः CIDR नोटेशन वापरून व्यक्त केलेले सबनेट.
+ Refs:
+  False positive:
+   Issues · CIDRAM/CIDRAM: "https://github.com/CIDRAM/CIDRAM/issues"
 Name: !lazy
  AbuseIPDB module: "AbuseIPDB मॉड्यूल."
  BGPView module: "BGPView मॉड्यूल."
@@ -147,7 +155,7 @@ config: !lazy
  bobuam_chrome: ""Chrome/Chromium" टोकनची सर्वात कमी परवानगी असलेली आवृत्ती. शिफारस: {{BOBUAM Token.Chrome}}."
  bobuam_edge: ""Edg/Edge" टोकनची सर्वात कमी परवानगी असलेली आवृत्ती. शिफारस: {{BOBUAM Token.Edge}}."
  bobuam_firefox: ""Firefox" टोकनची सर्वात कमी परवानगी असलेली आवृत्ती. शिफारस: {{BOBUAM Token.Firefox}}."
- bobuam_firefox_esr: "ESR आवृत्तीसाठी "Firefox" टोकनची अनुमत आवृत्ती. शिफारस: {{BOBUAM Token.Firefox ESR}}."
+ bobuam_firefox_esr: "ESR आवृत्तीसाठी "Firefox" टोकनची सर्वात कमी परवानगी असलेली आवृत्ती. शिफारस: {{BOBUAM Token.Firefox ESR}}."
  bobuam_opera: ""OPR" टोकनची सर्वात कमी परवानगी असलेली आवृत्ती. शिफारस: {{BOBUAM Token.Opera}}."
  bobuam_reason_ambiguous: "जेव्हा एखादी अस्पष्ट वापरकर्ता एजंट स्ट्रिंग आढळते तेव्हा अवरोधित करण्याचे कारण दाखवायचे."
  bobuam_reason_bot: "अवरोधित केलेल्या बॉट्ससाठी अवरोधित करण्याचे कारण दाखवायचे."
@@ -806,6 +814,7 @@ link:
  Edit mode: "संपादन मोड"
  File Manager: "फाइल व्यवस्थापक"
  Get API key: "जर तुमच्याकडे आधीच API की नसेल, तर ती मिळविण्यासाठी येथे क्लिक करा."
+ Glossary: "शब्दावली"
  Home: "मुख्यपृष्ठ"
  IP Testing: "IP चाचणी"
  IP Tracking: "IP ट्रॅकिंग"
@@ -1081,6 +1090,7 @@ tip:
  Enter user agent here (optional): "येथे वापरकर्ता एजंट प्रविष्ट करा (पर्यायी)."
  Enter user agents here: "येथे वापरकर्ता एजंट प्रविष्ट करा."
  File Manager: "फाइल मॅनेजर तुम्हाला फायली डिलीट, एडिट, अपलोड, आणि डाउनलोड करण्याची परवानगी देतो. सावधगिरीने वापरा (यामुळे तुमची स्थापना खंडित होऊ शकते)."
+ Glossary: "या शब्दकोशात CIDRAM द्वारे वापरल्या जाणाऱ्या काही पारिभाषिक शब्दांचे वर्णन केले आहे, जेणेकरून वापराच्या संदर्भात त्यांचा अभिप्रेत अर्थ स्पष्ट होण्यास मदत होईल."
  Greeting: "नमस्कार, %s."
  Home: "हे CIDRAM फ्रंट-एंडचे होमपेज आहे. पुढे जाण्यासाठी डावीकडील नेव्हिगेशन मेनूमधून एक लिंक निवडा."
  How many infractions to incur: "किती उल्लंघने भोगायची."

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2026.03.28).
+ * This file: General methods used by the front-end (last modified: 2026.03.29).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -90,7 +90,7 @@ trait FrontEndMethods
                 $Base,
                 \RecursiveDirectoryIterator::FOLLOW_SYMLINKS | \RecursiveDirectoryIterator::SKIP_DOTS | \RecursiveDirectoryIterator::UNIX_PATHS
             ), \RecursiveIteratorIterator::SELF_FIRST), 0, 1000);
-            if (iterator_count($List) >= 1000) {
+            if (\iterator_count($List) >= 1000) {
                 unset($List);
                 return $this->fileManagerRecursiveList($Base, false);
             }

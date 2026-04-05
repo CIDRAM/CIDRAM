@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Afrikaans language data for the front-end (last modified: 2026.03.22).
+# This file: Afrikaans language data for the front-end (last modified: 2026.04.02).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -77,6 +77,27 @@ Extended Description: !lazy
  Referrer spam module: "Blokkering gebaseer op verwyser-strooipos sal oor die algemeen geen betekenisvolle sekuriteitsvoordeel bied nie, maar in sommige gevalle kan dit nuttig wees vir sommige gebruikers, om meer inligting oor versoeke in te samel en om dit te kan rapporteer."
  Stop Forum Spam module: "Beskerm registrasie en intekenbladsye teen IP's wat deur SFS gelys word."
  Tor blocker module: "Verbied toegang vanaf Tor-uitgangsnodusse deur DNSEL-opsoeke (ondersteun beide IPv4 en IPv6)."
+Glossary: !lazy
+ Entries:
+  CIDR: |
+   "CIDR" is 'n akroniem vir "Classless Inter-Domain Routing", en dit is waar die "CIDR" in "CIDRAM" vandaan kom. "CIDRAM" is 'n akroniem is vir "Classless Inter-Domain Routing Access Manager".
+   In die konteks van CIDRAM verwys "CIDR" (of "CIDR's") spesifiek na subnette wat uitgedruk word met behulp van CIDR-notasie.
+  Vals positief: |
+   Oor die algemeen, wanneer 'n toets uitgevoer word, wanneer die resultate van die toets "positief" is (d.w.s., die voorwaardes van die toets word as waar bevind), maar verwag is om "negatief" te wees (d.w.s., die resultate van die toets is foutief), word dit 'n "vals positief" genoem. <em>Engels: "false positive". Of alternatiewelik: "vals positiewe fout"; "vals alarm".</em>
+   Sommige verwante terme is "ware positief", "ware negatief", en "vals negatief". <em>Engels: "true positive", "true negative", "false negative".</em> "Waar positief" verwys na wanneer die resultate van die toets en die werklike toestand van die toestand beide waar (of "positief") is, en "waar negatief" verwys na wanneer die resultate van die toets en die werklike toestand van die toestand beide vals (of "negatief") is; 'n "ware positief" of 'n "ware negatief" word as 'n "korrekte inferensie" beskou.
+   Die omgekeerde van 'n "vals positief" is 'n "vals negatief". Wanneer die resultate van die toets "negatief" is, maar verwag is om "positief" te wees (of moes gewees het), word die resultate "vals negatief" genoem.
+   In die konteks van CIDRAM verwys hierdie terme tipies na wanneer CIDRAM iets blokkeer wat dit nie behoort te blokkeer nie, of wanneer dit nie daarin slaag om iets te blokkeer wat dit behoort te blokkeer nie. Wanneer CIDRAM 'n versoek blokkeer wat nie geblokkeer moes gewees het nie (bv., as gevolg van slegte, verouderde, of verkeerde handtekeninge), of wanneer dit om die verkeerde redes doen, is dit 'n "vals positief". Wanneer CIDRAM nie 'n versoek blokkeer wat geblokkeer moes gewees het nie (bv., as gevolg van onvoorsiene bedreigings, ontbrekende handtekeninge, foutiewe modules, of tekortkominge in die proses), is dit "vals negatief" (alhoewel dit tipies beskryf word as 'n "gemiste opsporing"). <em>Engels: "missed detection".</em>
+   | | Die versoek moet NIE geblokkeer word nie | Die versoek MOET geblokkeer word |
+   | Die versoek is NIE geblokkeer nie | Ware negatief (korrekte inferensie) | Gemiste opsporing (of vals negatief) |
+   | Die versoek IS geblokkeer | Vals positief | Ware positief (korrekte inferensie) |
+   As jy vals positiewe teëkom, kyk eers na die opdateringsbladsy, en as enigiets as verouderd gemerk is, dateer dit op. Daarna, as die probleem steeds voortduur, kan jy die probleem by CIDRAM se probleemopsporingsprogram aanmeld.
+ Indexes:
+  CIDR: "cidr"
+  [Vals negatief, Vals positief, Ware negatief, Ware positief]: "false_positive"
+ Refs:
+  Vals positief:
+   Vals positief en vals negatief - Wikipedia: "https://af.wikipedia.org/wiki/Vals_positief_en_vals_negatief"
+   Issues · CIDRAM/CIDRAM: "https://github.com/CIDRAM/CIDRAM/issues"
 Name: !lazy
  AbuseIPDB module: "AbuseIPDB module."
  BGPView module: "BGPView module."
@@ -147,7 +168,7 @@ config: !lazy
  bobuam_chrome: "Laagste toegelate weergawe van die "Chrome/Chromium"-token. Aanbeveel: {{BOBUAM Token.Chrome}}."
  bobuam_edge: "Laagste toegelate weergawe van die "Edg/Edge"-token. Aanbeveel: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "Laagste toegelate weergawe van die "Firefox"-token. Aanbeveel: {{BOBUAM Token.Firefox}}."
- bobuam_firefox_esr: "Toegelate weergawe van die "Firefox"-token vir die ESR-weergawe. Aanbeveel: {{BOBUAM Token.Firefox ESR}}."
+ bobuam_firefox_esr: "Laagste toegelate weergawe van die "Firefox"-token vir die ESR-weergawe. Aanbeveel: {{BOBUAM Token.Firefox ESR}}."
  bobuam_opera: "Laagste toegelate weergawe van die "OPR"-token. Aanbeveel: {{BOBUAM Token.Opera}}."
  bobuam_reason_ambiguous: "Blokrede wat gewys word wanneer 'n dubbelsinnige gebruikersagentstring bespeur word."
  bobuam_reason_bot: "Blokrede wat vir geblokkeerde bots gewys word."
@@ -807,6 +828,7 @@ link:
  Edit mode: "Redigeermodus"
  File Manager: "Lêerbestuurder"
  Get API key: "As jy nie reeds 'n API-sleutel het nie, klik hier om een te kry."
+ Glossary: "Woordelys"
  Home: "Tuis"
  IP Testing: "IP-toetsing"
  IP Tracking: "IP-nasporing"
@@ -1090,6 +1112,7 @@ tip:
  Enter user agent here (optional): "Voer gebruikersagent hier in (opsioneel)."
  Enter user agents here: "Voer gebruikersagente hier in."
  File Manager: "Die lêerbestuurder laat jou toe om lêers uit te vee, te wysig, op te laai, en af te laai. Gebruik met omsigtigheid (jy kan jou installasie hiermee breek)."
+ Glossary: "Die woordelys beskryf sommige van die terminologie wat deur CIDRAM gebruik word, om die bedoelde betekenis in die konteks waar dit gebruik word te help verduidelik."
  Greeting: "Hallo, %s."
  Home: "Dit is die tuisblad vir CIDRAM se front-end. Kies 'n skakel uit die navigasiekieslys aan die linkerkant om voort te gaan."
  How many infractions to incur: "Hoeveel oortredings om aan te gaan."

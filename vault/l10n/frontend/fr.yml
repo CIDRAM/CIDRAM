@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2026.03.22).
+# This file: French language data for the front-end (last modified: 2026.04.02).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -87,6 +87,29 @@ Extended Description: !lazy
  Referrer spam module: "Le blocage basé sur le spam référent ne procure généralement aucun avantage de sécurité significatif, mais dans certains cas, cela pourrait être utile à certains utilisateurs pour rassembler plus d'informations sur les requêtes et pour pouvoir les rapporter."
  Stop Forum Spam module: "Protège l'enregistrement et les pages de connexion contre les adresses IP répertoriées par SFS."
  Tor blocker module: "Interdit l'accès à partir des nœuds de sortie Tor via les recherches DNSEL (le supporte IPv4 et IPv6)."
+Glossary: !lazy
+ Entries:
+  CIDR: |
+   « CIDR » est un acronyme pour « Classless Inter-Domain Routing », d'où vient le « CIDR » dans « CIDRAM », « CIDRAM » étant un acronyme pour « Classless Inter-Domain Routing Access Manager ».
+   Dans le contexte de CIDRAM, « CIDR » (ou « CIDRs ») fait spécifiquement référence aux sous-réseaux exprimés à l'aide de la notation CIDR.
+  Faux positif: |
+   En général, lors d'un test, lorsque les résultats sont « positifs » (c'est-à-dire que les conditions du test sont vérifiées), mais qu'ils étaient attendus (ou auraient dû être) « négatifs » (c'est-à-dire que les résultats du test sont erronés), on parle de « faux positif ». <em>Anglais : « false positive ». Ou encore : « erreur de faux positif » ; « fausse alarme ».</em>
+   Les termes « vrai positif », « vrai négatif », et « faux négatif » sont liés. <em>Anglais : « true positive », « true negative », « false negative ».</em> Un « vrai positif » désigne une situation où les résultats du test et l'état réel sont tous deux vrais (ou « positifs »), et un « vrai négatif » désigne une situation où les résultats du test et l'état réel sont tous deux faux (ou « négatifs »). Un « vrai positif » ou un « vrai négatif » est considéré comme une « inférence correcte ».
+   L'inverse d'un « faux positif » est un « faux négatif ». Lorsque les résultats du test sont « négatifs », alors qu'ils étaient attendus (ou auraient dû être) « positifs », on parle de « faux négatif ».
+   Dans le contexte de la CIDRAM, ces termes font généralement référence aux situations où la CIDRAM bloque quelque chose qu'elle ne devrait pas, ou lorsqu'elle ne parvient pas à bloquer quelque chose qu'elle devrait. Lorsque CIDRAM bloque une requête qui n'aurait pas dû être bloquée (par exemple, en raison de signatures erronées, obsolètes, ou incorrectes), ou lorsqu'il le fait pour de mauvaises raisons, il s'agit d'un « faux positif ». Lorsque CIDRAM ne parvient pas à bloquer une requête qui aurait dû l'être (par exemple, en raison de menaces imprévues, de signatures manquantes, de modules défectueux, ou de lacunes dans le processus), il s'agit d'un « faux négatif » (bien que généralement décrit comme une « détection manquée »). <em>Anglais : « missed detection ».</em>
+   | | La requête ne devrait PAS être bloquée | La requête DEVRAIT être bloquée |
+   | La requête n'est PAS bloquée | Vrai négatif (inférence correcte) | Détection manquée (ou faux négatif) |
+   | La requête EST bloquée. | Faux positif | Vrai positif (inférence correcte) |
+   Si vous rencontrez des faux positifs, consultez d'abord la page des mises à jour et, si un élément est marqué comme dépassé, mettez-le à jour. Si le problème persiste, vous pouvez ensuite le signaler sur le système de suivi des problèmes de CIDRAM.
+ Indexes:
+  CIDR: "cidr"
+  [Faux négatif, Faux positif, Vrai négatif, Vrai positif]: "false_positive"
+ Refs:
+  CIDR:
+   Adresse IP — Wikipédia (Agrégation des adresses): "https://fr.wikipedia.org/wiki/Adresse_IP\#Agr%C3%A9gation_des_adresses"
+  Faux positif:
+   faux positif — Wiktionnaire, le dictionnaire libre: "https://fr.wiktionary.org/wiki/faux_positif"
+   Issues · CIDRAM/CIDRAM: "https://github.com/CIDRAM/CIDRAM/issues"
 Name: !lazy
  AbuseIPDB module: "Module AbuseIPDB."
  BGPView module: "Module BGPView."
@@ -125,7 +148,7 @@ checkbox:
  Block non-verified requests: "Bloquer les requêtes non vérifiés\_?"
  Blocked negatives: "Négatifs bloqués"
  Blocked non-verified: "Non vérifiés bloqués"
- Delete orphaned values: "Supprimer les valeurs orphelines."
+ Delete orphaned values: "Supprimez les valeurs orphelines."
  Enable this stage: "Activer cette étape\_?"
  Log any errors generated during this stage: "Enregistrer les erreurs générés lors de cette étape\_?"
  Omit this field when it_s empty: "Omettre ce champ lorsqu'il est vide\_?"
@@ -157,7 +180,7 @@ config: !lazy
  bobuam_chrome: "Version la plus basse autorisé du jeton «\_Chrome/Chromium\_». Recommandé\_: {{BOBUAM Token.Chrome}}."
  bobuam_edge: "Version la plus basse autorisé du jeton «\_Edg/Edge\_». Recommandé\_: {{BOBUAM Token.Edge}}."
  bobuam_firefox: "Version la plus basse autorisé du jeton «\_Firefox\_». Recommandé\_: {{BOBUAM Token.Firefox}}."
- bobuam_firefox_esr: "Version autorisé du jeton «\_Firefox\_» pour la version ESR. Recommandé\_: {{BOBUAM Token.Firefox ESR}}."
+ bobuam_firefox_esr: "Version la plus basse autorisé du jeton «\_Firefox\_» pour la version ESR. Recommandé\_: {{BOBUAM Token.Firefox ESR}}."
  bobuam_opera: "Version la plus basse autorisé du jeton «\_OPR\_». Recommandé\_: {{BOBUAM Token.Opera}}."
  bobuam_reason_ambiguous: "La raison du blocage affiché lorsqu'une chaîne d'agent utilisateur ambiguë est détecté."
  bobuam_reason_bot: "La raison du blocage affiché pour les blocages de robots."
@@ -224,8 +247,8 @@ config: !lazy
   fr-CA: "Si vous avez choisi de recevoir des notifications de CIDRAM par courriel, par exemple, lorsque des règles auxiliaires spécifiques sont déclenchées, vous pouvez spécifier ici le nom du destinataire de ces notifications."
  general_email_notification_when: "Quand envoyer des notifications après avoir été générés."
  general_emailaddr:
-  fr-FR: "Si vous souhaitez, vous pouvez fournir une adresse e-mail ici à donner aux utilisateurs quand ils sont bloqués, pour qu'ils utilisent comme un point de contact pour support et/ou assistance dans le cas d'eux étant bloqué par erreur. AVERTISSEMENT\_: Tout de l'adresse e-mail vous fournissez ici sera très certainement être acquis par les robots des spammeurs et voleurs de contenu au cours de son être utilisés ici, et donc, il est recommandé fortement que si vous choisissez pour fournir une adresse e-mail ici, de vous assurer que l'adresse e-mail que vous fournissez ici est une adresse jetable et/ou une adresse que ne vous dérange pas d'être spammé (en d'autres termes, vous ne voulez probablement pas d'utiliser votre adresses e-mail personnel primaire ou d'affaires primaire)."
-  fr-CA: "Si vous le souhaitez, vous pouvez fournir une adresse courriel ici à donner aux utilisateurs quand ils sont bloqués, pour qu'ils utilisent comme point de contact pour le soutien et/ou l'assistance dans le cas où ils sont bloqués par erreur. AVERTISSEMENT\_: Tout de l'adresse courriel que vous fournissez ici sera très certainement acquis par les robots des pourrielleurs et des voleurs de contenu au cours de son utilisation ici, et donc, il est fortement recommandé que si vous choisissez de fournir une adresse courriel ici, de vous assurer que l'adresse courriel que vous fournissez ici est une adresse jetable et/ou une adresse que ne vous dérange pas d'être spammé (en d'autres termes, vous ne voulez probablement pas utiliser votre adresse courriel personnelle primaire ou d'affaires primaire)."
+  fr-FR: "Si vous le souhaitez, vous pouvez fournir une adresse e-mail ici à donner aux utilisateurs quand ils sont bloqués, pour qu'ils l'utilisent comme un point de contact pour support et/ou assistance dans le cas où ils seraient bloqués par erreur ou par inadvertance. AVERTISSEMENT\_: Tout de l'adresse e-mail vous fournissez ici sera très certainement être acquis par les robots des spammeurs et voleurs de contenu au cours de son être utilisés ici, et donc, il est recommandé fortement que si vous choisissez pour fournir une adresse e-mail ici, de vous assurer que l'adresse e-mail que vous fournissez ici est une adresse jetable et/ou une adresse que ne vous dérange pas d'être spammé (en d'autres termes, vous ne voulez probablement pas utiliser votre adresses e-mail personnel primaire ou d'affaires primaire)."
+  fr-CA: "Si vous le souhaitez, vous pouvez fournir une adresse courriel ici à donner aux utilisateurs quand ils sont bloqués, pour qu'ils l'utilisent comme point de contact pour soutien et/ou assistance dans le cas où ils seraient bloqués par erreur ou par inadvertance. AVERTISSEMENT\_: Tout de l'adresse courriel que vous fournissez ici sera très certainement acquis par les robots des pourrielleurs et des voleurs de contenu au cours de son utilisation ici, et donc, il est fortement recommandé que si vous choisissez de fournir une adresse courriel ici, de vous assurer que l'adresse courriel que vous fournissez ici est une adresse jetable et/ou une adresse que ne vous dérange pas d'être spammé (en d'autres termes, vous ne voulez probablement pas utiliser votre adresse courriel personnelle primaire ou d'affaires primaire)."
  general_emailaddr_display_style: "Comment préférez-vous que l'adresse électronique soit présentée aux utilisateurs\_?"
  general_fields: "Contrôles des champs lors d'un événement de bloc (lorsqu'une requête est bloquée)."
  general_force_hostname_lookup: "Forcer les recherches de nom d'hôte\_? True = Oui\_; False = Non [Défaut]. Les recherches de nom d'hôte sont normalement effectuées «\_au besoin\_», mais peuvent être forcées pour toutes les requêtes. Cela peut être utile pour fournir des informations plus détaillées dans les fichiers journaux, mais peut également avoir un effet légèrement négatif sur les performances."
@@ -366,21 +389,21 @@ field:
  2FA code: "Code 2FA"
  API key: "Clé API"
  Activate: "Activer"
- Add more conditions: "Ajouter plus de conditions"
- Add to tracking: "Ajouter au suivi"
- Add webhook: "Ajouter un webhook"
+ Add more conditions: "Ajoutez plus de conditions"
+ Add to tracking: "Ajoutez-le à la surveillance"
+ Add webhook: "Ajoutez un webhook"
  After 24 hours, bundled together: "Après 24 heures, regroupés (ou lorsqu'il est déclenché manuellement, par exemple, via cron)."
  Blocked: "Bloqué"
- Clear all: "Annuler tout"
+ Clear all: "Annulez tout"
  Clear: "Annuler"
  Clickable link: "Lien cliquable"
  Component: "Composant"
  Components: "Composants"
  Confirm: "Confirmer"
- Create new account: "Créer un nouveau compte"
+ Create new account: "Créez un nouveau compte"
  Currently active signature files: "Fichiers de signature actuellement actifs"
  Deactivate: "Désactiver"
- Delete account: "Supprimer le compte"
+ Delete account: "Supprimez ce compte"
  Delete: "Supprimer"
  Direct input: "Entrez les données directement"
  Directory: "Répertoire"
@@ -392,8 +415,8 @@ field:
  False (False): "False (Faux)"
  File: "Fichier"
  Filename: "Nom de fichier\_:"
- Generate output as CIDRs: "Générer une sortie sous forme de CIDR"
- Generate output as netmasks: "Générer une sortie sous forme de masques de réseau"
+ Generate output as CIDRs: "Générez une sortie sous forme de CIDR"
+ Generate output as netmasks: "Générez une sortie sous forme de masques de réseau"
  Immediately: "Immédiatement."
  Install: "Installer"
  Last modified: "Dernière modification"
@@ -656,11 +679,11 @@ label:
  Data source: "Source des données"
  Data value: "Valeur des données"
  Default: "Défaut"
- Delete previous reports: "Supprimer les rapports précédents"
+ Delete previous reports: "Supprimez les rapports précédents"
  Deny: "Refuser."
  Dependencies: "Dépendances\_:"
  Difference: "Différence"
- Disable auxiliary rules: "Désactiver les règles auxiliaires"
+ Disable auxiliary rules: "Désactivez les règles auxiliaires"
  Displaying %s entry that cites %s:
   - "%s entrée affichée qui cite «\_%s\_»."
   - "%s entrées affichées qui citent «\_%s\_»."
@@ -670,7 +693,7 @@ label:
  Don_t block the request: "Ne bloquez pas la requête.\nSi vous préférez que les requêtes ne soient bloquées que lorsque vous êtes certain qu'elles sont malveillantes, ou que vous préfériez faire preuve de prudence concernant les faux positifs (au prix d'un trafic indésirable qui passe occasionnellement), choisissez cette option. Si vous préférez que les requêtes soient bloquées si vous n'êtes pas certain qu'elles sont bénignes, ou faire preuve de vigilance (au prix de faux positifs occasionnels), choisissez l'une des autres options disponibles."
  Duplicate to %s: "Dupliquer dans %s"
  Empty, unfamiliar, and others: "Vide, inconnu, et autres."
- Enable auxiliary rules: "Activer les règles auxiliaires"
+ Enable auxiliary rules: "Activez les règles auxiliaires"
  Entered %s Assuming %s: "Saisie\_: %s – Supposé\_: %s"
  Entries per page: "Entrées par page\_:"
  Every request: "Chaque requête.\nPlus rigoureux et minutieux, mais aussi plus susceptible d'atteindre les limites et les quotas beaucoup plus rapidement, ce qui peut entraîner le blocage du service au moment où il est le plus nécessaire. De plus, bien que les résultats de la recherche soient toujours mis en cache, cela pourrait néanmoins avoir un impact négatif sur les performances du site Web dans certains cas. Peut être nécessaire dans certains cas, mais généralement pas recommandé."
@@ -773,7 +796,7 @@ label:
  The cache is empty: "Le cache est vide."
  Total: "Total"
  Trigger a bypass: "Déclenchez un contournement.\nSoustrait un compte du nombre de signatures déclenchées, tant qu'au moins une signature a déjà été déclenchée. Recommandé pour traiter les faux positifs simples potentiellement causés par les fichiers de signature défaut."
- Unignore this: "Ne pas ignorez ceci"
+ Unignore this: "N'ignorez pas ceci"
  Values for IP tracking: "Valeurs pour la surveillance IP"
  Whitelist the request: "Mettez la requête en la liste blanche.\nRéinitialise le nombre de signatures déclenchées, et abandonne tout traitement ultérieur de la requête. Garantit que le CIDRAM ne bloquera jamais la requête."
  Your IP address: "Votre adresse IP\_:"
@@ -782,12 +805,12 @@ label:
   A name for the new rule: "Un nom pour la nouvelle règle\_:"
   Additional instructions: "Instructions supplémentaires (à exécuter seulement après avoir implémenté l'action de la règle)\_:"
   Auxiliary rules triggered: "Règles auxiliaires déclenchées"
-  Create new rule: "Créer une nouvelle règle"
+  Create new rule: "Créez une nouvelle règle"
   Detect the method for testing the conditions automatically: "Détecter la méthode pour tester les conditions automatiquement."
-  Disable this rule: "Désactiver cette règle"
+  Disable this rule: "Désactivez cette règle"
   Drop the rule here to move it to this position, or onto another rule to swap positions: "Déposez la règle ici pour la déplacer vers cette position, ou sur une autre règle pour échanger les positions."
   Email: {"fr-FR": "E-mail", "fr-CA": "Courriel"}
-  Enable this rule: "Activer cette règle"
+  Enable this rule: "Activez cette règle"
   Enforce default IP tracking options: "Appliquer les options de surveillance d'IP défaut"
   Enforce extended IP tracking options: "Appliquer les options de surveillance d'IP étendues"
   Forcibly disable Cloudflare Turnstile: "Désactiver Cloudflare Turnstile par la force"
@@ -813,7 +836,7 @@ label:
    fr-CA: "Envoyer une notification de déclenchement à l'adresse courriel configurée pour les notifications"
   Suppress logging: "Supprimer la journalisation"
   Suppress output template: "Supprime le modèle de sortie"
-  Suppress reports: "Supprimer les rapports"
+  Suppress reports: "Supprimez les rapports"
   The name of the file to run: "Le nom du fichier à exécuter\_:"
   The reason given to the user when blocked: "La raison donnée à l'utilisateur lorsqu'il est bloqué\_:"
   Track this rule: "Surveillez cette règle"
@@ -825,14 +848,14 @@ label:
   When the rule should begin (optional): "Quand la règle doit commencer (optionnelle)\_:"
   When the rule should expire (optional): "Quand la règle doit expirer (optionnelle)\_:"
   Where to redirect the request: "Où rediriger la requête\_:"
-  block the request: "bloquer la requête"
-  bypass the request: "contourner la requête"
+  block the request: "bloquez la requête"
+  bypass the request: "contournez la requête"
   greylist the request: "mettre la requête sur la liste grise"
   logic_all: "Pour déclencher la règle, toutes les conditions doivent être remplies."
   logic_any: "Toute condition «\_égal\_» (=) peut déclencher la règle, tant que toutes les conditions «\_inégales\_» (≠) sont également remplies."
-  profile the request: "profiler la requête"
-  redirect the request (without blocking it): "rediriger la requête (sans la bloquer)"
-  run a file to handle the request: "exécuter un fichier pour gérer la requête"
+  profile the request: "profilez la requête"
+  redirect the request (without blocking it): "redirigez la requête (sans la bloquer)"
+  run a file to handle the request: "exécutez un fichier pour gérer la requête"
   whitelist the request: "mettre la requête sur la liste blanche"
  bobuam:
   Ambiguous user agents: "Agents utilisateurs ambigus"
@@ -866,6 +889,7 @@ link:
  Edit mode: "Mode d'édition"
  File Manager: "Gestionnaire de fichiers"
  Get API key: "Si vous n'avez pas de clé API, cliquez ici pour l'obtenir."
+ Glossary: "Glossaire"
  Home: "Page d'accueil"
  IP Testing: "Test IP"
  IP Tracking: "Surveillance IP"
@@ -1060,27 +1084,27 @@ response:
  release_notes: "<a href="%s"><span class="navicon link"></span>Notes de version pour %s.</a>"
 stages: !lazy
  Check whether banned: "Vérifiez si c'est interdit"
- Deploy CAPTCHAs (blocked requests): "Déployer les CAPTCHAs (requêtes bloquées)"
- Deploy CAPTCHAs (non-blocked requests): "Déployer les CAPTCHAs (requêtes non bloquées)"
- Execute IP tracking: "Exécuter le surveillance d'IP"
- Execute auxiliary rules: "Exécuter les règles auxiliaires"
- Execute modules: "Exécuter les modules"
- Execute other verification: "Exécuter une autre vérification"
- Execute rate limiting: "Exécuter la limitation du débit"
- Execute reporting: "Traiter les rapports"
- Execute search engine verification: "Exécuter la vérification des moteurs de recherche"
- Execute signature files tests: "Exécuter les tests des fichiers de signature"
- Execute social media verification: "Exécuter la vérification des médias sociaux"
- Execute webhooks: "Exécuter des webhooks"
- Generate output (blocked requests): "Générer une sortie (requêtes bloquées)"
- Prepare fields for output and logs: "Préparer les champs pour la sortie et les journaux"
+ Deploy CAPTCHAs (blocked requests): "Déployez les CAPTCHAs (requêtes bloquées)"
+ Deploy CAPTCHAs (non-blocked requests): "Déployez les CAPTCHAs (requêtes non bloquées)"
+ Execute IP tracking: "Exécutez le surveillance d'IP"
+ Execute auxiliary rules: "Exécutez les règles auxiliaires"
+ Execute modules: "Exécutez les modules"
+ Execute other verification: "Exécutez une autre vérification"
+ Execute rate limiting: "Exécutez la limitation du débit"
+ Execute reporting: "Traitez les rapports"
+ Execute search engine verification: "Exécutez la vérification des moteurs de recherche"
+ Execute signature files tests: "Exécutez les tests des fichiers de signature"
+ Execute social media verification: "Exécutez la vérification des médias sociaux"
+ Execute webhooks: "Exécutez des webhooks"
+ Generate output (blocked requests): "Générez une sortie (requêtes bloquées)"
+ Prepare fields for output and logs: "Préparez les champs pour la sortie et les journaux"
  Process email trigger notification queue:
   fr-FR: "Traiter la file d'attente des e-mails de notification de déclenchement"
   fr-CA: "Traiter la file d'attente des courriels de notification de déclenchement"
  Redirect according to auxiliary rules: "Rediriger selon les règles auxiliaires"
  Terminate the request (blocked requests): "Terminer la requête (requêtes bloquées)"
  Update statistics: "Mettre à jour les statistiques"
- Write to logs (blocked requests): "Enregistrer dans les journaux (requêtes bloquées)"
+ Write to logs (blocked requests): "Enregistrez dans les journaux (requêtes bloquées)"
 state_fixer: "%s %s."
 state_fixer_changed:
  - "Fait %s changement"
@@ -1092,10 +1116,10 @@ state_sl_totals: "Totaux (Signatures\_: %s – Sections de signature\_: %s – F
 state_tracking:
  - "Actuellement en cours de surveillance de %s adresse IP."
  - "Actuellement en cours de surveillance de %s adresses IP."
-switch-tracking-aux-set-false: "Ne vérifier pas les règles auxiliaires"
-switch-tracking-aux-set-true: "Vérifier les règles auxiliaires"
-switch-tracking-blocked-already-set-false: "Ne vérifier pas les fichiers de signature"
-switch-tracking-blocked-already-set-true: "Vérifier les fichiers de signature"
+switch-tracking-aux-set-false: "Ne vérifiez pas les règles auxiliaires"
+switch-tracking-aux-set-true: "Vérifiez les règles auxiliaires"
+switch-tracking-blocked-already-set-false: "Ne vérifiez pas les fichiers de signature"
+switch-tracking-blocked-already-set-true: "Vérifiez les fichiers de signature"
 switch-tracking-hide-banned-blocked-set-false: "Ne pas omettre les IP interdites/bloquées"
 switch-tracking-hide-banned-blocked-set-true: "Omettre les IP interdites/bloquées"
 time_days_ago:
@@ -1157,6 +1181,7 @@ tip:
  Enter user agent here (optional): "Entrez l'agent utilisateur ici (optionnel)."
  Enter user agents here: "Entrez les agents utilisateurs ici."
  File Manager: "Le gestionnaire de fichiers vous permet de supprimer, éditer et télécharger des fichiers. Utiliser avec précaution (vous pourriez casser votre installation avec ceci)."
+ Glossary: "Le glossaire décrit certains termes utilisés par le CIDRAM, afin de clarifier le sens voulu dans le contexte où ils sont utilisés."
  Greeting: {"fr-FR": "Bonjour, %s.", "fr-CA": "Salut, %s."}
  Home: "C'est la page d'accueil de l'accès frontal de CIDRAM. Sélectionnez un lien dans le menu de navigation à gauche pour continuer."
  How many infractions to incur: "Combien d'infractions encourir."

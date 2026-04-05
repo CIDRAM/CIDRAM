@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2026.03.22).
+# This file: Korean language data for the front-end (last modified: 2026.04.02).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -77,6 +77,17 @@ Extended Description: !lazy
  Referrer spam module: "리퍼러 스팸에 기반한 차단은 일반적으로 의미 있는 보안 이점을 제공하지 않습니다, 그러나 어떤 경우에는, 요청에 대한 추가 정보를 수집하고 보고서를 생성하는 데 유용 할 수 있습니다."
  Stop Forum Spam module: "SFS가 나열한 IP에 대한 등록 및 로그인 페이지를 보호합니다."
  Tor blocker module: "DNSEL 조회를 통한 Tor 출구 노드의 액세스 금지 (IPv4 및 IPv6 모두 지원)."
+Glossary: !lazy
+ Entries:
+  CIDR: |
+   "CIDR"은 "Classless Inter-Domain Routing"의 약자로, "CIDRAM"의 "CIDR"이 여기서 유래되었습니다. "CIDRAM"은 "Classless Inter-Domain Routing Access Manager"의 약자입니다.
+   CIDRAM의 맥락에서, "CIDR"은 CIDR 표기법을 사용하여 표현된 서브넷을 구체적으로 지칭합니다.
+ Refs:
+  CIDR:
+   CIDR - 위키백과, 우리 모두의 백과사전: "https://ko.wikipedia.org/wiki/CIDR"
+  False positive:
+   거짓 양성과 거짓 음성 - 위키백과, 우리 모두의 백과사전: "https://ko.wikipedia.org/wiki/%EA%B1%B0%EC%A7%93_%EC%96%91%EC%84%B1%EA%B3%BC_%EA%B1%B0%EC%A7%93_%EC%9D%8C%EC%84%B1"
+   Issues · CIDRAM/CIDRAM: "https://github.com/CIDRAM/CIDRAM/issues"
 Name: !lazy
  AbuseIPDB module: "AbuseIPDB 모듈."
  BGPView module: "BGPView 모듈."
@@ -147,7 +158,7 @@ config: !lazy
  bobuam_chrome: ""Chrome/Chromium" 토큰의 가장 낮은 허용 버전입니다. 추천: {{BOBUAM Token.Chrome}}."
  bobuam_edge: ""Edg/Edge" 토큰의 가장 낮은 허용 버전입니다. 추천: {{BOBUAM Token.Edge}}."
  bobuam_firefox: ""Firefox" 토큰의 가장 낮은 허용 버전입니다. 추천: {{BOBUAM Token.Firefox}}."
- bobuam_firefox_esr: "ESR 버전에 허용되는 "Firefox" 토큰 버전입니다. 추천: {{BOBUAM Token.Firefox ESR}}."
+ bobuam_firefox_esr: "ESR 버전에 허용되는 "Firefox" 토큰의 가장 낮은 허용 버전입니다. 추천: {{BOBUAM Token.Firefox ESR}}."
  bobuam_opera: ""OPR" 토큰의 가장 낮은 허용 버전입니다. 추천: {{BOBUAM Token.Opera}}."
  bobuam_reason_ambiguous: "모호한 사용자 에이전트 문자열이 감지될 때 표시되는 차단 이유입니다."
  bobuam_reason_bot: "봇 차단에 대해 표시되는 차단 이유입니다."
@@ -797,6 +808,7 @@ link:
  Edit mode: "편집 모드"
  File Manager: "파일 관리자"
  Get API key: "아직 API 키가 없으면, 여기를 클릭하여 키를 받으세요."
+ Glossary: "용어집"
  Home: "홈"
  IP Testing: "IP 테스트"
  IP Tracking: "IP 추적"
@@ -1050,6 +1062,7 @@ tip:
  Enter user agent here (optional): "여기에 사용자 에이전트를 입력하세요 (선택 사항이다)."
  Enter user agents here: "여기에 사용자 에이전트를 입력하세요."
  File Manager: "파일 관리자를 사용하여 파일을 삭제, 편집, 업로드, 다운로드 할 수 있습니다. 신중하게 사용하는 (이것을 사용하여 설치를 끊을 수 있습니다)."
+ Glossary: "용어집은 CIDRAM에서 사용하는 일부 용어를 설명하여 해당 용어가 사용되는 맥락에서 의도된 의미를 명확히 하는 데 도움을 줍니다."
  Greeting: "안녕하세요, %s."
  Home: "이것은 CIDRAM 프론트 엔드의 홈페이지입니다. 계속하려면 왼쪽 탐색 메뉴에서 링크를 선택합니다."
  How many infractions to incur: "얼마나 많은 위반이 발생합니다."

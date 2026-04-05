@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2026.02.28).
+# This file: Italian language data for the front-end (last modified: 2026.03.30).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -27,10 +27,10 @@
 Extended Description Bypasses: "Un file per bypassare alcune delle firme predefinite normalmente inclusi nel pacchetto principale."
 Extended Description Chart.js: "Consente al front-end di generare grafici a torta.<br />{{Links.Chart.js}} è disponibile tramite la licenza {{Links.MIT}}."
 Extended Description IPv4: &ExtDesCloud "Blocca servizi cloud indesiderate e punti finali non umani."
-Extended Description IPv4-Bogons: &ExtDesBogons "Blocca bogon/marziano CIDRs."
+Extended Description IPv4-Bogons: &ExtDesBogons "Blocca CIDR bogon/marziani."
 Extended Description IPv4-ISPs: &ExtDesISPs "Blocca ISP pericolosi e spam incline (include reti multiplay, che possono contenere endpoint sia umani che non umani)."
 Extended Description IPv4-Nonblocking: &ExtDesNonblocking "Utile per la profilazione, ma non blocca nulla di per sé."
-Extended Description IPv4-Other: &ExtDesOther "Blocca CIDRs per i proxy, VPN e altri vari servizi indesiderati."
+Extended Description IPv4-Other: &ExtDesOther "Blocca CIDR per i proxy, VPN e altri vari servizi indesiderati."
 Extended Description IPv6: *ExtDesCloud
 Extended Description IPv6-Bogons: *ExtDesBogons
 Extended Description IPv6-ISPs: *ExtDesISPs
@@ -332,8 +332,8 @@ info_some_useful_links: |+
        <li><span class="comCat" role="region" aria-controls="menuOUTRS" aria-expanded="false">Altri strumenti, risorse, servizi, ecc che sono utili.</span>
          <ul class="comSub" id="menuOUTRS">
            <li>{{Links.SFS}} – Mantiene un database di spammer di forum noti. Utile per proteggere siti Web e forum dagli spammer.</li>
-           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Ottenere CIDRs da ASNs, determinare le relazioni di ASNs, scopri ASNs basata su nomi di rete, ecc.</li>
-           <li>{{Links.BGPView}} – Ottenere CIDRs da ASNs, determinare le relazioni di ASNs, scopri ASNs basata su nomi di rete, ecc.</li>
+           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Ottenere CIDR da ASN, determinare le relazioni di ASNs, scopri ASNs basata su nomi di rete, ecc.</li>
+           <li>{{Links.BGPView}} – Ottenere CIDR da ASN, determinare le relazioni di ASNs, scopri ASNs basata su nomi di rete, ecc.</li>
            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar da Qrator</a> – Strumento utile per verificare la connettività di ASN nonché per varie altre informazioni utili riguardo ASNs.</li>
            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Il progetto Spamhaus</a> – Visualizza i rapporti per quanto riguarda ai tassi di infezione di botnet per ASN.</li>
            <li>{{Links.AbuseIPDB}} – Mantiene un database di conosciuti indirizzi IP abusivi; Fornisce un API per il controllo e la rapporta di IP.</li>

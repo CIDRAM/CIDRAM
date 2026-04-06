@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v4/vault/signatures/ipv6_isps.dat
 
-# Version: 2026.84.0
-# Last modified: 2026.03.26
+# Version: 2026.95.0
+# Last modified: 2026.04.06
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -357,15 +357,14 @@ Tag: VNPT Corp
 # WordPress/XMLRPC, SQLi, XSS, and webapp attacks, port scans, hacking, and
 # spam detected from here, caught faking as Googlebot, and caught sniffing for
 # vulnerabilities to exploit. Significant source of unwanted traffic.
-# Stop Forum Spam (SFS) listings: 436 (AS4224), 14,150 (AS60729).
-# Updated: 2025.05.05
+# Stop Forum Spam (SFS) listings: 23 (AS4224), 5,272 (AS60729).
+# Updated: 2026.04.06
 
 2a0a:4587:2010::/46 Deny Attacks
 2a0b:f4c1:2::/48 Deny Attacks
 2a0b:f4c2::/40 Deny Attacks
 Origin: DE
 2602:fef9:100::/48 Deny Attacks
-2602:fef9:400::/48 Deny Attacks
 Origin: US
 Profile: Mobile ISP;Tor endpoints here;Webhosting
 Tag: Calyx/Zwiebelfreunde
@@ -509,3 +508,49 @@ Tag: OOO Istra.net
 Origin: IN
 Profile: Domestic ISP
 Tag: As Broadband Pvt Ltd
+
+
+# ASN 9541 ("Cyber Internet Services (Pvt) Ltd").
+# Pakistani multiplay network. Brute-force, SQLi, WordPress/XMLRPC, and webapp
+# attacks, Mozi botnets, port scans, hacking, and spam detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 7,509.
+# Updated: 2026.04.06
+
+2400:adc1:12d:7000::/64 Deny Spam
+2400:adc1:189:4f00::/64 Deny Spam
+2400:adc1:1b5:4f00::/64 Deny Spam
+2400:adc1:1da:dc00::/64 Deny Spam
+2400:adc1:1e0:7100::/64 Deny Spam
+2400:adc1:4af:d100::/64 Deny Spam
+2400:adc1:4c2:b200::/64 Deny Spam
+2400:adc1:4c8:700::/64 Deny Spam
+2400:adc3:10a:8700::/64 Deny Spam
+2400:adc5:12e:b400::/64 Deny Spam
+2400:adc5:143:5b00::/64 Deny Spam
+2400:adc5:170:a900::/64 Deny Spam
+2400:adc5:190:7c01::/64 Deny Spam
+2400:adc5:1a6:7d00::/64 Deny Spam
+2400:adc5:1ab:6e00::/64 Deny Spam
+2400:adc5:486:6500::/64 Deny Spam
+2400:adc5:49d:a200::/64 Deny Spam
+2400:adc5:4a7:4e00::/64 Deny Spam
+2400:adc7:155:b00::/64 Deny Spam
+2400:adc7:181:ee00::/64 Deny Spam
+2400:adc7:90b:a900::/64 Deny Spam
+2400:adc7:912:7a00::/64 Deny Spam
+2400:adc7:92b:2600::/64 Deny Spam
+2400:adc7:931:1600::/64 Deny Spam
+2400:adc7:946:6300::/64 Deny Spam
+2400:adc7:95b:4300::/64 Deny Spam
+2400:adc7:95d:7f00::/64 Deny Spam
+2400:adc7:97f:2101::/64 Deny Spam
+2400:adc7:1957:5600::/64 Deny Spam
+2400:adc7:2112:4c00::/64 Deny Spam
+2400:adc7:2113:7700::/64 Deny Spam
+2400:adc7:2129:2800::/64 Deny Spam
+2400:adc7:510d:8b00::/64 Deny Spam
+2400:adcc:210f:fe00::/64 Deny Spam
+Origin: PK
+Profile: Dedicated;Domestic ISP;Infrastructure/Transit;Multiplay;Webhosting
+Tag: Cyber Internet Services

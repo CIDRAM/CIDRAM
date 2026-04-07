@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2026.03.27).
+ * This file: Optional security extras module (last modified: 2026.04.07).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -601,6 +601,11 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         if ($this->trigger(\preg_match('~(?:^|[/?])\.azure/config(?:$|[/?])~', $LCNrURI), 'Probing for exposed Azure configuration')) {
             $this->Reporter->report([15, 21], ['Caught probing for exposed Azure configuration.'], $this->BlockInfo['IPAddr']);
         } // 2026.03.27
+
+        /** Unauthorised access attempt to wp-settings.php file. */
+        if ($this->trigger(\preg_match('~(?:^|[/?])wp-settings.php(?:$|[/?])~', $LCNrURI), 'Unauthorised access attempt to wp-settings.php file')) {
+            $this->Reporter->report([15, 21], ['Unauthorised access attempt to wp-settings.php file.'], $this->BlockInfo['IPAddr']);
+        } // 2026.04.07
     }
 
     /**

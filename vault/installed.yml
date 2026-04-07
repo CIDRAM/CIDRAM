@@ -7,7 +7,7 @@ CIDRAM Core:
   Common Classes Package: "^2.16"
   l10n/core/{lang}: ">=2025.237"
  Changelog: "https://github.com/CIDRAM/CIDRAM/blob/v4/Changelog.md"
- Release Notes For: ["4.0.0", "4.0.1", "4.1.0"]
+ Release Notes For: ["4.0.0", "4.0.1", "4.1.0", "4.2.0"]
  When Update Succeeds:
   - "wpVer 4.8 6.9.4 4.1.0 7.2"
   - "foreach {Components.RemoteMeta.CIDRAM Core.Release Notes For} as Key => Value if {Components.Meta.CIDRAM Core.Version}<{Value}&&{Components.RemoteMeta.CIDRAM Core.Version}>={Value} then queue message response.release_notes https://github.com/CIDRAM/CIDRAM/releases/tag/v{Value} CIDRAM v{Value}"
@@ -1445,7 +1445,7 @@ IP-API module:
    Used with: "modules"
 Optional security extras module:
  False Positive Risk: "Medium"
- Version: "2026.86.0"
+ Version: "2026.96.0"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "^4"
@@ -1457,7 +1457,7 @@ Optional security extras module:
    Used with: "imports"
   modules/extras.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/modules/extras.php"
-   Checksum: "8eb8fa0024f3f63a80d27e13fe98f0eb030daf7309aeb904ae89f1db0415f267:62735"
+   Checksum: "2c925696749001ce600fbe2e53e6e48386bfb44c6d0620f4b80911c6ed4a2e3b:63110"
    Used with: "modules"
 Project Honeypot module:
  False Positive Risk: "Medium"

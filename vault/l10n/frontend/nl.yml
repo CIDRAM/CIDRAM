@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2026.04.02).
+# This file: Dutch language data for the front-end (last modified: 2026.04.07).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -82,10 +82,22 @@ Glossary: !lazy
   CIDR: |
    "CIDR" is een acroniem voor "Classless Inter-Domain Routing", vandaar de "CIDR" in "CIDRAM". "CIDRAM" is een acroniem voor "Classless Inter-Domain Routing Access Manager".
    In de context van CIDRAM verwijst "CIDR" (of "CIDRs") specifiek naar subnetten die worden weergegeven met behulp van CIDR-notatie.
+  Valspositief: |
+   Over het algemeen, wanneer de uitslag van een test "positief" is (d.w.z., de testcondities blijken waar te zijn), terwijl het "negatief" had moeten zijn (d.w.z., de testuitslag is onjuist), spreekt men van een "valspositief". <em>Engels: "false positive". Of anders gezegd: "foutpositief"; "vals-positieve fout"; "vals alarm".</em>
+   Enkele verwante termen zijn "echt positief", "echt negatief", en "valsnegatief" (of "foutnegatief"). <em>Engels: "true positive", "true negative", "false negative".</em> Een "echt positief" betekent dat zowel de testuitslag als de werkelijke toestand van de voorwaarde waar (of "positief") zijn, terwijl een "echt negatief" betekent dat zowel de testuitslag als de werkelijke toestand van de voorwaarde onwaar (of "negatief") zijn. Een "echt positief" of een "echt negatief" wordt beschouwd als een "correcte conclusie".
+   Het tegenovergestelde van een "valspositief" (of "foutpositief") is een "valsnegatief" (of "foutnegatief"). Wanneer de uitslag van de test "negatief" is, terwijl het "positief" had moeten zijn, spreekt men van een "valsnegatief".
+   In de context van CIDRAM verwijzen deze termen doorgaans naar situaties waarin CIDRAM iets blokkeert wat het niet zou moeten blokkeren, of wanneer het er niet in slaagt iets te blokkeren wat het wel zou moeten blokkeren. Wanneer CIDRAM een verzoek blokkeert dat niet geblokkeerd had mogen worden (b.v., vanwege slechte, verouderde, of onjuiste signatures), of wanneer dit om de verkeerde redenen gebeurt, spreken we van een "valspositief". Wanneer CIDRAM een verzoek niet blokkeert dat wel geblokkeerd had moeten worden (b.v., vanwege onvoorziene bedreigingen, ontbrekende signatures, defecte modules, of tekortkomingen in het proces), spreekt men van een "valsnegatief" (hoewel dit doorgaans wordt omschreven als een "gemiste detectie"). <em>Engels: "missed detection".</em>
+   | | Het verzoek moet NIET worden geblokkeerd | Het verzoek MOET worden geblokkeerd |
+   | Het verzoek wordt NIET geblokkeerd | Echt negatief (correcte conclusie) | Gemiste detectie (of valsnegatief) |
+   | Het verzoek IS geblokkeerd | Valspositief | Echt positief (correcte conclusie) |
+   Als je valspositieven tegenkomt, controleer eerst de updatepagina en werk alles bij wat als verouderd is gemarkeerd. Als het probleem zich daarna nog steeds voordoet, u kunt het melden via de probleemtracker van CIDRAM.
+ Indexes:
+  CIDR: "cidr"
+  [Valsnegatief, Valspositief, Echt negatief, Echt positief]: "false_positive"
  Refs:
   CIDR:
    Classless Inter-Domain Routing - Wikipedia: "https://nl.wikipedia.org/wiki/Classless_Inter-Domain_Routing"
-  False positive:
+  Valspositief:
    Foutpositief en foutnegatief - Wikipedia: "https://nl.wikipedia.org/wiki/Foutpositief_en_foutnegatief"
    Issues · CIDRAM/CIDRAM: "https://github.com/CIDRAM/CIDRAM/issues"
 Name: !lazy
@@ -413,7 +425,7 @@ hint:
  This value can be found in the dashboard for your CAPTCHA service: "Deze waarde is te vinden in het dashboard voor uw CAPTCHA-service."
 hints_asnlookup: "** Vereist ASN-opzoekfunctionaliteit (b.v., via de IP-API-module of BGPView-module)."
 hints_aux_stats: "Opmerking: Het bijhouden van statistieken voor aanvullende regels kan worden beheerd vanaf de pagina met aanvullende regels."
-hints_cause_fp: "*!! Grote kans op het veroorzaken van valse positieven vanwege %s."
+hints_cause_fp: "*!! Grote kans op het veroorzaken van valspositieven vanwege %s."
 hints_cclookup: "** Vereist landcode-opzoekfunctionaliteit (b.v., via de IP-API-module of BGPView-module)."
 hints_client_hints: "!! Dit is een clienthint met een lage entropie. Clienthints zijn een nieuwe, experimentele webtechnologie die nog niet breed wordt ondersteund door alle browsers en grote clients. <em>Zien: {{Links.MDN.Client hints}}.</em> Clienthints kunnen nuttig zijn voor het nemen van vingerafdrukken, maar omdat ze niet breed worden ondersteund, er mag niet van worden uitgegaan of op vertrouwd dat ze aanwezig zullen zijn in verzoeken (d.w.z., blokkeren op basis van hun afwezigheid is een slecht idee)."
 hints_client_honour: "Het maakt niet uit hoe we de klant instrueren, het is belangrijk om te onthouden dat we uiteindelijk geen controle hebben over wat de klant kiest om te doen, en er is geen enkele garantie dat de klant onze instructies zal opvolgen."
@@ -446,7 +458,7 @@ hints_shorthand:
  4.: "Verwijst naar gevallen waarin stenowoorden helemaal niet worden gebruikt, of niet worden herkend door CIDRAM."
  Eén per signature.: "Een signature kan meerdere profielen oproepen, maar kan slechts één stenowoord gebruiken. Het is mogelijk dat meerdere stenowoorden geschikt zijn, maar aangezien er maar één kan worden gebruikt, we streven ernaar altijd alleen de meest geschikte te gebruiken."
  Prioriteit.: "Een geselecteerde optie heeft altijd voorrang op een niet geselecteerde optie. B.v., als er meerdere stenowoorden in het spel zijn, maar slechts één ervan als geblokkeerd is ingesteld, wordt het verzoek nog steeds geblokkeerd."
- Menselijke eindpunten en cloud services.: "Cloud service kan verwijzen naar webhosting providers, server farms, data centers of een aantal andere dingen. Menselijk eindpunt verwijst naar de manier waarop een mens toegang krijgt tot internet, b.v., via een internetprovider. Een netwerk biedt meestal slechts een of het ander, maar kan soms beide bieden. We streven ernaar om potentiële menselijke eindpunten nooit als cloudservices te identificeren. Daarom een cloud service kan worden geïdentificeerd als iets anders als het bereik wordt gedeeld door bekende menselijke eindpunten. Evenzo, we streven ernaar om cloud services, waarvan het bereik niet wordt gedeeld door bekende menselijke eindpunten, altijd als cloud services te identificeren. Daarom een verzoek dat expliciet als een cloud service wordt geïdentificeerd waarschijnlijk niet deelt het bereik met bekende menselijke eindpunten. Evenzo, een verzoek dat expliciet wordt geïdentificeerd door aanvallen of spam risico waarschijnlijk deelt het bereik. Het internet is echter altijd in beweging, de doeleinden van netwerken veranderen in de loop van de tijd, en bereik worden altijd gekocht of verkocht, dus blijf bewust en waakzaam met betrekking tot valse positieven."
+ Menselijke eindpunten en cloud services.: "Cloud service kan verwijzen naar webhosting providers, server farms, data centers of een aantal andere dingen. Menselijk eindpunt verwijst naar de manier waarop een mens toegang krijgt tot internet, b.v., via een internetprovider. Een netwerk biedt meestal slechts een of het ander, maar kan soms beide bieden. We streven ernaar om potentiële menselijke eindpunten nooit als cloudservices te identificeren. Daarom een cloud service kan worden geïdentificeerd als iets anders als het bereik wordt gedeeld door bekende menselijke eindpunten. Evenzo, we streven ernaar om cloud services, waarvan het bereik niet wordt gedeeld door bekende menselijke eindpunten, altijd als cloud services te identificeren. Daarom een verzoek dat expliciet als een cloud service wordt geïdentificeerd waarschijnlijk niet deelt het bereik met bekende menselijke eindpunten. Evenzo, een verzoek dat expliciet wordt geïdentificeerd door aanvallen of spam risico waarschijnlijk deelt het bereik. Het internet is echter altijd in beweging, de doeleinden van netwerken veranderen in de loop van de tijd, en bereik worden altijd gekocht of verkocht, dus blijf bewust en waakzaam met betrekking tot valspositieven."
 hints_time_format: |
  <strong><em>Tijdelijke aanduiding – Uitleg – Voorbeeld gebaseerd op 2024-04-30T18:27:49+08:00.</em></strong><br />
  <code class="s">{yyyy}</code> – Het jaartal – B.v., 2024.<br />
@@ -473,7 +485,7 @@ hints_usemode:
  4: "De "signatures limiet" wordt bepaald door {{Links.ConfigRef.signature_limit}}."
 hints_verification:
  "Wat zijn "positieven" en "negatieven"?": "Bij het verifiëren van de identiteit die door een verzoek wordt gepresenteerd, een succesvol resultaat kan worden omschreven als "positief" of "negatief". In het geval dat wordt bevestigd dat de gepresenteerde identiteit de ware identiteit is, deze als "positief" beschreven wordt. In het geval dat wordt bevestigd dat de gepresenteerde identiteit vervalst is, deze als "negatief" beschreven wordt. Een onsuccesvolle uitkomst (b.v., verificatie mislukt, of de juistheid van de gepresenteerde identiteit kan niet worden vastgesteld) wordt echter niet als "positief" of "negatief" beschreven. In plaats daarvan zou een mislukte uitkomst eenvoudigweg als niet-geverifieerd worden beschreven. Als er geen poging wordt gedaan om de identiteit van het verzoek te verifiëren, het verzoek wordt eveneens als niet-geverifieerd beschreven. De termen hebben alleen zin in de context waarin de identiteit van het verzoek wordt herkend, en dus waar verificatie mogelijk is. In gevallen waarin de gepresenteerde identiteit niet overeenkomt met de bovenstaande opties, of waar geen identiteit wordt gepresenteerd, worden de bovenstaande opties irrelevant."
- "Wat zijn "enkele-treffer bypasses"?": "In sommige gevallen kan een positief-geverifieerd verzoek nog steeds worden geblokkeerd als gevolg van de signatuurbestanden, modules, of andere voorwaarden van het verzoek, en bypasses kunnen nodig zijn om valse positieven te voorkomen. In het geval dat een bypass bedoeld is om precies één overtreding af te handelen, niet meer en niet minder, dergelijke een bypass zou kunnen worden omschreven als een "enkele-treffer bypass"."
+ "Wat zijn "enkele-treffer bypasses"?": "In sommige gevallen kan een positief-geverifieerd verzoek nog steeds worden geblokkeerd als gevolg van de signatuurbestanden, modules, of andere voorwaarden van het verzoek, en bypasses kunnen nodig zijn Om valspositieven te voorkomen. In het geval dat een bypass bedoeld is om precies één overtreding af te handelen, niet meer en niet minder, dergelijke een bypass zou kunnen worden omschreven als een "enkele-treffer bypass"."
 hints_want_to_block: "!! De meeste gebruikers zullen waarschijnlijk willen dat dit wordt geblokkeerd, ongeacht of het echt of vervalst is. Dat kan worden bereikt door "proberen te verifiëren" niet te selecteren en "niet-geverifieerde verzoeken blokkeren" te selecteren. Omdat sommige gebruikers dergelijke verzoeken echter willen kunnen verifiëren (om negatieven te blokkeren en positieven toe te staan), in plaats van dergelijke verzoeken via modules te blokkeren, worden hier opties geboden voor het afhandelen van dergelijke verzoeken."
 info_cli: !lazy
  by_default_ips: |
@@ -569,7 +581,7 @@ label:
  308 Permanent Redirect: "308 Permanent Redirect (Permanente omleiding)\nInstrueert de client dat de omleiding PERMANENT is, en dat de verzoekmethode die wordt gebruikt voor de omleiding NIET mag verschillen van de verzoekmethode die wordt gebruikt voor het oorspronkelijke verzoek."
  403 Forbidden: "403 Forbidden (Verboden)\nRobuuster, maar minder gebruiksvriendelijk. Aanbevolen voor de meeste algemene omstandigheden."
  409 Conflict: "409 Conflict\nAanbevolen bij resourceconflicten (b.v., conflicten bij samenvoegingen, conflicten bij bestandstoegang, enz). Niet aanbevolen in andere contexten."
- 410 Gone: "410 Gone (Weg)\nKan problemen veroorzaken bij het oplossen van valse positieven, omdat sommige browsers dit statusbericht in de cache opslaan en geen volgende verzoeken verzenden, zelfs niet nadat de blokkering is opgeheven. Kan in sommige contexten, voor bepaalde soorten verkeer, de meeste voorkeur hebben."
+ 410 Gone: "410 Gone (Weg)\nKan problemen veroorzaken bij het oplossen van valspositieven, omdat sommige browsers dit statusbericht in de cache opslaan en geen volgende verzoeken verzenden, zelfs niet nadat de blokkering is opgeheven. Kan in sommige contexten, voor bepaalde soorten verkeer, de meeste voorkeur hebben."
  418 I_m a teapot: "418 I'm a teapot (Ik ben een theepot)\nVerwijst naar een 1-aprilgrap ({{Links.RFC2324}}). Het is zeer onwaarschijnlijk dat deze door een client, bot, browser, of anderszins wordt begrepen. Geleverd voor amusement en gemak, maar over het algemeen niet aanbevolen."
  429 Too Many Requests: "429 Too Many Requests (Te veel verzoeken)\nAanbevolen voor de tarieflimiet, bij het omgaan met DDoS-aanvallen, en voor het voorkomen van overstromingen. Niet aanbevolen in andere contexten."
  451 Unavailable For Legal Reasons: "451 Unavailable For Legal Reasons (Om juridische redenen onbeschikbaar)\nAanbevolen bij blokkering voornamelijk om juridische redenen. Niet aanbevolen in andere contexten."
@@ -625,7 +637,7 @@ label:
  Displaying %s entry:
   - "%s item weergeven."
   - "%s items weergeven."
- Don_t block the request: "Blokkeer het verzoek niet.\nAls u liever wilt dat verzoeken alleen worden geblokkeerd als u zeker weet dat ze kwaadaardig zijn, of als u voorzichtig wilt zijn met vals-positieve (ten koste van ongewenste verkeer dat af en toe doorkomt), kies dit. Als u liever wilt dat verzoeken worden geblokkeerd als u niet zeker weet of ze goedaardig zijn, of als u liever waakzaam wilt blijven (ten koste van de incidentele vals-positieve), kiest u een van de andere beschikbare opties."
+ Don_t block the request: "Blokkeer het verzoek niet.\nAls u liever wilt dat verzoeken alleen worden geblokkeerd als u zeker weet dat ze kwaadaardig zijn, of als u voorzichtig wilt zijn met betrekking tot valspositieven (ten koste van ongewenste verkeer dat af en toe doorkomt), kies dit. Als u liever wilt dat verzoeken worden geblokkeerd als u niet zeker weet of ze goedaardig zijn, of als u liever waakzaam wilt blijven (ten koste van de incidentele valspositieven), kiest u een van de andere beschikbare opties."
  Duplicate to %s: "Dupliceer naar %s"
  Empty, unfamiliar, and others: "Leeg, onbekend, en andere."
  Enable auxiliary rules: "Aanvullende regels inschakelen"
@@ -637,7 +649,7 @@ label:
  Export: "Exporteer"
  Extension: "Extensie"
  External: "Externe"
- False positive risk: "Vals positieve risico:"
+ False positive risk: "Valspositief risico:"
  Fancy: "Geformatteerde"
  Focus: "Focus:"
  Greylist the request: "Behandel het verzoek als op de grijze lijst.\nStelt het aantal getriggerde signatures in op nul, maar gaat door met het verwerken van het verzoek. Aanbevolen wanneer u het verzoek niet als op de witte lijst wilt behandelen, maar iets meer substantieel nodig hebt dan het triggeren van een bypass."
@@ -726,7 +738,7 @@ label:
  Text formatting: "Tekstformaat:"
  The cache is empty: "De cache is leeg."
  Total: "Totaal"
- Trigger a bypass: "Trigger een bypass.\nTrekt één telling af van het aantal getriggerde signatures, zolang er minstens één signature is al getriggerd. Aanbevolen voor het omgaan met eenvoudige valse positieven die mogelijk worden veroorzaakt door de standaard signatuurbestanden."
+ Trigger a bypass: "Trigger een bypass.\nTrekt één telling af van het aantal getriggerde signatures, zolang er minstens één signature is al getriggerd. Aanbevolen voor het omgaan met eenvoudige valspositieven die mogelijk worden veroorzaakt door de standaard signatuurbestanden."
  Unignore this: "Niet negeer dit"
  Values for IP tracking: "Waarden voor IP-tracking"
  Whitelist the request: "Behandel het verzoek als op de witte lijst.\nStelt het aantal getriggerde signatures in op nul, en breekt elke verdere verwerking van het verzoek af. Garandeert dat CIDRAM het verzoek nooit zal blokkeren."
@@ -1074,7 +1086,7 @@ tip:
  Accounts: "De accounts pagina stelt u in staat om te bepalen wie toegang heeft tot de CIDRAM frontend."
  Actions menu: "Bij blokkeren wordt er 1 aan het aantal signatures toegevoegd. Bij omzeilen wordt er 1 afgetrokken van het aantal signatures. Met de witte lijst wordt het aantal signatures op 0 gezet en wordt de verwerking beëindigd, en dus worden alle volgende regels volledig overgeslagen. Met de grijze lijst wordt het aantal signatures op 0 gezet, maar de verwerking is niet beëindigd. Profilering heeft geen invloed op het aantal signatures, maar is nuttig wanneer complexere logica nodig is om te bepalen of andere soorten acties moeten worden uitgevoerd, omdat gegenereerde profielen kunnen worden gekoppeld aan de voorwaarden van daaropvolgende regels. Als het aantal signatures na verwerking 1 of meer bedraagt, wordt het verzoek geblokkeerd."
  Aggregator: "Met de aggregator kunt u IP's, CIDR's, un netmaskers zo de kleinste mogelijke weg uitdrukken. Voer de gegevens in die moeten worden geaggregeerd en druk op "OK"."
- An accepted value is any CIDR with a range that covers the IP address of the request: "Een acceptabele waarde is elke CIDR waarvan het bereik het IP-adres van het verzoek omvat. B.v., 1.2.3.0/24, 1.2.0.0/16, 1.0.0.0/8, enz zouden worden geaccepteerd voor 1.2.3.4. Om valse positieven te voorkomen, zijn smallere bereiken (b.v., 1.2.3.4/32) over het algemeen te verkiezen boven bredere bereiken (b.v., 0.0.0.0/1). Met de calculator kunt u achterhalen welke CIDR-bereiken een specifiek IP-adres omvatten."
+ An accepted value is any CIDR with a range that covers the IP address of the request: "Een acceptabele waarde is elke CIDR waarvan het bereik het IP-adres van het verzoek omvat. B.v., 1.2.3.0/24, 1.2.0.0/16, 1.0.0.0/8, enz zouden worden geaccepteerd voor 1.2.3.4. Om valspositieven te voorkomen, zijn smallere bereiken (b.v., 1.2.3.4/32) over het algemeen te verkiezen boven bredere bereiken (b.v., 0.0.0.0/1). Met de calculator kunt u achterhalen welke CIDR-bereiken een specifiek IP-adres omvatten."
  Auxiliary Rules Modes: "In de weergavemodus worden aanvullende regels weergegeven in een compacte lijst, zodat u ze gemakkelijk kunt lezen. Door erop te klikken kunt u de regels in de lijst uitvouwen en krijgt u meer details te zien. Wanneer u op het trigram (☰) klikt, worden opties voor het exporteren of verwijderen van een regel weergegeven. U kunt de volgorde van regels wijzigen door ze te slepen en neer te zetten, een regel van de huidige positie naar de gewenste positie slepen. De bewerkingsmodus is vereist om aanvullende regels, bewerkbare velden en opties te wijzigen en nieuwe voorwaarden, webhooks, of andere logica aan de regels toe te voegen indien nodig die op de pagina worden weergegeven. Nieuwe aanvullende regels kunnen via beide modi worden gemaakt."
  Auxiliary Rules Priority: "Prioriteit (hoogste➡(gelijk🔄gelijkwaardig)➡laagste):"
  Auxiliary Rules Webhooks: "Wanneer een regel wordt geactiveerd, CIDRAM probeert alle aangesloten webhooks op de hoogte te stellen van het evenement. Een webhook is een URL die POST-gegevens kan ontvangen, en kan nuttig zijn als er een externe service, app, script, enz  wordt gehost op een compleet ander netwerk dan CIDRAM en u wilt dat deze de door CIDRAM gegenereerde gegevens over de aanvraag verwerkt."

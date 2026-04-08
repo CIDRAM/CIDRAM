@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Czech language data for the front-end (last modified: 2026.04.02).
+# This file: Czech language data for the front-end (last modified: 2026.04.07).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -82,10 +82,22 @@ Glossary: !lazy
   CIDR: |
    „CIDR“ je zkratka pro „Classless Inter-Domain Routing“ (Beztřídní mezidoménové směrování), odkud pochází „CIDR“ v názvu „CIDRAM“. „CIDRAM“ je zkratka pro „Classless Inter-Domain Routing Access Manager“ (Beztřídní mezidoménové směrování správce přístupu).
    V kontextu CIDRAM se „CIDR“ konkrétně vztahuje na podsítě vyjádřené pomocí notace CIDR.
+  Falešně pozitivní: |
+   Obecně, při provádění testu, pokud jsou výsledky testu „pozitivní“ (tj., podmínky testu se shodují), ale očekávalo se (nebo mělo být) „negativní“ (tj., výsledky testu jsou chybné), označuje se to jako „falešně pozitivní“. <em>Angličtina: „false positive“. Nebo alternativně: „falešně pozitivní chyba“; „falešný poplach“.</em>
+   Některé související termíny jsou „skutečně pozitivní“, „skutečně negativní“, a „falešně negativní“. <em>Angličtina: „true positive“, „true negative“, „false negative“.</em> „Skutečně pozitivní“ znamená, že výsledky testu i skutečný stav dané podmínky jsou pravdivé (neboli „pozitivní“), a „skutečně negativní“ znamená, že výsledky testu i skutečný stav dané podmínky jsou nepravdivé (neboli „negativní“). „Skutečně pozitivní“ nebo „skutečně negativní“ se považuje za „správný závěr“.
+   Opakem „falešně pozitivní“ je „falešně negativní“. Pokud jsou výsledky testu „negativní“, ale očekávalo se (nebo měly být) „pozitivní“, označuje se jako „falešně negativní“.
+   V kontextu CIDRAM se tyto termíny obvykle vztahují k situaci, kdy CIDRAM blokuje něco co by neměl, nebo kdy se mu nepodaří zablokovat něco co by měl. Když CIDRAM zablokuje požadavek, který blokován být neměl (např., kvůli špatným, zastaralým, nebo nesprávným podpisům), nebo když tak učiní z nesprávných důvodů, jedná se o „falešně pozitivní“. Pokud CIDRAM nedokáže zablokovat požadavek, který měl být zablokován (např., kvůli nepředvídaným hrozbám, chybějícím podpisům, vadným modulům, nebo nedostatkům v procesu), jedná se o „falešně negativní“ (ačkoli se to obvykle popisuje jako „zmeškaná detekce“). <em>Angličtina: „missed detection“.</em>
+   | | Požadavek by NEMĚLA být blokována | Požadavek by MĚLA být zablokována |
+   | Požadavek NENÍ blokována | Skutečně negativní (správný závěr) | Zmeškaná detekce (nebo falešně negativní) |
+   | Požadavek JE zablokována | Falešně pozitivní | Skutečně pozitivní (správný závěr) |
+   Pokud narazíte na falešně pozitivní, nejprve zkontrolujte stránku s aktualizacemi a pokud je cokoli označeno jako zastaralé, aktualizujte to. Pokud problém přetrvává i poté, můžete jej nahlásit v systému pro sledování problémů CIDRAM.
+ Indexes:
+  CIDR: "cidr"
+  [Falešně negativní, Falešně pozitivní, Skutečně negativní, Skutečně pozitivní]: "false_positive"
  Refs:
   CIDR:
    Classless Inter-Domain Routing – Wikipedie: "https://cs.wikipedia.org/wiki/Classless_Inter-Domain_Routing"
-  False positive:
+  Falešně pozitivní:
    Issues · CIDRAM/CIDRAM: "https://github.com/CIDRAM/CIDRAM/issues"
 Name: !lazy
  AbuseIPDB module: "Modul AbuseIPDB."
@@ -236,7 +248,7 @@ config: !lazy
  general_stages: "Ovládací prvky pro fáze prováděcího řetězce (zda je aktivován, zda jsou zaznamenány chyby, atd)."
  general_statistics: "Ovládací prvky pro které statistické informace se mají sledovat."
  general_statistics_captchas: "Ovládací prvky pro které statistické informace se mají sledovat pro CAPTCHA."
- general_time_format: "Formát zápisu data/času používaný CIDRAM. Další možnosti mohou být přidány na vyžádání."
+ general_time_format: "Formát zápisu data/času používaný CIDRAM. Další možnosti mohou být přidáno na žádostí."
  general_time_offset: "Posun časového pásma v minutách."
  general_timezone: "Slouží k určení časového pásma, které se má použít (např., Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, atd). Zadejte „SYSTEM“, aby to PHP zpracovalo za vás automaticky."
  ipapi: "Konfigurace pro modul IP-API (poskytuje nástroj pro vyhledávání ASN a kódu země pro CIDRAM)."
@@ -416,7 +428,7 @@ hint:
  This value can be found in the dashboard for your CAPTCHA service: "Tuto hodnotu lze nalézt na řídicím panelu vaší služby CAPTCHA."
 hints_asnlookup: "** Vyžaduje funkčnost vyhledávání ASN (např., přes modul IP-API nebo BGPView)."
 hints_aux_stats: "Poznámka: Zda sledovat statistiky pro pomocná pravidla lze ovládat na stránce pomocných pravidel."
-hints_cause_fp: "*!! Vysoká pravděpodobnost způsobení falešných poplachů v důsledku %s."
+hints_cause_fp: "*!! Vysoká pravděpodobnost způsobení falešně pozitivních v důsledku %s."
 hints_cclookup: "** Vyžaduje funkčnost vyhledávání kódu země (např., přes modul IP-API nebo BGPView)."
 hints_client_hints: "!! Toto je nápověda klienta s nízkou entropií. Klientské rady jsou nová, experimentální webová technologie, která zatím není široce podporována všemi prohlížeči a hlavními klienty. <em>Vidět: {{Links.MDN.Client hints}}.</em> I když klientské rady mohou být užitečné pro digitální otisky prstů, protože nejsou široce podporovány, jejich přítomnost v požadavcích by se neměla předpokládat ani spoléhat na (t.j., blokování na základě jejich nepřítomnosti je špatný nápad)."
 hints_client_honour: "Bez ohledu na to, jak dáváme klientovi pokyny, je důležité mít na paměti, že v konečném důsledku nemáme žádnou kontrolu nad tím, co se klient rozhodne udělat, a neexistuje žádná záruka, že klient bude respektovat naše pokyny."
@@ -471,12 +483,12 @@ hints_time_format: |
 hints_usemode:
  0: "Poznámka: Požadavky, které byly whitelistování nebo ověřené a neblokované nikdy nemusí dokončit CAPTCHA."
  1: "Taky: CAPTCHA mohou poskytnout užitečnou další vrstvu ochrany proti robotům a různým druhům škodlivých automatizovaných požadavků, ale neposkytnou žádnou ochranu proti škodlivému člověku."
- 2: "Žádosti lze „označit k použití“ pomocí pomocných pravidel."
+ 2: "Požadavky lze „označit k použití“ pomocí pomocných pravidel."
  3: "Zda je požadavek považován za „citlivý“, je určeno pomocí {{Links.ConfigRef.sensitive}}."
  4: "„Limit podpisu“ je určen pomocí {{Links.ConfigRef.signature_limit}}."
 hints_verification:
- "Co jsou „pozitiva“ a „negativa“?": "Při ověřování identity předložené žádostí lze úspěšný výsledek popsat jako „pozitivní“ nebo „negativní“. Když se potvrdí, že prezentovaná identita je pravou identitou, byla by popsána jako „pozitivní“. Když se potvrdí, že předložená identita je zfalšovaná, bude popsána jako „negativní“. Neúspěšný výsledek (např., selže ověření, nebo nelze určit pravdivost předložené identity) by však nebyl popsán jako „pozitivní“ nebo „negativní“. Místo toho by byl neúspěšný výsledek popsán jednoduše jako neověřený. Pokud nedojde k žádnému pokusu o ověření identity předložené požadavkem, bude požadavek rovněž popsána jako neověřený. Termíny mají smysl pouze v kontextu, kdy je rozpoznána identita předložená žádostí, a tedy tam, kde je možné ověření. Pokud prezentovaná identita neodpovídá výše uvedeným možnostem, nebo pokud není uvedena žádná identita, výše uvedené možnosti se stanou irelevantními."
- "Co jsou „bypassace s jedním zásahem“?": "V některých případech může být pozitivně ověřený požadavek stále blokován v důsledku podpisových souborů, modulů, nebo jiných podmínek požadavku a může být nutné bypassovat, aby se zabránilo falešným poplachům. V případě, kdy má bypassace řešit přesně jeden přestupek, nic více a nic méně, lze takový bypassace označit jako „bypassace s jedním zásahem“."
+ "Co jsou „pozitiva“ a „negativa“?": "Při ověřování identita požadavku lze úspěšný výsledek popsat jako „pozitivní“ nebo „negativní“. Když se potvrdí, že prezentovaná identita je pravou identitou, byla by popsána jako „pozitivní“. Když se potvrdí, že předložená identita je zfalšovaná, bude popsána jako „negativní“. Neúspěšný výsledek (např., selže ověření, nebo nelze určit pravdivost předložené identity) by však nebyl popsán jako „pozitivní“ nebo „negativní“. Místo toho by byl neúspěšný výsledek popsán jednoduše jako neověřený. Pokud nedojde k žádnému pokusu o ověření identity předložené požadavkem, bude požadavek rovněž popsána jako neověřený. Termíny mají smysl pouze v kontextu, kdy je rozpoznána identita předložená v požadavku, a tedy tam, kde je možné ověření. Pokud prezentovaná identita neodpovídá výše uvedeným možnostem, nebo pokud není uvedena žádná identita, výše uvedené možnosti se stanou irelevantními."
+ "Co jsou „bypassace s jedním zásahem“?": "V některých případech může být pozitivně ověřený požadavek stále blokován v důsledku podpisových souborů, modulů, nebo jiných podmínek požadavku a může být nutné bypassovat, aby se předešlo falešně pozitivním. V případě, kdy má bypassace řešit přesně jeden přestupek, nic více a nic méně, lze takový bypassace označit jako „bypassace s jedním zásahem“."
 hints_want_to_block: "!! Většina uživatelů bude pravděpodobně chtít aby to bylo zablokováno, bez ohledu na to, zda je to skutečné nebo zfalšované. Toho lze dosáhnout tím, že nebude vybráno „pokus o ověření“ a bude vybráno „blokovat neověřené požadavky“. Protože však někteří uživatelé mohou chtít mít možnost ověřovat takové požadavky (za účelem blokování negativních a zároveň povolení pozitivních), místo blokování takových požadavků prostřednictvím modulů, jsou zde uvedeny možnosti pro zpracování takových požadavků."
 info_cli: !lazy
  by_default_ips: |
@@ -572,7 +584,7 @@ label:
  308 Permanent Redirect: "308 Permanent Redirect (Trvalé přesměrování)\nInstruuje klienta, že přesměrování je TRVALÉ, a že metoda požadavku použitá pro přesměrování NESMÍ být jiná než metoda požadavku použitá pro počáteční požadavek."
  403 Forbidden: "403 Forbidden (Zakázáno)\nRobustnější, ale méně uživatelsky přívětivé. Doporučeno pro většinu obecných okolností."
  409 Conflict: "409 Konflikt\nDoporučeno pro konflikty zdrojů (např., konflikty sloučení, konflikty přístupu k souborům, atd). Nedoporučuje se v jiných kontextech."
- 410 Gone: "410 Gone (Pryč)\nMůže způsobit problémy při řešení falešných poplachů, protože některé prohlížeče ukládají tuto stavovou zprávu do mezipaměti a neodesílají další požadavky, i když byly odblokovány. V některých kontextech může být pro určité druhy provozu nejvýhodnější."
+ 410 Gone: "410 Gone (Pryč)\nMůže způsobit problémy při řešení falešně pozitivních, protože některé prohlížeče ukládají tuto stavovou zprávu do mezipaměti a neodesílají další požadavky, i když byly odblokovány. V některých kontextech může být pro určité druhy provozu nejvýhodnější."
  418 I_m a teapot: "418 I'm a teapot (Jsem čajník)\nOdkazuje na aprílový žertík ({{Links.RFC2324}}). Je velmi nepravděpodobné, že by mu porozuměl jakýkoli klient, robot, prohlížeč nebo jinak. Poskytováno pro zábavu a pohodlí, ale obecně se nedoporučuje."
  429 Too Many Requests: "429 Too Many Requests (Příliš mnoho požadavků)\nDoporučeno pro omezení rychlosti, při řešení DDoS útoků, a pro prevenci povodní. Nedoporučuje se v jiných kontextech."
  451 Unavailable For Legal Reasons: "451 Unavailable For Legal Reasons (Nedostupné z právních důvodů)\nDoporučeno při blokování především z právních důvodů. Nedoporučuje se v jiných kontextech."
@@ -630,7 +642,7 @@ label:
   - "Zobrazuje se %s záznam."
   - "Zobrazují se %s záznamy."
   - "Zobrazeno %s záznamů."
- Don_t block the request: "Neblokujte žádost.\nChcete-li aby byly požadavky blokovány pouze tehdy, když jste si jisti že jsou škodlivé, nebo chcete-li zůstat opatrní o falešně pozitivní výsledky (za cenu občasného průchodu nežádoucího provozu), zvolte tuto možnost. Chcete-li aby byly požadavky zablokovány, pokud si nejste jisti že jsou neškodné, nebo pokud byste raději zůstali ostražití (za cenu občasných falešných poplachů), zvolte jednu z dalších dostupných možností."
+ Don_t block the request: "Neblokujte požadavek.\nChcete-li aby byly požadavky blokovány pouze tehdy, když jste si jisti že jsou škodlivé, nebo chcete-li zůstat opatrní o falešně pozitivní výsledky (za cenu občasného průchodu nežádoucího provozu), zvolte tuto možnost. Chcete-li aby byly požadavky zablokovány, pokud si nejste jisti že jsou neškodné, nebo pokud byste raději zůstali ostražití (s rizikem občasných falešně pozitivních), zvolte jednu z dalších dostupných možností."
  Duplicate to %s: "Duplikovat do %s"
  Empty, unfamiliar, and others: "Prázdné, neznámé, a další."
  Enable auxiliary rules: "Zapnout pomocná pravidla"
@@ -684,7 +696,7 @@ label:
  Only those not installed: "Pouze ty, které nejsou nainstalovány."
  Only when blocked, specially marked for use, within the signature limit, and not banned: "Pouze při zablokování, speciálně označeném pro použití, v rámci limitu podpisů, a bez zákazu."
  Only when blocked, within the signature limit, and not banned: "Pouze při zablokování, v rámci limitu podpisů, a bez zákazu."
- Only when not blocked, at sensitive page requests: "Pouze když není blokován, na žádost citlivých stránek."
+ Only when not blocked, at sensitive page requests: "Pouze když není blokován, na požadavek citlivých stránek."
  Only when not blocked, or when specially marked for use, within the signature limit, and not banned: "Pouze když není blokován, nebo speciálně označeném pro použití, v rámci limitu podpisu, a není zakázán."
  Only when not blocked: "Pouze když není blokován."
  Only when within the signature limit, and not banned (regardless of whether blocked): "Pouze v rámci limitu podpisů, a nikoli zakázáno (bez ohledu zda je blokován)."
@@ -731,7 +743,7 @@ label:
  Text formatting: "Formátování textu:"
  The cache is empty: "Mezipaměť je prázdná."
  Total: "Celkový"
- Trigger a bypass: "Spusťte bypass.\nOdečte jeden počet od počtu spuštěných podpisů, pokud již byl spuštěn alespoň jeden podpis. Doporučeno pro řešení jednoduchých falešných poplachů potenciálně způsobených standardními soubory podpisů."
+ Trigger a bypass: "Spusťte bypass.\nOdečte jeden počet od počtu spuštěných podpisů, pokud již byl spuštěn alespoň jeden podpis. Doporučeno pro řešení jednoduchých falešně pozitivních potenciálně způsobený standardními soubory podpisů."
  Unignore this: "Odignorujte to"
  Values for IP tracking: "Hodnoty pro sledování IP"
  Whitelist the request: "Whitelistujte požadavek.\nResetuje počet spuštěných podpisů, a přeruší jakékoli další zpracování požadavku. Zaručuje, že CIDRAM požadavek nikdy nezablokuje."

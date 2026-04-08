@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2026.04.02).
+# This file: Polish language data for the front-end (last modified: 2026.04.07).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -81,11 +81,23 @@ Glossary: !lazy
  Entries:
   CIDR: |
    „CIDR” to akronim od „Classless Inter-Domain Routing”, skąd pochodzi skrót „CIDR” w „CIDRAM”, a „CIDRAM” to akronim od „Classless Inter-Domain Routing Access Manager”.
-   W kontekście pamięci CIDRAM termin „CIDR” (lub „CIDR-y”) odnosi się konkretnie do podsieci wyrażonych przy użyciu notacji CIDR.
+   W kontekście CIDRAM, termin „CIDR” (lub „CIDR-y”) odnosi się konkretnie do podsieci wyrażonych przy użyciu notacji CIDR.
+  Fałszywie pozytywny: |
+   Ogólnie rzecz biorąc, gdy podczas przeprowadzania testu wyniki są „pozytywne” (tj., warunki testu okazały się prawdziwe), ale oczekiwano (lub oczekiwano że będą) „negatywne” (tj., wyniki testu są błędne), wówczas taki wynik określa się jako „fałszywie pozytywny”. <em>Angielski: „false positive”. Lub inaczej: „błąd fałszywie dodatni”; „fałszywy alarm”.</em>
+   Niektóre powiązane terminy to „prawdziwie pozytywny”, „prawdziwie negatywny”, i „fałszywie negatywny”. <em>Angielski: „true positive”, „true negative”, „false negative”.</em> „Prawdziwie pozytywny” odnosi się do sytuacji, gdy wyniki testu i rzeczywisty stan warunku są prawdziwe (lub „pozytywne”), a „prawdziwie negatywny” odnosi się do sytuacji, gdy wyniki testu i rzeczywisty stan warunku są fałszywe (lub „negatywne”). „Prawdziwie pozytywny” lub „prawdziwie negatywny” wynik jest uważany za „poprawny wniosek”.
+   Odwrotnością „fałszywie pozytywny” jest „fałszywie negatywny”. Gdy wyniki testu są „negatywne”, ale oczekiwano (lub powinno być) „pozytywne”, to jest „fałszywie negatywny”.
+   W kontekście CIDRAM, terminy te odnoszą się zazwyczaj do sytuacji w której CIDRAM blokuje coś czego nie powinna, lub gdy nie udaje jej się zablokować czegoś co powinna. Gdy CIDRAM blokuje żądanie które nie powinno zostać zablokowane (np., z powodu złych, nieaktualnych, lub nieprawidłowych podpisów) lub gdy robi to z niewłaściwych powodów, jest to „fałszywie pozytywny”. Gdy CIDRAM nie zablokuje żądania które powinno zostać zablokowane (np., z powodu nieprzewidzianych zagrożeń, brakujących podpisów, wadliwych modułów, lub niedociągnięć w procesie), jest to „fałszywie negatywny” (choć zazwyczaj opisywanym jako „pominięte wykrycie”). <em>Angielski: „missed detection”.</em>
+   | | Żądanie NIE powinno być zablokowane | Żądanie POWINNO być zablokowane |
+   | Żądanie NIE jest zablokowane | Prawdziwie negatywny (poprawny wniosek) | Pominięte wykrycie (lub fałszywie negatywny) |
+   | Żądanie JEST zablokowane | Fałszywie pozytywny | Prawdziwie pozytywny (poprawny wniosek) |
+   Jeśli napotkasz fałszywe pozytywne, najpierw sprawdź stronę aktualizacji. Jeśli cokolwiek jest oznaczone jako nieaktualne, zaktualizuj to. Jeśli po wykonaniu tej czynności problem nadal będzie występował, możesz zgłosić go za pośrednictwem systemu śledzenia problemów CIDRAM.
+ Indexes:
+  CIDR: "cidr"
+  [Fałszywie negatywny, Fałszywie pozytywny, Prawdziwie negatywny, Prawdziwie pozytywny]: "false_positive"
  Refs:
   CIDR:
    Classless Inter-Domain Routing – Wikipedia, wolna encyklopedia: "https://pl.wikipedia.org/wiki/Classless_Inter-Domain_Routing"
-  False positive:
+  Fałszywie pozytywny:
    Issues · CIDRAM/CIDRAM: "https://github.com/CIDRAM/CIDRAM/issues"
 Name: !lazy
  AbuseIPDB module: "Moduł AbuseIPDB."

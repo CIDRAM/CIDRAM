@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2026.04.02).
+# This file: Latvian language data for the front-end (last modified: 2026.04.07).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -82,10 +82,22 @@ Glossary: !lazy
   CIDR: |
    "CIDR" ir akronīms apzīmējumam "Classless Inter-Domain Routing" (bezklases starpdomēnu maršrutēšana), un no kurienes cēlies "CIDR" saīsinājumā "CIDRAM", kas ir akronīms apzīmējumam "Classless Inter-Domain Routing Access Manager" (bezklases starpdomēnu maršrutēšanas piekļuves pārvaldnieks).
    CIDRAM kontekstā "CIDR" (vai "CIDR") attiecas tieši uz apakštīkliem, kas izteikti, izmantojot CIDR notāciju.
+  Viltus pozitīvs: |
+   Veicot testu, ja testa rezultāti ir "pozitīvi" (t.i., testa nosacījumi ir atzīti par patiesiem), bet bija paredzams, ka tie būs "negatīvi" (t.i., testa rezultāti ir kļūdaini), tas ir "viltus pozitīvs". <em>Angļu valodā: "false positive". Vai arī: "viltus pozitīva kļūda"; "viltus trauksme".</em>
+   Daži saistīti termini ir "patiesi pozitīvs", "patiesi negatīvs", un "viltus negatīvs". <em>Angļu valodā: "true positive", "true negative", "false negative".</em> "Patiesi pozitīvs" ir tad, kad gan testa rezultāti, gan faktiskais nosacījuma stāvoklis ir patiesi (jeb "pozitīvs"), un "patiesi negatīvs" ir tad, kad gan testa rezultāti, gan faktiskais nosacījuma stāvoklis ir aplami (jeb "negatīvi"). "Patiesi pozitīvs" vai "patiesi negatīvs" tiek uzskatīts par "pareizu secinājumu".
+   "Viltus pozitīvs" apgrieztais ir "viltus negatīvs". Ja testa rezultāti ir "negatīvi", bet bija gaidāmi "pozitīvi", tas ir "viltus negatīvs".
+   CIDRAM kontekstā šie termini parasti attiecas uz gadījumiem, kad CIDRAM bloķē kaut ko tādu, ko tai nevajadzētu, vai kad tai neizdodas bloķēt kaut ko tādu, ko tai vajadzētu. Ja CIDRAM bloķē pieprasījumu, kuram nevajadzēja tikt bloķētam (piemēram, sliktu, novecojušu, vai nepareizu parakstu dēļ), vai ja tas tiek darīts nepareizu iemeslu dēļ, tas ir "viltus pozitīvs". Ja CIDRAM neizdodas bloķēt pieprasījumu, kas būtu jābloķē (piemēram, neparedzētu draudu, trūkstošu parakstu, bojātu moduļu, vai procesa nepilnību dēļ), tas ir "viltus negatīvs" (lai gan parasti to raksturo kā "nepamanītu noteikšanu"). <em>Angļu valodā: "missed detection".</em>
+   | | Pieprasījums NEVAJADZĒTU bloķēt | Pieprasījums VAJADZĒTU bloķēt |
+   | Pieprasījums NAV bloķēts | Patiesi negatīvs (pareizu secinājumu) | Nepamanīta noteikšana (vai viltus negatīvs) |
+   | Pieprasījums IR bloķēts | Viltus pozitīvs | Patiesi pozitīvs (pareizu secinājumu) |
+   Ja rodas kļūdaini pozitīvi rezultāti, vispirms pārbaudiet atjauninājumu lapu un, ja kaut kas ir atzīmēts kā novecojis, atjauniniet to. Pēc tam, ja problēma joprojām pastāv, varat ziņot par to CIDRAM problēmu izsekotājā.
+ Indexes:
+  CIDR: "cidr"
+  [Viltus negatīvs, Viltus pozitīvs, Patiesi negatīvs, Patiesi pozitīvs]: "false_positive"
  Refs:
   CIDR:
    Bezklases starpdomēnu maršrutēšana — Vikipēdija: "https://lv.wikipedia.org/wiki/Bezklases_starpdom%C4%93nu_mar%C5%A1rut%C4%93%C5%A1ana"
-  False positive:
+  Viltus pozitīvs:
    Issues · CIDRAM/CIDRAM: "https://github.com/CIDRAM/CIDRAM/issues"
 Name: !lazy
  AbuseIPDB module: "AbuseIPDB modulis."

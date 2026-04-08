@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2026.04.02).
+# This file: Swedish language data for the front-end (last modified: 2026.04.07).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -82,10 +82,22 @@ Glossary: !lazy
   CIDR: |
    "CIDR" är en förkortning för "Classless Inter-Domain Routing", vilket är varifrån "CIDR" i "CIDRAM" kommer. "CIDRAM" är en förkortning för "Classless Inter-Domain Routing Access Manager".
    I samband med CIDRAM hänvisar "CIDR" (eller "CIDRer") specifikt till delnät uttryckta med CIDR-notation.
+  Falskt positiv: |
+   I allmänhet, när ett test utförs och testresultaten är "positiva" (dvs., testförhållandena visar sig vara sanna), men förväntades vara (eller borde ha varit) "negativa" (dvs., testresultaten är felaktiga), det kallas ett "falskt positivt". <em>Engelska: "false positive". Eller alternativt: "falskt positivt fel"; "falskt alarm".</em>
+   Några relaterade termer är "sant positiv", "sant negativ", och "falskt negativ". <em>Engelska: "true positive", "true negative", "false negative".</em> Ett "sant positivt" avser när både testresultaten och det faktiska tillståndet är sanna (eller "positiva"), och ett "sant negativt" avser när både testresultaten och det faktiska tillståndet är falska (eller "negativa"). En "sant positiv" eller en "sant negativ" anses vara en "korrekt slutsats".
+   Motsatsen till ett "falskt positivt" är ett "falskt negativt". När testresultaten är "negativa", men förväntades vara (eller borde ha varit) "positiva", det kallas ett "falskt negativt".
+   I samband med CIDRAM syftar dessa termer vanligtvis på när CIDRAM blockerar något det inte borde, eller när det misslyckas med att blockera något det borde. När CIDRAM blockerar en begäran som inte borde ha blockerats (t.ex., på grund av dåliga, föråldrade, eller felaktiga signaturer), eller när den gör det av fel skäl, är detta ett "falskt positivt". När CIDRAM misslyckas med att blockera en begäran som borde ha blockerats (t.ex., på grund av oförutsedda hot, saknade signaturer, felaktiga moduler, eller brister i processen), är detta ett "falskt negativt" (men vanligtvis beskrivet som en "missad upptäckt"). <em>Engelska: "missed detection".</em>
+   | | Begäran borde INTE blockeras | Begäran BORDE blockeras |
+   | Begäran är INTE blockerad | Sant negativ (korrekt slutsats) | Missad upptäckt (eller falskt negativ) |
+   | Begäran ÄR blockerad | Falskt positiv | Sant positiv (korrekt slutsats) |
+   Om du stöter på falska positiva, kontrollera först uppdateringssidan och uppdatera om något är markerat som föråldrat. Om problemet kvarstår du kan rapportera problemet via CIDRAMs problemspårare.
+ Indexes:
+  CIDR: "cidr"
+  [Falskt negativ, Falskt positiv, Sant negativ, Sant positiv]: "false_positive"
  Refs:
   CIDR:
    Classless Inter-Domain Routing – Wikipedia: "https://sv.wikipedia.org/wiki/Classless_Inter-Domain_Routing"
-  False positive:
+  Falskt positiv:
    Issues · CIDRAM/CIDRAM: "https://github.com/CIDRAM/CIDRAM/issues"
 Name: !lazy
  AbuseIPDB module: "AbuseIPDB modul."

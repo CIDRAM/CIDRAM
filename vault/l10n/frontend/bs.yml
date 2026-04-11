@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bosnian language data for the front-end (last modified: 2026.04.02).
+# This file: Bosnian language data for the front-end (last modified: 2026.04.10).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -82,8 +82,20 @@ Glossary: !lazy
   CIDR: |
    "CIDR" je akronim za "Classless Inter-Domain Routing", odakle potiče "CIDR" u "CIDRAM", pri čemu je "CIDRAM" akronim za "Classless Inter-Domain Routing Access Manager".
    U kontekstu CIDRAM-a, "CIDR" (ili "CIDR-ovi") se posebno odnosi na podmreže izražene korištenjem CIDR notacije.
+  Lažno pozitivan: |
+   Općenito, prilikom izvođenja testa, kada su rezultati testa "pozitivni" (tj., uslovi testa se ispostave tačnim), ali se očekivalo (ili je trebalo da budu) "negativni" (tj., rezultati testa su pogrešni), to se naziva "lažno pozitivnim". <em>Engleski: "false positive". Alternativno: "lažno pozitivna greška"; "lažni alarm".</em>
+   Neki povezani termini su "istinski pozitivan", "istinski negativan", i "lažno negativan". <em>Engleski: "true positive", "true negative", "false negative".</em> "Istinski pozitivan" se odnosi na situaciju kada su i rezultati testa i stvarno stanje uvjeta istiniti (ili "pozitivni"), a "istinski negativan" se odnosi na situaciju kada su i rezultati testa i stvarno stanje uvjeta lažni (ili "negativni"). "Istinski pozitivan" ili "istinski negativan" zaključak se smatra "tačnim zaključkom".
+   Inverz "lažno pozitivnog" je "lažno negativan". Kada su rezultati testa "negativni", ali se očekivalo da budu (ili je trebalo da budu) "pozitivni", takvi rezultati se nazivaju "lažno negativni".
+   U kontekstu CIDRAM-a, ovi termini se obično odnose na situaciju kada CIDRAM blokira nešto što ne bi trebao, ili kada ne uspije blokirati nešto što bi trebao. Kada CIDRAM blokira zahtjev koji nije trebao biti blokiran (npr,. zbog loših, zastarjelih, ili netačnih potpisa), ili kada to učini iz pogrešnih razloga, to je "lažno pozitivan". Kada CIDRAM ne uspije blokirati zahtjev koji je trebao biti blokiran (npr., zbog nepredviđenih prijetnji, nedostajućih potpisa, neispravnih modula, ili nedostataka u procesu), to je "lažno negativno" (iako se obično opisuje kao "propuštena detekcija"). <em>Engleski: "missed detection".</em>
+   | | Zahtjev NE trebalo bi biti blokiran  | Zahtjev TREBALO BI biti blokiran |
+   | Zahtjev NIJE blokiran | Istinski negativan (tačnim zaključkom) | Propuštena detekcija (ili lažno negativan) |
+   | Zahtjev JE blokiran | Lažno pozitivan | Istinski pozitivan (tačnim zaključkom) |
+   Ako naiđete na lažno pozitivne, prvo provjerite stranicu s ažuriranjima i ako je nešto označeno kao zastarjelo, ažurirajte to. Nakon toga, ako problem i dalje postoji, možete ga prijaviti na CIDRAM-ovom sistemu za praćenje problema.
+ Indexes:
+  CIDR: "cidr"
+  [Lažno negativan, Lažno pozitivan, Istinski negativan, Istinski pozitivan]: "false_positive"
  Refs:
-  False positive:
+  Lažno pozitivan:
    Lažna pozitivnost i lažna negativnost - Wikipedia: "https://bs.wikipedia.org/wiki/La%C5%BEna_pozitivnost_i_la%C5%BEna_negativnost"
    Issues · CIDRAM/CIDRAM: "https://github.com/CIDRAM/CIDRAM/issues"
 Name: !lazy
@@ -284,7 +296,7 @@ config: !lazy
  quic_positive_action: "Koju radnju CIDRAM treba izvršiti kada naiđe na zahtjev od Quic cloud-a? Zadana radnja = Zaobići."
  rate_limiting: "Konfiguracija za ograničavanje brzine (ne preporučuje se za opću upotrebu)."
  rate_limiting_allowance_period: "Trajanje praćenja upotrebe. Zadano = 0°0′0″."
- rate_limiting_exceptions: "Izuzeci (tj. zahtjevi koji ne bi trebali biti ograničeni brzinom). Relevantno samo kada je ograničenje brzine omogućeno."
+ rate_limiting_exceptions: "Izuzeci (tj., zahtjevi koji ne bi trebali biti ograničeni brzinom). Relevantno samo kada je ograničenje brzine omogućeno."
  rate_limiting_hint: "Imajte na umu da, kao i kod svih ostalih CIDRAM funkcionalnosti, CIDRAM-ova funkcionalnost ograničavanja brzine može primijeniti samo na one stranice i resurse na koje je CIDRAM povezan. To bi obično značilo da resursi koji nisu iz PHP-a ne bi bili obuhvaćeni osim tamo gdje ih eksplicitno opslužuju povezani PHP resursi. Ako možete koristiti serverski modul, cPanel, ili neki drugi mrežni alat za provođenje ograničavanje brzine, bilo bi bolje koristiti to umjesto CIDRAM-ove funkcionalnosti ograničavanja brzine. Također imajte na umu da bi odlučan i uporan korisnik mogao lako zaobići ograničavanje brzine rotiranjem njihove IP adrese ili prelaskom na proxy ili VPN provajdera o kojem CIDRAM još nije svjestan, i imajte na umu da ograničavanje brzine može biti vrlo frustrirajuće za stvarne krajnje korisnike. Ponekad može biti potrebno, ali rijetko je poželjno."
  rate_limiting_max_bandwidth: "Koliko se propusnog opsega može iskoristiti unutar dodijeljenog vremena prije ograničavanja brzine budućih zahtjeva. Vrijednost 0 onemogućuje ovu vrstu ograničenja brzine. Zadano = 0KB."
  rate_limiting_max_requests: "Koliko zahtjeva se može poslati u predviđenom vremenu prije ograničavanja brzine budućih zahtjeva. Vrijednost 0 onemogućuje ovu vrstu ograničenja brzine. Zadano = 0."
@@ -417,7 +429,7 @@ hints_asnlookup: "** Zahtijeva funkcionalnost za ASN pretraživanja (npr., preko
 hints_aux_stats: "Bilješka: Praćenje statistike za pomoćna pravila može se kontrolisati sa stranice pomoćnih pravila."
 hints_cause_fp: "*!! Velika vjerovatnoća izazivanja lažnih pozitivnih rezultata zbog %s."
 hints_cclookup: "** Zahtijeva funkcionalnost za traženje kodova zemalja (npr., preko IP-API ili BGPView modula)."
-hints_client_hints: "!! Ovo je savjet klijenta s niskom entropijom. Ovo je nova, eksperimentalna web tehnologija koja još nije široko podržana. <em>Vidi: {{Links.MDN.Client hints}}.</em> Iako savjeti klijenta mogu biti korisni za uzimanje otisaka prstiju, budući da nisu široko podržani, njihovo prisustvo u zahtjevima ne treba pretpostavljati niti se na njih oslanjati (tj. blokiranje na osnovu njihovog odsustva je loša ideja)."
+hints_client_hints: "!! Ovo je savjet klijenta s niskom entropijom. Ovo je nova, eksperimentalna web tehnologija koja još nije široko podržana. <em>Vidi: {{Links.MDN.Client hints}}.</em> Iako savjeti klijenta mogu biti korisni za uzimanje otisaka prstiju, budući da nisu široko podržani, njihovo prisustvo u zahtjevima ne treba pretpostavljati niti se na njih oslanjati (tj., blokiranje na osnovu njihovog odsustva je loša ideja)."
 hints_client_honour: "Bez obzira na to kako dajemo instrukcije klijentu, važno je zapamtiti da u konačnici nemamo kontrolu nad onim što klijent odabere da uradi, i nema garancije da će klijent poštovati naša uputstva."
 hints_default_dns:
  Čpp.: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#what-can-i-use-for-default_dns" hreflang="en-AU">Šta mogu koristiti za "default_dns"?</a></em>"
@@ -432,7 +444,7 @@ hints_http_response_header_code:
  2.: "Kada je entitet koji je podnio zahtjev zabranjen zbog prekoračenja ograničenja prekršaja, koristit će se HTTP statusna poruka za "zabranjeno"."
  3.: "Kada je blokirano zbog ograničenja brzine, koristit će se 429, ili kada je blokirano zbog sukoba resursa, koristit će se HTTP statusna poruka definirana sa <code class="s">signatures➡conflict_response</code> (ograničavanje brzine i sukobi resursa imaju jednak prioritet u ovom kontekstu)."
  4.: "Kada je blokirano zbog pomoćnog pravila koje postavlja "nadjačavanje HTTP statusnog koda", koristit će se to nadjačavanje HTTP statusnog koda."
- 5.: "Kada je blokirano iz pravnih razloga (tj. kada je blokirano zbog prilagođenog potpisa koji koristi skraćenicu "pravni"), koristit će se HTTP statusna poruka za "pravni"."
+ 5.: "Kada je blokirano iz pravnih razloga (tj., kada je blokirano zbog prilagođenog potpisa koji koristi skraćenicu "pravni"), koristit će se HTTP statusna poruka za "pravni"."
  6.: "Za sve ostale blokirane zahtjeve, koristit će se HTTP statusna poruka za "zadano" (ovo ima najniži prioritet)."
 hints_inspection: "* Namijenjen samo za otklanjanje grešaka u pomoćnim pravilima. Ne prikazuje se blokiranim korisnicima."
 hints_ipv6_on_32bit: "Bilješka: IPv6 pretraživanja možda neće raditi ispravno na nekim 32-bitnim sistemima."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2026.04.02).
+# This file: Turkish language data for the front-end (last modified: 2026.04.10).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -82,10 +82,22 @@ Glossary: !lazy
   CIDR: |
    "CIDR", "Sınıfsız Alanlar Arası Yönlendirme"nin kısaltmasıdır ve "CIDRAM"deki "CIDR" de buradan gelir. "CIDRAM", "Sınıfsız Alanlar Arası Yönlendirme Erişim Yöneticisi"nin kısaltmasıdır.
    CIDRAM bağlamında, "CIDR" (veya "CIDR'ler") özellikle CIDR gösterimi kullanılarak ifade edilen alt ağları ifade eder.
+  Yanlış pozitif: |
+   Bir test yapılırken, test sonuçları "pozitif" (yani test koşullarının doğru olduğu) iken, ama beklenen sonuç "negatif" (yani test sonuçları hatalı) ise, buna "yanlış pozitif" denir. <em>İngilizce: "false positive". Veya alternatif olarak: "yanlış pozitif hata"; "yanlış alarm".</em>
+   "Gerçek pozitif", "gerçek negatif", ve "yanlış negatif" gibi bazı ilgili terimler bulunmaktadır. <em>İngilizce: "true positive", "true negative", "false negative".</em> "Gerçek pozitif", test sonuçlarının ve durumun gerçek halinin her ikisinin de doğru (veya "pozitif") olması anlamına gelir. "Gerçek negatif", test sonuçlarının ve durumun gerçek halinin her ikisinin de yanlış (veya "negatif") olması anlamına gelir. "Gerçek pozitif" veya "gerçek negatif", "doğru çıkarım" olarak kabul edilir.
+   "Yanlış pozitif"in tersi "yanlış negatif"tir. Test sonuçları "negatif" çıktığında, ancak "pozitif" olması bekleniyorsa (veya olması gerekiyorsa), bu "yanlış negatif"tir.
+   CIDRAM bağlamında, bu terimler genellikle CIDRAM'in engellememesi gereken bir şeyi engellediği veya engellemesi gereken bir şeyi engellemediği durumları ifade eder. CIDRAM, engellenmemesi gereken bir isteği engellediğinde (örneğin, hatalı, güncel olmayan veya yanlış imzalar nedeniyle), veya yanlış nedenlerle engellediğinde, bu bir "yanlış pozitif"tir. CIDRAM'ın engellenmesi gereken bir isteği engellememesi durumuna (örneğin, öngörülemeyen tehditler, eksik imzalar, hatalı modüller, veya süreçteki eksiklikler nedeniyle) "yanlış negatif" denir (ancak bu genellikle "gözden kaçan tespit" olarak tanımlanır). <em>İngilizce: "missed detection".</em>
+   | | İstek engellenmemelidir | İstek engellenmelidir |
+   | İstek engellenmedi | Gerçek negatif (doğru çıkarım) | Gözden kaçan tespit (veya yanlış negatif) |
+   | İstek engellendi | Yanlış pozitif | Gerçek pozitif (doğru çıkarım) |
+   Yanlış pozitif karşılaşırsanız, öncelikle güncellemeler sayfasını kontrol edin, ve herhangi bir şeyin güncel olmadığını belirten bir işaret varsa, onu güncelleyin. Bundan sonra sorun hala devam ederse, sorunu CIDRAM'ın sorun takip sistemine bildirebilirsiniz.
+ Indexes:
+  CIDR: "cidr"
+  [Yanlış negatif, Yanlış pozitif, Gerçek negatif, Gerçek pozitif]: "false_positive"
  Refs:
   CIDR:
    Sınıfsız alanlar arası yönlendirme - Vikipedi: "https://tr.wikipedia.org/wiki/S%C4%B1n%C4%B1fs%C4%B1z_alanlar_aras%C4%B1_y%C3%B6nlendirme"
-  False positive:
+  Yanlış pozitif:
    Yanlış pozitif ve yanlış negatif - Vikipedi: "https://tr.wikipedia.org/wiki/Yanl%C4%B1%C5%9F_pozitif_ve_yanl%C4%B1%C5%9F_negatif"
    Issues · CIDRAM/CIDRAM: "https://github.com/CIDRAM/CIDRAM/issues"
 Name: !lazy

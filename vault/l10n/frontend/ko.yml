@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2026.04.02).
+# This file: Korean language data for the front-end (last modified: 2026.04.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -82,10 +82,22 @@ Glossary: !lazy
   CIDR: |
    "CIDR"은 "Classless Inter-Domain Routing"의 약자로, "CIDRAM"의 "CIDR"이 여기서 유래되었습니다. "CIDRAM"은 "Classless Inter-Domain Routing Access Manager"의 약자입니다.
    CIDRAM의 맥락에서, "CIDR"은 CIDR 표기법을 사용하여 표현된 서브넷을 구체적으로 지칭합니다.
+  거짓 양성: |
+   검사를 수행했을 때, 결과가 "양성"으로 나왔지만 "음성"이 예상되었던 경우 (즉, 검사 결과가 잘못되었습니다), 이를 "거짓 양성"이라고 합니다. <em>영어: "false positive". 또는: "오탐 오류"; "오경보".</em>
+   "진실 양성", "진실 음성", "거짓 음성"은 서로 관련된 용어들입니다. <em>영어: "true positive", "true negative", "false negative".</em> "참양성"은 검사 결과와 실제 상태가 모두 참(또는 "양성")인 경우이고, "참음성"은 검사 결과와 실제 상태가 모두 거짓(또는 "음성")인 경우입니다. "참긍정" 또는 "참부정"은 "정확한 추론"으로 간주됩니다.
+   "거짓 양성"의 반대는 "거짓 음성"입니다. 검사 결과가 "음성"으로 나왔지만 "양성"이 예상되었던 경우, 이를 "거짓 음성"이라고 합니다.
+   CIDRAM은 이러한 용어를 사용하여 차단되어서는 안 되는 것이 차단되는 경우와 차단되어야 하는 것이 차단되지 않는 경우를 설명합니다. CIDRAM이 차단해서는 안 되는 요청(예: 서명이 잘못되었거나, 오래되었거나, 부정확한 경우)을 차단하거나, 잘못된 이유로 차단하는 경우, 이를 "거짓 양성"이라고 합니다. CIDRAM이 차단했어야 할 요청을 차단하지 못하는 경우(예: 예상치 못한 위협, 서명 누락, 모듈 오류 또는 프로세스상의 결함으로 인해) 이를 "거짓 음성"이라고 합니다 (일반적으로 "탐지 실패"로 설명되지만). <em>영어: "missed detection".</em>
+   | | 해당 요청은 차단되어서는 안 됩니다 | 해당 요청은 차단되어야 합니다 |
+   | 요청이 차단되지 않았습니다 | 진실 음성 (정확한 추론) | 탐지 실패 (또는 거짓 음성) |
+   | 요청이 차단되었습니다 | 거짓 양성 | 진실 양성 (정확한 추론) |
+   거짓 양성이 발생하는 경우 먼저 업데이트 페이지를 확인하고, 구식으로 표시됨 항목이 있으면, 업데이트하십시오. 그 후에도 문제가 계속 발생하면, CIDRAM의 문제 추적 시스템에 문제를 보고할 수 있습니다.
+ Indexes:
+  CIDR: "cidr"
+  [거짓 음성, 거짓 양성, 진실 음성, 진실 양성]: "false_positive"
  Refs:
   CIDR:
    CIDR - 위키백과, 우리 모두의 백과사전: "https://ko.wikipedia.org/wiki/CIDR"
-  False positive:
+  거짓 양성:
    거짓 양성과 거짓 음성 - 위키백과, 우리 모두의 백과사전: "https://ko.wikipedia.org/wiki/%EA%B1%B0%EC%A7%93_%EC%96%91%EC%84%B1%EA%B3%BC_%EA%B1%B0%EC%A7%93_%EC%9D%8C%EC%84%B1"
    Issues · CIDRAM/CIDRAM: "https://github.com/CIDRAM/CIDRAM/issues"
 Name: !lazy

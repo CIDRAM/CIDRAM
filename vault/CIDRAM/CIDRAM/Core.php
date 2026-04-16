@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2026.03.26).
+ * This file: The CIDRAM core (last modified: 2026.04.06).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -130,7 +130,7 @@ class Core
     /**
      * @var string CIDRAM version number (SemVer).
      */
-    public $ScriptVersion = '4.1.0';
+    public $ScriptVersion = '4.2.0';
 
     /**
      * @var string CIDRAM version identifier (complete notation).

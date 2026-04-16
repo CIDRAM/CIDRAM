@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The file manager page (last modified: 2026.03.18).
+ * This file: The file manager page (last modified: 2026.04.15).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -67,24 +67,24 @@ if (!$this->FE['ASYNC']) {
     if (isset($FMData['do_action'], $_FILES['upload-file']['name']) && $FMData['do_action'] === 'upload-file') {
         /** Check whether safe. */
         $SafeToContinue = (
-            basename($_FILES['upload-file']['name']) === $_FILES['upload-file']['name'] &&
+            \basename($_FILES['upload-file']['name']) === $_FILES['upload-file']['name'] &&
             $this->pathSecurityCheck($_FILES['upload-file']['name']) &&
             isset($_FILES['upload-file']['tmp_name'], $_FILES['upload-file']['error']) &&
             $_FILES['upload-file']['error'] === \UPLOAD_ERR_OK &&
-            is_uploaded_file($_FILES['upload-file']['tmp_name']) &&
+            \is_uploaded_file($_FILES['upload-file']['tmp_name']) &&
             !is_link($this->FE['basepath'] . $_FILES['upload-file']['name'])
         );
 
         /** If the filename already exists, delete the old file before moving the new file. */
         if ($SafeToContinue && \is_readable($this->FE['basepath'] . $_FILES['upload-file']['name'])) {
-            if (is_dir($this->FE['basepath'] . $_FILES['upload-file']['name'])) {
+            if (\is_dir($this->FE['basepath'] . $_FILES['upload-file']['name'])) {
                 if ($this->isDirEmpty($this->FE['basepath'] . $_FILES['upload-file']['name'])) {
-                    rmdir($this->FE['basepath'] . $_FILES['upload-file']['name']);
+                    \rmdir($this->FE['basepath'] . $_FILES['upload-file']['name']);
                 } else {
                     $SafeToContinue = false;
                 }
             } else {
-                unlink($this->FE['basepath'] . $_FILES['upload-file']['name']);
+                \unlink($this->FE['basepath'] . $_FILES['upload-file']['name']);
             }
         }
 
@@ -168,7 +168,7 @@ if (!$this->FE['ASYNC']) {
             $this->Events->fireEvent('final');
             header('Content-Type: application/octet-stream');
             header('Content-Transfer-Encoding: Binary');
-            header('Content-disposition: attachment; filename="' . basename($FMData['filename']) . '"');
+            header('Content-disposition: attachment; filename="' . \basename($FMData['filename']) . '"');
             echo $this->readFile($this->FE['basepath'] . $FMData['filename']);
             die;
         }
@@ -263,11 +263,11 @@ if (!$this->FE['ASYNC']) {
 
     /** If the destination already exists, delete it before renaming the new file. */
     if ($SafeToContinue && \file_exists($this->FE['basepath'] . $FMData['filename_new']) && \is_readable($this->FE['basepath'] . $FMData['filename_new'])) {
-        if (is_dir($this->FE['basepath'] . $FMData['filename_new'])) {
-            if (!$this->isDirEmpty($this->FE['basepath'] . $FMData['filename_new']) || !rmdir($this->FE['basepath'] . $FMData['filename_new'])) {
+        if (\is_dir($this->FE['basepath'] . $FMData['filename_new'])) {
+            if (!$this->isDirEmpty($this->FE['basepath'] . $FMData['filename_new']) || !\rmdir($this->FE['basepath'] . $FMData['filename_new'])) {
                 $SafeToContinue = false;
             }
-        } elseif (!unlink($this->FE['basepath'] . $FMData['filename_new'])) {
+        } elseif (!\unlink($this->FE['basepath'] . $FMData['filename_new'])) {
             $SafeToContinue = false;
         }
     }
@@ -290,13 +290,13 @@ if (!$this->FE['ASYNC']) {
     /** Return results to the async call for the rename operation. */
     echo $this->FE['state_msg'];
 } elseif (isset($FMData['filename'], $FMData['do_action']) && $FMData['do_action'] === 'delete-file') {
-    if (is_dir($this->FE['basepath'] . $FMData['filename'])) {
-        if ($this->isDirEmpty($this->FE['basepath'] . $FMData['filename']) && rmdir($this->FE['basepath'] . $FMData['filename'])) {
+    if (\is_dir($this->FE['basepath'] . $FMData['filename'])) {
+        if ($this->isDirEmpty($this->FE['basepath'] . $FMData['filename']) && \rmdir($this->FE['basepath'] . $FMData['filename'])) {
             $this->FE['state_msg'] = 'OK';
         } else {
             $this->FE['state_msg'] = $this->L10N->getString('response.Failed to delete');
         }
-    } elseif (unlink($this->FE['basepath'] . $FMData['filename'])) {
+    } elseif (\unlink($this->FE['basepath'] . $FMData['filename'])) {
         $this->deleteDirectory($FMData['filename']);
         $this->FE['state_msg'] = 'OK';
     } else {

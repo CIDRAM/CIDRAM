@@ -5,6 +5,12 @@ function delRule(a, i) {
   })
 }
 
+function dplRule(a, i) {
+  window.auxDpl = a, $('POST', '', ['auxDpl'], null, function(a) {
+    window.location.reload(true)
+  })
+}
+
 function moveToTop(a, i) {
   window.auxT = a, $('POST', '', ['auxT'], null, function(a) {
     window.location.reload(true)

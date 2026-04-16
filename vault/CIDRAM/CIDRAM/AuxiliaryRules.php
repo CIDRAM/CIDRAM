@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used for auxiliary rules (last modified: 2026.03.22).
+ * This file: Methods used for auxiliary rules (last modified: 2026.04.15).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -378,7 +378,8 @@ trait AuxiliaryRules
             }
 
             /** Figure out which options are available for the rule (view mode). */
-            $Options = ['<span onclick="javascript:%s(\'' . $this->escapeJsInHTML($Name) . '\',\'' . $RuleClass . '\')" class="auxopt" tabindex="0" role="button"><code><span class="auxicon %s" title="%s"></span><span class="s auxicontxt">%s</span></code></span>'];
+            $EscapedName = $this->escapeJsInHTML($Name);
+            $Options = ['<span onclick="javascript:%s(\'' . $EscapedName . '\',\'' . $RuleClass . '\')" class="auxopt" tabindex="0" role="button"><code><span class="auxicon %s" title="%s"></span><span class="s auxicontxt">%s</span></code></span>'];
             if (empty($Data['Disable this rule'])) {
                 $Options['disableRule'] = \sprintf($Options[0], 'disableRule', 'auxbl pause', '⏸', $this->L10N->getString('label.aux.Disable this rule'));
             } else {
@@ -386,8 +387,14 @@ trait AuxiliaryRules
             }
             $Options['exportRule'] = \sprintf(
                 '<span onclick="javascript:{document.getElementById(\'xprtName\').value=\'%s\';document.getElementById(\'xprtForm\').submit()}" class="auxopt" tabindex="0" role="button"><code><span class="auxicon auxbl export"></span><span class="s auxicontxt">%s</span></code></span>',
-                $this->escapeJsInHTML($Name),
+                $EscapedName,
                 $this->L10N->getString('label.Export')
+            );
+            $Options['duplicateRule'] = \sprintf(
+                '<span onclick="javascript:dplRule(\'%s\',\'%s\')" class="auxopt" tabindex="0" role="button"><code><span class="auxicon auxbl export"></span><span class="s auxicontxt">%s</span></code></span>',
+                $EscapedName,
+                $RuleClass,
+                $this->L10N->getString('label.Duplicate')
             );
             if ($Count > 1) {
                 if ($Current !== 1) {
@@ -405,7 +412,7 @@ trait AuxiliaryRules
             }
             unset($Options[0]);
             $Options['delRule'] = \sprintf(
-                '<span onclick="javascript:confirm(\'%s\')&&delRule(\'' . $this->escapeJsInHTML($Name) . '\',\'' . $RuleClass . '\')" class="auxopt"><code><span class="auxicon auxrd delete" title="⌧" tabindex="0" role="button"></span><span class="s auxicontxt">%s</span></code></span>',
+                '<span onclick="javascript:confirm(\'%s\')&&delRule(\'' . $EscapedName . '\',\'' . $RuleClass . '\')" class="auxopt"><code><span class="auxicon auxrd delete" title="⌧" tabindex="0" role="button"></span><span class="s auxicontxt">%s</span></code></span>',
                 $this->escapeJsInHTML(\sprintf($this->L10N->getString('confirm.Delete'), $Name)),
                 $this->L10N->getString('field.Delete')
             );

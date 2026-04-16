@@ -557,3 +557,5 @@
 ### v4.2.0
 
 - [2026.04.02]: Added a glossary page to the front-end.
+- [2026.04.16]: Added the ability to duplicate an auxiliary rule with a single click to the auxiliary rules view mode page (#677).
+- *Plus all the regular signature updates.*

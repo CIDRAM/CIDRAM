@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The backup page (last modified: 2026.03.18).
+ * This file: The backup page (last modified: 2026.04.15).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -94,7 +94,7 @@ if (isset($_POST['bckpAct'])) {
         if (
             isset($_FILES['importFile']['name'], $_FILES['importFile']['tmp_name'], $_FILES['importFile']['error']) &&
             $_FILES['importFile']['error'] === \UPLOAD_ERR_OK &&
-            is_uploaded_file($_FILES['importFile']['tmp_name'])
+            \is_uploaded_file($_FILES['importFile']['tmp_name'])
         ) {
             $this->initialiseErrorHandler();
             $Try = $this->readFile($_FILES['importFile']['tmp_name']);

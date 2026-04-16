@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2026.03.28).
+ * This file: General methods used by the front-end (last modified: 2026.04.16).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1610,5 +1610,50 @@ trait FrontEndMethods
             $A -= $B;
             $B -= $B;
         }
+    }
+
+    /**
+     * Determine the name to use for a "copied" entity.
+     *
+     * @param string $Origin The original name to be worked from.
+     * @param callable $AlreadyUsed A callable to check whether an option has already been used.
+     * @param int $MaxLimit The maximum number of iterations for name checks allowed.
+     * @return string The name to use.
+     */
+    private function copyIterableName(string $Origin, callable $AlreadyUsed, int $MaxLimit = 1024): string
+    {
+        $CopyFirst = $this->L10N->getString('label.%s (Copy)') ?: '%s (Copy)';
+        $CopyFirstBlank = \sprintf($CopyFirst, '');
+        $CopyFirstBlankLen = \strlen($CopyFirstBlank);
+        if (\substr($Origin, $CopyFirstBlankLen * -1) === $CopyFirstBlank) {
+            $Origin = \substr($Origin, 0, $CopyFirstBlankLen * -1);
+        }
+        $CopyExtra = $this->L10N->getString('label.%s (Copy %s)') ?: '%s (Copy %s)';
+        $CopyExtraBlank = \sprintf($CopyExtra, '', '');
+        $CopyExtraBlankLen = \strlen($CopyExtraBlank);
+        $OriginNoDigits = \preg_replace('~\d~', '', $Origin);
+        if (\substr($OriginNoDigits, $CopyExtraBlankLen * -1) === $CopyExtraBlank) {
+            $Origin = \preg_replace('~' . \sprintf(\preg_quote($CopyExtra), '', '\\d+') . '$~', '', $Origin);
+        }
+        $Try = \sprintf($CopyFirst, $Origin);
+        if (!$AlreadyUsed($Try)) {
+            return $Try;
+        }
+        for ($Current = 1; $Current < $MaxLimit; $Current++) {
+            $Try = \sprintf($CopyExtra, $Origin, $Current);
+            if (!$AlreadyUsed($Try)) {
+                return $Try;
+            }
+        }
+        try {
+            $Current = \random_int(1025, 99999);
+        } catch (\Exception $e) {
+            $Current = \rand(1025, 99999);
+        }
+        $Try = \sprintf($CopyExtra, $Origin, $Current);
+        if (!$AlreadyUsed($Try)) {
+            return $Try;
+        }
+        return '';
     }
 }

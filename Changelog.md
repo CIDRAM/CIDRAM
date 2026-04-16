@@ -534,3 +534,8 @@
 - [2026.03.22]: Extended the hint at the auxiliary rules page for country code lookups to properly explain what they look like.
 - [2026.03.25]: Aesthetic patch.
 - *Plus all the regular signature updates.*
+
+### v3.12.0
+
+- [2026.04.16]: Added the ability to duplicate an auxiliary rule with a single click to the auxiliary rules view mode page (#677).
+- *Plus all the regular signature updates.*

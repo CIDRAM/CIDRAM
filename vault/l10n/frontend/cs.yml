@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Czech language data for the front-end (last modified: 2026.03.30).
+# This file: Czech language data for the front-end (last modified: 2026.04.16).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -211,7 +211,7 @@ config: !lazy
  general_silent_mode_response_header_code: "Jakou zprávu o stavu HTTP má CIDRAM odeslat při tichém přesměrování zablokovaných pokusů o přístup?"
  general_stages: "Ovládací prvky pro fáze prováděcího řetězce (zda je aktivován, zda jsou zaznamenány chyby, atd)."
  general_statistics: "Ovládací prvky pro které statistické informace se mají sledovat."
- general_time_format: "Formát zápisu data/času používaný CIDRAM. Další možnosti mohou být přidány na vyžádání."
+ general_time_format: "Formát zápisu data/času používaný CIDRAM. Další možnosti mohou být přidáno na žádostí."
  general_time_offset: "Posun časového pásma v minutách."
  general_timezone: "Slouží k určení časového pásma, které se má použít (např., Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, atd). Zadejte „SYSTEM“, aby to PHP zpracovalo za vás automaticky."
  hcaptcha: "Konfigurace pro hCaptcha (poskytuje lidem způsob, jak znovu získat přístup, když je blokován)."
@@ -412,7 +412,7 @@ field:
    - "bajtů"
 hints_asnlookup: "** Vyžaduje funkčnost vyhledávání ASN (např., přes modul IP-API nebo BGPView)."
 hints_aux_stats: "Poznámka: Zda sledovat statistiky pro pomocná pravidla lze ovládat na stránce pomocných pravidel."
-hints_cause_fp: "*!! Vysoká pravděpodobnost způsobení falešných poplachů v důsledku %s."
+hints_cause_fp: "*!! Vysoká pravděpodobnost způsobení falešně pozitivních v důsledku %s."
 hints_cclookup: "** Vyžaduje funkčnost vyhledávání kódu země (např., přes modul IP-API nebo BGPView)."
 hints_client_hints: "!! Toto je nápověda klienta s nízkou entropií. Klientské rady jsou nová, experimentální webová technologie, která zatím není široce podporována všemi prohlížeči a hlavními klienty. <em>Vidět: {{Links.MDN.Client hints}}.</em> I když klientské rady mohou být užitečné pro digitální otisky prstů, protože nejsou široce podporovány, jejich přítomnost v požadavcích by se neměla předpokládat ani spoléhat na (t.j., blokování na základě jejich nepřítomnosti je špatný nápad)."
 hints_client_honour: "Bez ohledu na to, jak dáváme klientovi pokyny, je důležité mít na paměti, že v konečném důsledku nemáme žádnou kontrolu nad tím, co se klient rozhodne udělat, a neexistuje žádná záruka, že klient bude respektovat naše pokyny."
@@ -460,11 +460,11 @@ hints_time_format: |
 hints_usemode:
  0: "Poznámka: Požadavky, které byly whitelistování nebo ověřené a neblokované nikdy nemusí dokončit CAPTCHA."
  1: "Taky: CAPTCHA mohou poskytnout užitečnou další vrstvu ochrany proti robotům a různým druhům škodlivých automatizovaných požadavků, ale neposkytnou žádnou ochranu proti škodlivému člověku."
- 2: "Žádosti lze „označit k použití“ pomocí pomocných pravidel."
+ 2: "Požadavky lze „označit k použití“ pomocí pomocných pravidel."
  3: "Zda je požadavek považován za „citlivý“, je určeno pomocí {{Links.ConfigRef.sensitive}}."
 hints_verification:
- "Co jsou „pozitiva“ a „negativa“?": "Při ověřování identity předložené žádostí lze úspěšný výsledek popsat jako „pozitivní“ nebo „negativní“. Když se potvrdí, že prezentovaná identita je pravou identitou, byla by popsána jako „pozitivní“. Když se potvrdí, že předložená identita je zfalšovaná, bude popsána jako „negativní“. Neúspěšný výsledek (např., selže ověření, nebo nelze určit pravdivost předložené identity) by však nebyl popsán jako „pozitivní“ nebo „negativní“. Místo toho by byl neúspěšný výsledek popsán jednoduše jako neověřený. Pokud nedojde k žádnému pokusu o ověření identity předložené požadavkem, bude požadavek rovněž popsána jako neověřený. Termíny mají smysl pouze v kontextu, kdy je rozpoznána identita předložená žádostí, a tedy tam, kde je možné ověření. Pokud prezentovaná identita neodpovídá výše uvedeným možnostem, nebo pokud není uvedena žádná identita, výše uvedené možnosti se stanou irelevantními."
- "Co jsou „bypassace s jedním zásahem“?": "V některých případech může být pozitivně ověřený požadavek stále blokován v důsledku podpisových souborů, modulů, nebo jiných podmínek požadavku a může být nutné bypassovat, aby se zabránilo falešným poplachům. V případě, kdy má bypassace řešit přesně jeden přestupek, nic více a nic méně, lze takový bypassace označit jako „bypassace s jedním zásahem“."
+ "Co jsou „pozitiva“ a „negativa“?": "Při ověřování identita požadavku lze úspěšný výsledek popsat jako „pozitivní“ nebo „negativní“. Když se potvrdí, že prezentovaná identita je pravou identitou, byla by popsána jako „pozitivní“. Když se potvrdí, že předložená identita je zfalšovaná, bude popsána jako „negativní“. Neúspěšný výsledek (např., selže ověření, nebo nelze určit pravdivost předložené identity) by však nebyl popsán jako „pozitivní“ nebo „negativní“. Místo toho by byl neúspěšný výsledek popsán jednoduše jako neověřený. Pokud nedojde k žádnému pokusu o ověření identity předložené požadavkem, bude požadavek rovněž popsána jako neověřený. Termíny mají smysl pouze v kontextu, kdy je rozpoznána identita předložená v požadavku, a tedy tam, kde je možné ověření. Pokud prezentovaná identita neodpovídá výše uvedeným možnostem, nebo pokud není uvedena žádná identita, výše uvedené možnosti se stanou irelevantními."
+ "Co jsou „bypassace s jedním zásahem“?": "V některých případech může být pozitivně ověřený požadavek stále blokován v důsledku podpisových souborů, modulů, nebo jiných podmínek požadavku a může být nutné bypassovat, aby se předešlo falešně pozitivním. V případě, kdy má bypassace řešit přesně jeden přestupek, nic více a nic méně, lze takový bypassace označit jako „bypassace s jedním zásahem“."
 hints_want_to_block: "!! Většina uživatelů bude pravděpodobně chtít aby to bylo zablokováno, bez ohledu na to, zda je to skutečné nebo zfalšované. Toho lze dosáhnout tím, že nebude vybráno „pokus o ověření“ a bude vybráno „blokovat neověřené požadavky“. Protože však někteří uživatelé mohou chtít mít možnost ověřovat takové požadavky (za účelem blokování negativních a zároveň povolení pozitivních), místo blokování takových požadavků prostřednictvím modulů, jsou zde uvedeny možnosti pro zpracování takových požadavků."
 info_cli: !lazy
  by_default_ips: |
@@ -541,6 +541,8 @@ Some useful links: |+
        </li>
      </ul>
 label:
+ %s (Copy %s): "%s (Kopie %s)"
+ %s (Copy): "%s (Kopie)"
  %s across %s file:
   - "%s v %s souboru"
   - "%s ve %s souborech"
@@ -559,7 +561,7 @@ label:
  308 Permanent Redirect: "308 Permanent Redirect (Trvalé přesměrování)\nInstruuje klienta, že přesměrování je TRVALÉ, a že metoda požadavku použitá pro přesměrování NESMÍ být jiná než metoda požadavku použitá pro počáteční požadavek."
  403 Forbidden: "403 Forbidden (Zakázáno)\nRobustnější, ale méně uživatelsky přívětivé. Doporučeno pro většinu obecných okolností."
  409 Conflict: "409 Konflikt\nDoporučeno pro konflikty zdrojů (např., konflikty sloučení, konflikty přístupu k souborům, atd). Nedoporučuje se v jiných kontextech."
- 410 Gone: "410 Gone (Pryč)\nMůže způsobit problémy při řešení falešných poplachů, protože některé prohlížeče ukládají tuto stavovou zprávu do mezipaměti a neodesílají další požadavky, i když byly odblokovány. V některých kontextech může být pro určité druhy provozu nejvýhodnější."
+ 410 Gone: "410 Gone (Pryč)\nMůže způsobit problémy při řešení falešně pozitivních, protože některé prohlížeče ukládají tuto stavovou zprávu do mezipaměti a neodesílají další požadavky, i když byly odblokovány. V některých kontextech může být pro určité druhy provozu nejvýhodnější."
  418 I_m a teapot: "418 I'm a teapot (Jsem čajník)\nOdkazuje na aprílový žertík ({{Links.RFC2324}}). Je velmi nepravděpodobné, že by mu porozuměl jakýkoli klient, robot, prohlížeč nebo jinak. Poskytováno pro zábavu a pohodlí, ale obecně se nedoporučuje."
  429 Too Many Requests: "429 Too Many Requests (Příliš mnoho požadavků)\nDoporučeno pro omezení rychlosti, při řešení DDoS útoků, a pro prevenci povodní. Nedoporučuje se v jiných kontextech."
  451 Unavailable For Legal Reasons: "451 Unavailable For Legal Reasons (Nedostupné z právních důvodů)\nDoporučeno při blokování především z právních důvodů. Nedoporučuje se v jiných kontextech."
@@ -612,8 +614,9 @@ label:
   - "Zobrazuje se %s záznam."
   - "Zobrazují se %s záznamy."
   - "Zobrazeno %s záznamů."
- Don_t block the request: "Neblokujte žádost.\nChcete-li aby byly požadavky blokovány pouze tehdy, když jste si jisti že jsou škodlivé, nebo chcete-li zůstat opatrní o falešně pozitivní výsledky (za cenu občasného průchodu nežádoucího provozu), zvolte tuto možnost. Chcete-li aby byly požadavky zablokovány, pokud si nejste jisti že jsou neškodné, nebo pokud byste raději zůstali ostražití (za cenu občasných falešných poplachů), zvolte jednu z dalších dostupných možností."
+ Don_t block the request: "Neblokujte požadavek.\nChcete-li aby byly požadavky blokovány pouze tehdy, když jste si jisti že jsou škodlivé, nebo chcete-li zůstat opatrní o falešně pozitivní výsledky (za cenu občasného průchodu nežádoucího provozu), zvolte tuto možnost. Chcete-li aby byly požadavky zablokovány, pokud si nejste jisti že jsou neškodné, nebo pokud byste raději zůstali ostražití (s rizikem občasných falešně pozitivních), zvolte jednu z dalších dostupných možností."
  Duplicate to %s: "Duplikovat do %s"
+ Duplicate: "Duplikovat"
  Empty, unfamiliar, and others: "Prázdné, neznámé, a další."
  Enable auxiliary rules: "Zapnout pomocná pravidla"
  Entered %s Assuming %s: "Zadáno: %s – Za předpokladu: %s"
@@ -661,7 +664,7 @@ label:
  Normal: "Normální"
  Only when blocked, specially marked for use, within the signature limit, and not banned: "Pouze při zablokování, speciálně označeném pro použití, v rámci limitu podpisů, a bez zákazu."
  Only when blocked, within the signature limit, and not banned: "Pouze při zablokování, v rámci limitu podpisů, a bez zákazu."
- Only when not blocked, at sensitive page requests: "Pouze když není blokován, na žádost citlivých stránek."
+ Only when not blocked, at sensitive page requests: "Pouze když není blokován, na požadavek citlivých stránek."
  Only when not blocked, or when specially marked for use, within the signature limit, and not banned: "Pouze když není blokován, nebo speciálně označeném pro použití, v rámci limitu podpisu, a není zakázán."
  Only when not blocked: "Pouze když není blokován."
  Only when within the signature limit, and not banned (regardless of whether blocked): "Pouze v rámci limitu podpisů, a nikoli zakázáno (bez ohledu zda je blokován)."
@@ -706,7 +709,7 @@ label:
  Total disk space: "Celkový prostor na disku:"
  Total disk usage: "Celkové využití disku:"
  Total: "Celkový"
- Trigger a bypass: "Spusťte bypass.\nOdečte jeden počet od počtu spuštěných podpisů, pokud již byl spuštěn alespoň jeden podpis. Doporučeno pro řešení jednoduchých falešných poplachů potenciálně způsobených standardními soubory podpisů."
+ Trigger a bypass: "Spusťte bypass.\nOdečte jeden počet od počtu spuštěných podpisů, pokud již byl spuštěn alespoň jeden podpis. Doporučeno pro řešení jednoduchých falešně pozitivních potenciálně způsobený standardními soubory podpisů."
  Unignore this: "Odignorujte to"
  Values for IP tracking: "Hodnoty pro sledování IP"
  Whitelist the request: "Whitelistujte požadavek.\nResetuje počet spuštěných podpisů, a přeruší jakékoli další zpracování požadavku. Zaručuje, že CIDRAM požadavek nikdy nezablokuje."

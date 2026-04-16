@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The file manager page (last modified: 2026.03.18).
+ * This file: The file manager page (last modified: 2026.04.15).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -79,24 +79,24 @@ unset($Key);
 if (isset($_POST['do'], $_FILES['upload-file']['name']) && $_POST['do'] === 'upload-file') {
     /** Check whether safe. */
     $SafeToContinue = (
-        basename($_FILES['upload-file']['name']) === $_FILES['upload-file']['name'] &&
+        \basename($_FILES['upload-file']['name']) === $_FILES['upload-file']['name'] &&
         $this->pathSecurityCheck($_FILES['upload-file']['name']) &&
         isset($_FILES['upload-file']['tmp_name'], $_FILES['upload-file']['error']) &&
         $_FILES['upload-file']['error'] === \UPLOAD_ERR_OK &&
-        is_uploaded_file($_FILES['upload-file']['tmp_name']) &&
+        \is_uploaded_file($_FILES['upload-file']['tmp_name']) &&
         !is_link($this->Vault . $_FILES['upload-file']['name'])
     );
 
     /** If the filename already exists, delete the old file before moving the new file. */
     if ($SafeToContinue && \is_readable($this->Vault . $_FILES['upload-file']['name'])) {
-        if (is_dir($this->Vault . $_FILES['upload-file']['name'])) {
+        if (\is_dir($this->Vault . $_FILES['upload-file']['name'])) {
             if ($this->isDirEmpty($this->Vault . $_FILES['upload-file']['name'])) {
-                rmdir($this->Vault . $_FILES['upload-file']['name']);
+                \rmdir($this->Vault . $_FILES['upload-file']['name']);
             } else {
                 $SafeToContinue = false;
             }
         } else {
-            unlink($this->Vault . $_FILES['upload-file']['name']);
+            \unlink($this->Vault . $_FILES['upload-file']['name']);
         }
     }
 
@@ -116,16 +116,16 @@ if (isset($_POST['do'], $_FILES['upload-file']['name']) && $_POST['do'] === 'upl
 } elseif (isset($FMData['filename'], $_POST['do']) && \is_readable($this->Vault . $FMData['filename']) && $this->pathSecurityCheck($FMData['filename'])) {
     /** Delete a file. */
     if ($_POST['do'] === 'delete-file') {
-        if (is_dir($this->Vault . $FMData['filename'])) {
+        if (\is_dir($this->Vault . $FMData['filename'])) {
             if (
                 $this->isDirEmpty($this->Vault . $FMData['filename']) &&
-                rmdir($this->Vault . $FMData['filename'])
+                \rmdir($this->Vault . $FMData['filename'])
             ) {
                 $this->FE['state_msg'] = $this->L10N->getString('response.Directory successfully deleted');
             } else {
                 $this->FE['state_msg'] = $this->L10N->getString('response.Failed to delete');
             }
-        } elseif (unlink($this->Vault . $FMData['filename'])) {
+        } elseif (\unlink($this->Vault . $FMData['filename'])) {
             /** Remove empty directories. */
             $this->deleteDirectory($FMData['filename']);
 
@@ -151,14 +151,14 @@ if (isset($_POST['do'], $_FILES['upload-file']['name']) && $_POST['do'] === 'upl
                 \file_exists($this->Vault . $FMData['filename_new']) &&
                 \is_readable($this->Vault . $FMData['filename_new'])
             ) {
-                if (is_dir($this->Vault . $FMData['filename_new'])) {
+                if (\is_dir($this->Vault . $FMData['filename_new'])) {
                     if (
                         !$this->isDirEmpty($this->Vault . $FMData['filename_new']) ||
-                        !rmdir($this->Vault . $FMData['filename_new'])
+                        !\rmdir($this->Vault . $FMData['filename_new'])
                     ) {
                         $SafeToContinue = false;
                     }
-                } elseif (!unlink($this->Vault . $FMData['filename_new'])) {
+                } elseif (!\unlink($this->Vault . $FMData['filename_new'])) {
                     $SafeToContinue = false;
                 }
             }
@@ -174,7 +174,7 @@ if (isset($_POST['do'], $_FILES['upload-file']['name']) && $_POST['do'] === 'upl
 
                     /** Update state message. */
                     $this->FE['state_msg'] = $this->L10N->getString(
-                        is_dir($this->Vault . $FMData['filename_new']) ? 'response.Directory successfully renamed' : 'response.File successfully renamed'
+                        \is_dir($this->Vault . $FMData['filename_new']) ? 'response.Directory successfully renamed' : 'response.File successfully renamed'
                     );
                 } else {
                     $this->FE['state_msg'] = $this->L10N->getString('response.Failed to rename');
@@ -262,7 +262,7 @@ if (isset($_POST['do'], $_FILES['upload-file']['name']) && $_POST['do'] === 'upl
         $this->Events->fireEvent('final');
         header('Content-Type: application/octet-stream');
         header('Content-Transfer-Encoding: Binary');
-        header('Content-disposition: attachment; filename="' . basename($FMData['filename']) . '"');
+        header('Content-disposition: attachment; filename="' . \basename($FMData['filename']) . '"');
         echo $this->readFile($this->Vault . $FMData['filename']);
         die;
     }

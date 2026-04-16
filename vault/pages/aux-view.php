@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The auxiliary rules view mode page (last modified: 2026.03.24).
+ * This file: The auxiliary rules view mode page (last modified: 2026.04.16).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -284,7 +284,7 @@ if (!$this->FE['ASYNC']) {
     /** Reconstruct and update auxiliary rules data. */
     if (!$this->updateAuxData() && \file_exists($this->Vault . 'auxiliary.yml')) {
         /** If auxiliary rules data reconstruction fails, or if it's empty, delete the file. */
-        unlink($this->Vault . 'auxiliary.yml');
+        \unlink($this->Vault . 'auxiliary.yml');
     }
 
     /** Confirm successful deletion. */
@@ -329,4 +329,16 @@ if (!$this->FE['ASYNC']) {
     /** Enable an auxiliary rule. */
     unset($this->CIDRAM['AuxData'][$this->desabotage($_POST['auxER'])]['Disable this rule']);
     $this->updateAuxData();
+} elseif (isset($_POST['auxDpl'], $this->CIDRAM['AuxData'][$this->desabotage($_POST['auxDpl'])])) {
+    /** Duplicate an auxiliary rule. */
+    $ToCopyName = $this->desabotage($_POST['auxDpl']);
+    $ToCopy = $this->CIDRAM['AuxData'][$ToCopyName];
+    $ToCopyName = $this->copyIterableName($ToCopyName, function($Name) {
+        return isset($this->CIDRAM['AuxData'][$Name]);
+    });
+    if ($ToCopyName !== '') {
+        $this->CIDRAM['AuxData'][$ToCopyName] = $ToCopy;
+        $this->CIDRAM['AuxData'][$ToCopyName]['Disable this rule'] = true;
+        $this->updateAuxData();
+    }
 }

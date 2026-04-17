@@ -82,10 +82,23 @@ Glossary: !lazy
   CIDR: |
    „CIDR“ ist ein Akronym für „Classless Inter-Domain Routing“, daher stammt auch das „CIDR“ in „CIDRAM“, wobei „CIDRAM“ ein Akronym für „Classless Inter-Domain Routing Access Manager“ ist.
    Im Kontext von CIDRAM bezieht sich „CIDR“ (oder „CIDRs“) speziell auf Subnetze die in CIDR-Notation ausgedrückt werden.
+  Falsch-Positiv: |
+   Wenn ein Test durchgeführt wird, wenn das Testergebnis „positiv“ ist, obwohl „negativ“ erwartet wurde (oder hätte sein sollen), spricht man von einem „Falsch-Positiv“. <em>Englisch: „false positive“. Or alternatively: „false positive error“; „false alarm“.</em>
+   Verwandte Begriffe sind „Richtig-Positiv“, „Richtig-Negativ“, und „Falsch-Negativ“. <em>Englisch: „true positive“, „true negative“, „false negative“.</em> Wenn sowohl das tatsächliche als auch das erwartete Testergebnis „positiv“ sind, spricht man von einem „Richtig-Positiv“. Wenn sowohl das tatsächliche als auch das erwartete Testergebnis „negativ“ sind, spricht man von einem „Richtig-Negativ“. Ein „Richtig-Positiv“ oder ein „Richtig-Negativ“ wird als „korrekte Schlussfolgerung“ betrachtet.
+   Das Gegenteil eines „Falsch-Positiv“ ist ein „Falsch-Negativ“. Wenn das Testergebnis „negativ“ ist, obwohl „positiv“ erwartet wurde (oder hätte sein sollen), spricht man von einem „Falsch-Negativ“.
+   Im Kontext von CIDRAM beziehen sich diese Begriffe typischerweise darauf, wenn CIDRAM etwas blockiert was es nicht blockieren sollte, oder wenn es etwas nicht blockiert was es sollte. Wenn CIDRAM eine Anfrage blockiert die nicht hätte blockiert werden sollen (z.B., aufgrund fehlerhafter, veralteter, oder unrichtig Signaturen), oder wenn es dies aus den falschen Gründen tut, spricht man von einem „Falsch-Positiv“. Wenn CIDRAM kann eine Anfrage nicht blockieren die hätte blockiert werden sollen (z.B., aufgrund unvorhergesehener Bedrohungen, fehlender Signaturen, fehlerhafter Module, oder Mängel im Prozess), spricht man von einem „Falsch-Negativ“ (aber typischerweise als „verpasste Erkennung“ bezeichnet wird). <em>Englisch: „missed detection“.</em>
+   | | Die Anfrage sollte NICHT blockiert werden | Die Anfrage SOLLTE blockiert werden |
+   | Die Anfrage wurde NICHT blockiert | Richtig-Negativ (korrekte Schlussfolgerung) | Verpasste Erkennung (oder Falsch-Negativ) |
+   | Die Anfrage wurde blockiert | Falsch-Positiv | Richtig-Positiv (korrekte Schlussfolgerung) |
+   Sollten Sie auf Falscher-Positiver stoßen, überprüfen Sie zuerst die Seite mit den Aktualisierungen und aktualisieren Sie alle als veraltet markierten Komponenten. Sollte das Problem danach immer noch bestehen, können Sie es im Issue-Tracker von CIDRAM melden.
+ Indexes:
+  CIDR: "cidr"
+  [Falsch-Negativ, Falsch-Positiv, Richtig-Negativ, Richtig-Positiv]: "false_positive"
  Refs:
   CIDR:
    Classless Inter-Domain Routing – Wikipedia: "https://de.wikipedia.org/wiki/Classless_Inter-Domain_Routing"
-  False positive:
+  Falsch-Positiv:
+   falsch-positiv – Wiktionary: "https://de.wiktionary.org/wiki/falsch-positiv"
    Issues · CIDRAM/CIDRAM: "https://github.com/CIDRAM/CIDRAM/issues"
 Name: !lazy
  AbuseIPDB module: "AbuseIPDB-Modul."

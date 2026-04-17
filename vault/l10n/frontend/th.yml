@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2026.04.16).
+# This file: Thai language data for the front-end (last modified: 2026.04.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -155,7 +155,7 @@ config: !lazy
  bobuam_reason_malformed: "เหตุผลในการบล็อคที่แสดงเมื่อตรวจพบสตริงตัวแทนผู้ใช้ที่มีรูปแบบไม่ถูกต้อง."
  bobuam_reason_masquerade: "เหตุผลในการบล็อคที่แสดงขึ้นเมื่อตัวแทนผู้ใช้พยายามปลอมตัวเป็นอย่างอื่น."
  bobuam_safari: "โทเค็น "Version" ของ Safari เวอร์ชันต่ำสุดที่อนุญาต. ที่แนะนำ: {{BOBUAM Token.Safari}}."
- bobuam_what_to_block: "จะบล็อกอะไรบ้าง?"
+ bobuam_what_to_block: "จะบล็อคอะไรบ้าง?"
  bunnycdn: "การกำหนดค่าสำหรับโมดูลความเข้ากันได้ของ BunnyCDN."
  bunnycdn_positive_action: "CIDRAM ควรดำเนินการใดเมื่อพบคำขอจาก BunnyCDN? การกระทำเริ่มต้น = บายพาส."
  bypasses: "การกำหนดค่าสำหรับบายพาสลายเซ็นเริ่มต้น."
@@ -607,7 +607,7 @@ label:
  Export: "ส่งออก"
  Extension: "ส่วนขยาย"
  External: "ภายนอก"
- False positive risk: "ความเสี่ยงสำหรับการบวกเท็จ:"
+ False positive risk: "ความเสี่ยงสำหรับการบวกลวง:"
  Fancy: "แฟนซี"
  Focus: "โฟกัส:"
  Free disk space: "พื้นที่ว่างในดิสก์:"
@@ -702,9 +702,10 @@ label:
   Create new rule: "สร้างกฎใหม่"
   Detect the method for testing the conditions automatically: "ตรวจหาวิธีการทดสอบเงื่อนไขโดยอัตโนมัติ."
   Disable this rule: "ปิดใช้กฎนี้"
+  Disable: "ปิดใช้งาน"
   Drop the rule here to move it to this position, or onto another rule to swap positions: "วางกฎไว้ที่นี่เพื่อย้ายไปยังตำแหน่งนี้ หรือไปที่กฎอื่นเพื่อสลับตำแหน่ง."
   Email: "อีเมล"
-  Enable this rule: "เปิดใช้งานกฎนี้"
+  Enable: "เปิดใช้งาน"
   Enforce default IP tracking options: "บังคับใช้ตัวเลือกการติดตาม IP ขยายตัว"
   Enforce extended IP tracking options: "บังคับใช้ตัวเลือกการติดตาม IP เพิ่มเติม"
   Forcibly disable hCaptcha: "บังคับปิดใช้งาน hCaptcha"
@@ -904,7 +905,7 @@ response:
  New auxiliary rule, %s, created successfully: "กฎเสริมใหม่ "%s" ถูกสร้าง."
  Not available at the upstream for legal reasons: "ไม่มีให้บริการที่ต้นน้ำด้วยเหตุผลทางกฎหมาย."
  Not available at the upstream: "ไม่มีให้บริการที่ต้นน้ำ."
- Outdated: "ล้าสมัยแล้ว!"
+ Outdated: "เวอร์ชันเก่า!"
  Parse: "แยกวิเคราะห์"
  Passed: "ความสำเร็จ"
  Password field empty: "รหัสผ่านฟิลด์ว่างเปล่า!"

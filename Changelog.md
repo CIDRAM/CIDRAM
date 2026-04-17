@@ -538,4 +538,5 @@
 ### v3.12.0
 
 - [2026.04.16]: Added the ability to duplicate an auxiliary rule with a single click to the auxiliary rules view mode page (#677).
+- [2026.04.17]: Shortened some of the action labels at the auxiliary rules view mode page (#403).
 - *Plus all the regular signature updates.*

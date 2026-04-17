@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese language data for the front-end (last modified: 2026.04.16).
+# This file: Chinese language data for the front-end (last modified: 2026.04.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -758,8 +758,8 @@ label:
  Displaying %s entry that cites %s: {"zh-Hans": "显示%s个包含“%s”的项目。", "zh-Hant": "顯示%s個包含『%s』的項目。"}
  Displaying %s entry: {"zh-Hans": "显示%s个项目。", "zh-Hant": "顯示%s個項目。"}
  Don_t block the request:
-  zh-Hans: "不要阻止该请求。\n如果您希望仅当您确定请求是恶意的时才阻止请求，或者对误报采取谨慎态度（以偶尔导致不必要的流量通过为代价），请选择此项。​如果您希望在不确定请求是否良性时阻止请求，或者希望保持警惕（偶尔会出现误报的风险），请选择其他可用选项。"
-  zh-Hant: "不要阻止該請求。\n如果您希望僅在確定請求是惡意的時才阻止請求，或在誤報方面採取謹慎態度（以偶爾透過不必要的流量為代價），請選擇此選項。​如果您希望在不確定請求是否良性的情況下阻止請求，或者希望保持警惕（偶爾有誤報的風險），請選擇其他可用選項。"
+  zh-Hans: "不要阻止该请求。\n如果您希望仅当您确定请求是恶意的时才阻止请求，或者对假阳性采取谨慎态度（以偶尔导致不必要的流量通过为代价），请选择此项。​如果您希望在不确定请求是否良性时阻止请求，或者希望保持警惕（偶尔会出现假阳性的风险），请选择其他可用选项。"
+  zh-Hant: "不要阻止該請求。\n如果您希望僅在確定請求是惡意的時才阻止請求，或在假陽性方面採取謹慎態度（以偶爾透過不必要的流量為代價），請選擇此選項。​如果您希望在不確定請求是否良性的情況下阻止請求，或者希望保持警惕（偶爾有假陽性的風險），請選擇其他可用選項。"
  Duplicate to %s: {"zh-Hans": "复制到%s", "zh-Hant": "複製到%s"}
  Duplicate: {"zh-Hans": "复制", "zh-Hant": "複製"}
  Empty, unfamiliar, and others: {"zh-Hans": "空虚，陌生，其他。", "zh-Hant": "空虛，陌生，其他。"}
@@ -873,11 +873,12 @@ label:
   Create new rule: {"zh-Hans": "创建新规则", "zh-Hant": "創建新規則"}
   Detect the method for testing the conditions automatically: {"zh-Hans": "测试条件的方法自动检测。", "zh-Hant": "測試條件的方法自動檢測。"}
   Disable this rule: {"zh-Hans": "禁用此规则", "zh-Hant": "禁用此規則"}
+  Disable: "禁用"
   Drop the rule here to move it to this position, or onto another rule to swap positions:
    zh-Hans: "将规则拖放到此处以将其移动到此位置，或拖放到另一条规则上以交换位置。"
    zh-Hant: "將規則拖曳到此處以將其移至此位置，或拖曳到另一條規則上以交換位置。"
   Email: {"zh-Hans": "电子邮件", "zh-Hant": "電子郵件"}
-  Enable this rule: {"zh-Hans": "启用此规则", "zh-Hant": "啟用此規則"}
+  Enable: {"zh-Hans": "启用", "zh-Hant": "啟用"}
   Enforce default IP tracking options: {"zh-Hans": "实施默认的IP跟踪选项", "zh-Hant": "實施默認的IP跟踪選項"}
   Enforce extended IP tracking options: {"zh-Hans": "实施扩展的IP跟踪选项", "zh-Hant": "實施擴展的IP跟踪選項"}
   Forcibly disable hCaptcha: {"zh-Hans": "强制禁用hCaptcha", "zh-Hant": "強制禁用hCaptcha"}
@@ -1192,8 +1193,8 @@ tip:
   zh-Hant: "阻止會使簽名計數加 1。 繞過將從簽名計數中扣除 1。 白名單將簽名計數設定為 0 並終止處理，從而完全跳過任何後續規則。 灰名單將簽名數設定為 0，但不會終止處理。 分類不會影響簽名計數，但當需要更複雜的邏輯來確定是否執行其他類型的操作時很有用，因為產生的分類可以連結到後續規則的條件。 處理後，如果簽名數為 1 或更大，則請求將被阻止。"
  Aggregator: {"zh-Hans": "聚合器允许您以最小的可能方式表达IP，CIDR，和网络掩码。​输入要聚合的数据，然后按“OK”。", "zh-Hant": "聚合器允許您以最小的可能方式表達IP，CIDR，和網絡掩碼。​輸入要聚合的數據，然後按『OK』。"}
  An accepted value is any CIDR with a range that covers the IP address of the request:
-  zh-Hans: "可接受的值是任何包含请求IP地址范围的CIDR。 例如，1.2.3.0/24、1.2.0.0/16、1.0.0.0/8、等等都可接受，适用于 1.2.3.4。 为避免误报，较窄的范围（例如，1.2.3.4/32）通常比较宽的范围（例如，0.0.0.0/1）更可取。 可以使用计算器页面查找哪些CIDR范围覆盖指定的IP地址。"
-  zh-Hant: "可接受的值是任何包含請求IP位址範圍的CIDR。 例如，1.2.3.0/24、1.2.0.0/16、1.0.0.0/8、等等都可接受，適用於 1.2.3.4。 為避免誤報，較窄的範圍（例如，1.2.3.4/32）通常比較寬的範圍（例如，0.0.0.0/1）更可取。 可以使用計算機頁面尋找哪些CIDR範圍來覆蓋指定的IP位址。"
+  zh-Hans: "可接受的值是任何包含请求IP地址范围的CIDR。 例如，1.2.3.0/24、1.2.0.0/16、1.0.0.0/8、等等都可接受，适用于 1.2.3.4。 为避免假阳性，较窄的范围（例如，1.2.3.4/32）通常比较宽的范围（例如，0.0.0.0/1）更可取。 可以使用计算器页面查找哪些CIDR范围覆盖指定的IP地址。"
+  zh-Hant: "可接受的值是任何包含請求IP位址範圍的CIDR。 例如，1.2.3.0/24、1.2.0.0/16、1.0.0.0/8、等等都可接受，適用於 1.2.3.4。 為避免假陽性，較窄的範圍（例如，1.2.3.4/32）通常比較寬的範圍（例如，0.0.0.0/1）更可取。 可以使用計算機頁面尋找哪些CIDR範圍來覆蓋指定的IP位址。"
  Auxiliary Rules Modes:
   zh-Hans: "查看模式将辅助规则显示为紧凑列表，以便于阅读。​单击列表中的规则即可展开并显示更多详细信息。​单击三元组（☰）时将显示导出或删除规则的选项。​可以通过拖放操作更改规则的顺序，将规则从现有位置拖动到所需位置。​需要编辑模式来修改辅助规则，页面上有可编辑字段和选项，用于添加新条件、webhook、或其他逻辑。​可以通过任一模式创建新的辅助规则。"
   zh-Hant: "查看模式將輔助規則顯示為緊湊列表，以便於閱讀。​點擊清單中的規則即可展開並顯示更多詳細資訊。​點選三元組（☰）時將顯示匯出或刪除規則的選項。​可以透過拖曳操作來變更規則的順序，將規則從現有位置拖曳到所需位置。​需要編輯模式來修改輔助規則，頁面上有可編輯欄位和選項，用於新增條件、webhook、或其他邏輯。​可以透過任一模式建立新的輔助規則。"

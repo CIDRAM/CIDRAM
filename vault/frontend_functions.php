@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2026.03.16).
+ * This file: Front-end functions file (last modified: 2026.04.17).
  */
 
 /**
@@ -3702,7 +3702,7 @@ $CIDRAM['AuxGenerateFEData'] = function (bool $Mode = false) use (&$CIDRAM): str
         /** Figure out which options are available for the rule (view mode). */
         $Options = ['(<span style="cursor:pointer" onclick="javascript:%s(\'' . $CIDRAM['escapeJsInHTML']($Name) . '\',\'' . $RuleClass . '\')" tabindex="0" role="button"><code class="s">%s</code></span>)'];
         if (empty($Data['Disable this rule'])) {
-            $Options['disableRule'] = sprintf($Options[0], 'disableRule', '<span style="position:relative;top:-2px" class="txtRd">⏸</span>' . $CIDRAM['L10N']->getString('label_aux_special_disable'));
+            $Options['disableRule'] = sprintf($Options[0], 'disableRule', '<span style="position:relative;top:-2px" class="txtRd">⏸</span>' . $CIDRAM['L10N']->getString('label_aux_special_disable_short'));
         } else {
             $Options['enableRule'] = sprintf($Options[0], 'enableRule', '<span style="position:relative;top:-3px" class="txtGn">▶</span>' . $CIDRAM['L10N']->getString('label_aux_special_enable'));
         }

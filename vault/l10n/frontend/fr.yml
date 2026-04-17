@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2026.04.16).
+# This file: French language data for the front-end (last modified: 2026.04.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -153,14 +153,14 @@ checkbox:
  Log any errors generated during this stage: "Enregistrer les erreurs générés lors de cette étape\_?"
  Omit this field when it_s empty: "Omettre ce champ lorsqu'il est vide\_?"
  Profile it: "Profilez le."
- Should infractions generated during this stage count towards IP tracking: "Compter les infractions générés lors de cette étape dans le surveillance d'IP\_?"
+ Should infractions generated during this stage count towards IP tracking: "Compter les infractions générés lors de cette étape dans la surveillance d'IP\_?"
  Should this field appear in log entries: "Inclure ce champ dans les journaux\_?"
  Should this field appear on the access denied page: "Inclure ce champ sur la page «\_accès refusé\_»\_?"
  Suppress Cloudflare Turnstile: "Supprimer Cloudflare Turnstile"
  Suppress Friendly Captcha: "Supprimer Friendly Captcha"
  Suppress hCaptcha: "Supprimer hCaptcha"
  Test as sensitive request: "Tester en tant que requête sensible"
- Untrack positives: "Annuler le surveillance des positifs\_?"
+ Untrack positives: "Annuler la surveillance des positifs\_?"
  When blocked, suppress output template: "Lorsqu'il est bloqué, supprime le modèle de sortie."
 config: !lazy
  abuseipdb: "Configuration pour le module AbusIPDB."
@@ -811,22 +811,23 @@ label:
   Create new rule: "Créez une nouvelle règle"
   Detect the method for testing the conditions automatically: "Détecter la méthode pour tester les conditions automatiquement."
   Disable this rule: "Désactivez cette règle"
+  Disable: "Désactivez"
   Drop the rule here to move it to this position, or onto another rule to swap positions: "Déposez la règle ici pour la déplacer vers cette position, ou sur une autre règle pour échanger les positions."
   Email: {"fr-FR": "E-mail", "fr-CA": "Courriel"}
-  Enable this rule: "Activez cette règle"
-  Enforce default IP tracking options: "Appliquer les options de surveillance d'IP défaut"
-  Enforce extended IP tracking options: "Appliquer les options de surveillance d'IP étendues"
+  Enable: "Activez"
+  Enforce default IP tracking options: "Appliquez les options de surveillance d'IP défaut"
+  Enforce extended IP tracking options: "Appliquez les options de surveillance d'IP étendues"
   Forcibly disable Cloudflare Turnstile: "Désactiver Cloudflare Turnstile par la force"
   Forcibly disable Friendly Captcha: "Désactiver Friendly Captcha par la force"
-  Forcibly disable IP tracking: "Désactiver le surveillance d'IP par la force"
+  Forcibly disable IP tracking: "Désactivez la surveillance d'IP par la force"
   Forcibly disable hCaptcha: "Désactiver hCaptcha par la force"
-  Forcibly enable IP tracking: "Activer le surveillance d'IP par la force"
+  Forcibly enable IP tracking: "Activez la surveillance d'IP par la force"
   HTTP status code override: "Remplacement du code d'état HTTP\_:"
   If the following conditions are met, %s: "Si les conditions suivantes sont remplies, %s."
-  Mark for use with Cloudflare Turnstile: "Marquer pour une utilisation avec Cloudflare Turnstile"
-  Mark for use with Friendly Captcha: "Marquer pour une utilisation avec Friendly Captcha"
-  Mark for use with hCaptcha: "Marquer pour une utilisation avec hCaptcha"
-  Modify rule: "Modifier la règle"
+  Mark for use with Cloudflare Turnstile: "Marquez pour une utilisation avec Cloudflare Turnstile"
+  Mark for use with Friendly Captcha: "Marquez pour une utilisation avec Friendly Captcha"
+  Mark for use with hCaptcha: "Marquez pour une utilisation avec hCaptcha"
+  Modify rule: "Modifiez la règle"
   Move down: "Descendre la règle"
   Move to the bottom: "Descendre la règle vers le bas"
   Move to the top: "Ascendre la règle vers le haut"
@@ -1089,7 +1090,7 @@ stages: !lazy
  Check whether banned: "Vérifiez si c'est interdit"
  Deploy CAPTCHAs (blocked requests): "Déployez les CAPTCHAs (requêtes bloquées)"
  Deploy CAPTCHAs (non-blocked requests): "Déployez les CAPTCHAs (requêtes non bloquées)"
- Execute IP tracking: "Exécutez le surveillance d'IP"
+ Execute IP tracking: "Exécutez la surveillance d'IP"
  Execute auxiliary rules: "Exécutez les règles auxiliaires"
  Execute modules: "Exécutez les modules"
  Execute other verification: "Exécutez une autre vérification"

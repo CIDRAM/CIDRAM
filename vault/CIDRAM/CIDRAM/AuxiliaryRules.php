@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used for auxiliary rules (last modified: 2026.04.15).
+ * This file: Methods used for auxiliary rules (last modified: 2026.04.17).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -381,9 +381,9 @@ trait AuxiliaryRules
             $EscapedName = $this->escapeJsInHTML($Name);
             $Options = ['<span onclick="javascript:%s(\'' . $EscapedName . '\',\'' . $RuleClass . '\')" class="auxopt" tabindex="0" role="button"><code><span class="auxicon %s" title="%s"></span><span class="s auxicontxt">%s</span></code></span>'];
             if (empty($Data['Disable this rule'])) {
-                $Options['disableRule'] = \sprintf($Options[0], 'disableRule', 'auxbl pause', '⏸', $this->L10N->getString('label.aux.Disable this rule'));
+                $Options['disableRule'] = \sprintf($Options[0], 'disableRule', 'auxbl pause', '⏸', $this->L10N->getString('label.aux.Disable'));
             } else {
-                $Options['enableRule'] = \sprintf($Options[0], 'enableRule', 'auxgn play', '▶', $this->L10N->getString('label.aux.Enable this rule'));
+                $Options['enableRule'] = \sprintf($Options[0], 'enableRule', 'auxgn play', '▶', $this->L10N->getString('label.aux.Enable'));
             }
             $Options['exportRule'] = \sprintf(
                 '<span onclick="javascript:{document.getElementById(\'xprtName\').value=\'%s\';document.getElementById(\'xprtForm\').submit()}" class="auxopt" tabindex="0" role="button"><code><span class="auxicon auxbl export"></span><span class="s auxicontxt">%s</span></code></span>',

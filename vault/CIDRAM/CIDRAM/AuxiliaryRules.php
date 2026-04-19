@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used for auxiliary rules (last modified: 2026.04.17).
+ * This file: Methods used for auxiliary rules (last modified: 2026.04.19).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -391,7 +391,7 @@ trait AuxiliaryRules
                 $this->L10N->getString('label.Export')
             );
             $Options['duplicateRule'] = \sprintf(
-                '<span onclick="javascript:dplRule(\'%s\',\'%s\')" class="auxopt" tabindex="0" role="button"><code><span class="auxicon auxbl export"></span><span class="s auxicontxt">%s</span></code></span>',
+                '<span onclick="javascript:dplRule(\'%s\',\'%s\')" class="auxopt" tabindex="0" role="button"><code><span class="auxicon auxbl duplicate"></span><span class="s auxicontxt">%s</span></code></span>',
                 $EscapedName,
                 $RuleClass,
                 $this->L10N->getString('label.Duplicate')

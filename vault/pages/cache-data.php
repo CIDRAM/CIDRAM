@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The cache data page (last modified: 2026.03.22).
+ * This file: The cache data page (last modified: 2026.04.19).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -122,7 +122,7 @@ if ($this->FE['ASYNC']) {
             $DuplicateTo = \sprintf($Duplicate, $KeyLabel);
             $Duplicability .= ' – <span onclick="javascript:confirm(\'' . $this->escapeJsInHTML(
                 \sprintf($Action, $DuplicateTo)
-            ) . '\')&&cdp(\'' . $SourceKey . '\',\'' . $Key . '\')"><code><span class="auxicon export" title="' . $DuplicateTo . '"></span><span class="s auxicontxt">' . $DuplicateTo . '</span></code></span>';
+            ) . '\')&&cdp(\'' . $SourceKey . '\',\'' . $Key . '\')"><code><span class="auxicon duplicate" title="' . $DuplicateTo . '"></span><span class="s auxicontxt">' . $DuplicateTo . '</span></code></span>';
         }
 
         /** Process all cache items. */

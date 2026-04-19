@@ -1,6 +1,6 @@
 <?php
 /**
- * A simple, unified cache handler (last modified: 2026.03.22).
+ * A simple, unified cache handler (last modified: 2026.04.19).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -1000,7 +1000,7 @@ class Cache
             $PDO = $this->WorkingData->prepare(self::GET_ALL_QUERY);
             if ($PDO !== false && $PDO->execute()) {
                 $Data = $PDO->fetchAll();
-                if (!is_array($Data)) {
+                if (!\is_array($Data)) {
                     return [];
                 }
                 foreach ($Data as $Entry) {

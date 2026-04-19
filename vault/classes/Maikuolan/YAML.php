@@ -1,6 +1,6 @@
 <?php
 /**
- * YAML handler (last modified: 2026.03.20).
+ * YAML handler (last modified: 2026.04.19).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -171,7 +171,7 @@ class YAML
     public function process($In, array &$Arr, $Depth = 0, $Refs = false)
     {
         /** Type guard. */
-        if (!is_string($In)) {
+        if (!\is_string($In)) {
             return false;
         }
 
@@ -189,28 +189,28 @@ class YAML
             $Captured = [];
 
             /** Support various encodings. */
-            if (class_exists('\Maikuolan\Common\Demojibakefier')) {
+            if (\class_exists('\Maikuolan\Common\Demojibakefier')) {
                 $this->Demojibakefier = new \Maikuolan\Common\Demojibakefier();
 
                 /**
                  * Attempt to determine input encoding.
                  * @link https://yaml.org/spec/1.2.2/#52-character-encodings
                  */
-                if (preg_match('~^\0\0(?:\0|\xFE\xFF)~', $In)) {
-                    $In = substr($In, 4);
+                if (\preg_match('~^\0\0(?:\0|\xFE\xFF)~', $In)) {
+                    $In = \substr($In, 4);
                     $this->LastInputEncoding = 'UTF-32BE';
-                } elseif (preg_match('~^(?:\xFF\xFE|.\0)\0\0~', $In)) {
-                    $In = substr($In, 4);
+                } elseif (\preg_match('~^(?:\xFF\xFE|.\0)\0\0~', $In)) {
+                    $In = \substr($In, 4);
                     $this->LastInputEncoding = 'UTF-32LE';
-                } elseif (preg_match('~^(?:\xFE\xFF|\0)~', $In)) {
-                    $In = substr($In, 2);
+                } elseif (\preg_match('~^(?:\xFE\xFF|\0)~', $In)) {
+                    $In = \substr($In, 2);
                     $this->LastInputEncoding = 'UTF-16BE';
-                } elseif (preg_match('~^(?:\xFF\xFE|.\0)~', $In)) {
-                    $In = substr($In, 2);
+                } elseif (\preg_match('~^(?:\xFF\xFE|.\0)~', $In)) {
+                    $In = \substr($In, 2);
                     $this->LastInputEncoding = 'UTF-16LE';
                 } else {
-                    if (substr($In, 0, 3) === "\xEF\xBB\xBF") {
-                        $In = substr($In, 3);
+                    if (\substr($In, 0, 3) === "\xEF\xBB\xBF") {
+                        $In = \substr($In, 3);
                     }
                     $this->LastInputEncoding = 'UTF-8';
                 }
@@ -223,7 +223,7 @@ class YAML
                 /** Attempt to normalise encoding if not already UTF-8. */
                 if ($this->LastInputEncoding !== 'UTF-8') {
                     /** Suppress errors to avoid potentially flooding logs. */
-                    set_error_handler(function ($errno) {
+                    \set_error_handler(function ($errno) {
                         return;
                     });
 
@@ -238,7 +238,7 @@ class YAML
                     $In = $Attempt;
 
                     /** We're done.. Restore the error handler. */
-                    restore_error_handler();
+                    \restore_error_handler();
                 }
             }
 
@@ -266,18 +266,18 @@ class YAML
         /** Continues until there aren't any new lines to process remaining. */
         while ($SoL !== false) {
             /** @var int|false End position of the current line. */
-            $EoL = strpos($In, "\n", $SoL);
+            $EoL = \strpos($In, "\n", $SoL);
 
             /** @var string The current line. */
-            $ThisLine = ($EoL === false) ? substr($In, $SoL) : substr($In, $SoL, $EoL - $SoL);
+            $ThisLine = ($EoL === false) ? \substr($In, $SoL) : \substr($In, $SoL, $EoL - $SoL);
 
             /** @var int|false Start position of the next line. */
             $SoL = ($EoL === false) ? false : $EoL + 1;
 
             /** Strip comments and whitespace. */
-            if (!($ThisLine = preg_replace(['/(?<!\\\\)#.*$/', '/\s+$/'], '', $ThisLine))) {
+            if (!($ThisLine = \preg_replace(['/(?<!\\\\)#.*$/', '/\s+$/'], '', $ThisLine))) {
                 /** Line preservation for multiline and folded blocks. .*/
-                if (($this->MultiLine || $this->MultiLineFolded) && strlen($SendTo)) {
+                if (($this->MultiLine || $this->MultiLineFolded) && \strlen($SendTo)) {
                     $SendTo .= "\n";
                 }
 
@@ -288,13 +288,13 @@ class YAML
             $ThisTab = 0;
 
             /** Determine the indent of the current line. */
-            while (($Chr = substr($ThisLine, $ThisTab, 1)) && ($Chr === ' ' || $Chr === "\t")) {
+            while (($Chr = \substr($ThisLine, $ThisTab, 1)) && ($Chr === ' ' || $Chr === "\t")) {
                 $ThisTab++;
             }
 
             /** Used for reconstruction. */
             if ($this->LastIndent === '') {
-                $this->LastIndent = str_repeat(substr($ThisLine, 0, 1), $ThisTab);
+                $this->LastIndent = \str_repeat(\substr($ThisLine, 0, 1), $ThisTab);
             }
 
             /**
@@ -311,11 +311,11 @@ class YAML
                     if ($SendTo) {
                         if ($this->MultiLine) {
                             $SendTo .= "\n";
-                        } elseif (substr($ThisLine, $TabLen, 1) !== ' ' && substr($SendTo, -1) !== ' ') {
+                        } elseif (\substr($ThisLine, $TabLen, 1) !== ' ' && \substr($SendTo, -1) !== ' ') {
                             $SendTo .= ' ';
                         }
                     }
-                    $SendTo .= substr($ThisLine, $TabLen);
+                    $SendTo .= \substr($ThisLine, $TabLen);
                 }
                 continue;
             }
@@ -338,22 +338,22 @@ class YAML
 
                 $Success = true;
                 if (!$this->MultiLine && !$this->MultiLineFolded) {
-                    if (!isset($Arr[$Key]) || !is_array($Arr[$Key])) {
+                    if (!isset($Arr[$Key]) || !\is_array($Arr[$Key])) {
                         $Arr[$Key] = [];
                     }
-                    $Success = $this->process(preg_replace('~\n$~m', '', $SendTo), $Arr[$Key], $TabLen);
+                    $Success = $this->process(\preg_replace('~\n$~m', '', $SendTo), $Arr[$Key], $TabLen);
                 } else {
                     $this->tryStringDataTraverseByRef($SendTo);
                     if ($this->Chomp === '-') {
-                        $SendTo = preg_replace('~[\r\n]+$~m', '', $SendTo);
+                        $SendTo = \preg_replace('~[\r\n]+$~m', '', $SendTo);
                     } elseif ($this->Chomp === '') {
-                        $SendTo = preg_replace('~([\r\n])[\r\n]+$~m', '\1', $SendTo);
+                        $SendTo = \preg_replace('~([\r\n])[\r\n]+$~m', '\1', $SendTo);
                     }
                     $Arr[$Key] = $SendTo;
                 }
                 $HasMerged = false;
                 if (isset($ThisBlockTag) && $ThisBlockTag !== '') {
-                    if ($ThisBlockTag === '!merge' && is_array($Arr[$Key])) {
+                    if ($ThisBlockTag === '!merge' && \is_array($Arr[$Key])) {
                         $MergeData = $Arr[$Key];
                         unset($Arr[$Key]);
                         $Arr += $this->merge($MergeData);
@@ -362,7 +362,7 @@ class YAML
                         $Arr[$Key] = $this->coerce($Arr[$Key], false, $ThisBlockTag);
                     }
                 }
-                if (!$HasMerged && $Key === '<<' && is_array($Arr[$Key])) {
+                if (!$HasMerged && $Key === '<<' && \is_array($Arr[$Key])) {
                     $MergeData = $Arr[$Key];
                     unset($Arr[$Key]);
                     $Arr += $this->merge($MergeData);
@@ -387,22 +387,22 @@ class YAML
         /** Needed for processing any remaining data. */
         if ($SendTo) {
             if (!$this->MultiLine && !$this->MultiLineFolded) {
-                if (!isset($Arr[$Key]) || !is_array($Arr[$Key])) {
+                if (!isset($Arr[$Key]) || !\is_array($Arr[$Key])) {
                     $Arr[$Key] = [];
                 }
-                $Success = $this->process(preg_replace('~\n$~m', '', $SendTo), $Arr[$Key], $TabLen);
+                $Success = $this->process(\preg_replace('~\n$~m', '', $SendTo), $Arr[$Key], $TabLen);
             } else {
                 $this->tryStringDataTraverseByRef($SendTo);
                 if ($this->Chomp === '-') {
-                    $SendTo = preg_replace('~[\r\n]+$~m', '', $SendTo);
+                    $SendTo = \preg_replace('~[\r\n]+$~m', '', $SendTo);
                 } elseif ($this->Chomp === '') {
-                    $SendTo = preg_replace('~([\r\n])[\r\n]+$~m', '\1', $SendTo);
+                    $SendTo = \preg_replace('~([\r\n])[\r\n]+$~m', '\1', $SendTo);
                 }
                 $Arr[$Key] = $SendTo;
             }
             $HasMerged = false;
             if (isset($ThisBlockTag) && $ThisBlockTag !== '') {
-                if ($ThisBlockTag === '!merge' && is_array($Arr[$Key])) {
+                if ($ThisBlockTag === '!merge' && \is_array($Arr[$Key])) {
                     $MergeData = $Arr[$Key];
                     unset($Arr[$Key]);
                     $Arr += $this->merge($MergeData);
@@ -411,7 +411,7 @@ class YAML
                     $Arr[$Key] = $this->coerce($Arr[$Key], false, $ThisBlockTag);
                 }
             }
-            if (!$HasMerged && $Key === '<<' && is_array($Arr[$Key])) {
+            if (!$HasMerged && $Key === '<<' && \is_array($Arr[$Key])) {
                 $MergeData = $Arr[$Key];
                 unset($Arr[$Key]);
                 $Arr += $this->merge($MergeData);
@@ -433,7 +433,7 @@ class YAML
     public function reconstruct(array $Arr, $UseCaptured = false, $DoWithAnchors = false)
     {
         $Out = '';
-        $this->DoWithAnchors = (count($this->Anchors) && $DoWithAnchors);
+        $this->DoWithAnchors = (\count($this->Anchors) && $DoWithAnchors);
         if ($UseCaptured) {
             if ($this->LastIndent !== '') {
                 $this->Indent = $this->LastIndent;
@@ -458,23 +458,23 @@ class YAML
      */
     public function dataTraverse(&$Data, $Path = [], $AllowNonScalar = false)
     {
-        if (!is_array($Path)) {
-            $Path = preg_split('~(?<!\\\\)\\.~', $Path) ?: [];
+        if (!\is_array($Path)) {
+            $Path = \preg_split('~(?<!\\\\)\\.~', $Path) ?: [];
         }
-        $Segment = array_shift($Path);
-        if ($Segment === null || strlen($Segment) === 0) {
-            return $AllowNonScalar || is_scalar($Data) ? $Data : '';
+        $Segment = \array_shift($Path);
+        if ($Segment === null || \strlen($Segment) === 0) {
+            return $AllowNonScalar || \is_scalar($Data) ? $Data : '';
         }
-        $Segment = str_replace('\.', '.', $Segment);
-        if (is_array($Data)) {
+        $Segment = \str_replace('\.', '.', $Segment);
+        if (\is_array($Data)) {
             return isset($Data[$Segment]) ? $this->dataTraverse($Data[$Segment], $Path, $AllowNonScalar) : '';
         }
-        if (is_object($Data) && property_exists($Data, $Segment)) {
+        if (\is_object($Data) && property_exists($Data, $Segment)) {
             return $this->dataTraverse($Data->$Segment, $Path, $AllowNonScalar);
         }
-        if (is_string($Data)) {
-            if (preg_match('~^(?:trim|str(?:tolower|toupper|len))\\(\\)~i', $Segment)) {
-                $Segment = substr($Segment, 0, -2);
+        if (\is_string($Data)) {
+            if (\preg_match('~^(?:trim|str(?:tolower|toupper|len))\\(\\)~i', $Segment)) {
+                $Segment = \substr($Segment, 0, -2);
                 $Data = $Segment($Data);
             }
         }
@@ -515,11 +515,11 @@ class YAML
     private function normaliseValue(&$Value, $EnforceScalar = false)
     {
         /** Avoid mistyping due to excess whitespace. */
-        $Value = trim($Value);
+        $Value = \trim($Value);
 
         /** Resolve tags. */
-        if (preg_match('~^!([!\dA-Za-z_:,-]+)(?: (.*))?$~', $Value, $Resolved)) {
-            $Tag = strtolower($Resolved[1]);
+        if (\preg_match('~^!([!\dA-Za-z_:,-]+)(?: (.*))?$~', $Value, $Resolved)) {
+            $Tag = \strtolower($Resolved[1]);
             if (!$EnforceScalar) {
                 $this->LastResolvedTag = $Tag;
             }
@@ -536,13 +536,13 @@ class YAML
             /** Check for anchors and populate if necessary. */
             $AnchorMatches = [];
             if (
-                preg_match('~^&([\dA-Za-z]+) +(.*)$~', $Value, $AnchorMatches) &&
+                \preg_match('~^&([\dA-Za-z]+) +(.*)$~', $Value, $AnchorMatches) &&
                 isset($AnchorMatches[1], $AnchorMatches[2])
             ) {
                 $Value = $AnchorMatches[2];
                 $this->Anchors[$AnchorMatches[1]] = $Value;
             } elseif (
-                preg_match('~^\*([\dA-Za-z]+)$~', $Value, $AnchorMatches) &&
+                \preg_match('~^\*([\dA-Za-z]+)$~', $Value, $AnchorMatches) &&
                 isset($AnchorMatches[1], $this->Anchors[$AnchorMatches[1]])
             ) {
                 $Value = $this->Anchors[$AnchorMatches[1]];
@@ -553,7 +553,7 @@ class YAML
 
             /** In case of processing JSON data or flow collections. */
             foreach ([['[', ']'], ['{', '}']] as $Braces) {
-                if (substr($Value, 0, 1) === $Braces[0] && substr($Value, -1) === $Braces[1]) {
+                if (\substr($Value, 0, 1) === $Braces[0] && \substr($Value, -1) === $Braces[1]) {
                     $NewArr = [];
                     $this->flowControl($Value, $NewArr, $Braces[0]);
                     $Value = $NewArr;
@@ -565,7 +565,7 @@ class YAML
             }
         }
 
-        $ValueLen = strlen($Value);
+        $ValueLen = \strlen($Value);
 
         /** Check for string quotes. */
         foreach ([
@@ -577,8 +577,8 @@ class YAML
             ["\xe2\x80\x98", "\xe2\x80\x99", 3],
             ["\xe2\x80\x9c", "\xe2\x80\x9d", 3]
         ] as $Wrapper) {
-            if (substr($Value, 0, $Wrapper[2]) === $Wrapper[0] && substr($Value, $ValueLen - $Wrapper[2]) === $Wrapper[1]) {
-                $Value = substr($Value, $Wrapper[2], $ValueLen - ($Wrapper[2] * 2));
+            if (\substr($Value, 0, $Wrapper[2]) === $Wrapper[0] && \substr($Value, $ValueLen - $Wrapper[2]) === $Wrapper[1]) {
+                $Value = \substr($Value, $Wrapper[2], $ValueLen - ($Wrapper[2] * 2));
                 $Value = $this->unescape($Value, $Wrapper[0]);
                 if ($Tag !== '') {
                     $Value = $this->coerce($Value, $EnforceScalar, $Tag);
@@ -589,10 +589,10 @@ class YAML
 
         /** Executed only for keys. */
         if ($EnforceScalar) {
-            $Value = trim($Value);
+            $Value = \trim($Value);
             if ($Tag !== '') {
                 $Value = $this->coerce($Value, $EnforceScalar, $Tag);
-            } elseif (preg_match('~^\d+$~', $Value)) {
+            } elseif (\preg_match('~^\d+$~', $Value)) {
                 $Value = (int)$Value;
             }
             return;
@@ -603,7 +603,7 @@ class YAML
             return;
         }
 
-        $ValueLow = strtolower($Value);
+        $ValueLow = \strtolower($Value);
         if ($ValueLow === 'true' || $ValueLow === 'on' || $ValueLow === 'y' || $ValueLow === 'yes' || $Value === '+') {
             $Value = true;
         } elseif ($ValueLow === 'false' || $ValueLow === 'n' || $ValueLow === 'no' || $ValueLow === 'off' || $Value === '-' || $ValueLen === 0) {
@@ -616,15 +616,15 @@ class YAML
             $Value = -INF;
         } elseif ($ValueLow === '.nan') {
             $Value = NAN;
-        } elseif (preg_match('~^0x[\dA-Fa-f]+$~', $Value)) {
-            $Value = hexdec(str_replace('_', '', substr($Value, 2)));
-        } elseif (preg_match('~^0o[0-8]+$~', $Value)) {
-            $Value = octdec(str_replace('_', '', substr($Value, 2)));
-        } elseif (preg_match('~^0b[01]+$~', $Value)) {
-            $Value = bindec(str_replace('_', '', substr($Value, 2)));
-        } elseif (preg_match('~^\d+$~', $Value)) {
+        } elseif (\preg_match('~^0x[\dA-Fa-f]+$~', $Value)) {
+            $Value = \hexdec(\str_replace('_', '', \substr($Value, 2)));
+        } elseif (\preg_match('~^0o[0-8]+$~', $Value)) {
+            $Value = octdec(\str_replace('_', '', \substr($Value, 2)));
+        } elseif (\preg_match('~^0b[01]+$~', $Value)) {
+            $Value = \bindec(\str_replace('_', '', \substr($Value, 2)));
+        } elseif (\preg_match('~^\d+$~', $Value)) {
             $Value = (int)str_replace('_', '', $Value);
-        } elseif (preg_match('~^(?:\d+\.\d+|\d+(?:\.\d+)?[Ee][-+]\d+)$~', $Value)) {
+        } elseif (\preg_match('~^(?:\d+\.\d+|\d+(?:\.\d+)?[Ee][-+]\d+)$~', $Value)) {
             $Value = (float)str_replace('_', '', $Value);
         }
     }
@@ -652,55 +652,55 @@ class YAML
             $Key = '...';
             $Value = null;
             $Arr[$Key] = $Value;
-        } elseif (substr($ThisLine, -1) === ':' && strpos($ThisLine, ': ') === false) {
-            $Key = substr($ThisLine, $ThisTab, -1);
+        } elseif (\substr($ThisLine, -1) === ':' && \strpos($ThisLine, ': ') === false) {
+            $Key = \substr($ThisLine, $ThisTab, -1);
             $this->normaliseValue($Key, true);
             if (!isset($Arr[$Key])) {
                 $Arr[$Key] = null;
             }
             $Value = null;
-        } elseif (substr($ThisLine, $ThisTab, 2) === '? ') {
-            $Key = substr($ThisLine, $ThisTab + 2);
+        } elseif (\substr($ThisLine, $ThisTab, 2) === '? ') {
+            $Key = \substr($ThisLine, $ThisTab + 2);
             $this->normaliseValue($Key, true);
             $Value = null;
             $Arr[$Key] = null;
-        } elseif (substr($ThisLine, $ThisTab, 2) === '- ') {
-            $Value = substr($ThisLine, $ThisTab + 2);
-            $ValueLen = strlen($Value);
+        } elseif (\substr($ThisLine, $ThisTab, 2) === '- ') {
+            $Value = \substr($ThisLine, $ThisTab + 2);
+            $ValueLen = \strlen($Value);
             $this->normaliseValue($Value);
             if ($ValueLen > 0) {
-                if ($this->LastResolvedTag === '!merge' && is_array($Value)) {
+                if ($this->LastResolvedTag === '!merge' && \is_array($Value)) {
                     $Arr += $this->merge($Value);
                 } else {
                     $Arr[] = $Value;
                 }
             }
             $Key = $this->arrayKeyLast($Arr);
-        } elseif (substr($ThisLine, $ThisTab) === '-') {
+        } elseif (\substr($ThisLine, $ThisTab) === '-') {
             $Value = null;
             $Arr[] = $Value;
             $Key = $this->arrayKeyLast($Arr);
-        } elseif (($DelPos = strpos($ThisLine, ': ')) !== false) {
-            $Key = substr($ThisLine, $ThisTab, $DelPos - $ThisTab);
-            $KeyLen = strlen($Key);
+        } elseif (($DelPos = \strpos($ThisLine, ': ')) !== false) {
+            $Key = \substr($ThisLine, $ThisTab, $DelPos - $ThisTab);
+            $KeyLen = \strlen($Key);
             $this->normaliseValue($Key, true);
             if (!$Key) {
-                if (substr($ThisLine, $ThisTab, $DelPos - $ThisTab + 2) !== '0: ') {
+                if (\substr($ThisLine, $ThisTab, $DelPos - $ThisTab + 2) !== '0: ') {
                     return false;
                 }
                 $Key = 0;
             }
-            $Value = substr($ThisLine, $ThisTab + $KeyLen + 2);
-            $ValueLen = strlen($Value);
+            $Value = \substr($ThisLine, $ThisTab + $KeyLen + 2);
+            $ValueLen = \strlen($Value);
             $this->normaliseValue($Value);
             if ($ValueLen > 0) {
-                if (($this->LastResolvedTag === '!merge' || $Key === '<<') && is_array($Value)) {
+                if (($this->LastResolvedTag === '!merge' || $Key === '<<') && \is_array($Value)) {
                     $Arr += $this->merge($Value);
                 } else {
                     $Arr[$Key] = $Value;
                 }
             }
-        } elseif (strpos($ThisLine, ':') === false && strlen($ThisLine) > 1) {
+        } elseif (\strpos($ThisLine, ':') === false && \strlen($ThisLine) > 1) {
             $Key = $ThisLine;
             $this->normaliseValue($Key, true);
             if (!isset($Arr[$Key])) {
@@ -713,14 +713,14 @@ class YAML
          * Chomping.
          * @link https://yaml.org/spec/1.2.2/#8112-block-chomping-indicator
          */
-        if (is_string($Value) && strlen($Value) === 2) {
-            $Chomp = substr($Value, -1);
+        if (\is_string($Value) && \strlen($Value) === 2) {
+            $Chomp = \substr($Value, -1);
             if ($Chomp === '-') {
                 $this->Chomp = '-';
-                $Value = substr($Value, 0, 1);
+                $Value = \substr($Value, 0, 1);
             } elseif ($Chomp === '+') {
                 $this->Chomp = '+';
-                $Value = substr($Value, 0, 1);
+                $Value = \substr($Value, 0, 1);
             } else {
                 $this->Chomp = '';
             }
@@ -743,7 +743,7 @@ class YAML
      */
     private function processInner(array $Arr, &$Out, $Depth = 0)
     {
-        $Sequential = (array_keys($Arr) === range(0, count($Arr) - 1));
+        $Sequential = (\array_keys($Arr) === \range(0, \count($Arr) - 1));
         $NullSet = $this->isNullSet($Arr);
         if ($Depth >= $this->FlowRebuildDepth) {
             $Out .= $Sequential ? '[' : '{';
@@ -757,7 +757,7 @@ class YAML
                 if (!$Sequential) {
                     $Out .= ($this->QuoteKeys ? $this->scalarToString($Key) : $this->escapeKey($Key)) . ':';
                 }
-                if (is_array($Value)) {
+                if (\is_array($Value)) {
                     $this->processInner($Value, $Out, $Depth + 1);
                     continue;
                 }
@@ -792,14 +792,14 @@ class YAML
                 $Out .= "...\n";
                 continue;
             }
-            $ThisDepth = str_repeat($this->Indent, $Depth);
+            $ThisDepth = \str_repeat($this->Indent, $Depth);
             if ($NullSet && !$Sequential) {
                 $Out .= $ThisDepth . '?';
                 $Value = $this->escapeKey($Key);
             } else {
                 $Out .= $ThisDepth . ($Sequential ? '-' : ($this->QuoteKeys ? $this->scalarToString($Key) : $this->escapeKey($Key)) . ':');
             }
-            if (is_array($Value)) {
+            if (\is_array($Value)) {
                 if ($Depth < $this->FlowRebuildDepth - 1) {
                     $Out .= "\n";
                 }
@@ -807,16 +807,16 @@ class YAML
                 continue;
             }
             $Out .= ' ';
-            if (is_string($Value)) {
-                $HasHash = strpos($Value, '#') !== false;
-                if (!$HasHash && strpos($Value, "\n") !== false) {
-                    if (preg_match('~\n{2,}$~m', $Value)) {
+            if (\is_string($Value)) {
+                $HasHash = \strpos($Value, '#') !== false;
+                if (!$HasHash && \strpos($Value, "\n") !== false) {
+                    if (\preg_match('~\n{2,}$~m', $Value)) {
                         $ToAdd = "|+\n" . $ThisDepth . $this->Indent;
                     } else {
                         $ToAdd = "|\n" . $ThisDepth . $this->Indent;
                     }
-                    $ToAdd .= preg_replace('~\n(?=[^\n])~m', "\n" . $ThisDepth . $this->Indent, $Value);
-                } elseif (!$HasHash && $this->FoldedAt > 0 && strpos($Value, ' ') !== false && strlen($Value) >= $this->FoldedAt) {
+                    $ToAdd .= \preg_replace('~\n(?=[^\n])~m', "\n" . $ThisDepth . $this->Indent, $Value);
+                } elseif (!$HasHash && $this->FoldedAt > 0 && \strpos($Value, ' ') !== false && \strlen($Value) >= $this->FoldedAt) {
                     $ToAdd = ">\n" . $ThisDepth . $this->Indent . wordwrap(
                         $Value,
                         $this->FoldedAt,
@@ -855,16 +855,16 @@ class YAML
     private function escape($Value = '', $Newlines = true)
     {
         if ($this->Quotes === "'") {
-            return str_replace(['\\', '#', "'"], ['\\\\', '\#', "''"], $Value);
+            return \str_replace(['\\', '#', "'"], ['\\\\', '\#', "''"], $Value);
         }
         if ($this->Quotes !== '"') {
-            return str_replace(['\\', '#'], ['\\\\', '\#'], $Value);
+            return \str_replace(['\\', '#'], ['\\\\', '\#'], $Value);
         }
-        $Value = str_replace('\\', '\\\\', $Value);
+        $Value = \str_replace('\\', '\\\\', $Value);
         if ($Newlines) {
-            $Value = str_replace("\n", '\n', $Value);
+            $Value = \str_replace("\n", '\n', $Value);
         }
-        $Value = str_replace(
+        $Value = \str_replace(
             ['#', "\0", "\7", "\8", "\t", "\x0B", "\x0C", "\x0D", "\x1B", "\xC2\x85", "\xC2\xA0", "\xE2\x80\xA8", "\xE2\x80\xA9"],
             ['\#', '\0', '\a', '\b', '\t', '\v', '\f', '\r', '\e', '\N', '\_', '\L', '\P'],
             $Value
@@ -883,10 +883,10 @@ class YAML
             '~(?<=[\xF0-\xF4])[\x80-\xBF](?![\x80-\xBF]{2})~',
             '~(?<=[\xF0-\xF4][\x80-\xBF])[\x80-\xBF](?![\x80-\xBF])~'
         ], function ($Match) {
-            return '\\x' . bin2hex($Match[0]);
+            return '\\x' . \bin2hex($Match[0]);
         }, $Value);
         if ($this->EscapeBySpec) {
-            $Value = str_replace(['"', '/'], ['\"', '\/'], $Value);
+            $Value = \str_replace(['"', '/'], ['\"', '\/'], $Value);
         }
         return $Value;
     }
@@ -899,13 +899,13 @@ class YAML
      */
     private function escapeKey($Key = '')
     {
-        if (!is_string($Key)) {
+        if (!\is_string($Key)) {
             return '';
         }
-        if (strpos($Key, '#') === false && strpos($Key, '\\') === false) {
+        if (\strpos($Key, '#') === false && \strpos($Key, '\\') === false) {
             return $Key;
         }
-        return '"' . str_replace(['\\', '#'], ['\\\\', '\#'], $Key) . '"';
+        return '"' . \str_replace(['\\', '#'], ['\\\\', '\#'], $Key) . '"';
     }
 
     /**
@@ -918,10 +918,10 @@ class YAML
     private function unescape($Value = '', $Style = '"')
     {
         if ($Style === '"' || $Style === "\xe2\x80\x9c" || $Style === "\x91") {
-            set_error_handler(function ($errno) {
+            \set_error_handler(function ($errno) {
                 return;
             });
-            $Value = preg_replace([
+            $Value = \preg_replace([
                 '~(?<!\\\\)\\\\((?:\\\\{2})*)#~',
                 '~(?<!\\\\)\\\\((?:\\\\{2})*)0~',
                 '~(?<!\\\\)\\\\((?:\\\\{2})*)a~',
@@ -940,30 +940,30 @@ class YAML
                 '~(?<!\\\\)\\\\((?:\\\\{2})*)P~'
             ], ['\1#', "\\1\0", "\\1\7", "\\1\x08", "\\1\t", "\\1\n", "\\1\x0B", "\\1\x0C", "\\1\x0D", "\\1\x1B", '\1"', '\1/', "\\1\xC2\x85", "\\1\xC2\xA0", "\\1\xE2\x80\xA8", "\\1\xE2\x80\xA9"], $Value);
             $Value = preg_replace_callback('~(?<!\\\\)\\\\((?:\\\\{2})*)x([\dA-Fa-f]{2})~', function ($Captured) {
-                return ($Decoded = hex2bin($Captured[2])) === false ? $Captured[0] : $Captured[1] . $Decoded;
+                return ($Decoded = \hex2bin($Captured[2])) === false ? $Captured[0] : $Captured[1] . $Decoded;
             }, $Value);
             $Value = preg_replace_callback('~(?<!\\\\)\\\\((?:\\\\{2})*)u([\dA-Fa-f]{4})~', function ($Captured) {
-                if (($Decoded = hex2bin($Captured[2])) === false) {
+                if (($Decoded = \hex2bin($Captured[2])) === false) {
                     return $Captured[0];
                 }
-                $Reversed = ($Attempt = \iconv('UTF-16BE', 'UTF-8', $Decoded)) === false ? '' : iconv('UTF-8', 'UTF-16BE', $Attempt);
-                return $Captured[1] . (($Attempt !== false && strcmp($Reversed, $Decoded) === 0) ? $Attempt : $Decoded);
+                $Reversed = ($Attempt = \iconv('UTF-16BE', 'UTF-8', $Decoded)) === false ? '' : \iconv('UTF-8', 'UTF-16BE', $Attempt);
+                return $Captured[1] . (($Attempt !== false && \strcmp($Reversed, $Decoded) === 0) ? $Attempt : $Decoded);
             }, $Value);
             $Value = preg_replace_callback('~(?<!\\\\)\\\\((?:\\\\{2})*)U([\dA-Fa-f]{8})~', function ($Captured) {
-                if (($Decoded = hex2bin($Captured[2])) === false) {
+                if (($Decoded = \hex2bin($Captured[2])) === false) {
                     return $Captured[0];
                 }
-                $Reversed = ($Attempt = \iconv('UTF-32BE', 'UTF-8', $Decoded)) === false ? '' : iconv('UTF-8', 'UTF-32BE', $Attempt);
-                return $Captured[1] . (($Attempt !== false && strcmp($Reversed, $Decoded) === 0) ? $Attempt : $Decoded);
+                $Reversed = ($Attempt = \iconv('UTF-32BE', 'UTF-8', $Decoded)) === false ? '' : \iconv('UTF-8', 'UTF-32BE', $Attempt);
+                return $Captured[1] . (($Attempt !== false && \strcmp($Reversed, $Decoded) === 0) ? $Attempt : $Decoded);
             }, $Value);
-            $Value = str_replace('\\\\', '\\', $Value);
-            restore_error_handler();
+            $Value = \str_replace('\\\\', '\\', $Value);
+            \restore_error_handler();
             return $Value;
         }
         if ($Style === "'" || $Style === "\xe2\x80\x98" || $Style === "\x93") {
-            return str_replace(["''", '\#', '\\\\'], ["'", '#', '\\'], $Value);
+            return \str_replace(["''", '\#', '\\\\'], ["'", '#', '\\'], $Value);
         }
-        return str_replace(['\#', '\\\\'], ['#', '\\'], $Value);
+        return \str_replace(['\#', '\\\\'], ['#', '\\'], $Value);
     }
 
     /**
@@ -1010,18 +1010,18 @@ class YAML
              * @link https://yaml.org/type/omap.html
              */
             if ($Tag === '!map' || $Tag === '!omap') {
-                if (!is_array($Value)) {
-                    if (is_string($Value)) {
+                if (!\is_array($Value)) {
+                    if (\is_string($Value)) {
                         $this->normaliseValue($Value);
                     }
                     return [$Value];
                 }
                 $Arr = [];
                 foreach ($Value as $ThisKey => $ThisValue) {
-                    if (is_string($ThisKey)) {
+                    if (\is_string($ThisKey)) {
                         $this->normaliseValue($ThisKey, true);
                     }
-                    if (is_string($ThisValue)) {
+                    if (\is_string($ThisValue)) {
                         $this->normaliseValue($ThisValue);
                     }
                     $Arr[$ThisKey] = $ThisValue;
@@ -1034,15 +1034,15 @@ class YAML
              * @link https://yaml.org/type/seq.html
              */
             if ($Tag === '!seq') {
-                if (!is_array($Value)) {
-                    if (is_string($Value)) {
+                if (!\is_array($Value)) {
+                    if (\is_string($Value)) {
                         $this->normaliseValue($Value);
                     }
                     return [$Value];
                 }
                 $Arr = [];
                 foreach ($Value as $ThisValue) {
-                    if (is_string($ThisValue)) {
+                    if (\is_string($ThisValue)) {
                         $this->normaliseValue($ThisValue);
                     }
                     $Arr[] = $ThisValue;
@@ -1055,12 +1055,12 @@ class YAML
              * @link https://yaml.org/type/set.html
              */
             if ($Tag === '!set') {
-                if (!is_array($Value)) {
+                if (!\is_array($Value)) {
                     return [$Value => null];
                 }
                 $Arr = [];
                 foreach ($Value as $ThisValue) {
-                    if (!is_scalar($ThisValue)) {
+                    if (!\is_scalar($ThisValue)) {
                         continue;
                     }
                     $Arr[$ThisValue] = null;
@@ -1074,12 +1074,12 @@ class YAML
             }
         }
 
-        if (is_string($Value)) {
-            $ValueLen = strlen($Value);
-            $ValueLow = strtolower($Value);
+        if (\is_string($Value)) {
+            $ValueLen = \strlen($Value);
+            $ValueLow = \strtolower($Value);
         } else {
-            if (is_array($Value)) {
-                $ValueLen = count($Value);
+            if (\is_array($Value)) {
+                $ValueLen = \count($Value);
             } else {
                 $ValueLen = empty($Value) ? 0 : 1;
             }
@@ -1090,10 +1090,10 @@ class YAML
          * @link https://yaml.org/type/bool.html
          */
         if ($Tag === '!bool') {
-            if (is_bool($Value)) {
+            if (\is_bool($Value)) {
                 return $Value;
             }
-            if (!is_scalar($Value)) {
+            if (!\is_scalar($Value)) {
                 return $ValueLen > 0;
             }
             if ($ValueLow === 'false' || $ValueLow === 'n' || $ValueLow === 'no' || $ValueLow === 'off' || $Value === '-' || $ValueLen === 0 || $ValueLow === 'null' || $Value === '~') {
@@ -1106,10 +1106,10 @@ class YAML
          * @link https://yaml.org/type/float.html
          */
         if ($Tag === '!float') {
-            if (is_float($Value)) {
+            if (\is_float($Value)) {
                 return $Value;
             }
-            if (!is_scalar($Value)) {
+            if (!\is_scalar($Value)) {
                 return (float)$ValueLen;
             }
             if ($ValueLow === 'true' || $ValueLow === 'on' || $ValueLow === 'y' || $ValueLow === 'yes' || $Value === '+') {
@@ -1122,10 +1122,10 @@ class YAML
          * @link https://yaml.org/type/int.html
          */
         if ($Tag === '!int') {
-            if (is_int($Value)) {
+            if (\is_int($Value)) {
                 return $Value;
             }
-            if (!is_scalar($Value)) {
+            if (!\is_scalar($Value)) {
                 return $ValueLen;
             }
             if ($ValueLow === 'true' || $ValueLow === 'on' || $ValueLow === 'y' || $ValueLow === 'yes' || $Value === '+') {
@@ -1147,20 +1147,20 @@ class YAML
             if ($Value === false) {
                 return 'false';
             }
-            if (is_string($Value)) {
+            if (\is_string($Value)) {
                 return $Value;
             }
-            return is_scalar($Value) ? (string)$Value : '';
+            return \is_scalar($Value) ? (string)$Value : '';
         }
 
         /**
          * @link https://yaml.org/type/binary.html
          */
         if ($Tag === '!binary') {
-            if ($Value === '' || !is_string($Value)) {
+            if ($Value === '' || !\is_string($Value)) {
                 return '';
             }
-            return base64_decode(preg_replace('~\s~', '', $Value));
+            return \base64_decode(\preg_replace('~\s~', '', $Value));
         }
 
         /** For extending with other scalar coercion. */
@@ -1169,19 +1169,19 @@ class YAML
         }
 
         /** Tags intended for working with strings only. */
-        if (is_string($Value)) {
+        if (\is_string($Value)) {
             /** Hash functions. */
-            if (substr($Tag, 0, 5) === 'hash:') {
-                $Algo = substr($Tag, 5);
-                if (in_array($Algo, hash_algos(), true)) {
-                    return hash($Algo, $Value);
+            if (\substr($Tag, 0, 5) === 'hash:') {
+                $Algo = \substr($Tag, 5);
+                if (\in_array($Algo, hash_algos(), true)) {
+                    return \hash($Algo, $Value);
                 }
             }
 
             /** Permitted PHP string functions. */
-            if (preg_match($this->AllowedStringTagsPattern, $Tag) && function_exists($Tag)) {
+            if (\preg_match($this->AllowedStringTagsPattern, $Tag) && \function_exists($Tag)) {
                 /** Needed to ensure that older PHP versions are consistent with PHP 8.1's behaviour. */
-                if (preg_match('~^(?:html(?:_entity_decode|entities|specialchars(?:_decode)?))$~', $Tag)) {
+                if (\preg_match('~^(?:html(?:_entity_decode|entities|specialchars(?:_decode)?))$~', $Tag)) {
                     return $Tag($Value, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401);
                 }
 
@@ -1191,7 +1191,7 @@ class YAML
         }
 
         /** Permitted numeric PHP functions. */
-        if (is_numeric($Value) && preg_match($this->AllowedNumericTagsPattern, $Tag) && function_exists($Tag)) {
+        if (\is_numeric($Value) && \preg_match($this->AllowedNumericTagsPattern, $Tag) && \function_exists($Tag)) {
             return $Tag($Value);
         }
 
@@ -1213,8 +1213,8 @@ class YAML
 
         $NewArr = [];
         foreach ($Arr as $Key => $Value) {
-            if (is_int($Key)) {
-                if (is_array($Value)) {
+            if (\is_int($Key)) {
+                if (\is_array($Value)) {
                     $NewArr += $this->merge($Value);
                 }
                 continue;
@@ -1241,7 +1241,7 @@ class YAML
 
         /** Flow sequence. */
         if ($Brace === '[') {
-            $Split = explode(',', substr($In, 1, -1));
+            $Split = \explode(',', \substr($In, 1, -1));
             $Segment = '';
             $SequenceDepth = 0;
             $MappingDepth = 0;
@@ -1251,9 +1251,9 @@ class YAML
              * sequences or mappings are detected.
              */
             foreach ($Split as $Try) {
-                $Trimmed = trim($Try);
-                $Start = substr($Trimmed, 0, 1);
-                $End = substr($Trimmed, -1);
+                $Trimmed = \trim($Try);
+                $Start = \substr($Trimmed, 0, 1);
+                $End = \substr($Trimmed, -1);
                 $Segment = ($SequenceDepth < 1 && $MappingDepth < 1) ? $Try : $Segment . ',' . $Try;
                 $this->flowControlDepth($Start, $End, $SequenceDepth, $MappingDepth);
                 if ($SequenceDepth < 1 && $MappingDepth < 1) {
@@ -1274,7 +1274,7 @@ class YAML
 
         /** Flow mappings. */
         if ($Brace === '{') {
-            $Split = explode(',', substr($In, 1, -1));
+            $Split = \explode(',', \substr($In, 1, -1));
             $Segment = '';
             $SequenceDepth = 0;
             $MappingDepth = 0;
@@ -1285,11 +1285,11 @@ class YAML
              */
             foreach ($Split as $Try) {
                 if ($SequenceDepth < 1 && $MappingDepth < 1) {
-                    if (($CPos = strpos($Try, ':')) === false) {
-                        if (strlen($Key) && isset($Arr[$Key])) {
-                            $Trimmed = trim($Arr[$Key]);
-                            $First = substr($Trimmed, 0, 1);
-                            $Last = substr($Trimmed, -1);
+                    if (($CPos = \strpos($Try, ':')) === false) {
+                        if (\strlen($Key) && isset($Arr[$Key])) {
+                            $Trimmed = \trim($Arr[$Key]);
+                            $First = \substr($Trimmed, 0, 1);
+                            $Last = \substr($Trimmed, -1);
 
                             /** Might belong to the previous entry, in case the value contains commas. */
                             if (($First === '"' && $Last !== '"') || ($First === "'" && $Last !== "'")) {
@@ -1302,20 +1302,20 @@ class YAML
                         return false;
                     }
 
-                    $Key = trim(substr($Try, 0, $CPos));
+                    $Key = \trim(\substr($Try, 0, $CPos));
 
                     /** Fail immediately if the key is empty. */
-                    if (strlen($Key) < 1) {
+                    if (\strlen($Key) < 1) {
                         return false;
                     }
 
-                    $Value = substr($Try, $CPos + 1);
+                    $Value = \substr($Try, $CPos + 1);
                 } else {
                     $Value = $Try;
                 }
-                $Trimmed = trim($Value);
-                $Start = substr($Trimmed, 0, 1);
-                $End = substr($Trimmed, -1);
+                $Trimmed = \trim($Value);
+                $Start = \substr($Trimmed, 0, 1);
+                $End = \substr($Trimmed, -1);
                 $Segment = ($SequenceDepth < 1 && $MappingDepth < 1) ? $Value : $Segment . ',' . $Try;
                 $this->flowControlDepth($Start, $End, $SequenceDepth, $MappingDepth);
                 if ($SequenceDepth < 1 && $MappingDepth < 1) {
@@ -1391,12 +1391,12 @@ class YAML
      */
     private function arrayKeyLast(array &$Arr)
     {
-        if (function_exists('array_key_last')) {
-            return array_key_last($Arr);
+        if (\function_exists('array_key_last')) {
+            return \array_key_last($Arr);
         }
-        end($Arr);
-        $Key = key($Arr);
-        reset($Arr);
+        \end($Arr);
+        $Key = \key($Arr);
+        \reset($Arr);
         return $Key;
     }
 
@@ -1409,14 +1409,14 @@ class YAML
     private function flattenTagNonScalar($In)
     {
         /** Return the input verbatim if it isn't an array. */
-        if (!is_array($In)) {
+        if (!\is_array($In)) {
             return $In;
         }
 
         $NewArr = [];
         foreach ($In as $Key => $Value) {
-            if (is_array($Value)) {
-                $NewArr = array_merge($NewArr, $this->flattenTagNonScalar($Value));
+            if (\is_array($Value)) {
+                $NewArr = \array_merge($NewArr, $this->flattenTagNonScalar($Value));
                 continue;
             }
             $NewArr[$Key] = $Value;
@@ -1447,13 +1447,13 @@ class YAML
         if ($In === -INF) {
             return '-.inf';
         }
-        if (is_float($In) && is_nan($In)) {
+        if (\is_float($In) && is_nan($In)) {
             return '.nan';
         }
-        if (is_string($In)) {
+        if (\is_string($In)) {
             return $this->Quotes . $this->escape($In) . $this->Quotes;
         }
-        if (is_object($In)) {
+        if (\is_object($In)) {
             if (method_exists($In, '__toString')) {
                 return $this->Quotes . $this->escape((string)$In) . $this->Quotes;
             }

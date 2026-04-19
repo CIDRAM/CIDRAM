@@ -1,6 +1,6 @@
 <?php
 /**
- * Number formatter (last modified: 2024.06.26).
+ * Number formatter (last modified: 2026.04.19).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -1183,7 +1183,7 @@ class NumberFormatter
             $this->GroupSeparator = '';
             return;
         }
-        $Format = explode('-', $Format);
+        $Format = \explode('-', $Format);
         if ($Format[0] === 'Arabic') {
             $this->ConversionSet = 'Eastern';
             $this->GroupSeparator = '';
@@ -1281,18 +1281,18 @@ class NumberFormatter
             return '';
         }
         $CSet = $this->{$this->ConversionSet};
-        $DecPos = strpos($Number, '.');
+        $DecPos = \strpos($Number, '.');
         if ($DecPos !== false) {
             if ($Decimals > 0 && $this->DecimalSeparator && empty($CSet['.'])) {
-                $Fraction = substr($Number, $DecPos + 1) ?: '';
-                $Len = strlen($Fraction);
+                $Fraction = \substr($Number, $DecPos + 1) ?: '';
+                $Len = \strlen($Fraction);
                 if ($Len > 0) {
                     $Fraction = $this->convertFraction($Fraction, 10, $this->Base, $Decimals);
-                    $Fraction = substr($Fraction, 0, $Decimals);
-                    $Len = strlen($Fraction);
+                    $Fraction = \substr($Fraction, 0, $Decimals);
+                    $Len = \strlen($Fraction);
                 }
                 if ($Len < $Decimals) {
-                    $Fraction .= str_repeat('0', $Decimals - $Len);
+                    $Fraction .= \str_repeat('0', $Decimals - $Len);
                 }
             }
             $Number = (string)(int)substr($Number, 0, $DecPos);
@@ -1306,7 +1306,7 @@ class NumberFormatter
             $Formatted = $CSet['=' . $Number];
             $WholeLen = -1;
         } else {
-            $WholeLen = strlen($Number);
+            $WholeLen = \strlen($Number);
         }
         for ($OddEven = 'o', $Unit = 0, $Formatted = '', $ThouPos = $this->GroupOffset, $Pos = $WholeLen - 1; $Pos > -1; $Pos--, $Unit++, $OddEven = $OddEven === 'o' ? 'e' : 'o') {
             if ($ThouPos >= $this->GroupSize) {
@@ -1322,8 +1322,8 @@ class NumberFormatter
                 $Myriads = ($Unit % 4) === 0;
                 $Hundreds = $Myriads === false && ($Unit % 2) === 0;
             }
-            $Key = substr($Number, $Pos, 1);
-            $Double = $Pos > 0 ? substr($Number, $Pos - 1, 1) . $Key : '';
+            $Key = \substr($Number, $Pos, 1);
+            $Double = $Pos > 0 ? \substr($Number, $Pos - 1, 1) . $Key : '';
             $Power = '';
             $Digit = '';
             if (isset($CSet['^' . $Unit . '+' . $Double])) {
@@ -1352,8 +1352,8 @@ class NumberFormatter
         }
         if (isset($Fraction) && $Decimals && $this->DecimalSeparator && empty($CSet['.'])) {
             $Formatted .= $this->DecimalSeparator;
-            for ($Len = strlen($Fraction), $Pos = 0; $Pos < $Len; $Pos++) {
-                $Key = substr($Fraction, $Pos, 1);
+            for ($Len = \strlen($Fraction), $Pos = 0; $Pos < $Len; $Pos++) {
+                $Key = \substr($Fraction, $Pos, 1);
                 $Power = '';
                 $Digit = '';
                 if (isset($CSet['^-' . $Pos . '+' . $Key])) {
@@ -1373,8 +1373,8 @@ class NumberFormatter
                 $Formatted .= $Digit . $Power;
             }
         }
-        if (($DecLen = strlen($this->DecimalSeparator)) && substr($Formatted, 0, $DecLen) === $this->DecimalSeparator) {
-            $Formatted = substr($Formatted, $DecLen);
+        if (($DecLen = \strlen($this->DecimalSeparator)) && \substr($Formatted, 0, $DecLen) === $this->DecimalSeparator) {
+            $Formatted = \substr($Formatted, $DecLen);
         }
         return $Formatted;
     }
@@ -1387,7 +1387,7 @@ class NumberFormatter
      */
     public function getSetJSON($Set = '')
     {
-        return isset($this->{$Set}) ? json_encode($this->{$Set}) : '[]';
+        return isset($this->{$Set}) ? \json_encode($this->{$Set}) : '[]';
     }
 
     /**
@@ -1404,15 +1404,15 @@ class NumberFormatter
         if ($From < 2 || $To < 2 || $From > 36 || $To > 36 || $Limit < 1) {
             return '';
         }
-        $FracLen = strlen($Fraction);
+        $FracLen = \strlen($Fraction);
         if ($From === $To || $FracLen < 1) {
             return $Fraction;
         }
-        $Fraction = rtrim($Fraction, '0');
+        $Fraction = \rtrim($Fraction, '0');
         if ($From !== 10) {
             $PreFloat = [];
             for ($Index = 0; $Index < $FracLen; $Index++) {
-                $PreFloat[$Index] = substr($Fraction, $Index, 1);
+                $PreFloat[$Index] = \substr($Fraction, $Index, 1);
                 if (isset($this->Symbols[$PreFloat[$Index]])) {
                     $PreFloat[$Index] = $this->Symbols[$PreFloat[$Index]];
                 }
@@ -1428,7 +1428,7 @@ class NumberFormatter
                     }
                 }
             }
-            $Float = implode('', $PreFloat);
+            $Float = \implode('', $PreFloat);
         }
         $Float = (float)('0.' . $Fraction);
         $Sum = 0;
@@ -1436,7 +1436,7 @@ class NumberFormatter
         while ($Degree < $this->MaxDegrees) {
             $Sum += $Float;
             $Degree++;
-            if ($Sum > 0 && strpos($Sum, '.') === false) {
+            if ($Sum > 0 && \strpos($Sum, '.') === false) {
                 break;
             }
         }
@@ -1451,11 +1451,11 @@ class NumberFormatter
             if (isset($this->Symbols[$Arr[$Index]])) {
                 $Arr[$Index] = $this->Symbols[$Arr[$Index]];
             }
-            if (strlen($Arr[$Index]) > 1) {
+            if (\strlen($Arr[$Index]) > 1) {
                 $Arr[$Index] = 0;
             }
             $Index++;
         }
-        return implode('', $Arr);
+        return \implode('', $Arr);
     }
 }

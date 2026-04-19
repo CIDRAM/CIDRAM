@@ -1,6 +1,6 @@
 <?php
 /**
- * L10N handler (last modified: 2023.12.29).
+ * L10N handler (last modified: 2026.04.19).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -79,7 +79,7 @@ class L10N
     public function __construct(array $Data = [], $Fallback = [])
     {
         $this->Data = $Data;
-        if (is_array($Fallback) || $Fallback instanceof \Maikuolan\Common\L10N) {
+        if (\is_array($Fallback) || $Fallback instanceof \Maikuolan\Common\L10N) {
             $this->Fallback = $Fallback;
         }
         if (!empty($Data['IntegerRule'])) {
@@ -96,7 +96,7 @@ class L10N
                 $this->FractionRule = $this->getFractionRule($Data['FractionRule']);
             }
         }
-        if (is_array($Fallback)) {
+        if (\is_array($Fallback)) {
             if (!empty($Fallback['IntegerRule'])) {
                 if (method_exists($this, $Fallback['IntegerRule'])) {
                     $this->FallbackIntegerRule = $Fallback['IntegerRule'];
@@ -129,19 +129,19 @@ class L10N
             $FractionRule = $this->FractionRule;
         } elseif ($this->Fallback instanceof \Maikuolan\Common\L10N) {
             return $this->Fallback->getPlural($Number, $String);
-        } elseif (is_array($this->Fallback) && isset($this->Fallback[$String])) {
+        } elseif (\is_array($this->Fallback) && isset($this->Fallback[$String])) {
             $Choices = $this->Fallback[$String];
             $IntegerRule = $this->FallbackIntegerRule;
             $FractionRule = $this->FallbackFractionRule;
         } else {
             return '';
         }
-        if (is_string($Choices)) {
+        if (\is_string($Choices)) {
             return $Choices;
         }
-        if (is_float($Number)) {
+        if (\is_float($Number)) {
             $Choice = $this->{$FractionRule}($Number);
-        } elseif (is_int($Number)) {
+        } elseif (\is_int($Number)) {
             $Choice = $this->{$IntegerRule}($Number);
         } else {
             $Choice = 0;
@@ -149,12 +149,12 @@ class L10N
         if (isset($Choices[$Choice])) {
             $Out = $Choices[$Choice];
         } else {
-            $Out = $Number > 1 ? array_pop($Choices) : array_shift($Choices);
+            $Out = $Number > 1 ? \array_pop($Choices) : \array_shift($Choices);
         }
-        if (is_array($Out)) {
-            $Out = ($this->PreferredVariant !== '' && isset($Out[$this->PreferredVariant])) ? $Out[$this->PreferredVariant] : array_shift($Out);
+        if (\is_array($Out)) {
+            $Out = ($this->PreferredVariant !== '' && isset($Out[$this->PreferredVariant])) ? $Out[$this->PreferredVariant] : \array_shift($Out);
         }
-        return is_string($Out) ? $Out : '';
+        return \is_string($Out) ? $Out : '';
     }
 
     /**
@@ -172,10 +172,10 @@ class L10N
         } else {
             $Out = isset($this->Fallback[$String]) ? $this->Fallback[$String] : '';
         }
-        if (is_array($Out)) {
-            $Out = ($this->PreferredVariant !== '' && isset($Out[$this->PreferredVariant])) ? $Out[$this->PreferredVariant] : array_shift($Out);
+        if (\is_array($Out)) {
+            $Out = ($this->PreferredVariant !== '' && isset($Out[$this->PreferredVariant])) ? $Out[$this->PreferredVariant] : \array_shift($Out);
         }
-        return is_string($Out) ? $Out : '';
+        return \is_string($Out) ? $Out : '';
     }
 
     /**
@@ -186,7 +186,7 @@ class L10N
      */
     public function arrayFromL10nToArray($References)
     {
-        if (!is_array($References)) {
+        if (!\is_array($References)) {
             $References = [$References];
         }
         $Out = [];
@@ -194,33 +194,33 @@ class L10N
             $Try = '';
             if (isset($this->Data[$Reference])) {
                 $Try = $this->Data[$Reference];
-            } elseif (is_array($this->Fallback)) {
+            } elseif (\is_array($this->Fallback)) {
                 if (isset($this->Fallback[$Reference])) {
                     $Try = $this->Fallback[$Reference];
                 }
             } elseif ($this->Fallback instanceof \Maikuolan\Common\L10N) {
                 if (isset($this->Fallback->Data[$Reference])) {
                     $Try = $this->Fallback->Data[$Reference];
-                } elseif (is_array($this->Fallback->Fallback) && isset($this->Fallback->Fallback[$Reference])) {
+                } elseif (\is_array($this->Fallback->Fallback) && isset($this->Fallback->Fallback[$Reference])) {
                     $Try = $this->Fallback->Fallback[$Reference];
                 }
             }
             if ($Try === '') {
-                if (($SPos = strpos($Reference, ' ')) !== '') {
-                    $Try = (($TryFrom = $this->getString(substr($Reference, 0, $SPos))) !== '' && strpos($TryFrom, '%s') !== false) ? sprintf($TryFrom, substr($Reference, $SPos + 1)) : $Reference;
+                if (($SPos = \strpos($Reference, ' ')) !== '') {
+                    $Try = (($TryFrom = $this->getString(\substr($Reference, 0, $SPos))) !== '' && \strpos($TryFrom, '%s') !== false) ? \sprintf($TryFrom, \substr($Reference, $SPos + 1)) : $Reference;
                 } else {
                     $Try = $Reference;
                 }
             }
-            $Reference = (!is_array($Try) || preg_match('~^[a-z]{2}(?:-[A-Z]{2})?$~', key($Try))) ? [$Try] : $Try;
+            $Reference = (!\is_array($Try) || \preg_match('~^[a-z]{2}(?:-[A-Z]{2})?$~', \key($Try))) ? [$Try] : $Try;
             foreach ($Reference as $Key => $Value) {
-                if (is_array($Value)) {
-                    $Value = $this->PreferredVariant !== '' && isset($Value[$this->PreferredVariant]) ? $Value[$this->PreferredVariant] : array_shift($Value);
-                    if (!is_string($Value)) {
+                if (\is_array($Value)) {
+                    $Value = $this->PreferredVariant !== '' && isset($Value[$this->PreferredVariant]) ? $Value[$this->PreferredVariant] : \array_shift($Value);
+                    if (!\is_string($Value)) {
                         $Value = '';
                     }
                 }
-                if (!is_string($Key)) {
+                if (!\is_string($Key)) {
                     $Out[] = $Value;
                     continue;
                 }
@@ -747,16 +747,16 @@ class L10N
     public function getIntegerRule($Code)
     {
         /** For different rules based on region, country, or dialect. */
-        if (($Pos = strpos($Code, '-')) !== false) {
+        if (($Pos = \strpos($Code, '-')) !== false) {
             if ($Code === 'pt-BR') {
                 return 'int2Type3';
             }
 
             /** Try falling back to standard codes. */
-            $Code = substr($Code, 0, $Pos);
+            $Code = \substr($Code, 0, $Pos);
         }
 
-        if (in_array($Code, [
+        if (\in_array($Code, [
             'ceb',
             'fil',
             'tl'
@@ -764,14 +764,14 @@ class L10N
             return 'int2Type1';
         }
 
-        if (in_array($Code, [
+        if (\in_array($Code, [
             'is',
             'mk'
         ], true)) {
             return 'int2Type2';
         }
 
-        if (in_array($Code, [
+        if (\in_array($Code, [
             'ak',
             'am',
             'as',
@@ -801,7 +801,7 @@ class L10N
             return 'int2Type3';
         }
 
-        if (in_array($Code, [
+        if (\in_array($Code, [
             'af',
             'an',
             'asa',
@@ -918,21 +918,21 @@ class L10N
             return 'int2Type4';
         }
 
-        if (in_array($Code, [
+        if (\in_array($Code, [
             'lv',
             'prg'
         ], true)) {
             return 'int3Type1';
         }
 
-        if (in_array($Code, [
+        if (\in_array($Code, [
             'ksh',
             'lag'
         ], true)) {
             return 'int3Type2';
         }
 
-        if (in_array($Code, [
+        if (\in_array($Code, [
             'fj',
             'he',
             'iu',
@@ -947,7 +947,7 @@ class L10N
             return 'int3Type3';
         }
 
-        if (in_array($Code, [
+        if (\in_array($Code, [
             'be',
             'bs',
             'hr',
@@ -959,64 +959,64 @@ class L10N
             return 'int3Type4';
         }
 
-        if (in_array($Code, [
+        if (\in_array($Code, [
             'pl'
         ], true)) {
             return 'int3Type5';
         }
 
-        if (in_array($Code, [
+        if (\in_array($Code, [
             'lt'
         ], true)) {
             return 'int3Type6';
         }
 
-        if (in_array($Code, [
+        if (\in_array($Code, [
             'shi'
         ], true)) {
             return 'int3Type7';
         }
 
-        if (in_array($Code, [
+        if (\in_array($Code, [
             'ro',
             'mo'
         ], true)) {
             return 'int3Type8';
         }
 
-        if (in_array($Code, [
+        if (\in_array($Code, [
             'cs',
             'sk'
         ], true)) {
             return 'int3Type9';
         }
 
-        if (in_array($Code, [
+        if (\in_array($Code, [
             'qya',
             'tkl'
         ], true)) {
             return 'int3Type10';
         }
 
-        if (in_array($Code, [
+        if (\in_array($Code, [
             'gv'
         ], true)) {
             return 'int4Type1';
         }
 
-        if (in_array($Code, [
+        if (\in_array($Code, [
             'gd'
         ], true)) {
             return 'int4Type2';
         }
 
-        if (in_array($Code, [
+        if (\in_array($Code, [
             'br'
         ], true)) {
             return 'int4Type3';
         }
 
-        if (in_array($Code, [
+        if (\in_array($Code, [
             'dsb',
             'hsb',
             'sl'
@@ -1024,31 +1024,31 @@ class L10N
             return 'int4Type4';
         }
 
-        if (in_array($Code, [
+        if (\in_array($Code, [
             'ga'
         ], true)) {
             return 'int5Type1';
         }
 
-        if (in_array($Code, [
+        if (\in_array($Code, [
             'mt'
         ], true)) {
             return 'int5Type2';
         }
 
-        if (in_array($Code, [
+        if (\in_array($Code, [
             'ar'
         ], true)) {
             return 'int6Type1';
         }
 
-        if (in_array($Code, [
+        if (\in_array($Code, [
             'cy'
         ], true)) {
             return 'int6Type2';
         }
 
-        if (in_array($Code, [
+        if (\in_array($Code, [
             'kw'
         ], true)) {
             return 'int6Type3';
@@ -1068,20 +1068,20 @@ class L10N
     public function getFractionRule($Code)
     {
         /** For different rules based on region, country, or dialect. */
-        if (($Pos = strpos($Code, '-')) !== false) {
+        if (($Pos = \strpos($Code, '-')) !== false) {
             if ($Code === 'pt-BR') {
                 return 'fraction2Type1';
             }
 
             /** Try falling back to standard codes. */
-            $Code = substr($Code, 0, $Pos);
+            $Code = \substr($Code, 0, $Pos);
         }
 
-        if (in_array($Code, ['da', 'ff', 'fr', 'hy', 'kab', 'lag'], true)) {
+        if (\in_array($Code, ['da', 'ff', 'fr', 'hy', 'kab', 'lag'], true)) {
             return 'fraction2Type1';
         }
 
-        if (in_array($Code, ['am', 'as', 'bn', 'doi', 'fa', 'gu', 'he', 'hi', 'kn', 'shi', 'zu'], true)) {
+        if (\in_array($Code, ['am', 'as', 'bn', 'doi', 'fa', 'gu', 'he', 'hi', 'kn', 'shi', 'zu'], true)) {
             return 'fraction2Type2';
         }
 
@@ -1102,12 +1102,12 @@ class L10N
             return 'rtl';
         }
 
-        if (($Pos = strpos($Code, '-')) !== false) {
-            $Code = substr($Code, 0, $Pos);
+        if (($Pos = \strpos($Code, '-')) !== false) {
+            $Code = \substr($Code, 0, $Pos);
         }
 
         /** Right-to-left. */
-        if (in_array($Code, ['ar', 'arc', 'arz', 'az', 'ckb', 'dv', 'fa', 'ha', 'he', 'khw', 'ks', 'ku', 'nqo', 'ps', 'sam', 'sd', 'syc', 'syr', 'ug', 'ur', 'uz', 'yi'], true)) {
+        if (\in_array($Code, ['ar', 'arc', 'arz', 'az', 'ckb', 'dv', 'fa', 'ha', 'he', 'khw', 'ks', 'ku', 'nqo', 'ps', 'sam', 'sd', 'syc', 'syr', 'ug', 'ur', 'uz', 'yi'], true)) {
             return 'rtl';
         }
 

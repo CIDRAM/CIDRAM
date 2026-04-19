@@ -1,6 +1,6 @@
 <?php
 /**
- * Demojibakefier (last modified: 2026.03.20).
+ * Demojibakefier (last modified: 2026.04.19).
  *
  * Intended to normalise the character encoding of a given string to a
  * preferred character encoding when the given string's byte sequences don't
@@ -67,7 +67,7 @@ class Demojibakefier
      */
     public function __construct($NormaliseTo = '')
     {
-        if ($NormaliseTo !== '' && in_array($NormaliseTo, $this->supported())) {
+        if ($NormaliseTo !== '' && \in_array($NormaliseTo, $this->supported())) {
             $this->NormaliseTo = $NormaliseTo;
         }
     }
@@ -361,7 +361,7 @@ class Demojibakefier
         $Valid = [];
 
         /** Suppress errors (because every failed normalisation attempt will generate errors and fill logs otherwise). */
-        set_error_handler(function ($errno) {
+        \set_error_handler(function ($errno) {
             return;
         });
 
@@ -383,7 +383,7 @@ class Demojibakefier
         }
 
         /** We're done.. Restore the error handler. */
-        restore_error_handler();
+        \restore_error_handler();
 
         /** If the string conforms to our desired encoding, and can be reversed to it, we'll go with that. */
         if (isset($Valid[$this->NormaliseTo])) {

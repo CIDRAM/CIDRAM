@@ -1,6 +1,6 @@
 <?php
 /**
- * Operation handler (last modified: 2026.03.17).
+ * Operation handler (last modified: 2026.04.19).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -123,7 +123,7 @@ class Operation extends CommonAbstract
         $OpOrArr = \explode('|', $Prefix);
         $Result = true;
         foreach ($OpOrArr as $OpOr) {
-            $OpAndArr = \preg_split('~\&| ~', $OpOr, -1, PREG_SPLIT_NO_EMPTY) ?: [];
+            $OpAndArr = \preg_split('~\&| ~', $OpOr, -1, \PREG_SPLIT_NO_EMPTY) ?: [];
             foreach ($OpAndArr as $OpAnd) {
                 $Initial = \substr($OpAnd, 0, 1);
                 if ($Initial === '>') {
@@ -255,7 +255,7 @@ class Operation extends CommonAbstract
         foreach (\explode('||', $IfString) as $PartsOr) {
             $IfPass = true;
             foreach (\explode('&&', $PartsOr) as $PartsAnd) {
-                $Parts = \preg_split('~([<>]=?|!?[=^]+)~', $PartsAnd, -1, PREG_SPLIT_DELIM_CAPTURE);
+                $Parts = \preg_split('~([<>]=?|!?[=^]+)~', $PartsAnd, -1, \PREG_SPLIT_DELIM_CAPTURE);
                 foreach ($Parts as &$Part) {
                     $Part = \trim($Part);
                     if (\substr($Part, 0, 1) === '{' && \substr($Part, -1) === '}') {
@@ -335,7 +335,7 @@ class Operation extends CommonAbstract
         if ($Instruction === '') {
             return true;
         }
-        $Parts = \preg_split('~([-+*/%.]?=)~', $Instruction, 2, PREG_SPLIT_DELIM_CAPTURE);
+        $Parts = \preg_split('~([-+*/%.]?=)~', $Instruction, 2, \PREG_SPLIT_DELIM_CAPTURE);
         if (\count($Parts) !== 3) {
             return false;
         }
@@ -437,7 +437,7 @@ class Operation extends CommonAbstract
 
         $First = \substr($Data, 0, 1);
         $Last = \substr($Data, -1);
-        $Parts = \preg_split('~(?<!\\\\)\\{((?:[A-Za-z\d ()_-]+\\.?)+)\\}~', $Data, -1, PREG_SPLIT_DELIM_CAPTURE);
+        $Parts = \preg_split('~(?<!\\\\)\\{((?:[A-Za-z\d ()_-]+\\.?)+)\\}~', $Data, -1, \PREG_SPLIT_DELIM_CAPTURE);
         $NumOfParts = \count($Parts);
         if ($NumOfParts % 2 !== 1) {
             return false;
@@ -459,7 +459,7 @@ class Operation extends CommonAbstract
             return false;
         }
         $PartsBefore = $Parts;
-        $Parts = \preg_split('~(?<!\\\\)\\(([^()]+)\\)~', $Parts, -1, PREG_SPLIT_DELIM_CAPTURE);
+        $Parts = \preg_split('~(?<!\\\\)\\(([^()]+)\\)~', $Parts, -1, \PREG_SPLIT_DELIM_CAPTURE);
         $NumOfParts = \count($Parts);
         if ($NumOfParts > 2) {
             for ($Iter = 0; $Iter < $NumOfParts - 1; $Iter += 2) {
@@ -485,7 +485,7 @@ class Operation extends CommonAbstract
      */
     public function operateInner(string $Part)
     {
-        $Part = \preg_split('~(?<!^)(?<![-+*/%{}\\\\])(\*\*|[-+*/%])~', $Part, -1, PREG_SPLIT_DELIM_CAPTURE);
+        $Part = \preg_split('~(?<!^)(?<![-+*/%{}\\\\])(\*\*|[-+*/%])~', $Part, -1, \PREG_SPLIT_DELIM_CAPTURE);
         $Total = \array_shift($Part);
         while (\count($Part) > 1) {
             $Operator = \array_shift($Part);

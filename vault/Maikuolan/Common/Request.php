@@ -1,6 +1,6 @@
 <?php
 /**
- * Request handler (last modified: 2026.03.20).
+ * Request handler (last modified: 2026.04.19).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -122,15 +122,16 @@ class Request extends CommonAbstract
             return '';
         }
 
+        /** Option overrides (currently used only for manually overriding CURLOPT_SSL_VERIFYPEER). **/
+        $Overrides = [];
+
         /** Test channel triggers. */
         foreach ($this->Channels['Triggers'] as $TriggerName => $TriggerURI) {
-            if (
-                !isset($this->Channels[$TriggerName]) ||
-                !\is_array($this->Channels[$TriggerName]) ||
-                \substr($URI, 0, \strlen($TriggerURI)) !== $TriggerURI
-            ) {
+            /** Ensures only the channel data for a channel matching the current URI is loaded for this specific method instance. */
+            if (!isset($this->Channels[$TriggerName]) || !\is_array($this->Channels[$TriggerName]) || \substr($URI, 0, \strlen($TriggerURI)) !== $TriggerURI) {
                 continue;
             }
+
             foreach ($this->Channels[$TriggerName] as $Channel => $Options) {
                 if (!\is_array($Options) || !isset($Options[$TriggerName])) {
                     continue;
@@ -143,7 +144,7 @@ class Request extends CommonAbstract
                 if (empty($Options) || $this->inCsv(\key($Options), $this->Disabled)) {
                     continue;
                 }
-                $AlternateURI = current($Options) . \substr($URI, $Len);
+                $AlternateURI = \current($Options) . \substr($URI, $Len);
                 break;
             }
             if ($this->inCsv($TriggerName, $this->Disabled)) {
@@ -153,13 +154,10 @@ class Request extends CommonAbstract
                 return '';
             }
             if (isset($this->Channels['Overrides'], $this->Channels['Overrides'][$TriggerName])) {
-                $Overrides = $this->Channels['cURL Overrides'][$TriggerName];
+                $Overrides = $this->Channels['Overrides'][$TriggerName];
             }
             break;
         }
-
-        /** Empty overrides in case none declared. */
-        $Overrides = [];
 
         /** Initialise the cURL session. */
         $Request = \curl_init($URI);

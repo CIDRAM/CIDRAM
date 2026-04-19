@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The auxiliary rules view mode page (last modified: 2026.04.16).
+ * This file: The auxiliary rules view mode page (last modified: 2026.04.17).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -333,7 +333,7 @@ if (!$this->FE['ASYNC']) {
     /** Duplicate an auxiliary rule. */
     $ToCopyName = $this->desabotage($_POST['auxDpl']);
     $ToCopy = $this->CIDRAM['AuxData'][$ToCopyName];
-    $ToCopyName = $this->copyIterableName($ToCopyName, function($Name) {
+    $ToCopyName = $this->copyIterableName($ToCopyName, function ($Name) {
         return isset($this->CIDRAM['AuxData'][$Name]);
     });
     if ($ToCopyName !== '') {

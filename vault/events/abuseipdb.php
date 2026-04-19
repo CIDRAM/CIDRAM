@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: AbuseIPDB event handlers (last modified: 2026.03.18).
+ * This file: AbuseIPDB event handlers (last modified: 2026.04.19).
  */
 
 /**
@@ -36,7 +36,7 @@ $this->Events->addHandler('reporterFinished', function (): void {
             continue;
         }
         $Entry = \explode('|', $Line, 4);
-        if (count($Entry) !== 4) {
+        if (\count($Entry) !== 4) {
             continue;
         }
         $Ago = $this->Now - $Entry[0];
@@ -70,7 +70,7 @@ $this->Events->addHandler('reporterFinished', function (): void {
         $this->CIDRAM['AbuseIPDB-Report Queue'] = $Keep;
     }
     unset($Ago, $Keep, $First);
-    $Count = count($Try);
+    $Count = \count($Try);
     if ($Count === 0) {
         return;
     }

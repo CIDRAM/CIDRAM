@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bosnian language data for the front-end (last modified: 2026.04.17).
+# This file: Bosnian language data for the front-end (last modified: 2026.04.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -630,7 +630,7 @@ label:
  Export: "Izvoz"
  Extension: "Ekstenzija"
  External: "Vanjski"
- False positive risk: "Rizik od lažno pozitivnih:"
+ False positive risk: "Rizik od lažno pozitivnih"
  Fancy: "Otmjeno"
  Focus: "Fokus:"
  Free disk space: "Slobodan prostor na disku:"
@@ -641,7 +641,7 @@ label:
  Import: "Uvoz"
  Inactive: "Neaktivno"
  Installed Available: "Instalirano/Dostupno"
- Integrity check: "Provjera integriteta:"
+ Integrity check: "Provjera integriteta"
  Intersect: "Presjek"
  Inverted: "Obrnuto"
  Invisible: "Nevidljiv"
@@ -692,7 +692,7 @@ label:
  Requests reported to external APIs: "Zahtjevi prijavljeni vanjskim API-jima"
  SAPI used: "SAPI koristi:"
  Safety mechanisms: "Sigurnosni mehanizmi"
- Sanity check: "Provjera zdravog razuma:"
+ Sanity check: "Provjera zdravog razuma"
  Search Engine: "Tražilica"
  Search for: "Pretraži:"
  See also: "Vidi također:"
@@ -1071,7 +1071,7 @@ tip:
  Actions menu: "Blokiranje dodaje 1 broju potpisa. Zaobilaženjem se od broja potpisa oduzima 1. Bijela lista postavlja broj potpisa na 0 i prekida obradu, čime se u potpunosti preskaču sva sljedeća pravila. Siva lista postavlja broj potpisa na 0, ali ne prekida obradu. Profiliranje ne utiče na broj potpisa, ali je korisno kada je potrebna složenija logika za određivanje da li treba izvršiti druge vrste radnji, jer se generisani profili mogu povezati sa uslovima narednih pravila. Nakon obrade, ako je broj potpisa 1 ili veći, zahtjev će biti blokiran."
  Aggregator: "Agregator vam omogućava da izrazite IP adrese, CIDR-ove, i mrežne maske na najmanji mogući način. Unesite podatke koji će biti agregirani i pritisnite "OK"."
  An accepted value is any CIDR with a range that covers the IP address of the request: "Prihvaćena vrijednost je bilo koji CIDR s rasponom koji pokriva IP adresu zahtjeva. Npr., 1.2.3.0/24, 1.2.0.0/16, 1.0.0.0/8, itd bi bili prihvaćeni za 1.2.3.4. Da bi se izbjegli lažno pozitivni, uži rasponi (npr., 1.2.3.4/32) su generalno poželjniji od širih raspona (npr., 0.0.0.0/1). Stranica kalkulatora može se koristiti za pronalaženje CIDR-ova koji imaju raspone koji pokrivaju određenu IP adresu."
- Auxiliary Rules Modes: "Režim pregleda prikazuje pomoćna pravila kao sažetu listu radi lakšeg čitanja. Pravila na listi se mogu proširiti i prikazati dodatni detalji klikom na njih. Opcije za izvoz ili brisanje pravila će se prikazati kada kliknete na trigram (☰). Redoslijed pravila se može promijeniti metodom prevuci i ispusti, prevlačenjem pravila s postojeće pozicije na željenu poziciju. Za izmjenu pomoćnih pravila potreban je režim uređivanja, polja koja se mogu uređivati ​​i opcije za dodavanje novih uslova, webhookova, ili druge logike pravilima po potrebi na stranici. Nova pomoćna pravila mogu se kreirati putem bilo kojeg režima."
+ Auxiliary Rules Modes: "Režim pregleda prikazuje pomoćna pravila kao sažetu listu radi lakšeg čitanja. Pravila na listi se mogu proširiti i prikazati dodatni detalji klikom na njih. Opcije za izvoz ili brisanje pravila će se prikazati kada kliknete na trigram (☰). Redoslijed pravila se može promijeniti metodom prevuci i ispusti, prevlačenjem pravila s postojeće pozicije na željenu poziciju. Za izmjenu pomoćnih pravila potreban je režim uređivanja, polja koja se mogu uređivati i opcije za dodavanje novih uslova, webhookova, ili druge logike pravilima po potrebi na stranici. Nova pomoćna pravila mogu se kreirati putem bilo kojeg režima."
  Auxiliary Rules Priority: "Prioritet (najviši➡(jednaka🔄ekvivalentno)➡najniže):"
  Auxiliary Rules Webhooks: "Kada se pravilo pokrene, CIDRAM će pokušati obavijestiti sve povezane webhookove o događaju. Webhook je URL adresa koja može primati POST podatke, i može biti korisna ako postoji eksterna usluga, aplikacija, skripta itd hostovana na potpuno drugoj mreži od CIDRAM-a, a koju želite obraditi podacima koje generira CIDRAM o zahtjevu."
  Auxiliary Rules: "Ovu stranicu možete koristiti za kreiranje, brisanje, i modificiranje pomoćnih pravila za CIDRAM."

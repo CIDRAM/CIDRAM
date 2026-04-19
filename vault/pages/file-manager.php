@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The file manager page (last modified: 2026.04.15).
+ * This file: The file manager page (last modified: 2026.04.19).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -84,7 +84,7 @@ if (isset($_POST['do'], $_FILES['upload-file']['name']) && $_POST['do'] === 'upl
         isset($_FILES['upload-file']['tmp_name'], $_FILES['upload-file']['error']) &&
         $_FILES['upload-file']['error'] === \UPLOAD_ERR_OK &&
         \is_uploaded_file($_FILES['upload-file']['tmp_name']) &&
-        !is_link($this->Vault . $_FILES['upload-file']['name'])
+        !\is_link($this->Vault . $_FILES['upload-file']['name'])
     );
 
     /** If the filename already exists, delete the old file before moving the new file. */

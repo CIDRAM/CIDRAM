@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The IP testing page (last modified: 2026.03.18).
+ * This file: The IP testing page (last modified: 2026.04.19).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -113,7 +113,7 @@ if (isset($_POST['ip-addr-focus'])) {
     } elseif ($this->CIDRAM['TestMode'] === 2) {
         $Working = \explode("\n", \str_replace("\r", '', $this->FE['custom-ua-focus']));
     } else {
-        $Working = \array_unique(array_map(function ($IP) {
+        $Working = \array_unique(\array_map(function ($IP) {
             $New = $this->correctFieldInput($IP);
             if ($New !== '' && \strlen($IP) < 128) {
                 if (isset($this->CIDRAM['Assumptions'][$New])) {
@@ -125,7 +125,7 @@ if (isset($_POST['ip-addr-focus'])) {
             return $New;
         }, \explode("\n", \str_replace("\r", '', $this->FE['ip-addr-focus'] ?: $this->FE['ip-addr']))));
     }
-    natsort($Working);
+    \natsort($Working);
     $this->CIDRAM['ThisIP'] = [];
 
     /** Initialise shorthand options. */

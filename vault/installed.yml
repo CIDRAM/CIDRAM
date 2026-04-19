@@ -64,7 +64,7 @@ CIDRAM Core:
    Checksum: "23fbd9783d6c1a6358a4390543f2e06d160127cfbebc5c4294a1cf5a1917f9a3:19077"
 CIDRAM Front-End:
  Name: "CIDRAM Front-End"
- Version: "3.12.0-DEV+261050"
+ Version: "3.12.0-DEV+261060"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "Latest"
@@ -475,7 +475,7 @@ CIDRAM Front-End:
    Checksum: "1f28e7670dd3220854e7975546a38d7d7d2f4a4e5312f9b69aaeeb121254330a:10270"
   pages/aux-view.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/pages/aux-view.php"
-   Checksum: "ea43a392859e2df4eed6b527f4aebf0c3e50d31ea8b1760c6bd13f6ff5757208:15897"
+   Checksum: "3bfbf9e8106dd4bd6735abde3c47600cce52c65cc75659e6d427b4ccdaaf6c31:15898"
   pages/backup.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/pages/backup.php"
    Checksum: "7a85ece1a7d4dd01acc97fee0cc848221d36c39291fd5cc32379355d5a7d0cc5:24985"
@@ -581,13 +581,13 @@ Common Classes Package:
    Checksum: "7a631ae396b5f67be0f76d0468fd55e9aabb96a992e83a7c810b5d4d95774ce6:61103"
 IPv4:
  False Positive Risk: "Medium"
- Version: "2026.95.0"
+ Version: "2026.108.0"
  Dependencies:
   Bypasses: ">=2025.348"
  Files:
   signatures/ipv4.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/signatures/ipv4.dat"
-   Checksum: "f56025fd0e8cd94b308066ab6e21a0d818ac9d9f54db9f13491bea3f97285a82:1918288"
+   Checksum: "c795f72385fc07ae2671c2a5e5618a9f5db1b2b8c3eaa7a0a72f1b55fdeaac20:1916831"
    Used with: "ipv4"
 IPv4-Bogons:
  False Positive Risk: "Low"
@@ -625,13 +625,13 @@ IPv4-Other:
    Used with: "ipv4"
 IPv6:
  False Positive Risk: "Low"
- Version: "2026.95.0"
+ Version: "2026.108.0"
  Dependencies:
   Bypasses: ">=2025.348"
  Files:
   signatures/ipv6.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/signatures/ipv6.dat"
-   Checksum: "4d3bbbcb1ef626e607adfe30dd60ce6daaf17065e650540c7bdba285ee91433f:568348"
+   Checksum: "b42bf6305ae8e2a6f058814fe2ce7f165bd26ca0b7f6d9bc8744bd76fef37f87:568498"
    Used with: "ipv6"
 IPv6-Bogons:
  False Positive Risk: "Low"

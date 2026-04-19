@@ -1,6 +1,6 @@
 <?php
 /**
- * YAML handler (last modified: 2026.03.20).
+ * YAML handler (last modified: 2026.03.26).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -244,7 +244,7 @@ class YAML extends CommonAbstract implements \Countable
                 /** Attempt to normalise encoding if not already UTF-8. */
                 if ($this->LastInputEncoding !== 'UTF-8') {
                     /** Suppress errors to avoid potentially flooding logs. */
-                    set_error_handler(function ($errno) {
+                    \set_error_handler(function ($errno) {
                         return;
                     });
 
@@ -259,7 +259,7 @@ class YAML extends CommonAbstract implements \Countable
                     $In = $Attempt;
 
                     /** We're done.. Restore the error handler. */
-                    restore_error_handler();
+                    \restore_error_handler();
                 }
             }
 
@@ -1041,7 +1041,7 @@ class YAML extends CommonAbstract implements \Countable
     private function unescape(string $Value = '', string $Style = '"'): string
     {
         if ($Style === '"' || $Style === "\xe2\x80\x9c" || $Style === "\x91") {
-            set_error_handler(function ($errno) {
+            \set_error_handler(function ($errno) {
                 return;
             });
             $Value = \preg_replace([
@@ -1080,7 +1080,7 @@ class YAML extends CommonAbstract implements \Countable
                 return $Captured[1] . (($Attempt !== false && \strcmp($Reversed, $Decoded) === 0) ? $Attempt : $Decoded);
             }, $Value);
             $Value = \str_replace('\\\\', '\\', $Value);
-            restore_error_handler();
+            \restore_error_handler();
             return $Value;
         }
         if ($Style === "'" || $Style === "\xe2\x80\x98" || $Style === "\x93") {

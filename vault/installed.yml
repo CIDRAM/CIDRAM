@@ -68,7 +68,7 @@ CIDRAM Core:
    Checksum: "23fbd9783d6c1a6358a4390543f2e06d160127cfbebc5c4294a1cf5a1917f9a3:19077"
 CIDRAM Front-End:
  Name: "CIDRAM Front-End"
- Version: "4.2.0-DEV+261050"
+ Version: "4.2.0-DEV+261060"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "Latest"
@@ -538,7 +538,7 @@ CIDRAM Front-End:
    Checksum: "83c5747434a035b879159324e02ecb84912dd5b277b03de38b8a4cf1b0936344:10252"
   pages/aux-view.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/pages/aux-view.php"
-   Checksum: "f5d634c4656eb545c8acc482c0eabf95012936d42dd3323165c959964ca35867:14590"
+   Checksum: "0e1d3b5e69183283ee2c5e628cf641dd9bf24ede8fc866a4154c3b6d8b82d0e6:14591"
   pages/backup.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/pages/backup.php"
    Checksum: "5c342952e1090989e75519f6b2a151bc12e07b0317572928c2f3670156457f6b:31376"
@@ -647,13 +647,13 @@ Common Classes Package:
    Checksum: "7a631ae396b5f67be0f76d0468fd55e9aabb96a992e83a7c810b5d4d95774ce6:61103"
 IPv4:
  False Positive Risk: "Medium"
- Version: "2026.95.0"
+ Version: "2026.108.0"
  Dependencies:
   Bypasses: ">=2025.348"
  Files:
   signatures/ipv4.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/signatures/ipv4.dat"
-   Checksum: "f56025fd0e8cd94b308066ab6e21a0d818ac9d9f54db9f13491bea3f97285a82:1918288"
+   Checksum: "c795f72385fc07ae2671c2a5e5618a9f5db1b2b8c3eaa7a0a72f1b55fdeaac20:1916831"
    Used with: "ipv4"
 IPv4-Bogons:
  False Positive Risk: "Low"
@@ -691,13 +691,13 @@ IPv4-Other:
    Used with: "ipv4"
 IPv6:
  False Positive Risk: "Low"
- Version: "2026.95.0"
+ Version: "2026.108.0"
  Dependencies:
   Bypasses: ">=2025.348"
  Files:
   signatures/ipv6.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/signatures/ipv6.dat"
-   Checksum: "4d3bbbcb1ef626e607adfe30dd60ce6daaf17065e650540c7bdba285ee91433f:568348"
+   Checksum: "b42bf6305ae8e2a6f058814fe2ce7f165bd26ca0b7f6d9bc8744bd76fef37f87:568498"
    Used with: "ipv6"
 IPv6-Bogons:
  False Positive Risk: "Low"

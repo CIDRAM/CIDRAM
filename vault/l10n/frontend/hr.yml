@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Croatian language data for the front-end (last modified: 2026.04.17).
+# This file: Croatian language data for the front-end (last modified: 2026.04.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -441,7 +441,7 @@ hints_duration:
  Ograničenja.: "Notacije se mogu miješati, ali jedinice uvijek moraju biti opisane od najveće prema najmanjoj, i ne smiju se ponavljati. Npr., <strong>1 week 2 days 3′4″</strong> je <span class="txtGn">valjan</span> i bit će ispravno shvaćen, ali <strong>3′4″ 1 week 2 days</strong> i <strong>3 hours 3h 3°</strong> su <span class="txtRd">nevažeći</span>. CIDRAM-u je svejedno koristite li razmak ili ne. Brojevi moraju biti čisti i neformatirani. Radi praktičnosti, najveća podržana jedinica je tjedan. Kada se konfiguracija ažurira, CIDRAM normalizira trajanja na lučnog vremena."
 hints_has_bypass: "* Ova opcija ima odgovarajuće zaobilaženje pod <code class="s">bypasses➡used</code>. Preporučuje se osigurati da je potvrdni okvir za odgovarajuće zaobilaženje označen na isti način kao i potvrdni okvir za pokušaj provjere ove opcije."
 hints_http_response_header_code:
- 1.: "Kada je na snazi ​​"tihi način", koristit će se HTTP statusna poruka definirana s <code class="s">general➡silent_mode_response_header_code</code> (ovo ima najveći prioritet)."
+ 1.: "Kada je na snazi "tihi način", koristit će se HTTP statusna poruka definirana s <code class="s">general➡silent_mode_response_header_code</code> (ovo ima najveći prioritet)."
  2.: "Kada je entitet koji je podnio zahtjev zabranjen zbog prekoračenja ograničenja prekršaja, koristit će se HTTP statusna poruka za "zabranjeno"."
  3.: "Kada je blokirano zbog ograničenja brzine, koristit će se 429, ili kada je blokirano zbog sukoba resursa, koristit će se HTTP statusna poruka definirana s <code class="s">signatures➡conflict_response</code> (ograničavanje brzine i sukobi resursa imaju jednak prioritet u ovom kontekstu)."
  4.: "Kada je blokirano zbog pomoćnog pravila koje postavlja "nadjačavanje HTTP statusnog koda", koristit će se to nadjačavanje HTTP statusnog koda."
@@ -658,7 +658,7 @@ label:
  Export: "Izvoz"
  Extension: "Ekstenzija"
  External: "Vanjski"
- False positive risk: "Rizik od lažno pozitivnih:"
+ False positive risk: "Rizik od lažno pozitivnih"
  Fancy: "Otmjeno"
  Focus: "Fokus:"
  Greylist the request: "Stavi zahtjev na sivu listu.\nResetira broj potpisa, ali nastavlja s obradom zahtjeva. Preporučuje se kada ne želite staviti zahtjev na bijelu listu, ali vam je potrebno nešto opsežnije od zaobilaženja."
@@ -668,7 +668,7 @@ label:
  Import: "Uvoz"
  Inactive: "Neaktivno"
  Installed Available: "Instalirano/Dostupno"
- Integrity check: "Provjera integriteta:"
+ Integrity check: "Provjera integriteta"
  Intersect: "Presjek"
  Inverted: "Obrnuto"
  Invisible: "Nevidljiv"
@@ -725,7 +725,7 @@ label:
  Requests reported to external APIs: "Zahtjevi prijavljeni vanjskim API-jima"
  SAPI used: "SAPI koristi:"
  Safety mechanisms: "Sigurnosni mehanizmi"
- Sanity check: "Provjera zdravog razuma:"
+ Sanity check: "Provjera zdravog razuma"
  Search Engine: "Tražilica"
  Search for: "Tražiti:"
  See also: "Vidi također:"
@@ -1063,7 +1063,7 @@ switch-tracking-aux-set-false: "Ne provjeravajte prema pomoćnim pravilima"
 switch-tracking-aux-set-true: "Provjerite prema pomoćnim pravilima"
 switch-tracking-blocked-already-set-false: "Ne provjeravajte prema datotekama potpisa"
 switch-tracking-blocked-already-set-true: "Provjerite prema datotekama potpisa"
-switch-tracking-hide-banned-blocked-set-false: "Nemojte skrivati ​​zabranjene/blokirane IP adrese"
+switch-tracking-hide-banned-blocked-set-false: "Nemojte skrivati zabranjene/blokirane IP adrese"
 switch-tracking-hide-banned-blocked-set-true: "Skrivati zabranjene/blokirane IP adrese"
 time_days_ago:
  - "Prije %s dan"

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods for updating CIDRAM components (last modified: 2026.03.18).
+ * This file: Methods for updating CIDRAM components (last modified: 2026.04.19).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -399,8 +399,8 @@ trait Updater
                 return;
             }
             $Arr['Extended Description'] .= \sprintf(
-                '<br /><em>%s <span class="%s">%s</span></em>',
-                $this->L10N->getString('label.False positive risk'),
+                '<br /><em>%s<span class="%s">%s</span></em>',
+                $this->L10N->getString('label.False positive risk') . $this->L10N->getString('pair_separator'),
                 $Class,
                 $State
             );
@@ -946,7 +946,7 @@ trait Updater
     private function updatesHandlerUninstall($ID): void
     {
         if (\is_array($ID)) {
-            $ID = current($ID);
+            $ID = \current($ID);
         }
         $InUse = $this->componentUpdatePrep($ID);
         $BytesRemoved = 0;
@@ -1010,7 +1010,7 @@ trait Updater
     private function updatesHandlerActivate($ID): void
     {
         if (\is_array($ID)) {
-            $ID = current($ID);
+            $ID = \current($ID);
         }
         $Activation = [
             'ipv4' => $this->Configuration['components']['ipv4'],
@@ -1117,7 +1117,7 @@ trait Updater
     private function updatesHandlerDeactivate($ID): void
     {
         if (\is_array($ID)) {
-            $ID = current($ID);
+            $ID = \current($ID);
         }
         $this->CIDRAM['Deactivation'] = [
             'ipv4' => $this->Configuration['components']['ipv4'],
@@ -1398,16 +1398,16 @@ trait Updater
 
                 /** Append results. */
                 $Table .= \sprintf(
-                    '<code>%1$s</code> – %7$s %8$s – %9$s %10$s<br />%2$s – <code class="%6$s">%3$s</code><br />%4$s – <code class="%6$s">%5$s</code><hr />',
+                    '<code>%1$s</code> – %7$s%8$s – %9$s%10$s<br />%2$s – <code class="%6$s">%3$s</code><br />%4$s – <code class="%6$s">%5$s</code><hr />',
                     $ThisFile,
                     $this->L10N->getString('label.Actual'),
                     $Actual ?: '?',
                     $this->L10N->getString('label.Expected'),
                     $Checksum ?: '?',
                     $Class,
-                    $this->L10N->getString('label.Integrity check'),
+                    $this->L10N->getString('label.Integrity check') . $this->L10N->getString('pair_separator'),
                     $Integrity,
-                    $this->L10N->getString('label.Sanity check'),
+                    $this->L10N->getString('label.Sanity check') . $this->L10N->getString('pair_separator'),
                     $Sanity
                 );
             }

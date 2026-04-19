@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2026.04.17).
+# This file: Vietnamese language data for the front-end (last modified: 2026.04.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -83,9 +83,9 @@ Glossary: !lazy
    "CIDR" là viết tắt của "Classless Inter-Domain Routing" (Định tuyến liên miền không phân lớp), và "CIDR" trong "CIDRAM" xuất phát từ đó. "CIDRAM" là viết tắt của "Classless Inter-Domain Routing Access Manager" (Trình quản lý truy cập định tuyến liên miền không phân lớp).
    Trong ngữ cảnh của CIDRAM, "CIDR" đề cập cụ thể đến các mạng con được biểu diễn bằng ký hiệu CIDR.
   Sai tích cực: |
-   Khi thực hiện một xét nghiệm, nếu kết quả xét nghiệm là "dương tính" (nghĩa là các điều kiện xét nghiệm được xác nhận là đúng), nhưng kết quả dự kiến ​​(hay đáng lẽ phải là) "âm tính" (nghĩa là kết quả xét nghiệm sai), thì đó được gọi là "sai tích cực". <em>Tiếng Anh: "false positive". Hay cách khác: "lỗi sai tích cực"; "dương tính giả"; "lỗi dương tính giả"; "báo động giả". Đối với các xét nghiệm y tế, "dương tính giả" cách diễn đạt phổ biến hơn, trong khi đối với lĩnh vực CNTT, "sai tích cực" cách diễn đạt phổ biến hơn, nhưng về cơ bản là tương đương nhau.</em>
+   Khi thực hiện một xét nghiệm, nếu kết quả xét nghiệm là "dương tính" (nghĩa là các điều kiện xét nghiệm được xác nhận là đúng), nhưng kết quả dự kiến (hay đáng lẽ phải là) "âm tính" (nghĩa là kết quả xét nghiệm sai), thì đó được gọi là "sai tích cực". <em>Tiếng Anh: "false positive". Hay cách khác: "lỗi sai tích cực"; "dương tính giả"; "lỗi dương tính giả"; "báo động giả". Đối với các xét nghiệm y tế, "dương tính giả" cách diễn đạt phổ biến hơn, trong khi đối với lĩnh vực CNTT, "sai tích cực" cách diễn đạt phổ biến hơn, nhưng về cơ bản là tương đương nhau.</em>
    Một số thuật ngữ liên quan là "đúng tích cực" (hay "dương tính thật"), "đúng tiêu cực" (hay "âm tính thật"), và "sai tiêu cực" (hay "âm tính giả"). <em>Tiếng Anh: "true positive", "true negative", "false negative".</em> "Đúng tích cực" là khi cả kết quả xét nghiệm và tình trạng thực tế đều đúng (hay "dương tính"), và "đúng tiêu cực" là khi cả kết quả xét nghiệm và tình trạng thực tế đều sai (hay "âm tính"). Một "đúng tích cực" hay "đúng tiêu cực" được coi là một "suy luận chính xác".
-   Ngược lại với "sai tích cực" là "sai tiêu cực". Khi kết quả xét nghiệm là "âm tính", nhưng kết quả dự kiến ​​(hay đáng lẽ phải) là "dương tính", thì đó được gọi là "sai tiêu cực".
+   Ngược lại với "sai tích cực" là "sai tiêu cực". Khi kết quả xét nghiệm là "âm tính", nhưng kết quả dự kiến (hay đáng lẽ phải) là "dương tính", thì đó được gọi là "sai tiêu cực".
    Trong ngữ cảnh của CIDRAM, các thuật ngữ này thường đề cập đến trường hợp CIDRAM chặn thứ gì đó mà nó không nên chặn, hoặc khi nó không chặn được thứ gì đó mà nó đáng lẽ phải chặn. Khi CIDRAM chặn một yêu cầu lẽ ra không bị chặn (ví dụ, do chữ ký không hợp lệ, hết hạn, hoặc không chính xác), hoặc khi nó chặn vì những lý do sai, đó được gọi là "sai tích cực". Khi CIDRAM không chặn được một yêu cầu đáng lẽ phải bị chặn (ví dụ, do các mối đe dọa không lường trước được, thiếu chữ ký, mô-đun bị lỗi, hoặc thiếu sót trong quy trình), đó được gọi là "sai tiêu cực" (mặc dù thường được mô tả là "bỏ sót phát hiện"). <em>Tiếng Anh: "missed detection".</em>
    | | Yêu cầu KHÔNG nên bị chặn | Yêu cầu NÊN bị chặn |
    | Yêu cầu KHÔNG bị chặn | Đúng tiêu cực (suy luận chính xác) | Bỏ sót phát hiện (hay sai tiêu cực) |
@@ -645,7 +645,7 @@ label:
  Export: "Xuất"
  Extension: "Phần mở rộng"
  External: "Bên ngoài"
- False positive risk: "Nguy cơ sai tích cực:"
+ False positive risk: "Nguy cơ sai tích cực"
  Fancy: "Đẹp"
  Focus: "Trọng tâm:"
  Greylist the request: "Danh sách xám các yêu cầu.\nĐặt lại số lượng chữ ký được kích hoạt, nhưng vẫn tiếp tục xử lý yêu cầu. Được khuyến khích khi bạn không muốn đưa yêu cầu vào danh sách trắng, nhưng cần điều gì đó thực chất hơn kích hoạt trường hợp."
@@ -655,7 +655,7 @@ label:
  Import: "Nhập"
  Inactive: "Không hoạt động"
  Installed Available: "Được cài đặt / Có sẵn"
- Integrity check: "Kiểm tra tính toàn vẹn:"
+ Integrity check: "Kiểm tra tính toàn vẹn"
  Intersect: "Giao nhau"
  Inverted: "Nghịch đảo"
  Invisible: "Vô hình"
@@ -712,7 +712,7 @@ label:
  Requests reported to external APIs: "Các yêu cầu được báo cáo cho các API bên ngoài"
  SAPI used: "SAPI đang được dùng:"
  Safety mechanisms: "Cơ chế an toàn"
- Sanity check: "Kiểm tra an toàn:"
+ Sanity check: "Kiểm tra an toàn"
  Search Engine: "Máy tìm kiếm"
  Search for: "Tìm kiếm:"
  See also: "Xem thêm:"

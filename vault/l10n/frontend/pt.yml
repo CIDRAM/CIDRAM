@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2026.04.17).
+# This file: Portuguese language data for the front-end (last modified: 2026.04.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -894,7 +894,7 @@ label:
  Export: "Exportar"
  Extension: "Extensão"
  External: "Externo"
- False positive risk: "Risco de falsos positivos:"
+ False positive risk: "Risco de falsos positivos"
  Fancy: "Chique"
  Focus: "Foco:"
  Greylist the request: "Trate a solicitação como na lista cinza.\nRedefine o número de assinaturas desencadeadas, mas continua processando a solicitação. Recomendado quando você não deseja tratar a solicitação como na lista branca, mas precisa de algo mais substancial do que desencadear um bypass."
@@ -904,7 +904,7 @@ label:
  Import: "Importar"
  Inactive: "Inativo"
  Installed Available: "Instalado/Disponível"
- Integrity check: "Verificação de integridade:"
+ Integrity check: "Verificação de integridade"
  Intersect: {"pt-BR": "A interseção dos dois conjuntos", "pt-PT": "A intersecção dos dois conjuntos"}
  Inverted: "Invertido"
  Invisible: "Invisível"
@@ -967,7 +967,7 @@ label:
  Requests reported to external APIs: "Solicitações relatados para APIs externos"
  SAPI used: "SAPI usada:"
  Safety mechanisms: "Mecanismos de segurança"
- Sanity check: "Verificação de sanidade:"
+ Sanity check: "Verificação de sanidade"
  Search Engine: "Motor de pesquisa"
  Search for: "Procurar:"
  See also: "Veja também:"
@@ -1389,7 +1389,7 @@ tip:
  An accepted value is any CIDR with a range that covers the IP address of the request:
   pt-BR: "Um valor aceito é qualquer CIDR cujo intervalo abranja o endereço IP da solicitação. Por exemplo, 1.2.3.0/24, 1.2.0.0/16, 1.0.0.0/8, etc seriam aceitos para 1.2.3.4. Para evitar falsos positivos, intervalos mais estreitos (por exemplo, 1.2.3.4/32) são geralmente preferíveis a intervalos mais amplos (por exemplo, 0.0.0.0/1). A página da calculadora pode ser usada para encontrar quais CIDRs possuem intervalos que abrangem um endereço IP específico."
   pt-PT: "Um valor aceite é qualquer CIDR cujo intervalo abranja o endereço IP da solicitação. Por exemplo, 1.2.3.0/24, 1.2.0.0/16, 1.0.0.0/8, etc seriam aceites para 1.2.3.4. Para evitar falsos positivos, intervalos mais estreitos (por exemplo, 1.2.3.4/32) são geralmente preferíveis a intervalos mais amplos (por exemplo, 0.0.0.0/1). A página da calculadora pode ser utilizada para encontrar quais os CIDR que possuem intervalos que abrangem um endereço IP específico."
- Auxiliary Rules Modes: "O modo de visualização exibe regras auxiliares como uma lista compacta para facilitar a leitura. As regras na lista podem ser expandidas e mais detalhes podem ser exibidos clicando nelas. Opções para exportar ou excluir uma regra serão mostradas ao clicar no trigrama (☰). As regras podem ser reordenadas por meio de arrastar e soltar, arrastando uma regra de sua posição existente para a posição desejada. O modo de edição é necessário para modificar regras auxiliares, campos editáveis ​​e opções para adicionar novas condições, webhooks, ou outra lógica às regras conforme necessário fornecidas na página. Novas regras auxiliares podem ser criadas por meio de qualquer modo."
+ Auxiliary Rules Modes: "O modo de visualização exibe regras auxiliares como uma lista compacta para facilitar a leitura. As regras na lista podem ser expandidas e mais detalhes podem ser exibidos clicando nelas. Opções para exportar ou excluir uma regra serão mostradas ao clicar no trigrama (☰). As regras podem ser reordenadas por meio de arrastar e soltar, arrastando uma regra de sua posição existente para a posição desejada. O modo de edição é necessário para modificar regras auxiliares, campos editáveis e opções para adicionar novas condições, webhooks, ou outra lógica às regras conforme necessário fornecidas na página. Novas regras auxiliares podem ser criadas por meio de qualquer modo."
  Auxiliary Rules Priority: "Prioridade (altíssima➡(igual🔄equivalente)➡baixíssima):"
  Auxiliary Rules Webhooks:
   pt-BR: "Quando uma regra é desencadeada, o CIDRAM tentará notificar quaisquer webhooks conectados sobre o evento. Um webhook é uma URL capaz de receber dados POST e pode ser útil se houver um serviço externo, aplicativo, script, etc hospedado em uma rede totalmente diferente da CIDRAM, na qual você deseja manipular os dados gerados pela CIDRAM sobre a solicitação."
@@ -1423,7 +1423,7 @@ tip:
   pt-BR: "O gerenciador de arquivos permite deletar, editar, carregar e descarregar arquivos. Use com cuidado (você poderia quebrar sua instalação com este)."
   pt-PT: "O gerenciador de arquivos permite deletar, editar, carregar e descarregar arquivos. Use com cuidado (poderia quebrar a sua instalação com este)."
  Glossary:
-  pt-BR: "O glossário descreve alguns dos termos usados ​​pelo CIDRAM, para ajudar a esclarecer o significado pretendido no contexto em que são usados."
+  pt-BR: "O glossário descreve alguns dos termos usados pelo CIDRAM, para ajudar a esclarecer o significado pretendido no contexto em que são usados."
   pt-PT: "O glossário descreve alguns dos termos utilizados pelo CIDRAM, para ajudar a esclarecer o significado pretendido no contexto em que são utilizados."
  Greeting: "Olá, %s."
  Home: "Esta é a página principal do CIDRAM front-end. Selecione um link no menu de navegação à esquerda para continuar."

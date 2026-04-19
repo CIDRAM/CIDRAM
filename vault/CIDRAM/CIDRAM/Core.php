@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2026.04.06).
+ * This file: The CIDRAM core (last modified: 2026.04.19).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1507,7 +1507,7 @@ class Core
             $this->BlockInfo['Signatures'] .= 'auxiliary.yml:' . $ReasonShort;
         } else {
             $Debug = \debug_backtrace(\DEBUG_BACKTRACE_PROVIDE_OBJECT | \DEBUG_BACKTRACE_IGNORE_ARGS, 1)[0];
-            $Source = basename($Debug['file']);
+            $Source = \basename($Debug['file']);
             $this->BlockInfo['Signatures'] .= $Source . ':L' . $Debug['line'];
         }
         $this->BlockInfo['SignatureCount']++;
@@ -1558,7 +1558,7 @@ class Core
             $this->BlockInfo['Signatures'] .= 'auxiliary.yml:' . $ReasonShort;
         } else {
             $Debug = \debug_backtrace(\DEBUG_BACKTRACE_PROVIDE_OBJECT | \DEBUG_BACKTRACE_IGNORE_ARGS, 1)[0];
-            $Source = basename($Debug['file']);
+            $Source = \basename($Debug['file']);
             $this->BlockInfo['Signatures'] .= $Source . ':L' . $Debug['line'];
         }
         $this->BlockInfo['SignatureCount']--;

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bosnian language data for the front-end (last modified: 2026.04.17).
+# This file: Bosnian language data for the front-end (last modified: 2026.04.19).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -440,7 +440,7 @@ hints_duration:
  Ograničenja.: "Notacije se mogu miješati, ali jedinice uvijek moraju biti opisane od najveće prema najmanjoj, i ne smiju se ponavljati. Npr., <strong>1 week 2 days 3′4″</strong> je <span class="txtGn">validan</span> i biće ispravno shvaćen, ali <strong>3′4″ 1 week 2 days</strong> i <strong>3 hours 3h 3°</strong> su <span class="txtRd">nevažeći</span>. CIDRAM-u nije važno da li koristite razmak ili ne. Brojevi moraju biti jednostavni i neformatirani. Radi praktičnosti, najveća podržana jedinica je sedmica. Kada se konfiguracija ažurira, CIDRAM normalizira trajanje u lučnog vremena."
 hints_has_bypass: "* Ova opcija ima odgovarajuće zaobilaženje pod <code class="s">bypasses➡used</code>. Preporučuje se da se osigura da je polje za potvrdu za odgovarajuće zaobilaženje označeno na isti način kao i polje za potvrdu za pokušaj provjere ove opcije."
 hints_http_response_header_code:
- 1.: "Kada je na snazi ​​"tihi način", koristit će se HTTP statusna poruka definirana sa <code class="s">general➡silent_mode_response_header_code</code> (ovo ima najveći prioritet)."
+ 1.: "Kada je na snazi "tihi način", koristit će se HTTP statusna poruka definirana sa <code class="s">general➡silent_mode_response_header_code</code> (ovo ima najveći prioritet)."
  2.: "Kada je entitet koji je podnio zahtjev zabranjen zbog prekoračenja ograničenja prekršaja, koristit će se HTTP statusna poruka za "zabranjeno"."
  3.: "Kada je blokirano zbog ograničenja brzine, koristit će se 429, ili kada je blokirano zbog sukoba resursa, koristit će se HTTP statusna poruka definirana sa <code class="s">signatures➡conflict_response</code> (ograničavanje brzine i sukobi resursa imaju jednak prioritet u ovom kontekstu)."
  4.: "Kada je blokirano zbog pomoćnog pravila koje postavlja "nadjačavanje HTTP statusnog koda", koristit će se to nadjačavanje HTTP statusnog koda."
@@ -659,7 +659,7 @@ label:
  Export: "Izvoz"
  Extension: "Ekstenzija"
  External: "Vanjski"
- False positive risk: "Rizik od lažno pozitivnih:"
+ False positive risk: "Rizik od lažno pozitivnih"
  Fancy: "Otmjeno"
  Focus: "Fokus:"
  Greylist the request: "Stavi zahtjev na sivu listu.\nResetuje broj potpisa, ali nastavlja s obradom zahtjeva. Preporučuje se kada ne želite staviti zahtjev na bijelu listu, ali vam je potrebno nešto značajnije od zaobilaženja."
@@ -669,7 +669,7 @@ label:
  Import: "Uvoz"
  Inactive: "Neaktivno"
  Installed Available: "Instalirano/Dostupno"
- Integrity check: "Provjera integriteta:"
+ Integrity check: "Provjera integriteta"
  Intersect: "Presjek"
  Inverted: "Obrnuto"
  Invisible: "Nevidljiv"
@@ -726,7 +726,7 @@ label:
  Requests reported to external APIs: "Zahtjevi prijavljeni vanjskim API-jima"
  SAPI used: "SAPI koristi:"
  Safety mechanisms: "Sigurnosni mehanizmi"
- Sanity check: "Provjera zdravog razuma:"
+ Sanity check: "Provjera zdravog razuma"
  Search Engine: "Tražilica"
  Search for: "Pretraži:"
  See also: "Vidi također:"
@@ -1118,7 +1118,7 @@ tip:
  Actions menu: "Blokiranje dodaje 1 broju potpisa. Zaobilaženjem se od broja potpisa oduzima 1. Bijela lista postavlja broj potpisa na 0 i prekida obradu, čime se u potpunosti preskaču sva sljedeća pravila. Siva lista postavlja broj potpisa na 0, ali ne prekida obradu. Profiliranje ne utiče na broj potpisa, ali je korisno kada je potrebna složenija logika za određivanje da li treba izvršiti druge vrste radnji, jer se generisani profili mogu povezati sa uslovima narednih pravila. Nakon obrade, ako je broj potpisa 1 ili veći, zahtjev će biti blokiran."
  Aggregator: "Agregator vam omogućava da izrazite IP adrese, CIDR-ove, i mrežne maske na najmanji mogući način. Unesite podatke koji će biti agregirani i pritisnite "OK"."
  An accepted value is any CIDR with a range that covers the IP address of the request: "Prihvaćena vrijednost je bilo koji CIDR s rasponom koji pokriva IP adresu zahtjeva. Npr., 1.2.3.0/24, 1.2.0.0/16, 1.0.0.0/8, itd bi bili prihvaćeni za 1.2.3.4. Da bi se izbjegli lažno pozitivni, uži rasponi (npr., 1.2.3.4/32) su generalno poželjniji od širih raspona (npr., 0.0.0.0/1). Stranica kalkulatora može se koristiti za pronalaženje CIDR-ova koji imaju raspone koji pokrivaju određenu IP adresu."
- Auxiliary Rules Modes: "Režim pregleda prikazuje pomoćna pravila kao sažetu listu radi lakšeg čitanja. Pravila na listi se mogu proširiti i prikazati dodatni detalji klikom na njih. Opcije za izvoz ili brisanje pravila će se prikazati kada kliknete na trigram (☰). Redoslijed pravila se može promijeniti metodom prevuci i ispusti, prevlačenjem pravila s postojeće pozicije na željenu poziciju. Za izmjenu pomoćnih pravila potreban je režim uređivanja, polja koja se mogu uređivati ​​i opcije za dodavanje novih uslova, webhookova, ili druge logike pravilima po potrebi na stranici. Nova pomoćna pravila mogu se kreirati putem bilo kojeg režima."
+ Auxiliary Rules Modes: "Režim pregleda prikazuje pomoćna pravila kao sažetu listu radi lakšeg čitanja. Pravila na listi se mogu proširiti i prikazati dodatni detalji klikom na njih. Opcije za izvoz ili brisanje pravila će se prikazati kada kliknete na trigram (☰). Redoslijed pravila se može promijeniti metodom prevuci i ispusti, prevlačenjem pravila s postojeće pozicije na željenu poziciju. Za izmjenu pomoćnih pravila potreban je režim uređivanja, polja koja se mogu uređivati i opcije za dodavanje novih uslova, webhookova, ili druge logike pravilima po potrebi na stranici. Nova pomoćna pravila mogu se kreirati putem bilo kojeg režima."
  Auxiliary Rules Priority: "Prioritet (najviši➡(jednaka🔄ekvivalentno)➡najniže):"
  Auxiliary Rules Webhooks: "Kada se pravilo pokrene, CIDRAM će pokušati obavijestiti sve povezane webhookove o događaju. Webhook je URL adresa koja može primati POST podatke, i može biti korisna ako postoji eksterna usluga, aplikacija, skripta itd hostovana na potpuno drugoj mreži od CIDRAM-a, a koju želite obraditi podacima koje generira CIDRAM o zahtjevu."
  Auxiliary Rules: "Ovu stranicu možete koristiti za kreiranje, brisanje, i modificiranje pomoćnih pravila za CIDRAM."

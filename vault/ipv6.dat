@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v4/vault/signatures/ipv6.dat
 
-# Version: 2026.95.0
-# Last modified: 2026.04.06
+# Version: 2026.108.0
+# Last modified: 2026.04.19
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -136,13 +136,15 @@ Tag: New Dream Network
 
 
 # ASN 33182 ("HostDime.com, Inc").
-# Stop Forum Spam (SFS) listings: 269.
-# Updated: 2025.04.01
+# Stop Forum Spam (SFS) listings: 39.
+# Updated: 2026.04.19
 
 2803:c40::/32 Deny Cloud
 Origin: CO
 2a04:840::/44 Deny Cloud
 Origin: GB
+2404:a700::/44 Deny Cloud
+Origin: IN
 2806:213::/32 Deny Cloud
 Origin: MX
 2605:2080::/33 Deny Cloud
@@ -1234,8 +1236,8 @@ Tag: Unitas Global
 # ASNs 23033, 27323, 32875 ("Wowrack.com").
 # Brute-force, WordPress/XMLRPC, and webapp attacks, hacking, and spam detected
 # from here.
-# Stop Forum Spam (SFS) listings: 131 (AS27323), 5 (AS32875).
-# Updated: 2023.07.11 / Checked: 2025.04.01
+# Stop Forum Spam (SFS) listings: 16 (AS23033), 138 (AS27323).
+# Updated: 2023.07.11 / Checked: 2026.04.19
 
 2602:ffca::/36 Deny Cloud
 2604:c00::/32 Deny Cloud
@@ -2285,8 +2287,8 @@ Tag: MBA DATACENTERS S.L
 
 # ASN 10439 ("CariNet, Inc").
 # Caught attempting to hack honeypots.
-# Stop Forum Spam (SFS) listings: 43.
-# Updated: 2016.04.08 / Checked: 2025.03.07
+# Stop Forum Spam (SFS) listings: 10.
+# Updated: 2016.04.08 / Checked: 2026.04.19
 
 2607:ff10::/32 Deny Cloud
 Origin: US
@@ -7302,12 +7304,15 @@ Tag: QTS LLC
 
 # ASN 35758 ("Rachamim Aviel Twito trading as A.B INTERNET SOLUTIONS").
 # Dedicated server lease company. Caught spamming forums and blogs.
-# Stop Forum Spam (SFS) listings: 103.
-# Updated: 2025.07.31
+# Stop Forum Spam (SFS) listings: 65.
+# Updated: 2026.04.19
 
+2a11:840:30::/48 Deny Cloud
+Origin: CA
 2a0a:1dc0::/29 Deny Cloud
 Origin: IL
 2a0a:2d04:1::/48 Deny Cloud
+2a0e:1a83:55::/48 Deny Cloud
 Origin: SC
 Profile: Dedicated;Webhosting
 Tag: Rachamim Aviel Twito
@@ -9686,12 +9691,12 @@ Tag: TeraSwitch Networks Inc
 
 
 # ASNs 58061, 60721 ("Scalaxy B.V", "Bursabil Teknoloji A.S").
-# Scalaxy: High​ fraud risk ISP (see scamalytics.com/ip/isp/scalaxy-b-v).
+# Scalaxy: High fraud risk ISP (see scamalytics.com/ip/isp/scalaxy-b-v).
 # Bursabil: Turkish webhosting provider. Sections merged together due to
 # interlacing. Brute-force, SQLi, and webapp attacks, port scans, hacking, and
 # spam detected from here.
-# Stop Forum Spam (SFS) listings: 3,796 (AS58061), 6 (AS60721).
-# Updated: 2025.06.09
+# Stop Forum Spam (SFS) listings: 560 (AS58061), 2 (AS60721).
+# Updated: 2026.04.19
 
 2a02:c6c0::/29 Deny Cloud
 2a0c:6740::/29 Deny Cloud
@@ -9706,6 +9711,7 @@ Origin: GB
 2a00:1ca8:d4::/48 Deny Cloud
 2a03:3f40:2::/48 Deny Cloud
 Origin: NL
+2a03:e340:1::/48 Deny Cloud
 2a03:e340:2::/48 Deny Cloud
 2a03:e340:6::/48 Deny Cloud
 Origin: RU
@@ -11486,8 +11492,8 @@ Tag: Beecloud
 # ASN 35816 ("Lancom Ltd").
 # Russian webhosting provider. Brute-force, DDoS, and webapp attacks, port
 # scans, hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 64.
-# Updated: 2022.04.16 / Checked: 2025.02.26
+# Stop Forum Spam (SFS) listings: 14.
+# Updated: 2022.04.16 / Checked: 2026.04.19
 
 2a02:2b18::/32 Deny Cloud
 Origin: RU
@@ -14035,8 +14041,8 @@ Tag: Virtuo.host
 # ASN 215590 ("DpkgSoft International Limited").
 # DDoS, brute-force, SSH, and webapp attacks, DNS compromise, and spam detected
 # from here.
-# Stop Forum Spam (SFS) listings: 103,980.
-# Updated: 2026.02.17
+# Stop Forum Spam (SFS) listings: 103,784.
+# Updated: 2026.02.17 / Checked: 2026.04.19
 
 2a01:ecc0:1::/48 Deny Cloud
 2a01:ecc0:5::/48 Deny Cloud

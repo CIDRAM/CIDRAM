@@ -64,7 +64,7 @@ CIDRAM Core:
  Reannotate: "components.dat"
 CIDRAM Front-End:
  Name: "CIDRAM Front-End"
- Version: "2.17.4-DEV+261080"
+ Version: "2.17.4-DEV+261090"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "Latest"
@@ -230,8 +230,8 @@ CIDRAM Front-End:
    - "94be5c5042512f18612a1a41a3166481c675f6bd5a122778517c168b366ab17c:4494"
    - "828d6cb0f53f3ff440d9901f295f8c6a0eefb295998445b81436158e94b40f2e:1391"
    - "3e662821b194ebbb3f26d500925cf716c69580cba196adafa20248cfbacb0f06:2405"
-   - "85cf9a6dcb6813cd26ea0a9eb088eaa2930882098daaa5f16469c8ec14f3a6bf:312253"
-   - "b9878d0a5443914d1e40c5761a7ced2a16d599e847a9dd8483c2bd57628f4deb:235661"
+   - "c59fb65a1d2c55542b6404a1467748f13f9b449afdd78a760992810ae579ee26:312572"
+   - "a6555c26837239f2b5d31478deb2aea1966d5d678025128d4e560344dd2fb4e4:235760"
  Reannotate: "components.dat"
 Common Classes Package:
  Name: "Common Classes Package"
@@ -733,7 +733,7 @@ l10n/nl:
 l10n/no:
  Name: "L10N: Norsk"
  Extended Description: "Norsk språkdata"
- Version: "2026.108.0"
+ Version: "2026.109.0"
  Dependencies:
   CIDRAM Core: "^2"
  Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat"
@@ -746,7 +746,7 @@ l10n/no:
    - "lang/lang.no.fe.yaml"
    - "lang/lang.no.yaml"
   Checksum:
-   - "f63e1e932eed317ea8071d37439b46f910a2ff0db8a392cc312f067479369f66:61541"
+   - "d294b04376d16b20c5810941af84a5c984b52217cdfa3c9d5d1ef659fa8725b1:61539"
    - "81b70f2e25546bfcab6dd390217d63bc6c3e1487815f1842340b59eef7e6c98d:6245"
  Reannotate: "components.dat"
 l10n/pl:
@@ -809,7 +809,7 @@ l10n/ru:
 l10n/sv:
  Name: "L10N: Svenska"
  Extended Description: "Svenska språkdata"
- Version: "2026.108.0"
+ Version: "2026.109.0"
  Dependencies:
   CIDRAM Core: "^2"
  Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat"
@@ -822,7 +822,7 @@ l10n/sv:
    - "lang/lang.sv.fe.yaml"
    - "lang/lang.sv.yaml"
   Checksum:
-   - "69cf60d4e30dffad9eb43a50f0dd6ca900007bc2acc6fca7c03ae4cf60215b52:62911"
+   - "66b969c118fccc35bbbf7cff2fcd103f82f052c2f1be28ef875b97d62a148df2:62909"
    - "997d656687d947c957ba4850db92cd42e767a5f31e7e4e87905c6548e64bca0a:6267"
  Reannotate: "components.dat"
 l10n/ta:
@@ -904,7 +904,7 @@ l10n/ur:
 l10n/vi:
  Name: "L10N: Tiếng Việt"
  Extended Description: "Dữ liệu tiếng Việt"
- Version: "2026.108.0"
+ Version: "2026.109.0"
  Dependencies:
   CIDRAM Core: "^2"
  Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat"
@@ -917,13 +917,13 @@ l10n/vi:
    - "lang/lang.vi.fe.yaml"
    - "lang/lang.vi.yaml"
   Checksum:
-   - "697f289ad9fc2f5d76eebb03b2e2fbbc3fa315ba7a36b679fb3bcae86d29761d:74023"
+   - "f6b272227bccad023ea47bd6cffb8797c67baa1c5450f5cce3eed2f180238c25:74051"
    - "9f03c1e57544a6be9f93a84ade680615a0360ce59d96412a5efe204a9bdaa260:7461"
  Reannotate: "components.dat"
 l10n/zh-TW:
  Name: "L10N: 中文（傳統）"
  Extended Description: "中文（傳統）語言數據"
- Version: "2026.108.0"
+ Version: "2026.109.0"
  Dependencies:
   CIDRAM Core: "^2"
  Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat"
@@ -936,13 +936,13 @@ l10n/zh-TW:
    - "lang/lang.zh-tw.fe.yaml"
    - "lang/lang.zh-tw.yaml"
   Checksum:
-   - "221956f8d25fbaf7ed0d6859182481855e26b2ca1d11b58e46ddbd3e5119528e:56397"
-   - "80ce90068f49431615cbf14e4b57c5a2429d54b9ffce322e9629bce127c48e77:5502"
+   - "e6c38b8b4c4061b4339715cfa43c5996ab5c1984598f5758ee44e9606697c403:56397"
+   - "6814db37656fda0c12ff32016b893fb5368f2464032aba2382e6a4467e1cd951:5502"
  Reannotate: "components.dat"
 l10n/zh:
  Name: "L10N: 中文（简体）"
  Extended Description: "中文（简体）语言数据"
- Version: "2026.108.0"
+ Version: "2026.109.0"
  Dependencies:
   CIDRAM Core: "^2"
  Remote: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v2/vault/components.dat"
@@ -955,6 +955,6 @@ l10n/zh:
    - "lang/lang.zh.fe.yaml"
    - "lang/lang.zh.yaml"
   Checksum:
-   - "058bf743e23b146362a3853afd8d0ea8698fc1be9ab338ea4c5781c314e8181b:56332"
+   - "e8d90ccaf42e65c7023f887c71c96fe24c89ae358c70bfa5589991de77435f11:56332"
    - "c9e26b9c41849a097a5273d31d53c8088a4d2130b4ebbf26aea25c30d0259e15:5510"
  Reannotate: "components.dat"

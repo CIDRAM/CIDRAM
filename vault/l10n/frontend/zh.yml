@@ -1117,6 +1117,7 @@ response:
  The same IP address can be reported only once every 15 minutes:
   zh-Hans: "同一IP地址每15分钟只能报告一次。​该报告在队列中，CIDRAM将稍后尝试提交该报告。"
   zh-Hant: "同一IP位址每15分鐘只能報告一次。​該報告在佇列中，CIDRAM將稍後嘗試提交該報告。"
+ The targeted file_s size exceeds PHP_s memory limit: {"zh-Hans": "目标文件的大小超过了PHP的内存限制！", "zh-Hant": "目標檔案的大小超過了PHP的記憶體限制！"}
  There aren_t currently any auxiliary rules: {"zh-Hans": "目前没有任何辅助规则。", "zh-Hant": "目前沒有任何輔助規則。"}
  There_s nothing to analyse, sorry: {"zh-Hans": "没有什么可分析的，对不起。", "zh-Hant": "沒有什麼可分析的，對不起。"}
  There_s nothing to print, sorry: {"zh-Hans": "没有什么可打印的，对不起。", "zh-Hant": "沒有什麼可打印的，對不起。"}
@@ -1259,8 +1260,8 @@ warning: !lazy
   zh-Hans: "注意：CIDRAM使用cookie来验证登录。​通过登录，您同意您的浏览器创建和存储cookie。"
   zh-Hant: "注意：CIDRAM使用cookie來驗證登錄。​通過登錄，您同意您的瀏覽器創建和存儲cookie。"
  Editing PHP files:
-  zh-Hans: "警告：一些虚拟主机在检测到请求中的PHP标记时会自动禁止IP地址（例如，当试图通过浏览器修改PHP文件时）。 CIDRAM无法知道您的虚拟主机是否这样做。 为了避免出现问题，建议尽可能不要以这种方式编辑PHP檔案。"
-  zh-Hant: "警告：一些虛擬主機在檢測到請求中的PHP標記時會自動禁止IP位址（例如，當試圖通過瀏覽器修改PHP文件時）。 CIDRAM無法知道您的虛擬主機是否這樣做。 為了避免出現問題，建議盡可能不要以這種方式編輯PHP檔案。"
+  zh-Hans: "警告：一些虚拟主机在检测到请求中的PHP标记时会自动禁止IP地址（例如，当试图通过浏览器修改PHP文件时）。 CIDRAM无法知道您的虚拟主机是否这样做。 为了避免出现问题，建议尽可能不要以这种方式编辑PHP文件。"
+  zh-Hant: "警告：一些虛擬主機在檢測到請求中的PHP標記時會自動禁止IP位址（例如，當試圖通過瀏覽器修改PHP檔案時）。 CIDRAM無法知道您的虛擬主機是否這樣做。 為了避免出現問題，建議盡可能不要以這種方式編輯PHP檔案。"
  IP tests are disabled:
   zh-Hans: "警告：IP测试被禁用！在解决此问题之前，无法使用签名文件。"
   zh-Hant: "警告：IP測試被禁用！在解決此問題之前，無法使用簽名檔案。"
@@ -1269,7 +1270,7 @@ warning: !lazy
   zh-Hant: "警告：一些前端功能需要JavaScript。 為確保整個前端按預期運行，建議啟用JavaScript。"
  Likely to be overwritten:
   zh-Hans: "警告：您当前正在编辑的文件属于组件“%s”。 对该文件所做的任何更改很可能会在下次更新该组件时被覆盖。"
-  zh-Hant: "警告：您當前正在編輯的文件屬於組件『%s』。 對該檔案所做的任何更改很可能會在下次更新該組件時被覆蓋。"
+  zh-Hant: "警告：您當前正在編輯的檔案屬於組件『%s』。 對該檔案所做的任何更改很可能會在下次更新該組件時被覆蓋。"
  Likely to become corrupted:
   zh-Hans: "警告：在当前正在编辑的文件中检测到非UTF8字节。 如果使用此特定工具进行编辑，文件可能会损坏。"
   zh-Hant: "警告：在目前正在編輯的檔案中偵測到非UTF8位元組。 如果使用此特定工具進行編輯，檔案可能會損壞。"

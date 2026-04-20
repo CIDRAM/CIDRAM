@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The file manager page (last modified: 2026.04.19).
+ * This file: The file manager page (last modified: 2026.04.20).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -34,6 +34,9 @@ $this->FE['VaultPath'] = \str_replace('\\', '/', $this->Vault) . '*';
 
 /** Prepare components metadata working array. */
 $this->Components = ['Files' => [], 'Components' => [], 'ComponentFiles' => [], 'Names' => []];
+
+/** Self-enforced memory limit. */
+$this->FE['MemoryLimit'] = $this->readBytes(\ini_get('memory_limit')) - \memory_get_peak_usage(true);
 
 /** Show/hide doughnuts link and etc. */
 if (!$DoughnutFile) {
@@ -210,16 +213,17 @@ if (isset($_POST['do'], $_FILES['upload-file']['name']) && $_POST['do'] === 'upl
             \fclose($Handle);
 
             $this->FE['state_msg'] = $this->L10N->getString('response.File successfully modified');
+        } elseif (!\file_exists($this->Vault . $FMData['filename']) || !\is_readable($this->Vault . $FMData['filename'])) {
+            $this->FE['state_msg'] = \sprintf($this->L10N->getString('response.Failed to access %s'), $this->Vault . $FMData['filename']);
+        } elseif (\filesize($this->Vault . $FMData['filename']) >= $this->FE['MemoryLimit']) {
+            $this->FE['state_msg'] = \sprintf($this->L10N->getString('response.Failed to access %s'), $this->Vault . $FMData['filename']) . $this->L10N->getString('response.The targeted file_s size exceeds PHP_s memory limit');
         } else {
             $this->FE['FE_Title'] .= ' – ' . $FMData['filename'];
             $this->FE['filename'] = $FMData['filename'];
-            $this->FE['content'] = $this->readFile($this->FE['basepath'] . $FMData['filename']);
+            $this->FE['content'] = $this->readFile($this->Vault . $FMData['filename']);
 
             /** Component update file overwrite warning. */
             if (isset($this->Components['Files'][$FMData['filename']])) {
-                if ($this->FE['state_msg'] !== '') {
-                    $this->FE['state_msg'] .= '<br />';
-                }
                 $this->FE['state_msg'] = \sprintf($this->L10N->getString('warning.Likely to be overwritten'), $this->Components['Files'][$FMData['filename']]);
             }
 
@@ -228,7 +232,7 @@ if (isset($_POST['do'], $_FILES['upload-file']['name']) && $_POST['do'] === 'upl
                 if ($this->FE['state_msg'] !== '') {
                     $this->FE['state_msg'] .= '<br />';
                 }
-                $this->FE['state_msg'] = $this->L10N->getString('warning.Likely to become corrupted');
+                $this->FE['state_msg'] .= $this->L10N->getString('warning.Likely to become corrupted');
             }
 
             /** Ensure safe for textarea display. */
@@ -268,9 +272,6 @@ if (isset($_POST['do'], $_FILES['upload-file']['name']) && $_POST['do'] === 'upl
     }
 }
 
-/** Cleanup. */
-unset($FMData);
-
 /** Template for file rows. */
 $this->FE['FilesRow'] = $this->readFile($this->getAssetPath('_files_row.html'));
 
@@ -285,6 +286,9 @@ $this->FE['TotalSize'] = 0;
 
 /** Fetch files data. */
 $Files = $this->fileManagerRecursiveList($this->Vault);
+
+/** Cleanup. */
+unset($this->FE['MemoryLimit'], $FMData);
 
 if (!$DoughnutFile) {
     $this->FE['Doughnut'] = '';
@@ -382,10 +386,10 @@ if (!$DoughnutFile) {
 $this->formatFileSize($this->FE['TotalSize']);
 
 /** Disk free space. */
-$this->FE['FreeSpace'] = disk_free_space(__DIR__);
+$this->FE['FreeSpace'] = \disk_free_space(__DIR__);
 
 /** Disk total space. */
-$this->FE['TotalSpace'] = disk_total_space(__DIR__);
+$this->FE['TotalSpace'] = \disk_total_space(__DIR__);
 
 /** Disk total usage. */
 $this->FE['TotalUsage'] = $this->FE['TotalSpace'] - $this->FE['FreeSpace'];

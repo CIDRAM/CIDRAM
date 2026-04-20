@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2026.04.16).
+ * This file: General methods used by the front-end (last modified: 2026.04.20).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -146,7 +146,7 @@ trait FrontEndMethods
                     )) {
                         $Arr[$Key]['Icon'] = 'icon=audio';
                     }
-                    if (\preg_match('/^(?:[BD]AT|CFG|CSS|[SDPX]?HT[AM]L?|IN[CFI]|JS|LOG|MD|NEON|I?NFO|PHP\d?|PY|TXT|YA?ML)$/', $Ext)) {
+                    if (\preg_match('/^(?:[BD]AT|CFG|CSS|[SDPX]?HT[AM]L?|IN[CFI]|JS|LOG|MD|NEON|I?NFO|PHP\d?|PY|TXT|YA?ML)$/', $Ext) && (!isset($this->FE['MemoryLimit']) || $Arr[$Key]['Filesize'] < $this->FE['MemoryLimit'])) {
                         $Arr[$Key]['CanEdit'] = true;
                     }
                 }

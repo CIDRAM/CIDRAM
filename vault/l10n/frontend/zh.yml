@@ -1153,7 +1153,7 @@ response:
  Failed to deactivate: {"zh-Hans": "无法停用！", "zh-Hant": "無法停用！"}
  Failed to delete any reports for %s: {"zh-Hans": "无法删除%s的任何报告！", "zh-Hant": "無法刪除%s的任何報告！"}
  Failed to delete: {"zh-Hans": "无法删除！", "zh-Hant": "無法刪除！"}
- Failed to duplicate: "Failed to duplicate!"
+ Failed to duplicate: {"zh-Hans": "复制失败！", "zh-Hant": "複製失敗！"}
  Failed to execute: {"zh-Hans": "无法执行！", "zh-Hant": "無法執行！"}
  Failed to import: {"zh-Hans": "导入失败！", "zh-Hant": "匯入失敗！"}
  Failed to install: {"zh-Hans": "无法安装！", "zh-Hant": "無法安裝！"}
@@ -1358,8 +1358,8 @@ warning: !lazy
   zh-Hans: "注意：CIDRAM使用cookie来验证登录。​通过登录，您同意您的浏览器创建和存储cookie。"
   zh-Hant: "注意：CIDRAM使用cookie來驗證登錄。​通過登錄，您同意您的瀏覽器創建和存儲cookie。"
  Editing PHP files:
-  zh-Hans: "警告：一些虚拟主机在检测到请求中的PHP标记时会自动禁止IP地址（例如，当试图通过浏览器修改PHP文件时）。 CIDRAM无法知道您的虚拟主机是否这样做。 为了避免出现问题，建议尽可能不要以这种方式编辑PHP檔案。"
-  zh-Hant: "警告：一些虛擬主機在檢測到請求中的PHP標記時會自動禁止IP位址（例如，當試圖通過瀏覽器修改PHP文件時）。 CIDRAM無法知道您的虛擬主機是否這樣做。 為了避免出現問題，建議盡可能不要以這種方式編輯PHP檔案。"
+  zh-Hans: "警告：一些虚拟主机在检测到请求中的PHP标记时会自动禁止IP地址（例如，当试图通过浏览器修改PHP文件时）。 CIDRAM无法知道您的虚拟主机是否这样做。 为了避免出现问题，建议尽可能不要以这种方式编辑PHP文件。"
+  zh-Hant: "警告：一些虛擬主機在檢測到請求中的PHP標記時會自動禁止IP位址（例如，當試圖通過瀏覽器修改PHP檔案時）。 CIDRAM無法知道您的虛擬主機是否這樣做。 為了避免出現問題，建議盡可能不要以這種方式編輯PHP檔案。"
  IP tests are disabled:
   zh-Hans: "警告：IP测试被禁用！在解决此问题之前，无法使用签名文件。"
   zh-Hant: "警告：IP測試被禁用！在解決此問題之前，無法使用簽名檔案。"
@@ -1368,7 +1368,7 @@ warning: !lazy
   zh-Hant: "警告：一些前端功能需要JavaScript。 為確保整個前端按預期運行，建議啟用JavaScript。"
  Likely to be overwritten:
   zh-Hans: "警告：您当前正在编辑的文件属于组件“%s”。 对该文件所做的任何更改很可能会在下次更新该组件时被覆盖。"
-  zh-Hant: "警告：您當前正在編輯的文件屬於組件『%s』。 對該檔案所做的任何更改很可能會在下次更新該組件時被覆蓋。"
+  zh-Hant: "警告：您當前正在編輯的檔案屬於組件『%s』。 對該檔案所做的任何更改很可能會在下次更新該組件時被覆蓋。"
  Likely to become corrupted:
   zh-Hans: "警告：在当前正在编辑的文件中检测到非UTF8字节。 如果使用此特定工具进行编辑，文件可能会损坏。"
   zh-Hant: "警告：在目前正在編輯的檔案中偵測到非UTF8位元組。 如果使用此特定工具進行編輯，檔案可能會損壞。"

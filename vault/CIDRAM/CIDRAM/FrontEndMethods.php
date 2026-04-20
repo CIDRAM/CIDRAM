@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2026.04.19).
+ * This file: General methods used by the front-end (last modified: 2026.04.20).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -213,7 +213,7 @@ trait FrontEndMethods
                 continue;
             }
             $Arr[$Key]['Component'] = $Component ?: $this->L10N->getString('field.Unknown');
-            if (!$NoEdit && \preg_match('/^(?:[BD]AT|SVG|TEX|URL)$/', $Ext)) {
+            if (!$NoEdit && \preg_match('/^(?:[BD]AT|SVG|TEX|URL)$/', $Ext) && (!isset($this->FE['MemoryLimit']) || $Arr[$Key]['FS'] < $this->FE['MemoryLimit'])) {
                 $Arr[$Key]['CanEdit'] = true;
             }
             if ($Base === $this->Vault && $Ext === 'ICO') {
@@ -413,7 +413,9 @@ trait FrontEndMethods
                 'W(?:ASM|AT)|X(?:A?ML|HT|HTML?|Q|SL)|Y(?:A?ML|NI)?|ZIM)$/',
                 $Ext
             )) {
-                $Arr[$Key]['CanEdit'] = true;
+                if (!isset($this->FE['MemoryLimit']) || $Arr[$Key]['FS'] < $this->FE['MemoryLimit']) {
+                    $Arr[$Key]['CanEdit'] = true;
+                }
                 if (!$LockIcon) {
                     $Arr[$Key]['Icon'] = 'icon=documentation';
                 }
@@ -1995,11 +1997,11 @@ trait FrontEndMethods
      *
      * @param string $Origin The file to copy.
      * @param string $Target Where to copy the file.
-     * @return string to-do
+     * @return string A human-readable message for whether it succeeded or failed.
      */
     private function copyFile(string $Origin, string $Target): string
     {
-        if (\filesize($Origin) >= ($this->readBytes(\ini_get('memory_limit')) + \memory_get_peak_usage(true))) {
+        if (\filesize($Origin) >= ($this->readBytes(\ini_get('memory_limit')) - \memory_get_peak_usage(true))) {
             return $this->L10N->getString('response.The targeted file_s size exceeds PHP_s memory limit') . ' ' . $this->L10N->getString('response.Failed to duplicate');
         }
         if (!\function_exists('copy') || \preg_match('~(^|,)copy(,|$)~i', \ini_get('disable_functions'))) {

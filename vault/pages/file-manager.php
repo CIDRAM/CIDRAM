@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The file manager page (last modified: 2026.04.19).
+ * This file: The file manager page (last modified: 2026.04.20).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -37,6 +37,9 @@ if (isset($this->CIDRAM['QueryVars']['basepath']) && $this->CIDRAM['QueryVars'][
     $this->FE['basepath'] = $this->Vault;
 }
 $this->FE['basepathActionAttach'] = $this->FE['basepath'] === $this->Vault ? '' : '&basepath=' . $this->FE['basepath'];
+
+/** Self-enforced memory limit. */
+$this->FE['MemoryLimit'] = $this->readBytes(\ini_get('memory_limit')) - \memory_get_peak_usage(true);
 
 /** Prepare data for display. */
 if (!$this->FE['ASYNC']) {
@@ -116,6 +119,10 @@ if (!$this->FE['ASYNC']) {
                 \fclose($Handle);
 
                 $this->FE['state_msg'] = $this->L10N->getString('response.File successfully modified');
+            } elseif (!\file_exists($this->FE['basepath'] . $FMData['filename']) || !\is_readable($this->FE['basepath'] . $FMData['filename'])) {
+                $this->FE['state_msg'] = \sprintf($this->L10N->getString('response.Failed to access %s'), $this->FE['basepath'] . $FMData['filename']);
+            } elseif (\filesize($this->FE['basepath'] . $FMData['filename']) >= $this->FE['MemoryLimit']) {
+                $this->FE['state_msg'] = \sprintf($this->L10N->getString('response.Failed to access %s'), $this->FE['basepath'] . $FMData['filename']) . $this->L10N->getString('response.The targeted file_s size exceeds PHP_s memory limit');
             } else {
                 $this->FE['FE_Title'] .= ' – ' . $FMData['filename'];
                 $this->FE['filename'] = $FMData['filename'];
@@ -131,7 +138,7 @@ if (!$this->FE['ASYNC']) {
                     if ($this->FE['state_msg'] !== '') {
                         $this->FE['state_msg'] .= '<br />';
                     }
-                    $this->FE['state_msg'] = $this->L10N->getString('warning.Likely to become corrupted');
+                    $this->FE['state_msg'] .= $this->L10N->getString('warning.Likely to become corrupted');
                 }
 
                 /** Ensure safe for textarea display. */
@@ -182,6 +189,7 @@ if (!$this->FE['ASYNC']) {
                     return \file_exists($Filename . $Ext);
                 });
                 $this->FE['state_msg'] = $this->copyFile($FMData['filename'], $Target . $Ext);
+                unset($Target, $Ext, $FMBase);
             }
         }
     }
@@ -331,4 +339,4 @@ if (!$this->FE['ASYNC']) {
 }
 
 /** Cleanup. */
-unset($FMData);
+unset($this->FE['MemoryLimit'], $FMData);

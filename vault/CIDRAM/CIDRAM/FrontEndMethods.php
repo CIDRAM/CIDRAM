@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2026.04.16).
+ * This file: General methods used by the front-end (last modified: 2026.04.19).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1988,5 +1988,30 @@ trait FrontEndMethods
             return $Try;
         }
         return '';
+    }
+
+    /**
+     * Attempt to copy a file.
+     *
+     * @param string $Origin The file to copy.
+     * @param string $Target Where to copy the file.
+     * @return string to-do
+     */
+    private function copyFile(string $Origin, string $Target): string
+    {
+        if (\filesize($Origin) >= ($this->readBytes(\ini_get('memory_limit')) + \memory_get_peak_usage(true))) {
+            return $this->L10N->getString('response.The targeted file_s size exceeds PHP_s memory limit') . ' ' . $this->L10N->getString('response.Failed to duplicate');
+        }
+        if (!\function_exists('copy') || \preg_match('~(^|,)copy(,|$)~i', \ini_get('disable_functions'))) {
+            $Data = $this->readFile($Origin);
+            $Handle = \fopen($Target, 'wb');
+            if (!\is_resource($Handle)) {
+                return $this->L10N->getString('response.Failed to duplicate');
+            }
+            $Err = \fwrite($Handle, $Data);
+            \fclose($Handle);
+            return $Err === false ? $this->L10N->getString('response.File successfully duplicated') : $this->L10N->getString('response.Failed to duplicate');
+        }
+        return \copy($Origin, $Target) ? $this->L10N->getString('response.File successfully duplicated') : $this->L10N->getString('response.Failed to duplicate');
     }
 }

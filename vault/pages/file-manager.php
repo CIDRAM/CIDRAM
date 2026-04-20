@@ -123,9 +123,6 @@ if (!$this->FE['ASYNC']) {
 
                 /** Component update file overwrite warning. */
                 if (isset($this->Components['Files'][$FMData['filename']])) {
-                    if ($this->FE['state_msg'] !== '') {
-                        $this->FE['state_msg'] .= '<br />';
-                    }
                     $this->FE['state_msg'] = \sprintf($this->L10N->getString('warning.Likely to be overwritten'), $this->Components['Files'][$FMData['filename']]);
                 }
 
@@ -172,6 +169,21 @@ if (!$this->FE['ASYNC']) {
             echo $this->readFile($this->FE['basepath'] . $FMData['filename']);
             die;
         }
+
+        /** Duplicate a file. */
+        if ($FMData['do_action'] === 'duplicate-file') {
+            $FMData['filename'] = $this->canonical($this->FE['basepath'] . $FMData['filename']);
+            if (!\is_writable(\dirname($FMData['filename']))) {
+                $this->FE['state_msg'] = $this->L10N->getString('response.Directory _%s_ isn_t writable') . ' ' . $this->L10N->getString('response.Failed to duplicate');
+            } else {
+                $FMBase = \basename($FMData['filename']);
+                $Ext = ($DecPos = \strrpos($FMBase, '.')) === false ? '' : \substr($FMBase, $DecPos);
+                $Target = $this->copyIterableName($Ext === '' ? $FMData['filename'] : \preg_replace('~' . \preg_quote($Ext) . '$~i', '', $FMData['filename']), function (string $Filename) use ($Ext): bool {
+                    return \file_exists($Filename . $Ext);
+                });
+                $this->FE['state_msg'] = $this->copyFile($FMData['filename'], $Target . $Ext);
+            }
+        }
     }
 
     /** Template for file rows. */
@@ -214,17 +226,26 @@ if (!$this->FE['ASYNC']) {
         $ThisFile['FilenameID'] = \preg_replace('~^0+~', '', \bin2hex($ThisFile['Filename']));
         if ($ThisFile['CanEdit'] && $ThisFile['Readable'] && $ThisFile['Writable']) {
             $ThisFile['ThisOptions'][] = \sprintf(
-                '<code onclick="javascript:document.getElementById(\'fmControlDoAction\').value=\'edit-file\';document.getElementById(\'fmControlFilename\').value=document.getElementById(\'File%1$s\').textContent;document.getElementById(\'fmControl\').submit();"><span class="auxicon auxbl edit" title="%2$s"></span><span class="s fmicontxt">%2$s</span></code>',
+                '<code onclick="javascript:document.getElementById(\'fmControlDoAction\').value=\'edit-file\';document.getElementById(\'fmControlFilename\').value=document.getElementById(\'File%1$s\').textContent;document.getElementById(\'fmControl\').submit()"><span class="auxicon auxbl edit" title="%2$s"></span><span class="s fmicontxt">%2$s</span></code>',
                 $ThisFile['FilenameID'],
                 $this->L10N->getString('field.Edit')
             );
         }
-        if (!$ThisFile['Directory'] && $ThisFile['Readable']) {
-            $ThisFile['ThisOptions'][] = \sprintf(
-                '<code onclick="javascript:document.getElementById(\'fmControlDoAction\').value=\'download-file\';document.getElementById(\'fmControlFilename\').value=document.getElementById(\'File%1$s\').textContent;document.getElementById(\'fmControl\').submit();"><span class="auxicon auxbl download" title="%2$s"></span><span class="s fmicontxt">%2$s</span></code>',
-                $ThisFile['FilenameID'],
-                $this->L10N->getString('field.Download')
-            );
+        if (!$ThisFile['Directory']) {
+            if ($ThisFile['Readable']) {
+                $ThisFile['ThisOptions'][] = \sprintf(
+                    '<code onclick="javascript:document.getElementById(\'fmControlDoAction\').value=\'download-file\';document.getElementById(\'fmControlFilename\').value=document.getElementById(\'File%1$s\').textContent;document.getElementById(\'fmControl\').submit()"><span class="auxicon auxbl download" title="%2$s"></span><span class="s fmicontxt">%2$s</span></code>',
+                    $ThisFile['FilenameID'],
+                    $this->L10N->getString('field.Download')
+                );
+            }
+            if ($ThisFile['Deletable']) {
+                $ThisFile['ThisOptions'][] = \sprintf(
+                    '<code onclick="javascript:document.getElementById(\'fmControlDoAction\').value=\'duplicate-file\';document.getElementById(\'fmControlFilename\').value=document.getElementById(\'File%1$s\').textContent;document.getElementById(\'fmControl\').submit()"><span class="auxicon auxbl duplicate" title="%2$s"></span><span class="s fmicontxt">%2$s</span></code>',
+                    $ThisFile['FilenameID'],
+                    $this->L10N->getString('label.Duplicate')
+                );
+            }
         }
         if ((!$ThisFile['Directory'] || $this->isDirEmpty($this->FE['basepath'] . $ThisFile['Filename'])) && $ThisFile['Deletable']) {
             $ThisFile['ThisOptions'][] = \sprintf(
@@ -238,6 +259,8 @@ if (!$this->FE['ASYNC']) {
                 $this->L10N->getString('field.Delete')
             );
             $ThisFile['DeleteConfirmText'] = \sprintf($this->L10N->getString('confirm.Delete'), '<span id="DeleteConfirmContent' . $ThisFile['FilenameID'] . '">' . $ThisFile['Filename'] . '</span>');
+        } else {
+            $ThisFile['DeleteConfirmText'] = '';
         }
         $ThisFile['ThisOptions'] = \implode('<span class="emsep"> – </span><br class="brsep" />', $ThisFile['ThisOptions']);
         if (\substr($ThisFile['Icon'], 0, 5) === 'icon=') {

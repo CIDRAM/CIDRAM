@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2026.02.24).
+ * This file: Front-end handler (last modified: 2026.04.20).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -3059,6 +3059,9 @@ if ($CIDRAM['FE']['UserState'] !== 1 && $CIDRAM['FE']['CronMode'] === '') {
     /** Prepare components metadata working array. */
     $CIDRAM['Components'] = ['Files' => [], 'Components' => [], 'ComponentFiles' => [], 'Names' => []];
 
+    /** Self-enforced memory limit. */
+    $CIDRAM['FE']['MemoryLimit'] = $CIDRAM['ReadBytes'](ini_get('memory_limit')) - memory_get_peak_usage(true);
+
     /** Show/hide doughnuts link and etc. */
     if (!$CIDRAM['DoughnutFile']) {
         $CIDRAM['FE']['FMgrFormTarget'] = 'cidram-page=file-manager';
@@ -3227,7 +3230,7 @@ if ($CIDRAM['FE']['UserState'] !== 1 && $CIDRAM['FE']['CronMode'] === '') {
                 fclose($CIDRAM['Handle']);
 
                 $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_file_edited');
-            } else {
+            } elseif (is_readable($CIDRAM['Vault'] . $_POST['filename']) && filesize($CIDRAM['Vault'] . $_POST['filename']) < $CIDRAM['FE']['MemoryLimit']) {
                 $CIDRAM['FE']['FE_Title'] .= ' – ' . $_POST['filename'];
                 $CIDRAM['FE']['filename'] = $_POST['filename'];
                 $CIDRAM['FE']['content'] = htmlentities($CIDRAM['ReadFile']($CIDRAM['Vault'] . $_POST['filename']));
@@ -3375,7 +3378,7 @@ if ($CIDRAM['FE']['UserState'] !== 1 && $CIDRAM['FE']['CronMode'] === '') {
     }
 
     /** Cleanup. */
-    unset($CIDRAM['DoughnutFile'], $CIDRAM['DoughnutPath'], $CIDRAM['Components']);
+    unset($CIDRAM['DoughnutFile'], $CIDRAM['DoughnutPath'], $CIDRAM['FE']['MemoryLimit'], $CIDRAM['Components']);
 
     /** Process files data. */
     array_walk($CIDRAM['FilesArray'], function ($ThisFile) use (&$CIDRAM) {

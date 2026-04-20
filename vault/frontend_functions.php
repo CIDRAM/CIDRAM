@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2026.04.17).
+ * This file: Front-end functions file (last modified: 2026.04.20).
  */
 
 /**
@@ -437,7 +437,7 @@ $CIDRAM['FileManager-RecursiveList'] = function ($Base) use (&$CIDRAM) {
                 )) {
                     $Arr[$Key]['Icon'] = 'icon=audio';
                 }
-                if (preg_match('/^(?:[BD]AT|CFG|CSS|[SDPX]?HT[AM]L?|IN[CFI]|JS|LOG|MD|NEON|I?NFO|PHP\d?|PY|TXT|YA?ML)$/', $Ext)) {
+                if (preg_match('/^(?:[BD]AT|CFG|CSS|[SDPX]?HT[AM]L?|IN[CFI]|JS|LOG|MD|NEON|I?NFO|PHP\d?|PY|TXT|YA?ML)$/', $Ext) && (!isset($CIDRAM['FE']['MemoryLimit']) || $Arr[$Key]['Filesize'] < $CIDRAM['FE']['MemoryLimit'])) {
                     $Arr[$Key]['CanEdit'] = true;
                 }
             }

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese language data for the front-end (last modified: 2026.04.18).
+# This file: Chinese language data for the front-end (last modified: 2026.04.20).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -58,7 +58,7 @@ Extended Description: !lazy
  Bad TLDs blocker module: {"zh-Hans": "阻止垃圾邮件发送者，黑客，和其他恶意实体经常使用的主机的TLD。", "zh-Hant": "阻止垃圾郵件發送者，黑客，和其他惡意實體經常使用的主機的TLD。"}
  Bad hosts blocker module: {"zh-Hans": "阻止垃圾邮件发送者，黑客，和其他恶意实体经常使用的主机。", "zh-Hant": "阻止垃圾郵件發送者，黑客，和其他惡意實體經常使用的主機。"}
  Bot user agents module: {"zh-Hans": "阻止不需要的机器人和恶意活动相关联的用户代理。", "zh-Hant": "阻止不需要的機器人和惡意活動相關聯的用戶代理。"}
- Bypasses: {"zh-Hans": "标准签名旁路文件通常包括在主包。", "zh-Hant": "標準簽名旁路文件通常包括在主包。"}
+ Bypasses: {"zh-Hans": "标准签名旁路文件通常包括在主包。", "zh-Hant": "標準簽名旁路檔案通常包括在主包。"}
  Chart.js: {"zh-Hans": "使前端能够生成饼图。<br />{{Links.Chart.js}}可通过{{Links.MIT}}许可证获得。", "zh-Hant": "使前端能夠生成餅圖。<br />{{Links.Chart.js}}可通過{{Links.MIT}}許可證獲得。"}
  Cookie scanner module: {"zh-Hans": "提供一些针对危险cookie的有限保护。", "zh-Hant": "提供一些針對危險cookie的有限保護。"}
  HTTP version checker module: {"zh-Hans": "通过CIDRAM配置可以阻止特定的协议和HTTP版本。", "zh-Hant": "通過CIDRAM配置可以阻止特定的協定和HTTP版本。"}
@@ -186,11 +186,11 @@ config: !lazy
  frontend_custom_footer: {"zh-Hans": "在所有前端页面的末尾作为HTML插入。​如果您想在所有此类页面中包含法律声明、联系链接、业务信息、或类似，这可能会很有用。", "zh-Hant": "在所有前端頁面的末尾作為HTML插入。​如果您想在所有此類頁面中包含法律聲明、聯繫鏈接、業務信息、或類似，這可能會很有用。"}
  frontend_custom_header: {"zh-Hans": "在所有前端页面的开头作为HTML插入。​如果您想在所有此类页面中包含网站徽标、个性化标题、脚本、或类似，这可能会很有用。", "zh-Hant": "在所有前端頁面的開頭作為HTML插入。​如果您想在所有此類頁面中包含網站徽標、個性化標題、腳本、或類似，這可能會很有用。"}
  frontend_enable_two_factor: {"zh-Hans": "该指令确定是否将2FA用于前端帐户。", "zh-Hant": "該指令確定是否將2FA用於前端帳戶。"}
- frontend_frontend_log: {"zh-Hans": "前端登录尝试的录音文件。​指定一个文件名，​或留空以禁用。", "zh-Hant": "前端登錄嘗試的錄音文件。​指定一個檔案名稱，​或留空以禁用。"}
+ frontend_frontend_log: {"zh-Hans": "前端登录尝试的录音文件。​指定一个文件名，​或留空以禁用。", "zh-Hant": "前端登錄嘗試的錄音檔案。​指定一個檔案名稱，​或留空以禁用。"}
  frontend_magnification: &MagnifDesc {"zh-Hans": "字型放大。 标准 = 1。", "zh-Hant": "字型放大。 標準 = 1。"}
  frontend_max_login_attempts: {"zh-Hans": "最大前端登录尝试次数。 标准 = 5。", "zh-Hant": "最大前端登錄嘗試次數。 標準 = 5。"}
  frontend_remotes: {"zh-Hans": "更新系统用于获取组件元数据的地址列表。​这可能需要在升级到新的主要版本时进行调整，或者在获取新的更新源时进行调整，但在正常情况下应该不理会。", "zh-Hant": "更新系統用於獲取組件元數據的地址列表。​這可能需要在升級到新的主要版本時進行調整，或者在獲取新的更新源時進行調整，但在正常情況下應該不理會。"}
- frontend_signatures_update_event_log: {"zh-Hans": "通过前端更新签名时用于记录的文件。​指定一个文件名，​或留空以禁用。", "zh-Hant": "通過前端更新簽名時用於記錄的文件。​指定一個檔案名稱，​或留空以禁用。"}
+ frontend_signatures_update_event_log: {"zh-Hans": "通过前端更新签名时用于记录的文件。​指定一个文件名，​或留空以禁用。", "zh-Hant": "通過前端更新簽名時用於記錄的檔案。​指定一個檔案名稱，​或留空以禁用。"}
  frontend_theme: {"zh-Hans": "用于前端的主题。", "zh-Hant": "用於前端的主題。"}
  frontend_theme_mode: {"zh-Hans": "用于前端的主题模式。", "zh-Hant": "用於前端的主題模式。"}
  general: {"zh-Hans": "基本配置（任何不属于其他类别的核心配置）。", "zh-Hant": "基本配置（任何不屬於其他類別的核心配置）。"}
@@ -212,7 +212,7 @@ config: !lazy
  general_fields: {"zh-Hans": "用于阻止事件的字段控件（当请求被阻止时）。", "zh-Hant": "用於阻止事件的字段控件（當請求被阻止時）。"}
  general_force_hostname_lookup:
   zh-Hans: "强制主机名查找？​True（真）=跟踪；False（假）=不跟踪【标准】。​主机名查询通常在“根据需要”的基础上执行，但可以在所有请求上强制。​这可能会有助于提供日志文件中更详细的信息，但也可能会对性能产生轻微的负面影响。"
-  zh-Hant: "強制主機名查找？​True（真）=跟踪；False（假）=不跟踪【標準】。​主機名查詢通常在『根據需要』的基礎上執行，但可以在所有請求上強制。​這可能會有助於提供日誌文件中更詳細的信息，但也可能會對性能產生輕微的負面影響。"
+  zh-Hant: "強制主機名查找？​True（真）=跟踪；False（假）=不跟踪【標準】。​主機名查詢通常在『根據需要』的基礎上執行，但可以在所有請求上強制。​這可能會有助於提供日誌檔案中更詳細的信息，但也可能會對性能產生輕微的負面影響。"
  general_http_response_header_code: {"zh-Hans": "阻止请求时，CIDRAM应发送哪个HTTP状态消息？", "zh-Hant": "阻止請求時，CIDRAM應發送哪個HTTP狀態消息？"}
  general_ipaddr:
   zh-Hans: "在哪里可以找到连接请求IP地址？ （对于Cloudflare等服务有用）。 标准 = REMOTE_ADDR。 警告：不要修改此除非您知道什么您做着！"
@@ -256,31 +256,31 @@ config: !lazy
  ipapi_whitelisted_ccs: *ConfigWhitelistedCCs
  legal: "法律要求的配置。"
  legal_privacy_policy: {"zh-Hans": "要显示在任何生成的页面的页脚中的相关隐私政策的地址。​指定一个URL，或留空以禁用。", "zh-Hant": "要顯示在任何生成的頁面的頁腳中的相關隱私政策的地址。​指定一個URL，或留空以禁用。"}
- legal_pseudonymise_ip_addresses: {"zh-Hans": "编写日志文件时使用假名的IP地址吗？​True（真）=使用假名【标准】；False（假）=不使用假名。", "zh-Hant": "編寫日誌文件時使用假名的IP位址嗎？​True（真）=使用假名【標準】；False（假）=不使用假名。"}
+ legal_pseudonymise_ip_addresses: {"zh-Hans": "编写日志文件时使用假名的IP地址吗？​True（真）=使用假名【标准】；False（假）=不使用假名。", "zh-Hant": "編寫日誌檔案時使用假名的IP位址嗎？​True（真）=使用假名【標準】；False（假）=不使用假名。"}
  logging: {"zh-Hans": "与日志相关的配置（与其他類別相關的被排除）。", "zh-Hant": "與日誌相關的配置（與其他類別相關的被排除）。"}
- logging_apache_style_log: {"zh-Hans": "Apache风格文件用于记录所有被拦截的访问。​指定一个文件名，​或留空以禁用。", "zh-Hant": "Apache風格文件用於記錄所有被攔截的訪問。​指定一個檔案名稱，​或留空以禁用。"}
- logging_error_log: {"zh-Hans": "用于记录检测到的任何非致命错误的文件。​指定一个文件名，​或留空以禁用。", "zh-Hant": "用於記錄檢測到的任何非致命錯誤的文件。​指定一個檔案名稱，​或留空以禁用。"}
- logging_log_banned_ips: {"zh-Hans": "包括IP禁止从阻止请求在日志文件吗？​True（真）=是【标准】；False（假）=不是。", "zh-Hant": "包括IP禁止從阻止請求在日誌文件嗎？​True（真）=是【標準】；False（假）=不是。"}
+ logging_apache_style_log: {"zh-Hans": "Apache风格文件用于记录所有被拦截的访问。​指定一个文件名，​或留空以禁用。", "zh-Hant": "Apache風格檔案用於記錄所有被攔截的訪問。​指定一個檔案名稱，​或留空以禁用。"}
+ logging_error_log: {"zh-Hans": "用于记录检测到的任何非致命错误的文件。​指定一个文件名，​或留空以禁用。", "zh-Hant": "用於記錄檢測到的任何非致命錯誤的檔案。​指定一個檔案名稱，​或留空以禁用。"}
+ logging_log_banned_ips: {"zh-Hans": "包括IP禁止从阻止请求在日志文件吗？​True（真）=是【标准】；False（假）=不是。", "zh-Hant": "包括IP禁止從阻止請求在日誌檔案嗎？​True（真）=是【標準】；False（假）=不是。"}
  logging_log_rotation_action:
   zh-Hans: "日志轮转限制了任何时候应该存在的日志文件的数量。​当新的日志文件被创建时，如果日志文件的指定的最大数量已经超过，将执行指定的操作。​您可以在此处指定所需的操作。"
-  zh-Hant: "日誌輪轉限制了任何時候應該存在的日誌文件的數量。​當新的日誌文件被創建時，如果日誌文件的指定的最大數量已經超過，將執行指定的操作。​您可以在此處指定所需的操作。"
+  zh-Hant: "日誌輪轉限制了任何時候應該存在的日誌檔案的數量。​當新的日誌檔案被創建時，如果日誌檔案的指定的最大數量已經超過，將執行指定的操作。​您可以在此處指定所需的操作。"
  logging_log_rotation_limit:
   zh-Hans: "日志轮转限制了任何时候应该存在的日志文件的数量。​当新的日志文件被创建时，如果日志文件的指定的最大数量已经超过，将执行指定的操作。​您可以在此指定所需的限制。​值为“0”将禁用日志轮转。"
-  zh-Hant: "日誌輪轉限制了任何時候應該存在的日誌文件的數量。​當新的日誌文件被創建時，如果日誌文件的指定的最大數量已經超過，將執行指定的操作。​您可以在此指定所需的限制。​值為『0』將禁用日誌輪轉。"
+  zh-Hant: "日誌輪轉限制了任何時候應該存在的日誌檔案的數量。​當新的日誌檔案被創建時，如果日誌檔案的指定的最大數量已經超過，將執行指定的操作。​您可以在此指定所需的限制。​值為『0』將禁用日誌輪轉。"
  logging_log_sanitisation:
   zh-Hans: "当使用前端日志页面查看日志数据时，CIDRAM在显示之前清理日志数据。​这可以保护用户免受XSS攻击和其他潜在威胁。​但是，默认情况下，在记录期间不会清理数据。​这是为了确保准确地保留日志数据（可以帮助任何未来的启发式或法医分析）。​但是，如果用户尝试使用外部工具读取日志数据，如果这些外部工具不执行自己的清理过程，用户可能会受到XSS攻击。​如有必要，可以使用此配置指令更改默认行为。 True = 记录数据时清理数据（数据保存不太准确，但XSS风险较低）。 False = 记录数据时不要清理数据（数据保存得更准确，但XSS风险更高）【标准】。"
   zh-Hant: "當使用前端日誌頁面查看日誌數據時，CIDRAM在顯示之前清理日誌數據。​這可以保護用戶免受XSS攻擊和其他潛在威脅。​但是，默認情況下，在記錄期間不會清理數據。​這是為了確保准確地保留日誌數據（可以幫助任何未來的啟發式或法醫分析）。​但是，如果用戶嘗試使用外部工具讀取日誌數據，如果這些外部工具不執行自己的清理過程，用戶可能會受到XSS攻擊。​如有必要，可以使用此配置指令更改默認行為。 True = 記錄數據時清理數據（數據保存不太準確，但XSS風險較低）。 False = 記錄數據時不要清理數據（數據保存得更準確，但XSS風險更高）【標準】。"
- logging_outbound_request_log: {"zh-Hans": "用于记录任何出站请求结果的文件。​指定一个文件名，​或留空以禁用。", "zh-Hant": "用於記錄任何出站請求結果的文件。​指定一個檔案名稱，​或留空以禁用。"}
- logging_report_log: {"zh-Hans": "用于记录发送到外部API的任何报告的文件。​指定一个文件名，​或留空以禁用。", "zh-Hant": "用於記錄發送到外部API的任何報告的文件。​指定一個檔案名稱，​或留空以禁用。"}
- logging_serialised_log: {"zh-Hans": "连载的文件用于记录所有被拦截的访问。​指定一个文件名，​或留空以禁用。", "zh-Hant": "連載的文件用於記錄所有被攔截的訪問。​指定一個檔案名稱，​或留空以禁用。"}
- logging_standard_log: {"zh-Hans": "人类可读文件用于记录所有被拦截的访问。​指定一个文件名，​或留空以禁用。", "zh-Hant": "人類可讀文件用於記錄所有被攔截的訪問。​指定一個檔案名稱，​或留空以禁用。"}
+ logging_outbound_request_log: {"zh-Hans": "用于记录任何出站请求结果的文件。​指定一个文件名，​或留空以禁用。", "zh-Hant": "用於記錄任何出站請求結果的檔案。​指定一個檔案名稱，​或留空以禁用。"}
+ logging_report_log: {"zh-Hans": "用于记录发送到外部API的任何报告的文件。​指定一个文件名，​或留空以禁用。", "zh-Hant": "用於記錄發送到外部API的任何報告的檔案。​指定一個檔案名稱，​或留空以禁用。"}
+ logging_serialised_log: {"zh-Hans": "连载的文件用于记录所有被拦截的访问。​指定一个文件名，​或留空以禁用。", "zh-Hant": "連載的檔案用於記錄所有被攔截的訪問。​指定一個檔案名稱，​或留空以禁用。"}
+ logging_standard_log: {"zh-Hans": "人类可读文件用于记录所有被拦截的访问。​指定一个文件名，​或留空以禁用。", "zh-Hant": "人類可讀檔案用於記錄所有被攔截的訪問。​指定一個檔案名稱，​或留空以禁用。"}
  logging_truncate:
   zh-Hans: "截断日志文件当他们达到一定的大小吗？​值是在B/KB/MB/GB/TB，​是日志文件允许的最大大小直到它被截断。​默认值为“0KB”将禁用截断（日志文件可以无限成长）。​注意：适用于单个日志文件！​日志文件大小不被算集体的。"
-  zh-Hant: "截斷日誌文件當他們達到一定的大小嗎？​值是在B/KB/MB/GB/TB，​是日誌文件允許的最大大小直到它被截斷。​默認值為『0KB』將禁用截斷（日誌文件可以無限成長）。​注意：適用於單個日誌文件！​日誌文件大小不被算集體的。"
+  zh-Hant: "截斷日誌文件當他們達到一定的大小嗎？​值是在B/KB/MB/GB/TB，​是日誌文件允許的最大大小直到它被截斷。​默認值為『0KB』將禁用截斷（日誌檔案可以無限成長）。​注意：適用於單個日誌檔案！​日誌檔案大小不被算集體的。"
  phpmailer: {"zh-Hans": "PHPMailer的配置（用于双因素身份验证和电子邮件通知）。", "zh-Hant": "PHPMailer的配置（用於雙重認證和電子郵件通知）。"}
  phpmailer_add_reply_to_address: {"zh-Hans": "通过SMTP发送电子邮件时引用的回复地址。", "zh-Hant": "通過SMTP發送電子郵件時引用的回复地址。"}
  phpmailer_add_reply_to_name: {"zh-Hans": "通过SMTP发送电子邮件时引用的回复姓名。", "zh-Hant": "通過SMTP發送電子郵件時引用的回複姓名。"}
- phpmailer_event_log: {"zh-Hans": "用于记录与PHPMailer相关的所有事件的文件。​指定一个文件名，​或留空以禁用。", "zh-Hant": "用於記錄與PHPMailer相關的所有事件的文件。​指定一個檔案名稱，​或留空以禁用。"}
+ phpmailer_event_log: {"zh-Hans": "用于记录与PHPMailer相关的所有事件的文件。​指定一个文件名，​或留空以禁用。", "zh-Hant": "用於記錄與PHPMailer相關的所有事件的檔案。​指定一個檔案名稱，​或留空以禁用。"}
  phpmailer_host: {"zh-Hans": "用于出站电子邮件的SMTP主机。", "zh-Hant": "用於出站電子郵件的SMTP主機。"}
  phpmailer_password: {"zh-Hans": "通过SMTP发送电子邮件时使用的密码。", "zh-Hant": "通過SMTP發送電子郵件時使用的密碼。"}
  phpmailer_port: {"zh-Hans": "用于出站电子邮件的端口号。​标准=587。", "zh-Hant": "用於出站電子郵件的端口號。​標準=587。"}
@@ -399,7 +399,7 @@ field:
  Execution order: {"zh-Hans": "执行顺序：", "zh-Hant": "執行順序："}
  Expiry: "到期"
  False (False): "False（假）"
- File: "文件"
+ File: {"zh-Hans": "文件", "zh-Hant": "檔案"}
  Filename: {"zh-Hans": "文件名：", "zh-Hant": "檔案名稱："}
  Generate output as CIDRs: {"zh-Hans": "以CIDR的形式生成输出", "zh-Hant": "以CIDR的形式生成輸出"}
  Generate output as netmasks: {"zh-Hans": "以子网络掩码的形式生成输出", "zh-Hant": "以子網絡掩碼的形式生成輸出"}
@@ -432,7 +432,7 @@ field:
  Update all: "更新一切"
  Update signature files: {"zh-Hans": "更新签名文件", "zh-Hant": "更新簽名檔案"}
  Update: "更新"
- Upload new file: {"zh-Hans": "上传新文件", "zh-Hant": "上傳新文件"}
+ Upload new file: {"zh-Hans": "上传新文件", "zh-Hant": "上傳新檔案"}
  Use system default timezone: {"zh-Hans": "使用系统默认时区。", "zh-Hant": "使用系統默認時區。"}
  Username: {"zh-Hans": "用户名", "zh-Hant": "使用者名稱"}
  Verified search engine and social media requests: {"zh-Hans": "经过验证的搜索引擎和社交媒体请求", "zh-Hant": "經過驗證的搜尋引擎和社交媒體請求"}
@@ -440,8 +440,8 @@ field:
  Verify: {"zh-Hans": "验证", "zh-Hant": "驗證"}
  Whitelisted requests: {"zh-Hans": "在白名单中的请求", "zh-Hant": "在白名單中的請求"}
  Your version: "您的版本"
- log_rotation_archive: {"zh-Hans": "首先归档，然后删除最旧的日志文件，直到不再超出限制。", "zh-Hant": "首先歸檔，然後刪除最舊的日誌文件，直到不再超出限制。"}
- log_rotation_delete: {"zh-Hans": "删除最旧的日志文件，直到不再超出限制。", "zh-Hant": "刪除最舊的日誌文件，直到不再超出限制。"}
+ log_rotation_archive: {"zh-Hans": "首先归档，然后删除最旧的日志文件，直到不再超出限制。", "zh-Hant": "首先歸檔，然後刪除最舊的日誌檔案，直到不再超出限制。"}
+ log_rotation_delete: {"zh-Hans": "删除最旧的日志文件，直到不再超出限制。", "zh-Hant": "刪除最舊的日誌檔案，直到不再超出限制。"}
  size:
   Total size: {"zh-Hans": "总大小：", "zh-Hant": "總大小："}
   bytes:
@@ -582,7 +582,7 @@ info_cli: !lazy
   zh-Hant: |
    您可以將命令鏈接在一起（該示例從一些文件中讀取，聚合它們的內容，
    然後將聚合的數據寫入output.dat）：
- you_can_also_r: {"zh-Hans": "您可以从文件中读取：", "zh-Hant": "您可以從文件中讀取："}
+ you_can_also_r: {"zh-Hans": "您可以从文件中读取：", "zh-Hant": "您可以從檔案中讀取："}
  you_can_also_u:
   zh-Hans: |
    如果您想，您可以使用逗号代替（与多行相同，但您不需要使用引号，
@@ -590,7 +590,7 @@ info_cli: !lazy
   zh-Hant: |
    如果您想，您可以使用逗號代替（與多行相同，但您不需要使用引號，
    並且不要將兩者混合在一起）：
- you_can_also_w: {"zh-Hans": "您可以写入文件：", "zh-Hant": "您可以寫入文件："}
+ you_can_also_w: {"zh-Hans": "您可以写入文件：", "zh-Hant": "您可以寫入檔案："}
  you_can_print_: {"zh-Hans": "您可以将数据打印到屏幕上（有时在链接命令时有用）：", "zh-Hant": "您可以將數據打印到屏幕上（有時在鏈接命令時有用）："}
 Some useful links:
  zh-Hans: |+
@@ -678,7 +678,7 @@ label:
  %s is available (%s): "%s可用（%s）。"
  %s is available: "%s可用。"
  %s is not available: "%s不可用。"
- %s signature: {"zh-Hans": "%s个文件中的", "zh-Hant": "%s個文件中的"}
+ %s signature: {"zh-Hans": "%s个文件中的", "zh-Hant": "%s個檔案中的"}
  200 OK:
   zh-Hans: "200 OK （好的）\n最不健壮，但最用户友好。​自动请求很可能将此响应解释为成功。"
   zh-Hant: "200 OK （好的）\n最不健壯，但最用戶友好。​自動請求很可能將此響應解釋為成功。"
@@ -699,7 +699,7 @@ label:
   zh-Hant: "403 Forbidden （禁止的）\n更健壯，但不太用戶友好。​一般最推薦的。"
  409 Conflict:
   zh-Hans: "409 Conflict （冲突）\n推荐用于资源冲突（例如，合并冲突、文件访问冲突、等等）。​不推荐在其他情况下。"
-  zh-Hant: "409 Conflict （衝突）\n建議用於資源衝突（例如，合併衝突、文件存取衝突、等等）。​不推薦在其他情況下。"
+  zh-Hant: "409 Conflict （衝突）\n建議用於資源衝突（例如，合併衝突、檔案存取衝突、等等）。​不推薦在其他情況下。"
  410 Gone:
   zh-Hans: "410 Gone （走了）\n解决假阳性时可能会导致问题，因为某些浏览器会缓存此状态消息并且不会发送后续请求，即使在被解除阻止后也是如此。​在某些情况下可能是最可取的。"
   zh-Hant: "410 Gone （走了）\n解決假陽性時可能會導致問題，因為某些瀏覽器會緩存此狀態消息並且不會發送後續請求，即使在被解除阻止後也是如此。​在某些情況下可能是最可取的。"
@@ -718,7 +718,7 @@ label:
  Action: {"zh-Hans": "行动", "zh-Hant": "行動"}
  Active IPv4 signature files: {"zh-Hans": "活动IPv4签名文件", "zh-Hant": "活動IPv4簽名檔案"}
  Active IPv6 signature files: {"zh-Hans": "活动IPv6签名文件", "zh-Hant": "活動IPv6簽名檔案"}
- Active configuration file: {"zh-Hans": "活动配置文件：", "zh-Hant": "活動配置文件："}
+ Active configuration file: {"zh-Hans": "活动配置文件：", "zh-Hant": "活動配置檔案："}
  Active events: {"zh-Hans": "活动事件", "zh-Hant": "活動事件"}
  Active imports: {"zh-Hans": "活动进口", "zh-Hant": "活動進口"}
  Active modules: {"zh-Hans": "活动模块", "zh-Hant": "活動模組"}
@@ -921,7 +921,7 @@ label:
   logic_any: {"zh-Hans": "只要满足所有“不等于”（≠）条件，任何“等于”（=）条件都可以触发规则。", "zh-Hant": "只要滿足所有『不等於』（≠）條件，任何『等於』（=）條件都可以觸發規則。"}
   profile the request: {"zh-Hans": "分类该请求", "zh-Hant": "分類該請求"}
   redirect the request (without blocking it): {"zh-Hans": "重定向该请求（不阻止它）", "zh-Hant": "重定向該請求（不阻止它）"}
-  run a file to handle the request: {"zh-Hans": "运行一个文件来处理该请求", "zh-Hant": "運行一個文件來處理該請求"}
+  run a file to handle the request: {"zh-Hans": "运行一个文件来处理该请求", "zh-Hant": "運行一個檔案來處理該請求"}
   whitelist the request: {"zh-Hans": "白名单该请求", "zh-Hant": "白名單該請求"}
  bobuam:
   Ambiguous user agents: {"zh-Hans": "模糊的用户代理", "zh-Hant": "模糊的用戶代理"}
@@ -953,7 +953,7 @@ link:
  Discussions: {"zh-Hans": "讨论", "zh-Hant": "討論"}
  Documentation: {"zh-Hans": "文档", "zh-Hant": "文檔"}
  Edit mode: {"zh-Hans": "编辑模式", "zh-Hant": "編輯模式"}
- File Manager: "文件管理器"
+ File Manager: {"zh-Hans": "文件管理器", "zh-Hant": "檔案管理器"}
  Get API key: {"zh-Hans": "如果您还没有API密钥，请单击此处获取。", "zh-Hant": "如果您還沒有API金鑰，請單擊此處獲取。"}
  Home: {"zh-Hans": "主页", "zh-Hant": "主頁"}
  IP Testing: {"zh-Hans": "IP测试", "zh-Hant": "IP測試"}
@@ -1029,26 +1029,26 @@ previewer:
  Weeks: {"zh-Hans": "周", "zh-Hant": "週"}
  Years: "年"
 response:
- Account successfully created: {"zh-Hans": "帐户成功创建！", "zh-Hant": "帳戶成功創建！"}
- Account successfully deleted: {"zh-Hans": "帐户成功删除！", "zh-Hant": "帳戶成功刪除！"}
+ Account successfully created: {"zh-Hans": "帐户创建成功了！", "zh-Hant": "帳戶創建成功了！"}
+ Account successfully deleted: {"zh-Hans": "帐户删除成功了！", "zh-Hant": "帳戶刪除成功了！"}
  Added %s to tracking: "在跟踪中添加了%s。"
  Already up-to-date: {"zh-Hans": "已经更新。", "zh-Hant": "已經更新。"}
  An account with that username already exists: {"zh-Hans": "一个帐户与那个用户名已经存在！", "zh-Hant": "一個帳戶與那個使用者名稱已經存在！"}
  An error occurred while attempting to uninstall the component: {"zh-Hans": "一个错误发生当尝试卸载组件。", "zh-Hant": "一個錯誤發生當嘗試卸載組件。"}
- Auxiliary rule, %s, deleted successfully: {"zh-Hans": "辅助规则“%s”删除成功。", "zh-Hant": "輔助規則『%s』刪除成功。"}
- Auxiliary rules successfully updated: {"zh-Hans": "辅助规则已成功更新。", "zh-Hant": "輔助規則已成功更新。"}
+ Auxiliary rule, %s, deleted successfully: {"zh-Hans": "辅助规则“%s”删除成功了。", "zh-Hant": "輔助規則『%s』刪除成功了。"}
+ Auxiliary rules successfully updated: {"zh-Hans": "辅助规则更新成功了。", "zh-Hant": "輔助規則更新成功了。"}
  Can_t fetch metadata: {"zh-Hans": "无法获取元数据", "zh-Hant": "無法取得元數據"}
- Can_t fetch the file: {"zh-Hans": "无法获取文件", "zh-Hant": "無法取得文件"}
+ Can_t fetch the file: {"zh-Hans": "无法获取文件", "zh-Hant": "無法取得檔案"}
  Can_t import from v%s data: {"zh-Hans": "无法从v%s数据导入！", "zh-Hant": "無法從v%s數據匯入！"}
  Checksum error: {"zh-Hans": "校验和错误！", "zh-Hant": "校驗和錯誤！"}
  Component not installed: {"zh-Hans": "组件不安装！", "zh-Hant": "組件不安裝！"}
- Component successfully installed: {"zh-Hans": "组件成功安装。", "zh-Hant": "組件成功安裝。"}
- Component successfully uninstalled: {"zh-Hans": "组件成功卸载。", "zh-Hant": "組件成功卸載。"}
- Component successfully updated: {"zh-Hans": "组件成功更新。", "zh-Hant": "組件成功更新。"}
- Configuration successfully updated: "配置成功更新。"
+ Component successfully installed: {"zh-Hans": "组件安装成功了。", "zh-Hant": "組件安裝成功了。"}
+ Component successfully uninstalled: {"zh-Hans": "组件卸载成功了。", "zh-Hant": "組件卸載成功了。"}
+ Component successfully updated: {"zh-Hans": "组件更新成功了。", "zh-Hant": "組件更新成功了。"}
+ Configuration successfully updated: "配置更新成功了。"
  Copied: {"zh-Hans": "已复制", "zh-Hant": "已複製"}
- Directory successfully deleted: {"zh-Hans": "文件夹成功删除！", "zh-Hant": "檔案夾成功刪除！"}
- Directory successfully renamed: {"zh-Hans": "文件夹成功改名！", "zh-Hant": "檔案夾成功改名！"}
+ Directory successfully deleted: {"zh-Hans": "文件夹删除成功了！", "zh-Hant": "檔案夾刪除成功了！"}
+ Directory successfully renamed: {"zh-Hans": "文件夹改名成功了！", "zh-Hant": "檔案夾改名成功了！"}
  Don_t know what to do with the data after reading it: {"zh-Hans": "读取数据后不知道如何处理。\n考虑将其链接到另一个命令。谢谢。", "zh-Hant": "讀取數據後不知道如何處理。\n考慮將其鏈接到另一個命令。謝謝。"}
  Error at the upstream: {"zh-Hans": "上游错误！", "zh-Hant": "上游錯誤！"}
  Failed to access %s: {"zh-Hans": "无法访问“%s”！", "zh-Hant": "無法訪問『%s』！"}
@@ -1070,10 +1070,10 @@ response:
  Failed to upload: {"zh-Hans": "无法上传！", "zh-Hant": "無法上傳！"}
  File contains unexpected content: {"zh-Hans": "文件包含意外的内容！", "zh-Hant": "檔案包含意外的內容！"}
  File rejected: {"zh-Hans": "文件拒绝", "zh-Hant": "檔案拒絕"}
- File successfully deleted: {"zh-Hans": "文件成功删除！", "zh-Hant": "檔案成功刪除！"}
- File successfully modified: "文件成功改性！"
- File successfully renamed: "文件成功改名！"
- File successfully uploaded: {"zh-Hans": "文件成功上传！", "zh-Hant": "檔案成功上傳！"}
+ File successfully deleted: {"zh-Hans": "文件删除成功了！", "zh-Hant": "檔案刪除成功了！"}
+ File successfully modified: {"zh-Hans": "文件改性成功了！", "zh-Hant": "檔案修改成功了！"}
+ File successfully renamed: {"zh-Hans": "文件改名成功了！", "zh-Hant": "檔案改名成功了！"}
+ File successfully uploaded: {"zh-Hans": "文件上传成功了！", "zh-Hant": "檔案上傳成功了！"}
  Finished reading from %s: {"zh-Hans": "从“%s”读完。", "zh-Hant": "從『%s』讀完。"}
  Finished writing to %s: {"zh-Hans": "完成对“%s”的写入。", "zh-Hant": "完成對『%s』的寫入。"}
  I can_t write to %s, sorry: {"zh-Hans": "我不能写信给“%s”，对不起。", "zh-Hant": "我不能寫信給『%s』，對不起。"}
@@ -1090,7 +1090,7 @@ response:
  Parse: "解析"
  Passed: "成功"
  Password field empty: {"zh-Hans": "密码输入是空的！", "zh-Hant": "密碼輸入是空的！"}
- Password successfully updated: {"zh-Hans": "密码成功更新！", "zh-Hant": "密碼成功更新！"}
+ Password successfully updated: {"zh-Hans": "密码更新成功了！", "zh-Hant": "密碼更新成功了！"}
  Payment required at the upstream: "在上游需要付款。"
  Permissions not adequate to perform asynchronous requests: {"zh-Hans": "权限不足以执行异步请求。尝试再次登录。", "zh-Hant": "權限不足以執行異步請求。嘗試再次登錄。"}
  Please select at least one category: {"zh-Hans": "请至少选择一个类别！", "zh-Hant": "請至少選擇一個類別！"}
@@ -1103,16 +1103,16 @@ response:
  Signature files have been updated (%s): {"zh-Hans": "签名文件已更新（%s）。", "zh-Hant": "簽名檔案已更新（%s）。"}
  Skipped: {"zh-Hans": "跳过了", "zh-Hant": "跳過了"}
  Source not specified: {"zh-Hans": "未指定来源！", "zh-Hant": "未註明來源！"}
- Statistics cleared: {"zh-Hans": "统计删除。", "zh-Hant": "統計刪除。"}
- Statistics updated: {"zh-Hans": "统计成功更新。", "zh-Hant": "統計成功更新。"}
- Successfully activated: {"zh-Hans": "已成功启用。", "zh-Hant": "已成功啟用。"}
- Successfully authenticated: {"zh-Hans": "验证成功。", "zh-Hant": "驗證成功。"}
- Successfully deactivated: "已成功停用。"
- Successfully deleted %s reports for %s: {"zh-Hans": "已成功删除%2$s的%1$s份报告！", "zh-Hant": "已成功刪除%2$s的%1$s份報告！"}
+ Statistics cleared: {"zh-Hans": "统计删除成功了。", "zh-Hant": "統計刪除成功了。"}
+ Statistics updated: {"zh-Hans": "统计更新成功了。", "zh-Hant": "統計更新成功了。"}
+ Successfully activated: {"zh-Hans": "启用成功了。 ", "zh-Hant": "啟用成功了。"}
+ Successfully authenticated: {"zh-Hans": "验证成功了。", "zh-Hant": "驗證成功了。"}
+ Successfully deactivated: "停用成功了。"
+ Successfully deleted %s reports for %s: {"zh-Hans": "%2$s的%1$s份报告被删除成功了！", "zh-Hant": "%2$s的%1$s份報告被刪除成功了！"}
  That account doesn_t exist: {"zh-Hans": "那个帐户不存在。", "zh-Hant": "那個帳戶不存在。"}
  The %s command can_t be chained in that way, sorry: {"zh-Hans": "%s命令不能以这种方式链接，对不起。", "zh-Hant": "%s命令不能以這種方式鏈接，對不起。"}
  The IP address is invalid: {"zh-Hans": "IP地址无效！", "zh-Hant": "IP位址無效！"}
- The IP address, %s, successfully reported: {"zh-Hans": "IP地址%s已成功报告！", "zh-Hant": "IP位址%s已成功報告！"}
+ The IP address, %s, successfully reported: {"zh-Hans": "IP地址%s报告成功了！", "zh-Hant": "IP位址%s報告成功了！"}
  The report has not been enqueued: {"zh-Hans": "该报告不在队列中。", "zh-Hant": "該報告不在隊列中。"}
  The same IP address can be reported only once every 15 minutes:
   zh-Hans: "同一IP地址每15分钟只能报告一次。​该报告在队列中，CIDRAM将稍后尝试提交该报告。"
@@ -1217,7 +1217,7 @@ tip:
  Enter referrer here (optional): {"zh-Hans": "在这里时输入引荐（可选的）。", "zh-Hant": "在這裡時輸入引薦（可選的）。"}
  Enter user agent here (optional): {"zh-Hans": "在这里时输入用户代理（可选的）。", "zh-Hant": "在這裡時輸入用戶代理（可選的）。"}
  Enter user agents here: {"zh-Hans": "在这里时输入用户代理。", "zh-Hant": "在這裡時輸入用戶代理。"}
- File Manager: {"zh-Hans": "文件管理器允许您删除，​编辑，​上传和下载文件。​小心使用（您可以用这个破坏您的安装）。", "zh-Hant": "檔案管理器允許您刪除，​編輯，​上傳和下載文件。​小心使用（您可以用這個破壞您的安裝）。"}
+ File Manager: {"zh-Hans": "文件管理器允许您删除，​编辑，​上传和下载文件。​小心使用（您可以用这个破坏您的安装）。", "zh-Hant": "檔案管理器允許您刪除，​編輯，​上傳和下載檔案。​小心使用（您可以用這個破壞您的安裝）。"}
  Greeting: "你好，%s。"
  Home: {"zh-Hans": "这是CIDRAM的前端主页。​从左侧的导航菜单中选择一个链接以继续。", "zh-Hant": "這是CIDRAM的前端主頁。​從左側的導航菜單中選擇一個鏈接以繼續。"}
  How many infractions to incur: {"zh-Hans": "有多少违规行为。", "zh-Hant": "有多少違規行為。"}
@@ -1247,7 +1247,7 @@ tip:
  Statistics tracking is currently disabled: {"zh-Hans": "注意：统计跟踪目前已被禁用，但可以通过配置页面启用。", "zh-Hant": "注意：統計跟踪目前已被禁用，但可以通過配置頁面啟用。"}
  Statistics: {"zh-Hans": "此页面显示了有关CIDRAM安装的一些基本使用统计信息。", "zh-Hant": "此頁面顯示了有關CIDRAM安裝的一些基本使用統計信息。"}
  Subtractor: {"zh-Hans": "减法仪可用于从另一个范围中减去IP/CIDR/网络掩码范围。", "zh-Hant": "減法儀可用於從另一個範圍中減去IP/CIDR/網絡掩碼範圍。"}
- Updates: {"zh-Hans": "更新页面允许您安装，卸载，和更新CIDRAM的各种组件（核心包、签名、L10N文件、等等）。", "zh-Hant": "更新頁面允許您安裝，卸載，和更新CIDRAM的各種組件（核心包、簽名、L10N文件、等等）。"}
+ Updates: {"zh-Hans": "更新页面允许您安装，卸载，和更新CIDRAM的各种组件（核心包、签名、L10N文件、等等）。", "zh-Hant": "更新頁面允許您安裝，卸載，和更新CIDRAM的各種組件（核心包、簽名、L10N檔案、等等）。"}
  When available, the value of the country code lookup:
   zh-Hans: "如果可用，国家代码查找的值是{{Links.ISO.3166}} 2位数国家代码。 例如，US 代表美国，RU 代表俄罗斯，CN 代表中国，等等。"
   zh-Hant: "如果可用，國家代碼查找的值是{{Links.ISO.3166}} 2位數國家代碼。 例如，US 代表美國，RU 代表俄羅斯，CN 代表中國，等等。"
@@ -1259,8 +1259,8 @@ warning: !lazy
   zh-Hans: "注意：CIDRAM使用cookie来验证登录。​通过登录，您同意您的浏览器创建和存储cookie。"
   zh-Hant: "注意：CIDRAM使用cookie來驗證登錄。​通過登錄，您同意您的瀏覽器創建和存儲cookie。"
  Editing PHP files:
-  zh-Hans: "警告：一些虚拟主机在检测到请求中的PHP标记时会自动禁止IP地址（例如，当试图通过浏览器修改PHP文件时）。 CIDRAM无法知道您的虚拟主机是否这样做。 为了避免出现问题，建议尽可能不要以这种方式编辑PHP文件。"
-  zh-Hant: "警告：一些虛擬主機在檢測到請求中的PHP標記時會自動禁止IP位址（例如，當試圖通過瀏覽器修改PHP文件時）。 CIDRAM無法知道您的虛擬主機是否這樣做。 為了避免出現問題，建議盡可能不要以這種方式編輯PHP文件。"
+  zh-Hans: "警告：一些虚拟主机在检测到请求中的PHP标记时会自动禁止IP地址（例如，当试图通过浏览器修改PHP文件时）。 CIDRAM无法知道您的虚拟主机是否这样做。 为了避免出现问题，建议尽可能不要以这种方式编辑PHP檔案。"
+  zh-Hant: "警告：一些虛擬主機在檢測到請求中的PHP標記時會自動禁止IP位址（例如，當試圖通過瀏覽器修改PHP文件時）。 CIDRAM無法知道您的虛擬主機是否這樣做。 為了避免出現問題，建議盡可能不要以這種方式編輯PHP檔案。"
  IP tests are disabled:
   zh-Hans: "警告：IP测试被禁用！在解决此问题之前，无法使用签名文件。"
   zh-Hant: "警告：IP測試被禁用！在解決此問題之前，無法使用簽名檔案。"
@@ -1269,10 +1269,10 @@ warning: !lazy
   zh-Hant: "警告：一些前端功能需要JavaScript。 為確保整個前端按預期運行，建議啟用JavaScript。"
  Likely to be overwritten:
   zh-Hans: "警告：您当前正在编辑的文件属于组件“%s”。 对该文件所做的任何更改很可能会在下次更新该组件时被覆盖。"
-  zh-Hant: "警告：您當前正在編輯的文件屬於組件『%s』。 對該文件所做的任何更改很可能會在下次更新該組件時被覆蓋。"
+  zh-Hant: "警告：您當前正在編輯的文件屬於組件『%s』。 對該檔案所做的任何更改很可能會在下次更新該組件時被覆蓋。"
  Likely to become corrupted:
   zh-Hans: "警告：在当前正在编辑的文件中检测到非UTF8字节。 如果使用此特定工具进行编辑，文件可能会损坏。"
-  zh-Hans: "警告：在目前正在編輯的檔案中偵測到非UTF8位元組。 如果使用此特定工具進行編輯，檔案可能會損壞。"
+  zh-Hant: "警告：在目前正在編輯的檔案中偵測到非UTF8位元組。 如果使用此特定工具進行編輯，檔案可能會損壞。"
  Modules are disabled:
   zh-Hans: "警告：模块被禁用！在解决此问题之前，无法使用模块。"
   zh-Hant: "警告：模組被禁用！在解決此問題之前，無法使用模組。"

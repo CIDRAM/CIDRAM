@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Report to AbuseIPDB page (last modified: 2026.03.18).
+ * This file: Report to AbuseIPDB page (last modified: 2026.04.21).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -99,6 +99,7 @@ if (!isset($_POST['populate']) && $this->FE['address'] !== '' && $this->FE['apik
         } else {
             $Categories = \implode(',', $Categories);
             $Queue = true;
+            $this->Request->MostRecentStatusCode = 0;
             $Status = $this->Request->request('https://api.abuseipdb.com/api/v2/report', [
                 'ip' => $this->FE['address'],
                 'categories' => $Categories,
@@ -151,6 +152,7 @@ if (!isset($_POST['populate']) && $this->FE['address'] !== '' && $this->FE['apik
             }
         }
     } elseif ($this->FE['endpoint'] === 'delete') {
+        $this->Request->MostRecentStatusCode = 0;
         $Status = $this->Request->request('https://api.abuseipdb.com/api/v2/clear-address?ipAddress=' . \urlencode($this->FE['address']), '', $this->Configuration['abuseipdb']['timeout_limit'], ['Key: ' . $this->FE['apikey'], 'Accept: application/json'], 0, 'DELETE');
         if (\preg_match('~\{"numReportsDeleted":(\d+)\}~', $Status, $Matches)) {
             $Matches = (int)$Matches[1];

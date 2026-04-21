@@ -122,6 +122,7 @@ class Request extends CommonAbstract
             !isset($this->DF['fread'])
         ) {
             $this->TryUsing = 2;
+            return;
         }
         $this->TryUsing = 0;
     }

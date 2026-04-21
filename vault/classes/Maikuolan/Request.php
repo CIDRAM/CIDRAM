@@ -1,6 +1,6 @@
 <?php
 /**
- * Request handler (last modified: 2026.04.19).
+ * Request handler (last modified: 2026.04.21).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -71,6 +71,62 @@ class Request extends CommonAbstract
     public $MostRecentStatusCode = 0;
 
     /**
+     * @var int What to try using for sending requests.
+     *      0: Nothing is available; Can't process requests.
+     *      1: Just use curl (curl is installed/available; default).
+     *      2: Try using fopen with stream_context_create (curl isn't installed/available).
+     */
+    public $TryUsing = 1;
+
+    /**
+     * @var array PHP disabled functions (populated by the constructor).
+     */
+    private $DF = [];
+
+    /**
+     * @var int Default stream blocksize (128KB).
+     */
+    private const STREAM_BLOCKSIZE = 131072;
+
+    /**
+     * Constructor.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        /** Disabled functions check. */
+        $this->DF = \array_flip(\explode(',', \ini_get('disable_functions') ?: ''));
+
+        if (
+            \extension_loaded('curl') &&
+            \function_exists('curl_init') &&
+            !isset($this->DF['curl_init']) &&
+            \function_exists('curl_setopt') &&
+            !isset($this->DF['curl_setopt']) &&
+            \function_exists('curl_exec') &&
+            !isset($this->DF['curl_exec'])
+        ) {
+            return;
+        }
+        if (
+            !\ini_get('open_basedir') &&
+            \ini_get('allow_url_fopen') &&
+            \function_exists('stream_context_create') &&
+            !isset($this->DF['stream_context_create']) &&
+            \function_exists('fopen') &&
+            !isset($this->DF['fopen']) &&
+            \function_exists('feof') &&
+            !isset($this->DF['feof']) &&
+            \function_exists('fread') &&
+            !isset($this->DF['fread'])
+        ) {
+            $this->TryUsing = 2;
+        }
+        $this->TryUsing = 0;
+    }
+
+    /**
      * Allow calling the instance as a function (proxies to request).
      *
      * @return string
@@ -118,7 +174,7 @@ class Request extends CommonAbstract
     public function request(string $URI, $Params = [], int $Timeout = -1, array $Headers = [], int $Depth = 0, string $Method = ''): string
     {
         /** Guard. */
-        if (!\function_exists('curl_init')) {
+        if (!$this->TryUsing) {
             return '';
         }
 
@@ -159,11 +215,115 @@ class Request extends CommonAbstract
             break;
         }
 
+        $IsHTTPS = \strtolower(\substr($URI, 0, 6)) === 'https:';
+
+        /** Using fopen with stream_context_create instead of curl. */
+        if ($this->TryUsing === 2) {
+            if (!empty($Params) && \gettype($Params) === 'array' && \function_exists('http_build_query') && !isset($this->DF['http_build_query'])) {
+                $Post = true;
+                $PostData = \http_build_query($Params);
+                $Headers['Content-Type'] = 'application/x-www-form-urlencoded';
+            } else {
+                $Post = false;
+                $PostData = '';
+            }
+            if ($Method !== '') {
+                $MethodToUse = $Method;
+            } else {
+                $MethodToUse = $Post ? 'POST' : 'GET';
+            }
+            $Context = ['http' => ['method' => $MethodToUse, 'timeout' => $Timeout > 0 ? $Timeout : $this->DefaultTimeout, 'follow_location' => 1, 'max_redirects' => 1, 'ignore_errors' => true]];
+            if (!isset($Headers['Accept-Language'])) {
+                $Headers = ['Accept-Language' => 'en-AU,en-US;q=0.9,en;q=0.8'] + $Headers;
+            }
+            $Headers['User-Agent'] = $this->UserAgent;
+            if ($this->Proxy !== '') {
+                $Context['http']['proxy'] = $this->Proxy;
+                $Context['http']['request_fulluri'] = true;
+                if ($this->ProxyAuth !== '') {
+                    $Headers['Proxy-Authorization'] = 'Basic ' . \base64_encode($this->ProxyAuth);
+                }
+            }
+            $Build = [];
+            foreach ($Headers as $HeaderName => $HeaderValue) {
+                $Build[] = $HeaderName . ': ' . $HeaderValue;
+            }
+            $Context['http']['header'] = \implode("\r\n", $Build);
+            unset($HeaderValue, $HeaderName, $Build);
+            if ($PostData !== '') {
+                $Context['http']['content'] = $PostData;
+            }
+            if ($IsHTTPS) {
+                $Cert = '';
+                if (\function_exists('openssl_get_cert_locations') && !isset($this->DF['openssl_get_cert_locations'])) {
+                    $Certs = \openssl_get_cert_locations();
+                    if (!empty($Certs['ini_cafile']) && \is_readable($Certs['ini_cafile'])) {
+                        $Cert = $Certs['ini_cafile'];
+                    } elseif (!empty($Certs['default_cert_file_env']) && \is_readable($Certs['default_cert_file_env'])) {
+                        $Cert = $Certs['default_cert_file_env'];
+                    }
+                }
+                if ($Cert !== '') {
+                    $VPeer = isset($Overrides['CURLOPT_SSL_VERIFYPEER']) ? !empty($Overrides['CURLOPT_SSL_VERIFYPEER']) : false;
+                    $Context['ssl'] = [
+                        'verify_peer' => $VPeer,
+                        'verify_peer_name' => $VPeer,
+                        'allow_self_signed' => false,
+                        'cafile' => $Cert
+                    ];
+                } else {
+                    $Context['ssl'] = [
+                        'verify_peer' => false,
+                        'verify_peer_name' => false,
+                        'allow_self_signed' => false,
+                        'cafile' => false
+                    ];
+                }
+            }
+            $Context = \stream_context_create($Context);
+
+            $Time = \microtime(true);
+            $Handle = \fopen($URI, 'rb', false, $Context);
+            if (!\is_resource($Handle)) {
+                return '';
+            }
+
+            /** Content of the request response. */
+            $Response = '';
+            while (!\feof($Handle)) {
+                $Response .= \fread($Handle, self::STREAM_BLOCKSIZE);
+            }
+
+            \fclose($Handle);
+            $Time = \microtime(true) - $Time;
+
+            if (\function_exists('http_get_last_response_headers')) {
+                $RHeaders = \http_get_last_response_headers();
+                if (isset($RHeaders[0]) && \substr($RHeaders[0], 0, 4) === 'HTTP' && ($SPos = \strpos($RHeaders[0], ' ')) !== false) {
+                    $Code = (int)\substr($RHeaders[0], $SPos + 1, 3);
+                }
+            }
+            if (isset($Code)) {
+                $this->sendMessage(\sprintf('%s - %s - %s - %s', $MethodToUse, $URI, $Code, (\floor($Time * 100) / 100) . 's'));
+                $this->MostRecentStatusCode = $Code;
+
+                /** Request failed. Try again using an alternative address. */
+                if ($Code >= 400 && isset($AlternateURI) && $Depth < 3) {
+                    return $this($AlternateURI, $Params, $Timeout, $Headers, $Depth + 1, $Method);
+                }
+            } else {
+                $this->sendMessage(\sprintf('%s - %s - %s - %s', $MethodToUse, $URI, 200, (\floor($Time * 100) / 100) . 's'));
+
+                /** Assuming 200, because no reliable way to tell otherwise without http_get_last_response_headers (and $http_response_header is deprecated as of PHP8.5). */
+                $this->MostRecentStatusCode = 200;
+            }
+
+            /** Return the results of the request. */
+            return $Response;
+        }
+
         /** Initialise the cURL session. */
         $Request = \curl_init($URI);
-
-        $LCURI = \strtolower($URI);
-        $SSL = (\substr($LCURI, 0, 6) === 'https:');
 
         \curl_setopt($Request, \CURLOPT_FRESH_CONNECT, true);
         \curl_setopt($Request, \CURLOPT_HEADER, false);
@@ -175,11 +335,23 @@ class Request extends CommonAbstract
             \curl_setopt($Request, \CURLOPT_POSTFIELDS, $Params);
             $Post = true;
         }
-        if ($SSL) {
+        if ($IsHTTPS) {
             \curl_setopt($Request, \CURLOPT_PROTOCOLS, \CURLPROTO_HTTPS);
             \curl_setopt($Request, \CURLOPT_SSL_VERIFYPEER, (
                 isset($Overrides['CURLOPT_SSL_VERIFYPEER']) ? !empty($Overrides['CURLOPT_SSL_VERIFYPEER']) : false
             ));
+            $Cert = '';
+            if (\function_exists('openssl_get_cert_locations') && !isset($this->DF['openssl_get_cert_locations'])) {
+                $Certs = \openssl_get_cert_locations();
+                if (!empty($Certs['ini_cafile']) && \is_readable($Certs['ini_cafile'])) {
+                    $Cert = $Certs['ini_cafile'];
+                } elseif (!empty($Certs['default_cert_file_env']) && \is_readable($Certs['default_cert_file_env'])) {
+                    $Cert = $Certs['default_cert_file_env'];
+                }
+            }
+            if ($Cert !== '') {
+                \curl_setopt($Request, \CURLOPT_CAINFO, $Cert);
+            }
         }
         if ($Method !== '') {
             \curl_setopt($Request, \CURLOPT_CUSTOMREQUEST, $Method);
@@ -209,8 +381,6 @@ class Request extends CommonAbstract
         /** Check for problems (e.g., resource not found, server errors, etc). */
         if (($Info = \curl_getinfo($Request)) && \is_array($Info) && isset($Info['http_code'])) {
             $this->sendMessage(\sprintf('%s - %s - %s - %s', $DebugMethod, $URI, $Info['http_code'], (\floor($Time * 100) / 100) . 's'));
-
-            /** Most recent HTTP status code. */
             $this->MostRecentStatusCode = $Info['http_code'];
 
             /** Request failed. Try again using an alternative address. */
@@ -222,8 +392,6 @@ class Request extends CommonAbstract
             }
         } else {
             $this->sendMessage(\sprintf('%s - %s - %s - %s', $DebugMethod, $URI, 200, (\floor($Time * 100) / 100) . 's'));
-
-            /** Most recent HTTP status code. */
             $this->MostRecentStatusCode = 200;
         }
 

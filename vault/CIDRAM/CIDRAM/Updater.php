@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods for updating CIDRAM components (last modified: 2026.04.19).
+ * This file: Methods for updating CIDRAM components (last modified: 2026.04.21).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -312,6 +312,7 @@ trait Updater
         foreach ($Remotes as $ThisRemote) {
             $RemoteData = $this->Cache->getEntry($ThisRemote);
             if ($RemoteData === false) {
+                $this->Request->MostRecentStatusCode = 0;
                 $RemoteData = $this->Request->request($ThisRemote);
                 if ($this->Request->MostRecentStatusCode !== 200) {
                     $this->FE['state_msg'] .= $this->L10N->getString('response.Can_t fetch metadata') . ' <code>&lt;' . $ThisRemote . '&gt;</code>' . $this->L10N->getString('pair_separator');
@@ -728,6 +729,7 @@ trait Updater
                             $Rollback = true;
                             continue 2;
                         }
+                        $this->Request->MostRecentStatusCode = 0;
                         if (\strlen($ThisFile = $this->Request->request($FileMeta['From'])) === 0 || $this->Request->MostRecentStatusCode !== 200) {
                             $StateMessage .= \sprintf('<code>%s</code> – <code>%s</code> – %s', $ThisTarget, $FileName, $this->L10N->getString('response.Can_t fetch the file') . $this->L10N->getString('pair_separator'));
                             if ($this->Request->MostRecentStatusCode === 401 || $this->Request->MostRecentStatusCode === 403) {

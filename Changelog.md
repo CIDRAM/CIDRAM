@@ -561,4 +561,5 @@
 - [2026.04.17]: Shortened some of the action labels at the auxiliary rules view mode page (#403).
 - [2026.04.20]: Added the ability to duplicate files at the front-end file manager.
 - [2026.04.20]: Strengthened some of the guards for editing files at the front-end file manager.
+- [2026.04.21]: Added a fallback to the request handler for sending requests using streams when curl isn't available, extending functionality of the request handler to those to whom curl isn't available.
 - *Plus all the regular signature updates.*

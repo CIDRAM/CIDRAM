@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2026.03.20).
+ * This file: Functions file (last modified: 2026.04.28).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -810,11 +810,7 @@ $CIDRAM['DNS-Reverse'] = function (string $Addr, string $DNS = '', int $Timeout 
     }
 
     /** Some safety mechanisms. */
-    if (!isset($CIDRAM['_allow_url_fopen'])) {
-        $CIDRAM['_allow_url_fopen'] = ini_get('allow_url_fopen');
-        $CIDRAM['_allow_url_fopen'] = !(!$CIDRAM['_allow_url_fopen'] || $CIDRAM['_allow_url_fopen'] === 'Off');
-    }
-    if (!$CIDRAM['Root'] || empty($Lookup) || !function_exists('fsockopen') || !$CIDRAM['_allow_url_fopen']) {
+    if (!$CIDRAM['Root'] || empty($Lookup)) {
         return $Addr;
     }
 
@@ -837,15 +833,7 @@ $CIDRAM['DNS-Reverse'] = function (string $Addr, string $DNS = '', int $Timeout 
         if (!empty($Response) || !$Server) {
             break;
         }
-
-        $Handle = fsockopen('udp://' . $Server, 53);
-        if ($Handle !== false) {
-            fwrite($Handle, $LeftPad . $Lookup);
-            stream_set_timeout($Handle, $Timeout);
-            stream_set_blocking($Handle, true);
-            $Response = fread($Handle, 1024);
-            fclose($Handle);
-        }
+        $Response = $CIDRAM['Request']('udp://' . $Server, ['Port' => 53, 'Message' => $LeftPad . $Lookup], $Timeout, [], 0, 'DNS');
     }
 
     /** No response, or failed lookup. Let's exit the closure. */

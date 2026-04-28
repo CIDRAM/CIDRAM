@@ -1,6 +1,6 @@
 <?php
 /**
- * YAML handler (last modified: 2026.03.26).
+ * YAML handler (last modified: 2026.04.27).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -1570,7 +1570,7 @@ class YAML extends CommonAbstract implements \Countable
      *
      * @param mixed $In The scalar.
      * @throws Error if provided an unsupported data type.
-     * @link https://github.com/Maikuolan/Common/blob/v2/_docs/YAML.md#supported-data-types
+     * @link https://github.com/Maikuolan/Common/blob/v2/docs/YAML.md#supported-data-types
      * @return string The string.
      */
     private function scalarToString($In): string

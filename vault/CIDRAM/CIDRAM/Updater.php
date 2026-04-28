@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods for updating CIDRAM components (last modified: 2026.04.21).
+ * This file: Methods for updating CIDRAM components (last modified: 2026.04.24).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -314,7 +314,7 @@ trait Updater
             if ($RemoteData === false) {
                 $this->Request->MostRecentStatusCode = 0;
                 $RemoteData = $this->Request->request($ThisRemote);
-                if ($this->Request->MostRecentStatusCode !== 200) {
+                if (!($this->Request->MostRecentStatusCode >= 200 && $this->Request->MostRecentStatusCode < 300)) {
                     $this->FE['state_msg'] .= $this->L10N->getString('response.Can_t fetch metadata') . ' <code>&lt;' . $ThisRemote . '&gt;</code>' . $this->L10N->getString('pair_separator');
                     if ($this->Request->MostRecentStatusCode === 401 || $this->Request->MostRecentStatusCode === 403) {
                         $this->FE['state_msg'] .= $this->L10N->getString('denied') . '<br />';
@@ -703,7 +703,7 @@ trait Updater
                             continue 2;
                         }
                         $this->Request->MostRecentStatusCode = 0;
-                        if (\strlen($ThisFile = $this->Request->request($FileMeta['From'])) === 0 || $this->Request->MostRecentStatusCode !== 200) {
+                        if (\strlen($ThisFile = $this->Request->request($FileMeta['From'])) === 0 || !($this->Request->MostRecentStatusCode >= 200 && $this->Request->MostRecentStatusCode < 300)) {
                             $StateMessage .= \sprintf('<code>%s</code> – <code>%s</code> – %s', $ThisTarget, $FileName, $this->L10N->getString('response.Can_t fetch the file') . $this->L10N->getString('pair_separator'));
                             if ($this->Request->MostRecentStatusCode === 401 || $this->Request->MostRecentStatusCode === 403) {
                                 $StateMessage .= $this->L10N->getString('denied') . '<br />';

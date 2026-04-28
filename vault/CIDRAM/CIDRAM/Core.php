@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2026.04.16).
+ * This file: The CIDRAM core (last modified: 2026.04.28).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1132,7 +1132,7 @@ class Core
 
         /** Sending UDP is usually pointless if we're not on root. */
         if (!isset($this->CIDRAM['Root'])) {
-            $this->CIDRAM['Root'] = (!\function_exists('posix_getuid') || posix_getuid() === 0);
+            $this->CIDRAM['Root'] = (!\function_exists('posix_getuid') || \posix_getuid() === 0);
         }
 
         /** Use gethostbyaddr if enabled and if we anticipate UDP failing. */
@@ -1141,11 +1141,7 @@ class Core
         }
 
         /** Some safety mechanisms. */
-        if (!isset($this->CIDRAM['_allow_url_fopen'])) {
-            $this->CIDRAM['_allow_url_fopen'] = \ini_get('allow_url_fopen');
-            $this->CIDRAM['_allow_url_fopen'] = !(!$this->CIDRAM['_allow_url_fopen'] || $this->CIDRAM['_allow_url_fopen'] === 'Off');
-        }
-        if (!$this->CIDRAM['Root'] || empty($Lookup) || !\function_exists('fsockopen') || !$this->CIDRAM['_allow_url_fopen']) {
+        if (!$this->CIDRAM['Root'] || empty($Lookup)) {
             return $Addr;
         }
 
@@ -1165,14 +1161,7 @@ class Core
             if (!empty($Response) || !$Server) {
                 break;
             }
-            $Handle = \fsockopen('udp://' . $Server, 53);
-            if ($Handle !== false) {
-                \fwrite($Handle, $LeftPad . $Lookup);
-                \stream_set_timeout($Handle, $Timeout);
-                \stream_set_blocking($Handle, true);
-                $Response = \fread($Handle, 1024);
-                \fclose($Handle);
-            }
+            $Response = $this->Request->request('udp://' . $Server, ['Port' => 53, 'Message' => $LeftPad . $Lookup], $Timeout, [], 0, 'DNS');
         }
 
         /** No response, or failed lookup. Let's exit the method. */

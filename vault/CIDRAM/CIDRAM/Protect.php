@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2026.03.18).
+ * This file: Protect traits (last modified: 2026.04.24).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -937,7 +937,7 @@ trait Protect
                         header('HTTP/1.1 ' . $this->CIDRAM['errCode'] . ' ' . $this->CIDRAM['ThisStatusHTTP']);
                         header('Status: ' . $this->CIDRAM['errCode'] . ' ' . $this->CIDRAM['ThisStatusHTTP']);
                     } else {
-                        $this->CIDRAM['errCode'] = \function_exists('http_response_code') && ($Try = http_response_code()) ? $Try : 200;
+                        $this->CIDRAM['errCode'] = \function_exists('http_response_code') && ($Try = \http_response_code()) ? $Try : 200;
                     }
 
                     if (!empty($this->CIDRAM['Suppress output template'])) {

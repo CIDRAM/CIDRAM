@@ -562,4 +562,5 @@
 - [2026.04.20]: Added the ability to duplicate files at the front-end file manager.
 - [2026.04.20]: Strengthened some of the guards for editing files at the front-end file manager.
 - [2026.04.21]: Added a fallback to the request handler for sending requests using streams when curl isn't available, extending functionality of the request handler to those to whom curl isn't available.
+- [2026.04.28]: Modified the code for performing DNS lookups so as to utilise the request handler and to thus be able to log lookups as outbound requests, a useful thing to log for benchmarking lookups and identifying related potential problems.
 - *Plus all the regular signature updates.*

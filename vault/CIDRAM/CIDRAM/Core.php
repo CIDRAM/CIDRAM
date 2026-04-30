@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2026.04.28).
+ * This file: The CIDRAM core (last modified: 2026.04.30).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1161,7 +1161,7 @@ class Core
             if (!empty($Response) || !$Server) {
                 break;
             }
-            $Response = $this->Request->request('udp://' . $Server, ['Port' => 53, 'Message' => $LeftPad . $Lookup], $Timeout, [], 0, 'DNS');
+            $Response = $this->Request->request('udp://' . $Server, ['Port' => 53, 'Message' => $LeftPad . $Lookup], $Timeout, [], 0, 'DNS', 1);
         }
 
         /** No response, or failed lookup. Let's exit the method. */

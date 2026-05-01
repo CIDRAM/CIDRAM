@@ -1,8 +1,8 @@
 # IPv4 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v4/vault/signatures/ipv4_other.dat
 
-# Version: 2026.95.0
-# Last modified: 2026.04.06
+# Version: 2026.120.0
+# Last modified: 2026.05.01
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -1655,8 +1655,7 @@ Tag: Web2Objects LLC
 # ASN 16652 ("Riseup Networks").
 # Webmail and VPN provider. Port scans and other unusual traffic detected from
 # some specific addresses here. Listing just the affected addresses only.
-# Stop Forum Spam (SFS) listings: 2.
-# Updated: 2025.12.28
+# Updated: 2025.12.28 / Checked: 2026.05.01
 
 198.252.153.0/24 Deny Attacks
 Origin: US
@@ -1682,3 +1681,18 @@ Origin: CA
 Origin: US
 Profile: VPNs here
 Tag: Windscribe
+
+
+# ASN 209183 ("AkhaliNet LLC").
+# VPN provider. WordPress login brute-forcing and spam detected from here. Logs
+# from external firewalls found for some ranges from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 22.
+# Updated: 2026.05.01
+
+104.238.30.0/24 Deny Attacks
+Origin: GB
+185.103.200.8/32 Deny Attacks
+Origin: RU
+Profile: VPNs here
+Tag: AkhaliNet LLC

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2026.04.24).
+ * This file: Protect traits (last modified: 2026.05.06).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -790,7 +790,7 @@ trait Protect
                 if (!empty($this->CIDRAM['Hostname']) && $this->CIDRAM['Hostname'] !== $this->BlockInfo['IPAddr']) {
                     $this->BlockInfo['Hostname'] = $this->CIDRAM['Hostname'];
                 } else {
-                    $this->BlockInfo['Hostname'] = '-';
+                    $this->BlockInfo['Hostname'] = '';
                 }
 
                 /** Build fields. */

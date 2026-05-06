@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2026.04.20).
+# This file: French language data for the front-end (last modified: 2026.05.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -99,7 +99,7 @@ Glossary: !lazy
    Dans le contexte de la CIDRAM, ces termes font généralement référence aux situations où la CIDRAM bloque quelque chose qu'elle ne devrait pas, ou lorsqu'elle ne parvient pas à bloquer quelque chose qu'elle devrait. Lorsque CIDRAM bloque une requête qui n'aurait pas dû être bloquée (par exemple, en raison de signatures erronées, obsolètes, ou incorrectes), ou lorsqu'il le fait pour de mauvaises raisons, il s'agit d'un « faux positif ». Lorsque CIDRAM ne parvient pas à bloquer une requête qui aurait dû l'être (par exemple, en raison de menaces imprévues, de signatures manquantes, de modules défectueux, ou de lacunes dans le processus), il s'agit d'un « faux négatif » (bien que généralement décrit comme une « détection manquée »). <em>Anglais : « missed detection ».</em>
    | | La requête ne devrait PAS être bloquée | La requête DEVRAIT être bloquée |
    | La requête n'est PAS bloquée | Vrai négatif (inférence correcte) | Détection manquée (ou faux négatif) |
-   | La requête EST bloquée. | Faux positif | Vrai positif (inférence correcte) |
+   | La requête EST bloquée | Faux positif | Vrai positif (inférence correcte) |
    Si vous rencontrez des faux positifs, consultez d'abord la page des mises à jour et, si un élément est marqué comme dépassé, mettez-le à jour. Si le problème persiste, vous pouvez ensuite le signaler sur le système de suivi des problèmes de CIDRAM.
  Indexes:
   CIDR: "cidr"
@@ -407,7 +407,7 @@ field:
  Delete: "Supprimer"
  Direct input: "Entrez les données directement"
  Directory: "Répertoire"
- Download: "Télécharger"
+ Download: {"fr-FR": "Téléchargez", "fr-CA": "Téléversez"}
  Edit: "Modifier"
  Execute: "Exécuter"
  Execution order: "Ordre d'exécution\_:"
@@ -448,7 +448,7 @@ field:
  Update all: "Tout mettre à jour"
  Update signature files: "Mettre à jour les fichiers de signature"
  Update: "Mettre à jour"
- Upload new file: {"fr-FR": "Télécharger un nouveau fichier", "fr-CA": "Téléverser un nouveau fichier"}
+ Upload new file: {"fr-FR": "Téléchargez un nouveau fichier", "fr-CA": "Téléversez un nouveau fichier"}
  Use system default timezone: "Utilisez le fuseau horaire par défaut du système."
  Username: "Nom d'Utilisateur"
  Verified search engine and social media requests: "Les requêtes vérifiés des moteur de recherche et médias sociaux"

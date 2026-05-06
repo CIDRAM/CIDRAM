@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malay language data for the front-end (last modified: 2026.04.20).
+# This file: Malay language data for the front-end (last modified: 2026.05.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -87,7 +87,7 @@ Glossary: !lazy
    Beberapa istilah yang berkaitan ialah "positif benar", "negatif benar", dan "negatif palsu". <em>Bahasa Inggeris: "true positive", "true negative", "false negative".</em> "Positif benar" merujuk kepada apabila keputusan ujian dan keadaan sebenar adalah benar (atau "positif"), dan "negatif benar" merujuk kepada apabila keputusan ujian dan keadaan sebenar adalah palsu (atau "negatif"). "Positif benar" atau "negatif benar" dianggap sebagai "inferens yang betul".
    Songsangan bagi "positif palsu" ialah "negatif palsu". Apabila keputusan ujian adalah "negatif", tetapi dijangka (atau sepatutnya) "positif", keputusan tersebut dirujuk sebagai "negatif palsu".
    Dalam konteks CIDRAM, istilah-istilah ini biasanya merujuk kepada apabila CIDRAM menyekat sesuatu yang tidak sepatutnya, atau apabila ia gagal menyekat sesuatu yang sepatutnya. Apabila CIDRAM menyekat permintaan yang sepatutnya tidak disekat (cth., disebabkan oleh tandatangan yang rosak, ketinggalan zaman, atau salah), atau apabila ia berbuat demikian atas sebab yang salah, ini adalah "positif palsu". Apabila CIDRAM gagal menyekat permintaan yang sepatutnya disekat (cth., disebabkan oleh ancaman yang tidak dijangka, tandatangan yang hilang, modul yang rosak, atau kekurangan dalam proses), ini adalah "negatif palsu" (walaupun biasanya digambarkan sebagai "pengesanan yang terlepas"). <em>Bahasa Inggeris: "missed detection".</em>
-   | | Permintaan TIDAK seharusnya disekat | Permintaan SEHARUSNYA disekat |
+   | | Permintaan TIDAK sepatutnya disekat | Permintaan SEPATUTNYA disekat |
    | Permintaan TIDAK disekat | Negatif benar (inferens yang betul) | Pengesanan yang terlepas (atau negatif palsu) |
    | Permintaan disekat | Positif palsu | Positif benar (inferens yang betul) |
    Jika anda menemui positif palsu, semak halaman kemas kini terlebih dahulu dan jika ada yang ditanda sebagai ketinggalan zaman, kemas kininya. Selepas ini, jika masalah masih berterusan, anda boleh melaporkan masalah tersebut di penjejak isu CIDRAM.

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2026.04.20).
+# This file: Portuguese language data for the front-end (last modified: 2026.05.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -237,7 +237,7 @@ config: !lazy
  general_default_algo: "Define qual algoritmo usar para todas as futuras senhas e sessões."
  general_default_dns:
   pt-BR: "Uma lista de servidores DNS a serem usados para pesquisas de nomes de host. ATENÇÃO: Não mude isso a menos que você saiba o que está fazendo!"
-  pt-PT: "Uma lista de servidores DNS a serem usados para pesquisas de nomes de host. ATENÇÃO: Não mude isso a menos que você saiba o que está a fazer!"
+  pt-PT: "Uma lista de servidores DNS a serem usados para pesquisas de nomes de host. ATENÇÃO: Não mude isso a menos que saiba o que está a fazer!"
  general_default_timeout:
   pt-BR: "Tempo limite padrão a ser usado para solicitações externas? Padrão = 12 segundos."
   pt-PT: "Tempo limite padrão a utilizar para solicitações externas? Padrão = 12 segundos."
@@ -252,11 +252,11 @@ config: !lazy
   pt-PT: "Se optou por receber notificações do CIDRAM por e-mail, por exemplo, quando são desencadeadas regras auxiliares específicas, pode especificar aqui o nome do destinatário dessas notificações."
  general_email_notification_when: "Quando enviar notificações após serem geradas."
  general_emailaddr:
-  pt-BR: "Se você desejar, você pode fornecer um endereço de e-mail aqui a ser dado para os usuários quando eles estão bloqueadas, para eles para usar como um ponto de contato para suporte e/ou assistência no caso de eles serem bloqueados por engano ou em erro. AVISO: Qualquer endereço de e-mail que você fornecer aqui certamente vai ser adquirido por robôs de spam e raspadores/scrapers durante o curso de seu ser usada aqui, e assim, é fortemente recomendado que, se você optar por fornecer um endereço de e-mail aqui, que você garantir que o endereço de e-mail você fornecer aqui é um endereço descartável e/ou um endereço que você não é importante (em outras palavras, você provavelmente não quer usar seu pessoal principal ou negócio principal endereço de e-mail)."
-  pt-PT: "Se desejar, pode fornecer um endereço de e-mail aqui a ser dado para os utilizadores quando eles estão bloqueadas, para eles para usar como um ponto de contacto para suporte e/ou assistência no caso de eles serem bloqueados por engano ou em erro. AVISO: Qualquer endereço de e-mail que você fornecer aqui certamente vai ser adquirido por robôs de spam e raspadores/scrapers durante o curso de seu ser usada aqui, e assim, é fortemente recomendado que, se optar por fornecer um endereço de e-mail aqui, que você garantir que o endereço de e-mail você fornecer aqui é um endereço descartável e/ou um endereço que você não é importante (em outras palavras, você provavelmente não quer usar seu pessoal principal ou negócio principal endereço de e-mail)."
+  pt-BR: "Se você desejar, você pode fornecer um endereço de e-mail aqui a ser dado para os usuários quando eles estão bloqueadas, para eles para usar como um ponto de contato para suporte e/ou assistência no caso de eles serem bloqueados por engano ou em erro. AVISO: Qualquer endereço de e-mail que você fornecer aqui certamente vai ser adquirido por robôs de spam e raspadores/scrapers durante o curso de seu ser usada aqui, e assim, é fortemente recomendado que, se você optar por fornecer um endereço de e-mail aqui, que você garantir que o endereço de e-mail você fornecer aqui é um endereço descartável e/ou um endereço que não é importante (em outras palavras, você provavelmente não quer usar seu pessoal principal ou negócio principal endereço de e-mail)."
+  pt-PT: "Se desejar, pode fornecer um endereço de e-mail aqui a ser dado para os utilizadores quando eles estão bloqueadas, para eles para usar como um ponto de contacto para suporte e/ou assistência no caso de eles serem bloqueados por engano ou em erro. AVISO: Qualquer endereço de e-mail que você fornecer aqui certamente vai ser adquirido por robôs de spam e raspadores/scrapers durante o curso de seu ser usada aqui, e assim, é fortemente recomendado que, se optar por fornecer um endereço de e-mail aqui, que você garantir que o endereço de e-mail você fornecer aqui é um endereço descartável e/ou um endereço que não é importante (em outras palavras, provavelmente não quer usar o seu pessoal principal ou negócio principal endereço de e-mail)."
  general_emailaddr_display_style:
   pt-BR: "Como você prefere que o endereço de e-mail seja apresentado aos usuários?"
-  pt-PT: "Como você prefere que o endereço de e-mail seja apresentado aos utilizadores?"
+  pt-PT: "Como prefere que o endereço de e-mail seja apresentado aos utilizadores?"
  general_fields: "Controles para os campos durante eventos de bloqueio (quando uma solicitação é bloqueada)."
  general_force_hostname_lookup:
   pt-BR: "Forçar pesquisas de nome de anfitrião? True = Sim; False = Não [Padrão]. As pesquisas de nome de anfitrião normalmente são realizadas com base na necessidade, mas pode ser forçado para todos os solicitações. Isso pode ser útil como forma de fornecer informações mais detalhadas nos arquivos de log, mas também pode ter um efeito ligeiramente negativo sobre o desempenho."
@@ -266,7 +266,7 @@ config: !lazy
   pt-PT: "Qual mensagem de estado HTTP deve enviar o CIDRAM ao bloquear solicitações?"
  general_ipaddr:
   pt-BR: "Onde encontrar o IP endereço das solicitações? (Útil por serviços como o Cloudflare). Padrão = REMOTE_ADDR. ATENÇÃO: Não mude isso a menos que você saiba o que está fazendo!"
-  pt-PT: "Onde encontrar o IP endereço das solicitações? (Útil por serviços como o Cloudflare). Padrão = REMOTE_ADDR. ATENÇÃO: Não mude isso a menos que você saiba o que está a fazer!"
+  pt-PT: "Onde encontrar o IP endereço das solicitações? (Útil por serviços como o Cloudflare). Padrão = REMOTE_ADDR. ATENÇÃO: Não mude isso a menos que saiba o que está a fazer!"
  general_lang: "Especificar o padrão da linguagem por CIDRAM."
  general_lang_override: "Localizar de acordo com HTTP_ACCEPT_LANGUAGE sempre que possível? True = Sim [Padrão]; False = Não."
  general_numbers: "Como você prefere que os números sejam exibidos? Selecione o exemplo que parece mais correto para você."
@@ -1073,7 +1073,7 @@ msg_template_2fa:
   <p>Este código expira em 10 minutos.</p></center>
 notice_new_major_version:
  pt-BR: "Aviso: %s está agora disponível (você está usando %s). Você atende aos requisitos mínimos de PHP desta versão. <em>Ver: <a href="{{Links.CIDRAM.Docs Base Path}}readme.pt.md\#10-atualizando-de-versões-principais-anteriores" hreflang="pt-BR"><span class="navicon link"></span>ATUALIZANDO DE VERSÕES PRINCIPAIS ANTERIORES</a>.</em>"
- pt-PT: "Aviso: %s está agora disponível (você usa %s). Você atende aos requisitos mínimos de PHP desta versão. <em>Ver: <a href="{{Links.CIDRAM.Docs Base Path}}readme.pt.md\#10-atualizando-de-versões-principais-anteriores" hreflang="pt-BR"><span class="navicon link"></span>ATUALIZANDO DE VERSÕES PRINCIPAIS ANTERIORES</a>.</em>"
+ pt-PT: "Aviso: %s está agora disponível (você usa %s). Cumpre os requisitos mínimos de PHP desta versão. <em>Ver: <a href="{{Links.CIDRAM.Docs Base Path}}readme.pt.md\#10-atualizando-de-versões-principais-anteriores" hreflang="pt-BR"><span class="navicon link"></span>ATUALIZANDO DE VERSÕES PRINCIPAIS ANTERIORES</a>.</em>"
 operator_<: "Deve ser menor que (comparação numérica)."
 operator_=: "Deve ser uma correspondência exata (comparação direta de string)."
 operator_>: "Deve ser maior que (comparação numérica)."
@@ -1208,7 +1208,7 @@ response:
  _Yes: "Sim"
  please_check_config:
   pt-BR: "Verifique sua configuração para garantir que o módulo recém-instalado se comporte como você deseja."
-  pt-PT: "Verifique a sua configuração para garantir que o módulo recém-instalado se comporte como você deseja."
+  pt-PT: "Verifique a sua configuração para garantir que o módulo recém-instalado se comporte como deseja."
  release_notes: "<a href="%s"><span class="navicon link"></span>Notas de lançamento para %s.</a>"
 stages: !lazy
  Deploy CAPTCHAs (blocked requests): "Implantar CAPTCHAs (solicitações bloqueadas)"
@@ -1294,7 +1294,7 @@ tip:
  2FA Sent: "Um e-mail contendo um código de autenticação de dois fatores foi enviado para o seu endereço de e-mail. Por favor, confirme este código abaixo para obter acesso ao front-end. Se você não recebeu este e-mail, tente fazer logout, aguarde 10 minutos, e faça login novamente para receber um novo e-mail contendo um novo código."
  Accounts:
   pt-BR: "A página de contas permite que você controle quem pode acessar o CIDRAM front-end."
-  pt-PT: "A página de contas permite que você controle quem pode aceder ao CIDRAM front-end."
+  pt-PT: "A página de contas permite que controle quem pode aceder ao CIDRAM front-end."
  Actions menu: "Bloquear adiciona 1 à contagem da assinaturas. Bypass/Contornar deduz 1 da contagem da assinaturas. Lista branca define a contagem da assinaturas como 0 e encerra o processamento, ignorando completamente quaisquer regras subsequentes. Lista cinza define a contagem da assinaturas como 0, mas não encerra o processamento. Perfil não afeta a contagem da assinaturas, mas é útil quando uma lógica mais complexa pode ser necessária para determinar se outros tipos de ações devem ser executados, pois os perfis gerados podem ser encadeados às condições de regras subsequentes. Após o processamento, se a contagem da assinaturas for 1 ou maior, a solicitação será bloqueada."
  Aggregator: "O agregador permite que você expresse IPs, CIDRs, e máscaras de rede da maneira mais pequena possível. Insira os dados a serem agregados e pressione "OK"."
  An accepted value is any CIDR with a range that covers the IP address of the request:
@@ -1390,7 +1390,7 @@ warning: !lazy
  JavaScript required: "Atenção: Algumas funcionalidades do front-end requerem JavaScript. Para garantir que todo o front-end se comporte conforme o esperado, é recomendável ativar o JavaScript."
  Likely to be overwritten:
   pt-BR: "Atenção: O arquivo que você está editando no momento pertence ao componente "%s". Quaisquer alterações feitas neste arquivo provavelmente serão sobrescritas na próxima vez que o componente for atualizado."
-  pt-PT: "Atenção: O arquivo que você está a editar no momento pertence ao componente "%s". Quaisquer alterações feitas neste arquivo provavelmente serão sobrescritas na próxima vez que o componente for atualizado."
+  pt-PT: "Atenção: O arquivo que está a editar no momento pertence ao componente "%s". Quaisquer alterações feitas neste arquivo provavelmente serão sobrescritas na próxima vez que o componente for atualizado."
  Likely to become corrupted:
   pt-BR: "Atenção: Bytes não UTF8 foram detectados no arquivo que está sendo editado. O arquivo será provavelmente corrompido se editado usando esta funcionalidade específica."
   pt-PT: "Atenção: Bytes não UTF8 foram detectados no arquivo que está a ser editado. O arquivo será provavelmente corrompido se editado utilizando esta funcionalidade específica."

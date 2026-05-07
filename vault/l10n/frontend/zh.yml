@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese language data for the front-end (last modified: 2026.04.20).
+# This file: Chinese language data for the front-end (last modified: 2026.05.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -151,7 +151,7 @@ config: !lazy
  bgpview_blocked_ccs: &ConfigBlockedCCs {"zh-Hans": "由模块匹配时要阻止的国家列表（由其{{Links.ISO.3166}}两个字母的国家代码标识）。", "zh-Hant": "由模組匹配時要阻止的國家列表（由其{{Links.ISO.3166}}兩個字母的國家代碼標識）。"}
  bgpview_whitelisted_asns: &ConfigWhitelistedASNs {"zh-Hans": "由模块匹配时要列入白名单的ASN列表。", "zh-Hant": "由模組匹配時要列入白名單的ASN列表。"}
  bgpview_whitelisted_ccs: &ConfigWhitelistedCCs {"zh-Hans": "由模块匹配时要列入白名单的国家列表（由其{{Links.ISO.3166}}两个字母的国家代码标识）。", "zh-Hant": "由模組匹配時要列入白名單的國家列表（由其{{Links.ISO.3166}}兩個字母的國家代碼標識）。"}
- bobuam: {"zh-Hans": "“机器人或浏览器用户代理模块”的配置。​该模块检测不需要的机器人、旧浏览器，并执行一些健全性检查。", "zh-Hant": "『機器人或瀏覽器用戶代理模組』的配置。​該模組檢測不需要的機器人、舊瀏覽器，並執行一些健全性檢查。"}
+ bobuam: {"zh-Hans": "“机器人或浏览器用户代理模块”的配置。 该模块检测不需要的机器人、旧浏览器，并执行一些健全性检查。", "zh-Hant": "『機器人或瀏覽器用戶代理模組』的配置。 該模組檢測不需要的機器人、舊瀏覽器，並執行一些健全性檢查。"}
  bobuam_chrome: {"zh-Hans": "“Chrome/Chromium”令牌的最低允许版本。 推荐的：“{{BOBUAM Token.Chrome}}”。", "zh-Hant": "『Chrome/Chromium』令牌的最低允許版本。 推薦的：『{{BOBUAM Token.Chrome}}』。"}
  bobuam_edge: {"zh-Hans": "“Edg/Edge”令牌的最低允许版本。 推荐的：“{{BOBUAM Token.Edge}}”。", "zh-Hant": "『Edg/Edge』令牌的最低允許版本。 推薦的：『{{BOBUAM Token.Edge}}』。"}
  bobuam_firefox: {"zh-Hans": "“Firefox”令牌的最低允许版本。 推荐的：“{{BOBUAM Token.Firefox}}”。", "zh-Hant": "『Firefox』令牌的最低允許版本。 推薦的：『{{BOBUAM Token.Firefox}}』。"}
@@ -168,9 +168,9 @@ config: !lazy
  bunnycdn_positive_action: {"zh-Hans": "CIDRAM遇到BunnyCDN的请求时应该执行什么动作？ 标准操作 = 绕过。", "zh-Hant": "CIDRAM遇到BunnyCDN的請求時應該執行什麼動作？ 標準操作 = 繞過。"}
  bypasses: {"zh-Hans": "默认签名绕过配置。", "zh-Hant": "默認簽名繞過配置。"}
  bypasses_used: {"zh-Hans": "应该使用哪些绕过？", "zh-Hant": "應該使用哪些繞過？"}
- components: {"zh-Hans": "CIDRAM使用的组件的启用和停用的配置。​通常由更新页面填充，但也可以从此处进行管理，以实现更好的控制以及更新页面无法识别的自定义组件。", "zh-Hant": "CIDRAM使用的組件的啟用和停用的配置。​通常由更新頁面填充，但也可以從此處進行管理，以實現更好的控制以及更新頁面無法識別的自定義組件。"}
- components_events: {"zh-Hans": "事件处理程序。​通常用于修改CIDRAM在内部的行为方式或提供附加功能。", "zh-Hant": "事件處理程序。​通常用於修改CIDRAM在內部的行為方式或提供附加功能。"}
- components_imports: {"zh-Hans": "进口。​通常用于向CIDRAM提供组件的配置信息。", "zh-Hant": "進口。​通常用於向CIDRAM提供組件的配置信息。"}
+ components: {"zh-Hans": "CIDRAM使用的组件的启用和停用的配置。 通常由更新页面填充，但也可以从此处进行管理，以实现更好的控制以及更新页面无法识别的自定义组件。", "zh-Hant": "CIDRAM使用的組件的啟用和停用的配置。 通常由更新頁面填充，但也可以從此處進行管理，以實現更好的控制以及更新頁面無法識別的自定義組件。"}
+ components_events: {"zh-Hans": "事件处理程序。 通常用于修改CIDRAM在内部的行为方式或提供附加功能。", "zh-Hant": "事件處理程序。 通常用於修改CIDRAM在內部的行為方式或提供附加功能。"}
+ components_imports: {"zh-Hans": "进口。 通常用于向CIDRAM提供组件的配置信息。", "zh-Hant": "進口。 通常用於向CIDRAM提供組件的配置信息。"}
  components_ipv4: {"zh-Hans": "IPv4签名文件。", "zh-Hant": "IPv4簽名檔案。"}
  components_ipv6: {"zh-Hans": "IPv6签名文件。", "zh-Hant": "IPv6簽名檔案。"}
  components_modules: {"zh-Hans": "模块。", "zh-Hant": "模組。"}
@@ -183,69 +183,69 @@ config: !lazy
  extras_signatures_raw: {"zh-Hans": "基于原始请求输入的签名。", "zh-Hant": "基於原始請求輸入的簽名。"}
  extras_signatures_ruri: {"zh-Hans": "基于重构URI的签名。", "zh-Hant": "基於重構URI的簽名。"}
  frontend: "前端的配置。"
- frontend_custom_footer: {"zh-Hans": "在所有前端页面的末尾作为HTML插入。​如果您想在所有此类页面中包含法律声明、联系链接、业务信息、或类似，这可能会很有用。", "zh-Hant": "在所有前端頁面的末尾作為HTML插入。​如果您想在所有此類頁面中包含法律聲明、聯繫鏈接、業務信息、或類似，這可能會很有用。"}
- frontend_custom_header: {"zh-Hans": "在所有前端页面的开头作为HTML插入。​如果您想在所有此类页面中包含网站徽标、个性化标题、脚本、或类似，这可能会很有用。", "zh-Hant": "在所有前端頁面的開頭作為HTML插入。​如果您想在所有此類頁面中包含網站徽標、個性化標題、腳本、或類似，這可能會很有用。"}
+ frontend_custom_footer: {"zh-Hans": "在所有前端页面的末尾作为HTML插入。 如果您想在所有此类页面中包含法律声明、联系链接、业务信息、或类似，这可能会很有用。", "zh-Hant": "在所有前端頁面的末尾作為HTML插入。 如果您想在所有此類頁面中包含法律聲明、聯繫鏈接、業務信息、或類似，這可能會很有用。"}
+ frontend_custom_header: {"zh-Hans": "在所有前端页面的开头作为HTML插入。 如果您想在所有此类页面中包含网站徽标、个性化标题、脚本、或类似，这可能会很有用。", "zh-Hant": "在所有前端頁面的開頭作為HTML插入。 如果您想在所有此類頁面中包含網站徽標、個性化標題、腳本、或類似，這可能會很有用。"}
  frontend_enable_two_factor: {"zh-Hans": "该指令确定是否将2FA用于前端帐户。", "zh-Hant": "該指令確定是否將2FA用於前端帳戶。"}
- frontend_frontend_log: {"zh-Hans": "前端登录尝试的录音文件。​指定一个文件名，​或留空以禁用。", "zh-Hant": "前端登錄嘗試的錄音檔案。​指定一個檔案名稱，​或留空以禁用。"}
+ frontend_frontend_log: {"zh-Hans": "前端登录尝试的录音文件。 指定一个文件名，或留空以禁用。", "zh-Hant": "前端登錄嘗試的錄音檔案。 指定一個檔案名稱，或留空以禁用。"}
  frontend_magnification: &MagnifDesc {"zh-Hans": "字型放大。 标准 = 1。", "zh-Hant": "字型放大。 標準 = 1。"}
  frontend_max_login_attempts: {"zh-Hans": "最大前端登录尝试次数。 标准 = 5。", "zh-Hant": "最大前端登錄嘗試次數。 標準 = 5。"}
- frontend_remotes: {"zh-Hans": "更新系统用于获取组件元数据的地址列表。​这可能需要在升级到新的主要版本时进行调整，或者在获取新的更新源时进行调整，但在正常情况下应该不理会。", "zh-Hant": "更新系統用於獲取組件元數據的地址列表。​這可能需要在升級到新的主要版本時進行調整，或者在獲取新的更新源時進行調整，但在正常情況下應該不理會。"}
- frontend_signatures_update_event_log: {"zh-Hans": "通过前端更新签名时用于记录的文件。​指定一个文件名，​或留空以禁用。", "zh-Hant": "通過前端更新簽名時用於記錄的檔案。​指定一個檔案名稱，​或留空以禁用。"}
+ frontend_remotes: {"zh-Hans": "更新系统用于获取组件元数据的地址列表。 这可能需要在升级到新的主要版本时进行调整，或者在获取新的更新源时进行调整，但在正常情况下应该不理会。", "zh-Hant": "更新系統用於獲取組件元數據的地址列表。 這可能需要在升級到新的主要版本時進行調整，或者在獲取新的更新源時進行調整，但在正常情況下應該不理會。"}
+ frontend_signatures_update_event_log: {"zh-Hans": "通过前端更新签名时用于记录的文件。 指定一个文件名，或留空以禁用。", "zh-Hant": "通過前端更新簽名時用於記錄的檔案。 指定一個檔案名稱，或留空以禁用。"}
  frontend_theme: {"zh-Hans": "用于前端的主题。", "zh-Hant": "用於前端的主題。"}
  frontend_theme_mode: {"zh-Hans": "用于前端的主题模式。", "zh-Hant": "用於前端的主題模式。"}
  general: {"zh-Hans": "基本配置（任何不属于其他类别的核心配置）。", "zh-Hant": "基本配置（任何不屬於其他類別的核心配置）。"}
- general_allow_gethostbyaddr_lookup: {"zh-Hans": "当UDP不可用时允许gethostbyaddr查找？​True（真）=允许【标准】；False（假）=不允许。", "zh-Hant": "當UDP不可用時允許gethostbyaddr查找？​True（真）=允許【標準】；False（假）=不允許。"}
+ general_allow_gethostbyaddr_lookup: {"zh-Hans": "当UDP不可用时允许gethostbyaddr查找？ True（真）=允许【标准】；False（假）=不允许。", "zh-Hant": "當UDP不可用時允許gethostbyaddr查找？ True（真）=允許【標準】；False（假）=不允許。"}
  general_ban_override:
-  zh-Hans: "覆盖“http_response_header_code”当“infraction_limit”已被超过？ 200 = 不要覆盖【标准】。​其他值与“http_response_header_code”的可用值相同。"
-  zh-Hant: "覆蓋『http_response_header_code』當『infraction_limit』已被超過？ 200 = 不要覆蓋【標準】。​其他值與『http_response_header_code』的可用值相同。"
+  zh-Hans: "覆盖“http_response_header_code”当“infraction_limit”已被超过？ 200 = 不要覆盖【标准】。 其他值与“http_response_header_code”的可用值相同。"
+  zh-Hant: "覆蓋『http_response_header_code』當『infraction_limit』已被超過？ 200 = 不要覆蓋【標準】。 其他值與『http_response_header_code』的可用值相同。"
  general_default_algo: {"zh-Hans": "定义要用于所有未来密码和会话的算法。", "zh-Hant": "定義要用於所有未來密碼和會話的算法。"}
- general_default_dns: {"zh-Hans": "DNS服务器列表，​用于主机名查找。​警告：不要修改此除非您知道什么您做着！", "zh-Hant": "DNS服務器列表，​用於主機名查找。​警告：不要修改此除非您知道什麼您做著！"}
+ general_default_dns: {"zh-Hans": "DNS服务器列表，用于主机名查找。 警告：不要修改此除非您知道什么您做着！", "zh-Hant": "DNS服務器列表，用於主機名查找。 警告：不要修改此除非您知道什麼您做著！"}
  general_default_timeout: {"zh-Hans": "用于外部请求的默认超时？ 标准 = 12秒。", "zh-Hant": "用於外部請求的默認超時？ 標準 = 12秒。"}
  general_disabled_channels: {"zh-Hans": "这可用于防止CIDRAM在发送请求时使用特定通道（例如，在更新时、在获取组件元数据时、等等）。", "zh-Hant": "這可用於防止CIDRAM在發送請求時使用特定通道（例如，在更新時、在獲取組件元數據時、等等）。"}
  general_email_notification_address: {"zh-Hans": "如果您选择通过电子邮件接收CIDRAM的通知，例如，当特定的辅助规则被触发时，您可以在此处指定这些通知的收件人地址。", "zh-Hant": "如果您選擇透過電子郵件接收CIDRAM的通知，例如，當特定的輔助規則被觸發時，您可以在此指定這些通知的收件者位址。"}
  general_email_notification_name: {"zh-Hans": "如果您选择通过电子邮件接收CIDRAM的通知，例如，当特定的辅助规则被触发时，您可以在此处指定这些通知的收件人姓名。", "zh-Hant": "如果您選擇透過電子郵件接收CIDRAM的通知，例如，當特定的輔助規則被觸發時，您可以在此指定這些通知的收件者姓名。"}
  general_email_notification_when: {"zh-Hans": "生成后何时发送通知。", "zh-Hant": "產生後何時發送通知。"}
  general_emailaddr:
-  zh-Hans: "如果您希望，​您可以提供电子邮件地址这里要给予用户当他们被阻止，​他们使用作为接触点为支持和/或帮助在的情况下他们错误地阻止。​警告:您提供的任何电子邮件地址，​它肯定会被获得通过垃圾邮件机器人和铲运机，​所以，​它强烈推荐如果选择提供一个电子邮件地址这里，​您保证它是一次性的和/或不是很重要（换一种说法，​您可能不希望使用您的主电子邮件地址或您的企业电子邮件地址）。"
-  zh-Hant: "如果您希望，​您可以提供電子郵件地址這裡要給予用戶當他們被阻止，​他們使用作為接觸點為支持和/或幫助在的情況下他們錯誤地阻止。​警告:您提供的任何電子郵件地址，​它肯定會被獲得通過垃圾郵件機器人和鏟運機，​所以，​它強烈推薦如果選擇提供一個電子郵件地址這裡，​您保證它是一次性的和/或不是很重要（換一種說法，​您可能不希望使用您的主電子郵件地址或您的企業電子郵件地址）。"
+  zh-Hans: "如果您希望，您可以提供电子邮件地址这里要给予用户当他们被阻止，他们使用作为接触点为支持和/或帮助在的情况下他们错误地阻止。 警告:您提供的任何电子邮件地址，它肯定会被获得通过垃圾邮件机器人和铲运机，所以，它强烈推荐如果选择提供一个电子邮件地址这里，您保证它是一次性的和/或不是很重要（换一种说法，您可能不希望使用您的主电子邮件地址或您的企业电子邮件地址）。"
+  zh-Hant: "如果您希望，您可以提供電子郵件地址這裡要給予用戶當他們被阻止，他們使用作為接觸點為支持和/或幫助在的情況下他們錯誤地阻止。 警告:您提供的任何電子郵件地址，它肯定會被獲得通過垃圾郵件機器人和鏟運機，所以，它強烈推薦如果選擇提供一個電子郵件地址這裡，您保證它是一次性的和/或不是很重要（換一種說法，您可能不希望使用您的主電子郵件地址或您的企業電子郵件地址）。"
  general_emailaddr_display_style: {"zh-Hans": "您希望如何将电子邮件地址呈现给用户？", "zh-Hant": "您希望如何將電子郵件地址呈現給用戶？"}
  general_fields: {"zh-Hans": "用于阻止事件的字段控件（当请求被阻止时）。", "zh-Hant": "用於阻止事件的字段控件（當請求被阻止時）。"}
  general_force_hostname_lookup:
-  zh-Hans: "强制主机名查找？​True（真）=跟踪；False（假）=不跟踪【标准】。​主机名查询通常在“根据需要”的基础上执行，但可以在所有请求上强制。​这可能会有助于提供日志文件中更详细的信息，但也可能会对性能产生轻微的负面影响。"
-  zh-Hant: "強制主機名查找？​True（真）=跟踪；False（假）=不跟踪【標準】。​主機名查詢通常在『根據需要』的基礎上執行，但可以在所有請求上強制。​這可能會有助於提供日誌檔案中更詳細的信息，但也可能會對性能產生輕微的負面影響。"
+  zh-Hans: "强制主机名查找？ True（真）=跟踪；False（假）=不跟踪【标准】。 主机名查询通常在“根据需要”的基础上执行，但可以在所有请求上强制。 这可能会有助于提供日志文件中更详细的信息，但也可能会对性能产生轻微的负面影响。"
+  zh-Hant: "強制主機名查找？ True（真）=跟踪；False（假）=不跟踪【標準】。 主機名查詢通常在『根據需要』的基礎上執行，但可以在所有請求上強制。 這可能會有助於提供日誌檔案中更詳細的信息，但也可能會對性能產生輕微的負面影響。"
  general_http_response_header_code: {"zh-Hans": "阻止请求时，CIDRAM应发送哪个HTTP状态消息？", "zh-Hant": "阻止請求時，CIDRAM應發送哪個HTTP狀態消息？"}
  general_ipaddr:
   zh-Hans: "在哪里可以找到连接请求IP地址？ （对于Cloudflare等服务有用）。 标准 = REMOTE_ADDR。 警告：不要修改此除非您知道什么您做着！"
   zh-Hant: "在哪裡可以找到連接請求IP位址？ （對於Cloudflare等服務有用）。 標準 = REMOTE_ADDR。 警告：不要修改此除非您知道什麼您做著！"
  general_lang: {"zh-Hans": "指定标准CIDRAM语言。", "zh-Hant": "指定標準CIDRAM語言。"}
  general_lang_override: {"zh-Hans": "尽可能根据HTTP_ACCEPT_LANGUAGE进行本地化？True（真）=进行本地化【标准】；False（假）=不要本地化。", "zh-Hant": "盡可能根據HTTP_ACCEPT_LANGUAGE進行本地化？True（真）=進行本地化【標準】；False（假）=不要本地化。"}
- general_numbers: {"zh-Hans": "您如何喜欢显示数字？​选择最适合示例。", "zh-Hant": "您如何喜歡顯示數字？​選擇最適合示例。"}
- general_request_proxy: {"zh-Hans": "如果您希望通过代理发送出站请求，请在此处指定该代理。​如果您不想这，请将此处留空。", "zh-Hant": "如果您希望透過代理發送出站請求，請在此處指定該代理。​如果您不想這，請將此處留空。"}
+ general_numbers: {"zh-Hans": "您如何喜欢显示数字？ 选择最适合示例。", "zh-Hant": "您如何喜歡顯示數字？ 選擇最適合示例。"}
+ general_request_proxy: {"zh-Hans": "如果您希望通过代理发送出站请求，请在此处指定该代理。 如果您不想这，请将此处留空。", "zh-Hant": "如果您希望透過代理發送出站請求，請在此處指定該代理。 如果您不想這，請將此處留空。"}
  general_request_proxyauth:
-  zh-Hans: "如果通过代理发送出站请求并且该代理需要用户名和密码，请在此处指定该用户名和密码（例如，<code>user:pass</code>）。​如果您不想这，请将此处留空。"
-  zh-Hant: "如果透過代理發送出站請求且該代理需要使用者名稱和密碼，請在此處指定該使用者名稱和密碼（例如，<code>user:pass</code>）。​如果您不想這，請將此處留空。"
+  zh-Hans: "如果通过代理发送出站请求并且该代理需要用户名和密码，请在此处指定该用户名和密码（例如，<code>user:pass</code>）。 如果您不想这，请将此处留空。"
+  zh-Hant: "如果透過代理發送出站請求且該代理需要使用者名稱和密碼，請在此處指定該使用者名稱和密碼（例如，<code>user:pass</code>）。 如果您不想這，請將此處留空。"
  general_sensitive:
-  zh-Hans: "视为敏感页面的路径列表。​需要时，将根据重建的URI检查列出的每个路径。​以正斜杠开头的路径将被视为文字，并从请求的路径部分开始匹配。​否则，以非字母数字字符开头并以相同字符（或相同字符加上可选的“i”标志）结束的路径将被视为正则表达式。​任何其他类型的路径都将被视为文字，并且可以匹配URI的任何部分。​被视为敏感页面的路径可能会影响某些模块的行为方式，但不会产生任何其他影响。"
-  zh-Hant: "視為敏感頁面的路徑列表。​需要時，將根據重建的URI檢查列出的每個路徑。​以正斜杠開頭的路徑將被視為文字，並從請求的路徑部分開始匹配。​否則，以非字母數字字符開頭並以相同字符（或相同字符加上可選的『i』標誌）結束的路徑將被視為正則表達式。​任何其他類型的路徑都將被視為文字，並且可以匹配URI的任何部分。​被視為敏感頁面的路徑可能會影響某些模組的行為方式，但不會產生任何其他影響。"
- general_silent_mode: {"zh-Hans": "CIDRAM应该默默重定向被拦截的访问而不是显示该“拒绝访问”页吗？​指定位置至重定向被拦截的访问，​或让它空将其禁用。", "zh-Hant": "CIDRAM應該默默重定向被攔截的訪問而不是顯示該『拒絕訪問』頁嗎？​指定位置至重定向被攔截的訪問，​或讓它空將其禁用。"}
+  zh-Hans: "视为敏感页面的路径列表。 需要时，将根据重建的URI检查列出的每个路径。 以正斜杠开头的路径将被视为文字，并从请求的路径部分开始匹配。 否则，以非字母数字字符开头并以相同字符（或相同字符加上可选的“i”标志）结束的路径将被视为正则表达式。 任何其他类型的路径都将被视为文字，并且可以匹配URI的任何部分。 被视为敏感页面的路径可能会影响某些模块的行为方式，但不会产生任何其他影响。"
+  zh-Hant: "視為敏感頁面的路徑列表。 需要時，將根據重建的URI檢查列出的每個路徑。 以正斜杠開頭的路徑將被視為文字，並從請求的路徑部分開始匹配。 否則，以非字母數字字符開頭並以相同字符（或相同字符加上可選的『i』標誌）結束的路徑將被視為正則表達式。 任何其他類型的路徑都將被視為文字，並且可以匹配URI的任何部分。 被視為敏感頁面的路徑可能會影響某些模組的行為方式，但不會產生任何其他影響。"
+ general_silent_mode: {"zh-Hans": "CIDRAM应该默默重定向被拦截的访问而不是显示该“拒绝访问”页吗？ 指定位置至重定向被拦截的访问，或让它空将其禁用。", "zh-Hant": "CIDRAM應該默默重定向被攔截的訪問而不是顯示該『拒絕訪問』頁嗎？ 指定位置至重定向被攔截的訪問，或讓它空將其禁用。"}
  general_silent_mode_response_header_code: {"zh-Hans": "当静默重定向被阻止的访问尝试时，CIDRAM应发送哪个HTTP状态消息？", "zh-Hant": "當靜默重定向被阻止的訪問嘗試時，CIDRAM應發送哪個HTTP狀態消息？"}
  general_stages: {"zh-Hans": "用于执行链的各个阶段的控件（是否启用、是否记录错误、等等）。", "zh-Hant": "用於執行鏈的各個階段的控件（是否啟用、是否記錄錯誤、等等）。"}
  general_statistics: {"zh-Hans": "控制要跟踪的统计信息。", "zh-Hant": "控制要跟踪的統計信息。"}
- general_time_format: {"zh-Hans": "CIDRAM使用的日期符号格式。​可根据要求增加附加选项。", "zh-Hant": "CIDRAM使用的日期符號格式。​可根據要求增加附加選項。"}
+ general_time_format: {"zh-Hans": "CIDRAM使用的日期符号格式。 可根据要求增加附加选项。", "zh-Hant": "CIDRAM使用的日期符號格式。 可根據要求增加附加選項。"}
  general_time_offset: {"zh-Hans": "时区偏移量（分钟）。", "zh-Hant": "時區偏移量（分鐘）。"}
  general_timezone:
-  zh-Hans: "这用于指定要使用的时区​（例如，Africa/Cairo、America/New_York、Asia/Tokyo、Australia/Perth、Europe/Berlin、Pacific/Guam、等等）。​指定“SYSTEM”使PHP自动为您处理。"
-  zh-Hant: "這用於指定要使用的時區​（例如，Africa/Cairo、America/New_York、Asia/Tokyo、Australia/Perth、Europe/Berlin、Pacific/Guam、等等）。​指定『SYSTEM』使PHP自動為您處理。"
+  zh-Hans: "这用于指定要使用的时区（例如，Africa/Cairo、America/New_York、Asia/Tokyo、Australia/Perth、Europe/Berlin、Pacific/Guam、等等）。 指定“SYSTEM”使PHP自动为您处理。"
+  zh-Hant: "這用於指定要使用的時區（例如，Africa/Cairo、America/New_York、Asia/Tokyo、Australia/Perth、Europe/Berlin、Pacific/Guam、等等）。 指定『SYSTEM』使PHP自動為您處理。"
  hcaptcha: {"zh-Hans": "HCaptcha的配置（为人们提供了一种在受阻时重新获得访问权限的方法）。", "zh-Hant": "HCaptcha的配置（為人們提供了一種在受阻時重新獲得訪問權限的方法）。"}
  hcaptcha_api: &CaptchaAPI {"zh-Hans": "使用哪个API？", "zh-Hant": "使用哪個API？"}
  hcaptcha_expiry: &CaptchaExpiry {"zh-Hans": "记得验证码多少小时？ 标准 = 720 （1个月）。", "zh-Hant": "記得驗證碼多少小時？ 標準 = 720 （1個月）。"}
- hcaptcha_hcaptcha_log: &CaptchaLogFile {"zh-Hans": "记录所有的验证码的尝试？​要做到这一点，​指定一个文件名到使用。​如果不，​离开这个变量为空白。", "zh-Hant": "記錄所有的驗證碼的嘗試？​要做到這一點，​指定一個檔案名稱到使用。​如果不，​離開這個變量為空白。"}
+ hcaptcha_hcaptcha_log: &CaptchaLogFile {"zh-Hans": "记录所有的验证码的尝试？ 要做到这一点，指定一个文件名到使用。 如果不，离开这个变量为空白。", "zh-Hant": "記錄所有的驗證碼的嘗試？ 要做到這一點，指定一個檔案名稱到使用。 如果不，離開這個變量為空白。"}
  hcaptcha_lockip: &CaptchaLockIP {"zh-Hans": "应该验证码锁定到IP？", "zh-Hant": "應該驗證碼鎖定到IP？"}
  hcaptcha_lockuser: &CaptchaLockUser {"zh-Hans": "应该验证码锁定到用户？", "zh-Hant": "應該驗證碼鎖定到用戶？"}
  hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode {"zh-Hans": "向未阻止的请求显示验证码时应使用哪个状态码？", "zh-Hant": "向未阻止的請求顯示驗證碼時應使用哪個狀態碼？"}
  hcaptcha_secret: &CaptchaDashboard {"zh-Hans": "可以在您的验证码服务的仪表板中找到该值。", "zh-Hant": "可以在您的驗證碼服務的儀表板中找到該值。"}
- hcaptcha_show_api_message: &ShowAPIMessage {"zh-Hans": "显示API讯息吗？​True（真）=显示【标准】；False（假）=不显示。", "zh-Hant": "顯示API訊息嗎？​True（真）=顯示【標準】；False（假）=不顯示。"}
- hcaptcha_show_cookie_warning: &ShowCookieWarning {"zh-Hans": "显示cookie警告吗？​True（真）=显示【标准】；False（假）=不显示。", "zh-Hant": "顯示cookie警告嗎？​True（真）=顯示【標準】；False（假）=不顯示。"}
+ hcaptcha_show_api_message: &ShowAPIMessage {"zh-Hans": "显示API讯息吗？ True（真）=显示【标准】；False（假）=不显示。", "zh-Hant": "顯示API訊息嗎？ True（真）=顯示【標準】；False（假）=不顯示。"}
+ hcaptcha_show_cookie_warning: &ShowCookieWarning {"zh-Hans": "显示cookie警告吗？ True（真）=显示【标准】；False（假）=不显示。", "zh-Hant": "顯示cookie警告嗎？ True（真）=顯示【標準】；False（假）=不顯示。"}
  hcaptcha_signature_limit: &CaptchaSignatureLimit {"zh-Hans": "撤销验证码之前允许的最大签名数。 标准 = 1。", "zh-Hant": "撤銷驗證碼之前允許的最大簽名數。 標準 = 1。"}
  hcaptcha_sitekey: *CaptchaDashboard
  hcaptcha_usemode: &CaptchaUseMode {"zh-Hans": "何时应提供验证码？", "zh-Hant": "何時應提供驗證碼？"}
@@ -255,40 +255,40 @@ config: !lazy
  ipapi_whitelisted_asns: *ConfigWhitelistedASNs
  ipapi_whitelisted_ccs: *ConfigWhitelistedCCs
  legal: "法律要求的配置。"
- legal_privacy_policy: {"zh-Hans": "要显示在任何生成的页面的页脚中的相关隐私政策的地址。​指定一个URL，或留空以禁用。", "zh-Hant": "要顯示在任何生成的頁面的頁腳中的相關隱私政策的地址。​指定一個URL，或留空以禁用。"}
- legal_pseudonymise_ip_addresses: {"zh-Hans": "编写日志文件时使用假名的IP地址吗？​True（真）=使用假名【标准】；False（假）=不使用假名。", "zh-Hant": "編寫日誌檔案時使用假名的IP位址嗎？​True（真）=使用假名【標準】；False（假）=不使用假名。"}
+ legal_privacy_policy: {"zh-Hans": "要显示在任何生成的页面的页脚中的相关隐私政策的地址。 指定一个URL，或留空以禁用。", "zh-Hant": "要顯示在任何生成的頁面的頁腳中的相關隱私政策的地址。 指定一個URL，或留空以禁用。"}
+ legal_pseudonymise_ip_addresses: {"zh-Hans": "编写日志文件时使用假名的IP地址吗？ True（真）=使用假名【标准】；False（假）=不使用假名。", "zh-Hant": "編寫日誌檔案時使用假名的IP位址嗎？ True（真）=使用假名【標準】；False（假）=不使用假名。"}
  logging: {"zh-Hans": "与日志相关的配置（与其他類別相關的被排除）。", "zh-Hant": "與日誌相關的配置（與其他類別相關的被排除）。"}
- logging_apache_style_log: {"zh-Hans": "Apache风格文件用于记录所有被拦截的访问。​指定一个文件名，​或留空以禁用。", "zh-Hant": "Apache風格檔案用於記錄所有被攔截的訪問。​指定一個檔案名稱，​或留空以禁用。"}
- logging_error_log: {"zh-Hans": "用于记录检测到的任何非致命错误的文件。​指定一个文件名，​或留空以禁用。", "zh-Hant": "用於記錄檢測到的任何非致命錯誤的檔案。​指定一個檔案名稱，​或留空以禁用。"}
- logging_log_banned_ips: {"zh-Hans": "包括IP禁止从阻止请求在日志文件吗？​True（真）=是【标准】；False（假）=不是。", "zh-Hant": "包括IP禁止從阻止請求在日誌檔案嗎？​True（真）=是【標準】；False（假）=不是。"}
+ logging_apache_style_log: {"zh-Hans": "Apache风格文件用于记录所有被拦截的访问。 指定一个文件名，或留空以禁用。", "zh-Hant": "Apache風格檔案用於記錄所有被攔截的訪問。 指定一個檔案名稱，或留空以禁用。"}
+ logging_error_log: {"zh-Hans": "用于记录检测到的任何非致命错误的文件。 指定一个文件名，或留空以禁用。", "zh-Hant": "用於記錄檢測到的任何非致命錯誤的檔案。 指定一個檔案名稱，或留空以禁用。"}
+ logging_log_banned_ips: {"zh-Hans": "包括IP禁止从阻止请求在日志文件吗？ True（真）=是【标准】；False（假）=不是。", "zh-Hant": "包括IP禁止從阻止請求在日誌檔案嗎？ True（真）=是【標準】；False（假）=不是。"}
  logging_log_rotation_action:
-  zh-Hans: "日志轮转限制了任何时候应该存在的日志文件的数量。​当新的日志文件被创建时，如果日志文件的指定的最大数量已经超过，将执行指定的操作。​您可以在此处指定所需的操作。"
-  zh-Hant: "日誌輪轉限制了任何時候應該存在的日誌檔案的數量。​當新的日誌檔案被創建時，如果日誌檔案的指定的最大數量已經超過，將執行指定的操作。​您可以在此處指定所需的操作。"
+  zh-Hans: "日志轮转限制了任何时候应该存在的日志文件的数量。 当新的日志文件被创建时，如果日志文件的指定的最大数量已经超过，将执行指定的操作。 您可以在此处指定所需的操作。"
+  zh-Hant: "日誌輪轉限制了任何時候應該存在的日誌檔案的數量。 當新的日誌檔案被創建時，如果日誌檔案的指定的最大數量已經超過，將執行指定的操作。 您可以在此處指定所需的操作。"
  logging_log_rotation_limit:
-  zh-Hans: "日志轮转限制了任何时候应该存在的日志文件的数量。​当新的日志文件被创建时，如果日志文件的指定的最大数量已经超过，将执行指定的操作。​您可以在此指定所需的限制。​值为“0”将禁用日志轮转。"
-  zh-Hant: "日誌輪轉限制了任何時候應該存在的日誌檔案的數量。​當新的日誌檔案被創建時，如果日誌檔案的指定的最大數量已經超過，將執行指定的操作。​您可以在此指定所需的限制。​值為『0』將禁用日誌輪轉。"
+  zh-Hans: "日志轮转限制了任何时候应该存在的日志文件的数量。 当新的日志文件被创建时，如果日志文件的指定的最大数量已经超过，将执行指定的操作。 您可以在此指定所需的限制。 值为“0”将禁用日志轮转。"
+  zh-Hant: "日誌輪轉限制了任何時候應該存在的日誌檔案的數量。 當新的日誌檔案被創建時，如果日誌檔案的指定的最大數量已經超過，將執行指定的操作。 您可以在此指定所需的限制。 值為『0』將禁用日誌輪轉。"
  logging_log_sanitisation:
-  zh-Hans: "当使用前端日志页面查看日志数据时，CIDRAM在显示之前清理日志数据。​这可以保护用户免受XSS攻击和其他潜在威胁。​但是，默认情况下，在记录期间不会清理数据。​这是为了确保准确地保留日志数据（可以帮助任何未来的启发式或法医分析）。​但是，如果用户尝试使用外部工具读取日志数据，如果这些外部工具不执行自己的清理过程，用户可能会受到XSS攻击。​如有必要，可以使用此配置指令更改默认行为。 True = 记录数据时清理数据（数据保存不太准确，但XSS风险较低）。 False = 记录数据时不要清理数据（数据保存得更准确，但XSS风险更高）【标准】。"
-  zh-Hant: "當使用前端日誌頁面查看日誌數據時，CIDRAM在顯示之前清理日誌數據。​這可以保護用戶免受XSS攻擊和其他潛在威脅。​但是，默認情況下，在記錄期間不會清理數據。​這是為了確保准確地保留日誌數據（可以幫助任何未來的啟發式或法醫分析）。​但是，如果用戶嘗試使用外部工具讀取日誌數據，如果這些外部工具不執行自己的清理過程，用戶可能會受到XSS攻擊。​如有必要，可以使用此配置指令更改默認行為。 True = 記錄數據時清理數據（數據保存不太準確，但XSS風險較低）。 False = 記錄數據時不要清理數據（數據保存得更準確，但XSS風險更高）【標準】。"
- logging_outbound_request_log: {"zh-Hans": "用于记录任何出站请求结果的文件。​指定一个文件名，​或留空以禁用。", "zh-Hant": "用於記錄任何出站請求結果的檔案。​指定一個檔案名稱，​或留空以禁用。"}
- logging_report_log: {"zh-Hans": "用于记录发送到外部API的任何报告的文件。​指定一个文件名，​或留空以禁用。", "zh-Hant": "用於記錄發送到外部API的任何報告的檔案。​指定一個檔案名稱，​或留空以禁用。"}
- logging_serialised_log: {"zh-Hans": "连载的文件用于记录所有被拦截的访问。​指定一个文件名，​或留空以禁用。", "zh-Hant": "連載的檔案用於記錄所有被攔截的訪問。​指定一個檔案名稱，​或留空以禁用。"}
- logging_standard_log: {"zh-Hans": "人类可读文件用于记录所有被拦截的访问。​指定一个文件名，​或留空以禁用。", "zh-Hant": "人類可讀檔案用於記錄所有被攔截的訪問。​指定一個檔案名稱，​或留空以禁用。"}
+  zh-Hans: "当使用前端日志页面查看日志数据时，CIDRAM在显示之前清理日志数据。 这可以保护用户免受XSS攻击和其他潜在威胁。 但是，默认情况下，在记录期间不会清理数据。 这是为了确保准确地保留日志数据（可以帮助任何未来的启发式或法医分析）。 但是，如果用户尝试使用外部工具读取日志数据，如果这些外部工具不执行自己的清理过程，用户可能会受到XSS攻击。 如有必要，可以使用此配置指令更改默认行为。 True = 记录数据时清理数据（数据保存不太准确，但XSS风险较低）。 False = 记录数据时不要清理数据（数据保存得更准确，但XSS风险更高）【标准】。"
+  zh-Hant: "當使用前端日誌頁面查看日誌數據時，CIDRAM在顯示之前清理日誌數據。 這可以保護用戶免受XSS攻擊和其他潛在威脅。 但是，默認情況下，在記錄期間不會清理數據。 這是為了確保准確地保留日誌數據（可以幫助任何未來的啟發式或法醫分析）。 但是，如果用戶嘗試使用外部工具讀取日誌數據，如果這些外部工具不執行自己的清理過程，用戶可能會受到XSS攻擊。 如有必要，可以使用此配置指令更改默認行為。 True = 記錄數據時清理數據（數據保存不太準確，但XSS風險較低）。 False = 記錄數據時不要清理數據（數據保存得更準確，但XSS風險更高）【標準】。"
+ logging_outbound_request_log: {"zh-Hans": "用于记录任何出站请求结果的文件。 指定一个文件名，或留空以禁用。", "zh-Hant": "用於記錄任何出站請求結果的檔案。 指定一個檔案名稱，或留空以禁用。"}
+ logging_report_log: {"zh-Hans": "用于记录发送到外部API的任何报告的文件。 指定一个文件名，或留空以禁用。", "zh-Hant": "用於記錄發送到外部API的任何報告的檔案。 指定一個檔案名稱，或留空以禁用。"}
+ logging_serialised_log: {"zh-Hans": "连载的文件用于记录所有被拦截的访问。 指定一个文件名，或留空以禁用。", "zh-Hant": "連載的檔案用於記錄所有被攔截的訪問。 指定一個檔案名稱，或留空以禁用。"}
+ logging_standard_log: {"zh-Hans": "人类可读文件用于记录所有被拦截的访问。 指定一个文件名，或留空以禁用。", "zh-Hant": "人類可讀檔案用於記錄所有被攔截的訪問。 指定一個檔案名稱，或留空以禁用。"}
  logging_truncate:
-  zh-Hans: "截断日志文件当他们达到一定的大小吗？​值是在B/KB/MB/GB/TB，​是日志文件允许的最大大小直到它被截断。​默认值为“0KB”将禁用截断（日志文件可以无限成长）。​注意：适用于单个日志文件！​日志文件大小不被算集体的。"
-  zh-Hant: "截斷日誌文件當他們達到一定的大小嗎？​值是在B/KB/MB/GB/TB，​是日誌文件允許的最大大小直到它被截斷。​默認值為『0KB』將禁用截斷（日誌檔案可以無限成長）。​注意：適用於單個日誌檔案！​日誌檔案大小不被算集體的。"
+  zh-Hans: "截断日志文件当他们达到一定的大小吗？ 值是在B/KB/MB/GB/TB，是日志文件允许的最大大小直到它被截断。 默认值为“0KB”将禁用截断（日志文件可以无限成长）。 注意：适用于单个日志文件！ 日志文件大小不被算集体的。"
+  zh-Hant: "截斷日誌文件當他們達到一定的大小嗎？ 值是在B/KB/MB/GB/TB，是日誌文件允許的最大大小直到它被截斷。 默認值為『0KB』將禁用截斷（日誌檔案可以無限成長）。 注意：適用於單個日誌檔案！ 日誌檔案大小不被算集體的。"
  phpmailer: {"zh-Hans": "PHPMailer的配置（用于双因素身份验证和电子邮件通知）。", "zh-Hant": "PHPMailer的配置（用於雙重認證和電子郵件通知）。"}
  phpmailer_add_reply_to_address: {"zh-Hans": "通过SMTP发送电子邮件时引用的回复地址。", "zh-Hant": "通過SMTP發送電子郵件時引用的回复地址。"}
  phpmailer_add_reply_to_name: {"zh-Hans": "通过SMTP发送电子邮件时引用的回复姓名。", "zh-Hant": "通過SMTP發送電子郵件時引用的回複姓名。"}
- phpmailer_event_log: {"zh-Hans": "用于记录与PHPMailer相关的所有事件的文件。​指定一个文件名，​或留空以禁用。", "zh-Hant": "用於記錄與PHPMailer相關的所有事件的檔案。​指定一個檔案名稱，​或留空以禁用。"}
+ phpmailer_event_log: {"zh-Hans": "用于记录与PHPMailer相关的所有事件的文件。 指定一个文件名，或留空以禁用。", "zh-Hant": "用於記錄與PHPMailer相關的所有事件的檔案。 指定一個檔案名稱，或留空以禁用。"}
  phpmailer_host: {"zh-Hans": "用于出站电子邮件的SMTP主机。", "zh-Hant": "用於出站電子郵件的SMTP主機。"}
  phpmailer_password: {"zh-Hans": "通过SMTP发送电子邮件时使用的密码。", "zh-Hant": "通過SMTP發送電子郵件時使用的密碼。"}
- phpmailer_port: {"zh-Hans": "用于出站电子邮件的端口号。​标准=587。", "zh-Hant": "用於出站電子郵件的端口號。​標準=587。"}
+ phpmailer_port: {"zh-Hans": "用于出站电子邮件的端口号。 标准=587。", "zh-Hant": "用於出站電子郵件的端口號。 標準=587。"}
  phpmailer_set_from_address: {"zh-Hans": "通过SMTP发送电子邮件时引用的发件人地址。", "zh-Hant": "通過SMTP發送電子郵件時引用的發件人地址。"}
  phpmailer_set_from_name: {"zh-Hans": "通过SMTP发送电子邮件时引用的发件人姓名。", "zh-Hant": "通過SMTP發送電子郵件時引用的發件人姓名。"}
  phpmailer_skip_auth_process:
-  zh-Hans: "将此指令设置为<code>true</code>会指示PHPMailer跳过通过SMTP发送电子邮件时通常会发生的正常身份验证过程。​应该避免这种情况，因为跳过此过程可能会将出站电子邮件暴露给MITM攻击，但在此过程阻止PHPMailer连接到SMTP服务器的情况下可能是必要的。"
-  zh-Hant: "將此指令設置為<code>true</code>會指示PHPMailer跳過通過SMTP發送電子郵件時通常會發生的正常身份驗證過程。​應該避免這種情況，因為跳過此過程可能會將出站電子郵件暴露給MITM攻擊，但在此過程阻止PHPMailer連接到SMTP服務器的情況下可能是必要的。"
+  zh-Hans: "将此指令设置为<code>true</code>会指示PHPMailer跳过通过SMTP发送电子邮件时通常会发生的正常身份验证过程。 应该避免这种情况，因为跳过此过程可能会将出站电子邮件暴露给MITM攻击，但在此过程阻止PHPMailer连接到SMTP服务器的情况下可能是必要的。"
+  zh-Hant: "將此指令設置為<code>true</code>會指示PHPMailer跳過通過SMTP發送電子郵件時通常會發生的正常身份驗證過程。 應該避免這種情況，因為跳過此過程可能會將出站電子郵件暴露給MITM攻擊，但在此過程阻止PHPMailer連接到SMTP服務器的情況下可能是必要的。"
  phpmailer_smtp_auth: {"zh-Hans": "此指令确定是否对SMTP会话进行身份验证（通常应该保持不变）。", "zh-Hant": "此指令確定是否對SMTP會話進行身份驗證（通常應該保持不變）。"}
  phpmailer_smtp_secure: {"zh-Hans": "通过SMTP发送电子邮件时使用的协议（TLS或SSL）。", "zh-Hant": "通過SMTP發送電子郵件時使用的協定（TLS或SSL）。"}
  phpmailer_username: {"zh-Hans": "通过SMTP发送电子邮件时使用的用户名。", "zh-Hant": "通過SMTP發送電子郵件時使用的使用者名稱。"}
@@ -304,15 +304,15 @@ config: !lazy
  quic: {"zh-Hans": "Quic cloud兼容性模块配置。", "zh-Hant": "Quic cloud兼容性模組配置。"}
  quic_positive_action: {"zh-Hans": "CIDRAM遇到Quic cloud的请求时应该执行什么动作？ 标准操作 = 绕过。", "zh-Hant": "CIDRAM遇到Quic cloud的請求時應該執行什麼動作？ 標準操作 = 繞過。"}
  rate_limiting: {"zh-Hans": "速率限制的配置（不建议一般使用）。", "zh-Hant": "速率限制的配置（不建議一般使用）。"}
- rate_limiting_allowance_period: {"zh-Hans": "监视使用情况的持续时间。​标准=0°0′0″。", "zh-Hant": "監視使用情況的持續時間。​標準=0°0′0″。"}
- rate_limiting_exceptions: {"zh-Hans": "例外（即，不应限制速率的请求）。​仅在启用速率限制时有效。", "zh-Hant": "例外（即，不應限制速率的請求）。​僅在啟用速率限制時有效。"}
+ rate_limiting_allowance_period: {"zh-Hans": "监视使用情况的持续时间。 标准=0°0′0″。", "zh-Hant": "監視使用情況的持續時間。 標準=0°0′0″。"}
+ rate_limiting_exceptions: {"zh-Hans": "例外（即，不应限制速率的请求）。 仅在启用速率限制时有效。", "zh-Hant": "例外（即，不應限制速率的請求）。 僅在啟用速率限制時有效。"}
  rate_limiting_hint:
-  zh-Hans: "请记住，与所有其他CIDRAM功能一样，CIDRAM的速率限制功能只能应用于CIDRAM所连接的页面和资源。​这通常意味着非PHP资源不会在范围内，除非明确由连接的PHP资源提供。​如果您能够使用服务器模块、cPanel、或其他网络工具来强制执行速率限制，那么最好使用它而不是CIDRAM的速率限制功能。​还请记住，敏锐而坚定的用户可以通过轮换IP地址或切换到CIDRAM尚未意识到的代理或VPN提供轻松规避速率限制，还要记住，速率限制对于真正的最终用户来说可能会非常烦人。​有时这可能是必要的，但很少是可取的。"
-  zh-Hant: "請記住，與所有其他CIDRAM功能一樣，CIDRAM的速率限制功能只能套用於CIDRAM所連接的頁面和資源。​這通常意味著非PHP資源不會在範圍內，除非明確地由連接的PHP資源提供。​如果您能夠使用伺服器模組、cPanel、或其他網路工具來強制執行速率限制，那麼最好使用它而不是CIDRAM的速率限制功能。​還要記住，敏銳而堅定的用戶可以透過輪換IP位址或切換到CIDRAM尚未意識到的代理或VPN提供輕鬆規避速率限制，還要記住，速率限制對於真正的最終用戶來說可能會非常煩人。​有時這可能是必要的，但很少是可取的。"
- rate_limiting_max_bandwidth: {"zh-Hans": "在为将来的请求启用速率限制之前的最大允许带宽量。​值为0将禁用此类速率限制。​标准=0KB。", "zh-Hant": "在為將來的請求啟用速率限制之前的最大允許帶寬量。​值為0將禁用此類速率限制。​標準=0KB。"}
- rate_limiting_max_requests: {"zh-Hans": "在为将来的请求启用速率限制之前允许的最大请求数。​值为0将禁用此类速率限制。​标准=0。", "zh-Hant": "在為將來的請求啟用速率限制之前允許的最大請求數。​值為0將禁用此類速率限制。​標準=0。"}
- rate_limiting_precision_ipv4: {"zh-Hans": "监视IPv4使用时的精度。​值镜像CIDR块大小。​设置为32以获得最佳精度。​标准=32。", "zh-Hant": "監視IPv4使用時的精度。​值鏡像CIDR塊大小。​設置為32以獲得最佳精度。​標準=32。"}
- rate_limiting_precision_ipv6: {"zh-Hans": "监视IPv6使用时的精度。​值镜像CIDR块大小。​设置为128以获得最佳精度。​标准=128。", "zh-Hant": "監視IPv6使用時的精度。​值鏡像CIDR塊大小。​設置為128以獲得最佳精度。​標準=128。"}
+  zh-Hans: "请记住，与所有其他CIDRAM功能一样，CIDRAM的速率限制功能只能应用于CIDRAM所连接的页面和资源。 这通常意味着非PHP资源不会在范围内，除非明确由连接的PHP资源提供。 如果您能够使用服务器模块、cPanel、或其他网络工具来强制执行速率限制，那么最好使用它而不是CIDRAM的速率限制功能。 还请记住，敏锐而坚定的用户可以通过轮换IP地址或切换到CIDRAM尚未意识到的代理或VPN提供轻松规避速率限制，还要记住，速率限制对于真正的最终用户来说可能会非常烦人。 有时这可能是必要的，但很少是可取的。"
+  zh-Hant: "請記住，與所有其他CIDRAM功能一樣，CIDRAM的速率限制功能只能套用於CIDRAM所連接的頁面和資源。 這通常意味著非PHP資源不會在範圍內，除非明確地由連接的PHP資源提供。 如果您能夠使用伺服器模組、cPanel、或其他網路工具來強制執行速率限制，那麼最好使用它而不是CIDRAM的速率限制功能。 還要記住，敏銳而堅定的用戶可以透過輪換IP位址或切換到CIDRAM尚未意識到的代理或VPN提供輕鬆規避速率限制，還要記住，速率限制對於真正的最終用戶來說可能會非常煩人。 有時這可能是必要的，但很少是可取的。"
+ rate_limiting_max_bandwidth: {"zh-Hans": "在为将来的请求启用速率限制之前的最大允许带宽量。 值为0将禁用此类速率限制。 标准=0KB。", "zh-Hant": "在為將來的請求啟用速率限制之前的最大允許帶寬量。 值為0將禁用此類速率限制。 標準=0KB。"}
+ rate_limiting_max_requests: {"zh-Hans": "在为将来的请求启用速率限制之前允许的最大请求数。 值为0将禁用此类速率限制。 标准=0。", "zh-Hant": "在為將來的請求啟用速率限制之前允許的最大請求數。 值為0將禁用此類速率限制。 標準=0。"}
+ rate_limiting_precision_ipv4: {"zh-Hans": "监视IPv4使用时的精度。 值镜像CIDR块大小。 设置为32以获得最佳精度。 标准=32。", "zh-Hant": "監視IPv4使用時的精度。 值鏡像CIDR塊大小。 設置為32以獲得最佳精度。 標準=32。"}
+ rate_limiting_precision_ipv6: {"zh-Hans": "监视IPv6使用时的精度。 值镜像CIDR块大小。 设置为128以获得最佳精度。 标准=128。", "zh-Hant": "監視IPv6使用時的精度。 值鏡像CIDR塊大小。 設置為128以獲得最佳精度。 標準=128。"}
  rate_limiting_segregate: {"zh-Hans": "域名和主机的配额应该分开还是共享？ True = 配额将被分开。 False = 配额将被共享【标准】。", "zh-Hant": "域名和主機的配額應該分開還是共享？ True = 配額將被分開。 False = 配額將被共享【標準】。"}
  recaptcha: {"zh-Hans": "ReCAPTCHA的配置（为人们提供了一种在受阻时重新获得访问权限的方法）。", "zh-Hant": "ReCAPTCHA的配置（為人們提供了一種在受阻時重新獲得訪問權限的方法）。"}
  recaptcha_api: *CaptchaAPI
@@ -330,13 +330,13 @@ config: !lazy
  sfs: {"zh-Hans": "Stop Forum Spam模块的配置。", "zh-Hant": "Stop Forum Spam模組的配置。"}
  signatures: {"zh-Hans": "签名，签名文件，模块，等的配置。", "zh-Hant": "簽名，簽名檔案，模組，等的配置。"}
  signatures_conflict_response:
-  zh-Hans: "当同时尝试访问相同资源的次数过多时（例如，同时向同一台机器上的多个PHP进程发出对相同资源的请求），其中一些尝试可能会失败。​万一发生这种情况，并且影响到签名文件或模块，CIDRAM可能无法对该请求做出有效的决定。​如果发生这种情况，应该阻止该请求吗？​并且，CIDRAM应该发送哪条HTTP状态消息？"
-  zh-Hant: "當有太多同時嘗試存取相同資源時（例如，同時向同一台電腦上的多個PHP進程請求相同資源），其中一些嘗試可能會失敗。​萬一這會影響簽署檔案或模組，CIDRAM可能無法對請求做出有效的決定。​如果發生這種情況，應該阻止該請求嗎？​並且，CIDRAM應該發送哪種HTTP狀態訊息？"
+  zh-Hans: "当同时尝试访问相同资源的次数过多时（例如，同时向同一台机器上的多个PHP进程发出对相同资源的请求），其中一些尝试可能会失败。 万一发生这种情况，并且影响到签名文件或模块，CIDRAM可能无法对该请求做出有效的决定。 如果发生这种情况，应该阻止该请求吗？ 并且，CIDRAM应该发送哪条HTTP状态消息？"
+  zh-Hant: "當有太多同時嘗試存取相同資源時（例如，同時向同一台電腦上的多個PHP進程請求相同資源），其中一些嘗試可能會失敗。 萬一這會影響簽署檔案或模組，CIDRAM可能無法對請求做出有效的決定。 如果發生這種情況，應該阻止該請求嗎？ 並且，CIDRAM應該發送哪種HTTP狀態訊息？"
  signatures_default_tracktime: {"zh-Hans": "应跟踪IP地址的持续时间。 标准 = 7d0°0′0″ （1周）。", "zh-Hant": "應跟踪IP位址的持續時間。 標準 = 7d0°0′0″ （1週）。"}
- signatures_infraction_limit: {"zh-Hans": "从IP最大允许违规数量之前它被禁止。​标准=10。", "zh-Hant": "從IP最大允許違規數量之前它被禁止。​標準=10。"}
+ signatures_infraction_limit: {"zh-Hans": "从IP最大允许违规数量之前它被禁止。 标准=10。", "zh-Hant": "從IP最大允許違規數量之前它被禁止。 標準=10。"}
  signatures_shorthand: {"zh-Hans": "当与使用给定速记词的签名匹配时，控制如何处理请求。", "zh-Hant": "當與使用給定速記詞的簽名匹配時，控制如何處理請求。"}
- signatures_tracking_override: {"zh-Hans": "允许模块覆盖跟踪选项吗？​True（真）=允许【标准】；False（假）=不允许。", "zh-Hant": "允許模組覆蓋跟踪選項嗎？​True（真）=允許【標準】；False（假）=不允許。"}
- supplementary_cache_options: {"zh-Hans": "补充缓存选项。​注意：更改这些值可能会使您注销。", "zh-Hant": "補充緩存選項。​注意：更改這些值可能會使您註銷。"}
+ signatures_tracking_override: {"zh-Hans": "允许模块覆盖跟踪选项吗？ True（真）=允许【标准】；False（假）=不允许。", "zh-Hant": "允許模組覆蓋跟踪選項嗎？ True（真）=允許【標準】；False（假）=不允許。"}
+ supplementary_cache_options: {"zh-Hans": "补充缓存选项。 注意：更改这些值可能会使您注销。", "zh-Hant": "補充緩存選項。 注意：更改這些值可能會使您註銷。"}
  supplementary_cache_options_enable_apcu: {"zh-Hans": "指定是否尝试使用APCu进行缓存。 标准 = True。", "zh-Hant": "指定是否嘗試使用APCu進行緩存。 標準 = True。"}
  supplementary_cache_options_enable_memcached: {"zh-Hans": "指定是否尝试使用Memcached进行缓存。 标准 = False。", "zh-Hant": "指定是否嘗試使用Memcached進行緩存。 標準 = False。"}
  supplementary_cache_options_enable_pdo: {"zh-Hans": "指定是否尝试使用PDO进行缓存。 标准 = False。", "zh-Hant": "指定是否嘗試使用PDO進行緩存。 標準 = False。"}
@@ -357,8 +357,8 @@ config: !lazy
  template_data_block_event_title: {"zh-Hans": "为阻止事件显示的页面标题。", "zh-Hant": "為阻止事件顯示的頁面標題。"}
  template_data_captcha_title: {"zh-Hans": "为验证码请求显示的页面标题。", "zh-Hant": "為驗證碼請求顯示的頁面標題。"}
  template_data_css_url: {"zh-Hans": "自定义主题的CSS文件URL。", "zh-Hant": "自定義主題的CSS檔案URL。"}
- template_data_custom_footer: {"zh-Hans": "在所有“拒绝访问”页面的末尾作为HTML插入。​如果您想在所有此类页面中包含法律声明、联系链接、业务信息、或类似，这可能会很有用。", "zh-Hant": "在所有『拒絕訪問』頁面的末尾作為HTML插入。​如果您想在所有此類頁面中包含法律聲明、聯繫鏈接、業務信息、或類似，這可能會很有用。"}
- template_data_custom_header: {"zh-Hans": "在所有“拒绝访问”页面的开头作为HTML插入。​如果您想在所有此类页面中包含网站徽标、个性化标题、脚本、或类似，这可能会很有用。", "zh-Hant": "在所有『拒絕訪問』頁面的開頭作為HTML插入。​如果您想在所有此類頁面中包含網站徽標、個性化標題、腳本、或類似，這可能會很有用。"}
+ template_data_custom_footer: {"zh-Hans": "在所有“拒绝访问”页面的末尾作为HTML插入。 如果您想在所有此类页面中包含法律声明、联系链接、业务信息、或类似，这可能会很有用。", "zh-Hant": "在所有『拒絕訪問』頁面的末尾作為HTML插入。 如果您想在所有此類頁面中包含法律聲明、聯繫鏈接、業務信息、或類似，這可能會很有用。"}
+ template_data_custom_header: {"zh-Hans": "在所有“拒绝访问”页面的开头作为HTML插入。 如果您想在所有此类页面中包含网站徽标、个性化标题、脚本、或类似，这可能会很有用。", "zh-Hant": "在所有『拒絕訪問』頁面的開頭作為HTML插入。 如果您想在所有此類頁面中包含網站徽標、個性化標題、腳本、或類似，這可能會很有用。"}
  template_data_magnification: *MagnifDesc
  template_data_theme: {"zh-Hans": "用于阻止事件和验证码请求的主题。", "zh-Hant": "用於阻止事件和驗證碼請求的主題。"}
  template_data_theme_mode: {"zh-Hans": "用于阻止事件和验证码请求的主题模式。", "zh-Hant": "用於阻止事件和驗證碼請求的主題模式。"}
@@ -469,28 +469,28 @@ hints_duration:
   <strong>簡單的英語。</strong> 持續時間可以通過用簡單的英語書寫單位來描述。 例如， <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> 表示一周、兩天、三小時、四分鐘、五秒。<br /><br />
   <strong>約束。</strong> 表示法可以混合使用，但單位必須始終從大到小描述，並且不能重複。 例如， <strong>1 week 2 days 3′4″</strong> 是<span class="txtGn">有效的</span>並且會被正確理解，但 <strong>3′4″ 1 week 2 days</strong> 和 <strong>3 hours 3h 3°</strong> 是<span class="txtRd">無效的</span>。 CIDRAM不關心是否使用間距。 數字必須是普通的和無格式的。 為實用起見，支持的最大單位是一周。 當配置更新時，CIDRAM 將持續時間標準化為弧時。<br /><br />
 hints_has_bypass:
- zh-Hans: "* 这个选项在<code class="s">bypasses➡used</code>下有相应的绕过。​建议确保相应旁路的复选框标记方式与尝试验证此选项的复选框相同。"
- zh-Hant: "* 這個選項在<code class="s">bypasses➡used</code>下有相應的繞過。​建議確保相應旁路的複選框標記方式與嘗試驗證此選項的複選框相同。"
-hints_inspection: {"zh-Hans": "* 仅用于调试辅助规则。​不向被阻止的用户显示。", "zh-Hant": "* 僅用於調試輔助規則。​不向被阻止的用戶顯示。"}
+ zh-Hans: "* 这个选项在<code class="s">bypasses➡used</code>下有相应的绕过。 建议确保相应旁路的复选框标记方式与尝试验证此选项的复选框相同。"
+ zh-Hant: "* 這個選項在<code class="s">bypasses➡used</code>下有相應的繞過。 建議確保相應旁路的複選框標記方式與嘗試驗證此選項的複選框相同。"
+hints_inspection: {"zh-Hans": "* 仅用于调试辅助规则。 不向被阻止的用户显示。", "zh-Hant": "* 僅用於調試輔助規則。 不向被阻止的用戶顯示。"}
 hints_ipv6_on_32bit: {"zh-Hans": "注意：IPv6查找在某些32位系统上可能无法正常工作。", "zh-Hant": "注意：IPv6查找在某些32位系統上可能無法正常工作。"}
 hints_logging_datetime:
- zh-Hans: "有用提示：您可以使用时间格式占位符将日期/时间信息附加到日志文件的名称。​可用的时间格式占位符显示在{{Links.ConfigRef.time_format}}处。"
- zh-Hant: "有用的提示：您可以使用時間格式佔位符將日期/時間資訊附加到日誌檔案的名稱。​可用的時間格式佔位符顯示在{{Links.ConfigRef.time_format}}處。"
+ zh-Hans: "有用提示：您可以使用时间格式占位符将日期/时间信息附加到日志文件的名称。 可用的时间格式占位符显示在{{Links.ConfigRef.time_format}}处。"
+ zh-Hant: "有用的提示：您可以使用時間格式佔位符將日期/時間資訊附加到日誌檔案的名稱。 可用的時間格式佔位符顯示在{{Links.ConfigRef.time_format}}處。"
 hints_pdo_dsn:
  zh-Hans: "<strong>常问问题。</strong> <em><a href="{{Links.CIDRAM.Docs Base Path}}readme.zh-Hans.md\#user-content-HOW_TO_USE_PDO" hreflang="zh-Hans">“PDO DSN”是什么？如何能PDO与CIDRAM一起使用？</a></em>"
  zh-Hant: "<strong>常問問題。</strong> <em><a href="{{Links.CIDRAM.Docs Base Path}}readme.zh-Hant.md\#user-content-HOW_TO_USE_PDO" hreflang="zh-Hant">『PDO DSN』是什麼？如何能PDO與CIDRAM一起使用？</a></em>"
 hints_sensitive_pages: {"zh-Hans": "注意：“敏感页面”的构成由{{Links.ConfigRef.sensitive}}决定。", "zh-Hant": "注意：『敏感頁面』的構成由{{Links.ConfigRef.sensitive}}決定。"}
 hints_shorthand:
- 0.: {"zh-Hans": "如果您的网站需要通过LAN或localhost访问，不要阻止它。​否则，您可以阻止它。", "zh-Hant": "如果您的網站需要通過LAN或localhost訪問，不要阻止它。​否則，您可以阻止它。"}
+ 0.: {"zh-Hans": "如果您的网站需要通过LAN或localhost访问，不要阻止它。 否则，您可以阻止它。", "zh-Hant": "如果您的網站需要通過LAN或localhost訪問，不要阻止它。 否則，您可以阻止它。"}
  1.: {"zh-Hans": "标准签名文件不使用它，但它仍然受支持，因为它可能对某些用户有用。", "zh-Hant": "標準簽名檔案不使用它，但它仍然受支持，因為它可能對某些用戶有用。"}
- 2.: {"zh-Hans": "如果您需要用户能够通过代理访问您的网站，不要阻止它。​否则，您可以阻止它。", "zh-Hant": "如果您需要用戶能夠通過代理訪問您的網站，不要阻止它。​否則，您可以阻止它。"}
+ 2.: {"zh-Hans": "如果您需要用户能够通过代理访问您的网站，不要阻止它。 否则，您可以阻止它。", "zh-Hant": "如果您需要用戶能夠通過代理訪問您的網站，不要阻止它。 否則，您可以阻止它。"}
  3.: {"zh-Hans": "不支持直接在签名中使用，但在特定情况下可以通过其他方式调用。", "zh-Hant": "不支持直接在簽名中使用，但在特定情況下可以通過其他方式調用。"}
  4.: {"zh-Hans": "当速记词不使用或CIDRAM不识别时。", "zh-Hant": "當速記詞不使用或CIDRAM不識別時。"}
- 5.: {"zh-Hans": "<strong>对于每个签名只有一个。</strong> 签名可以调用多个分类，但只能使用一个速记词。​多个速记词可能是合适的，但由于只能使用一个，我们试图始终只使用最合适的。", "zh-Hant": "<strong>對於每個簽名只有一個。</strong> 簽名可以調用多個分類，但只能使用一個速記詞。​多個速記詞可能是合適的，但由於只能使用一個，我們試圖始終只使用最合適的。"}
- 6.: {"zh-Hans": "<strong>优先。</strong> 选定的选项始终优先于未选定的选项。​例如，如果多个速记词是生效的，但只有一个被设置为被阻止，则请求仍将被阻止。", "zh-Hant": "<strong>優先。</strong> 選定的選項始終優先於未選定的選項。​例如，如果多個速記詞是生效的，但只有一個被設置為被阻止，則請求仍將被阻止。"}
+ 5.: {"zh-Hans": "<strong>对于每个签名只有一个。</strong> 签名可以调用多个分类，但只能使用一个速记词。 多个速记词可能是合适的，但由于只能使用一个，我们试图始终只使用最合适的。", "zh-Hant": "<strong>對於每個簽名只有一個。</strong> 簽名可以調用多個分類，但只能使用一個速記詞。 多個速記詞可能是合適的，但由於只能使用一個，我們試圖始終只使用最合適的。"}
+ 6.: {"zh-Hans": "<strong>优先。</strong> 选定的选项始终优先于未选定的选项。 例如，如果多个速记词是生效的，但只有一个被设置为被阻止，则请求仍将被阻止。", "zh-Hant": "<strong>優先。</strong> 選定的選項始終優先於未選定的選項。 例如，如果多個速記詞是生效的，但只有一個被設置為被阻止，則請求仍將被阻止。"}
  7.:
-  zh-Hans: "<strong>人类端点和云服务。</strong> 云服务可能是指虚拟主机提供商、服务器场、数据中心、或许多其他事物。​人类端点是指人类访问互联网的方式，例如，通过互联网服务提供商。​网络通常只提供一个或另一个，但有时可能同时提供两者。​我们试图不将潜在的人类端点识别为云服务。​因此，如果云服务的范围由已知的人类端点共享，则可以将其识别为其他东西。​同样，如果范围不被任何已知的人类端点共享，我们会试图始终将云服务识别为云服务。​因此，明确标识为云服务的请求很可能不会与任何已知的人类端点共享其范围。​同样，由攻击或垃圾邮件的风险明确识别的请求很可能共享范围。​然而，互联网总是在不断变化，网络的目的可以改变，范围总是被买卖，所以关于假阳性的保持有意识和警惕。"
-  zh-Hant: "<strong>人類端點和雲服務。</strong> 雲服務可能是指虛擬主機提供商、服務器場、數據中心、或許多其他事物。​人類端點是指人類訪問互聯網的方式，例如，通過互聯網服務提供商。​網絡通常只提供一個或另一個，但有時可能同時提供兩者。​我們試圖不將潛在的人類端點識別為雲服務。​因此，如果雲服務的範圍由已知的人類端點共享，則可以將其識別為其他東西。​同樣，如果範圍不被任何已知的人類端點共享，我們會試圖始終將雲服務識別為雲服務。​因此，明確標識為雲服務的請求很可能不會與任何已知的人類端點共享其範圍。​同樣，由攻擊或垃圾郵件的風險明確識別的請求很可能共享範圍。​然而，互聯網總是在不斷變化，網絡的目的可以改變，範圍總是被買賣，所以關於假陽性的保持有意識和警惕。"
+  zh-Hans: "<strong>人类端点和云服务。</strong> 云服务可能是指虚拟主机提供商、服务器场、数据中心、或许多其他事物。 人类端点是指人类访问互联网的方式，例如，通过互联网服务提供商。 网络通常只提供一个或另一个，但有时可能同时提供两者。 我们试图不将潜在的人类端点识别为云服务。 因此，如果云服务的范围由已知的人类端点共享，则可以将其识别为其他东西。 同样，如果范围不被任何已知的人类端点共享，我们会试图始终将云服务识别为云服务。 因此，明确标识为云服务的请求很可能不会与任何已知的人类端点共享其范围。 同样，由攻击或垃圾邮件的风险明确识别的请求很可能共享范围。 然而，互联网总是在不断变化，网络的目的可以改变，范围总是被买卖，所以关于假阳性的保持有意识和警惕。"
+  zh-Hant: "<strong>人類端點和雲服務。</strong> 雲服務可能是指虛擬主機提供商、服務器場、數據中心、或許多其他事物。 人類端點是指人類訪問互聯網的方式，例如，通過互聯網服務提供商。 網絡通常只提供一個或另一個，但有時可能同時提供兩者。 我們試圖不將潛在的人類端點識別為雲服務。 因此，如果雲服務的範圍由已知的人類端點共享，則可以將其識別為其他東西。 同樣，如果範圍不被任何已知的人類端點共享，我們會試圖始終將雲服務識別為雲服務。 因此，明確標識為雲服務的請求很可能不會與任何已知的人類端點共享其範圍。 同樣，由攻擊或垃圾郵件的風險明確識別的請求很可能共享範圍。 然而，互聯網總是在不斷變化，網絡的目的可以改變，範圍總是被買賣，所以關於假陽性的保持有意識和警惕。"
 hints_time_format:
  zh-Hans: |
   <strong><em>占位符 – 解释 – 基于2024-04-30T18:27:49+08:00的示例。</em></strong><br />
@@ -534,11 +534,11 @@ hints_usemode:
  2: {"zh-Hans": "可以通过辅助规则将请求“标记为使用”。", "zh-Hant": "可以透過輔助規則將請求「標記為使用』。"}
  3: {"zh-Hans": "请求是否被视为“敏感”取决于{{Links.ConfigRef.sensitive}}。", "zh-Hant": "請求是否被視為『敏感』取決於{{Links.ConfigRef.sensitive}}。"}
 hints_verification:
- zh-Hans: "<strong>什么是“阳性”和“阴性”？</strong> 在验证请求提供的身份时，成功的结果可以描述为“阳性”或“阴性”。​当所呈现的身份被确认为真实身份时，将被描述为“阳性”。​当所提供的身份被证实为伪造时，将被描述为“阴性”。​但是，不成功的结果（例如，验证失败，或无法确定所提供身份的真实性）不会被描述为“阳性”或“阴性”。​相反，不成功的结果将被简单地描述为未验证。​当没有尝试验证请求提供的身份时，该请求同样会被描述为未验证。​这些术语仅在请求提供的身份被识别的情况下才有意义，因此，在可以进行验证的情况下。​如果提供的身份与上面提供的选项不匹配，或者没有提供身份，则上面提供的选项变得无关。<br /><br /><strong>什么是“一击绕过”？</strong> 在某些情况下，由于签名文件、模块、或请求的其他条件，可能仍会阻止经过肯定验证的请求，为了避免假阳性，可能需要绕过。​在绕过旨在处理仅一项违规行为的情况下，这样的绕过可以被描述为“一击绕过”。"
- zh-Hant: "<strong>什麼是『陽性』和『陰性』？</strong> 在驗證請求提供的身份時，成功的結果可以描述為『陽性』或『陰性』。​當所呈現的身份被確認為真實身份時，將被描述為『陽性』。​當所提供的身份被證實為偽造時，將被描述為『陰性』。​但是，不成功的結果（例如，驗證失敗，或無法確定所提供身份的真實性）不會被描述為『陽性』或『陰性』。​相反，不成功的結果將被簡單地描述為未驗證。​當沒有嘗試驗證請求提供的身份時，該請求同樣會被描述為未驗證。​這些術語僅在請求提供的身份被識別的情況下才有意義，因此，在可以進行驗證的情況下。​如果提供的身份與上面提供的選項不匹配，或者沒有提供身份，則上面提供的選項變得無關。<br /><br /><strong>什麼是『一擊繞過』？</strong> 在某些情況下，由於簽名檔案、模組、或請求的其他條件，可能仍會阻止經過肯定驗證的請求，為了避免假陽性，可能需要繞過。​在繞過旨在處理僅一項違規行為的情況下，這樣的繞過可以被描述為『一擊繞過』。"
+ zh-Hans: "<strong>什么是“阳性”和“阴性”？</strong> 在验证请求提供的身份时，成功的结果可以描述为“阳性”或“阴性”。 当所呈现的身份被确认为真实身份时，将被描述为“阳性”。 当所提供的身份被证实为伪造时，将被描述为“阴性”。 但是，不成功的结果（例如，验证失败，或无法确定所提供身份的真实性）不会被描述为“阳性”或“阴性”。 相反，不成功的结果将被简单地描述为未验证。 当没有尝试验证请求提供的身份时，该请求同样会被描述为未验证。 这些术语仅在请求提供的身份被识别的情况下才有意义，因此，在可以进行验证的情况下。 如果提供的身份与上面提供的选项不匹配，或者没有提供身份，则上面提供的选项变得无关。<br /><br /><strong>什么是“一击绕过”？</strong> 在某些情况下，由于签名文件、模块、或请求的其他条件，可能仍会阻止经过肯定验证的请求，为了避免假阳性，可能需要绕过。 在绕过旨在处理仅一项违规行为的情况下，这样的绕过可以被描述为“一击绕过”。"
+ zh-Hant: "<strong>什麼是『陽性』和『陰性』？</strong> 在驗證請求提供的身份時，成功的結果可以描述為『陽性』或『陰性』。 當所呈現的身份被確認為真實身份時，將被描述為『陽性』。 當所提供的身份被證實為偽造時，將被描述為『陰性』。 但是，不成功的結果（例如，驗證失敗，或無法確定所提供身份的真實性）不會被描述為『陽性』或『陰性』。 相反，不成功的結果將被簡單地描述為未驗證。 當沒有嘗試驗證請求提供的身份時，該請求同樣會被描述為未驗證。 這些術語僅在請求提供的身份被識別的情況下才有意義，因此，在可以進行驗證的情況下。 如果提供的身份與上面提供的選項不匹配，或者沒有提供身份，則上面提供的選項變得無關。<br /><br /><strong>什麼是『一擊繞過』？</strong> 在某些情況下，由於簽名檔案、模組、或請求的其他條件，可能仍會阻止經過肯定驗證的請求，為了避免假陽性，可能需要繞過。 在繞過旨在處理僅一項違規行為的情況下，這樣的繞過可以被描述為『一擊繞過』。"
 hints_want_to_block:
- zh-Hans: "!! 大多数用户可能希望将其阻止，无论它是真实的还是伪造的。​这可以通过不选择“尝试验证”并选择“阻止未验证的请求”来实现。​但是，由于某些用户可能希望能够验证此类请求（以便阻止阴性请求同时允许阳性请求），因此此处提供了处理此类请求的选项，而不是通过模块阻止此类请求。"
- zh-Hant: "!! 大多數用戶可能希望將其阻止，無論它是真實的還是偽造的。​這可以通過不選擇『嘗試驗證』並選擇『阻止未驗證的請求』來實現。​但是，由於某些用戶可能希望能夠驗證此類請求（以便阻止陰性請求同時允許陽性請求），因此此處提供了處理此類請求的選項，而不是通過模組阻止此類請求。"
+ zh-Hans: "!! 大多数用户可能希望将其阻止，无论它是真实的还是伪造的。 这可以通过不选择“尝试验证”并选择“阻止未验证的请求”来实现。 但是，由于某些用户可能希望能够验证此类请求（以便阻止阴性请求同时允许阳性请求），因此此处提供了处理此类请求的选项，而不是通过模块阻止此类请求。"
+ zh-Hant: "!! 大多數用戶可能希望將其阻止，無論它是真實的還是偽造的。 這可以通過不選擇『嘗試驗證』並選擇『阻止未驗證的請求』來實現。 但是，由於某些用戶可能希望能夠驗證此類請求（以便阻止陰性請求同時允許陽性請求），因此此處提供了處理此類請求的選項，而不是通過模組阻止此類請求。"
 info_cli: !lazy
  by_default_ips:
   zh-Hans: |
@@ -615,9 +615,9 @@ Some useful links:
         <li><span class="comCat" role="region" aria-controls="menuOUTRS" aria-expanded="false">其他有用的工具、资源、服务、等等</span>
           <ul class="comSub" id="menuOUTRS">
             <li>{{Links.SFS}} – 维护已知论坛垃圾邮件发送者的数据库。有用的保护网站和论坛免受垃圾邮件发送者的攻。</li>
-            <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – 从ASN获取CIDR、​确定ASN关系、​基于网络名称发现ASN、等等。</li>
+            <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – 从ASN获取CIDR、确定ASN关系、基于网络名称发现ASN、等等。</li>
             <li>{{Links.BGPView}} – 从ASN获取CIDR、确定ASN关系、基于网络名称发现ASN、等等。</li>
-            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Qrator的Radar</a> – 检查ASN连接的有用工具，​以及关于ASN的各种其他信息。</li>
+            <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Qrator的Radar</a> – 检查ASN连接的有用工具，以及关于ASN的各种其他信息。</li>
             <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Spamhaus项目</a> – 显示有关ASN僵尸网络感染率的报告。</li>
             <li>{{Links.AbuseIPDB}} – 维护已知的滥用IP数据库。它为IP检查和报告提供了一个API。</li>
             <li>{{Links.IP-API}} – 获取有关IP地址或主机名的信息，例如，国家代码、区域名称、经度、纬度、组织名称、等等。</li>
@@ -655,9 +655,9 @@ Some useful links:
           <ul class="comSub" id="menuOUTRS">
             <li>{{Links.SFS}} – 維護已知論壇垃圾郵件發送者的資料庫。有用的保護網站和論壇免受垃圾郵件發送者的攻。</li>
             <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – 從ASN獲取CIDR、確定ASN關係、基於網絡名稱發現ASN、等等。</li>
-            <li>{{Links.BGPView}} – 從ASN獲取CIDR，​確定ASN關係，​基於網絡名稱發現ASN，​等等。</li>
+            <li>{{Links.BGPView}} – 從ASN獲取CIDR，確定ASN關係，基於網絡名稱發現ASN，等等。</li>
             <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Qrator的Radar</a> – 檢查ASN連接的有用工具，以及關於ASN的各種其他信息。</li>
-            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Spamhaus項目</a> – 顯示有​關ASN殭屍網絡感染率的報告。</li>
+            <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Spamhaus項目</a> – 顯示有關ASN殭屍網絡感染率的報告。</li>
             <li>{{Links.AbuseIPDB}} – 維護已知的濫用IP資料庫。它為IP檢查和報告提供了一個API。</li>
             <li>{{Links.IP-API}} – 獲取有關IP位址或主機名的信息，例如，國家代碼、區域名稱、經度、緯度、組織名稱、等等。</li>
           </ul>
@@ -680,41 +680,41 @@ label:
  %s is not available: "%s不可用。"
  %s signature: {"zh-Hans": "%s个文件中的", "zh-Hant": "%s個檔案中的"}
  200 OK:
-  zh-Hans: "200 OK （好的）\n最不健壮，但最用户友好。​自动请求很可能将此响应解释为成功。"
-  zh-Hant: "200 OK （好的）\n最不健壯，但最用戶友好。​自動請求很可能將此響應解釋為成功。"
+  zh-Hans: "200 OK （好的）\n最不健壮，但最用户友好。 自动请求很可能将此响应解释为成功。"
+  zh-Hant: "200 OK （好的）\n最不健壯，但最用戶友好。 自動請求很可能將此響應解釋為成功。"
  301 Moved Permanently:
-  zh-Hans: "301 Moved Permanently （永久移动）\n指示客户端重定向是永久的。​重定向和初始请求的请求方法允许不同。"
-  zh-Hant: "301 Moved Permanently （永久移動）\n指示客戶端重定向是永久的。​重定向和初始請求的請求方法允許不同。"
+  zh-Hans: "301 Moved Permanently （永久移动）\n指示客户端重定向是永久的。 重定向和初始请求的请求方法允许不同。"
+  zh-Hant: "301 Moved Permanently （永久移動）\n指示客戶端重定向是永久的。 重定向和初始請求的請求方法允許不同。"
  302 Found:
-  zh-Hans: "302 Found （找到）\n指示客户端重定向是临时的。​重定向和初始请求的请求方法允许不同。"
-  zh-Hant: "302 Found （找到）\n指示客戶端重定向是臨時的。​重定向和初始請求的請求方法允許不同。"
+  zh-Hans: "302 Found （找到）\n指示客户端重定向是临时的。 重定向和初始请求的请求方法允许不同。"
+  zh-Hant: "302 Found （找到）\n指示客戶端重定向是臨時的。 重定向和初始請求的請求方法允許不同。"
  307 Temporary Redirect:
-  zh-Hans: "307 Temporary Redirect （临时重定向）\n指示客户端重定向是临时的。​重定向和初始请求的请求方法不允许不同。"
-  zh-Hant: "307 Temporary Redirect （臨時重定向）\n指示客戶端重定向是臨時的。​重定向和初始請求的請求方法不允許不同。"
+  zh-Hans: "307 Temporary Redirect （临时重定向）\n指示客户端重定向是临时的。 重定向和初始请求的请求方法不允许不同。"
+  zh-Hant: "307 Temporary Redirect （臨時重定向）\n指示客戶端重定向是臨時的。 重定向和初始請求的請求方法不允許不同。"
  308 Permanent Redirect:
-  zh-Hans: "308 Permanent Redirect （永久重定向）\n指示客户端重定向是永久的。​重定向和初始请求的请求方法不允许不同。"
-  zh-Hant: "308 Permanent Redirect （永久重定向）\n指示客戶端重定向是永久的。​重定向和初始請求的請求方法不允許不同。"
+  zh-Hans: "308 Permanent Redirect （永久重定向）\n指示客户端重定向是永久的。 重定向和初始请求的请求方法不允许不同。"
+  zh-Hant: "308 Permanent Redirect （永久重定向）\n指示客戶端重定向是永久的。 重定向和初始請求的請求方法不允許不同。"
  403 Forbidden:
-  zh-Hans: "403 Forbidden （禁止的）\n更健壮，但不太用户友好。​一般最推荐的。"
-  zh-Hant: "403 Forbidden （禁止的）\n更健壯，但不太用戶友好。​一般最推薦的。"
+  zh-Hans: "403 Forbidden （禁止的）\n更健壮，但不太用户友好。 一般最推荐的。"
+  zh-Hant: "403 Forbidden （禁止的）\n更健壯，但不太用戶友好。 一般最推薦的。"
  409 Conflict:
-  zh-Hans: "409 Conflict （冲突）\n推荐用于资源冲突（例如，合并冲突、文件访问冲突、等等）。​不推荐在其他情况下。"
-  zh-Hant: "409 Conflict （衝突）\n建議用於資源衝突（例如，合併衝突、檔案存取衝突、等等）。​不推薦在其他情況下。"
+  zh-Hans: "409 Conflict （冲突）\n推荐用于资源冲突（例如，合并冲突、文件访问冲突、等等）。 不推荐在其他情况下。"
+  zh-Hant: "409 Conflict （衝突）\n建議用於資源衝突（例如，合併衝突、檔案存取衝突、等等）。 不推薦在其他情況下。"
  410 Gone:
-  zh-Hans: "410 Gone （走了）\n解决假阳性时可能会导致问题，因为某些浏览器会缓存此状态消息并且不会发送后续请求，即使在被解除阻止后也是如此。​在某些情况下可能是最可取的。"
-  zh-Hant: "410 Gone （走了）\n解決假陽性時可能會導致問題，因為某些瀏覽器會緩存此狀態消息並且不會發送後續請求，即使在被解除阻止後也是如此。​在某些情況下可能是最可取的。"
+  zh-Hans: "410 Gone （走了）\n解决假阳性时可能会导致问题，因为某些浏览器会缓存此状态消息并且不会发送后续请求，即使在被解除阻止后也是如此。 在某些情况下可能是最可取的。"
+  zh-Hant: "410 Gone （走了）\n解決假陽性時可能會導致問題，因為某些瀏覽器會緩存此狀態消息並且不會發送後續請求，即使在被解除阻止後也是如此。 在某些情況下可能是最可取的。"
  418 I_m a teapot:
-  zh-Hans: "418 I'm a teapot （我是一个茶壶）\n引用愚人节的笑话【{{Links.RFC2324}}】。​任何客户端、机器人、浏览器、或其他方式都不太可能理解。​它是为了娱乐和方便而提供的，但是通常不推荐。"
-  zh-Hant: "418 I'm a teapot （我是一個茶壺）\n引用愚人節的笑話【{{Links.RFC2324}}】。​任何客戶端、機器人、瀏覽器、或其他方式都不太可能理解。​它是為了娛樂和方便而提供的，但是通常不推薦。"
+  zh-Hans: "418 I'm a teapot （我是一个茶壶）\n引用愚人节的笑话【{{Links.RFC2324}}】。 任何客户端、机器人、浏览器、或其他方式都不太可能理解。 它是为了娱乐和方便而提供的，但是通常不推荐。"
+  zh-Hant: "418 I'm a teapot （我是一個茶壺）\n引用愚人節的笑話【{{Links.RFC2324}}】。 任何客戶端、機器人、瀏覽器、或其他方式都不太可能理解。 它是為了娛樂和方便而提供的，但是通常不推薦。"
  429 Too Many Requests:
-  zh-Hans: "429 Too Many Requests （请求过多）\n推荐用于速率限制、处理DDoS攻击、和防洪。​不推荐在其他情况下。"
-  zh-Hant: "429 Too Many Requests （請求過多）\n推薦用於速率限制、處理DDoS攻擊、和防洪。​不推薦在其他情況下。"
+  zh-Hans: "429 Too Many Requests （请求过多）\n推荐用于速率限制、处理DDoS攻击、和防洪。 不推荐在其他情况下。"
+  zh-Hant: "429 Too Many Requests （請求過多）\n推薦用於速率限制、處理DDoS攻擊、和防洪。 不推薦在其他情況下。"
  451 Unavailable For Legal Reasons:
-  zh-Hans: "451 Unavailable For Legal Reasons （因法律原因不可用）\n主要出于法律原因被阻止时推荐。​不推荐在其他情况下。"
-  zh-Hant: "451 Unavailable For Legal Reasons （因法律原因不可用）\n主要出於法律原因被阻止時推薦。​不推薦在其他情況下。"
+  zh-Hans: "451 Unavailable For Legal Reasons （因法律原因不可用）\n主要出于法律原因被阻止时推荐。 不推荐在其他情况下。"
+  zh-Hant: "451 Unavailable For Legal Reasons （因法律原因不可用）\n主要出於法律原因被阻止時推薦。 不推薦在其他情況下。"
  503 Service Unavailable:
-  zh-Hans: "503 Service Unavailable （服务不可用）\n最健壮，但最不用户友好。​推荐用于受到攻击，或处理极其持久的有害流量时。"
-  zh-Hant: "503 Service Unavailable （服務不可用）\n最健壯，但最不用戶友好。​推薦用於受到攻擊，或處理極其持久的有害流量時。"
+  zh-Hans: "503 Service Unavailable （服务不可用）\n最健壮，但最不用户友好。 推荐用于受到攻击，或处理极其持久的有害流量时。"
+  zh-Hant: "503 Service Unavailable （服務不可用）\n最健壯，但最不用戶友好。 推薦用於受到攻擊，或處理極其持久的有害流量時。"
  Action: {"zh-Hans": "行动", "zh-Hant": "行動"}
  Active IPv4 signature files: {"zh-Hans": "活动IPv4签名文件", "zh-Hant": "活動IPv4簽名檔案"}
  Active IPv6 signature files: {"zh-Hans": "活动IPv6签名文件", "zh-Hant": "活動IPv6簽名檔案"}
@@ -758,8 +758,8 @@ label:
  Displaying %s entry that cites %s: {"zh-Hans": "显示%s个包含“%s”的项目。", "zh-Hant": "顯示%s個包含『%s』的項目。"}
  Displaying %s entry: {"zh-Hans": "显示%s个项目。", "zh-Hant": "顯示%s個項目。"}
  Don_t block the request:
-  zh-Hans: "不要阻止该请求。\n如果您希望仅当您确定请求是恶意的时才阻止请求，或者对假阳性采取谨慎态度（以偶尔导致不必要的流量通过为代价），请选择此项。​如果您希望在不确定请求是否良性时阻止请求，或者希望保持警惕（偶尔会出现假阳性的风险），请选择其他可用选项。"
-  zh-Hant: "不要阻止該請求。\n如果您希望僅在確定請求是惡意的時才阻止請求，或在假陽性方面採取謹慎態度（以偶爾透過不必要的流量為代價），請選擇此選項。​如果您希望在不確定請求是否良性的情況下阻止請求，或者希望保持警惕（偶爾有假陽性的風險），請選擇其他可用選項。"
+  zh-Hans: "不要阻止该请求。\n如果您希望仅当您确定请求是恶意的时才阻止请求，或者对假阳性采取谨慎态度（以偶尔导致不必要的流量通过为代价），请选择此项。 如果您希望在不确定请求是否良性时阻止请求，或者希望保持警惕（偶尔会出现假阳性的风险），请选择其他可用选项。"
+  zh-Hant: "不要阻止該請求。\n如果您希望僅在確定請求是惡意的時才阻止請求，或在假陽性方面採取謹慎態度（以偶爾透過不必要的流量為代價），請選擇此選項。 如果您希望在不確定請求是否良性的情況下阻止請求，或者希望保持警惕（偶爾有假陽性的風險），請選擇其他可用選項。"
  Duplicate to %s: {"zh-Hans": "复制到%s", "zh-Hant": "複製到%s"}
  Duplicate: {"zh-Hans": "复制", "zh-Hant": "複製"}
  Empty, unfamiliar, and others: {"zh-Hans": "空虚，陌生，其他。", "zh-Hant": "空虛，陌生，其他。"}
@@ -767,8 +767,8 @@ label:
  Entered %s Assuming %s: {"zh-Hans": "输入： %s – 假设： %s", "zh-Hant": "輸入： %s – 假設： %s"}
  Entries per page: {"zh-Hans": "每页项目数：", "zh-Hant": "每頁項目數："}
  Every request:
-  zh-Hans: "所有请求。\n更严格和彻底，但也可能更快地达到配额，可能导致被锁定在服务之外。​此外，尽管结果被缓存，但在某些情况下仍可能对网站性能产生负面影响。​在某些情况下可能是必要的，但通常不推荐。"
-  zh-Hant: "所有請求。\n更嚴格和徹底，但也可能更快地達到配額，可能導致被鎖定在服務之外。​此外，儘管結果被緩存，但在某些情況下仍可能對網站性能產生負面影響。​在某些情況下可能是必要的，但通常不推薦。"
+  zh-Hans: "所有请求。\n更严格和彻底，但也可能更快地达到配额，可能导致被锁定在服务之外。 此外，尽管结果被缓存，但在某些情况下仍可能对网站性能产生负面影响。 在某些情况下可能是必要的，但通常不推荐。"
+  zh-Hant: "所有請求。\n更嚴格和徹底，但也可能更快地達到配額，可能導致被鎖定在服務之外。 此外，儘管結果被緩存，但在某些情況下仍可能對網站性能產生負面影響。 在某些情況下可能是必要的，但通常不推薦。"
  Expected: {"zh-Hans": "预期", "zh-Hant": "預期"}
  Expires: {"zh-Hans": "过期：", "zh-Hant": "過期："}
  Export: {"zh-Hans": "导出", "zh-Hant": "匯出"}
@@ -778,7 +778,7 @@ label:
  Fancy: "漂亮"
  Focus: {"zh-Hans": "焦点：", "zh-Hant": "焦點："}
  Free disk space: {"zh-Hans": "可用磁盘空间：", "zh-Hant": "可用磁盤空間："}
- Greylist the request: {"zh-Hans": "将请求列入灰名单。\n重置触发的签名数量，但继续处理请求。​当您不想将请求列入白名单，但需要比触发的绕过更实质的时推荐使用。", "zh-Hant": "將請求列入灰名單。\n重置觸發的簽名數量，但繼續處理請求。​當您不想將請求列入白名單，但需要比觸發的繞過更實質的時推薦使用。"}
+ Greylist the request: {"zh-Hans": "将请求列入灰名单。\n重置触发的签名数量，但继续处理请求。 当您不想将请求列入白名单，但需要比触发的绕过更实质的时推荐使用。", "zh-Hant": "將請求列入灰名單。\n重置觸發的簽名數量，但繼續處理請求。 當您不想將請求列入白名單，但需要比觸發的繞過更實質的時推薦使用。"}
  Harvester: {"zh-Hans": "收割机", "zh-Hant": "收割機"}
  Hide: {"zh-Hans": "隐藏", "zh-Hant": "隱藏"}
  Ignore this: {"zh-Hans": "忽略这个", "zh-Hant": "忽略這個"}
@@ -834,8 +834,8 @@ label:
  Requests banned: {"zh-Hans": "请求已禁止", "zh-Hant": "請求已禁止"}
  Requests blocked: {"zh-Hans": "请求已阻止", "zh-Hant": "請求已阻止"}
  Requests for sensitive pages only:
-  zh-Hans: "仅对敏感页面的请求（例如，登录页面、注册表单、等等）。\n不那么严格和彻底，但在配额和限制方面更加保守，并且不太可能对性能产生负面影响。​大多数情况下推荐的策略。"
-  zh-Hant: "僅對敏感頁面的請求（例如，登錄頁面、註冊表單、等等）。\n不那麼嚴格和徹底，但在配額和限制方面更加保守，並且不太可能對性能產生負面影響。​大多數情況下推薦的策略。"
+  zh-Hans: "仅对敏感页面的请求（例如，登录页面、注册表单、等等）。\n不那么严格和彻底，但在配额和限制方面更加保守，并且不太可能对性能产生负面影响。 大多数情况下推荐的策略。"
+  zh-Hant: "僅對敏感頁面的請求（例如，登錄頁面、註冊表單、等等）。\n不那麼嚴格和徹底，但在配額和限制方面更加保守，並且不太可能對性能產生負面影響。 大多數情況下推薦的策略。"
  Requests passed: {"zh-Hans": "允许的请求", "zh-Hant": "允許的請求"}
  Requests reported to external APIs: {"zh-Hans": "向外部API报告的请求", "zh-Hant": "向外部API報告的請求"}
  SAPI used: "目前使用SAPI："
@@ -863,7 +863,7 @@ label:
  Trigger a bypass: {"zh-Hans": "触发旁路。\n只要至少已经触发了一个签名，就从触发的签名数中减去一个计数。推荐用于处理可能由默认签名文件引起的简单假阳性。", "zh-Hant": "觸發旁路。\n只要至少已經觸發了一個簽名，就從觸發的簽名數中減去一個計數。推薦用於處理可能由默認簽名檔案引起的簡單假陽性。"}
  Unignore this: {"zh-Hans": "不要忽略这个", "zh-Hant": "不要忽略這個"}
  Values for IP tracking: "IP跟踪的值"
- Whitelist the request: {"zh-Hans": "将请求列入白名单。\n重置触发的签名数量，并中止对请求的任何进一步处理。​保证CIDRAM永远不会阻止请求。", "zh-Hant": "將請求列入白名單。\n重置觸發的簽名數量，併中止對請求的任何進一步處理。​保證CIDRAM永遠不會阻止請求。"}
+ Whitelist the request: {"zh-Hans": "将请求列入白名单。\n重置触发的签名数量，并中止对请求的任何进一步处理。 保证CIDRAM永远不会阻止请求。", "zh-Hant": "將請求列入白名單。\n重置觸發的簽名數量，併中止對請求的任何進一步處理。 保證CIDRAM永遠不會阻止請求。"}
  Your IP address: {"zh-Hans": "您的IP地址：", "zh-Hant": "您的IP位址："}
  Your user agent: {"zh-Hans": "您的用户代理：", "zh-Hant": "您的用戶代理："}
  aux:
@@ -940,7 +940,7 @@ label:
   High: "高"
   Low: "低"
   Medium: "中等"
- timeout_limit: {"zh-Hans": "该模块执行外部请求。​您可以在此处指定这些请求的超时限制（以秒为单位）。", "zh-Hant": "該模組執行外部請求。​您可以在此處指定這些請求的超時限制（以秒為單位）。"}
+ timeout_limit: {"zh-Hans": "该模块执行外部请求。 您可以在此处指定这些请求的超时限制（以秒为单位）。", "zh-Hant": "該模組執行外部請求。 您可以在此處指定這些請求的超時限制（以秒為單位）。"}
  timeout_rl: {"zh-Hans": "在速率受限后恢复外部请求之前所需的时间量。", "zh-Hant": "在速率有限後恢復外部請求之前所需的時間量。"}
 link:
  Accounts: {"zh-Hans": "帐户", "zh-Hant": "帳戶"}
@@ -971,9 +971,9 @@ link:
  View mode: "查看模式"
 macro: !lazy
  Description:
-  activate_modules: &MayImpactPerformance {"zh-Hans": "通常不推荐，因为可能有一些您不需要。​在不需要时安装和启用组件可能会对性能产生负面影响。", "zh-Hant": "通常不推薦，因為可能有一些您不需要。​在不需要時安裝和啟用組件可能會對性能產生負面影響。"}
-  install_l10n_core: &RecommendKeepingCore {"zh-Hans": "在启用<code>lang_override</code>配置指令时，如果用户的浏览器指定了语言，只要安装了该语言的核心L10N数据，CIDRAM就能够以该语言显示“拒绝访问”页面。​因此，建议保留所有核心L10N数据。", "zh-Hant": "在啟用<code>lang_override</code>配置指令時，如果用戶的瀏覽器指定了語言，只要安裝了該語言的核心L10N數據，CIDRAM就能夠以該語言顯示『拒絕訪問』頁面。​因此，建議保留所有核心L10N數據。"}
-  install_l10n_fe: &RecommendFEOnlyNeeded {"zh-Hans": "您可以通过<code>lang</code>配置指令指定您的首选语言。​完成此操作后，除了您的首选语言之外，您不太可能需要任何前端L10N数据，并且可能希望删除它以释放一些可用磁盘空间。​但是，无论您选择删除它还是保留它，都不应该造成任何伤害。", "zh-Hant": "您可以通過<code>lang</code>配置指令指定您的首選語言。​完成此操作後，除了您的首選語言之外，您不太可能需要任何前端L10N數據，並且可能希望刪除它以釋放一些可用磁盤空間。​但是，無論您選擇刪除它還是保留它，都不應該造成任何傷害。"}
+  activate_modules: &MayImpactPerformance {"zh-Hans": "通常不推荐，因为可能有一些您不需要。 在不需要时安装和启用组件可能会对性能产生负面影响。", "zh-Hant": "通常不推薦，因為可能有一些您不需要。 在不需要時安裝和啟用組件可能會對性能產生負面影響。"}
+  install_l10n_core: &RecommendKeepingCore {"zh-Hans": "在启用<code>lang_override</code>配置指令时，如果用户的浏览器指定了语言，只要安装了该语言的核心L10N数据，CIDRAM就能够以该语言显示“拒绝访问”页面。 因此，建议保留所有核心L10N数据。", "zh-Hant": "在啟用<code>lang_override</code>配置指令時，如果用戶的瀏覽器指定了語言，只要安裝了該語言的核心L10N數據，CIDRAM就能夠以該語言顯示『拒絕訪問』頁面。 因此，建議保留所有核心L10N數據。"}
+  install_l10n_fe: &RecommendFEOnlyNeeded {"zh-Hans": "您可以通过<code>lang</code>配置指令指定您的首选语言。 完成此操作后，除了您的首选语言之外，您不太可能需要任何前端L10N数据，并且可能希望删除它以释放一些可用磁盘空间。 但是，无论您选择删除它还是保留它，都不应该造成任何伤害。", "zh-Hant": "您可以通過<code>lang</code>配置指令指定您的首選語言。 完成此操作後，除了您的首選語言之外，您不太可能需要任何前端L10N數據，並且可能希望刪除它以釋放一些可用磁盤空間。 但是，無論您選擇刪除它還是保留它，都不應該造成任何傷害。"}
   install_modules: *MayImpactPerformance
   uninstall_l10n_core: *RecommendKeepingCore
   uninstall_l10n_fe: *RecommendFEOnlyNeeded
@@ -1004,8 +1004,8 @@ msg_template_2fa:
  <h1>%s</h1>
  <p>此代碼將在10分鐘後到期。</p></center>
 notice_new_major_version:
- zh-Hans: "通知：%s现在可用（您正在使用%s）。​您满足此版本的最低PHP要求。 <em>看：<a href="{{Links.CIDRAM.Docs Base Path}}readme.zh-Hans.md\#10-从以前的主要版本升级" hreflang="zh-Hans"><span class="navicon link"></span>从以前的主要版本升级</a>。</em>"
- zh-Hant: "通知：%s現在可用（您正在使用%s）。​您滿足此版本的最低PHP要求。 <em>看：<a href="{{Links.CIDRAM.Docs Base Path}}readme.zh-Hant.md\#10-從以前的主要版本升級" hreflang="zh-Hant"><span class="navicon link"></span>從以前的主要版本升級</a>。</em>"
+ zh-Hans: "通知：%s现在可用（您正在使用%s）。 您满足此版本的最低PHP要求。 <em>看：<a href="{{Links.CIDRAM.Docs Base Path}}readme.zh-Hans.md\#10-从以前的主要版本升级" hreflang="zh-Hans"><span class="navicon link"></span>从以前的主要版本升级</a>。</em>"
+ zh-Hant: "通知：%s現在可用（您正在使用%s）。 您滿足此版本的最低PHP要求。 <em>看：<a href="{{Links.CIDRAM.Docs Base Path}}readme.zh-Hant.md\#10-從以前的主要版本升級" hreflang="zh-Hant"><span class="navicon link"></span>從以前的主要版本升級</a>。</em>"
 operator_<: {"zh-Hans": "必须是小于（数值比较）。", "zh-Hant": "必須是小於（數值比較）。"}
 operator_=: {"zh-Hans": "必须是完全匹配（直接字符串比较）。", "zh-Hant": "必須是完全匹配（直接字符串比較）。"}
 operator_>: {"zh-Hans": "必须是大于（数值比较）。", "zh-Hant": "必須是大於（數值比較）。"}
@@ -1080,7 +1080,7 @@ response:
  I don_t understand that command, sorry: {"zh-Hans": "我不明白的命令，对不起。", "zh-Hant": "我不明白的命令，對不起。"}
  Incorrect 2FA code entered: {"zh-Hans": "输入了错误的2FA代码。验证失败。", "zh-Hant": "輸入了錯誤的2FA代碼。驗證失敗。"}
  Invalid API key: {"zh-Hans": "API密钥无效！", "zh-Hant": "API金鑰無效！"}
- Invalid password: {"zh-Hans": "登录失败！​密码无效！", "zh-Hant": "登錄失敗！​密碼無效！"}
+ Invalid password: {"zh-Hans": "登录失败！ 密码无效！", "zh-Hant": "登錄失敗！ 密碼無效！"}
  Invalid timestamp: {"zh-Hans": "时间戳无效！", "zh-Hant": "時間戳無效！"}
  Maximum number of login attempts exceeded: {"zh-Hans": "最大登录尝试次数已经超过；拒绝访问。", "zh-Hant": "最大登錄嘗試次數已經超過；拒絕訪問。"}
  New auxiliary rule, %s, created successfully: {"zh-Hans": "新辅助规则“%s”创建成功。", "zh-Hant": "新輔助規則『%s』創建成功。"}
@@ -1115,8 +1115,8 @@ response:
  The IP address, %s, successfully reported: {"zh-Hans": "IP地址%s报告成功了！", "zh-Hant": "IP位址%s報告成功了！"}
  The report has not been enqueued: {"zh-Hans": "该报告不在队列中。", "zh-Hant": "該報告不在隊列中。"}
  The same IP address can be reported only once every 15 minutes:
-  zh-Hans: "同一IP地址每15分钟只能报告一次。​该报告在队列中，CIDRAM将稍后尝试提交该报告。"
-  zh-Hant: "同一IP位址每15分鐘只能報告一次。​該報告在佇列中，CIDRAM將稍後嘗試提交該報告。"
+  zh-Hans: "同一IP地址每15分钟只能报告一次。 该报告在队列中，CIDRAM将稍后尝试提交该报告。"
+  zh-Hant: "同一IP位址每15分鐘只能報告一次。 該報告在佇列中，CIDRAM將稍後嘗試提交該報告。"
  The targeted file_s size exceeds PHP_s memory limit: {"zh-Hans": "目标文件的大小超过了PHP的内存限制！", "zh-Hant": "目標檔案的大小超過了PHP的記憶體限制！"}
  There aren_t currently any auxiliary rules: {"zh-Hans": "目前没有任何辅助规则。", "zh-Hant": "目前沒有任何輔助規則。"}
  There_s nothing to analyse, sorry: {"zh-Hans": "没有什么可分析的，对不起。", "zh-Hant": "沒有什麼可分析的，對不起。"}
@@ -1125,10 +1125,10 @@ response:
  Tracking cleared: "已撤消跟踪。"
  Unable to determine: {"zh-Hans": "无法确定。", "zh-Hant": "無法確定。"}
  Unknown error: {"zh-Hans": "未知错误！", "zh-Hant": "未知錯誤！"}
- Username doesn_t exist: {"zh-Hans": "登录失败！​用户名不存在！", "zh-Hant": "登錄失敗！​使用者名稱不存在！"}
+ Username doesn_t exist: {"zh-Hans": "登录失败！ 用户名不存在！", "zh-Hant": "登錄失敗！ 使用者名稱不存在！"}
  Username field empty: {"zh-Hans": "用户名输入是空的！", "zh-Hant": "使用者名稱輸入是空的！"}
- Verification failed: {"zh-Hans": "验证失败！组件可能已损坏。", "zh-Hant": "驗證失敗！組件可能已損壞。"}
- Verification success: {"zh-Hans": "验证成功！没有发现问题。", "zh-Hant": "驗證成功！沒有發現問題。"}
+ Verification failed: {"zh-Hans": "验证失败！ 组件可能已损坏。", "zh-Hant": "驗證失敗！ 組件可能已損壞。"}
+ Verification success: {"zh-Hans": "验证成功！ 没有发现问题。", "zh-Hant": "驗證成功！ 沒有發現問題。"}
  Wrong endpoint: {"zh-Hans": "错误的端点！", "zh-Hant": "錯誤的端點！"}
  _No: "不是"
  _Yes: "是"
@@ -1186,25 +1186,25 @@ time_years_ago: "%s年前"
 time_years_from_now: "%s年后"
 tip:
  2FA Sent:
-  zh-Hans: "包含2FA代码的电子邮件已发送到您的电子邮件地址。​请确认以下代码以获取对前端的访问权限。​如果您没有收到此电子邮件，尝试登出，等待10分钟，然后再次登录以接收包含新代码的新电子邮件。"
-  zh-Hant: "包含2FA代碼的電子郵件已發送到您的電子郵件地址。​請確認以下代碼以獲取對前端的訪問權限。​如果您沒有收到此電子郵件，嘗試登出，等待10分鐘，然後再次登錄以接收包含新代碼的新電子郵件。"
+  zh-Hans: "包含2FA代码的电子邮件已发送到您的电子邮件地址。 请确认以下代码以获取对前端的访问权限。 如果您没有收到此电子邮件，尝试登出，等待10分钟，然后再次登录以接收包含新代码的新电子邮件。"
+  zh-Hant: "包含2FA代碼的電子郵件已發送到您的電子郵件地址。 請確認以下代碼以獲取對前端的訪問權限。 如果您沒有收到此電子郵件，嘗試登出，等待10分鐘，然後再次登錄以接收包含新代碼的新電子郵件。"
  Accounts: {"zh-Hans": "帐户页面允许您控制谁可以访问CIDRAM前端。", "zh-Hant": "帳戶頁面允許您控制誰可以訪問CIDRAM前端。"}
  Actions menu:
   zh-Hans: "阻止会使签名计数加 1。 绕过将从签名计数中扣除 1。 白名单将签名计数设置为 0 并终止处理，从而完全跳过任何后续规则。 灰名单将签名数设置为 0，但不会终止处理。 分类不会影响签名计数，但当需要更复杂的逻辑来确定是否执行其他类型的操作时很有用，因为生成的分类可以链接到后续规则的条件。 处理后，如果签名数为 1 或更大，则请求将被阻止。"
   zh-Hant: "阻止會使簽名計數加 1。 繞過將從簽名計數中扣除 1。 白名單將簽名計數設定為 0 並終止處理，從而完全跳過任何後續規則。 灰名單將簽名數設定為 0，但不會終止處理。 分類不會影響簽名計數，但當需要更複雜的邏輯來確定是否執行其他類型的操作時很有用，因為產生的分類可以連結到後續規則的條件。 處理後，如果簽名數為 1 或更大，則請求將被阻止。"
- Aggregator: {"zh-Hans": "聚合器允许您以最小的可能方式表达IP，CIDR，和网络掩码。​输入要聚合的数据，然后按“OK”。", "zh-Hant": "聚合器允許您以最小的可能方式表達IP，CIDR，和網絡掩碼。​輸入要聚合的數據，然後按『OK』。"}
+ Aggregator: {"zh-Hans": "聚合器允许您以最小的可能方式表达IP，CIDR，和网络掩码。 输入要聚合的数据，然后按“OK”。", "zh-Hant": "聚合器允許您以最小的可能方式表達IP，CIDR，和網絡掩碼。 輸入要聚合的數據，然後按『OK』。"}
  An accepted value is any CIDR with a range that covers the IP address of the request:
   zh-Hans: "可接受的值是任何包含请求IP地址范围的CIDR。 例如，1.2.3.0/24、1.2.0.0/16、1.0.0.0/8、等等都可接受，适用于 1.2.3.4。 为避免假阳性，较窄的范围（例如，1.2.3.4/32）通常比较宽的范围（例如，0.0.0.0/1）更可取。 可以使用计算器页面查找哪些CIDR范围覆盖指定的IP地址。"
   zh-Hant: "可接受的值是任何包含請求IP位址範圍的CIDR。 例如，1.2.3.0/24、1.2.0.0/16、1.0.0.0/8、等等都可接受，適用於 1.2.3.4。 為避免假陽性，較窄的範圍（例如，1.2.3.4/32）通常比較寬的範圍（例如，0.0.0.0/1）更可取。 可以使用計算機頁面尋找哪些CIDR範圍來覆蓋指定的IP位址。"
  Auxiliary Rules Modes:
-  zh-Hans: "查看模式将辅助规则显示为紧凑列表，以便于阅读。​单击列表中的规则即可展开并显示更多详细信息。​单击三元组（☰）时将显示导出或删除规则的选项。​可以通过拖放操作更改规则的顺序，将规则从现有位置拖动到所需位置。​需要编辑模式来修改辅助规则，页面上有可编辑字段和选项，用于添加新条件、webhook、或其他逻辑。​可以通过任一模式创建新的辅助规则。"
-  zh-Hant: "查看模式將輔助規則顯示為緊湊列表，以便於閱讀。​點擊清單中的規則即可展開並顯示更多詳細資訊。​點選三元組（☰）時將顯示匯出或刪除規則的選項。​可以透過拖曳操作來變更規則的順序，將規則從現有位置拖曳到所需位置。​需要編輯模式來修改輔助規則，頁面上有可編輯欄位和選項，用於新增條件、webhook、或其他邏輯。​可以透過任一模式建立新的輔助規則。"
+  zh-Hans: "查看模式将辅助规则显示为紧凑列表，以便于阅读。 单击列表中的规则即可展开并显示更多详细信息。 单击三元组（☰）时将显示导出或删除规则的选项。 可以通过拖放操作更改规则的顺序，将规则从现有位置拖动到所需位置。 需要编辑模式来修改辅助规则，页面上有可编辑字段和选项，用于添加新条件、webhook、或其他逻辑。 可以通过任一模式创建新的辅助规则。"
+  zh-Hant: "查看模式將輔助規則顯示為緊湊列表，以便於閱讀。 點擊清單中的規則即可展開並顯示更多詳細資訊。 點選三元組（☰）時將顯示匯出或刪除規則的選項。 可以透過拖曳操作來變更規則的順序，將規則從現有位置拖曳到所需位置。 需要編輯模式來修改輔助規則，頁面上有可編輯欄位和選項，用於新增條件、webhook、或其他邏輯。 可以透過任一模式建立新的輔助規則。"
  Auxiliary Rules Priority: {"zh-Hans": "优先（最高➡(相同🔄当量)➡最低）：", "zh-Hant": "優先（最高➡(相同🔄當量)➡最低）："}
  Auxiliary Rules Webhooks:
   zh-Hans: "当触发规则时，CIDRAM将尝试该事件通知所有连接的webhook。 Webhook是一个能够接收POST数据的URL，如果有一个外部服务、应用程序、脚本、等托管在与CIDRAM完全不同的网络上，并且您希望它处理CIDRAM生成的关于该请求的数据，那么webhook就会非常有用。"
   zh-Hant: "當觸發規則時，CIDRAM將嘗試該事件通知所有連接的webhook。 Webhook是一個能夠接收POST資料的URL，如果在與CIDRAM完全不同的網路上託管外部服務、應用程式、腳本、等並且您希望處理CIDRAM產生的有關請求的數據，那麼webhook可能會很有用。"
  Auxiliary Rules: {"zh-Hans": "您可以使用此页面为CIDRAM创建，删除，和修改辅助规则。", "zh-Hant": "您可以使用此頁面為CIDRAM創建，刪除，和修改輔助規則。"}
- Backup: {"zh-Hans": "该页面可用于导入/导出您的配置、辅助规则、等等。​如果您需要跨不同安装或不同主要版本迁移数据，这会很有用。", "zh-Hant": "該頁面可用於匯入/匯出您的配置、輔助規則、等等。​如果您需要跨不同安裝或不同主要版本遷移數據，這會很有用。"}
+ Backup: {"zh-Hans": "该页面可用于导入/导出您的配置、辅助规则、等等。 如果您需要跨不同安装或不同主要版本迁移数据，这会很有用。", "zh-Hant": "該頁面可用於匯入/匯出您的配置、輔助規則、等等。 如果您需要跨不同安裝或不同主要版本遷移數據，這會很有用。"}
  Cache Data: {"zh-Hans": "在这里您可以查看缓存的内容。", "zh-Hant": "在這裡您可以查看緩存的內容。"}
  Calculator: {"zh-Hans": "计算器允许您计算IP地址的CIDR和网络掩码。", "zh-Hant": "計算器允許您計算IP位址的CIDR和網絡掩碼。"}
  Click the component name for more details: {"zh-Hans": "单击组件名称以获取更多详细信息。", "zh-Hant": "單擊組件名稱以獲取更多詳細信息。"}
@@ -1218,15 +1218,15 @@ tip:
  Enter referrer here (optional): {"zh-Hans": "在这里时输入引荐（可选的）。", "zh-Hant": "在這裡時輸入引薦（可選的）。"}
  Enter user agent here (optional): {"zh-Hans": "在这里时输入用户代理（可选的）。", "zh-Hant": "在這裡時輸入用戶代理（可選的）。"}
  Enter user agents here: {"zh-Hans": "在这里时输入用户代理。", "zh-Hant": "在這裡時輸入用戶代理。"}
- File Manager: {"zh-Hans": "文件管理器允许您删除，​编辑，​上传和下载文件。​小心使用（您可以用这个破坏您的安装）。", "zh-Hant": "檔案管理器允許您刪除，​編輯，​上傳和下載檔案。​小心使用（您可以用這個破壞您的安裝）。"}
+ File Manager: {"zh-Hans": "文件管理器允许您删除，编辑，上传和下载文件。 小心使用（您可以用这个破坏您的安装）。", "zh-Hant": "檔案管理器允許您刪除，編輯，上傳和下載檔案。 小心使用（您可以用這個破壞您的安裝）。"}
  Greeting: "你好，%s。"
- Home: {"zh-Hans": "这是CIDRAM的前端主页。​从左侧的导航菜单中选择一个链接以继续。", "zh-Hant": "這是CIDRAM的前端主頁。​從左側的導航菜單中選擇一個鏈接以繼續。"}
+ Home: {"zh-Hans": "这是CIDRAM的前端主页。 从左侧的导航菜单中选择一个链接以继续。", "zh-Hant": "這是CIDRAM的前端主頁。 從左側的導航菜單中選擇一個鏈接以繼續。"}
  How many infractions to incur: {"zh-Hans": "有多少违规行为。", "zh-Hant": "有多少違規行為。"}
  IP Testing: {"zh-Hans": "IP测试页面允许您测试是否IP地址被阻止通过当前安装的签名。", "zh-Hant": "IP測試頁面允許您測試是否IP位址被阻止通過當前安裝的簽名。"}
- IP Tracking: {"zh-Hans": "IP跟踪页面允许您检查IP地址跟踪状态，​检查哪些IP已被禁止，​而如果您想这样做，​对撤消他们的跟踪。", "zh-Hant": "IP跟踪頁面允許您檢查IP位址跟踪狀態，​檢查哪些IP已被禁止，​而如果您想這樣做，​對撤消他們的跟踪。"}
+ IP Tracking: {"zh-Hans": "IP跟踪页面允许您检查IP地址跟踪状态，检查哪些IP已被禁止，而如果您想这样做，对撤消他们的跟踪。", "zh-Hant": "IP跟踪頁面允許您檢查IP位址跟踪狀態，檢查哪些IP已被禁止，而如果您想這樣做，對撤消他們的跟踪。"}
  If a request connects from an IPv6 address belonging to a range used by an IPv6 transition mechanism:
-  zh-Hans: "如果请求来自IPv6地址，而该地址属于IPv6过渡机制（例如，6to4、Teredo、ISATAP、等等）使用的地址范围，则“IP地址（解决）”字段将填充根据该IPv6转换机制转换的IPv4地址（例如，如果“IP地址”为“2002:c0a8:1::”，则“IP地址（解决）”将为“192.168.0.1”）。​在其他所有情况下，“IP地址（解决）”和“IP地址”字段将相同。"
-  zh-Hant: "如果請求來自IPv6位址，而該位址屬於IPv6過渡機制（例如，6to4、Teredo、ISATAP、等等）使用的位址範圍，則『IP位址（解決）』欄位將填入根據該IPv6轉換機制轉換的IPv4位址（例如，如果『IP位址』為『2002:c0a8:1::』，則『IP位址（解決）』將為『192.168.0.1』）。​在其他所有情況下，『IP位址（解決）』和『IP位址』欄位將相同。"
+  zh-Hans: "如果请求来自IPv6地址，而该地址属于IPv6过渡机制（例如，6to4、Teredo、ISATAP、等等）使用的地址范围，则“IP地址（解决）”字段将填充根据该IPv6转换机制转换的IPv4地址（例如，如果“IP地址”为“2002:c0a8:1::”，则“IP地址（解决）”将为“192.168.0.1”）。 在其他所有情况下，“IP地址（解决）”和“IP地址”字段将相同。"
+  zh-Hant: "如果請求來自IPv6位址，而該位址屬於IPv6過渡機制（例如，6to4、Teredo、ISATAP、等等）使用的位址範圍，則『IP位址（解決）』欄位將填入根據該IPv6轉換機制轉換的IPv4位址（例如，如果『IP位址』為『2002:c0a8:1::』，則『IP位址（解決）』將為『192.168.0.1』）。 在其他所有情況下，『IP位址（解決）』和『IP位址』欄位將相同。"
  Intersector: {"zh-Hans": "相交仪可用于从两组范围确定公共因子。", "zh-Hant": "相交儀可用於從兩組範圍確定公共因子。"}
  Logs: {"zh-Hans": "选择一个日志从下面的列表以查看那个日志的内容。", "zh-Hant": "選擇一個日誌從下面的列表以查看那個日誌的內容。"}
  Number of seconds until it expires: {"zh-Hans": "直到它过期的秒数。", "zh-Hant": "直到它過期的秒數。"}
@@ -1257,14 +1257,14 @@ warning: !lazy
   zh-Hans: "警告：对%s API的访问目前似乎受到速率限制。"
   zh-Hant: "警告：對%s API的訪問目前似乎受到速率限制。"
  Cookies:
-  zh-Hans: "注意：CIDRAM使用cookie来验证登录。​通过登录，您同意您的浏览器创建和存储cookie。"
-  zh-Hant: "注意：CIDRAM使用cookie來驗證登錄。​通過登錄，您同意您的瀏覽器創建和存儲cookie。"
+  zh-Hans: "注意：CIDRAM使用cookie来验证登录。 通过登录，您同意您的浏览器创建和存储cookie。"
+  zh-Hant: "注意：CIDRAM使用cookie來驗證登錄。 通過登錄，您同意您的瀏覽器創建和存儲cookie。"
  Editing PHP files:
   zh-Hans: "警告：一些虚拟主机在检测到请求中的PHP标记时会自动禁止IP地址（例如，当试图通过浏览器修改PHP文件时）。 CIDRAM无法知道您的虚拟主机是否这样做。 为了避免出现问题，建议尽可能不要以这种方式编辑PHP文件。"
   zh-Hant: "警告：一些虛擬主機在檢測到請求中的PHP標記時會自動禁止IP位址（例如，當試圖通過瀏覽器修改PHP檔案時）。 CIDRAM無法知道您的虛擬主機是否這樣做。 為了避免出現問題，建議盡可能不要以這種方式編輯PHP檔案。"
  IP tests are disabled:
-  zh-Hans: "警告：IP测试被禁用！在解决此问题之前，无法使用签名文件。"
-  zh-Hant: "警告：IP測試被禁用！在解決此問題之前，無法使用簽名檔案。"
+  zh-Hans: "警告：IP测试被禁用！ 在解决此问题之前，无法使用签名文件。"
+  zh-Hant: "警告：IP測試被禁用！ 在解決此問題之前，無法使用簽名檔案。"
  JavaScript required:
   zh-Hans: "警告：一些前端功能需要JavaScript。 为确保整个前端按预期运行，建议启用JavaScript。"
   zh-Hant: "警告：一些前端功能需要JavaScript。 為確保整個前端按預期運行，建議啟用JavaScript。"
@@ -1275,23 +1275,23 @@ warning: !lazy
   zh-Hans: "警告：在当前正在编辑的文件中检测到非UTF8字节。 如果使用此特定工具进行编辑，文件可能会损坏。"
   zh-Hant: "警告：在目前正在編輯的檔案中偵測到非UTF8位元組。 如果使用此特定工具進行編輯，檔案可能會損壞。"
  Modules are disabled:
-  zh-Hans: "警告：模块被禁用！在解决此问题之前，无法使用模块。"
-  zh-Hant: "警告：模組被禁用！在解決此問題之前，無法使用模組。"
+  zh-Hans: "警告：模块被禁用！ 在解决此问题之前，无法使用模块。"
+  zh-Hant: "警告：模組被禁用！ 在解決此問題之前，無法使用模組。"
  No modules are active:
-  zh-Hans: "警告：没有模块处于活动状态！可以使用配置或更新页面启用模块。"
-  zh-Hant: "警告：沒有模組處於活動狀態！可以使用配置或更新頁面啟用模組。"
+  zh-Hans: "警告：没有模块处于活动状态！ 可以使用配置或更新页面启用模块。"
+  zh-Hant: "警告：沒有模組處於活動狀態！ 可以使用配置或更新頁面啟用模組。"
  No signature files are active:
-  zh-Hans: "警告：没有签名文件处于活动状态！可以使用配置或更新页面启用签名文件。"
-  zh-Hant: "警告：沒有簽名檔案處於活動狀態！可以使用配置或更新頁面啟用簽名檔案。"
+  zh-Hans: "警告：没有签名文件处于活动状态！ 可以使用配置或更新页面启用签名文件。"
+  zh-Hant: "警告：沒有簽名檔案處於活動狀態！ 可以使用配置或更新頁面啟用簽名檔案。"
  Operating in dry run mode:
-  zh-Hans: "警告：在空运行模式下运行！在空运行模式下，请求仍会像往常一样被检查并记录为阻止事件，但没有任何内容被阻塞。"
-  zh-Hant: "警告：在空運行模式下運行！在空運行模式下，請求仍會像往常一樣被檢查並記錄為阻止事件，但沒有任何內容被阻塞。"
+  zh-Hans: "警告：在空运行模式下运行！ 在空运行模式下，请求仍会像往常一样被检查并记录为阻止事件，但没有任何内容被阻塞。"
+  zh-Hant: "警告：在空運行模式下運行！ 在空運行模式下，請求仍會像往常一樣被檢查並記錄為阻止事件，但沒有任何內容被阻塞。"
  Operating in maintenance mode:
-  zh-Hans: "警告：在维护模式下运行！在维护模式下，不会检查、记录、或阻止任何内容。"
-  zh-Hant: "警告：在維護模式下運行！在維護模式下，不會檢查、記錄、或阻止任何內容。"
+  zh-Hans: "警告：在维护模式下运行！ 在维护模式下，不会检查、记录、或阻止任何内容。"
+  zh-Hant: "警告：在維護模式下運行！ 在維護模式下，不會檢查、記錄、或阻止任何內容。"
  Page termination is disabled:
-  zh-Hans: "警告：页面终止被禁用！在解决此问题之前，无法正确阻止请求。"
-  zh-Hant: "警告：頁面終止被禁用！在解決此問題之前，無法正確阻止請求。"
+  zh-Hans: "警告：页面终止被禁用！ 在解决此问题之前，无法正确阻止请求。"
+  zh-Hant: "警告：頁面終止被禁用！ 在解決此問題之前，無法正確阻止請求。"
  Proceeding will log out all users:
   zh-Hans: "警告：如果继续，所有用户都将被登出。"
   zh-Hant: "警告：如果繼續，所有用戶都將被登出。"
@@ -1299,8 +1299,8 @@ warning: !lazy
   zh-Hans: "警告：辅助规则执行阶段目前已被禁用。"
   zh-Hant: "警告：輔助規則執行階段目前已被禁用。"
  This account is not using a valid password:
-  zh-Hans: "警告：此帐户不​使用有效的密码！"
-  zh-Hant: "警告：此帳戶不​使用有效的密碼！"
+  zh-Hans: "警告：此帐户不使用有效的密码！"
+  zh-Hant: "警告：此帳戶不使用有效的密碼！"
  Using the default password:
   zh-Hans: "警告：它使用标准密码！"
   zh-Hant: "警告：它使用標準密碼！"

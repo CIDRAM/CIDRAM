@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used to simulate block events (last modified: 2026.03.17).
+ * This file: Methods used to simulate block events (last modified: 2026.05.02).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -222,7 +222,7 @@ trait SimulateBlockEvent
         }
 
         /** Execute modules, if any have been enabled. */
-        if ($Modules && $this->Configuration['components']['modules'] !== '' && empty($this->CIDRAM['Whitelisted'])) {
+        if ($Modules && empty($this->CIDRAM['Whitelisted'] && $this->Configuration['components']['modules'] !== '')) {
             $this->Stage = 'Modules';
             if (!isset($this->CIDRAM['ModuleResCache'])) {
                 $this->CIDRAM['ModuleResCache'] = [];

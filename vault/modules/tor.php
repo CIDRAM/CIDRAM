@@ -10,7 +10,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Tor blocker module (last modified: 2026.03.26).
+ * This file: Tor blocker module (last modified: 2026.05.02).
  *
  * False positive risk (an approximate, rough estimate only): « [x]Low [ ]Medium [ ]High »
  */
@@ -46,11 +46,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         }
 
         /** Check IPv6 address. */
-        if ($this->trigger(
-            $this->CIDRAM['Tor-' . $LookupName] === '127.0.0.100',
-            'Tor exit node',
-            $this->L10N->getString('why_tor_project_exit_node')
-        )) {
+        if ($this->trigger($this->CIDRAM['Tor-' . $LookupName] === '127.0.0.100', 'Tor exit node', $this->L10N->getString('why_tor_project_exit_node'))) {
             $IsTor = true;
         }
     } elseif (\strpos($this->BlockInfo['IPAddr'], '.') !== false) {
@@ -65,11 +61,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         }
 
         /** Check IPv4 address. */
-        if ($this->trigger(
-            $this->CIDRAM['Tor-' . $LookupName] === '127.0.0.100',
-            'Tor exit node',
-            $this->L10N->getString('why_tor_project_exit_node')
-        )) {
+        if ($this->trigger($this->CIDRAM['Tor-' . $LookupName] === '127.0.0.100', 'Tor exit node', $this->L10N->getString('why_tor_project_exit_node'))) {
             $IsTor = true;
         }
     }

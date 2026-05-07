@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2026.04.30).
+ * This file: The CIDRAM core (last modified: 2026.05.02).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1154,7 +1154,7 @@ class Core
         }
 
         /** DNS is disabled. Let's exit the method. */
-        if (\strlen($DNS) === 0 && \strlen($this->Configuration['general']['default_dns']) === 0) {
+        if ($DNS === '' && $this->Configuration['general']['default_dns'] === '') {
             return $this->Configuration['general']['allow_gethostbyaddr_lookup'] ? $this->dnsReverseFallback($Addr) : $Addr;
         }
 

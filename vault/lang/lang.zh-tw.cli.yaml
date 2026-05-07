@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for CLI (last modified: 2025.09.21).
+# This file: Chinese (traditional) language data for CLI (last modified: 2026.05.06).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -24,8 +24,8 @@
 # requests, ask. I can help.
 ##/
 
-CLI_Bad_IP: " 指定的IP位址，​『{IP}』，​不是有效地址（IPv4/IPv6）！"
-CLI_F_Finished: "簽名定影已完成。​%s變化取得通過%s操作（%s）。"
+CLI_Bad_IP: " 指定的IP位址，『{IP}』，不是有效地址（IPv4/IPv6）！"
+CLI_F_Finished: "簽名定影已完成。 %s變化取得通過%s操作（%s）。"
 CLI_F_Started: "簽名定影已開始（%s）。"
 CLI_H: |
  CIDRAM CLI模式輔助。
@@ -48,8 +48,8 @@ CLI_H: |
  php.exe /cidram/loader.php -f signatures.dat
  php.exe /cidram/loader.php -v signatures.dat
  ---
-CLI_IP_Blocked: " 指定的IP位址，​『{IP}』，​是阻塞由一個或多簽名檔案。"
-CLI_IP_Not_Blocked: " 指定的IP位址，​『{IP}』，​不是阻塞由任何簽名檔案。"
+CLI_IP_Blocked: " 指定的IP位址，『{IP}』，是阻塞由一個或多簽名檔案。"
+CLI_IP_Not_Blocked: " 指定的IP位址，『{IP}』，不是阻塞由任何簽名檔案。"
 CLI_VF_Empty: "指定的簽名檔案為空或不存在的。"
 CLI_VF_Level_0: "通知"
 CLI_VF_Level_1: "警告"
@@ -60,10 +60,10 @@ CLI_VL_Duplicated: "線%s：簽名『%s』是一個賦值（%s計數）！"
 CLI_VL_Expiry: "線%s：到期標籤不包含有效的ISO8601日期/時間！"
 CLI_VL_Invalid: "線%s：『%s』不是一個有效的IPv4或IPv6地址！"
 CLI_VL_L120: "線%s：線路長度大於120位元組；線路長度應限制在120位元組為最佳可讀性。"
-CLI_VL_Mergeable: "線%s和線%s是相同的，​和因此，​可合併。"
+CLI_VL_Mergeable: "線%s和線%s是相同的，和因此，可合併。"
 CLI_VL_Missing: "線%s：【Function】失踪；簽名似乎是不完整。"
-CLI_VL_Nontriggerable: "線%s：『%s』不可觸發！​其基不匹配開始其範圍內！​試圖取代它以『%s』。"
-CLI_VL_Nontriggerable_Range: "線%s：『%s』不可觸發！​『%s』不是一個有效的範圍內！"
+CLI_VL_Nontriggerable: "線%s：『%s』不可觸發！ 其基不匹配開始其範圍內！ 試圖取代它以『%s』。"
+CLI_VL_Nontriggerable_Range: "線%s：『%s』不可觸發！ 『%s』不是一個有效的範圍內！"
 CLI_VL_Origin: "線%s：原產標籤不包含有效的ISO 3166-1 二位字母代碼！"
 CLI_VL_Subordinate: "線%s：『%s』是從屬於現有簽名『%s』。"
 CLI_VL_Superset: "線%s：『%s』是一個超集現有簽名『%s』。"
@@ -72,9 +72,9 @@ CLI_VL_Tabs: "線%s：製表是檢測；空間是首選到製表為最佳可讀�
 CLI_VL_Tags: "線%s：章節標籤大於20位元組；章節標籤應該清晰和簡明。"
 CLI_VL_Unrecognised: "線%s：【Function】未知；簽名可能被打破。"
 CLI_VL_Whitespace: "線%s：多餘的尾隨空白在這個線是檢測。"
-CLI_VL_YAML: "線%s：YAML樣數據是檢測，​但無法處理它。"
-CLI_V_CRLF: "CR/CRLF檢測在簽名檔案；這些都是允許的和不會產生問題，​但LF是最好。"
-CLI_V_Finished: "簽名驗證已完成（%s）。​如果沒有警告或錯誤已出現，​您的簽名檔案是最有可能的好。"
+CLI_VL_YAML: "線%s：YAML樣數據是檢測，但無法處理它。"
+CLI_V_CRLF: "CR/CRLF檢測在簽名檔案；這些都是允許的和不會產生問題，但LF是最好。"
+CLI_V_Finished: "簽名驗證已完成（%s）。 如果沒有警告或錯誤已出現，您的簽名檔案是最有可能的好。"
 CLI_V_LineByLine: "線由行驗證已開始。"
 CLI_V_Started: "簽名驗證已開始（%s）。"
 CLI_V_Terminal_LF: "簽名檔案應終止通過一個LF換行符。"

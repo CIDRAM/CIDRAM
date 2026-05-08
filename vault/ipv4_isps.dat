@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v4/vault/signatures/ipv4_isps.dat
 
-# Version: 2026.120.0
-# Last modified: 2026.05.01
+# Version: 2026.127.0
+# Last modified: 2026.05.08
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -2396,7 +2396,7 @@ Tag: BSNL
 # human access endpoints. Spam, hacking, brute-force attacks, port scans,
 # probing, etc detected from here.
 # Listing just the affected ranges/addresses only.
-# Updated: 2025.11.05 / Modified: 2026.01.26
+# Updated: 2025.11.05 / Modified: 2026.05.02
 
 1.68.195.143/32 Deny Attacks
 1.69.16.59/32 Deny Attacks
@@ -3056,6 +3056,7 @@ Tag: BSNL
 183.128.109.226/32 Deny Attacks
 183.128.109.234/32 Deny Attacks
 183.128.109.249/32 Deny Attacks
+183.134.40.82/32 Deny Attacks
 183.134.59.0/24 Deny Attacks
 183.136.225.0/24 Deny Attacks
 183.166.170.0/23 Deny Attacks
@@ -4283,7 +4284,7 @@ Tag: DCBG
 # hack attempts, probing, etc. Listing just the affected ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 8 (AS7643), 24,690 (AS45899),
 # 663 (AS135905), 108 (AS135967).
-# Updated: 2025.05.20 / Modified: 2026.02.24
+# Updated: 2025.05.20 / Modified: 2026.05.02
 
 14.160.23.0/24 Deny Attacks
 14.160.26.0/24 Deny Attacks
@@ -4649,6 +4650,7 @@ Tag: DCBG
 123.24.142.0/24 Deny Attacks
 123.25.1.66/32 Deny Attacks
 123.25.15.0/24 Deny Attacks
+123.25.35.0/24 Deny Attacks
 123.25.116.0/24 Deny Attacks
 123.25.234.0/24 Deny Attacks
 123.30.154.171/32 Deny Attacks
@@ -9107,21 +9109,6 @@ Profile: Domestic ISP;Mobile ISP;Infrastructure/Transit;Multiplay
 Tag: MTS PJSC
 
 
-# ASN 6849 ("Ukrtelecom").
-# Ukrainian domestic ISP. Brute-force attacks, port scans, hacking, and spam
-# detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 158.
-# Updated: 2025.05.25
-
-37.52.18.137/32 Deny Spam
-46.200.224.200/32 Deny Spam
-178.94.69.77/32 Deny Spam
-178.94.167.76/32 Deny Spam
-Origin: UA
-Profile: Domestic ISP
-Tag: Ukrtelecom
-
-
 # ASN 137432 ("BKB Network").
 # Caught using automated hacktools to try hacking into honeypots.
 # Listing just the affected ranges/addresses only.
@@ -9750,16 +9737,13 @@ Tag: Multinet Pakistan
 # ASN 6147 ("Telefonica del Peru S.A.A").
 # Peruvian domestic ISP. Spam and some email harvestors detected here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 300.
-# Updated: 2025.05.12
+# Stop Forum Spam (SFS) listings: 167.
+# Updated: 2026.05.08
 
 181.64.186.0/24 Deny Attacks
 181.65.138.129/32 Deny Attacks
-181.67.203.143/32 Deny Attacks
 190.237.6.0/24 Deny Attacks
 190.239.24.218/32 Deny Attacks
-200.37.252.237/32 Deny Spam
-200.60.126.18/32 Deny Spam
 200.121.141.0/24 Deny Attacks
 201.240.68.0/24 Deny Attacks
 Origin: PE
@@ -11842,10 +11826,10 @@ Tag: Crnogorski Telekom
 # ASN 12741 ("Netia SA").
 # Polish multiplay network. Webapp attacks, port scans, and spam detected from
 # here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 142.
-# Updated: 2025.05.25
+# Stop Forum Spam (SFS) listings: 22.
+# Updated: 2026.05.08
 
-62.87.151.1/32 Deny Attacks
+62.87.151.199/32 Deny Attacks
 Origin: PL
 Profile: Domestic ISP;Multiplay
 Tag: Netia SA
@@ -11899,17 +11883,25 @@ Tag: Lanet Network Ltd
 # ASN 8374 ("Polkomtel Sp. z o.o").
 # Polish domestic ISP. Webapp attacks and spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 89.
-# Updated: 2025.05.17
+# Stop Forum Spam (SFS) listings: 27.
+# Updated: 2026.05.08
 
-31.0.48.33/32 Deny Attacks
-31.0.48.107/32 Deny Attacks
-31.0.48.238/32 Deny Attacks
-31.0.49.150/32 Deny Attacks
-31.0.49.158/32 Deny Attacks
-31.0.60.254/32 Deny Attacks
-31.0.89.18/32 Deny Attacks
-31.0.177.135/32 Deny Attacks
+31.0.48.11/32 Deny Attacks
+31.0.48.13/32 Deny Attacks
+31.0.48.140/32 Deny Attacks
+31.0.48.142/32 Deny Attacks
+31.0.48.232/32 Deny Attacks
+31.0.49.57/32 Deny Attacks
+31.0.49.246/32 Deny Attacks
+31.0.49.250/32 Deny Attacks
+31.0.60.5/32 Deny Attacks
+31.0.60.98/32 Deny Attacks
+31.0.60.184/32 Deny Attacks
+31.0.60.190/32 Deny Attacks
+31.0.89.22/32 Deny Attacks
+31.0.89.47/32 Deny Attacks
+31.0.89.104/32 Deny Attacks
+31.0.89.194/32 Deny Attacks
 Origin: PL
 Profile: Domestic ISP
 Tag: Polkomtel
@@ -12462,11 +12454,12 @@ Tag: CMC Telecom
 # ASN 206358 ('N.P.SH "ISP - Broadcast"').
 # Albanian domestic ISP. Brute-force, phpMyAdmin, webapp attacks, and spam
 # detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 2.
-# Updated: 2025.05.25
+# Stop Forum Spam (SFS) listings: 4.
+# Updated: 2026.05.08
 
 185.188.218.2/32 Deny Attacks
-185.188.218.26/31 Deny Attacks
+185.188.218.26/32 Deny Attacks
+185.188.218.86/32 Deny Attacks
 185.188.218.206/32 Deny Attacks
 185.188.219.0/24 Deny Attacks
 Origin: AL
@@ -12623,7 +12616,8 @@ Tag: BROSEGHINI LTDA EPP
 # ASN 48573 ("PHAETON PLUS d.o.o").
 # Slovenian domestic ISP. DDoS, SSH and brute-force attacks detected from here.
 # Listing just the affected ranges/addresses only.
-# Updated: 2025.05.25
+# Stop Forum Spam (SFS) listings: 4.
+# Updated: 2025.05.25 / Checked: 2026.05.08
 
 94.143.40.0/24 Deny Attacks
 Origin: SI
@@ -12897,284 +12891,227 @@ Tag: INDOSAT
 # ASN 7713 ("PT Telekomunikasi Indonesia").
 # Indonesian domestic ISP. Brute-force, SSH, SQLi, and webapp attacks, hacking,
 # and spam detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 1,844.
-# Updated: 2025.05.27
+# Stop Forum Spam (SFS) listings: 995.
+# Updated: 2026.05.08
 
-36.64.152.3/32 Deny Spam
-36.64.236.3/32 Deny Attacks
-36.64.236.129/32 Deny Attacks
-36.65.78.246/32 Deny Attacks
-36.65.166.112/32 Deny Attacks
-36.65.238.95/32 Deny Attacks
-36.65.238.102/32 Deny Attacks
-36.65.238.159/32 Deny Attacks
-36.65.238.236/32 Deny Attacks
-36.68.223.0/24 Deny Attacks
-36.74.40.50/32 Deny Attacks
-36.74.40.170/32 Deny Attacks
-36.74.40.176/32 Deny Attacks
-36.74.40.222/32 Deny Attacks
-36.74.41.113/32 Deny Attacks
-36.74.41.158/32 Deny Attacks
-36.74.42.25/32 Deny Attacks
-36.74.43.212/32 Deny Attacks
-36.74.44.0/24 Deny Attacks
-36.74.45.170/32 Deny Attacks
-36.74.45.180/32 Deny Attacks
-36.74.45.208/32 Deny Attacks
+36.65.78.46/32 Deny Attacks
+36.65.78.91/32 Deny Attacks
+36.65.78.123/32 Deny Attacks
+36.65.78.185/32 Deny Attacks
+36.65.238.150/32 Deny Attacks
+36.65.238.164/32 Deny Attacks
+36.68.223.24/32 Deny Attacks
+36.68.223.79/32 Deny Attacks
+36.68.223.91/32 Deny Attacks
+36.68.223.113/32 Deny Attacks
+36.68.223.167/32 Deny Attacks
+36.74.40.77/32 Deny Attacks
+36.74.40.78/32 Deny Attacks
+36.74.40.227/32 Deny Attacks
 36.77.120.21/32 Deny Attacks
-36.77.120.34/32 Deny Attacks
-36.77.120.139/32 Deny Attacks
-36.78.23.30/32 Deny Attacks
-36.78.23.157/32 Deny Attacks
-36.78.23.190/32 Deny Attacks
-36.78.39.139/32 Deny Attacks
-36.78.39.181/32 Deny Attacks
-36.78.252.10/32 Deny Attacks
-36.78.252.135/32 Deny Attacks
-36.78.252.142/32 Deny Attacks
-36.78.252.211/32 Deny Attacks
-36.80.227.64/32 Deny Attacks
-36.80.227.119/32 Deny Attacks
-36.80.242.96/32 Deny Attacks
-36.80.242.232/32 Deny Attacks
-36.80.242.246/32 Deny Attacks
-36.80.253.52/32 Deny Attacks
-36.80.253.252/32 Deny Attacks
-36.81.44.1/32 Deny Attacks
-36.81.44.81/32 Deny Attacks
+36.77.120.182/32 Deny Attacks
+36.78.23.0/24 Deny Attacks
+36.78.252.22/32 Deny Attacks
+36.78.252.65/32 Deny Attacks
+36.78.252.136/32 Deny Attacks
+36.80.227.12/32 Deny Attacks
+36.80.242.0/24 Deny Attacks
+36.80.253.0/24 Deny Attacks
 36.81.232.0/24 Deny Attacks
 36.81.239.0/24 Deny Attacks
-36.81.246.0/24 Deny Attacks
-36.88.46.154/31 Deny Attacks
-36.88.46.156/31 Deny Attacks
-36.88.46.158/32 Deny Attacks
-36.88.62.109/32 Deny Spam
-36.88.182.242/32 Deny Spam
-36.88.235.146/32 Deny Spam
-36.89.237.50/32 Deny Spam
-36.89.251.105/32 Deny Spam
-36.90.0.0/17 Deny Attacks
+36.90.4.212/32 Deny Attacks
+36.90.5.3/32 Deny Attacks
+36.90.5.205/32 Deny Attacks
+36.90.7.36/32 Deny Attacks
+36.90.7.152/32 Deny Attacks
+36.90.8.74/32 Deny Attacks
+36.90.8.88/32 Deny Attacks
+36.90.8.104/32 Deny Attacks
+36.90.8.228/32 Deny Attacks
+36.90.9.0/24 Deny Attacks
+36.90.10.0/23 Deny Attacks
+36.90.12.0/22 Deny Attacks
+36.90.16.0/20 Deny Attacks
+36.90.32.0/19 Deny Attacks
+36.90.64.0/20 Deny Attacks
+36.90.80.0/21 Deny Attacks
+36.90.123.103/32 Deny Attacks
+36.90.126.74/32 Deny Attacks
+36.90.126.148/32 Deny Attacks
+36.90.126.173/32 Deny Attacks
+36.90.126.220/32 Deny Attacks
+36.90.126.243/32 Deny Attacks
+36.90.127.152/32 Deny Attacks
 36.90.128.0/19 Deny Attacks
-36.90.160.0/20 Deny Attacks
-36.90.176.0/21 Deny Attacks
-36.90.184.57/32 Deny Attacks
-36.90.185.20/32 Deny Attacks
-36.90.185.58/32 Deny Attacks
-36.90.185.213/32 Deny Attacks
+36.90.172.0/22 Deny Attacks
+36.90.183.25/32 Deny Attacks
+36.90.183.240/32 Deny Attacks
+36.90.184.7/32 Deny Attacks
 36.90.186.0/23 Deny Attacks
-36.90.194.0/23 Deny Attacks
-36.90.208.0/20 Deny Attacks
+36.90.210.0/23 Deny Attacks
+36.90.212.0/22 Deny Attacks
+36.90.216.0/21 Deny Attacks
 36.90.224.0/21 Deny Attacks
-36.90.242.245/32 Deny Attacks
-36.91.45.10/32 Deny Attacks
-36.91.45.13/32 Deny Attacks
-36.91.45.26/31 Deny Attacks
-36.91.45.29/32 Deny Attacks
-36.91.58.183/32 Deny Attacks
-36.91.145.59/32 Deny Attacks
+36.90.242.130/32 Deny Attacks
+36.91.45.11/32 Deny Attacks
+36.91.45.27/32 Deny Attacks
+36.91.45.28/32 Deny Attacks
+36.91.58.45/32 Deny Attacks
 36.91.145.99/32 Deny Attacks
-36.91.145.143/32 Deny Attacks
 36.91.145.235/32 Deny Attacks
 36.91.147.5/32 Deny Attacks
 36.91.147.71/32 Deny Attacks
 36.91.147.91/32 Deny Attacks
-36.91.171.29/32 Deny Attacks
 36.91.171.37/32 Deny Attacks
-36.91.186.70/32 Deny Attacks
+36.91.171.45/32 Deny Attacks
+36.91.171.113/32 Deny Attacks
+36.91.186.15/32 Deny Attacks
 36.91.186.209/32 Deny Attacks
-36.91.186.253/32 Deny Attacks
-36.92.1.3/32 Deny Attacks
+36.92.1.101/32 Deny Attacks
+36.92.1.138/32 Deny Attacks
 36.92.36.115/32 Deny Attacks
-36.92.39.42/32 Deny Spam
-36.92.46.26/32 Deny Spam
-36.92.134.57/32 Deny Attacks
 36.92.134.177/32 Deny Attacks
-36.92.147.49/32 Deny Attacks
-36.92.147.115/32 Deny Attacks
-36.92.165.163/32 Deny Attacks
-36.92.240.138/32 Deny Attacks
+36.92.147.99/32 Deny Attacks
+36.92.165.237/32 Deny Attacks
+36.92.187.170/32 Deny Attacks
 36.92.240.142/32 Deny Attacks
-36.93.3.95/32 Deny Spam
-36.93.32.243/32 Deny Attacks
-36.94.2.137/32 Deny Attacks
-36.94.2.202/32 Deny Attacks
-36.94.2.204/32 Deny Attacks
-36.94.8.23/32 Deny Attacks
-36.94.8.132/32 Deny Attacks
-36.94.8.160/32 Deny Attacks
-36.94.23.85/32 Deny Attacks
-36.94.23.90/32 Deny Attacks
-36.94.23.226/32 Deny Attacks
-36.94.102.35/32 Deny Spam
-36.94.228.115/32 Deny Attacks
-36.94.228.191/32 Deny Attacks
-36.94.228.207/32 Deny Attacks
+36.93.152.155/32 Deny Attacks
+36.94.2.142/32 Deny Attacks
+36.94.8.83/32 Deny Attacks
+36.94.8.194/32 Deny Attacks
+36.94.23.146/32 Deny Attacks
+36.94.225.106/32 Deny Attacks
+36.94.228.17/32 Deny Attacks
+36.94.228.103/32 Deny Attacks
 36.95.35.57/32 Deny Attacks
 36.95.35.217/32 Deny Attacks
-36.95.48.45/32 Deny Spam
-36.95.140.237/32 Deny Spam
-36.95.154.137/32 Deny Attacks
-36.95.171.125/32 Deny Attacks
-36.95.197.155/32 Deny Spam
-36.95.210.129/32 Deny Attacks
+36.95.210.175/32 Deny Attacks
+36.95.210.195/32 Deny Attacks
 110.136.21.0/24 Deny Attacks
-110.136.82.249/32 Deny Spam
-110.136.203.67/32 Deny Spam
-110.137.37.214/32 Deny Spam
-110.137.61.0/24 Deny Attacks
 110.137.194.0/24 Deny Attacks
-110.138.80.32/32 Deny Spam
-110.138.81.135/32 Deny Spam
-110.138.171.2/32 Deny Attacks
-110.138.171.80/32 Deny Attacks
-110.138.171.86/32 Deny Attacks
-110.138.171.107/32 Deny Attacks
-110.138.171.191/32 Deny Attacks
-118.96.245.99/32 Deny Attacks
-118.96.245.152/32 Deny Attacks
-118.96.245.238/32 Deny Attacks
 125.160.134.0/24 Deny Attacks
-125.161.39.0/32 Deny Attacks
-125.161.39.95/32 Deny Attacks
-125.161.50.27/32 Deny Attacks
-125.161.50.198/32 Deny Attacks
-125.161.50.251/32 Deny Attacks
+125.161.50.0/24 Deny Attacks
 125.162.210.0/24 Deny Attacks
-125.164.0.0/18 Deny Attacks
-125.164.156.66/32 Deny Attacks
-125.164.156.118/32 Deny Attacks
-125.164.156.171/32 Deny Attacks
-125.164.187.49/32 Deny Attacks
+125.163.6.76/32 Deny Spam
+125.163.6.220/32 Deny Attacks
+125.164.6.218/32 Deny Attacks
+125.164.14.241/32 Deny Attacks
+125.164.16.0/20 Deny Attacks
+125.164.32.0/19 Deny Attacks
+125.164.187.102/32 Deny Attacks
 125.165.41.0/24 Deny Attacks
-125.166.235.237/32 Deny Attacks
+125.166.235.19/32 Deny Attacks
+125.166.235.253/32 Deny Attacks
 125.167.32.105/32 Deny Attacks
-125.167.32.177/32 Deny Attacks
-125.167.32.189/32 Deny Attacks
-125.167.93.78/32 Deny Attacks
 180.241.206.0/23 Deny Attacks
-180.241.209.170/32 Deny Attacks
-180.241.210.52/32 Deny Attacks
-180.241.210.83/32 Deny Attacks
-180.241.210.129/32 Deny Attacks
-180.241.210.236/32 Deny Attacks
-180.241.211.0/24 Deny Attacks
-180.241.213.91/32 Deny Attacks
-180.241.213.101/32 Deny Attacks
+180.241.209.22/32 Deny Attacks
+180.241.209.153/32 Deny Attacks
+180.241.210.0/23 Deny Attacks
 180.241.214.0/24 Deny Attacks
-180.241.217.231/32 Deny Attacks
-180.241.218.29/32 Deny Attacks
-180.241.218.67/32 Deny Attacks
-180.241.218.102/32 Deny Attacks
-180.241.219.1/32 Deny Attacks
-180.241.219.152/32 Deny Attacks
-180.241.219.176/32 Deny Attacks
-180.241.221.145/32 Deny Attacks
-180.241.221.148/32 Deny Attacks
-180.241.222.83/32 Deny Attacks
-180.241.222.143/32 Deny Attacks
-180.241.222.240/32 Deny Attacks
-180.241.226.47/32 Deny Attacks
-180.241.228.86/32 Deny Attacks
-180.241.228.235/32 Deny Attacks
-180.241.229.81/32 Deny Attacks
-180.241.231.121/32 Deny Attacks
+180.241.218.22/32 Deny Attacks
+180.241.218.39/32 Deny Attacks
+180.241.218.49/32 Deny Attacks
+180.241.218.158/32 Deny Attacks
+180.241.219.7/32 Deny Attacks
+180.241.219.183/32 Deny Attacks
+180.241.219.196/32 Deny Attacks
+180.241.221.2/32 Deny Attacks
+180.241.221.104/32 Deny Attacks
+180.241.221.236/32 Deny Attacks
+180.241.221.242/32 Deny Attacks
+180.241.222.7/32 Deny Attacks
+180.241.222.218/32 Deny Attacks
+180.241.226.108/32 Deny Attacks
+180.241.228.64/31 Deny Attacks
+180.241.228.70/32 Deny Attacks
+180.241.228.153/32 Deny Attacks
+180.241.228.236/32 Deny Attacks
+180.241.229.92/32 Deny Attacks
+180.241.229.105/32 Deny Attacks
 180.241.233.0/24 Deny Attacks
 180.241.236.0/22 Deny Attacks
 180.241.240.0/22 Deny Attacks
-180.241.244.108/32 Deny Attacks
-180.241.244.197/32 Deny Attacks
-180.241.245.50/32 Deny Attacks
-180.241.245.144/32 Deny Attacks
-180.241.245.217/32 Deny Attacks
-180.241.246.173/32 Deny Attacks
-180.241.246.183/32 Deny Attacks
-180.241.246.224/32 Deny Attacks
+180.241.244.9/32 Deny Attacks
+180.241.244.182/32 Deny Attacks
+180.241.244.221/32 Deny Attacks
+180.241.244.234/32 Deny Attacks
+180.241.245.43/32 Deny Attacks
+180.241.245.44/32 Deny Attacks
+180.241.245.240/32 Deny Attacks
+180.241.246.39/32 Deny Attacks
+180.241.246.146/32 Deny Attacks
+180.241.246.209/32 Deny Attacks
+180.241.246.228/32 Deny Attacks
 180.241.247.0/24 Deny Attacks
 180.241.248.0/23 Deny Attacks
-180.241.254.124/32 Deny Attacks
+180.241.254.193/32 Deny Attacks
+180.241.254.198/32 Deny Attacks
+180.241.254.226/32 Deny Attacks
 180.242.111.0/24 Deny Attacks
-180.242.233.0/24 Deny Attacks
+180.242.233.56/32 Deny Attacks
+180.242.233.95/32 Deny Attacks
 180.243.0.0/20 Deny Attacks
-180.243.16.20/32 Deny Attacks
-180.243.16.93/32 Deny Attacks
-180.243.16.232/32 Deny Attacks
-180.243.17.81/32 Deny Attacks
-180.243.17.247/32 Deny Attacks
-180.243.18.97/32 Deny Attacks
-180.243.18.135/32 Deny Attacks
-180.243.18.215/32 Deny Attacks
-180.243.19.99/32 Deny Attacks
-180.243.25.106/32 Deny Attacks
-180.243.25.149/32 Deny Attacks
-180.243.27.176/32 Deny Attacks
-180.243.27.224/32 Deny Attacks
-180.243.29.5/32 Deny Attacks
-180.243.29.20/32 Deny Attacks
-180.243.29.243/32 Deny Attacks
+180.243.16.63/32 Deny Attacks
+180.243.16.84/32 Deny Attacks
+180.243.16.248/32 Deny Attacks
+180.243.16.250/32 Deny Attacks
+180.243.17.83/32 Deny Attacks
+180.243.17.209/32 Deny Attacks
+180.243.18.111/32 Deny Attacks
+180.243.18.158/32 Deny Attacks
+180.243.18.230/32 Deny Attacks
+180.243.18.245/32 Deny Attacks
+180.243.19.46/32 Deny Attacks
+180.243.19.85/32 Deny Attacks
+180.243.19.140/32 Deny Attacks
+180.243.19.235/32 Deny Attacks
+180.243.29.0/24 Deny Attacks
 180.243.32.0/20 Deny Attacks
-180.243.48.55/32 Deny Attacks
-180.243.48.169/32 Deny Attacks
-180.243.50.62/32 Deny Attacks
-180.243.50.97/32 Deny Attacks
-180.243.50.247/32 Deny Attacks
-180.243.51.132/32 Deny Attacks
-180.243.53.214/32 Deny Attacks
-180.243.56.44/32 Deny Attacks
-180.243.57.13/32 Deny Attacks
-180.243.59.173/32 Deny Attacks
-180.243.59.252/32 Deny Attacks
-180.244.160.189/32 Deny Spam
-180.246.205.121/32 Deny Attacks
-180.246.205.148/32 Deny Attacks
-180.246.205.164/32 Deny Attacks
-180.246.205.220/32 Deny Attacks
-180.246.205.233/32 Deny Attacks
-180.248.17.18/32 Deny Spam
+180.243.48.0/24 Deny Attacks
+180.243.50.0/23 Deny Attacks
+180.243.53.52/32 Deny Attacks
+180.243.56.0/23 Deny Attacks
+180.243.59.0/24 Deny Attacks
+180.246.205.0/24 Deny Attacks
 180.248.33.0/24 Deny Attacks
-180.248.39.54/32 Deny Spam
-180.248.45.141/32 Deny Spam
-180.249.141.177/32 Deny Attacks
-180.250.12.26/32 Deny Attacks
 180.250.39.76/32 Deny Attacks
 180.250.204.97/32 Deny Attacks
-180.251.94.132/32 Deny Attacks
-180.251.94.183/32 Deny Attacks
 180.251.180.0/22 Deny Attacks
 180.251.192.0/18 Deny Attacks
 180.252.21.0/24 Deny Attacks
 180.252.92.0/22 Deny Attacks
-180.252.97.43/32 Deny Attacks
-180.252.97.110/32 Deny Attacks
-180.252.98.8/32 Deny Attacks
-180.252.99.10/32 Deny Attacks
-180.252.101.226/32 Deny Attacks
-180.252.102.231/32 Deny Attacks
-180.252.103.159/32 Deny Attacks
-180.252.103.241/32 Deny Attacks
-180.252.108.152/32 Deny Attacks
-180.252.111.117/32 Deny Attacks
-180.253.73.0/24 Deny Attacks
-180.253.225.70/32 Deny Attacks
-180.253.225.111/32 Deny Attacks
-180.253.225.171/32 Deny Attacks
-180.253.225.218/32 Deny Attacks
-180.253.225.231/32 Deny Attacks
-180.253.242.107/32 Deny Attacks
-180.253.242.108/32 Deny Attacks
-180.253.242.218/32 Deny Attacks
-180.253.242.237/32 Deny Attacks
-180.254.48.19/32 Deny Attacks
-180.254.48.22/32 Deny Attacks
-180.254.48.241/32 Deny Attacks
+180.252.97.96/32 Deny Attacks
+180.252.98.80/32 Deny Attacks
+180.252.98.133/32 Deny Attacks
+180.252.98.160/32 Deny Attacks
+180.252.99.88/32 Deny Attacks
+180.252.101.5/32 Deny Attacks
+180.252.101.172/32 Deny Attacks
+180.252.102.52/32 Deny Attacks
+180.252.102.136/32 Deny Attacks
+180.252.103.3/32 Deny Attacks
+180.252.103.205/32 Deny Attacks
+180.252.108.17/32 Deny Attacks
+180.252.108.105/32 Deny Attacks
+180.252.111.10/32 Deny Attacks
+180.252.111.132/32 Deny Attacks
+180.252.111.137/32 Deny Attacks
+180.252.111.171/32 Deny Attacks
+180.252.111.193/32 Deny Attacks
+180.253.225.0/24 Deny Attacks
+180.253.242.0/24 Deny Attacks
 180.254.60.0/22 Deny Attacks
 180.254.64.0/21 Deny Attacks
 180.254.74.0/23 Deny Attacks
 180.254.76.0/22 Deny Attacks
 180.254.80.0/20 Deny Attacks
-180.254.212.90/32 Deny Spam
 203.130.248.211/32 Deny Attacks
-222.124.103.70/32 Deny Attacks
+203.130.248.214/32 Deny Attacks
+222.124.103.10/32 Deny Attacks
+222.124.103.72/32 Deny Attacks
+222.124.103.143/32 Deny Attacks
+222.124.103.155/32 Deny Attacks
+222.124.103.192/32 Deny Attacks
 222.124.177.148/32 Deny Attacks
 Origin: ID
 Profile: Domestic ISP;Infrastructure/Transit;Mobile ISP;Multiplay
@@ -13749,10 +13686,10 @@ Tag: Multimedia Polska
 # ASN 26599 ("Telefonica Brasil").
 # Brazilian domestic ISP and an occasional source of spam, SSH and brute-force
 # attacks. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 158.
-# Updated: 2025.05.25
+# Stop Forum Spam (SFS) listings: 206.
+# Updated: 2026.05.08
 
-179.225.151.76/32 Deny Attacks
+179.225.151.0/24 Deny Attacks
 Origin: BR
 Profile: Domestic ISP
 Tag: Telefonica Brasil
@@ -13829,10 +13766,15 @@ Tag: Scancom Limited
 # ASN 25521 ("Industrial Media Network").
 # Ukrainian domestic ISP. Spam, DDoS attacks, brute-force attacks, and port
 # scanning detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 67.
-# Updated: 2025.05.25
+# Stop Forum Spam (SFS) listings: 71.
+# Updated: 2026.05.08
 
-82.193.103.54/32 Deny Attacks
+82.193.99.59/32 Deny Attacks
+82.193.99.62/32 Deny Attacks
+82.193.99.138/32 Deny Attacks
+82.193.99.157/32 Deny Attacks
+82.193.103.87/32 Deny Attacks
+82.193.103.125/32 Deny Attacks
 Origin: UA
 Profile: Domestic ISP
 Tag: IPnet
@@ -14798,18 +14740,6 @@ Origin: CA
 Origin: HK
 Profile: Domestic ISP
 Tag: TELUS Communications Inc
-
-
-# ASN 2116 ("GLOBALCONNECT AS").
-# Brute-force, SSH attacks, and attacks against honeypots, port scans, and spam
-# detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 16.
-# Updated: 2025.05.21
-
-195.1.144.210/32 Deny Attacks
-Origin: NO
-Profile: Domestic ISP;Multiplay
-Tag: GLOBALCONNECT AS
 
 
 # ASN 34757 ("Sibirskie Seti Ltd").
@@ -15961,11 +15891,11 @@ Tag: U.P. COMMUNICATION SERVICES PVT LTD
 # ASN 11830 ("Instituto Costarricense de Electricidad y Telecom").
 # Costa Rican domestic ISP. Spam and hack attempts detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 27.
-# Updated: 2025.05.25
+# Stop Forum Spam (SFS) listings: 13.
+# Updated: 2026.05.08
 
-181.193.55.106/32 Deny Spam
-201.204.168.47/32 Deny Attacks
+201.204.168.83/32 Deny Attacks
+201.204.168.218/32 Deny Attacks
 Origin: CR
 Profile: Domestic ISP
 Tag: Instituto Costarricense
@@ -22912,19 +22842,6 @@ Profile: Domestic ISP
 Tag: J.A.CASAROTTE
 
 
-# ASN 13237 ("euNetworks GmbH").
-# EU transit and backbone provider. Brute-force, SSH, and SMTP attacks, port
-# scans, hacking, and spam detected from here.
-# Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 2.
-# Updated: 2025.05.05
-
-81.209.147.5/32 Deny Attacks
-Origin: DE
-Profile: Infrastructure/Transit
-Tag: euNetworks GmbH
-
-
 # ASN 149268 ("ROARNET-AS-IN").
 # Indian domestic ISP. Brute-force, webapp, and honeypot attacks, port scans,
 # and hacking detected from here.
@@ -24900,17 +24817,10 @@ Tag: Softcrop It
 # Brazilian domestic ISP. Brute-force, SSH, WordPress/XMLRPC, and webapp
 # attacks, credential stuffing, port scans, hacking, and spam detected from
 # here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 68.
-# Updated: 2025.05.01 / Modified: 2025.08.05
+# Stop Forum Spam (SFS) listings: 45.
+# Updated: 2026.05.08
 
-128.201.176.180/32 Deny Attacks
-128.201.176.191/32 Deny Attacks
-128.201.176.193/32 Deny Attacks
-128.201.177.148/32 Deny Attacks
-128.201.177.154/32 Deny Attacks
-128.201.177.167/32 Deny Attacks
-128.201.177.223/32 Deny Attacks
-177.185.30.15/32 Deny Attacks
+128.201.177.0/24 Deny Attacks
 179.125.96.0/21 Deny Attacks
 191.5.32.0/24 Deny Attacks
 Origin: BR
@@ -26727,6 +26637,62 @@ Tag: RAIN GROUP
 Origin: ID
 Profile: Domestic ISP
 Tag: Infotama Lintas
+
+
+# ASN 35063 ("Chopin Telewizja Kablowa spolka z ograniczona odpowiedzialnoscia").
+# Polish multiplay provider. Brute-force, SSH, SQLi, and webapp attacks, port
+# scans, hacking, and spam detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 2.
+# Updated: 2026.05.08
+
+31.7.40.9/32 Deny Attacks
+31.7.42.5/32 Deny Attacks
+31.7.42.115/32 Deny Attacks
+31.7.42.186/32 Deny Attacks
+31.7.43.8/32 Deny Attacks
+31.7.43.50/32 Deny Attacks
+Origin: PL
+Profile: Domestic ISP;Multiplay
+Tag: Chopin Telewizja
+
+
+# ASN 25424 ("CEZNET s.r.o").
+# Czech multiplay provider. Brute-force, SSH, WordPress/XMLRPC, honeypot, and
+# webapp attacks, port scans, and hacking detected from here.
+# Listing just the affected ranges/addresses only.
+# Updated: 2026.05.08
+
+37.9.192.213/32 Deny Attacks
+Origin: CZ
+Profile: Domestic ISP;Multiplay
+Tag: CEZNET s.r.o
+
+
+# ASN 24389 ("GrameenPhone Ltd").
+# Bangladesh mobile ISP. Brute-force, SSH, WordPress/XMLRPC, honeypot, and
+# webapp attacks, port scans, and hacking detected from here.
+# Listing just the affected ranges/addresses only.
+# Stop Forum Spam (SFS) listings: 504.
+# Updated: 2026.05.08
+
+37.111.192.0/20 Deny Attacks
+37.111.208.0/24 Deny Attacks
+37.111.210.0/23 Deny Attacks
+37.111.212.0/22 Deny Attacks
+37.111.216.0/21 Deny Attacks
+37.111.224.0/20 Deny Attacks
+37.111.240.0/24 Deny Attacks
+37.111.242.0/23 Deny Attacks
+37.111.244.0/22 Deny Attacks
+37.111.248.0/24 Deny Attacks
+37.111.253.0/24 Deny Attacks
+119.30.32.0/24 Deny Attacks
+119.30.38.0/23 Deny Attacks
+119.30.41.0/24 Deny Attacks
+Origin: BD
+Profile: Mobile ISP
+Tag: GrameenPhone Ltd
 
 
 # ---

@@ -558,6 +558,7 @@
 
 #### Bugs fixed.
 - [2026.05.06]: The "omit this field" option wasn't being honoured for empty hostname fields; Fixed (#681).
+- [2026.05.17]: Fixed a method call using a wrong parameter type in the AbuseIPDB module.
 
 #### Other changes.
 - [2026.04.02]: Added a glossary page to the front-end.

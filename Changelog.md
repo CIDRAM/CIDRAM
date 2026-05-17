@@ -569,4 +569,5 @@
 - [2026.04.21]: Added a fallback to the request handler for sending requests using streams when curl isn't available, extending functionality of the request handler to those to whom curl isn't available.
 - [2026.04.28]: Modified the code for performing DNS lookups so as to utilise the request handler and to thus be able to log lookups as outbound requests, a useful thing to log for benchmarking lookups and identifying related potential problems.
 - [2026.05.17]: Updated the flags CSS.
+- [2026.05.18]: Unified the triggers for the outdated browser checks in the BOBUAM so as to avoid complications in deciding appropriate CAPTCHA signature limits (#684).
 - *Plus all the regular signature updates.*

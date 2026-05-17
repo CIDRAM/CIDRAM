@@ -22,7 +22,7 @@
  * William "Bill" Minozzi.
  * @link https://www.stopbadbots.com/
  *
- * This file: Bot Or Browser User Agent Module (last modified: 2026.03.18).
+ * This file: Bot Or Browser User Agent Module (last modified: 2026.05.18).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -230,48 +230,56 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         ];
         if (
             \preg_match('%(?:^.*(?<!googlebot\.com|google\.com|search\.msn\.com)$|^.*(?<=proxy))%', $this->CIDRAM['Hostname']) &&
-            !(\preg_match('%(?:msn|bing)bot|bingpreview|bing\.com%', $this->BlockInfo['UALC']) && ($this->hasProfile('Bypass flagged') || !isset($this->Stages['Tests:Enable'])))
+            !(\preg_match('%(?:msn|bing)bot|bingpreview|bing\.com%', $this->BlockInfo['UALC']) && ($this->hasProfile('Bypass flagged') || !isset($this->Stages['Tests:Enable']))) &&
+            !(\preg_match('%^17\.%', $this->BlockInfo['IPAddrResolved'] ?: $this->BlockInfo['IPAddr']) && \preg_match('%\.applebot\.apple\.com$%', $this->CIDRAM['Hostname']) && \strpos($this->BlockInfo['UA'], 'Applebot') !== false)
         ) {
+            $Caught = [];
             if ($Opera) {
                 $EOLOpera = $this->Configuration['bobuam']['opera'] ?: (int)$this->CIDRAM['BOBUAM Token']['Opera'];
-                if ($this->trigger($TokenOpera < $EOLOpera, $Browser[0] . ' (O)', $Browser[1])) {
+                if ($TokenOpera < $EOLOpera) {
+                    $Caught[] = 'O';
                     $this->enactOptions('Opera:', $Options);
                 }
             }
             if ($Chromium) {
                 $EOLChrome = $this->Configuration['bobuam']['chrome'] ?: (int)$this->CIDRAM['BOBUAM Token']['Chrome'];
-                if ($this->trigger($TokenChrome < $EOLChrome, $Browser[0] . ' (C)', $Browser[1])) {
+                if ($TokenChrome < $EOLChrome) {
+                    $Caught[] = 'C';
                     $this->enactOptions('Chrome:', $Options);
                 }
             }
             if ($Edge) {
                 $EOLEdge = $this->Configuration['bobuam']['edge'] ?: (int)$this->CIDRAM['BOBUAM Token']['Edge'];
-                if ($this->trigger($TokenEdge < $EOLEdge, $Browser[0] . ' (E)', $Browser[1])) {
+                if ($TokenEdge < $EOLEdge) {
+                    $Caught[] = 'E';
                     $this->enactOptions('Edge:', $Options);
                 }
             }
             if ($Firefox) {
                 $EOLFirefox = $this->Configuration['bobuam']['firefox'] ?: (int)$this->CIDRAM['BOBUAM Token']['Firefox'];
                 $EOLFirefoxESR = $this->Configuration['bobuam']['firefox_esr'] ?: (int)$this->CIDRAM['BOBUAM Token']['Firefox ESR'];
-                if ($this->trigger((($TokenFirefox < $EOLFirefox) && ($TokenFirefox !== $EOLFirefoxESR)), $Browser[0] . ' (F)', $Browser[1])) {
+                if ($TokenFirefox < $EOLFirefox && $TokenFirefox !== $EOLFirefoxESR) {
+                    $Caught[] = 'F';
                     $this->enactOptions('Firefox:', $Options);
                 }
             }
             if ($Safari) {
                 $EOLSafari = $this->Configuration['bobuam']['safari'] ?: (int)$this->CIDRAM['BOBUAM Token']['Safari'];
-                if ($this->trigger($TokenSafari < $EOLSafari, $Browser[0] . ' (S)', $Browser[1])) {
+                if ($TokenSafari < $EOLSafari) {
+                    $Caught[] = 'S';
                     $this->enactOptions('Safari:', $Options);
                 }
             }
-            if ($this->trigger(!$Opera && !$Chromium && !$Edge && !$Firefox && !$Safari && \preg_match('%^(?i)(?!.*opera (?:mini\/|mobi).*)(?!.*(?:google(?:bot\/| web preview)|(android.*(?:version|samsungbrowser)\/)).*).*(?: Edge\/(?:(?:\d|1[01]|1(?:2\.(?:[02-9]|1(?:0[01346-9]|[1-9]))|3\.(?:[02-9]|1(?:0[0-46-9]|[1-9]))|4\.(?:[02-9]|1(?:4[0-24-9]|[0-35-9]))|5\.(?:0|1[0-4])))\.|[02-9])| Edg\/(?:\d|[0-6]\d)\.|msie\s?(?:\d|1[2-9]|[2-9]\d|\d{3,})\.|(?:netscape|mozilla\/(?:[0-3]\.|4\.0[24568]\s\[|4\.[578]|[7-9]\.|\d{2,}\.))|opera[\s\/](?:[0-8]\.|9\.[1-79]|bork-edition|1[01]\.|12\.(?:[02-9]|1[0-579])|1[3-9]\.|[2-9]\d\.|\d{3,}))%', $this->BlockInfo['UA']), $Browser[0] . ' (HC)', $Browser[1])) {
+            if (!$Opera && !$Chromium && !$Edge && !$Firefox && !$Safari && \preg_match(
+                '%^(?i)(?!.*opera (?:mini\/|mobi).*)(?!.*(?:google(?:bot\/| web preview)|(android.*(?:version|samsungbrowser)\/)).*).*(?: Edge\/(?:(?:\d|1[01]|1(?:2\.(?:[02-9]|1(?:0[01346-9]|[1-9]))|3\.(?:[02-9]|1(?:0[0-46-9]|[1-9]))|4\.(?:[02-9]|1(?:4[0-24-9]|[0-35-9]))|5\.(?:0|1[0-4])))\.|[02-9])| Edg\/(?:\d|[0-6]\d)\.|msie\s?(?:\d|1[2-9]|[2-9]\d|\d{3,})\.|(?:netscape|mozilla\/(?:[0-3]\.|4\.0[24568]\s\[|4\.[578]|[7-9]\.|\d{2,}\.))|opera[\s\/](?:[0-8]\.|9\.[1-79]|bork-edition|1[01]\.|12\.(?:[02-9]|1[0-579])|1[3-9]\.|[2-9]\d\.|\d{3,}))%',
+                $this->BlockInfo['UA']
+            )) {
+                $Caught[] = 'HC';
                 $this->enactOptions('Other:', $Options);
             }
-            if (\preg_match('%^17\.%', $this->BlockInfo['IPAddr'])) {
-                if (\preg_match('%\.applebot\.apple\.com$%', $this->CIDRAM['Hostname'])) {
-                    if (\strpos($this->BlockInfo['UA'], 'Applebot') !== false) {
-                        $this->bypass(\strpos($this->BlockInfo['WhyReason'], $Browser[0]) !== false, 'Applebot Bypass 2');
-                    }
-                }
+            if (!empty($Caught)) {
+                $Caught = \implode('+', $Caught);
+                $this->trigger(true, $Browser[0] . ' (' . $Caught . ')', $Browser[1]);
             }
         }
     }

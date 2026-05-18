@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v4/vault/signatures/ipv6.dat
 
-# Version: 2026.127.0
-# Last modified: 2026.05.08
+# Version: 2026.137.0
+# Last modified: 2026.05.18
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -50,16 +50,14 @@ Tag: Sharktech
 
 # ASN 35916 ("MULTACOM CORPORATION").
 # Dedicated server farm/leaser and hybrid cloud provider.
-# Stop Forum Spam (SFS) listings: 283.
-# Updated: 2025.06.15 / Checked: 2025.11.05
+# Stop Forum Spam (SFS) listings: 221.
+# Updated: 2026.05.18
 
-2a0d:d480::/29 Deny Cloud
-Origin: PE
-2a0d:6900::/29 Deny Cloud
-Origin: RU
 2602:fff6:1::/48 Deny Cloud
 2607:9a00::/32 Deny Cloud
 2607:f130::/32 Deny Cloud
+2a0d:6900::/29 Deny Cloud
+2a0d:d480::/29 Deny Cloud
 Origin: US
 Profile: Dedicated;Webhosting
 Tag: Multacom Corp
@@ -1053,7 +1051,7 @@ Tag: Corporate Colocation
 
 
 # ASNs 13926, 22781, 29713, 46253, 54203, 62651, 140952 ("Strong Technology, LLC").
-# Updated: 2026.02.13
+# Updated: 2026.05.18
 
 2404:5d80:6000::/39 Deny Cloud
 2404:5d80:6300::/40 Deny Cloud
@@ -1074,11 +1072,13 @@ Origin: JP
 2604:c980:3400::/40 Deny Cloud
 2604:c980:3800::/40 Deny Cloud
 2604:c980:5800::/40 Deny Cloud
+2604:c980:6600::/40 Deny Cloud
 2604:ea80:2400::/40 Deny Cloud
 2604:ea80:3000::/40 Deny Cloud
 2604:ea80:3600::/40 Deny Cloud
 2604:ea80:4200::/40 Deny Cloud
 2604:ea80:4800::/40 Deny Cloud
+2604:ea80:5800::/40 Deny Cloud
 2604:fc80:1000::/40 Deny Cloud
 2604:fc80:2000::/40 Deny Cloud
 2604:fc80:2400::/40 Deny Cloud
@@ -1117,9 +1117,11 @@ Origin: JP
 2a03:efc0:3700::/40 Deny Cloud
 2a03:efc0:5400::/40 Deny Cloud
 2a03:efc0:6600::/40 Deny Cloud
+2a03:efc0:7800::/40 Deny Cloud
+2a03:efc0:8200::/40 Deny Cloud
+2a03:efc0:8600::/40 Deny Cloud
 2a05:e9c0:1400::/40 Deny Cloud
 2a05:e9c0:1800::/40 Deny Cloud
-2a05:e9c0:3800::/40 Deny Cloud
 2a05:e9c0:5000::/40 Deny Cloud
 2a05:e9c0:6800::/40 Deny Cloud
 2a05:e9c0:7400::/40 Deny Cloud
@@ -6153,10 +6155,9 @@ Profile: Infrastructure/Transit;Webhosting
 Tag: ARDH GLOBAL
 
 
-# ASN 24971 ("Master Internet s.r.o").
-# Czech IT firm (provides servers, infrastructure, kubernetes clusters, etc).
-# Stop Forum Spam (SFS) listings: 14.
-# Updated: 2023.05.02 / Checked: 2025.04.01
+# ASN 24971 ("MasterDC s.r.o").
+# Stop Forum Spam (SFS) listings: 2.
+# Updated: 2023.05.02 / Checked: 2026.05.18
 
 2001:67c:68::/48 Deny Cloud
 2a00:8220::/32 Deny Cloud
@@ -9228,14 +9229,11 @@ Tag: Lanset
 
 # ASNs 931, 213122, 399114, 400061 ("Hyonix", "Krixe Pte. Ltd").
 # Brute-force, SSH, webapp attacks, hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 71 (AS931), 4,764 (AS213122),
-# 1 (AS399114), 2 (AS400061).
-# Updated: 2025.04.13
+# Updated: 2026.05.18
 
-2401:3a60:1500::/40 Deny Cloud
-2401:3a60:3100::/40 Deny Cloud
 2401:3a60:3300::/40 Deny Cloud
 2401:3a60:3400::/40 Deny Cloud
+2401:3a60:5300::/40 Deny Cloud
 Origin: SG
 Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: Hyonix LLC
@@ -13444,7 +13442,7 @@ Tag: Zhejiang Aiyun
 # ASNs 43260, 197555 ("DGN TEKNOLOJI A.S", "SMARTMIETEN TECH PRIVATE LIMITED").
 # Brute-force, RDP attacks, and port scans detected from here.
 # Stop Forum Spam (SFS) listings: 2 (AS43260).
-# Updated: 2025.06.09 / Checked: 2026.03.29
+# Updated: 2025.06.09 / Checked: 2026.05.18
 
 2a04:4280::/29 Deny Cloud
 2a05:bf00::/29 Deny Cloud
@@ -16702,7 +16700,7 @@ Tag: Optibounce, LLC
 
 # ASN 328608 ("Africa on Cloud").
 # DDoS, webapp attacks, port scans, scraping, and spam detected from here.
-# Updated: 2025.01.16 / Checked: 2026.01.09
+# Updated: 2025.01.16 / Checked: 2026.05.18
 
 2c0f:ebd0::/32 Deny Cloud
 2c0f:f1b8::/32 Deny Cloud
@@ -18695,6 +18693,17 @@ Tag: RedSwitches
 Origin: VG
 Profile: Restricted/Unidentifiable
 Tag: FIRST SERVER LIMITED
+
+
+# ASN 207096 ("Link Web Solutions LLP").
+# Brute-force, webapp attacks, sniffing for vulnerabilities, hacking, and spam
+# detected from here.
+# Updated: 2026.05.18
+
+2a0a:7600::/29 Deny Cloud
+Origin: GB
+Profile: Restricted/Unidentifiable
+Tag: Link Web Solutions LLP
 
 
 # ---

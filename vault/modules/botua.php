@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bot user agents module (last modified: 2026.03.18).
+ * This file: Bot user agents module (last modified: 2026.05.18).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -242,9 +242,9 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         'zibber|zurichfinancialservices~',
         $UANoSpace
     ) || \preg_match(
-        '~^Mozilla/5\.0( [a-z]{2,5}/0\..| \(Macintosh; Intel Mac OS X \d+_\d+_\d+\) AppleWebKit/\d+\.\d+\.\d+ \(KHTML, like Gecko\))?$~i',
+        '~^Mozilla/5\.0(?: [a-z]{2,5}/0\..| \(Macintosh; Intel Mac OS X \d+_\d+_\d+\) AppleWebKit/\d+\.\d+\.\d+ \(KHTML, like Gecko\))?$~i',
         $this->BlockInfo['UA']
-    ), 'Unauthorised'); // 2023.09.15 mod 2026.01.14
+    ), 'Unauthorised'); // 2023.09.15 mod 2026.05.18
 
     if ($this->trigger(\preg_match('~ivre-|masscan~', $UANoSpace), 'Port scanner and synflood tool detected')) {
         $this->Reporter->report([14, 15, 19], ['MASSCAN port scanner and synflood tool detected.'], $this->BlockInfo['IPAddr']);
@@ -348,6 +348,17 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         '(?=.*gecko\/\d)(?=.*firefox\/\d).*(?:openwave|config)\/[\d.]+$~',
         $UANoSpace
     ), 'Scraper UA'); // 2025.12.02
+
+    /**
+     * Requests with this UA are most likely stealth attempts by Perplexity.
+     * Also a legitimate UA for Chrome v124 running on MacOS v10 (Catalina),
+     * but as Chrome v124 was released April 2024 (now more than two years
+     * ago), and Chrome auto-updates, the chances of encountering a
+     * legitimate instance of it is fairly small.
+     *
+     * @link https://blog.cloudflare.com/perplexity-is-using-stealth-undeclared-crawlers-to-evade-website-no-crawl-directives/
+     */
+    $this->trigger(\preg_match('~^Mozilla/5\.0 \(Macintosh; Intel Mac OS X 10_15_7\) AppleWebKit/537\.36 \(KHTML, like Gecko\) Chrome/124(?:\.0){3} Safari/537\.36$~i', $this->BlockInfo['UA']), 'Scraper UA'); // 2026.05.18
 
     $this->trigger(\preg_match('~ct‑git‑scanner/~i', $this->BlockInfo['UA']), 'Unauthorised Git scanner'); // 2025.07.05
     $this->trigger(\preg_match('~4\.066686748~', $UANoSpace), 'Hack UA (pretending to be Netscape)'); // 2025.11.13

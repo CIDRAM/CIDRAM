@@ -549,4 +549,5 @@
 - [2026.04.28]: Modified the code for performing DNS lookups so as to utilise the request handler and to thus be able to log lookups as outbound requests, a useful thing to log for benchmarking lookups and identifying related potential problems.
 - [2026.05.17]: Updated the flags CSS.
 - [2026.05.18]: Unified the triggers for the outdated browser checks in the BOBUAM so as to avoid complications in deciding appropriate CAPTCHA signature limits (#684).
+- [2026.05.22]: Added ruby text for country flags shown at the logs page in fancy mode to be able to show both the flags and their relevant country codes together.
 - *Plus all the regular signature updates.*

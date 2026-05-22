@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used by the logs page (last modified: 2026.03.18).
+ * This file: Methods used by the logs page (last modified: 2026.05.22).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -172,20 +172,14 @@ trait Logs
             /** Add country flags. */
             if (\preg_match_all('~\[([A-Z]{2})\]~', $Section, $Parts) && \count($Parts[1])) {
                 if ($Flags) {
-                    $OuterOpen = '';
-                    $OuterClose = '';
-                    $InnerOpen = '<span class="flag ';
-                    $InnerClose = '"><span></span></span>';
+                    $FFormat = '<ruby><a href="%1$s&search=%2$s" title="%3$s"><span class="flag %3$s"><span></span></span></a><rp>[</rp><rt class="flagruby">%3$s</rt><rp>]</rp></ruby>';
                 } else {
-                    $OuterOpen = '[';
-                    $OuterClose = ']';
-                    $InnerOpen = '';
-                    $InnerClose = '';
+                    $FFormat = '[<a href="%1$s&search=%2$s" title="%3$s">%3$s</a>]';
                 }
                 foreach ($Parts[1] as $ThisPart) {
                     $Section = \str_replace(
                         '[' . $ThisPart . ']',
-                        $OuterOpen . '<a href="' . $this->paginationRemoveFrom($BlockLink) . '&search=' . $this->preparePartForSearchLink($ThisPart) . '" title="' . $ThisPart . '">' . $InnerOpen . $ThisPart . $InnerClose . '</a>' . $OuterClose,
+                        sprintf($FFormat, $this->paginationRemoveFrom($BlockLink), $this->preparePartForSearchLink($ThisPart), $ThisPart),
                         $Section
                     );
                 }

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Protect traits (last modified: 2026.05.06).
+ * This file: Protect traits (last modified: 2026.05.18).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -147,7 +147,7 @@ trait Protect
             $DoBan = false;
             if ($AtRunTimeInfractions >= $this->Configuration['signatures']['infraction_limit']) {
                 $DoBan = true;
-            } elseif ($this->BlockInfo['IPAddr'] !== $this->BlockInfo['IPAddrResolved']) {
+            } elseif ($this->BlockInfo['IPAddrResolved'] !== '' && $this->BlockInfo['IPAddr'] !== $this->BlockInfo['IPAddrResolved']) {
                 $Try = $this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddrResolved']] ?? $this->Cache->getEntry('Tracking-' . $this->BlockInfo['IPAddrResolved']);
                 if ($Try !== false && $Try >= $this->Configuration['signatures']['infraction_limit']) {
                     $DoBan = true;
@@ -176,7 +176,7 @@ trait Protect
             }
 
             /** Execute for resolved IP address if necessary. */
-            if ($this->BlockInfo['IPAddrResolved'] && $this->CIDRAM['TestResults'] && empty($this->CIDRAM['Whitelisted'])) {
+            if ($this->BlockInfo['IPAddrResolved'] !== '' && $this->CIDRAM['TestResults'] && empty($this->CIDRAM['Whitelisted'])) {
                 try {
                     $this->CIDRAM['TestResults'] = $this->runTests($this->BlockInfo['IPAddrResolved'], true);
                 } catch (\Exception $e) {
@@ -520,7 +520,7 @@ trait Protect
             $this->Stage = 'Statistics';
             if ($this->BlockInfo['SignatureCount'] > 0) {
                 if (!empty($this->CIDRAM['Banned'])) {
-                    if ($this->BlockInfo['IPAddrResolved']) {
+                    if ($this->BlockInfo['IPAddrResolved'] !== '') {
                         if (isset($this->StatisticsTracked['Banned-IPv4'])) {
                             $this->Cache->incEntry('Statistics-Banned-IPv4');
                         }
@@ -536,7 +536,7 @@ trait Protect
                             $this->Cache->incEntry('Statistics-Banned-IPv6');
                         }
                     }
-                } elseif ($this->BlockInfo['IPAddrResolved']) {
+                } elseif ($this->BlockInfo['IPAddrResolved'] !== '') {
                     if (isset($this->StatisticsTracked['Blocked-IPv4'])) {
                         $this->Cache->incEntry('Statistics-Blocked-IPv4');
                     }
@@ -557,7 +557,7 @@ trait Protect
                     }
                 }
             } else {
-                if ($this->BlockInfo['IPAddrResolved']) {
+                if ($this->BlockInfo['IPAddrResolved'] !== '') {
                     if (isset($this->StatisticsTracked['Passed-IPv4'])) {
                         $this->Cache->incEntry('Statistics-Passed-IPv4');
                     }
@@ -784,7 +784,7 @@ trait Protect
                 /** IP address pseudonymisation. */
                 if ($this->Configuration['legal']['pseudonymise_ip_addresses'] && $this->CIDRAM['TestResults']) {
                     $this->BlockInfo['IPAddr'] = $this->pseudonymiseIp($this->BlockInfo['IPAddr']);
-                    if ($this->BlockInfo['IPAddrResolved']) {
+                    if ($this->BlockInfo['IPAddrResolved'] !== '') {
                         $this->BlockInfo['IPAddrResolved'] = $this->pseudonymiseIp($this->BlockInfo['IPAddrResolved']);
                     }
                 }

@@ -22,7 +22,7 @@
  * William "Bill" Minozzi.
  * @link https://www.stopbadbots.com/
  *
- * This file: Bot Or Browser User Agent Module (last modified: 2026.05.18).
+ * This file: Bot Or Browser User Agent Module (last modified: 2026.05.24).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -85,7 +85,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $this->trigger(\preg_match('%(?:.* Chrome\/(\d*\.)).* Edg\/(?!\1)%', $this->BlockInfo['UA']), $Malformed[0] . ' (EC)', $Malformed[1]) ||
             $this->trigger(\preg_match('%(?i)(?!.*safari\/\d{3,5}(?![\w]))(?=safari).*%', $this->BlockInfo['UA']), $Malformed[0] . ' (S)', $Malformed[1]) ||
             $this->trigger(\preg_match('%(?i)(?:Microsoft Internet Explorer|ft NT (?:[12789]|[2-9]\d)\.)%', $this->BlockInfo['UA']), $Malformed[0] . ' (MS)', $Malformed[1]) ||
-            $this->trigger(\preg_match('%^(?=.*Windows NT \d\d\.)(?!.*Kindle\/.*)(?i)(?!.*mobile.*)(?!.*googlebot*)(?!.*android*)(?!.*edge?\/.*).*Version\/.*$%', $this->BlockInfo['UA']), $Malformed[0] . ' (WS)', $Malformed[1])
+            $this->trigger(\preg_match('%^(?=.*Windows NT \d\d\.)(?!.*Kindle\/.*)(?i)(?!.*mobile.*)(?!.*googlebot*)(?!.*android*)(?!.*edge?\/.*).*Version\/%', $this->BlockInfo['UA']), $Malformed[0] . ' (WS)', $Malformed[1])
         ) {
             $this->enactOptions('Malformed:', $Options);
         }
@@ -171,7 +171,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     }
 
     /** Fetch Opera user agent token. */
-    if ($Opera = \preg_match('%^(?=.*Mozilla\/).*OPR\/(\d+)\.\d+.*$%', $this->BlockInfo['UA'], $rebt)) {
+    if ($Opera = \preg_match('%^(?=.*Mozilla\/).*OPR\/(\d+)\.\d+%', $this->BlockInfo['UA'], $rebt)) {
         $TokenOpera = (int)$rebt[1];
     } else {
         $TokenOpera = 0;
@@ -179,8 +179,8 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
     /** Fetch Chrome/Chromium user agent token. */
     if (
-        $Chromium = \preg_match('%^(?i)(?!.*edg(?:a|e|ios)?\/)(?!.* build\/)(?!.* OPR\/)(?!.* Favicon)(?!.* SamsungBrowser/).*chrom(?:e|ium)\/(\d+)\.\d+.*$%', $this->BlockInfo['UA'], $rebt) ||
-        $Chromium = \preg_match('%^(?i)(?=.*android)(?!.* OPR\/)(?!.* Favicon)(?!.* SamsungBrowser/).*chrom(?:e|ium)\/(\d+)\.\d+.*$%', $this->BlockInfo['UA'], $rebt)
+        $Chromium = \preg_match('%^(?i)(?!.*edg(?:a|e|ios)?\/)(?!.* build\/)(?!.* OPR\/)(?!.* Favicon)(?!.* SamsungBrowser/).*chrom(?:e|ium)\/(\d+)\.\d+%', $this->BlockInfo['UA'], $rebt) ||
+        $Chromium = \preg_match('%^(?i)(?=.*android)(?!.* OPR\/)(?!.* Favicon)(?!.* SamsungBrowser/).*chrom(?:e|ium)\/(\d+)\.\d+%', $this->BlockInfo['UA'], $rebt)
     ) {
         $TokenChrome = (int)$rebt[1];
     } else {
@@ -188,7 +188,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     }
 
     /** Fetch Edge user agent token. */
-    if ($Edge = \preg_match('%^(?=.*Mozilla\/)(?i).*Edg(?:a|e|ios)?\/(\d+)\.\d+.*$%', $this->BlockInfo['UA'], $rebt)) {
+    if ($Edge = \preg_match('%^(?=.*Mozilla\/)(?i).*Edg(?:a|e|ios)?\/(\d+)\.\d+%', $this->BlockInfo['UA'], $rebt)) {
         $TokenEdge = (int)$rebt[1];
     } else {
         $TokenEdge = 0;
@@ -202,7 +202,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     }
 
     /** Fetch Safari user agent token. */
-    if ($Safari = \preg_match('%^(?=.*Safari\/)(?!.*(?:(?:Kindle|DuckDuckGo| Build)\/|; wv\\)).*)(?i).*version\/(\d+).*$%', $this->BlockInfo['UA'], $rebt)) {
+    if ($Safari = \preg_match('%^(?=.*Safari\/)(?!.*(?:(?:Kindle|DuckDuckGo| Build)\/|; wv\\)).*)(?i).*version\/(\d+)%', $this->BlockInfo['UA'], $rebt)) {
         $TokenSafari = (int)$rebt[1];
     } else {
         $TokenSafari = 0;
@@ -210,8 +210,8 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
     /** Fetch Samsung Browser user agent token. */
     if (
-        $Samsung = \preg_match('%^(?=.*Mozilla\/)(?i).* SamsungBrowser\/(\d+)\.\d+.*$%', $this->BlockInfo['UA'], $rebt) ||
-        $Samsung = \preg_match('%^(?=.*Mozilla\/)(?=.* SM-[\dA-Za-z]+)(?i).* Version\/(\d+)\.\d+.*$%', $this->BlockInfo['UA'], $rebt)
+        $Samsung = \preg_match('%^(?=.*Mozilla\/)(?i).* SamsungBrowser\/(\d+)\.\d+%', $this->BlockInfo['UA'], $rebt) ||
+        $Samsung = \preg_match('%^(?=.*Mozilla\/)(?=.* SM-[\dA-Za-z]+)(?i).* Version\/(\d+)\.\d+%', $this->BlockInfo['UA'], $rebt)
     ) {
         $TokenSamsung = (int)$rebt[1];
     } else {

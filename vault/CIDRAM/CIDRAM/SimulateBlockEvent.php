@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used to simulate block events (last modified: 2026.05.02).
+ * This file: Methods used to simulate block events (last modified: 2026.05.18).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -168,7 +168,7 @@ trait SimulateBlockEvent
             $DoBan = false;
             if ($this->BlockInfo['Infractions'] >= $this->Configuration['signatures']['infraction_limit']) {
                 $DoBan = true;
-            } elseif ($Addr !== $this->BlockInfo['IPAddrResolved']) {
+            } elseif ($this->BlockInfo['IPAddrResolved'] !== '' && $Addr !== $this->BlockInfo['IPAddrResolved']) {
                 $Try = $this->CIDRAM['Tracking-' . $this->BlockInfo['IPAddrResolved']] ?? $this->Cache->getEntry('Tracking-' . $this->BlockInfo['IPAddrResolved']);
                 if ($Try !== false && $Try >= $this->Configuration['signatures']['infraction_limit']) {
                     $DoBan = true;
@@ -197,7 +197,7 @@ trait SimulateBlockEvent
             }
 
             /** Execute for resolved IP address if necessary. */
-            if ($this->BlockInfo['IPAddrResolved']) {
+            if ($this->BlockInfo['IPAddrResolved'] !== '') {
                 if (!empty($this->CIDRAM['ThisIP']['IPAddress'])) {
                     $this->CIDRAM['ThisIP']['IPAddress'] .= ' (' . $this->BlockInfo['IPAddrResolved'] . ')';
                 }

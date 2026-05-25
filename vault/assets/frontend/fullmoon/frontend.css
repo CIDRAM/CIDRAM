@@ -18,7 +18,7 @@ input[type=password]{background-image:url(data:image/gif;base64,{Base64Encode}{A
 input[type=text]{background-image:url(data:image/gif;base64,{Base64Encode}{Asset:pip_{Text Direction}_silver.gif}{/Base64Encode})}
 input[type=text][pattern]:valid:not(input[type=text]:placeholder-shown){background-image:url(data:image/gif;base64,{Base64Encode}{Asset:pip_{Text Direction}_silver_valid.gif}{/Base64Encode})}
 input[type=text][pattern]:invalid:not(input[type=text]:placeholder-shown){background-image:url(data:image/gif;base64,{Base64Encode}{Asset:pip_{Text Direction}_silver_invalid.gif}{/Base64Encode})}
-input{border-radius:0}
+input,select,option{border-radius:0}
 input[type=button],input[type=file]::file-selector-button,input[type=submit],input[type=reset]{border-radius:18px;transition:all .3s ease-out}
 select,option,input,textarea{filter:grayscale(.1) brightness(.94)}
 select:active,textarea:active:not([readonly]),input:active{filter:grayscale(0) brightness(1)}

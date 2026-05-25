@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2026.05.05).
+# This file: Portuguese language data for the front-end (last modified: 2026.05.24).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -187,6 +187,9 @@ config: !lazy
   pt-BR: "O motivo do bloqueio mostrado quando um agente do usuário tenta se disfarçar de outra coisa."
   pt-PT: "O motivo do bloqueio mostrado quando um agente do utilizador tenta se disfarçar de outra coisa."
  bobuam_safari: "Versão mais baixa permitida do token "Version" do Safari. Recomendado: {{BOBUAM Token.Safari}}."
+ bobuam_token_difference_limit:
+  pt-BR: "Os CAPTCHAs oferecidos em resposta ao bloqueio do usuário devido a um navegador desatualizado, além de todos os outros requisitos, exigirão adicionalmente que a versão principal do navegador não seja inferior à versão mínima permitida especificada aqui. Por exemplo, se a versão mínima permitida for definida como 10, e o número especificado aqui for 2, a versão principal do navegador do usuário precisaria ser pelo menos 8 para que um CAPTCHA fosse apresentado. Quando definido como 0, esse requisito adicional não se aplicará."
+  pt-PT: "Os CAPTCHAs oferecidos em resposta ao bloqueio do utilizador devido a um navegador desatualizado, para além de todos os outros requisitos, exigirão adicionalmente que a versão principal do navegador não seja inferior à versão mínima permitida especificada aqui. Por exemplo, se a versão mínima permitida estiver definida para 10, e o número especificado aqui for 2, a versão principal do navegador do utilizador necessitaria de ser pelo menos 8 para que um CAPTCHA fosse apresentado. Quando definido para 0, este requisito adicional não se aplicará."
  bobuam_what_to_block: "O que bloquear?"
  bunnycdn: "Configuração para o módulo de compatibilidade BunnyCDN."
  bunnycdn_positive_action: "Qual ação o CIDRAM deve executar quando encontrar uma solicitação do BunnyCDN? Ação padrão = Contornar."

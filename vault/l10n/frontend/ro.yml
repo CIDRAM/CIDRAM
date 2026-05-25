@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Romanian language data for the front-end (last modified: 2026.04.20).
+# This file: Romanian language data for the front-end (last modified: 2026.05.24).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -155,6 +155,7 @@ config: !lazy
  bobuam_reason_malformed: "Motivul blocării afișat atunci când este detectat un șir de agent utilizator malformat."
  bobuam_reason_masquerade: "Motivul blocării afișat atunci când un agent de utilizator încearcă să se mascheze ca altceva."
  bobuam_safari: "Cea mai scăzută versiune permisă a simbolului „Versiune” Safari. Recomandat: {{BOBUAM Token.Safari}}."
+ bobuam_token_difference_limit: "CAPTCHA-urile oferite ca răspuns la blocarea utilizatorului din cauza unui browser învechit, pe lângă toate celelalte cerințe, vor impune în plus ca versiunea majoră a browserului său să nu fie mai îndepărtată de cea mai mică versiune permisă decât numărul specificat aici. De exemplu, dacă o versiune minimă permisă este setată la 10, iar numărul specificat aici este 2, versiunea majoră a browserului utilizatorului ar trebui să fie cel puțin 8 pentru a i se oferi un CAPTCHA. Când este setată la 0, această cerință suplimentară nu se va aplica."
  bobuam_what_to_block: "Ce să blochezi?"
  bunnycdn: "Configurarea modulului de compatibilitate BunnyCDN."
  bunnycdn_positive_action: "Ce acțiune ar trebui să efectueze CIDRAM atunci când întâlnește o solicitare de la BunnyCDN? Acțiune implicită = Bypass."

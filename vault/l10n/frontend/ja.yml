@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2026.05.06).
+# This file: Japanese language data for the front-end (last modified: 2026.05.24).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -155,6 +155,7 @@ config: !lazy
  bobuam_reason_malformed: "不正な形式のユーザー・エージェント文字列が検出されたときに表示されるブロックの理由。"
  bobuam_reason_masquerade: "ユーザー・エージェントが別のものになりすましたときに表示されるブロックの理由。"
  bobuam_safari: "許可されているSafariの「Version」トークンの最低バージョン。 おすすめされた： {{BOBUAM Token.Safari}}。"
+ bobuam_token_difference_limit: "ブラウザのバージョンが古いためにユーザーがブロックされた場合に提示されるキャプチャは、他のすべての要件に加えて、ブラウザのメジャー・バージョンが、ここで指定された番号よりも低い許容バージョンから古いものでないことも要求されます。 例えば、許可される最低バージョンが「10」に設定されていて、ここで指定されている数値が「2」の場合、キャプチャが表示されるためには、ユーザーのブラウザのメジャー・バージョンが少なくとも「8」である必要があります。 「0」に設定すると、この追加要件は適用されません。"
  bobuam_what_to_block: "何をブロックすべきでしょうか？"
  bunnycdn: "BunnyCDN互換性モジュールの設定。"
  bunnycdn_positive_action: "BunnyCDNからのリクエストに遭遇した場合、CIDRAMはどのアクションを実行する必要がありますか？ デフォルト・アクション = バイパスする。"

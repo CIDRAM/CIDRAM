@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2026.04.19).
+# This file: English language data for the front-end (last modified: 2026.05.18).
 ##/
 
 Abuse category: !lazy
@@ -171,6 +171,7 @@ config: !lazy
  bobuam_reason_malformed: "The block reason shown when a malformed user agent string is detected."
  bobuam_reason_masquerade: "The block reason shown when an user agent tries to masquerade as something else."
  bobuam_safari: "Lowest allowed version of Safari's "Version" token. Recommended: {{BOBUAM Token.Safari}}."
+ bobuam_token_difference_limit: "CAPTCHAs being offered in response to the user being blocked due to an outdated browser, alongside all other requirements, will additionally require that the major version of their browser be no further back from the lowest allowed version than the number specified here. E.g., if a lowest allowed version is set to 10, and the number specified here is 2, the major version of the user's browser would need to be at least 8 to be offered a CAPTCHA. When set to 0, this additional requirement won't apply."
  bobuam_what_to_block: "What to block?"
  bunnycdn: "BunnyCDN compatibility module configuration."
  bunnycdn_positive_action: "Which action should CIDRAM perform when it encounters a request from BunnyCDN? Default action = Bypass."

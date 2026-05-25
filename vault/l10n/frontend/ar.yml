@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2026.04.20).
+# This file: Arabic language data for the front-end (last modified: 2026.05.24).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -178,6 +178,7 @@ config: !lazy
  bobuam_reason_malformed: "السبب المُقدَّم عند اكتشاف وكيل مستخدم تالف وحظره."
  bobuam_reason_masquerade: "السبب المُقدَّم عندما يحاول وكيل المستخدم التنكر في صورة شيء آخر."
  bobuam_safari: "أقل إصدار مسموح به من رمز "Version" في Safari. مُستَحسَن: {{BOBUAM Token.Safari}}."
+ bobuam_token_difference_limit: "تتطلب اختبارات CAPTCHA التي يتم تقديمها استجابةً لحظر المستخدم بسبب متصفح قديم، إلى جانب جميع المتطلبات الأخرى، ألا يكون الإصدار الرئيسي لمتصفحهم أقدم من أدنى إصدار مسموح به من الرقم المحدد هنا. على سبيل المثال، إذا تم تعيين أدنى إصدار مسموح به إلى 10، وكان الرقم المحدد هنا هو 2، فيجب أن يكون الإصدار الرئيسي لمتصفح المستخدم 8 على الأقل ليتم عرض CAPTCHA عليه. عند ضبط القيمة على 0، لن يتم تطبيق هذا الشرط الإضافي."
  bobuam_what_to_block: "ما الذي يجب حظره؟"
  bunnycdn: "التكوين لوحدة التوافق BunnyCDN."
  bunnycdn_positive_action: "ما الإجراء الذي يجب أن يقوم به CIDRAM عندما يواجه طلبًا من BunnyCDN؟ الإجراء القياسي = تجاوز."

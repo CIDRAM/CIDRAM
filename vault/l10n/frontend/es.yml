@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2026.04.20).
+# This file: Spanish language data for the front-end (last modified: 2026.05.24).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -178,6 +178,7 @@ config: !lazy
  bobuam_reason_malformed: "El motivo del bloqueo que se muestra cuando se detecta una cadena de agente de usuario malformado."
  bobuam_reason_masquerade: "El motivo del bloqueo que se muestra cuando un agente de usuario intenta hacerse pasar por otra cosa."
  bobuam_safari: "La versión más baja permitida del token "Version" de Safari. Recomendado: {{BOBUAM Token.Safari}}."
+ bobuam_token_difference_limit: "Los CAPTCHA que se ofrezcan como respuesta al bloqueo del usuario debido a un navegador obsoleto, además de todos los demás requisitos, exigirán que la versión principal de su navegador no sea más antigua que la versión mínima permitida especificada aquí. Por ejemplo, si la versión mínima permitida se establece en 10, y el número especificado aquí es 2, la versión principal del navegador del usuario tendría que ser al menos 8 para que se le ofreciera un CAPTCHA. Cuando se establece en 0, este requisito adicional no se aplicará."
  bobuam_what_to_block: "¿Qué bloquear?"
  bunnycdn: "Configuración para el módulo de compatibilidad de BunnyCDN."
  bunnycdn_positive_action: "¿Qué acción debe realizar CIDRAM cuando encuentra una solicitud de BunnyCDN? Acción predefinido = Bypassear."

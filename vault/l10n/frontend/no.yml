@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2026.04.20).
+# This file: Norwegian language data for the front-end (last modified: 2026.05.24).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -177,6 +177,7 @@ config: !lazy
  bobuam_reason_malformed: "Årsaken til blokkering vises når en feilformet brukeragentstreng oppdages."
  bobuam_reason_masquerade: "Årsaken til blokkering vises når en brukeragent prøver å maskerade for noe annet."
  bobuam_safari: "Laveste tillatte versjon av Safaris «Version»-token. Anbefalt: {{BOBUAM Token.Safari}}."
+ bobuam_token_difference_limit: "CAPTCHA-er som tilbys som svar på at brukeren er blokkert på grunn av en utdatert nettleser, vil i tillegg kreve at hovedversjonen av nettleseren deres ikke er lenger tilbake fra den laveste tillatte versjonen enn tallet som er spesifisert her. Hvis f.eks. den laveste tillatte versjonen er satt til 10, og tallet som er angitt her er 2, må hovedversjonen av brukerens nettleser være minst 8 for å bli tilbudt en CAPTCHA. Når den er satt til 0, gjelder ikke dette tilleggskravet."
  bobuam_what_to_block: "Hva skal blokkeres?"
  bunnycdn: "Konfigurasjon for BunnyCDN-kompatibilitetsmodulen."
  bunnycdn_positive_action: "Hvilken handling skal CIDRAM utføre når den møter en forespørsel fra BunnyCDN? Standard handling = Bypassere."

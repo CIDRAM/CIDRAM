@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2026.04.20).
+# This file: Korean language data for the front-end (last modified: 2026.05.24).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -178,6 +178,7 @@ config: !lazy
  bobuam_reason_malformed: "잘못된 사용자 에이전트 문자열이 감지되었을 때 표시되는 차단 이유입니다."
  bobuam_reason_masquerade: "사용자 에이전트가 다른 것으로 가장하려고 할 때 표시되는 차단 이유입니다."
  bobuam_safari: "Safari의 "Version" 토큰 중 허용되는 가장 낮은 버전입니다. 추천: {{BOBUAM Token.Safari}}."
+ bobuam_token_difference_limit: "사용자가 오래된 브라우저로 인해 차단된 경우, CAPTCHA를 제공받으려면, 다른 모든 요구 사항과 더불어, 사용자의 브라우저 주 버전 번호가 허용되는 가장 낮은 버전부터 여기에 명시된 번호 이상이어야 합니다. 예를 들어, 허용되는 최소 버전이 10으로, 설정되어 있고 여기에 지정된 숫자가 2인 경우, 사용자의 브라우저 주 버전은 CAPTCHA를 표시받으려면 최소 8 이상이어야 합니다. 이 값을 0으로 설정하면 이 추가 요구 사항이 적용되지 않습니다."
  bobuam_what_to_block: "무엇을 차단해야 할까요?"
  bunnycdn: "BunnyCDN 호환 모듈 구성."
  bunnycdn_positive_action: "CIDRAM은 BunnyCDN의 요청을 만났을 때 어떤 작업을 수행해야 합니까? 기본 동작 = 우회."
@@ -251,7 +252,7 @@ config: !lazy
  general_statistics_captchas: "CAPTCHA에 대해 추적할 통계 정보를 제어합니다."
  general_time_format: "CIDRAM이 사용하는 날짜/시간 표기 형식. 요청 시 옵션이 추가될 수 있습니다."
  general_time_offset: "분 단위 시간대 오프셋."
- general_timezone: "사용할 시간대를 지정하는 데 사용됩니다 (예: Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, 등등). PHP가 이를 자동으로 처리하도록 하려면 "SYSTEM"을 지정하세요."
+ general_timezone: "사용할 시간대를 지정하는 데 사용됩니다 (예: Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam 등). PHP가 이를 자동으로 처리하도록 하려면 "SYSTEM"을 지정하세요."
  ipapi: "IP-API 모듈 구성 (CIDRAM에 대한 ASN 및 국가 코드 조회 기능을 제공합니다)."
  ipapi_blocked_asns: *ConfigBlockedASNs
  ipapi_blocked_ccs: *ConfigBlockedCCs
@@ -264,8 +265,8 @@ config: !lazy
  logging_apache_style_log: "액세스 시도 저지를 기록, Apache 스타일. 파일 이름을 지정하거나, 비활성화하려면 비워 두세요."
  logging_error_log: "감지된 치명적이지 않은 오류를 기록할 파일. 파일 이름을 지정하거나, 비활성화하려면 비워 두세요."
  logging_log_banned_ips: "금지 된 IP에서 차단 된 요청을 로그 파일에 포함됩니까? True = 예 (Default / 기본값); False = 아니오."
- logging_log_rotation_action: "로그 회전은 한 번에 존재해야하는 로그 파일 수를 제한합니다. 새 로그 파일을 만들 때 총 로그, 파일 수가 지정된 제한을 초과하면, 지정된 작업이 수행됩니다. 여기서 원하는 동작을 지정할 수 있습니다."
- logging_log_rotation_limit: "로그 회전은 한 번에 존재해야하는 로그 파일 수를 제한합니다. 새 로그 파일을 만들 때 총 로그, 파일 수가 지정된 제한을 초과하면, 지정된 작업이 수행됩니다. 여기서 원하는 한계를 지정할 수 있습니다. 값 0은 로그 회전을 비활성화합니다."
+ logging_log_rotation_action: "Log rotation은 한 번에 존재하는 로그 파일 개수를 제한합니다. 새 로그 파일이 만들어질 때 총 로그 파일 개수가 지정된 제한을 초과하면 지정된 동작이 수행됩니다. 여기에서 원하는 동작을 지정할 수 있습니다."
+ logging_log_rotation_limit: "Log rotation은 한 번에 존재하는 로그 파일 개수를 제한합니다. 새 로그 파일이 만들어질 때 총 로그 파일 개수가 지정된 제한을 초과하면 지정된 동작이 수행됩니다. 여기에서 원하는 제한을 지정할 수 있습니다. 값을 0으로 설정하면 log rotation이 비활성화됩니다."
  logging_log_sanitisation: "프런트 엔드 로그 페이지를 사용하여 로그 데이터를 볼 때, XSS 공격 및 기타 잠재적 인 위협으로부터 사용자를 보호하기 위해 CIDRAM은 로그 데이터를 표시하기 전에 위생 처리합니다. 그러나 기본적으로, 로깅 중에는 데이터가 삭제되지 않습니다. 이렇게하면 로그 데이터가 정확하게 보존됩니다 (앞으로 필요할 수도있는 경험적 또는 법의학 분석에 유용합니다). 그러나, 사용자가 외부 도구를 사용하여 로그 데이터를 읽으려고하면, 외부 도구가 자체 위생 처리를 수행하지 않는 경우, 사용자가 XSS 공격에 노출 될 수 있습니다. 필요한 경우, 이 구성 지정 문을 사용하여 기본 작동을 변경할 수 있습니다. True = 데이터 로깅 할 때 데이터, 위생적으로하다 (기록된 데이터 정확도가 더 낮습니다, 않지만 XSS 위험이 더 낮습니다). False = 데이터 로깅 할 때 데이터, 위생적으로하지 마라 (기록된 데이터 정확도가 더 높습니다, 않지만 XSS 위험이 더 높습니다) (Default / 기본 설정)."
  logging_outbound_request_log: "아웃바운드 요청의 결과를 기록할 파일. 파일 이름을 지정하거나, 비활성화하려면 비워 두세요."
  logging_report_log: "외부 API로 전송된 보고서를 기록하기 위한 파일입니다. 파일 이름을 지정하거나, 비활성화하려면 비워 두세요."
@@ -447,7 +448,7 @@ hints_http_response_header_code:
  6.: "다른 모든 차단된 요청의 경우 "기본값"에 대한 HTTP 상태 메시지가 사용됩니다 (이게 가장 낮은 우선순위를 갖습니다)."
 hints_inspection: "* 보조 규칙 디버깅 전용입니다. 차단된 사용자에게는 표시되지 않습니다."
 hints_ipv6_on_32bit: "참고: IPv6 조회는 일부 32비트 시스템에서 제대로 작동하지 않을 수 있습니다."
-hints_logging_datetime: "유용한 팁: 시간 형식 placeholder를 사용하여 로그 파일 이름에 날짜/시간 정보를 붙일 수 있습니다. 사용 가능한 시간 형식 자리 표시자는 {{Links.ConfigRef.time_format}}에 표시되어 있습니다."
+hints_logging_datetime: "유용한 팁: 시간 형식 placeholder를 사용하여 로그 파일 이름에 날짜/시간 정보를 붙일 수 있습니다. 사용할 수 있는 시간 형식 placeholder는 {{Links.ConfigRef.time_format}}에 표시되어 있습니다."
 hints_pdo_dsn:
  자주하는 질문.: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.ko.md\#user-content-HOW_TO_USE_PDO" hreflang="ko-KR">"PDO DSN"은 무엇입니까? CIDRAM과 함께 PDO를 사용하려면 어떻게해야합니까?</a></em>"
 hints_sensitive_pages: "참고: "민감한 페이지"를 구성하는 요소는 {{Links.ConfigRef.sensitive}}에 의해 결정됩니다."

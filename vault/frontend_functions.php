@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2026.04.20).
+ * This file: Front-end functions file (last modified: 2026.05.22).
  */
 
 /**
@@ -1180,8 +1180,9 @@ $CIDRAM['Formatter'] = function (&$In, $BlockLink = '', $Current = '', $FieldSep
                 );
             }
         }
-        preg_match_all('~\[([A-Z]{2})\]~', $Section, $Parts);
-        if (count($Parts[1])) {
+
+        /** Add country flags. */
+        if (preg_match_all('~\[([A-Z]{2})\]~', $Section, $Parts) && count($Parts[1])) {
             if ($Flags) {
                 $OuterOpen = '';
                 $OuterClose = '';

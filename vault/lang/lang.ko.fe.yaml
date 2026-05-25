@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2026.04.17).
+# This file: Korean language data for the front-end (last modified: 2026.05.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -120,8 +120,8 @@ config_general_ipaddr: "연결 요청의 IP 주소를 어디에서 찾을 것인
 config_general_lang: "CIDRAM의 기본 언어를 설정합니다."
 config_general_lang_override: "가능할 때마다 HTTP_ACCEPT_LANGUAGE에 따라 현지화 하시겠습니까? True = 예 (Default / 기본값); False = 아니오."
 config_general_log_banned_ips: "금지 된 IP에서 차단 된 요청을 로그 파일에 포함됩니까? True = 예 (Default / 기본값); False = 아니오."
-config_general_log_rotation_action: "로그 회전은 한 번에 존재해야하는 로그 파일 수를 제한합니다. 새 로그 파일을 만들 때 총 로그, 파일 수가 지정된 제한을 초과하면, 지정된 작업이 수행됩니다. 여기서 원하는 동작을 지정할 수 있습니다."
-config_general_log_rotation_limit: "로그 회전은 한 번에 존재해야하는 로그 파일 수를 제한합니다. 새 로그 파일을 만들 때 총 로그, 파일 수가 지정된 제한을 초과하면, 지정된 작업이 수행됩니다. 여기서 원하는 한계를 지정할 수 있습니다. 값 0은 로그 회전을 비활성화합니다."
+config_general_log_rotation_action: "Log rotation은 한 번에 존재하는 로그 파일 개수를 제한합니다. 새 로그 파일이 만들어질 때 총 로그 파일 개수가 지정된 제한을 초과하면 지정된 동작이 수행됩니다. 여기에서 원하는 동작을 지정할 수 있습니다."
+config_general_log_rotation_limit: "Log rotation은 한 번에 존재하는 로그 파일 개수를 제한합니다. 새 로그 파일이 만들어질 때 총 로그 파일 개수가 지정된 제한을 초과하면 지정된 동작이 수행됩니다. 여기에서 원하는 제한을 지정할 수 있습니다. 값을 0으로 설정하면 log rotation이 비활성화됩니다."
 config_general_log_sanitisation: "프런트 엔드 로그 페이지를 사용하여 로그 데이터를 볼 때, XSS 공격 및 기타 잠재적 인 위협으로부터 사용자를 보호하기 위해 CIDRAM은 로그 데이터를 표시하기 전에 위생 처리합니다. 그러나 기본적으로, 로깅 중에는 데이터가 삭제되지 않습니다. 이렇게하면 로그 데이터가 정확하게 보존됩니다 (앞으로 필요할 수도있는 경험적 또는 법의학 분석에 유용합니다). 그러나, 사용자가 외부 도구를 사용하여 로그 데이터를 읽으려고하면, 외부 도구가 자체 위생 처리를 수행하지 않는 경우, 사용자가 XSS 공격에 노출 될 수 있습니다. 필요한 경우, 이 구성 지정 문을 사용하여 기본 작동을 변경할 수 있습니다. True = 데이터 로깅 할 때 데이터, 위생적으로하다 (기록된 데이터 정확도가 더 낮습니다, 않지만 XSS 위험이 더 낮습니다). False = 데이터 로깅 할 때 데이터, 위생적으로하지 마라 (기록된 데이터 정확도가 더 높습니다, 않지만 XSS 위험이 더 높습니다) (Default / 기본 설정)."
 config_general_logfile: "액세스 시도 저지를 기록, 인간에 의해 읽기 가능. 파일 이름을 지정하거나, 비활성화하려면 비워 두세요."
 config_general_logfileApache: "액세스 시도 저지를 기록, Apache 스타일. 파일 이름을 지정하거나, 비활성화하려면 비워 두세요."
@@ -140,7 +140,7 @@ config_general_social_media_verification: "소셜 미디어 요청을 확인하�
 config_general_statistics: "CIDRAM 사용 통계를 추적합니까? True = 예; False = 아니오 (Default / 기본 설정)."
 config_general_timeFormat: "CIDRAM이 사용하는 날짜/시간 표기 형식. 요청 시 옵션이 추가될 수 있습니다."
 config_general_timeOffset: "분 단위 시간대 오프셋."
-config_general_timezone: "사용할 시간대를 지정하는 데 사용됩니다 (예: Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam, 등등). PHP가 이를 자동으로 처리하도록 하려면 "SYSTEM"을 지정하세요."
+config_general_timezone: "사용할 시간대를 지정하는 데 사용됩니다 (예: Africa/Cairo, America/New_York, Asia/Tokyo, Australia/Perth, Europe/Berlin, Pacific/Guam 등). PHP가 이를 자동으로 처리하도록 하려면 "SYSTEM"을 지정하세요."
 config_general_truncate: "로그 파일이 특정 크기에 도달하면 truncate할까요? 값은 로그 파일이 truncate되기 전에 커질 수 있는 B/KB/MB/GB/TB 단위의 최대 크기입니다. 기본값인 0KB는 truncation을 비활성화합니다 (로그 파일이 무한정 커질 수 있음). 참고: 개별 로그 파일에 적용됩니다! 로그 파일의 크기는 전체적으로 고려되지 않습니다."
 config_hcaptcha: "HCaptcha 설정 (차단될 때 사람이 다시 액세스할 수 있는 방법을 제공합니다)."
 config_hcaptcha_api: &CaptchaAPI "어떤 API를 사용할 수 있습니까?"

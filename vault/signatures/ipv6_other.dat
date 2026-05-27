@@ -1,8 +1,8 @@
 # IPv6 signatures file (CIDRs for proxies, VPNs and other miscellaneous unwanted services).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v4/vault/signatures/ipv6_other.dat
 
-# Version: 2026.95.0
-# Last modified: 2026.04.06
+# Version: 2026.146.0
+# Last modified: 2026.05.27
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -51,8 +51,9 @@ Tag: Emerald Onion
 # you are not allowed to redistribute the feed to other networks. The export of
 # these feeds/prefixes to other networks is prohibited.
 # Excerpt from: https://www.spamhaus.org/bgpf/
-# Updated: 2026.03.29
+# Updated: 2026.05.27
 
+2001:678:254::/48 Deny Spam
 2001:678:6c0::/48 Deny Spam
 2001:678:6c4::/48 Deny Spam
 2001:678:724::/48 Deny Spam
@@ -78,7 +79,6 @@ Tag: Emerald Onion
 2405:b480::/32 Deny Spam
 2405:e880::/32 Deny Spam
 2602:f68a::/40 Deny Spam
-2602:f959:1::/48 Deny Spam
 2602:f9bb::/36 Deny Spam
 2602:ffa0::/36 Deny Spam
 2604:be0:fff0::/44 Deny Spam
@@ -89,6 +89,7 @@ Tag: Emerald Onion
 2803:8700::/32 Deny Spam
 2a00:4c80::/29 Deny Spam
 2a00:55a0::/32 Deny Spam
+2a03:5840:130::/48 Deny Spam
 2a04:5200:5977::/48 Deny Spam
 2a05:b0c6:a000::/38 Deny Spam
 2a05:b0c7:6000::/36 Deny Spam
@@ -108,8 +109,6 @@ Tag: Emerald Onion
 2a0a:c00::/29 Deny Spam
 2a0a:53c0:938::/48 Deny Spam
 2a0a:6240::/29 Deny Spam
-2a0a:6340::/29 Deny Spam
-2a0a:a840::/29 Deny Spam
 2a0b:3e80::/29 Deny Spam
 2a0b:7ec0::/29 Deny Spam
 2a0b:88c0:16::/48 Deny Spam

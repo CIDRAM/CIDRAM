@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v4/vault/signatures/ipv6_isps.dat
 
-# Version: 2026.95.0
-# Last modified: 2026.04.06
+# Version: 2026.146.0
+# Last modified: 2026.05.27
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -183,24 +183,6 @@ Tag: Reliance Communications
 Origin: RU
 Profile: Domestic ISP
 Tag: PJSC Moscow city
-
-
-# ASNs 7015, 7725, 7922, 33661, 33651, 33652, 33668 ("Comcast Cable Communications, LLC").
-# Major domestic ISP in the United States; Should NEVER be blocked in entirety.
-# Listed here are some specific CIDRs/IPs on their network that pose a major
-# spam risk and/or are known sources of spam and/or other undesirable traffic.
-# Mozi botnet detected from here.
-# Stop Forum Spam (SFS) listings: 17 (AS7015), 5,275 (AS7922), 2 (AS33652).
-# Updated: 2025.08.04
-
-2601:281:cf7e:4e10::/64 Deny Spam
-2601:2c1:8601:96f0::/64 Deny Spam
-2601:400:8000:cdf0::/64 Deny Spam
-2601:603:68c:d70::/64 Deny Spam
-2601:801:400:3dc::/64 Deny Spam
-Origin: US
-Profile: Domestic ISP
-Tag: Comcast Spam IPs
 
 
 # ASNs 18209, 24309, 55577, 131269 ("Atria Convergence Technologies Pvt. Ltd.
@@ -388,8 +370,8 @@ Tag: PT Telekomunikasi Indonesia
 # ASN 263433 ("Click Fibra").
 # Brazilian fibre provider. Brute-force, SSH attacks, port scans, hacking, and
 # spam detected from here. This whole ASN appears to be affected.
-# Stop Forum Spam (SFS) listings: 2.
-# Updated: 2023.07.24 / Checked: 2025.06.29
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2023.07.24 / Checked: 2026.05.23
 
 2804:11b4::/32 Deny Attacks
 Origin: BR
@@ -511,7 +493,7 @@ Tag: As Broadband Pvt Ltd
 
 
 # ASN 9541 ("Cyber Internet Services (Pvt) Ltd").
-# Pakistani multiplay network. Brute-force, SQLi, WordPress/XMLRPC, and webapp
+# Pakistan multiplay network. Brute-force, SQLi, WordPress/XMLRPC, and webapp
 # attacks, Mozi botnets, port scans, hacking, and spam detected from here.
 # Listing just the affected ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 7,509.

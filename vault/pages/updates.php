@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The updates page (last modified: 2026.03.18).
+ * This file: The updates page (last modified: 2026.05.28).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -33,7 +33,7 @@ $this->filterSwitch(
     $this->FE['UpdatesFormTargetControls']
 );
 if ($StateModified) {
-    header('Location: ?' . $this->FE['UpdatesFormTarget']);
+    \header('Location: ?' . $this->FE['UpdatesFormTarget']);
     die;
 }
 unset($StateModified);

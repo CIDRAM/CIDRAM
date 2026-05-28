@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2026.03.20).
+ * This file: The CIDRAM front-end (last modified: 2026.05.28).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -420,7 +420,7 @@ class FrontEnd extends Core
             ($this->CIDRAM['Failed2FA'] = (int)$this->Cache->getEntry('Failed2FA' . $this->ipAddr)) &&
             ($this->CIDRAM['Failed2FA'] >= $this->Configuration['frontend']['max_login_attempts'])
         )) {
-            header('Content-Type: text/plain');
+            \header('Content-Type: text/plain');
             die('[CIDRAM] ' . $this->L10N->getString('response.Maximum number of login attempts exceeded'));
         }
 
@@ -456,7 +456,7 @@ class FrontEnd extends Core
                             if ($this->FE['CronMode'] === '') {
                                 $this->FE['SessionKey'] = \hash('sha256', $this->generateSalt());
                                 $this->FE['Cookie'] = $this->FE['User'] . $this->FE['SessionKey'];
-                                setcookie('CIDRAM-ADMIN', $this->FE['Cookie'], $this->Now + 604800, '/', $this->CIDRAM['HostnameOverride'] ?: $this->CIDRAM['HTTP_HOST'], false, true);
+                                \setcookie('CIDRAM-ADMIN', $this->FE['Cookie'], $this->Now + 604800, '/', $this->CIDRAM['HostnameOverride'] ?: $this->CIDRAM['HTTP_HOST'], false, true);
                                 $this->FE['ThisSession'] = $this->FE['User'] . ',' . \password_hash($this->FE['SessionKey'], $this->DefaultAlgo);
 
                                 /** Prepare 2FA email. */
@@ -617,9 +617,9 @@ class FrontEnd extends Core
         /** The user is attempting an asynchronous request without adequate permissions. */
         if ($this->FE['UserState'] !== 1 && $this->FE['ASYNC']) {
             $this->Events->fireEvent('final');
-            header('HTTP/1.0 403 Forbidden');
-            header('HTTP/1.1 403 Forbidden');
-            header('Status: 403 Forbidden');
+            \header('HTTP/1.0 403 Forbidden');
+            \header('HTTP/1.1 403 Forbidden');
+            \header('Status: 403 Forbidden');
             die($this->L10N->getString('response.Permissions not adequate to perform asynchronous requests'));
         }
 
@@ -635,7 +635,7 @@ class FrontEnd extends Core
                 $this->FE['ThisSession'] = '';
                 $this->FE['UserState'] = 0;
                 $this->FE['Permissions'] = 0;
-                setcookie('CIDRAM-ADMIN', '', -1, '/', $this->CIDRAM['HostnameOverride'] ?: $this->CIDRAM['HTTP_HOST'], false, true);
+                \setcookie('CIDRAM-ADMIN', '', -1, '/', $this->CIDRAM['HostnameOverride'] ?: $this->CIDRAM['HTTP_HOST'], false, true);
                 $this->frontendLogger($this->ipAddr, $this->FE['User'], $this->L10N->getString('label.Logged out'));
                 $this->FE['User'] = '';
             }
@@ -881,7 +881,7 @@ class FrontEnd extends Core
                 $this->pathSecurityCheck($this->CIDRAM['QueryVars']['file']) &&
                 \is_readable($this->Vault . $this->CIDRAM['QueryVars']['file'])
             ) {
-                header('Content-Type: image/x-icon');
+                \header('Content-Type: image/x-icon');
                 echo $this->readFile($this->Vault . $this->CIDRAM['QueryVars']['file']);
             } elseif (!empty($this->CIDRAM['QueryVars']['icon'])) {
                 $this->eTaggable($this->CIDRAM['QueryVars']['icon'] . '.gif');

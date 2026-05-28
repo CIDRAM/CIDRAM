@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2026.05.02).
+ * This file: The CIDRAM core (last modified: 2026.05.28).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -303,7 +303,7 @@ class Core
 
         /** Checks whether the CIDRAM defaults file is readable. */
         if (!\is_readable($this->Vault . 'defaults.yml')) {
-            header('Content-Type: text/plain');
+            \header('Content-Type: text/plain');
             die('[CIDRAM] Can\'t read the defaults file! Can\'t continue until this is resolved.');
         }
 
@@ -312,7 +312,7 @@ class Core
 
         /** Kills the script if parsing the configuration defaults file fails. */
         if (empty($this->CIDRAM['Config Defaults'])) {
-            header('Content-Type: text/plain');
+            \header('Content-Type: text/plain');
             die('[CIDRAM] Configuration defaults file is corrupt! Can\'t continue until this is resolved.');
         }
 
@@ -1590,7 +1590,7 @@ class Core
             $Length = \rand(self::GENERATE_SALT_MIN_LEN, self::GENERATE_SALT_MAX_LEN);
         }
         try {
-            $Salt = random_bytes($Length);
+            $Salt = \random_bytes($Length);
         } catch (\Exception $e) {
             $Salt = '';
         }
@@ -1741,14 +1741,14 @@ class Core
         if (!$this->Cache->connect()) {
             $this->Events->fireEvent('final');
             if ($this->Cache->Using === 'FF') {
-                header('Content-Type: text/plain');
+                \header('Content-Type: text/plain');
                 die('[CIDRAM] ' . $this->L10N->getString('response.Unable to write to the cache'));
             } else {
                 $Status = $this->getStatusHTTP(503);
-                header('HTTP/1.0 503 ' . $Status);
-                header('HTTP/1.1 503 ' . $Status);
-                header('Status: 503 ' . $Status);
-                header('Retry-After: 3600');
+                \header('HTTP/1.0 503 ' . $Status);
+                \header('HTTP/1.1 503 ' . $Status);
+                \header('Status: 503 ' . $Status);
+                \header('Retry-After: 3600');
                 die;
             }
         }

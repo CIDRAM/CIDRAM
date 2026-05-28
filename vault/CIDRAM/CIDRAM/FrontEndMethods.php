@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2026.04.20).
+ * This file: General methods used by the front-end (last modified: 2026.05.28).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1357,31 +1357,31 @@ trait FrontEndMethods
                     }
                     $OldETag = $_SERVER['HTTP_IF_NONE_MATCH'] ?? '';
                     $NewETag = \hash('sha256', $AssetData) . '-' . \strlen($AssetData);
-                    header('Last-Modified: ' . \gmdate('D, d M Y H:i:s T', \filemtime($ThisAsset)));
-                    header('ETag: "' . $NewETag . '"');
-                    header('Expires: ' . \gmdate('D, d M Y H:i:s T', $this->Now + 15552000));
+                    \header('Last-Modified: ' . \gmdate('D, d M Y H:i:s T', \filemtime($ThisAsset)));
+                    \header('ETag: "' . $NewETag . '"');
+                    \header('Expires: ' . \gmdate('D, d M Y H:i:s T', $this->Now + 15552000));
                     if (\preg_match('~(?:^|, )(?:"' . $NewETag . '"|' . $NewETag . ')(?:$|, )~', $OldETag)) {
-                        header('HTTP/1.0 304 Not Modified');
-                        header('HTTP/1.1 304 Not Modified');
-                        header('Status: 304 Not Modified');
+                        \header('HTTP/1.0 304 Not Modified');
+                        \header('HTTP/1.1 304 Not Modified');
+                        \header('Status: 304 Not Modified');
                         die;
                     }
-                    header($MimeType);
+                    \header($MimeType);
                     if ($NoSniff) {
-                        header('X-Content-Type-Options: nosniff');
+                        \header('X-Content-Type-Options: nosniff');
                     }
                     echo $AssetData;
                     die;
                 }
             }
-            header('HTTP/1.0 404 Not Found');
-            header('HTTP/1.1 404 Not Found');
-            header('Status: 404 Not Found');
+            \header('HTTP/1.0 404 Not Found');
+            \header('HTTP/1.1 404 Not Found');
+            \header('Status: 404 Not Found');
             die;
         }
-        header('HTTP/1.0 403 Forbidden');
-        header('HTTP/1.1 403 Forbidden');
-        header('Status: 403 Forbidden');
+        \header('HTTP/1.0 403 Forbidden');
+        \header('HTTP/1.1 403 Forbidden');
+        \header('Status: 403 Forbidden');
         die;
     }
 

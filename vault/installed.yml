@@ -1,6 +1,6 @@
 CIDRAM Core:
  Name: "CIDRAM Core"
- Version: "3.12.0-DEV+261440"
+ Version: "3.12.0-DEV+261470"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Front-End: "Latest"
@@ -28,7 +28,7 @@ CIDRAM Core:
    Checksum: "b7951b8f04a2f4b0a2fd989ca084528e9f51aaf24a0cb276914a9ad3f7469482:5567"
   CIDRAM/CIDRAM/Core.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Core.php"
-   Checksum: "b171168a3d5c2de17b29a5d7c18b89f7885d74519cff74550d6f556aae7d147f:146985"
+   Checksum: "658df901465319dd718a2162f211cd432e35c7f6913674cea353c785be83be67:146993"
   CIDRAM/CIDRAM/Duration.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Duration.php"
    Checksum: "1f6bc22975326486947b7e36028e1546304c1604698b8ff11357e7f005dc057c:11664"
@@ -37,13 +37,13 @@ CIDRAM Core:
    Checksum: "68c02520c8a9af59a50c6baa2179d64a469fbd2f668700dcb11f976a266c3461:5999"
   CIDRAM/CIDRAM/HCaptcha.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/HCaptcha.php"
-   Checksum: "a657ca7a3a1d14abd6bc6c423bd4445f22982b5747cfd6b0ea864dc7084329e4:15509"
+   Checksum: "c4f5253663c08342bdb2fea3db39cb2488d42ceaf81da3727be77c3e33df7897:15511"
   CIDRAM/CIDRAM/Protect.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Protect.php"
-   Checksum: "ee975a3c6710c33d0cb3cb5ea9d10e98171c4ee29f95e3ea79d1477f32d5a1f3:69258"
+   Checksum: "047b60cba15768566adeeaddcd1b61ccffee1be6f32d486b07fcc5b48df6891b:69280"
   CIDRAM/CIDRAM/ReCaptcha.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/ReCaptcha.php"
-   Checksum: "0101be9fcb616520330c23a9aed5585736aca90a017eae7c7da2736d73ece432:15040"
+   Checksum: "39a29ec0d6bbad0fb471b310bfe7313c1711efcd65cd945a2c16737e0ab3e977:15041"
   CIDRAM/CIDRAM/Reporter.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Reporter.php"
    Checksum: "c375863fac3d30db985da46f3f8663fdaacc4e07de1335f0d489f0460482c19e:3938"
@@ -64,7 +64,7 @@ CIDRAM Core:
    Checksum: "23fbd9783d6c1a6358a4390543f2e06d160127cfbebc5c4294a1cf5a1917f9a3:19077"
 CIDRAM Front-End:
  Name: "CIDRAM Front-End"
- Version: "3.12.0-DEV+261440"
+ Version: "3.12.0-DEV+261470"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "Latest"
@@ -442,16 +442,16 @@ CIDRAM Front-End:
    Checksum: "304df96d862e7a49de2bf1505b9c410a6d408b9cda24431a5670b15bec33538f:47370"
   CIDRAM/CIDRAM/CLI.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/CLI.php"
-   Checksum: "229cc46c7e55107be8e749d9c9a15cf09d9f7fcbf3ce6883ce762e8eabc61622:32715"
+   Checksum: "335d86818286308ae2f1ec698c03b7419653519961b5b18c4beadaa7837749f7:32716"
   CIDRAM/CIDRAM/Configuration.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Configuration.php"
    Checksum: "b48e5369d6485b74b7fb6d29babfdf2a250864a6782989a49a7b42062c2f8771:2005"
   CIDRAM/CIDRAM/FrontEnd.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/FrontEnd.php"
-   Checksum: "4306f49eb964e45528639d77b73492ba7ed709bbb2e8b1cf64f2cfbabf929b6b:48566"
+   Checksum: "95a08f9db231bf767e9b1ffb862894a76de9538b2bb35ce807adb70aac931139:48573"
   CIDRAM/CIDRAM/FrontEndMethods.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/FrontEndMethods.php"
-   Checksum: "6b215ab314c00094b7e5aa59d434e857b0a46f534658eedc8b80d1ca7194530b:70450"
+   Checksum: "adde8e30830494b92cda9386e8aa3df3053d5433c4c5613378323a3ddb0a4821:70464"
   CIDRAM/CIDRAM/Logs.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/CIDRAM/CIDRAM/Logs.php"
    Checksum: "11c175fea3e85a581a74c3f45455d67a058b7710ec9caf7de75f139e77fc220d:24201"
@@ -481,7 +481,7 @@ CIDRAM Front-End:
    Checksum: "3bfbf9e8106dd4bd6735abde3c47600cce52c65cc75659e6d427b4ccdaaf6c31:15898"
   pages/backup.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/pages/backup.php"
-   Checksum: "7a85ece1a7d4dd01acc97fee0cc848221d36c39291fd5cc32379355d5a7d0cc5:24985"
+   Checksum: "82a49edad74196d3265cd6a45adf3bff459ceb54401771f36f447c13985049de:24988"
   pages/cache-data.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/pages/cache-data.php"
    Checksum: "aa2fea2ef68de5f275975dd597fc693c798b0d2f45fdf151042ac1df3dfd3795:6964"
@@ -493,7 +493,7 @@ CIDRAM Front-End:
    Checksum: "34285fa5c5c07e25b132c788c8efdc983cada9d0d956331a47febfe3c564dc6c:49855"
   pages/file-manager.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/pages/file-manager.php"
-   Checksum: "8bcb5cf1a7f915b15ad413c8454d1a39650988d7125e4d4430519051af843bd9:17929"
+   Checksum: "6e9f8e2e0bdf8a5095cef72782165f5aa37b841ee627a29a70d11daa86ba8458:17935"
   pages/fixer.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/pages/fixer.php"
    Checksum: "52d9423485e98eb3916b11603fb4dab79fd46ebfac170efc9fe373364d0af930:9027"
@@ -505,10 +505,10 @@ CIDRAM Front-End:
    Checksum: "a667c10059aa8409feaffb89216bd1d6a272246d3f54535a5963cd4d8c60691c:20356"
   pages/ip-tracking.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/pages/ip-tracking.php"
-   Checksum: "790f7c91865892c3fa69b0c397cff44604ce0b06852095b9cb39aa20868889db:11799"
+   Checksum: "cf6c89863765bd946cef9251de3e68edde5fc80e8de02b5b5cb94b00b79042d7:11800"
   pages/logs.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/pages/logs.php"
-   Checksum: "90afa3aad9150e37cad3f846f170197eb4608602f8ea4394e3122f4c0775badc:24495"
+   Checksum: "25eda3be98a248defd6156ee0f3c68c8d749e559a93e67352c1e0528acc63be8:24498"
   pages/range.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/pages/range.php"
    Checksum: "776908f3035cde8f1dba3626a709239b8c392c86e0497c58e6a410170cee4110:2464"
@@ -526,7 +526,7 @@ CIDRAM Front-End:
    Checksum: "2577349b36869055074ea94785f66133bf13c227b42167f6ffd3afebac4d514a:3315"
   pages/updates.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/pages/updates.php"
-   Checksum: "1c0bbd2c735243186d1b1833e893ec0095eb2e7a64754c5d21561ef67b94557b:32314"
+   Checksum: "0b594081c4bfdf30813408690b4a70f21834bc39fa9c1bb910ba80784b42de81:32315"
 Common Classes Package:
  Name: "Common Classes Package"
  Version: "2.16.1"

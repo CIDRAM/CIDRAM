@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Tamil language data for the front-end (last modified: 2026.04.17).
+# This file: Tamil language data for the front-end (last modified: 2026.05.25).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -146,17 +146,17 @@ config_general_timezone: "பயன்படுத்த வேண்டிய �
 config_general_truncate: "பதிவுகள் ஒரு குறிப்பிட்ட அளவை எட்டும்போது அவற்றை நீக்கவா? B/KB/MB/GB/TB இல் உள்ள அதிகபட்ச அளவு மதிப்பு, நீக்குவதற்கு முன்பு ஒரு பதிவு கோப்பு வளரக்கூடும். இதை முடக்க 0KB [இயல்புநிலை மதிப்பு] ஐக் குறிப்பிடவும் (எல்லையற்ற அளவில் வளரலாம்). குறிப்பு: ஒற்றை கோப்புகளுக்கு மட்டுமே பொருந்தும்! அனைத்து பதிவு கோப்புகளின் அளவும் ஒன்றாக கருதப்படவில்லை."
 config_hcaptcha: "HCaptcha க்கான உள்ளமைவு (தடுக்கப்படும்போது மனிதர்களுக்கு அணுகலை மீண்டும் பெறுவதற்கான வழியை வழங்குகிறது)."
 config_hcaptcha_api: &CaptchaAPI "எந்த API ஐ பயன்படுத்த வேண்டும்?"
-config_hcaptcha_expiry: &CaptchaExpiry "கேப்ட்சா நிகழ்வுகளை நினைவில் கொள்ள வேண்டிய மணிநேரங்கள். இயல்புநிலை = 720 (1 மாதம்)."
-config_hcaptcha_lockip: &CaptchaLockIP "கேப்ட்சா ஐ IP முகவரிகளுடன் பிணைக்க வேண்டுமா?"
-config_hcaptcha_lockuser: &CaptchaLockUser "பயனர்களுக்கு கேப்ட்சா ஐ பிணைக்க வேண்டுமா?"
-config_hcaptcha_logfile: &CaptchaLogfile "எல்லா கேப்ட்சா முயற்சிகளையும் பதிவு செய்யவா? ஆம் எனில், பதிவு செய்ய பயன்படுத்த வேண்டிய கோப்பின் பெயரைக் குறிப்பிடவும். இல்லை என்றால், இந்த மாறியை காலியாக விடவும்."
+config_hcaptcha_expiry: &CaptchaExpiry "CAPTCHA நிகழ்வுகளை நினைவில் கொள்ள வேண்டிய மணிநேரங்கள். இயல்புநிலை = 720 (1 மாதம்)."
+config_hcaptcha_lockip: &CaptchaLockIP "CAPTCHA ஐ IP முகவரிகளுடன் பிணைக்க வேண்டுமா?"
+config_hcaptcha_lockuser: &CaptchaLockUser "பயனர்களுக்கு CAPTCHA ஐ பிணைக்க வேண்டுமா?"
+config_hcaptcha_logfile: &CaptchaLogfile "எல்லா CAPTCHA முயற்சிகளையும் பதிவு செய்யவா? ஆம் எனில், பதிவு செய்ய பயன்படுத்த வேண்டிய கோப்பின் பெயரைக் குறிப்பிடவும். இல்லை என்றால், இந்த மாறியை காலியாக விடவும்."
 config_hcaptcha_nonblocked_status_code: &CaptchaNonblockedStatusCode "தடுக்கப்படாத கோரிக்கைகளுக்கு CAPTCHA களைக் காண்பிக்கும் போது எந்த நிலைக் குறியீட்டைப் பயன்படுத்த வேண்டும்?"
-config_hcaptcha_secret: &CaptchaDashboard "உங்கள் கேப்ட்சா சேவைக்கான டாஷ்போர்டில் இந்த மதிப்பைக் காணலாம்."
+config_hcaptcha_secret: &CaptchaDashboard "உங்கள் CAPTCHA சேவைக்கான டாஷ்போர்டில் இந்த மதிப்பைக் காணலாம்."
 config_hcaptcha_show_api_message: &ShowAPIMessage "API செய்தியைக் காண்பிக்கவா? True (உண்மை) = ஆம் [இயல்புநிலை]; False (தவறான) = இல்லை."
 config_hcaptcha_show_cookie_warning: &ShowCookieWarning "குக்கீ எச்சரிக்கையைக் காட்டவா? True (உண்மை) = ஆம் [இயல்புநிலை]; False (தவறான) = இல்லை."
-config_hcaptcha_signature_limit: &CaptchaSignatureLimit "கேப்ட்சா சலுகை திரும்பப் பெறுவதற்கு முன்பு அனுமதிக்கப்பட்ட அதிகபட்ச கையொப்பங்கள். இயல்புநிலை = 1."
+config_hcaptcha_signature_limit: &CaptchaSignatureLimit "CAPTCHA சலுகை திரும்பப் பெறுவதற்கு முன்பு அனுமதிக்கப்பட்ட அதிகபட்ச கையொப்பங்கள். இயல்புநிலை = 1."
 config_hcaptcha_sitekey: *CaptchaDashboard
-config_hcaptcha_usemode: &CaptchaUseMode "கேப்ட்சாவை எப்போது வழங்க வேண்டும்? குறிப்பு: வெள்ளை பட்டியலிடப்பட்ட அல்லது சரிபார்க்கப்பட்ட மற்றும் தடுக்கப்படாத கோரிக்கைகள் ஒருபோதும் கேப்ட்சாவை முடிக்க தேவையில்லை. மேலும் குறிப்பு: கேப்ட்சாக்கள், ரோபோக்கள் மற்றும் பல்வேறு வகையான தீங்கிழைக்கும் தானியங்கு கோரிக்கைகளுக்கு எதிராக பயனுள்ள பாதுகாப்பை வழங்க முடியும், ஆனால் தீங்கிழைக்கும் மனிதனுக்கு எதிராக எந்தப் பாதுகாப்பையும் வழங்காது."
+config_hcaptcha_usemode: &CaptchaUseMode "CAPTCHAவை எப்போது வழங்க வேண்டும்? குறிப்பு: வெள்ளை பட்டியலிடப்பட்ட அல்லது சரிபார்க்கப்பட்ட மற்றும் தடுக்கப்படாத கோரிக்கைகள் ஒருபோதும் CAPTCHAவை முடிக்க தேவையில்லை. மேலும் குறிப்பு: CAPTCHAக்கள், ரோபோக்கள் மற்றும் பல்வேறு வகையான தீங்கிழைக்கும் தானியங்கு கோரிக்கைகளுக்கு எதிராக பயனுள்ள பாதுகாப்பை வழங்க முடியும், ஆனால் தீங்கிழைக்கும் மனிதனுக்கு எதிராக எந்தப் பாதுகாப்பையும் வழங்காது."
 config_legal: "சட்ட தேவைகளுக்கான உள்ளமைவு."
 config_legal_omit_hostname: "பதிவுகளிலிருந்து ஹோஸ்ட்பெயர்களை அகற்றவா? True (உண்மை) = ஆம்; False (தவறான) = இல்லை [இயல்புநிலை]."
 config_legal_omit_ip: ""பதிவுகளிலிருந்து IP முகவரிகளை அகற்றவா? True (உண்மை) = ஆம்; False (தவறான) = இல்லை [இயல்புநிலை]. குறிப்பு: "omit_ip", "true" ஆக இருக்கும் போது "pseudonymise_ip_addresses" எதுவும் செய்யாது."

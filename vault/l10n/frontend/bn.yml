@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data for the front-end (last modified: 2026.04.20).
+# This file: Bangla language data for the front-end (last modified: 2026.05.27).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -176,6 +176,7 @@ config: !lazy
  bobuam_reason_malformed: "একটি বিকৃত ব্যবহারকারী এজেন্ট স্ট্রিং সনাক্ত করা হলে ব্লকের কারণ দেখানো হয়।"
  bobuam_reason_masquerade: "একটি ব্যবহারকারী এজেন্ট যখন অন্য কিছু হিসাবে মাশকারেড করার চেষ্টা করে তখন ব্লকের কারণ দেখানো হয়।"
  bobuam_safari: "সাফারির "Version" টোকেনের সর্বনিম্ন অনুমোদিত সংস্করণ। প্রস্তাবিত: "{{BOBUAM Token.Safari}}"।"
+ bobuam_token_difference_limit: "পুরোনো ব্রাউজারের কারণে অবরুদ্ধ হওয়া কোনো ব্যবহারকারীকে ক্যাপচা দেখানোর জন্য, অন্যান্য সমস্ত শর্তের পাশাপাশি, তার ব্রাউজারের প্রধান সংস্করণ সংখ্যাটি সর্বনিম্ন অনুমোদিত সংস্করণ থেকে এখানে উল্লেখিত সংখ্যা চেয়ে কম হওয়া চলবে না। যেমন, যদি সর্বনিম্ন অনুমোদিত সংস্করণ 10-এ সেট করা থাকে, এবং এখানে নির্দিষ্ট করা সংখ্যাটি 2 হয়, তাহলে ক্যাপচা পেতে ব্যবহারকারীর ব্রাউজারের প্রধান সংস্করণ কমপক্ষে 8 হতে হবে। এর মান 0 সেট করা হলে, এই অতিরিক্ত শর্তটি প্রযোজ্য হবে না।"
  bobuam_what_to_block: "কি অবরুদ্ধ করবেন?"
  bunnycdn: "BunnyCDN সামঞ্জস্য মডিউল কনফিগারেশন।"
  bunnycdn_positive_action: "BunnyCDN থেকে অনুরোধের সম্মুখীন হলে CIDRAM কোন কাজটি সম্পাদন করা উচিত? ডিফল্ট অ্যাকশন = অনুরোধ বাইপাস।"
@@ -321,7 +322,7 @@ config: !lazy
  supplementary_cache_options_pdo_password: "PDO পাসওয়ার্ড।"
  supplementary_cache_options_pdo_username: "PDO ব্যবহারকারীর নাম।"
  supplementary_cache_options_prefix: "এখানে উল্লিখিত মানটি সমস্ত ক্যাশে এন্ট্রি কীগুলিতে প্রিপেন্ড করা হবে। ডিফল্ট = "CIDRAM_"। যখন একই সার্ভারে একাধিক ইনস্টলেশন বিদ্যমান, এটি তাদের ক্যাশে একে অপরের থেকে আলাদা রাখার জন্য কার্যকর হতে পারে।"
- supplementary_cache_options_redis_database_number: "ডাটাবেস নম্বর Redis. ডিফল্ট = "0"। দ্রষ্টব্য: Redis Cluster সাথে 0 ছাড়া অন্য মান ব্যবহার করা যাবে না।"
+ supplementary_cache_options_redis_database_number: "ডাটাবেস সংখ্যা Redis. ডিফল্ট = "0"। দ্রষ্টব্য: Redis Cluster সাথে 0 ছাড়া অন্য মান ব্যবহার করা যাবে না।"
  supplementary_cache_options_redis_host: "Redis হোস্ট মান। ডিফল্ট = localhost."
  supplementary_cache_options_redis_port: "Redis পোর্ট মান। ডিফল্ট = "6379"।"
  supplementary_cache_options_redis_timeout: "Redis সময়সীমা মান। ডিফল্ট = "2.5"।"

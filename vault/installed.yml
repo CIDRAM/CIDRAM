@@ -1582,16 +1582,17 @@ BOBUAM:
   Optional module which detects unwanted bots, old browsers, and performs some sanity checks.<br />Contains some data from
   the Wordpress plugin "Stop Bad Bots" by William "Bill" Minozzi.<br />(A few webservices bots might need bypasses).
  False Positive Risk: "Medium"
- Version: "2026.144.0"
+ Version: "2026.147.0"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "^3.7"
   CIDRAM Front-End: "^3.10"
   l10n/core/{lang}: ">=2026.55"
-  l10n/frontend/{lang}: ">=2026.55"
+  l10n/frontend/{lang}: ">=2026.144"
  When Install Succeeds: ["queue message response.please_check_config"]
  When Update Succeeds:
   - "if {Components.Meta.BOBUAM.Version}<2026.58&&{Components.RemoteMeta.BOBUAM.Version}>=2026.58 then queue message <span dir="ltr" lang="en-AU">[BOBUAM 2026.58.0] Removed three configuration directives (sanity_check, block_bots, and block_eol_browsers). Added a new configuration directive (what_to_block). All available block options enabled by default. You *may* want to revise your configuration accordingly.</span>"
+  - "if {Components.Meta.BOBUAM.Version}<2026.147&&{Components.RemoteMeta.BOBUAM.Version}>=2026.147 then queue message <span dir="ltr" lang="en-AU">[BOBUAM 2026.147.0] Added a new configuration directive (token_difference_limit).</span>"
  Files:
   imports/bobuam.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/imports/bobuam.yml"
@@ -1599,7 +1600,7 @@ BOBUAM:
    Used with: "imports"
   modules/bobuam.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/modules/bobuam.php"
-   Checksum: "01bfbee9f3a099d06086ace13fb26e97f22313e274c67af40bf7efd97f04b85e:48878"
+   Checksum: "54fdd4f8a30e1c0eb38a4ec28a8d33818a3d3d40f127bd1e6e2a6cdaf4c7798b:50460"
    Used with: "modules"
 theme/bluemetal:
  Name: "Theme: Blue Metal"

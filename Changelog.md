@@ -550,4 +550,5 @@
 - [2026.05.17]: Updated the flags CSS.
 - [2026.05.18]: Unified the triggers for the outdated browser checks in the BOBUAM so as to avoid complications in deciding appropriate CAPTCHA signature limits (#684).
 - [2026.05.22]: Added ruby text for country flags shown at the logs page in fancy mode to be able to show both the flags and their relevant country codes together.
+- [2026.05.28]: Added a new configuration directive (token_difference_limit) to the BOBUAM, allowing for more granular control over CAPTCHAs (#676).
 - *Plus all the regular signature updates.*

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2026.05.02).
+ * This file: The CIDRAM core (last modified: 2026.05.28).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -228,22 +228,22 @@ class Core
     public const FILE_BLOCKSIZE = 131072;
 
     /**
-     * @var int Minimum salt length (used by the generateSalt() method).
+     * @var int Minimum salt length for generateSalt().
      */
     public const GENERATE_SALT_MIN_LEN = 32;
 
     /**
-     * @var int Maximum salt length (used by the generateSalt() method).
+     * @var int Maximum salt length for generateSalt().
      */
     public const GENERATE_SALT_MAX_LEN = 72;
 
     /**
-     * @var int Earliest permitted byte (used by the generateSalt() method).
+     * @var int Earliest permitted byte for generateSalt().
      */
     public const GENERATE_SALT_MIN_CHR = 1;
 
     /**
-     * @var int Latest permitted byte (used by the generateSalt() method).
+     * @var int Latest permitted byte for generateSalt().
      */
     public const GENERATE_SALT_MAX_CHR = 255;
 
@@ -308,7 +308,7 @@ class Core
 
         /** Checks whether the CIDRAM defaults file is readable. */
         if (!\is_readable($this->Vault . 'defaults.yml')) {
-            header('Content-Type: text/plain');
+            \header('Content-Type: text/plain');
             die('[CIDRAM] Can\'t read the defaults file! Can\'t continue until this is resolved.');
         }
 
@@ -317,7 +317,7 @@ class Core
 
         /** Kills the script if parsing the configuration defaults file fails. */
         if (empty($this->CIDRAM['Config Defaults'])) {
-            header('Content-Type: text/plain');
+            \header('Content-Type: text/plain');
             die('[CIDRAM] Configuration defaults file is corrupt! Can\'t continue until this is resolved.');
         }
 
@@ -1592,7 +1592,7 @@ class Core
             $Length = \rand(self::GENERATE_SALT_MIN_LEN, self::GENERATE_SALT_MAX_LEN);
         }
         try {
-            $Salt = random_bytes($Length);
+            $Salt = \random_bytes($Length);
         } catch (\Exception $e) {
             $Salt = '';
         }
@@ -1743,14 +1743,14 @@ class Core
         if (!$this->Cache->connect()) {
             $this->Events->fireEvent('final');
             if ($this->Cache->Using === 'FF') {
-                header('Content-Type: text/plain');
+                \header('Content-Type: text/plain');
                 die('[CIDRAM] ' . $this->L10N->getString('response.Unable to write to the cache'));
             } else {
                 $Status = $this->getStatusHTTP(503);
-                header('HTTP/1.0 503 ' . $Status);
-                header('HTTP/1.1 503 ' . $Status);
-                header('Status: 503 ' . $Status);
-                header('Retry-After: 3600');
+                \header('HTTP/1.0 503 ' . $Status);
+                \header('HTTP/1.1 503 ' . $Status);
+                \header('Status: 503 ' . $Status);
+                \header('Retry-After: 3600');
                 die;
             }
         }

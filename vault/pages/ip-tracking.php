@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The IP tracking page (last modified: 2026.03.18).
+ * This file: The IP tracking page (last modified: 2026.05.28).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -28,7 +28,7 @@ $this->filterSwitch(
     $this->FE['TrackingFilterControls']
 );
 if ($StateModified) {
-    header('Location: ?' . $this->FE['TrackingFilter']);
+    \header('Location: ?' . $this->FE['TrackingFilter']);
     die;
 }
 unset($StateModified);

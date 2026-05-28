@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The logs page (last modified: 2026.04.15).
+ * This file: The logs page (last modified: 2026.05.28).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -37,9 +37,9 @@ if (
     $this->CIDRAM['QueryVars']['textMode'] === 'download'
 ) {
     $this->Events->fireEvent('final');
-    header('Content-Type: application/octet-stream');
-    header('Content-Transfer-Encoding: Binary');
-    header('Content-disposition: attachment; filename="' . \basename($this->CIDRAM['QueryVars']['logfile']) . '"');
+    \header('Content-Type: application/octet-stream');
+    \header('Content-Transfer-Encoding: Binary');
+    \header('Content-disposition: attachment; filename="' . \basename($this->CIDRAM['QueryVars']['logfile']) . '"');
     echo $this->readFile($this->Vault . $this->CIDRAM['QueryVars']['logfile']);
     die;
 }

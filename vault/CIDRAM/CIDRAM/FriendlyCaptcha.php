@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Friendly Captcha class (last modified: 2026.03.17).
+ * This file: Friendly Captcha class (last modified: 2026.05.28).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -146,7 +146,7 @@ class FriendlyCaptcha extends Captcha
 
                         $UserHash = \password_hash($Cookie, $this->DefaultAlgo);
                         $Cookie = $UserHash . ',' . \base64_encode($UserSalt);
-                        setcookie(
+                        \setcookie(
                             'CIDRAM',
                             $Cookie,
                             $this->CIDRAM->Now + ($this->CIDRAM->Configuration['captcha']['expiry'] * 3600),

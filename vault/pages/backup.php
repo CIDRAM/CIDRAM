@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The backup page (last modified: 2026.04.15).
+ * This file: The backup page (last modified: 2026.05.28).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -80,9 +80,9 @@ if (isset($_POST['bckpAct'])) {
             $Export = \gzencode($Export);
             $Filename .= '.gz';
         }
-        header('Content-Type: application/octet-stream');
-        header('Content-Transfer-Encoding: Binary');
-        header('Content-disposition: attachment; filename="' . $Filename . '"');
+        \header('Content-Type: application/octet-stream');
+        \header('Content-Transfer-Encoding: Binary');
+        \header('Content-disposition: attachment; filename="' . $Filename . '"');
         echo $Export;
         $this->restoreErrorHandler();
         $this->Events->fireEvent('final');

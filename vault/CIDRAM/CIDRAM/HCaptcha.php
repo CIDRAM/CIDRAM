@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: HCaptcha class (last modified: 2026.03.17).
+ * This file: HCaptcha class (last modified: 2026.05.28).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -140,7 +140,7 @@ class HCaptcha extends Captcha
 
                         $UserHash = \password_hash($Cookie, $this->DefaultAlgo);
                         $Cookie = $UserHash . ',' . \base64_encode($UserSalt);
-                        setcookie(
+                        \setcookie(
                             'CIDRAM',
                             $Cookie,
                             $this->CIDRAM->Now + ($this->CIDRAM->Configuration['captcha']['expiry'] * 3600),
@@ -193,7 +193,7 @@ class HCaptcha extends Captcha
             $this->CIDRAM->Cache->incEntry('Statistics-HCaptcha:Served');
         }
 
-        header(\sprintf(
+        \header(\sprintf(
             'Content-Security-Policy: default-src \'none\'; connect-src %1$s; frame-src %1$s; script-src %1$s \'unsafe-inline\'; style-src \'unsafe-inline\';',
             '\'self\' https://assets.hcaptcha.com https://hcaptcha.com https://newassets.hcaptcha.com/'
         ));

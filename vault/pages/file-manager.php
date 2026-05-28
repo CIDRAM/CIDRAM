@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The file manager page (last modified: 2026.04.20).
+ * This file: The file manager page (last modified: 2026.05.28).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -95,9 +95,9 @@ if (!$this->FE['ASYNC']) {
         if ($SafeToContinue) {
             if (rename($_FILES['upload-file']['tmp_name'], $this->FE['basepath'] . $_FILES['upload-file']['name'])) {
                 $this->FE['state_msg'] = $this->L10N->getString('response.File successfully uploaded');
-                header('HTTP/1.0 201 Created');
-                header('HTTP/1.1 201 Created');
-                header('Status: 201 Created');
+                \header('HTTP/1.0 201 Created');
+                \header('HTTP/1.1 201 Created');
+                \header('Status: 201 Created');
             } else {
                 $this->FE['state_msg'] = $this->L10N->getString('response.Failed to upload');
             }
@@ -170,9 +170,9 @@ if (!$this->FE['ASYNC']) {
         /** Download a file. */
         if ($FMData['do_action'] === 'download-file') {
             $this->Events->fireEvent('final');
-            header('Content-Type: application/octet-stream');
-            header('Content-Transfer-Encoding: Binary');
-            header('Content-disposition: attachment; filename="' . \basename($FMData['filename']) . '"');
+            \header('Content-Type: application/octet-stream');
+            \header('Content-Transfer-Encoding: Binary');
+            \header('Content-disposition: attachment; filename="' . \basename($FMData['filename']) . '"');
             echo $this->readFile($this->FE['basepath'] . $FMData['filename']);
             die;
         }

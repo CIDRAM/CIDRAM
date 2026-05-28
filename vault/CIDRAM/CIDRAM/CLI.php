@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CIDRAM CLI mode (last modified: 2026.03.21).
+ * This file: CIDRAM CLI mode (last modified: 2026.05.28).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -24,7 +24,7 @@ trait CLI
     {
         /** Guard against access from the wrong endpoint. */
         if (!empty($_SERVER['REQUEST_METHOD']) || \substr(php_sapi_name(), 0, 3) !== 'cli' || !empty($_SERVER['HTTP_USER_AGENT'])) {
-            header('Content-Type: text/plain');
+            \header('Content-Type: text/plain');
             die('[CIDRAM CLI] Webserver access not permitted.');
         }
 

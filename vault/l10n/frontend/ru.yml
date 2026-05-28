@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2026.04.20).
+# This file: Russian language data for the front-end (last modified: 2026.05.28).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -155,6 +155,7 @@ config: !lazy
  bobuam_reason_malformed: "Причина блокировки, отображаемая при обнаружении деформированной строки пользовательского агента."
  bobuam_reason_masquerade: "Причина блокировки, отображаемая, когда пользовательский агент пытается маскироваться под что-то другое."
  bobuam_safari: "Самая низкая разрешенная версия токена «Version» Safari. Рекомендуемые: {{BOBUAM Token.Safari}}."
+ bobuam_token_difference_limit: "Для того чтобы пользователю, заблокированному из-за устаревшей версии браузера, была предложена CAPTCHA, помимо всех прочих требований, основной номер версии его браузера должен быть не ниже указанного здесь номера, начиная с самой низкой допустимой версии. Например, если минимально допустимая версия установлена ​​на 10, а здесь указано число 2, то для того чтобы пользователю была предложена CAPTCHA, основная версия его браузера должна быть не ниже 8. Если установить значение 0, это дополнительное требование не будет применяться."
  bobuam_what_to_block: "Что блокировать?"
  bunnycdn: "Конфигурация для модуля совместимости BunnyCDN."
  bunnycdn_positive_action: "Какое действие должен выполнить CIDRAM при получении запроса от BunnyCDN? Стандартное действие = Обходите."

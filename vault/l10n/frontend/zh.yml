@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese language data for the front-end (last modified: 2026.05.06).
+# This file: Chinese language data for the front-end (last modified: 2026.05.25).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -163,6 +163,9 @@ config: !lazy
  bobuam_reason_malformed: {"zh-Hans": "检测到畸形的用户代理字符串时显示的阻止原因。", "zh-Hant": "檢測到畸形的用戶代理字符串時顯示的阻止原因。"}
  bobuam_reason_masquerade: {"zh-Hans": "当用户代理试图伪装成其他东西时显示的阻止原因。", "zh-Hant": "當用戶代理試圖偽裝成其他東西時顯示的阻止原因。"}
  bobuam_safari: {"zh-Hans": "Safari的“Version”令牌的最低允许版本。 推荐的：“{{BOBUAM Token.Safari}}”。", "zh-Hant": "Safari的『Version』令牌的最低允許版本。 推薦的：『{{BOBUAM Token.Safari}}』。"}
+ bobuam_token_difference_limit:
+  zh-Hans: "当用户因浏览器版本过旧而被阻止时，为了向用户提供验证码，除了所有其他要求外，其浏览器的主版本号必须不低于此处指定的最低允许版本号。 例如，如果允许的最低版本设置为10，而此处指定的数字为2，则用户浏览器的主版本至少需要为8才能提供验证码。 如果设置为0，则此要求不适用。"
+  zh-Hant: "當使用者因瀏覽器版本過舊而被阻止時，為了向使用者提供驗證碼，除了所有其他要求外，其瀏覽器的主版本號必須不低於此處指定的最低允許版本號。 例如，如果允許的最低版本設定為10，而此處指定的數字為2，則使用者瀏覽器的主版本至少需要為8才能提供驗證碼。 如果設定為0，則此要求不適用。"
  bobuam_what_to_block: {"zh-Hans": "要阻止什么？", "zh-Hant": "要阻止什麼？"}
  bunnycdn: {"zh-Hans": "BunnyCDN兼容性模块配置。", "zh-Hant": "BunnyCDN兼容性模組配置。"}
  bunnycdn_positive_action: {"zh-Hans": "CIDRAM遇到BunnyCDN的请求时应该执行什么动作？ 标准操作 = 绕过。", "zh-Hant": "CIDRAM遇到BunnyCDN的請求時應該執行什麼動作？ 標準操作 = 繞過。"}

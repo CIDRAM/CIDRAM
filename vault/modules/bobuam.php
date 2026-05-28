@@ -22,7 +22,7 @@
  * William "Bill" Minozzi.
  * @link https://www.stopbadbots.com/
  *
- * This file: Bot Or Browser User Agent Module (last modified: 2026.05.24).
+ * This file: Bot Or Browser User Agent Module (last modified: 2026.05.28).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -237,6 +237,9 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             if ($Opera) {
                 $EOLOpera = $this->Configuration['bobuam']['opera'] ?: (int)$this->CIDRAM['BOBUAM Token']['Opera'];
                 if ($TokenOpera < $EOLOpera) {
+                    if ($this->Configuration['bobuam']['token_difference_limit'] > 0 && $TokenOpera < ($EOLOpera - $this->Configuration['bobuam']['token_difference_limit'])) {
+                        unset($Options['Opera:MarkForUseWithHCaptcha'], $Options['Opera:MarkForUseWithFriendlyCaptcha'], $Options['Opera:MarkForUseWithCloudflareTurnstile']);
+                    }
                     $Caught[] = 'O';
                     $this->enactOptions('Opera:', $Options);
                 }
@@ -244,6 +247,9 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             if ($Chromium) {
                 $EOLChrome = $this->Configuration['bobuam']['chrome'] ?: (int)$this->CIDRAM['BOBUAM Token']['Chrome'];
                 if ($TokenChrome < $EOLChrome) {
+                    if ($this->Configuration['bobuam']['token_difference_limit'] > 0 && $TokenChrome < ($EOLChrome - $this->Configuration['bobuam']['token_difference_limit'])) {
+                        unset($Options['Chrome:MarkForUseWithHCaptcha'], $Options['Chrome:MarkForUseWithFriendlyCaptcha'], $Options['Chrome:MarkForUseWithCloudflareTurnstile']);
+                    }
                     $Caught[] = 'C';
                     $this->enactOptions('Chrome:', $Options);
                 }
@@ -251,6 +257,9 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             if ($Edge) {
                 $EOLEdge = $this->Configuration['bobuam']['edge'] ?: (int)$this->CIDRAM['BOBUAM Token']['Edge'];
                 if ($TokenEdge < $EOLEdge) {
+                    if ($this->Configuration['bobuam']['token_difference_limit'] > 0 && $TokenEdge < ($EOLEdge - $this->Configuration['bobuam']['token_difference_limit'])) {
+                        unset($Options['Edge:MarkForUseWithHCaptcha'], $Options['Edge:MarkForUseWithFriendlyCaptcha'], $Options['Edge:MarkForUseWithCloudflareTurnstile']);
+                    }
                     $Caught[] = 'E';
                     $this->enactOptions('Edge:', $Options);
                 }
@@ -259,6 +268,9 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
                 $EOLFirefox = $this->Configuration['bobuam']['firefox'] ?: (int)$this->CIDRAM['BOBUAM Token']['Firefox'];
                 $EOLFirefoxESR = $this->Configuration['bobuam']['firefox_esr'] ?: (int)$this->CIDRAM['BOBUAM Token']['Firefox ESR'];
                 if ($TokenFirefox < $EOLFirefox && $TokenFirefox !== $EOLFirefoxESR) {
+                    if ($this->Configuration['bobuam']['token_difference_limit'] > 0 && $TokenFirefox < ($EOLFirefox - $this->Configuration['bobuam']['token_difference_limit'])) {
+                        unset($Options['Firefox:MarkForUseWithHCaptcha'], $Options['Firefox:MarkForUseWithFriendlyCaptcha'], $Options['Firefox:MarkForUseWithCloudflareTurnstile']);
+                    }
                     $Caught[] = 'F';
                     $this->enactOptions('Firefox:', $Options);
                 }
@@ -266,6 +278,9 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             if ($Safari) {
                 $EOLSafari = $this->Configuration['bobuam']['safari'] ?: (int)$this->CIDRAM['BOBUAM Token']['Safari'];
                 if ($TokenSafari < $EOLSafari) {
+                    if ($this->Configuration['bobuam']['token_difference_limit'] > 0 && $TokenSafari < ($EOLSafari - $this->Configuration['bobuam']['token_difference_limit'])) {
+                        unset($Options['Safari:MarkForUseWithHCaptcha'], $Options['Safari:MarkForUseWithFriendlyCaptcha'], $Options['Safari:MarkForUseWithCloudflareTurnstile']);
+                    }
                     $Caught[] = 'S';
                     $this->enactOptions('Safari:', $Options);
                 }

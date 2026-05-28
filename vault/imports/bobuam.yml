@@ -11,7 +11,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: BOBUAM defaults file (last modified: 2026.05.08).
+# This file: BOBUAM defaults file (last modified: 2026.05.18).
 ##/
 
 Config Defaults:
@@ -123,6 +123,9 @@ Config Defaults:
     Firefox: "{Short.Outdated browser} (Firefox)"
     Safari: "{Short.Outdated browser} (Safari)"
     Other: "{Short.Outdated browser} ({label.Other})"
+  token_difference_limit:
+   type: "int"
+   default: 0
 BOBUAM Token:
  # Opera v119 initial stable release 2025.05.13 <https://blogs.opera.com/desktop/>
  Opera: "119"

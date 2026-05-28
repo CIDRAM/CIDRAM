@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: ReCaptcha class (last modified: 2026.03.17).
+ * This file: ReCaptcha class (last modified: 2026.05.28).
  */
 
 namespace CIDRAM\Core;
@@ -87,7 +87,7 @@ class ReCaptcha extends Captcha
                         }
                         $UserHash = \password_hash($Cookie, $this->CIDRAM['DefaultAlgo']);
                         $Cookie = $UserHash . ',' . \base64_encode($UserSalt);
-                        setcookie(
+                        \setcookie(
                             'CIDRAM',
                             $Cookie,
                             $this->CIDRAM['Now'] + ($this->CIDRAM['Config']['recaptcha']['expiry'] * 3600),

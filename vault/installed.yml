@@ -9,7 +9,7 @@ CIDRAM Core:
  Changelog: "https://github.com/CIDRAM/CIDRAM/blob/v4/Changelog.md"
  Release Notes For: ["4.0.0", "4.0.1", "4.1.0", "4.2.0"]
  When Update Succeeds:
-  - "wpVer 4.8 6.9.4 4.1.0 7.2"
+  - "wpVer 4.8 7.0 4.1.0 7.2"
   - "foreach {Components.RemoteMeta.CIDRAM Core.Release Notes For} as Key => Value if {Components.Meta.CIDRAM Core.Version}<{Value}&&{Components.RemoteMeta.CIDRAM Core.Version}>={Value} then queue message response.release_notes https://github.com/CIDRAM/CIDRAM/releases/tag/v{Value} CIDRAM v{Value}"
   - "if {Components.Meta.CIDRAM Core.Version}<4.0.0-DEV&&{Components.RemoteMeta.CIDRAM Core.Version}>=4.0.0-DEV then set Configuration.captcha={Configuration.hcaptcha};executeMacro uninstall_no_longer_available;set Configuration.captcha.hcaptcha_secret="{Configuration.captcha.secret}";set Configuration.captcha.hcaptcha_sitekey="{Configuration.captcha.sitekey}";set Configuration.captcha.usemode.hcaptcha={Configuration.captcha.usemode};set Configuration.captcha.nonblocked_status_code.hcaptcha={Configuration.captcha.nonblocked_status_code};set Configuration.captcha.api.hcaptcha="{Configuration.captcha.api}";set Configuration.recaptcha="";set Configuration.hcaptcha="";set Configuration.general.http_response_header_code.default={Configuration.general.http_response_header_code};set Configuration.general.statistics={CIDRAM.Config Defaults.general.statistics.default};updateConfiguration"
   - "if {Components.Meta.CIDRAM Core.Version}<4.1.0-DEV+260440&&{Components.RemoteMeta.CIDRAM Core.Version}>=4.1.0-DEV+260440 then queue message <span dir="ltr" lang="en-AU">[CIDRAM Core 4.1.0-DEV+260440] UptimeRobot's default signature bypass has been replaced with full verification support. Pressing <span class="txtRd">↺ Reset</span> on <code class="s">verification➡other</code> at the configuration page and then update is recommended.</span>"
@@ -650,13 +650,13 @@ Common Classes Package:
    Checksum: "d3a61a0078178d30acd1415e6e5a71afa03d9952b0a41b5c75b4c342320e571b:61106"
 IPv4:
  False Positive Risk: "Medium"
- Version: "2026.146.0"
+ Version: "2026.152.0"
  Dependencies:
   Bypasses: ">=2025.348"
  Files:
   signatures/ipv4.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/signatures/ipv4.dat"
-   Checksum: "8f8579c6c2b44becbf4ecef507b7b6d5b66c0df501c5427eaf5c444db7ed845a:1985040"
+   Checksum: "90e29550808965b35cc70c71a39ca9ebb235de4367bc2dec80da1e0c89a4f931:1992202"
    Used with: "ipv4"
 IPv4-Bogons:
  False Positive Risk: "Low"
@@ -668,13 +668,13 @@ IPv4-Bogons:
    Used with: "ipv4"
 IPv4-ISPs:
  False Positive Risk: "Medium"
- Version: "2026.146.0"
+ Version: "2026.152.0"
  Dependencies:
   Bypasses: ">=2025.225"
  Files:
   signatures/ipv4_isps.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/signatures/ipv4_isps.dat"
-   Checksum: "e35304a4e5b4aa67026d934b8cc59dc06177119c5ad37582afd99b135a5179b1:782708"
+   Checksum: "1ae3a9d7264d2599c9c5558513bb5655e984438e00269f68050b4dc486a45f30:782793"
    Used with: "ipv4"
 IPv4-Nonblocking:
  False Positive Risk: "Low"
@@ -694,13 +694,13 @@ IPv4-Other:
    Used with: "ipv4"
 IPv6:
  False Positive Risk: "Low"
- Version: "2026.146.0"
+ Version: "2026.152.0"
  Dependencies:
   Bypasses: ">=2025.348"
  Files:
   signatures/ipv6.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/signatures/ipv6.dat"
-   Checksum: "8d7c727d88c1f36e45c0b176643ed1fb2c77c58ab7cc1ac1c424c0e363471489:588411"
+   Checksum: "1631a4fffac01b69bf953d15109f15de7614e0b4f3b4ca39d4f0377700833001:587562"
    Used with: "ipv6"
 IPv6-Bogons:
  False Positive Risk: "Low"
@@ -1356,14 +1356,14 @@ AbuseIPDB module:
    Checksum: "bb5fa57fca6e5599d6769112021b6ab88baea8c5476ad43767d2ef0d3b06de2b:10930"
 Bad hosts blocker module:
  False Positive Risk: "Medium"
- Version: "2026.76.0"
+ Version: "2026.152.0"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "^4"
  Files:
   modules/badhosts.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/modules/badhosts.php"
-   Checksum: "a8683c8cde6365736edcf39236c071e08f1e86af9770848b7270bf7ab6b48f4a:8889"
+   Checksum: "3160cfc370607b30a13a6cf2cdac54f34eeb36fcba46356477d1311201a5942e:9112"
    Used with: "modules"
 Bad TLDs blocker module:
  False Positive Risk: "Low"

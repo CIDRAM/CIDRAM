@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v4/vault/signatures/ipv4_isps.dat
 
-# Version: 2026.146.0
-# Last modified: 2026.05.27
+# Version: 2026.152.0
+# Last modified: 2026.06.02
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -12634,22 +12634,12 @@ Tag: P.A.K.T LLC
 # ASNs 6739, 12357, 12430 ("VODAFONE ESPANA S.A.U").
 # Spanish domestic ISP. Brute-force, DDoS, SSH attacks, port scans, and spam
 # detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 128 (AS6739), 1 (AS12357), 275 (AS12430).
-# Updated: 2025.05.21 / Modified: 2025.06.29
+# Stop Forum Spam (SFS) listings: 30 (AS6739), 115 (AS12430).
+# Updated: 2026.06.02
 
 31.4.241.0/24 Deny Attacks
-31.4.242.0/24 Deny Attacks
-31.4.243.29/32 Deny Attacks
-37.223.182.201/32 Deny Spam
-37.223.204.16/32 Deny Spam
-37.223.241.204/32 Deny Spam
-37.223.242.247/32 Deny Spam
-46.25.121.110/32 Deny Attacks
-79.108.206.242/32 Deny Attacks
+31.4.242.0/23 Deny Attacks
 81.60.194.189/32 Deny Attacks
-82.159.78.135/32 Deny Attacks
-95.60.47.189/32 Deny Spam
-188.85.81.233/32 Deny Attacks
 Origin: ES
 Profile: Domestic ISP;Mobile ISP
 Tag: VODAFONE ESPANA
@@ -17701,12 +17691,12 @@ Tag: Precious netcom pvt ltd
 # Bangladesh multiplay domestic ISP. Spam and port scans detected from here.
 # Some addresses caught probing for semalt resources here. Listing just the
 # affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 77.
-# Updated: 2026.01.09
+# Stop Forum Spam (SFS) listings: 29.
+# Updated: 2026.05.31
 
 103.133.200.0/22 Deny Attacks
+103.135.253.0/24 Deny Attacks
 103.237.36.0/22 Deny Attacks
-160.202.145.0/24 Deny Attacks
 Origin: BD
 Profile: Domestic ISP;Multiplay;Webhosting
 Tag: Antaranga Dot Com Ltd
@@ -21150,46 +21140,26 @@ Tag: Imam Bonjol Padang
 # ASN 29465 ("MTN NIGERIA Communication limited").
 # Nigerian multiplay ISP. Brute-force, SSH attacks, and spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 3,209.
-# Updated: 2025.05.06
+# Stop Forum Spam (SFS) listings: 1,290.
+# Updated: 2026.06.02
 
-102.88.70.59/32 Deny Spam
-102.88.71.0/24 Deny Attacks
-102.88.108.130/32 Deny Spam
 102.88.110.0/24 Deny Attacks
-102.88.111.234/32 Deny Spam
-102.89.22.191/32 Deny Spam
 102.89.23.0/24 Deny Attacks
 102.89.32.0/23 Deny Attacks
 102.89.34.0/24 Deny Attacks
 102.89.40.0/21 Deny Attacks
-102.89.69.5/32 Deny Spam
-102.89.76.6/32 Deny Spam
-102.89.83.232/32 Deny Spam
-102.89.85.32/32 Deny Spam
-102.89.85.77/32 Deny Spam
-102.90.81.16/32 Deny Spam
-102.90.98.214/32 Deny Spam
-102.90.100.53/32 Deny Spam
-102.90.103.202/32 Deny Spam
-102.91.0.94/32 Deny Attacks
 102.91.4.0/23 Deny Attacks
-102.91.14.162/32 Deny Spam
-102.91.17.18/32 Deny Attacks
-102.91.17.90/32 Deny Attacks
+102.91.17.121/32 Deny Attacks
+102.91.17.182/32 Deny Attacks
 102.91.93.0/24 Deny Attacks
 197.210.8.0/24 Deny Attacks
 197.210.28.0/23 Deny Attacks
 197.210.52.0/22 Deny Attacks
-197.210.71.96/32 Deny Spam
 197.210.76.0/22 Deny Attacks
-197.210.84.0/23 Deny Attacks
+197.210.96.58/32 Deny Attacks
 197.210.96.85/32 Deny Attacks
 197.210.130.18/32 Deny Attacks
-197.210.189.171/32 Deny Spam
-197.210.201.158/32 Deny Attacks
 197.210.226.0/24 Deny Attacks
-197.210.227.138/32 Deny Spam
 Origin: NG
 Profile: Domestic ISP;Multiplay
 Tag: MTN NIGERIA
@@ -26609,6 +26579,42 @@ Tag: Tata Communications
 Origin: PK
 Profile: Domestic ISP
 Tag: Riderz Network
+
+
+# ASN 131724 ("DISKOMINFO PROV. JAWA TENGAH").
+# Indonesian public service provider. Spoofing, brute-force, SSH, and webapp
+# attacks, hacking, and port scans detected from here.
+# Listing just the affected ranges/addresses only.
+# Updated: 2026.05.31
+
+103.107.244.0/23 Deny Attacks
+Origin: ID
+Profile: Domestic ISP;Government
+Tag: jatengprov.go.id
+
+
+# ASN 50224 ("MTRL GROUP LIMITED").
+# Hosts here suspected to be hijacked by Detour Dog malware.
+# Listing just the affected ranges/addresses only.
+# Updated: 2026.06.02
+
+94.103.125.176/32 Deny Malware
+Origin: GB
+Profile: Domestic ISP
+Tag: MTRL GROUP LIMITED
+
+
+# ASN 216312 ("Gezim Cerri").
+# Albanian domestic ISP. Aisuru botnets, brute-force, SQLi, and webapp attacks,
+# hacking, and port scans detected from here.
+# Listing just the affected ranges/addresses only.
+# Updated: 2026.06.02
+
+45.66.230.0/24 Deny Attacks
+94.156.166.0/24 Deny Attacks
+Origin: BG
+Profile: Domestic ISP
+Tag: Gezim Cerri
 
 
 # ---

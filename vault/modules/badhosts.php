@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bad hosts blocker module (last modified: 2026.03.18).
+ * This file: Bad hosts blocker module (last modified: 2026.06.02).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -176,6 +176,11 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $this->addProfileEntry('Tor endpoints here');
         } // 2021.03.18 mod 2022.07.07
     }
+
+    /**
+     * @link https://www.infoblox.com/threat-intel/threat-actors/detour-dog/
+     */
+    $this->trigger(\preg_match('~unlimited\.dog$~i', $HN), 'Host suspected to be hijacked by Detour Dog malware'); // 2026.06.02
 
     /** WordPress cronjob bypass. */
     $this->bypass(

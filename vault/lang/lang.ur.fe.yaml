@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Urdu language data for the front-end (last modified: 2026.04.17).
+# This file: Urdu language data for the front-end (last modified: 2026.06.04).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -27,7 +27,7 @@
 Extended Description Bypasses: "پہلے سے طے شدہ دستخطی بائی پاس فائلوں کو عام طور پر بنیادی پیکیج کے ساتھ شامل تھے."
 Extended Description Chart.js: "پائی چارٹ پیدا کرنے کے لیے سامنے کے آخر میں قابل بناتا ہے.<br />{{Links.Chart.js}} {{Links.MIT}} لائسنس کے ذریعہ دستیاب ہے."
 Extended Description IPv4: &ExtDesCloud "بلاکس ناپسندیدہ کلاؤڈ سروسز اور غیر انسانی رسائی پوائنٹس."
-Extended Description IPv4-Bogons: &ExtDesBogons "بلاکس martian/bogon CIDR."
+Extended Description IPv4-Bogons: &ExtDesBogons "بلاکس مریخ/بوگون CIDR."
 Extended Description IPv4-ISPs: &ExtDesISPs "خطرناک بلاکس اور سپام ISP (ملٹی پلے نیٹ ورک پر مشتمل ہے. ان میں انسانی اور غیر انسانی مقامات بھی ہوسکتے ہیں)."
 Extended Description IPv4-Nonblocking: &ExtDesNonblocking "پروفائلنگ کے لیے مفید ہے، لیکن کسی بھی چیز کو اپنے طور پر مسدود نہیں کرتا ہے."
 Extended Description IPv4-Other: &ExtDesOther "پراکسی جنگ لڑ، وپ، اور دیگر متفرق ناپسندیدہ خدمات کے لیے CIDR."
@@ -54,12 +54,12 @@ Extended Description module_sfs.php: "SFS کے ذریعہ درج کردہ IP پ�
 Name Bypasses: "پہلے سے طے شدہ دستخطی بائ پاس."
 Name CN_cidram.inc: "چین IPv4 بلاک لسٹ."
 Name IPv4: "IPv4 (کلاوڈ اور میزبان خدمات)."
-Name IPv4-Bogons: "IPv4 (bogons)."
+Name IPv4-Bogons: "IPv4 (بوگون)."
 Name IPv4-ISPs: "IPv4 (سروس فراہم کرنے والے سپیم بھیجنے کے لیے)."
 Name IPv4-Nonblocking: "IPv4 غیر مسدود دستخطیں."
 Name IPv4-Other: "IPv4 (پراکسی، وی پی این، وغیرہ)."
 Name IPv6: "IPv6 (کلاوڈ اور میزبان خدمات)."
-Name IPv6-Bogons: "IPv6 (bogons)."
+Name IPv6-Bogons: "IPv6 (بوگون)."
 Name IPv6-ISPs: "IPv6 (سروس فراہم کرنے والے سپیم بھیجنے کے لیے)."
 Name IPv6-Nonblocking: "IPv6 غیر مسدود دستخطیں."
 Name IPv6-Other: "IPv6 (پراکسی، وی پی این، وغیرہ)."
@@ -186,7 +186,7 @@ config_recaptcha_sitekey: *CaptchaDashboard
 config_recaptcha_usemode: *CaptchaUseMode
 config_signatures: "دستخطوں، دستخط فائلوں، ماڈیولز، وغیرہ کے لیے تشکیل."
 config_signatures_block_attacks: "حملوں اور دیگر غیر معمولی ٹریفک سے وابستہ CIDRیں کو بلاک کریں؟ مثال کے طور پر، پورٹ اسکین، ہیکنگ، کمزوریوں کی تحقیقات وغیرہ. ایسا کرنے جب آپ کو مسائل کا سامنا ہوتا ہے جب تک، عام طور پر، یہ ہمیشہ سچ کے لیے مقرر کیا جانا چاہیے."
-config_signatures_block_bogons: "بلاک bogon/martian کی CIDRیں؟ آپ لوکل ہوسٹ سے، یا اپنے LAN سے اپنے مقامی نیٹ ورک کے اندر سے اپنی ویب سائٹ پر کنکشن، توقع ہے، اس ہدایت کے جھوٹے پر مقرر کیا جائے چاہیے. اگر آپ ان میں ایسے کنکشنوں کی توقع نہیں ہے، تو اس ہدایت صحیح پر سیٹ کیا جانا چاہیے."
+config_signatures_block_bogons: "بلاک بوگون/مریخ کی CIDRیں؟ آپ لوکل ہوسٹ سے، یا اپنے LAN سے اپنے مقامی نیٹ ورک کے اندر سے اپنی ویب سائٹ پر کنکشن، توقع ہے، اس ہدایت کے جھوٹے پر مقرر کیا جائے چاہیے. اگر آپ ان میں ایسے کنکشنوں کی توقع نہیں ہے، تو اس ہدایت صحیح پر سیٹ کیا جانا چاہیے."
 config_signatures_block_cloud: "بلاک CIDRیں webhosting کے/کلاؤڈ سروسز سے تعلق رکھنے والے کے طور پر شناخت؟ آپ کو آپ کی ویب سائٹ سے ایک API سروس آپریٹ یا اگر آپ دوسری ویب سائٹس کو اپنی ویب سائٹ سے رابطہ قائم کرنے کی توقع ہے تو، تو اس جھوٹے کے لیے مقرر کیا جانا چاہیے. آپ ایسا نہیں کرتے، تو پھر، اس ہدایت صحیح پر سیٹ کیا جانا چاہیے."
 config_signatures_block_generic: "بلاک کرنے کی سفارش کی CIDRیں کو بلاک کرنا؟ یہ دیگر زیادہ مخصوص دستخط کی اقسام میں سے کسی کا حصہ ہونے کے طور پر نشان نہیں ہیں کہ کسی بھی دستخطوں پر محیط ہے."
 config_signatures_block_legal: "قانونی ذمہ داریوں کے جواب میں CIDRیں کو بلاک کریں؟ یہ ہدایت عام طور پر کسی بھی اثر نہیں ہونا چاہیے، کیونکہ CIDRAM کسی CIDRیں کے ساتھ "قانونی ذمہ داریوں" سے متعلق نہیں ہے، لیکن اس کے باوجود موجود ہے کہ کسی بھی اپنی مرضی کے دستخط فائلوں یا ماڈیولز کے فائدہ کے لیے اضافی کنٹرول کی پیمائش کے طور پر جو قانونی وجوہات کی بنا پر موجود ہو."

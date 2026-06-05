@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malay language data for the front-end (last modified: 2026.05.24).
+# This file: Malay language data for the front-end (last modified: 2026.06.04).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -91,9 +91,16 @@ Glossary: !lazy
    | Permintaan TIDAK disekat | Negatif benar (inferens yang betul) | Pengesanan yang terlepas (atau negatif palsu) |
    | Permintaan disekat | Positif palsu | Positif benar (inferens yang betul) |
    Jika anda menemui positif palsu, semak halaman kemas kini terlebih dahulu dan jika ada yang ditanda sebagai ketinggalan zaman, kemas kininya. Selepas ini, jika masalah masih berterusan, anda boleh melaporkan masalah tersebut di penjejak isu CIDRAM.
+  Tandatangan: |
+   Dalam konteks CIDRAM, tandatangan ("signature" dalam bahasa Inggeris) merujuk kepada data yang terdapat dalam fail tandatangan dan modul yang digunakan oleh CIDRAM untuk menentukan sama ada permintaan harus disekat.
+   Dalam kes fail tandatangan, tandatangan biasanya terdiri daripada CIDR, arahan yang mewakili tindakan yang dikehendaki untuk diambil apabila permintaan daripada alamat IP milik CIDR tersebut ditemui, dan sekiranya alamat IP disekat, apakah sebabnya. Ia selalunya akan digabungkan sebagai bahagian, disertakan dengan komen, markup, dan metadata lain untuk memberikan konteks tambahan.
+   Contoh tandatangan daripada fail tandatangan bogon IPv4: {{Excerpts.Bogon signature}}
+   Dalam kes modul, tandatangan biasanya merujuk kepada panggilan dalam kod modul kepada kaedah tertentu yang bertanggungjawab untuk menyekat permintaan apabila syarat tertentu dipenuhi.
+   Contoh hipotetikal tandatangan daripada modul: {{Excerpts.Module signature}}
  Indexes:
   CIDR: "cidr"
   [Negatif palsu, Positif palsu, Negatif benar, Positif benar]: "false_positive"
+  Tandatangan: "signature"
  Refs:
   Positif palsu:
    Issues · CIDRAM/CIDRAM: "https://github.com/CIDRAM/CIDRAM/issues"
@@ -175,7 +182,7 @@ config: !lazy
  bobuam_reason_malformed: "Sebab sekat ditunjukkan apabila rentetan ejen pengguna yang cacat dikesan."
  bobuam_reason_masquerade: "Sebab sekat ditunjukkan apabila ejen pengguna cuba menyamar sebagai sesuatu yang lain."
  bobuam_safari: "Versi token "Version" Safari paling rendah dibenarkan. Disyorkan: {{BOBUAM Token.Safari}}."
- bobuam_token_difference_limit: "CAPTCHA yang ditawarkan sebagai tindak balas kepada pengguna yang disekat disebabkan oleh pelayar yang ketinggalan zaman, berserta semua keperluan lain, juga memerlukan versi utama pelayar mereka tidak berada lebih jauh daripada versi terendah yang dibenarkan daripada bilangan yang dinyatakan disini. Contohnya, jika versi terendah yang dibenarkan ditetapkan kepada 10, dan nombor yang dinyatakan disini ialah 2, versi utama pelayar pengguna perlu sekurang-kurangnya 8 untuk ditawarkan CAPTCHA. Apabila ditetapkan kepada 0, keperluan tambahan ini tidak akan terpakai."
+ bobuam_token_difference_limit: "CAPTCHA yang ditawarkan sebagai tindak balas kepada pengguna yang disekat disebabkan oleh penyemak imbas yang ketinggalan zaman, berserta semua keperluan lain, juga memerlukan versi utama penyemak imbas mereka tidak berada lebih jauh daripada versi terendah yang dibenarkan daripada bilangan yang dinyatakan disini. Contohnya, jika versi terendah yang dibenarkan ditetapkan kepada 10, dan nombor yang dinyatakan disini ialah 2, versi utama penyemak imbas pengguna perlu sekurang-kurangnya 8 untuk ditawarkan CAPTCHA. Apabila ditetapkan kepada 0, keperluan tambahan ini tidak akan terpakai."
  bobuam_what_to_block: "Apa yang perlu disekat?"
  bunnycdn: "Konfigurasi untuk modul keserasian BunnyCDN."
  bunnycdn_positive_action: "Tindakan manakah yang perlu CIDRAM lakukan apabila ia menghadapi permintaan daripada BunnyCDN? Tindakan lalai = Memintasnya."
@@ -427,7 +434,7 @@ hints_aux_stats: "Nota: Sama ada untuk menjejak statistik untuk peraturan tambah
 hints_cause_fp: "*!! Kemungkinan tinggi menyebabkan positif palsu kerana %s."
 hints_cclookup: "** Memerlukan kefungsian carian kod negara (cth., melalui modul IP-API atau BGPView)."
 hints_client_hints: "!! Ini adalah petunjuk pelanggan dengan entropi rendah. Petunjuk pelanggan ialah teknologi web percubaan baharu yang belum lagi disokong secara meluas merentas semua penyemak imbas dan pelanggan utama. <em>Lihat: {{Links.MDN.Client hints}}.</em> Walaupun petunjuk pelanggan boleh berguna untuk cap jari, kerana ia tidak disokong secara meluas, kehadiran mereka dalam permintaan tidak boleh diandaikan atau bergantung kepada (iaitu, menyekat berdasarkan ketiadaan mereka adalah idea yang tidak baik)."
-hints_client_honour: "Tidak kira cara kami mengarahkan pelanggan, adalah penting untuk diingat bahawa kami akhirnya tidak mempunyai kawalan ke atas perkara yang pelanggan pilih untuk lakukan, dan tiada jaminan bahawa pelanggan akan mematuhi arahan kami."
+hints_client_honour: "Tidak kira cara kita mengarahkan pelanggan, adalah penting untuk diingat bahawa kita akhirnya tidak mempunyai kawalan ke atas perkara yang pelanggan pilih untuk lakukan, dan tiada jaminan bahawa pelanggan akan mematuhi arahan kita."
 hints_default_dns:
  FAQ.: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.id.md\#apa-yang-bisa-saya-gunakan-untuk-default_dns" hreflang="id-ID">Apakah yang boleh saya gunakan untuk "default_dns"?</a></em>"
 hints_duration:

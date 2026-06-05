@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2026.05.24).
+# This file: Spanish language data for the front-end (last modified: 2026.06.04).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -91,9 +91,16 @@ Glossary: !lazy
    | La solicitud NO está bloqueada | Verdadero negativo (inferencia correcta) | Detección fallida (o falso negativo) |
    | La solicitud ESTÁ bloqueada | Falso positivo | Verdadero positivo (inferencia correcta) |
    Si encuentra falsos positivos, primero revise la página de actualizaciones y, si algo está marcado como anticuado, actualícelo. Si después de eso el problema persiste, puede informar del mismo en el sistema de seguimiento de incidencias de CIDRAM.
+  Firma: |
+   En el contexto de CIDRAM, una firma ("signature" en inglés) se refiere a los datos, que se encuentran dentro de los archivos de firma y dentro de los módulos, que CIDRAM utiliza para determinar si las solicitudes deben bloquearse.
+   En el caso de los archivos de firma, una firma normalmente consta de un CIDR, un comando que representa la acción deseada que se debe tomar cuando se encuentra una solicitud de una dirección IP perteneciente a ese CIDR y, en caso de que se bloquee una dirección IP, el motivo para hacerlo. A menudo se agruparán en secciones, acompañadas de comentarios, marcado, y otros metadatos para proporcionar contexto adicional.
+   Un ejemplo de firma del archivo de firmas de bogons IPv4: {{Excerpts.Bogon signature}}
+   En el caso de los módulos, una firma normalmente hace referencia a las llamadas en el código de los módulos a un método específico responsable de bloquear una solicitud cuando se cumplen determinadas condiciones.
+   Un ejemplo hipotético de una firma de un módulo: {{Excerpts.Module signature}}
  Indexes:
   CIDR: "cidr"
   [Falso negativo, Falso positivo, Verdadero negativo, Verdadero positivo]: "false_positive"
+  Firma: "signature"
  Refs:
   CIDR:
    Classless Inter-Domain Routing - Wikipedia, la enciclopedia libre: "https://es.wikipedia.org/wiki/Classless_Inter-Domain_Routing"

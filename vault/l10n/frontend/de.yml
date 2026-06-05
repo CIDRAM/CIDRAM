@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2026.05.24).
+# This file: German language data for the front-end (last modified: 2026.06.04).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -91,9 +91,16 @@ Glossary: !lazy
    | Die Anfrage wurde NICHT blockiert | Richtig-Negativ (korrekte Schlussfolgerung) | Verpasste Erkennung (oder Falsch-Negativ) |
    | Die Anfrage wurde blockiert | Falsch-Positiv | Richtig-Positiv (korrekte Schlussfolgerung) |
    Sollten Sie auf Falscher-Positiver stoßen, überprüfen Sie zuerst die Seite mit den Aktualisierungen und aktualisieren Sie alle als veraltet markierten Komponenten. Sollte das Problem danach immer noch bestehen, können Sie es im Issue-Tracker von CIDRAM melden.
+  Signatur: |
+   Im Kontext von CIDRAM bezeichnet der Begriff „Signatur“ auf Daten die sich in Signaturdateien und modulen befinden, und von CIDRAM verwendet werden um zu bestimmen, ob Anfragen blockiert werden sollen.
+   In Signaturdateien besteht eine Signatur typischerweise aus einem CIDR-Block, einem Befehl der die gewünschte Aktion bei einer Anfrage von einer IP-Adresse innerhalb dieses CIDR-Blocks beschreibt, und im Falle einer Blockierung der IP-Adresse, dem Grund dafür. Sie werden oft zu Sektionen zusammengefasst und durch Kommentare, Markup, und weitere Metadaten ergänzt um zusätzlichen Kontext zu liefern.
+   Ein Beispiel für eine Signatur aus der IPv4-Bogons-Signaturdatei: {{Excerpts.Bogon signature}}
+   In Modulen bezieht sich eine Signatur typischerweise auf Aufrufe im Code von Modulen an eine bestimmte Methode, die für das Blockieren einer Anfrage wenn bestimmte Bedingungen erfüllt sind zuständig ist.
+   Ein hypothetisches Beispiel für eine Signatur eines Moduls: {{Excerpts.Module signature}}
  Indexes:
   CIDR: "cidr"
   [Falsch-Negativ, Falsch-Positiv, Richtig-Negativ, Richtig-Positiv]: "false_positive"
+  Signatur: "signature"
  Refs:
   CIDR:
    Classless Inter-Domain Routing – Wikipedia: "https://de.wikipedia.org/wiki/Classless_Inter-Domain_Routing"

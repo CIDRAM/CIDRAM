@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2026.05.24).
+# This file: Swedish language data for the front-end (last modified: 2026.06.04).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -91,9 +91,16 @@ Glossary: !lazy
    | Begäran är INTE blockerad | Sant negativ (korrekt slutsats) | Missad upptäckt (eller falskt negativ) |
    | Begäran ÄR blockerad | Falskt positiv | Sant positiv (korrekt slutsats) |
    Om du stöter på falska positiva, kontrollera först uppdateringssidan och uppdatera om något är markerat som föråldrat. Om problemet kvarstår du kan rapportera problemet via CIDRAMs problemspårare.
+  Signatur: |
+   I CIDRAM-sammanhang avser en signatur till data som finns i signaturfiler och moduler och som används av CIDRAM för att avgöra om förfrågningar ska blockeras.
+   När det gäller signaturfiler består en signatur vanligtvis av en CIDR, ett kommando som representerar den önskade åtgärden som ska vidtas när en begäran från en IP-adress som tillhör den CIDRn påträffas, och i händelse av att en IP-adress blockeras, anledningen till att göra det. De samlas ofta som avsnitt, tillsammans med kommentarer, markeringar, och andra metadata för att ge ytterligare sammanhang.
+   Ett exempel på en signatur från IPv4 bogons signaturfil: {{Excerpts.Bogon signature}}
+   När det gäller moduler avser en signatur vanligtvis till anrop i modulernas kod till en specifik metod som ansvarar för att blockera en begäran när specifika villkor är uppfyllda.
+   Ett hypotetiskt exempel på en signatur från en modul: {{Excerpts.Module signature}}
  Indexes:
   CIDR: "cidr"
   [Falskt negativ, Falskt positiv, Sant negativ, Sant positiv]: "false_positive"
+  Signatur: "signature"
  Refs:
   CIDR:
    Classless Inter-Domain Routing – Wikipedia: "https://sv.wikipedia.org/wiki/Classless_Inter-Domain_Routing"

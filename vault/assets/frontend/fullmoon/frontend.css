@@ -50,7 +50,7 @@ li>.iCntr>.iCntn>textarea{width:calc(100% - 92px)}
 a,.pseudolink{text-decoration:underline}
 a:link,a:visited,.pseudolink{color:#eee6ab}
 a:hover,a:active,a:focus,.pseudolink:hover,.pseudolink:active,.pseudolink:focus{color:#fff7bc}
-.headbox,.footbox,.cat,.exp,nav,.s,.txtGn,.txtOe,.txtRd,.spanner,a,input,input[type=file]::file-selector-button,select,textarea,.vrte,.vrto,dt{font-weight:700}
+.headbox,.footbox,.cat,.exp,nav,.s,.txtGn,.txtOe,.txtRd,.spanner,a,input,input[type=file]::file-selector-button,select,textarea,.vrte,.vrto,dt,dd code{font-weight:700}
 .ci,.co,.center{margin:auto}
 .ci,.co,.ng1:not(nav .ng1,.quad .ng1,.duo .ng1,.col .ng1,nav .ng1),.ng2:not(nav .ng2,.quad .ng2,.duo .ng2,.col .ng2,nav .ng2){width:calc(100% - 32px)}
 .ci{background-color:rgba(69,84,75,.5);border-style:solid;border-width:1px;border-color:#aaa;text-align:{FE_Align};border-top-{FE_Align_Reverse}-radius:24px;padding:12px}
@@ -146,7 +146,7 @@ select[class=auto]+select[class=auto]{margin-{FE_Align}:-3px;margin-{FE_Align_Re
 .gridHA.gridVA{background-color:rgba(0,0,0,.125)}
 .gridHA.gridVB{background-color:rgba(127,110,85,.3)}
 .gridVB:not(.gridHA){background-color:rgba(251,191,127,.35)}
-.configMatrixLabel.gridVB{background:linear-gradient(0deg,rgba(251,191,127,.35),rgba(0,0,0,0))}
+.configMatrixLabel.gridVB,dd code{background:linear-gradient(0deg,rgba(251,191,127,.35),rgba(0,0,0,0))}
 .warning::before,.warning::after{content:"⚠️";font-size:24px;display:inline;line-height:100%;position:relative;top:2px}
 .warning{display:inline-block;margin:4px;font-weight:700;color:#e7ab7d;background:linear-gradient({90deg},rgba(128,92,0,0) 0,rgba(128,92,0,.8) 20% 80%,rgba(128,92,0,0) 100%);line-height:100%}
 .gridlabel,.detailedSvgIcon{transition:all .2s ease-out}

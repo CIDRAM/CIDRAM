@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2026.05.24).
+# This file: Italian language data for the front-end (last modified: 2026.06.04).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -91,9 +91,16 @@ Glossary: !lazy
    | La richiesta NON è bloccata | Vero negativo (inferenza corretta) | Mancata rilevazione (o falso negativo) |
    | La richiesta È bloccata | Falso positivo | Vero positivo (inferenza corretta) |
    Se riscontri falsi positivi, controlla prima la pagina degli aggiornamenti e, se qualcosa è contrassegnato come non aggiornato, aggiornalo. Successivamente, se il problema persiste, è possibile segnalarlo tramite il sistema di segnalazione dei problemi di CIDRAM.
+  Firma: |
+   Nel contesto di CIDRAM, una firma ("signature" in inglese) si riferisce ai dati, contenuti nei file di firma e nei moduli, utilizzati da CIDRAM per determinare se le richieste debbano essere bloccate.
+   Nel caso dei file di firma, una firma è tipicamente composta da un CIDR, un comando che rappresenta l'azione desiderata da intraprendere quando viene rilevata una richiesta proveniente da un indirizzo IP appartenente a quel CIDR e, nel caso in cui un indirizzo IP venga bloccato, il motivo del blocco. Spesso vengono raggruppati in sezioni, accompagnati da commenti, markup, e altri metadati per fornire un contesto aggiuntivo.
+   Un esempio di firma dal file di firme IPv4 bogon: {{Excerpts.Bogon signature}}
+   Nel caso dei moduli, una firma si riferisce in genere alle chiamate, all'interno del codice dei moduli, a uno specifico metodo responsabile del blocco di una richiesta al verificarsi di determinate condizioni.
+   Un esempio ipotetico di firma da un modulo: {{Excerpts.Module signature}}
  Indexes:
   CIDR: "cidr"
   [Falso negativo, Falso positivo, Vero negativo, Vero positivo]: "false_positive"
+  Firma: "signature"
  Refs:
   CIDR:
    Classless Inter-Domain Routing - Wikipedia: "https://it.wikipedia.org/wiki/Classless_Inter-Domain_Routing"

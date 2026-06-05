@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Czech language data for the front-end (last modified: 2026.05.24).
+# This file: Czech language data for the front-end (last modified: 2026.06.04).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -91,9 +91,16 @@ Glossary: !lazy
    | Požadavek NENÍ blokována | Skutečně negativní (správný závěr) | Zmeškaná detekce (nebo falešně negativní) |
    | Požadavek JE zablokována | Falešně pozitivní | Skutečně pozitivní (správný závěr) |
    Pokud narazíte na falešně pozitivní, nejprve zkontrolujte stránku s aktualizacemi a pokud je cokoli označeno jako zastaralé, aktualizujte to. Pokud problém přetrvává i poté, můžete jej nahlásit v systému pro sledování problémů CIDRAM.
+  Podpis: |
+   V kontextu CIDRAM se podpis (v angličtině „signature“) vztahuje na data nalezená v souborech podpisů a v modulech, která CIDRAM používá k určení, zda by měly být požadavky blokovány.
+   V případě souborů s podpisy se podpis obvykle skládá z CIDR, příkazu představujícího požadovanou akci, která se má provést při výskytu požadavku z IP adresy patřící do daného CIDR, a v případě blokování IP adresy z důvodu blokování. Často budou seskupeny jako sekce, doplněné komentáři, značkami, a dalšími metadaty, které poskytnou další kontext.
+   Příklad podpisu ze souboru podpisu bogony pro IPv4: {{Excerpts.Bogon signature}}
+   V případě modulů se podpis obvykle vztahuje k volání specifické metody v kódu modulů, která je zodpovědná za blokování požadavku když jsou splněny určité podmínky.
+   Hypotetický příklad podpisu z modulu: {{Excerpts.Module signature}}
  Indexes:
   CIDR: "cidr"
   [Falešně negativní, Falešně pozitivní, Skutečně negativní, Skutečně pozitivní]: "false_positive"
+  Podpis: "signature"
  Refs:
   CIDR:
    Classless Inter-Domain Routing – Wikipedie: "https://cs.wikipedia.org/wiki/Classless_Inter-Domain_Routing"

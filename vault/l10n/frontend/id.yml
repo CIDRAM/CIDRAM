@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2026.05.24).
+# This file: Indonesian language data for the front-end (last modified: 2026.06.04).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -91,9 +91,16 @@ Glossary: !lazy
    | Permintaan TIDAK diblokir | Negatif benar (inferensi benar) | Deteksi yang terlewatkan (atau negatif palsu) |
    | Permintaan diblokir | Positif palsu | Positif benar (inferensi benar) |
    Jika Anda menemukan positif palsu, pertama-tama periksa halaman pembaruan, dan jika ada sesuatu yang ditandai sebagai tidak terbaru, perbarui. Setelah ini, jika masalah masih berlanjut, Anda dapat melaporkan masalah tersebut di pelacak masalah CIDRAM.
+  Tanda tangan: |
+   Dalam konteks CIDRAM, tanda tangan ("signature" dalam bahasa Inggris) merujuk pada data yang terdapat dalam file tanda tangan dan modul yang digunakan oleh CIDRAM untuk menentukan apakah permintaan harus diblokir.
+   Dalam kasus file tanda tangan, tanda tangan biasanya terdiri dari CIDR, perintah yang mewakili tindakan yang diinginkan untuk dilakukan ketika permintaan dari alamat IP yang termasuk dalam CIDR tersebut ditemui, dan jika alamat IP diblokir, alasan mengapa hal itu dilakukan. Tanda tangan sering kali dikelompokkan bersama sebagai bagian, disertai dengan komentar, penandaan, dan metadata lainnya untuk memberikan konteks tambahan.
+   Contoh tanda tangan dari file tanda tangan bogon IPv4: {{Excerpts.Bogon signature}}
+   Dalam kasus modul, tanda tangan biasanya merujuk pada panggilan dalam kode modul ke metode spesifik yang bertanggung jawab untuk memblokir permintaan ketika kondisi tertentu terpenuhi.
+   Contoh hipotetis tanda tangan dari modul: {{Excerpts.Module signature}}
  Indexes:
   CIDR: "cidr"
   [Negatif palsu, Positif palsu, Negatif benar, Positif benar]: "false_positive"
+  Tanda tangan: "signature"
  Refs:
   CIDR:
    Classless Inter-Domain Routing - Wikipedia bahasa Indonesia, ensiklopedia bebas: "https://id.wikipedia.org/wiki/Classless_Inter-Domain_Routing"
@@ -430,7 +437,7 @@ hints_aux_stats: "Catat: Apakah akan melacak statistik untuk aturan tambahan dap
 hints_cause_fp: "*!! Kemungkinan tinggi menyebabkan positif palsu karena %s."
 hints_cclookup: "** Memerlukan fungsionalitas pencarian kode negara (misalnya, melalui modul IP-API atau BGPView)."
 hints_client_hints: "!! Ini adalah petunjuk klien dengan entropi rendah. Petunjuk klien adalah teknologi web eksperimental baru yang belum didukung secara luas di semua browser dan klien utama. <em>Melihat: {{Links.MDN.Client hints}}.</em> Meskipun petunjuk klien dapat berguna untuk sidik jari, karena petunjuk tersebut tidak didukung secara luas, kehadiran petunjuk klien tersebut dalam permintaan tidak boleh diasumsikan atau diandalkan (yaitu, memblokir berdasarkan ketidakhadiran mereka adalah ide yang buruk)."
-hints_client_honour: "Terlepas dari bagaimana kami menginstruksikan klien, penting untuk diingat bahwa pada akhirnya kami tidak memiliki kendali atas apa yang klien pilih untuk dilakukan, dan tidak ada jaminan bahwa klien akan menghormati instruksi kami."
+hints_client_honour: "Terlepas dari bagaimana kita menginstruksikan klien, penting untuk diingat bahwa pada akhirnya kita tidak memiliki kendali atas apa yang klien pilih untuk dilakukan, dan tidak ada jaminan bahwa klien akan menghormati instruksi kita."
 hints_default_dns:
  FAQ.: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.id.md\#apa-yang-bisa-saya-gunakan-untuk-default_dns" hreflang="id-ID">Apa yang bisa saya gunakan untuk "default_dns"?</a></em>"
 hints_duration:

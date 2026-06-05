@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2026.05.24).
+# This file: Turkish language data for the front-end (last modified: 2026.06.04).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -91,9 +91,16 @@ Glossary: !lazy
    | İstek engellenmedi | Gerçek negatif (doğru çıkarım) | Gözden kaçan tespit (veya yanlış negatif) |
    | İstek engellendi | Yanlış pozitif | Gerçek pozitif (doğru çıkarım) |
    Yanlış pozitif karşılaşırsanız, öncelikle güncellemeler sayfasını kontrol edin, ve herhangi bir şeyin güncel olmadığını belirten bir işaret varsa, onu güncelleyin. Bundan sonra sorun hala devam ederse, sorunu CIDRAM'ın sorun takip sistemine bildirebilirsiniz.
+  İmza: |
+   CIDRAM bağlamında, imza (İngilizce'de "signature"), CIDRAM tarafından isteklerin engellenip engellenmeyeceğine karar vermek için kullanılan, imza dosyaları ve modüllerinde bulunan verileri ifade eder.
+   İmza dosyaları söz konusu olduğunda, bir imza tipik olarak bir CIDR'den, o CIDR'ye ait bir IP adresinden gelen bir istekle karşılaşıldığında gerçekleştirilecek istenen eylemi temsil eden bir komuttan ve, bir IP adresinin engellenmesi durumunda, bunun nedeninden oluşur. Bunlar genellikle bölümler halinde bir araya getirilir ve ek bağlam sağlamak için yorumlar, işaretlemeler, ve diğer meta verilerle birlikte sunulur.
+   IPv4 bogon'ler imza dosyasından bir imza örneği: {{Excerpts.Bogon signature}}
+   Modüller söz konusu olduğunda, bir imza tipik olarak modül kodundaki, belirli koşullar karşılandığında bir isteği engellemekten sorumlu belirli bir metoda yapılan çağrıları ifade eder.
+   Bir modülden alınmış varsayımsal bir imza örneği: {{Excerpts.Module signature}}
  Indexes:
   CIDR: "cidr"
   [Yanlış negatif, Yanlış pozitif, Gerçek negatif, Gerçek pozitif]: "false_positive"
+  İmza: "signature"
  Refs:
   CIDR:
    Sınıfsız alanlar arası yönlendirme - Vikipedi: "https://tr.wikipedia.org/wiki/S%C4%B1n%C4%B1fs%C4%B1z_alanlar_aras%C4%B1_y%C3%B6nlendirme"

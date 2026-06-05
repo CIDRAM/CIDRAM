@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2026.05.24).
+# This file: Vietnamese language data for the front-end (last modified: 2026.06.04).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -91,9 +91,16 @@ Glossary: !lazy
    | Yêu cầu KHÔNG bị chặn | Đúng tiêu cực (suy luận chính xác) | Bỏ sót phát hiện (hay sai tiêu cực) |
    | Yêu cầu BỊ chặn | Sai tích cực | Đúng tích cực (suy luận chính xác) |
    Nếu bạn gặp phải sai tích cực, trước tiên hãy kiểm tra trang cập nhật, và nếu có bất kỳ thành phần nào được đánh dấu là hết hạn, hãy cập nhật nó. Sau đó, nếu sự cố vẫn tiếp diễn, bạn có thể báo cáo lỗi này trên hệ thống theo dõi lỗi của CIDRAM.
+  Chữ ký: |
+   Trong ngữ cảnh của CIDRAM, chữ ký ("signature" trong tiếng Anh) đề cập đến dữ liệu được tìm thấy trong các tập tin chữ ký và các mô-đun, được sử dụng bởi CIDRAM để xác định xem các yêu cầu có nên bị chặn hay không.
+   Đối với các tập tin chữ ký, chữ ký thường bao gồm một CIDR, một lệnh thể hiện hành động mong muốn thực hiện khi gặp yêu cầu từ một địa chỉ IP thuộc CIDR đó, và trong trường hợp địa chỉ IP bị chặn, lý do dẫn đến việc bị chặn. Chúng thường được nhóm lại thành các phần, kèm theo nhận xét, đánh dấu, và các siêu dữ liệu khác để cung cấp thêm ngữ cảnh.
+   Ví dụ về chữ ký từ tập tin chữ ký bogon của IPv4: {{Excerpts.Bogon signature}}
+   Đối với các mô-đun, chữ ký thường đề cập đến các lệnh gọi trong mã của mô-đun đến một phương thức cụ thể chịu trách nhiệm chặn yêu cầu khi các điều kiện cụ thể được đáp ứng.
+   Ví dụ giả định về chữ ký từ một mô-đun: {{Excerpts.Module signature}}
  Indexes:
   CIDR: "cidr"
   [Sai tiêu cực, Sai tích cực, Đúng tiêu cực, Đúng tích cực]: "false_positive"
+  Chữ ký: "signature"
  Refs:
   CIDR:
    Classless Inter-Domain Routing - Wikipedia: "https://vi.wikipedia.org/wiki/Classless_Inter-Domain_Routing"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Galician language data for the front-end (last modified: 2026.05.24).
+# This file: Galician language data for the front-end (last modified: 2026.06.04).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -91,9 +91,16 @@ Glossary: !lazy
    | A solicitude NON está bloqueada | Verdadeiro negativo (inferencia correcta) | Detección fallida (ou falso negativo) |
    | A solicitude ESTÁ bloqueada | Falso positivo | Verdadeiro positivo (inferencia correcta) |
    Se atopas falsos positivos, primeiro consulta a páxina de actualizacións e, se algo está marcado como desactualizado, actualízao. Despois diso, se o problema persiste, podes informar do problema no rastreador de problemas de CIDRAM.
+  Sinatura: |
+   No contexto de CIDRAM, unha sinatura ("signature" en inglés) refírese aos datos, que se atopan dentro dos ficheiros de sinatura e dentro dos módulos, que CIDRAM emprega para determinar se as solicitudes deben ser bloqueadas.
+   No caso dos ficheiros de sinatura, unha sinatura consiste normalmente nun CIDR, un comando que representa a acción desexada a realizar cando se atopa unha solicitude dun enderezo IP pertencente a ese CIDR e, no caso de que un enderezo IP estea bloqueado, o motivo polo que se fai. A miúdo agrúpanse como seccións, acompañadas de comentarios, etiquetas, e outros metadatos para proporcionar contexto adicional.
+   Un exemplo dunha sinatura do ficheiro de sinaturas IPv4 bogons: {{Excerpts.Bogon signature}}
+   No caso dos módulos, unha sinatura normalmente refírese a chamadas no código dos módulos a un método específico responsable de bloquear unha solicitude cando se cumpren condicións específicas.
+   Un exemplo hipotético dunha sinatura dun módulo: {{Excerpts.Module signature}}
  Indexes:
   CIDR: "cidr"
   [Falso negativo, Falso positivo, Verdadeiro negativo, Verdadeiro positivo]: "false_positive"
+  Sinatura: "signature"
  Refs:
   Falso positivo:
    Issues · CIDRAM/CIDRAM: "https://github.com/CIDRAM/CIDRAM/issues"

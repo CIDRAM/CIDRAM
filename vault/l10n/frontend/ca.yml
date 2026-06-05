@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Catalan language data for the front-end (last modified: 2026.05.24).
+# This file: Catalan language data for the front-end (last modified: 2026.06.04).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -91,9 +91,16 @@ Glossary: !lazy
    | La sol·licitud NO està bloquejada | Veritable negatiu (inferència correcta) | Detecció perduda (o fals negatiu) |
    | La sol·licitud ESTÀ bloquejada | Fals positiu | Veritable positiu (inferència correcta) |
    Si trobeu falsos positius, primer consulteu la pàgina d'actualitzacions i, si alguna cosa està marcada com a antiquada, actualitzeu-la. Després d'això, si el problema persisteix, podeu informar-ne al rastrejador d'incidències de CIDRAM.
+  Signatura: |
+   En el context de CIDRAM, una signatura ("signature" en anglès) fa referència a les dades, que es troben dins dels fitxers de signatura i en mòduls, que CIDRAM utilitza per determinar si les sol·licituds s'han de bloquejar.
+   En el cas dels fitxers de signatura, una signatura normalment consisteix en un CIDR, una ordre que representa l'acció desitjada a realitzar quan es troba una sol·licitud d'una adreça IP que pertany a aquest CIDR i, en cas que una adreça IP estigui bloquejada, el motiu per fer-ho. Sovint s'agruparan com a seccions, acompanyades de comentaris, marcatge, i altres metadades per proporcionar context addicional.
+   Un exemple de signatura del fitxer de signatura IPv4 bogons: {{Excerpts.Bogon signature}}
+   En el cas dels mòduls, una signatura normalment fa referència a les crides del codi dels mòduls a un mètode específic responsable de bloquejar una sol·licitud quan es compleixen condicions específiques.
+   Un exemple hipotètic d'una signatura d'un mòdul: {{Excerpts.Module signature}}
  Indexes:
   CIDR: "cidr"
   [Fals negatiu, Fals positiu, Veritable negatiu, Veritable positiu]: "false_positive"
+  Signatura: "signature"
  Refs:
   CIDR:
    "Classless Inter-Domain Routing - Viquipèdia, l'enciclopèdia lliure": "https://ca.wikipedia.org/wiki/Classless_Inter-Domain_Routing"

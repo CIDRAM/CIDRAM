@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2026.05.24).
+# This file: Dutch language data for the front-end (last modified: 2026.06.04).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -91,9 +91,16 @@ Glossary: !lazy
    | Het verzoek wordt NIET geblokkeerd | Echt negatief (correcte conclusie) | Gemiste detectie (of valsnegatief) |
    | Het verzoek IS geblokkeerd | Valspositief | Echt positief (correcte conclusie) |
    Als u valspositieven tegenkomt, controleer eerst de updatepagina en werk alles bij wat als verouderd is gemarkeerd. Als het probleem zich daarna nog steeds voordoet, kunt u het melden via de probleemtracker van CIDRAM.
+  Signature: |
+   In de context van CIDRAM verwijst een signature naar gegevens in signatuurbestanden en modules te vinden, die door CIDRAM worden gebruikt om te bepalen of verzoeken moeten worden geblokkeerd.
+   In het geval van signatuurbestanden bestaat een signature doorgaans uit een CIDR, een commando dat de gewenste actie aangeeft die moet worden uitgevoerd wanneer een verzoek van een IP-adres binnen die CIDR wordt ontvangen, en, in het geval dat een IP-adres wordt geblokkeerd, de reden daarvoor. Ze worden vaak gebundeld in secties, vergezeld van opmerkingen, opmaak, en andere metadata om extra context te bieden.
+   Een voorbeeld van een signature uit het IPv4 bogons-signatuurbestand: {{Excerpts.Bogon signature}}
+   In het geval van modules verwijst een signature doorgaans naar aanroepen in de code van modules naar een specifieke methode die verantwoordelijk is voor het blokkeren van een verzoek wanneer aan bepaalde voorwaarden wordt voldaan.
+   Een hypothetisch voorbeeld van een signature uit een module: {{Excerpts.Module signature}}
  Indexes:
   CIDR: "cidr"
   [Valsnegatief, Valspositief, Echt negatief, Echt positief]: "false_positive"
+  Signature: "signature"
  Refs:
   CIDR:
    Classless Inter-Domain Routing - Wikipedia: "https://nl.wikipedia.org/wiki/Classless_Inter-Domain_Routing"

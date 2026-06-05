@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2026.05.24).
+# This file: Japanese language data for the front-end (last modified: 2026.06.04).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -91,9 +91,16 @@ Glossary: !lazy
    | リクエストはブロックされていません | 真陰性（正しい推論） | 検出漏れ（または、偽陰性） |
    | リクエストはブロックされました | 偽陽性 | 真陽性（正しい推論） |
    偽陽性が発生した場合は、まずアップデート・ページを確認し、時代遅れと表示されているものがあれば、アップデートしてください。 それでも問題が解決しない場合は、CIDRAMの課題追跡システムに問題を報告してください。
+  シグネチャ: |
+   CIDRAMの文脈において、シグネチャ（英語では「signature」）とは、シグネチャ・ファイルやモジュール内に含まれるデータを指し、CIDRAMがリクエストをブロックすべきかどうかを判断するために使用するものです。
+   シグネチャ・ファイルの場合、シグネチャは通常、CIDR、そのCIDRに属するＩＰアドレスからの要求があった場合に実行すべき望ましいアクションを表すコマンド、およびＩＰアドレスがブロックされた場合は、その理由で構成されます。 それらは多くの場合、セクションとしてまとめられ、追加のコンテキストを提供するためのコメント、マークアップ、その他のメタデータが付随します。
+   ＩＰｖ４ボゴン・シグネチャ・ファイルからのシグネチャの例： {{Excerpts.Bogon signature}}
+   モジュールの場合、シグネチャとは通常、特定の条件が満たされたときにリクエストをブロックする役割を担う特定のメソッドへの、モジュールのコード内の呼び出しを指します。
+   モジュールからのシグネチャの仮想的な例： {{Excerpts.Module signature}}
  Indexes:
   CIDR: "cidr"
   [偽陰性, 偽陽性, 真陰性, 真陽性]: "false_positive"
+  シグネチャ: "signature"
  Refs:
   CIDR:
    Classless Inter-Domain Routing - Wikipedia: "https://ja.wikipedia.org/wiki/Classless_Inter-Domain_Routing"

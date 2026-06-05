@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Croatian language data for the front-end (last modified: 2026.05.24).
+# This file: Croatian language data for the front-end (last modified: 2026.06.04).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -91,9 +91,16 @@ Glossary: !lazy
    | Zahtjev NIJE blokiran | Istinski negativan (ispravnim zaključkom) | Propušteno otkrivanje (ili lažno negativan) |
    | Zahtjev JE blokiran | Lažno pozitivan | Istinski pozitivan (ispravnim zaključkom) |
    Ako naiđete na lažno pozitivne, prvo provjerite stranicu s ažuriranjima i ako je nešto označeno kao zastarjelo, ažurirajte to. Nakon toga, ako problem i dalje postoji, možete ga prijaviti na CIDRAM-ovom sustavu za praćenje problema.
+  Potpis: |
+   U kontekstu CIDRAM-a, potpis ("signature" na engleskom) se odnosi na podatke koji se nalaze unutar datoteka potpisa i unutar modula, a koje CIDRAM koristi za određivanje treba li blokirati zahtjeve.
+   U slučaju datoteka potpisa, potpis se obično sastoji od CIDR-a, naredbe koja predstavlja željenu radnju koju treba poduzeti kada se naiđe na zahtjev s IP adrese koja pripada tom CIDR-u, a u slučaju da je IP adresa blokirana, razloga za to. Često će biti grupirani kao odjeljci, popraćeni komentarima, oznakama, i drugim metapodacima kako bi se pružio dodatni kontekst.
+   Primjer potpisa iz IPv4 bogona datoteke potpisa: {{Excerpts.Bogon signature}}
+   U slučaju modula, potpis se obično odnosi na pozive u kodu modula prema određenoj metodi odgovornoj za blokiranje zahtjeva kada su ispunjeni određeni uvjeti.
+   Hipotetski primjer potpisa iz modula: {{Excerpts.Module signature}}
  Indexes:
   CIDR: "cidr"
   [Lažno negativan, Lažno pozitivan, Istinski negativan, Istinski pozitivan]: "false_positive"
+  Potpis: "signature"
  Refs:
   CIDR:
    CIDR – Wikipedija: "https://hr.wikipedia.org/wiki/CIDR"

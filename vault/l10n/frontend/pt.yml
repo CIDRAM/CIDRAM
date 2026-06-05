@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2026.05.24).
+# This file: Portuguese language data for the front-end (last modified: 2026.06.04).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -117,9 +117,23 @@ Glossary: !lazy
     | A solicitação NÃO está bloqueada | Verdadeiro negativo (inferência correta) | Deteção perdida (ou falso negativo) |
     | A solicitação ESTÁ bloqueada | Falso positivo | Verdadeiro positivo (inferência correta) |
     Se encontrar falsos positivos, primeiro verifique a página de atualizações e, se algo estiver marcado como desatualizado, atualize. Depois disso, se o problema persistir, pode comunicá-lo no sistema de rastreio de problemas do CIDRAM.
+  Assinatura:
+   pt-BR: |
+    No contexto do CIDRAM, uma assinatura ("signature" em inglês) refere-se a dados, encontrados em arquivos de assinatura e módulos, usados ​​pelo CIDRAM para determinar se as solicitações devem ser bloqueadas.
+    No caso de arquivos de assinatura, uma assinatura normalmente consiste em um CIDR, um comando que representa a ação desejada a ser tomada quando uma solicitação de um endereço IP pertencente a esse CIDR for encontrada e, no caso um endereço IP seja bloqueado, o motivo do bloqueio. As assinaturas geralmente são agrupadas em seções, acompanhadas de comentários, marcações, e outros metadados para fornecer contexto adicional.
+    Um exemplo de assinatura do arquivo de assinatura de bogon IPv4: {{Excerpts.Bogon signature}}
+    No caso de módulos, uma assinatura normalmente refere-se a chamadas no código dos módulos para um método específico responsável por bloquear uma solicitação quando determinadas condições são atendidas.
+    Um exemplo hipotético de uma assinatura de um módulo: {{Excerpts.Module signature}}
+   pt-PT: |
+    No contexto do CIDRAM, uma assinatura ("signature" em inglês) refere-se a dados, encontrados em arquivos de assinatura e módulos, utilizados pelo CIDRAM para determinar se as solicitações devem ser bloqueadas.
+    No caso dos arquivos de assinatura, uma assinatura consiste normalmente num CIDR, um comando que representa a ação desejada a ser tomada quando é encontrado um solicitação de um endereço IP pertencente a esse CIDR e, no caso de um endereço IP ser bloqueado, o motivo do bloqueio. As assinaturas são geralmente agrupadas em secções, acompanhadas de comentários, marcações, e outros metadados para fornecer contexto adicional.
+    Um exemplo de assinatura do arquivo de assinatura de bogon IPv4: {{Excerpts.Bogon signature}}
+    No caso dos módulos, uma assinatura refere-se normalmente a chamadas no código dos módulos para um método específico responsável por bloquear um solicitação quando determinadas condições são satisfeitas.
+    Um exemplo hipotético de uma assinatura de um módulo: {{Excerpts.Module signature}}
  Indexes:
   CIDR: "cidr"
   [Falso negativo, Falso positivo, Verdadeiro negativo, Verdadeiro positivo]: "false_positive"
+  Assinatura: "signature"
  Refs:
   CIDR:
    Roteamento Interdomínio Sem Classes – Wikipédia, a enciclopédia livre: "https://pt.wikipedia.org/wiki/Roteamento_Interdom%C3%ADnio_Sem_Classes"

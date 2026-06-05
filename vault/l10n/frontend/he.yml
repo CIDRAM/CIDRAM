@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hebrew language data for the front-end (last modified: 2026.05.24).
+# This file: Hebrew language data for the front-end (last modified: 2026.06.04).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -91,9 +91,16 @@ Glossary: !lazy
    | הבקשה לא חסומה | חיובי אמיתי (מסקנה נכונה) | זיהוי שהוחמצ (או שלילי כוזב) |
    | הבקשה אכן חסומה | חיובי כוזב | שלילי אמיתי (מסקנה נכונה) |
    אם נתקלתם חיוביות כוזבות, בדקו תחילה את דף העדכונים, ואם משהו מסומן כמיושן, עדכנו אותו. לאחר מכן, אם הבעיה עדיין נמשכת, ניתן לדווח עליה במעקב הבעיות של CIDRAM.
+  חתימה: |
+   בהקשר של CIDRAM, חתימה ("signature" באנגלית) מתייחסת לנתונים, הנמצאים בתוך קבצי חתימה ומודולים, המשמשים את CIDRAM כדי לקבוע האם יש לחסום בקשות.
+   במקרה של קבצי חתימה, חתימה מורכבת בדרך כלל מ-CIDR, פקודה המייצגת את הפעולה הרצויה שיש לנקוט כאשר נתקלת בבקשה מכתובת IP השייכת לאותו CIDR, ובמקרה שכתובת IP נחסמת, הסיבה לכך. לעיתים קרובות הם יקובצו יחד כמדורים, בליווי הערות, סימון, ומטא-דאטה אחרים כדי לספק הקשר נוסף.
+   דוגמה לחתימה מקובץ החתימות בוגונים של IPv4: {{Excerpts.Bogon signature}}
+   במקרה של מודולים, חתימה מתייחסת בדרך כלל לקריאות בקוד של מודולים לשיטה ספציפית האחראית על חסימת בקשה כאשר מתקיימים תנאים ספציפיים.
+   דוגמה היפותטית לחתימה ממודול: {{Excerpts.Module signature}}
  Indexes:
   CIDR: "cidr"
   [שלילי כוזב, חיובי כוזב, חיובי אמיתי, שלילי אמיתי]: "false_positive"
+  חתימה: "signature"
  Refs:
   חיובי כוזב:
    חיובי כוזב ושלילי כוזב – ויקיפדיה: "https://he.wikipedia.org/wiki/%D7%97%D7%99%D7%95%D7%91%D7%99_%D7%9B%D7%95%D7%96%D7%91_%D7%95%D7%A9%D7%9C%D7%99%D7%9C%D7%99_%D7%9B%D7%95%D7%96%D7%91"

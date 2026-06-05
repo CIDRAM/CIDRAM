@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Afrikaans language data for the front-end (last modified: 2026.05.24).
+# This file: Afrikaans language data for the front-end (last modified: 2026.06.04).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -91,9 +91,16 @@ Glossary: !lazy
    | Die versoek is NIE geblokkeer nie | Ware negatief (korrekte inferensie) | Gemiste opsporing (of vals negatief) |
    | Die versoek IS geblokkeer | Vals positief | Ware positief (korrekte inferensie) |
    As jy vals positiewe teëkom, kyk eers na die opdateringsbladsy, en as enigiets as verouderd gemerk is, dateer dit op. Daarna, as die probleem steeds voortduur, kan jy die probleem by CIDRAM se probleemopsporingsprogram rapporteer.
+  Handtekening: |
+   In die konteks van CIDRAM verwys 'n handtekening ("signature" in Engels) na data, wat binne handtekeninglêers en modules gevind word, wat deur CIDRAM gebruik word om te bepaal of versoeke geblokkeer moet word.
+   In die geval van handtekeninglêers bestaan ​​'n handtekening tipies uit 'n CIDR, 'n opdrag wat die verlangde aksie verteenwoordig om te neem wanneer 'n versoek van 'n IP-adres wat aan daardie CIDR behoort teëgekom word, en in die geval dat 'n IP-adres geblokkeer word, die rede daarvoor. Hulle sal dikwels saamgevoeg word as afdelings, vergesel van kommentaar, opmaak, en ander metadata om addisionele konteks te verskaf.
+   Voorbeeld van 'n handtekening uit die IPv4 bogons handtekeninglêer: {{Excerpts.Bogon signature}}
+   In die geval van modules verwys 'n handtekening tipies na oproepe in die kode van modules na 'n spesifieke metode wat verantwoordelik is vir die blokkering van 'n versoek wanneer aan spesifieke voorwaardes voldoen word.
+   Hipotetiese voorbeeld van 'n handtekening van 'n module: {{Excerpts.Module signature}}
  Indexes:
   CIDR: "cidr"
   [Vals negatief, Vals positief, Ware negatief, Ware positief]: "false_positive"
+  Handtekening: "signature"
  Refs:
   Vals positief:
    Vals positief en vals negatief - Wikipedia: "https://af.wikipedia.org/wiki/Vals_positief_en_vals_negatief"

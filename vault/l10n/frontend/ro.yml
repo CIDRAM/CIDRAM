@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Romanian language data for the front-end (last modified: 2026.05.24).
+# This file: Romanian language data for the front-end (last modified: 2026.06.04).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -91,9 +91,16 @@ Glossary: !lazy
    | Solicitărea NU este blocată | Adevărat negativ (inferență corectă) | Detecție ratată (sau fals negativ) |
    | Solicitărea ESTE blocată | Fals pozitiv | Adevărat pozitiv (inferență corectă) |
    Dacă întâmpinați rezultate fals pozitive, verificați mai întâi pagina de actualizări și, dacă ceva este marcat ca învechit, actualizați-l. După aceea, dacă problema persistă, o puteți raporta în sistemul de urmărire a problemelor CIDRAM.
+  Semnătură: |
+   În contextul CIDRAM, o semnătură („signature” în engleză) se referă la datele, găsite în fișierele de semnătură și în module, utilizate de CIDRAM pentru a determina dacă solicitările ar trebui blocate.
+   În cazul fișierelor de semnătură, o semnătură constă de obicei dintr-un CIDR, o comandă care reprezintă acțiunea dorită de întreprins atunci când este întâlnită o solicitare de la o adresă IP aparținând acelui CIDR și, în cazul în care o adresă IP este blocată, motivul pentru care se face acest lucru. Acestea vor fi adesea grupate în secțiuni, însoțite de comentarii, markup, și alte metadate pentru a oferi context suplimentar.
+   Un exemplu de semnătură din fișierul de semnătură IPv4 bogoni: {{Excerpts.Bogon signature}}
+   În cazul modulelor, o semnătură se referă de obicei la apeluri din codul modulelor către o metodă specifică responsabilă de blocarea unei solicitări atunci când sunt îndeplinite anumite condiții.
+   Un exemplu ipotetic de semnătură dintr-un modul: {{Excerpts.Module signature}}
  Indexes:
   CIDR: "cidr"
   [Fals negativ, Fals pozitiv, Adevărat negativ, Adevărat pozitiv]: "false_positive"
+  Semnătură: "signature"
  Refs:
   Fals pozitiv:
    Issues · CIDRAM/CIDRAM: "https://github.com/CIDRAM/CIDRAM/issues"

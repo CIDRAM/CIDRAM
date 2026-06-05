@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Glossary for CIDRAM (last modified: 2026.04.02).
+ * This file: Glossary for CIDRAM (last modified: 2026.05.31).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -82,9 +82,21 @@ foreach ($Entries as $Index => $Entry) {
 
     $this->FE['Entries'][] = \sprintf('<div class="ng1"><dl><dt%s>%s</dt><dd>%s</dd></dl></div>', $Anchor, $Index, $Entry);
 }
+foreach ($Refs as $Index => $Entry) {
+    if (isset($Entries[$Index])) {
+        continue;
+    }
+    $Anchor = isset($Indexes[$Index]) ? ' id="' . $Indexes[$Index] . '"' : '';
+    $NewData = $SeeAlso . '<ul>';
+    foreach ($Entry as $RefName => $Ref) {
+        $NewData .= \sprintf('<li><cite><a href="%s" dir="ltr" rel="noopener noreferrer external"><span class="navicon link"></span>%s</a></cite></li>', $Ref, $RefName);
+    }
+    $NewData .= '</ul>';
+    $this->FE['Entries'][] = \sprintf('<div class="ng1"><dl><dt%s>%s</dt><dd>%s</dd></dl></div>', $Anchor, $Index, $NewData);
+}
 \sort($this->FE['Entries']);
 $this->FE['Entries'] = \implode("\n      ", $this->FE['Entries']);
-unset($Style, $Cell, $CellOdd, $Prepend, $Count, $EntryPart, $RowOdd, $First, $Ref, $RefName, $Entry, $SeeAlso, $Refs, $Entries, $Anchor, $Index, $Indexes);
+unset($NewData, $Style, $Cell, $CellOdd, $Prepend, $Count, $EntryPart, $RowOdd, $First, $Ref, $RefName, $Entry, $SeeAlso, $Refs, $Entries, $Anchor, $Index, $Indexes);
 
 /** Parse output. */
 $this->FE['FE_Content'] = $this->parseVars($this->FE, $this->readFile($this->getAssetPath('_glossary.html')), true);

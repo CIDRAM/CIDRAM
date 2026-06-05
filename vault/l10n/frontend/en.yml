@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2026.05.18).
+# This file: English language data for the front-end (last modified: 2026.06.04).
 ##/
 
 Abuse category: !lazy
@@ -81,9 +81,16 @@ Glossary: !lazy
    | The request is NOT blocked | True negative (correct inference) | Missed detection (or false negative) |
    | The request IS blocked | False positive | True positive (correct inference) |
    If you encounter false positives, first check the updates page, and if anything is marked as outdated, update it. After that, if the problem still persists, you can report the problem at CIDRAM's issue tracker.
+  Signature: |
+   In the context of CIDRAM, a signature refers to data, found within signature files and modules, used by CIDRAM to determine whether requests should be blocked.
+   In the case of signature files, a signature typically consists of a CIDR, a command representing the desired action to take when a request from an IP address belonging to that CIDR is encountered, and in the event an IP address is blocked, the reason for doing so. They'll often be bundled together as sections, accompanied by comments, markup, and other metadata to provide additional context.
+   An example of a signature from the IPv4 bogons signature file: {{Excerpts.Bogon signature}}
+   In the case of modules, a signature typically refers to calls in the code of modules to a specific method responsible for blocking a request when specific conditions are met.
+   A hypothetical example of a signature from a module: {{Excerpts.Module signature}}
  Indexes:
   CIDR: "cidr"
   [False negative, False positive, True negative, True positive]: "false_positive"
+  Signature: "signature"
  Refs:
   CIDR:
    Classless Inter-Domain Routing - Wikipedia: "https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing"

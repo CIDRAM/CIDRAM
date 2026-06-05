@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2026.05.24).
+# This file: French language data for the front-end (last modified: 2026.06.04).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -101,9 +101,16 @@ Glossary: !lazy
    | La requête n'est PAS bloquée | Vrai négatif (inférence correcte) | Détection manquée (ou faux négatif) |
    | La requête EST bloquée | Faux positif | Vrai positif (inférence correcte) |
    Si vous rencontrez des faux positifs, consultez d'abord la page des mises à jour et, si un élément est marqué comme dépassé, mettez-le à jour. Si le problème persiste, vous pouvez ensuite le signaler sur le système de suivi des problèmes de CIDRAM.
+  Signature: |
+   Dans le contexte de CIDRAM, une signature fait référence aux données, trouvées dans les fichiers de signature et modules, utilisées par CIDRAM pour déterminer si les requêtes doivent être bloquées.
+   Dans le cas des fichiers de signature, une signature se compose généralement d'un CIDR, d'une commande représentant l'action souhaitée à entreprendre lorsqu'une requête provenant d'une adresse IP appartenant à ce CIDR est rencontrée, et, dans le cas où une adresse IP est bloquée, de la raison de ce blocage. Elles seront souvent regroupées en sections, accompagnées de commentaires, de balises, et d'autres métadonnées pour fournir un contexte supplémentaire.
+   Exemple d'un signature extraite du fichier de signatures IPv4 bogons : {{Excerpts.Bogon signature}}
+   Dans le cas des modules, une signature fait généralement référence aux appels, dans le code des modules, à une méthode spécifique chargée de bloquer une requête lorsque des conditions spécifiques sont remplies.
+   Exemple hypothétique d'un signature d'un module : {{Excerpts.Module signature}}
  Indexes:
   CIDR: "cidr"
   [Faux négatif, Faux positif, Vrai négatif, Vrai positif]: "false_positive"
+  Signature: "signature"
  Refs:
   CIDR:
    Adresse IP — Wikipédia (Agrégation des adresses): "https://fr.wikipedia.org/wiki/Adresse_IP\#Agr%C3%A9gation_des_adresses"

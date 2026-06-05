@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese language data for the front-end (last modified: 2026.05.25).
+# This file: Chinese language data for the front-end (last modified: 2026.06.04).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -92,8 +92,8 @@ Glossary: !lazy
     “CIDR”是“Classless Inter-Domain Routing（无类别域间路由）”的缩写，“CIDRAM”中的“CIDR”就是由此而来。 “CIDRAM”是“Classless Inter-Domain Routing Access Manager（无类别域间路由访问管理器）”的缩写。
     在CIDRAM的上下文中，“CIDR”特指以CIDR符号表示的子网。
    zh-Hant: |
-    「CIDR」是「Classless Inter-Domain Routing（無類別域間路由）」的縮寫，「CIDRAM」中的「CIDR」就是由此而來。 「CIDRAM」是「Classless Inter-Domain Routing Access Manager（無類別域間路由存取管理員）」的縮寫。
-    在CIDRAM的上下文中，「CIDR」特別指以CIDR符號表示的子網路。
+    『CIDR』是『Classless Inter-Domain Routing（無類別域間路由）』的縮寫，『CIDRAM』中的『CIDR』就是由此而來。 『CIDRAM』是『Classless Inter-Domain Routing Access Manager（無類別域間路由存取管理員）』的縮寫。
+    在CIDRAM的上下文中，『CIDR』特別指以CIDR符號表示的子網路。
   假阳性/假陽性:
    zh-Hans: |
     进行测试时，如果结果为“阳性”（即测试条件为真），但预期结果为“阴性”（即测试结果有误），则为“假阳性”。 <em>英语： “false positive”。 或者也可以说：“假阳性错误”、“虚假警报”、“误报”、“虚惊”。</em>
@@ -113,9 +113,23 @@ Glossary: !lazy
     | 請求未被阻止 | 真陰性（正確的推斷） | 漏檢（或假陰性） |
     | 請求已被阻止 | 假陽性 | 真陽性（正確的推斷） |
     如果遇到假陽性，請先檢查更新頁面，如果發現任何內容被標記為過時，請進行更新。 之後，如果問題仍然存在，您可以向CIDRAM的問題追蹤器報告該問題。
+  签名/簽名:
+   zh-Hans: |
+    在CIDRAM的上下文中，签名（英文为“signature”）是指在签名文件和模块中找到的CIDRAM使用的数据来确定是否应该阻止请求。
+    对于签名文件，签名通常包含一个CIDR、一个表示当遇到来自属于该 CIDR的IP地址的请求时要采取的期望操作的命令，以及在IP地址被阻止的情况下，阻止该地址的原因。 它们通常会捆绑在一起作为章节，并附有注释、标记、和其他元数据，以提供更多上下文。
+    以下是IPv4 bogon签名文件中的一个签名示例： {{Excerpts.Bogon signature}}
+    对于模块，签名通常指的是模块代码中对特定方法的调用，该方法负责在满足特定条件时阻止请求。
+    以下是一个模块签名假设示例： {{Excerpts.Module signature}}
+   zh-Hant: |
+    在CIDRAM的上下文中，簽名（英文為『signature』）是指在簽名檔案和模組中找到的CIDRAM使用的數據來決定是否應該阻止請求。
+    對於簽名文件，簽名通常包含一個CIDR、一個表示當遇到來自屬於該 CIDR的IP位址的請求時要採取的期望操作的命令，以及在IP位址被阻止的情況下，阻止該位址的原因。 它們通常會捆綁在一起作為章節，並附有註釋、標記、和其他元數據，以提供更多上下文。
+    以下是IPv4 bogon簽名檔案中的一個簽名範例： {{Excerpts.Bogon signature}}
+    對於模組，簽名通常指的是模組程式碼中對特定方法的調用，該方法負責在滿足特定條件時阻止請求。
+    以下是一個模組簽名假設範例： {{Excerpts.Module signature}}
  Indexes:
   CIDR: "cidr"
   [假阴性/假陰性, 假阳性/假陽性, 真阴性/真陰性, 真阳性/真陽性]: "false_positive"
+  签名/簽名: "signature"
  Refs:
   CIDR:
    无类别域间路由 - 维基百科，自由的百科全书: "https://zh.wikipedia.org/wiki/%E6%97%A0%E7%B1%BB%E5%88%AB%E5%9F%9F%E9%97%B4%E8%B7%AF%E7%94%B1"
@@ -380,7 +394,7 @@ config: !lazy
  supplementary_cache_options_prefix:
   zh-Hans: "该值将附加到所有缓存条目的键的开头。 标准 = “CIDRAM_”。 当同一服务器上存在多个安装时，这对于将它们的缓存彼此分开非常有用。"
   zh-Hant: "該值將附加到所有緩存條目的鍵的開頭。 標準 = 『CIDRAM_』。 當同一服務器上存在多個安裝時，這對於將它們的緩存彼此分開非常有用。"
- supplementary_cache_options_redis_database_number: {"zh-Hans": "Redis 数据库编号。 标准 = “0”。 注意：不能在 Redis Cluster 中使用 0 以外的值。", "zh-Hant": "Redis 資料庫編號。 標準 = 『0』。 注意：不能在 Redis Cluster 中使用 0 以外的值。"}
+ supplementary_cache_options_redis_database_number: {"zh-Hans": "Redis 数据库编号。 标准 = “0”。 注意：不能在 Redis Cluster 中使用 0 以外的值。", "zh-Hant": "Redis 數據庫編號。 標準 = 『0』。 注意：不能在 Redis Cluster 中使用 0 以外的值。"}
  supplementary_cache_options_redis_host: {"zh-Hans": "Redis 主机值。 标准 = localhost。", "zh-Hant": "Redis 主機值。 標準 = localhost。"}
  supplementary_cache_options_redis_port: {"zh-Hans": "Redis 端口值。 标准 = “6379”。", "zh-Hant": "Redis 端口值。 標準 = 『6379』。"}
  supplementary_cache_options_redis_timeout: {"zh-Hans": "Redis 超时值。 标准 = “2.5”。", "zh-Hant": "Redis 超時值。 標準 = 『2.5』。"}
@@ -711,12 +725,12 @@ Some useful links:
         </li>
         <li><span class="comCat" role="region" aria-controls="menuOUTRS" aria-expanded="false">其他有用的工具、資源、服務、等等</span>
           <ul class="comSub" id="menuOUTRS">
-            <li>{{Links.SFS}} – 維護已知論壇垃圾郵件發送者的資料庫。有用的保護網站和論壇免受垃圾郵件發送者的攻。</li>
+            <li>{{Links.SFS}} – 維護已知論壇垃圾郵件發送者的數據庫。有用的保護網站和論壇免受垃圾郵件發送者的攻。</li>
             <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – 從ASN獲取CIDR、確定ASN關係、基於網絡名稱發現ASN、等等。</li>
             <li>{{Links.BGPView}} – 從ASN獲取CIDR，確定ASN關係，基於網絡名稱發現ASN，等等。</li>
             <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Qrator的Radar</a> – 檢查ASN連接的有用工具，以及關於ASN的各種其他信息。</li>
             <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Spamhaus項目</a> – 顯示有關ASN殭屍網絡感染率的報告。</li>
-            <li>{{Links.AbuseIPDB}} – 維護已知的濫用IP資料庫。它為IP檢查和報告提供了一個API。</li>
+            <li>{{Links.AbuseIPDB}} – 維護已知的濫用IP數據庫。它為IP檢查和報告提供了一個API。</li>
             <li>{{Links.IP-API}} – 獲取有關IP位址或主機名的信息，例如，國家代碼、區域名稱、經度、緯度、組織名稱、等等。</li>
           </ul>
         </li>
@@ -1012,7 +1026,7 @@ label:
  expire_bad: {"zh-Hans": "从创造的时候，该模块缓存的不良数据的可能会在它到期之前生存的时间量。", "zh-Hant": "從創造的時候，該模組緩存的不良數據的可能會在它到期之前生存的時間量。"}
  expire_good: {"zh-Hans": "从创造的时候，该模块缓存的好数据的可能会在它到期之前生存的时间量。", "zh-Hant": "從創造的時候，該模組緩存的好數據的可能會在它到期之前生存的時間量。"}
  lookup_strategy: {"zh-Hans": "应该为哪些请求执行查找？", "zh-Hant": "應該為哪些請求執行查找？"}
- options: {"zh-Hans": "当此模块触发签名或阻止事件时要制定的选项。", "zh-Hant": "當此模組觸發簽章或阻止事件時要製定的選項。"}
+ options: {"zh-Hans": "当此模块触发签名或阻止事件时要制定的选项。", "zh-Hant": "當此模組觸發簽名或阻止事件時要製定的選項。"}
  results: {"zh-Hans": "结果 （%s 输入 – %s 拒绝 – %s 公认 – %s 合并 – %s 产量）：", "zh-Hant": "結果 （%s 輸入 – %s 拒絕 – %s 公認 – %s 合併 – %s 產量）："}
  rl_requests: {"zh-Hans": "发送的请求： %s – 可用请求： %s", "zh-Hant": "發送的請求： %s – 可用請求： %s"}
  rl_when: {"zh-Hans": "最新记录： %s （过期： %s）。<br />最早记录： %s （过期： %s）。", "zh-Hant": "最新記錄： %s （過期： %s）。<br />最早記錄： %s （過期： %s）。"}
@@ -1114,7 +1128,7 @@ purpose: !lazy
  Audio file: {"zh-Hans": "音频文件", "zh-Hant": "音訊檔案"}
  Card file: {"zh-Hans": "卡片文件", "zh-Hant": "卡片檔案"}
  Compressed file or archive: {"zh-Hans": "压缩文件", "zh-Hant": "壓縮檔案"}
- Database file: {"zh-Hans": "数据库文件", "zh-Hant": "資料庫檔案"}
+ Database file: {"zh-Hans": "数据库文件", "zh-Hant": "數據庫檔案"}
  Document: {"zh-Hans": "文档", "zh-Hant": "文檔"}
  Email file: {"zh-Hans": "电子邮件文件", "zh-Hant": "電子郵件檔案"}
  Encrypted or sensitive file: {"zh-Hans": "加密或敏感文件", "zh-Hant": "加密或敏感檔案"}
@@ -1296,7 +1310,7 @@ tip:
  Auxiliary Rules Priority: {"zh-Hans": "优先（最高➡(相同🔄当量)➡最低）：", "zh-Hant": "優先（最高➡(相同🔄當量)➡最低）："}
  Auxiliary Rules Webhooks:
   zh-Hans: "当触发规则时，CIDRAM将尝试该事件通知所有连接的webhook。 Webhook是一个能够接收POST数据的URL，如果有一个外部服务、应用程序、脚本、等托管在与CIDRAM完全不同的网络上，并且您希望它处理CIDRAM生成的关于该请求的数据，那么webhook就会非常有用。"
-  zh-Hant: "當觸發規則時，CIDRAM將嘗試該事件通知所有連接的webhook。 Webhook是一個能夠接收POST資料的URL，如果在與CIDRAM完全不同的網路上託管外部服務、應用程式、腳本、等並且您希望處理CIDRAM產生的有關請求的數據，那麼webhook可能會很有用。"
+  zh-Hant: "當觸發規則時，CIDRAM將嘗試該事件通知所有連接的webhook。 Webhook是一個能夠接收POST數據的URL，如果在與CIDRAM完全不同的網路上託管外部服務、應用程式、腳本、等並且您希望處理CIDRAM產生的有關請求的數據，那麼webhook可能會很有用。"
  Auxiliary Rules: {"zh-Hans": "您可以使用此页面为CIDRAM创建，删除，和修改辅助规则。", "zh-Hant": "您可以使用此頁面為CIDRAM創建，刪除，和修改輔助規則。"}
  Backup: {"zh-Hans": "该页面可用于导入/导出您的配置、辅助规则、等等。 如果您需要跨不同安装或不同主要版本迁移数据，这会很有用。", "zh-Hant": "該頁面可用於匯入/匯出您的配置、輔助規則、等等。 如果您需要跨不同安裝或不同主要版本遷移數據，這會很有用。"}
  Cache Data: {"zh-Hans": "在这里您可以查看缓存的内容。", "zh-Hant": "在這裡您可以查看緩存的內容。"}
@@ -1328,7 +1342,7 @@ tip:
  Logs: {"zh-Hans": "选择一个日志从下面的列表以查看那个日志的内容。", "zh-Hant": "選擇一個日誌從下面的列表以查看那個日誌的內容。"}
  Note that the exact value of this statistic will be the same as that shown at the statistics page at the time the rule is processed:
   zh-Hans: "请注意，此统计信息的确切值将与处理规则时统计信息页面上显示的值相同。"
-  zh-Hant: "請注意，此統計資料的確切值將與處理規則時統計資料頁面上顯示的值相同。"
+  zh-Hant: "請注意，此統計數據的確切值將與處理規則時統計數據頁面上顯示的值相同。"
  Number of seconds until it expires: {"zh-Hans": "直到它过期的秒数。", "zh-Hant": "直到它過期的秒數。"}
  Numeric comparison:
   zh-Hans: "要使用数值比较，请选择直接字符串比较或自动方法检测，确保条件的值是数字，并在其前面添加所需的运算符。<br />例如，对于“等于”条件，&gt;=2产生≥2，&lt;=2产生≤2，对于“不等于”条件，&gt;=2产生≱2，&lt;=2产生≰2，等等。"

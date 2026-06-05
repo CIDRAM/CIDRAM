@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2026.05.25).
+# This file: Defaults file (last modified: 2026.06.04).
 ##/
 
 Config Defaults:
@@ -1354,7 +1354,7 @@ Provide:
     "Statistics-CloudflareTurnstile:Served": "{link.Statistics} – Cloudflare Turnstile – {response.Served}"
   Flags:
    CAPTCHA:
-    Hint: "{label.aux.When forcibly disabled, marking for use won_t have any effect} {label.See also} <code>captcha➡usemode</code>"
+    Hint: "{label.aux.When forcibly disabled, marking for use won_t have any effect} {label.See also} <code translate="no">captcha➡usemode</code>"
     Mark for use with HCaptcha:
      Label: "label.aux.Mark for use with hCaptcha"
      Sets:
@@ -1394,7 +1394,7 @@ Provide:
       CIDRAM: {Suppress logging: true}
    Reports:
     Label: "label.aux.Suppress reports"
-    Hint: "{label.See also} <code>abuseipdb➡report_back</code>"
+    Hint: "{label.See also} <code translate="no">abuseipdb➡report_back</code>"
     Suppress reports:
      Label: "label.aux.Suppress reports"
      Sets:
@@ -1428,7 +1428,7 @@ Provide:
      Label: "label.aux.Track this rule"
    Email:
     Label: "label.aux.Email"
-    Hint: "{label.aux.Requires PHPMailer} {label.See also} <code>general➡email_notification_address</code>, <code>general➡email_notification_name</code>"
+    Hint: "{label.aux.Requires PHPMailer} {label.See also} <code>general➡email_notification_address</code>, <code translate="no">general➡email_notification_name</code>"
     Email:
      Icon: "<span class="bckpicon auxbl email"></span>"
      Label: "label.aux.Send trigger notification to the configured email notification address"
@@ -1448,12 +1448,12 @@ Links: !lazy
   Issues: "<a href="https://github.com/CIDRAM/CIDRAM/issues" dir="ltr" hreflang="en" rel="noopener noreferrer external">github.com/CIDRAM/CIDRAM/issues</a>"
   WordPress: "<a href="https://wordpress.org/plugins/cidram/" dir="ltr" hreflang="en" rel="noopener noreferrer external">wordpress.org/plugins/cidram</a>"
  ConfigRef:
-  sensitive: "<a onclick="javascript:toggleconfigNav('generalRow','generalShowLink')" href="\#config_general_sensitive"><code dir="ltr">general➡sensitive</code></a>"
-  sensitive_rtl: "<a onclick="javascript:toggleconfigNav('generalRow','generalShowLink')" href="\#config_general_sensitive"><code dir="rtl">sensitive⬅general</code></a>"
-  time_format: "<a onclick="javascript:toggleconfigNav('generalRow','generalShowLink')" href="\#config_general_time_format"><code dir="ltr">general➡time_format</code></a>"
-  time_format_rtl: "<a onclick="javascript:toggleconfigNav('generalRow','generalShowLink')" href="\#config_general_time_format"><code dir="rtl">time_format⬅general</code></a>"
-  signature_limit: "<a onclick="javascript:toggleconfigNav('captchaRow','captchaShowLink')" href="\#config_captcha_signature_limit"><code dir="ltr">captcha➡signature_limit</code></a>"
-  signature_limit_rtl: "<a onclick="javascript:toggleconfigNav('captchaRow','captchaShowLink')" href="\#config_captcha_signature_limit"><code dir="rtl">signature_limit⬅captcha</code></a>"
+  sensitive: "<a onclick="javascript:toggleconfigNav('generalRow','generalShowLink')" href="\#config_general_sensitive"><code dir="ltr" translate="no">general➡sensitive</code></a>"
+  sensitive_rtl: "<a onclick="javascript:toggleconfigNav('generalRow','generalShowLink')" href="\#config_general_sensitive"><code dir="rtl" translate="no">sensitive⬅general</code></a>"
+  time_format: "<a onclick="javascript:toggleconfigNav('generalRow','generalShowLink')" href="\#config_general_time_format"><code dir="ltr" translate="no">general➡time_format</code></a>"
+  time_format_rtl: "<a onclick="javascript:toggleconfigNav('generalRow','generalShowLink')" href="\#config_general_time_format"><code dir="rtl" translate="no">time_format⬅general</code></a>"
+  signature_limit: "<a onclick="javascript:toggleconfigNav('captchaRow','captchaShowLink')" href="\#config_captcha_signature_limit"><code dir="ltr" translate="no">captcha➡signature_limit</code></a>"
+  signature_limit_rtl: "<a onclick="javascript:toggleconfigNav('captchaRow','captchaShowLink')" href="\#config_captcha_signature_limit"><code dir="rtl" translate="no">signature_limit⬅captcha</code></a>"
  Discussions: "https://github.com/CIDRAM/CIDRAM/discussions"
  Documentation: "https://cidram.github.io/\#documentation"
  IP-API: "<a href="https://ip-api.com/" dir="ltr" hreflang="en-US" rel="noopener noreferrer external">IP-API</a>"
@@ -1477,3 +1477,6 @@ Extra SVG Icons:
  IP Testing: "<span onclick="javascript:{document.getElementById('ipTestFormInput').value='%s';document.getElementById('ipTestForm').submit()}" title="{link.IP Testing}" class="translateIcon navicon test" tabindex="0" role="button"></span>"
 SVGs form data:
  IP Testing: "<form id="ipTestForm" action="?cidram-page=ip-testing" method="POST" style="display:none"><input type="hidden" name="ip-addr-focus" id="ipTestFormInput" /><input type="hidden" name="TestsSwitch" value="on" /></form>"
+Excerpts: !lazy
+ Bogon signature: "<code dir="ltr" lang="zxx" translate="no">0.0.0.0/8 Deny Bogon</code>"
+ Module signature: "<code dir="ltr" lang="zxx" translate="no">$this->trigger(strpos($this->BlockInfo['UA'], 'Foobar') !== false, 'Foobar-UA', 'User agent "Foobar" not allowed.');</code>"

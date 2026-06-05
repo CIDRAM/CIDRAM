@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2026.05.24).
+# This file: Latvian language data for the front-end (last modified: 2026.06.04).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -91,9 +91,16 @@ Glossary: !lazy
    | Pieprasījums NAV bloķēts | Patiesi negatīvs (pareizu secinājumu) | Nepamanīta noteikšana (vai viltus negatīvs) |
    | Pieprasījums IR bloķēts | Viltus pozitīvs | Patiesi pozitīvs (pareizu secinājumu) |
    Ja rodas kļūdaini pozitīvi rezultāti, vispirms pārbaudiet atjauninājumu lapu un, ja kaut kas ir atzīmēts kā novecojis, atjauniniet to. Pēc tam, ja problēma joprojām pastāv, varat ziņot par to CIDRAM problēmu izsekotājā.
+  Paraksts: |
+   CIDRAM kontekstā paraksts ("signature" angļu valodā) attiecas uz datiem, kas atrodami parakstu failos un moduļos, kurus CIDRAM izmanto, lai noteiktu, vai pieprasījumi ir jābloķē.
+   Paraksta failu gadījumā paraksts parasti sastāv no CIDR un komandas, kas attēlo vēlamo darbību, kas, kad tiek saņemts pieprasījums no IP adreses, kas pieder šim CIDR, jāveic, un ja IP adrese tiek bloķēta, norāde par bloķēšanas iemeslu. Tie bieži tiks apvienoti sadaļās, pievienojot komentārus, iezīmējumus, un citus metadatus, lai sniegtu papildu kontekstu.
+   Paraksta piemērs no IPv4 bogonu paraksta faila: {{Excerpts.Bogon signature}}
+   Moduļu gadījumā paraksts parasti attiecas uz moduļu kodā esošajiem izsaukumiem uz noteiktu metodi, kas ir atbildīga par pieprasījuma bloķēšanu, ja ir izpildīti konkrēti nosacījumi.
+   Hipotētisks moduļa paraksta piemērs: {{Excerpts.Module signature}}
  Indexes:
   CIDR: "cidr"
   [Viltus negatīvs, Viltus pozitīvs, Patiesi negatīvs, Patiesi pozitīvs]: "false_positive"
+  Paraksts: "signature"
  Refs:
   CIDR:
    Bezklases starpdomēnu maršrutēšana — Vikipēdija: "https://lv.wikipedia.org/wiki/Bezklases_starpdom%C4%93nu_mar%C5%A1rut%C4%93%C5%A1ana"

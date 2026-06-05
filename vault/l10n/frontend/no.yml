@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2026.05.24).
+# This file: Norwegian language data for the front-end (last modified: 2026.06.04).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -91,9 +91,16 @@ Glossary: !lazy
    | Forespørselen er IKKE blokkert | Sann negativ (korrekt slutning) | Misset deteksjon (eller falsk negativ) |
    | Forespørselen ER blokkert | Falsk positiv | Sann positiv (korrekt slutning) |
    Hvis du støter på falske positiver, først sjekke oppdateringssiden, og hvis noe er merket som utdatert, oppdatere det. Hvis problemet fortsatt vedvarer, du kan rapportere problemet på CIDRAMs problemsporing.
+  Signatur: |
+   I sammenheng med CIDRAM refererer en signatur til data som finnes i signaturfiler og moduler, og som CIDRAM bruker for å avgjøre om forespørsler skal blokkeres.
+   Når det gjelder signaturfiler, består en signatur vanligvis av en CIDR, en kommando som representerer den ønskede handlingen som skal utføres når en forespørsel fra en IP-adresse som tilhører den CIDRen påtreffes, og i tilfelle en IP-adresse er blokkert, årsaken til dette. De vil ofte bli samlet sammen som seksjoner, ledsaget av kommentarer, markering, og andre metadata for å gi ytterligere kontekst.
+   Et eksempel på en signatur fra IPv4 bogoner signaturfil: {{Excerpts.Bogon signature}}
+   Når det gjelder moduler, refererer en signatur vanligvis til kall i modulenes kode til en spesifikk metode som er ansvarlig for å blokkere en forespørsel når spesifikke betingelser er oppfylt.
+   Et hypotetisk eksempel på en signatur fra en modul: {{Excerpts.Module signature}}
  Indexes:
   CIDR: "cidr"
   [Falsk negative, Falsk positiv, Sann negativ, Sann positiv]: "false_positive"
+  Signatur: "signature"
  Refs:
   CIDR:
    Classless Inter-Domain Routing – Wikipedia: "https://no.wikipedia.org/wiki/Classless_Inter-Domain_Routing"
@@ -1106,7 +1113,7 @@ tip:
  Auxiliary Rules: "Du kan bruke denne siden til å opprette, slette og endre tilleggsregler for CIDRAM."
  Backup: "Denne siden kan brukes til å importere/eksportere konfigurasjonen din, tilleggsregler din, osv. Dette kan være nyttig hvis du trenger å migrere data på tvers av forskjellige installasjoner eller forskjellige hovedversjoner."
  Cache Data: "Her kan du se innholdet i cachen."
- Calculator: "Kalkulatoren lar deg beregne CIDR-ene og nettmaskene til en IP-adresse."
+ Calculator: "Kalkulatoren lar deg beregne CIDRene og nettmaskene til en IP-adresse."
  Click the component name for more details: "Klikk på komponentnavnet for flere detaljer."
  Configuration: "Konfigurasjonssiden lar deg endre konfigurasjonen for CIDRAM fra frontenden."
  Enter IP address here: "Skriv inn IP-adressen her."

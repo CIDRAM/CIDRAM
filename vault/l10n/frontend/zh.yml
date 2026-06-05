@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese language data for the front-end (last modified: 2026.05.25).
+# This file: Chinese language data for the front-end (last modified: 2026.05.29).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -352,7 +352,7 @@ config: !lazy
  supplementary_cache_options_prefix:
   zh-Hans: "该值将附加到所有缓存条目的键的开头。 标准 = “CIDRAM_”。 当同一服务器上存在多个安装时，这对于将它们的缓存彼此分开非常有用。"
   zh-Hant: "該值將附加到所有緩存條目的鍵的開頭。 標準 = 『CIDRAM_』。 當同一服務器上存在多個安裝時，這對於將它們的緩存彼此分開非常有用。"
- supplementary_cache_options_redis_database_number: {"zh-Hans": "Redis 数据库编号。 标准 = “0”。 注意：不能在 Redis Cluster 中使用 0 以外的值。", "zh-Hant": "Redis 資料庫編號。 標準 = 『0』。 注意：不能在 Redis Cluster 中使用 0 以外的值。"}
+ supplementary_cache_options_redis_database_number: {"zh-Hans": "Redis 数据库编号。 标准 = “0”。 注意：不能在 Redis Cluster 中使用 0 以外的值。", "zh-Hant": "Redis 數據庫編號。 標準 = 『0』。 注意：不能在 Redis Cluster 中使用 0 以外的值。"}
  supplementary_cache_options_redis_host: {"zh-Hans": "Redis 主机值。 标准 = localhost。", "zh-Hant": "Redis 主機值。 標準 = localhost。"}
  supplementary_cache_options_redis_port: {"zh-Hans": "Redis 端口值。 标准 = “6379”。", "zh-Hant": "Redis 端口值。 標準 = 『6379』。"}
  supplementary_cache_options_redis_timeout: {"zh-Hans": "Redis 超时值。 标准 = “2.5”。", "zh-Hant": "Redis 超時值。 標準 = 『2.5』。"}
@@ -656,12 +656,12 @@ Some useful links:
         </li>
         <li><span class="comCat" role="region" aria-controls="menuOUTRS" aria-expanded="false">其他有用的工具、資源、服務、等等</span>
           <ul class="comSub" id="menuOUTRS">
-            <li>{{Links.SFS}} – 維護已知論壇垃圾郵件發送者的資料庫。有用的保護網站和論壇免受垃圾郵件發送者的攻。</li>
+            <li>{{Links.SFS}} – 維護已知論壇垃圾郵件發送者的數據庫。有用的保護網站和論壇免受垃圾郵件發送者的攻。</li>
             <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – 從ASN獲取CIDR、確定ASN關係、基於網絡名稱發現ASN、等等。</li>
             <li>{{Links.BGPView}} – 從ASN獲取CIDR，確定ASN關係，基於網絡名稱發現ASN，等等。</li>
             <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Qrator的Radar</a> – 檢查ASN連接的有用工具，以及關於ASN的各種其他信息。</li>
             <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Spamhaus項目</a> – 顯示有關ASN殭屍網絡感染率的報告。</li>
-            <li>{{Links.AbuseIPDB}} – 維護已知的濫用IP資料庫。它為IP檢查和報告提供了一個API。</li>
+            <li>{{Links.AbuseIPDB}} – 維護已知的濫用IP數據庫。它為IP檢查和報告提供了一個API。</li>
             <li>{{Links.IP-API}} – 獲取有關IP位址或主機名的信息，例如，國家代碼、區域名稱、經度、緯度、組織名稱、等等。</li>
           </ul>
         </li>
@@ -935,7 +935,7 @@ label:
  expire_bad: {"zh-Hans": "从创造的时候，该模块缓存的不良数据的可能会在它到期之前生存的时间量。", "zh-Hant": "從創造的時候，該模組緩存的不良數據的可能會在它到期之前生存的時間量。"}
  expire_good: {"zh-Hans": "从创造的时候，该模块缓存的好数据的可能会在它到期之前生存的时间量。", "zh-Hant": "從創造的時候，該模組緩存的好數據的可能會在它到期之前生存的時間量。"}
  lookup_strategy: {"zh-Hans": "应该为哪些请求执行查找？", "zh-Hant": "應該為哪些請求執行查找？"}
- options: {"zh-Hans": "当此模块触发签名或阻止事件时要制定的选项。", "zh-Hant": "當此模組觸發簽章或阻止事件時要製定的選項。"}
+ options: {"zh-Hans": "当此模块触发签名或阻止事件时要制定的选项。", "zh-Hant": "當此模組觸發簽名或阻止事件時要製定的選項。"}
  results: {"zh-Hans": "结果 （%s 输入 – %s 拒绝 – %s 公认 – %s 合并 – %s 产量）：", "zh-Hant": "結果 （%s 輸入 – %s 拒絕 – %s 公認 – %s 合併 – %s 產量）："}
  rl_requests: {"zh-Hans": "发送的请求： %s – 可用请求： %s", "zh-Hant": "發送的請求： %s – 可用請求： %s"}
  rl_when: {"zh-Hans": "最新记录： %s （过期： %s）。<br />最早记录： %s （过期： %s）。", "zh-Hant": "最新記錄： %s （過期： %s）。<br />最早記錄： %s （過期： %s）。"}
@@ -1205,7 +1205,7 @@ tip:
  Auxiliary Rules Priority: {"zh-Hans": "优先（最高➡(相同🔄当量)➡最低）：", "zh-Hant": "優先（最高➡(相同🔄當量)➡最低）："}
  Auxiliary Rules Webhooks:
   zh-Hans: "当触发规则时，CIDRAM将尝试该事件通知所有连接的webhook。 Webhook是一个能够接收POST数据的URL，如果有一个外部服务、应用程序、脚本、等托管在与CIDRAM完全不同的网络上，并且您希望它处理CIDRAM生成的关于该请求的数据，那么webhook就会非常有用。"
-  zh-Hant: "當觸發規則時，CIDRAM將嘗試該事件通知所有連接的webhook。 Webhook是一個能夠接收POST資料的URL，如果在與CIDRAM完全不同的網路上託管外部服務、應用程式、腳本、等並且您希望處理CIDRAM產生的有關請求的數據，那麼webhook可能會很有用。"
+  zh-Hant: "當觸發規則時，CIDRAM將嘗試該事件通知所有連接的webhook。 Webhook是一個能夠接收POST數據的URL，如果在與CIDRAM完全不同的網路上託管外部服務、應用程式、腳本、等並且您希望處理CIDRAM產生的有關請求的數據，那麼webhook可能會很有用。"
  Auxiliary Rules: {"zh-Hans": "您可以使用此页面为CIDRAM创建，删除，和修改辅助规则。", "zh-Hant": "您可以使用此頁面為CIDRAM創建，刪除，和修改輔助規則。"}
  Backup: {"zh-Hans": "该页面可用于导入/导出您的配置、辅助规则、等等。 如果您需要跨不同安装或不同主要版本迁移数据，这会很有用。", "zh-Hant": "該頁面可用於匯入/匯出您的配置、輔助規則、等等。 如果您需要跨不同安裝或不同主要版本遷移數據，這會很有用。"}
  Cache Data: {"zh-Hans": "在这里您可以查看缓存的内容。", "zh-Hant": "在這裡您可以查看緩存的內容。"}

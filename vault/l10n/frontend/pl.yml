@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2026.05.24).
+# This file: Polish language data for the front-end (last modified: 2026.05.29).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -296,7 +296,7 @@ config: !lazy
  recaptcha_usemode: *CaptchaUseMode
  sfs: "Konfiguracja modułu Stop Forum Spam."
  signatures: "Konfiguracja podpisów, plików podpisów, modułów, itp."
- signatures_conflict_response: "Gdy podejmowanych jest zbyt wiele równoczesnych prób dostępu do tych samych zasobów (np., jednoczesne żądania do wielu procesów PHP na tym samym komputerze dotyczące tych samych zasobów), niektóre z tych prób mogą się nie powieść. W rzadkim i mało prawdopodobnym przypadku, gdy dotyczy to plików sygnatur lub modułów, CIDRAM może nie mieć możliwości podjęcia skutecznej decyzji w sprawie żądania. Jeśli tak się stanie, czy żądanie powinno zostać zablokowane i jaki komunikat o stanie HTTP powinien zostać wysłany przez CIDRAM?"
+ signatures_conflict_response: "Gdy podejmowanych jest zbyt wiele równoczesnych prób dostępu do tych samych zasobów (np., jednoczesne żądania do wielu procesów PHP na tym samym komputerze dotyczące tych samych zasobów), niektóre z tych prób mogą się nie powieść. W rzadkim i mało prawdopodobnym przypadku, gdy dotyczy to plików podpis lub modułów, CIDRAM może nie mieć możliwości podjęcia skutecznej decyzji w sprawie żądania. Jeśli tak się stanie, czy żądanie powinno zostać zablokowane i jaki komunikat o stanie HTTP powinien zostać wysłany przez CIDRAM?"
  signatures_default_tracktime: "Czas, przez jaki adresy IP powinny być śledzone. Domyślna = 7d0°0′0″ (1 tydzień)."
  signatures_infraction_limit: "Maksymalna liczba wykroczeń, które może ponieść IP, zanim zostanie zablokowane przez śledzenie IP. Domyślna = 10."
  signatures_shorthand: "Kontroluje, co zrobić z żądaniem, gdy istnieje pozytywne dopasowanie do podpisu, który wykorzystuje podane skrócone słowa."
@@ -433,7 +433,7 @@ hints_pdo_dsn:
 hints_sensitive_pages: "Uwaga: „Strona wrażliwa” jest oznaczona przez {{Links.ConfigRef.sensitive}}."
 hints_shorthand:
  0.: "Jeśli Twoja witryna wymaga dostępu przez LAN lub localhost, nie blokuj tego. W przeciwnym razie możesz to zablokować."
- 1.: "Domyślne pliki podpis nie używają tego, ale mimo to jest są obsługiwane, ponieważ mogą być przydatne dla niektórych użytkowników."
+ 1.: "Domyślne pliki podpisów nie używają tego, ale mimo to jest są obsługiwane, ponieważ mogą być przydatne dla niektórych użytkowników."
  2.: "Jeśli potrzebujesz, aby użytkownicy mogli uzyskać dostęp do Twojej witryny za pośrednictwem serwerów proxy, nie blokuj tego. W przeciwnym razie możesz to zablokować."
  3.: "Bezpośrednie użycie w podpisach nie jest obsługiwane, ale w szczególnych okolicznościach może być wywoływane w inny sposób."
  4.: "Odnosi się do przypadków, w których skrócone słowa w ogóle nie są używane lub nie są rozpoznawane przez CIDRAM."
@@ -782,7 +782,7 @@ label:
  expire_bad: "Od chwili jego kreacja, ilość czasu, przez jaki złe dane przechowywane w pamięci podręcznej przez ten moduł mogą przetrwać, zanim wygasną."
  expire_good: "Od chwili jego kreacja, ilość czasu, przez jaki dobre dane przechowywane w pamięci podręcznej przez ten moduł mogą przetrwać, zanim wygasną."
  lookup_strategy: "Dla jakich żądań należy wykonać wyszukiwania?"
- options: "Opcje, które mają zostać włączone, gdy wyzwalane są sygnatury lub zdarzenia blokujące przez ten moduł."
+ options: "Opcje, które mają zostać włączone, gdy wyzwalane są podpisy lub zdarzenia blokujące przez ten moduł."
  results: "Rezultat (%s dostarczone – %s odrzucone – %s zaakceptowane – %s połączone – %s zwrócone):"
  rl_requests: "Wysłane wnioski: %s – Dostępne wnioski: %s"
  rl_when: "Najnowszy rekord: %s (Wygasa: %s).<br />Najstarszy rekord: %s (Wygasa: %s)."

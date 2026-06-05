@@ -223,22 +223,22 @@ class Core
     public const FILE_BLOCKSIZE = 131072;
 
     /**
-     * @var int Minimum salt length (used by the generateSalt() method).
+     * @var int Minimum salt length for generateSalt().
      */
     public const GENERATE_SALT_MIN_LEN = 32;
 
     /**
-     * @var int Maximum salt length (used by the generateSalt() method).
+     * @var int Maximum salt length for generateSalt().
      */
     public const GENERATE_SALT_MAX_LEN = 72;
 
     /**
-     * @var int Earliest permitted byte (used by the generateSalt() method).
+     * @var int Earliest permitted byte for generateSalt().
      */
     public const GENERATE_SALT_MIN_CHR = 1;
 
     /**
-     * @var int Latest permitted byte (used by the generateSalt() method).
+     * @var int Latest permitted byte for generateSalt().
      */
     public const GENERATE_SALT_MAX_CHR = 255;
 

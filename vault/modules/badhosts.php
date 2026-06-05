@@ -180,7 +180,9 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     /**
      * @link https://www.infoblox.com/threat-intel/threat-actors/detour-dog/
      */
-    $this->trigger(\preg_match('~unlimited\.dog$~i', $HN), 'Host suspected to be hijacked by Detour Dog malware'); // 2026.06.02
+    if ($this->trigger(\preg_match('~unlimited\.dog$~i', $HN), 'Host suspected to be hijacked by Detour Dog malware')) {
+        $this->Reporter->report([1, 20], ['Host suspected to be hijacked by Detour Dog malware.'], $this->BlockInfo['IPAddr']);
+    } // 2026.06.02
 
     /** WordPress cronjob bypass. */
     $this->bypass(

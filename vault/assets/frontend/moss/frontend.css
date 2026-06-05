@@ -38,7 +38,7 @@ a:link,a:visited{color:#604848}
 a:hover,a:active,a:focus{color:#866}
 .bNav,.gen,.spanner{text-align:{FE_Align_Reverse}}
 .bNav{height:64px}
-.cat,.exp,.bNav,.gen,.nav,.s,.tip,.txtGn,.txtOe,.txtRd,.spanner,a,input,input[type=file]::file-selector-button,select,textarea{font-weight:700}
+.cat,.exp,.bNav,.gen,.nav,.s,.tip,.txtGn,.txtOe,.txtRd,.spanner,a,input,input[type=file]::file-selector-button,select,textarea,dd code{font-weight:700}
 .ci,.co,.gen,.center{margin:auto}
 .ci,.co,.ng1,.ng2{width:calc(100% - 32px)}
 .idx{width:calc(100% - 10px)}
@@ -142,7 +142,7 @@ td code~input,td code~select{vertical-align:middle}
 .gridHA.gridVA{background-color:rgba(0,0,0,.125)}
 .gridHA.gridVB{background-color:rgba(110,127,85,.6)}
 .gridVB:not(.gridHA){background-color:rgba(191,251,127,.7)}
-.configMatrixLabel.gridVB{background:linear-gradient(0deg,rgba(191,251,127,.7),rgba(0,0,0,0))}
+.configMatrixLabel.gridVB,dd code{background:linear-gradient(0deg,rgba(191,251,127,.7),rgba(0,0,0,0))}
 .warning::before,.warning::after{content:"⚠️";font-size:24px;display:inline;line-height:100%;position:relative;top:2px}
 .warning{display:inline-block;margin:4px;font-weight:700;color:#a04848;background:linear-gradient({90deg},rgba(255,192,0,0) 0,rgba(255,192,0,.8) 20% 80%,rgba(255,192,0,0) 100%);line-height:100%}
 .gridlabel,.detailedSvgIcon{transition:all .2s ease-out}

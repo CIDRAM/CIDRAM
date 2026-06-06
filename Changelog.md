@@ -559,6 +559,7 @@
 #### Bugs fixed.
 - [2026.05.06]: The "omit this field" option wasn't being honoured for empty hostname fields; Fixed (#681).
 - [2026.05.17]: Fixed a method call using a wrong parameter type in the AbuseIPDB module.
+- [2026.06.07]: After updating Edge to the latest version today, the size and position of checkbox and radio fields at the front-end would glitch out whenever passing over and losing mouse focus on them for some reason. Added some hard width and height values specifically for these input types to the CSS to counteract the problem.
 
 #### Other changes.
 - [2026.04.02]: Added a glossary page to the front-end.

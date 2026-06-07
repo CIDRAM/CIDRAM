@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2026.04.07).
+ * This file: Optional security extras module (last modified: 2026.06.07).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -321,9 +321,9 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         } // 2025.08.02
 
         /** Probing for env file. */
-        if ($this->trigger(\preg_match('~(?:^|[/?=])(?:(?:config|secrets?)?\.env|env\.backup)(?:\.[\da-z]+)*(?:$|[/?])~', $LCNrURI), 'Probing for env file')) {
+        if ($this->trigger(\preg_match('~(?:^|[/?=])(?:(?:config|secrets?|server)?\.env|env\.backup)(?:\.[\da-z]+)*(?:$|[/?])~', $LCNrURI), 'Probing for env file')) {
             $this->Reporter->report([15, 21], ['Caught probing for env file.'], $this->BlockInfo['IPAddr']);
-        } // 2025.03.18 mod 2025.09.22
+        } // 2025.03.18 mod 2026.06.07
 
         /** Probing for unsecured configuration file. */
         if ($this->trigger(\preg_match('~(?:^|[/?])\.?config.ya?ml(?:$|[/?])~', $LCNrURI), 'Probing for unsecured configuration file')) {
@@ -603,9 +603,39 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         } // 2026.03.27
 
         /** Unauthorised access attempt to wp-settings.php file. */
-        if ($this->trigger(\preg_match('~(?:^|[/?])wp-settings.php(?:$|[/?])~', $LCNrURI), 'Unauthorised access attempt to wp-settings.php file')) {
+        if ($this->trigger(\preg_match('~(?:^|[/?])wp-settings\.php(?:$|[/?])~', $LCNrURI), 'Unauthorised access attempt to wp-settings.php file')) {
             $this->Reporter->report([15, 21], ['Unauthorised access attempt to wp-settings.php file.'], $this->BlockInfo['IPAddr']);
-        } // 2026.04.07
+        } // 2026.04.07 mod 2026.06.07
+
+        /** Probing for exposed Firebase configuration file. */
+        if ($this->trigger(\preg_match('~(?:^|[/?])firebase[-/](?:config|init)\.json(?:$|[/?])~', $LCNrURI), 'Probing for exposed Firebase configuration')) {
+            $this->Reporter->report([15, 21], ['Caught probing for exposed Firebase configuration.'], $this->BlockInfo['IPAddr']);
+        } // 2026.06.07
+
+        /** Probing for exposed Spring Boot database credentials. */
+        if ($this->trigger(\preg_match('~(?:^|[/?])application\.properties(?:$|[/?])~', $LCNrURI), 'Probing for exposed Spring Boot database credentials')) {
+            $this->Reporter->report([15, 21], ['Caught probing for exposed Spring Boot database credentials.'], $this->BlockInfo['IPAddr']);
+        } // 2026.06.07
+
+        /** Probing for exposed Google Cloud Platform credentials. */
+        if ($this->trigger(\preg_match('~(?:^|[/?])gcp-credentials\.json(?:$|[/?])~', $LCNrURI), 'Probing for exposed Google Cloud Platform credentials')) {
+            $this->Reporter->report([15, 21], ['Caught probing for exposed Google Cloud Platform credentials.'], $this->BlockInfo['IPAddr']);
+        } // 2026.06.07
+
+        /** Probing for exposed Laravel error logs. */
+        if ($this->trigger(\preg_match('~(?:^|[/?])logs/laravel\.log(?:$|[/?])~', $LCNrURI), 'Probing for exposed Laravel error logs')) {
+            $this->Reporter->report([15, 21], ['Caught probing for exposed Laravel error logs.'], $this->BlockInfo['IPAddr']);
+        } // 2026.06.07
+
+        /** Probing for exposed PyPI credentials. */
+        if ($this->trigger(\preg_match('~(?:^|[/?])\.pypirc(?:$|[/?])~', $LCNrURI), 'Probing for exposed PyPI credentials')) {
+            $this->Reporter->report([15, 21], ['Caught probing for exposed PyPI credentials.'], $this->BlockInfo['IPAddr']);
+        } // 2026.06.07
+
+        /** Probing for exposed shell credentials. */
+        if ($this->trigger(\preg_match('~(?:^|[/?])\.envrc(?:$|[/?])~', $LCNrURI), 'Probing for exposed shell credentials')) {
+            $this->Reporter->report([15, 21], ['Caught probing for exposed shell credentials.'], $this->BlockInfo['IPAddr']);
+        } // 2026.06.07
     }
 
     /**

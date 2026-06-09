@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v4/vault/signatures/ipv4_isps.dat
 
-# Version: 2026.152.0
-# Last modified: 2026.06.02
+# Version: 2026.159.0
+# Last modified: 2026.06.09
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -7691,7 +7691,7 @@ Tag: Freenet Ltd
 # significant levels of spam detected from here.
 # Listing just the affected ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 55,458.
-# Updated: 2026.05.18 / Modified: 2026.05.20
+# Updated: 2026.05.18 / Modified: 2026.06.06
 
 2.56.16.0/22 Deny Cloud
 2.59.0.0/23 Deny Cloud
@@ -7910,6 +7910,7 @@ Origin: MU
 102.38.236.0/24 Deny Cloud
 Origin: NG
 45.133.116.0/24 Deny Cloud
+85.121.55.0/24 Deny Attacks
 85.203.45.0/24 Deny Attacks
 91.123.0.0/21 Deny Cloud
 92.50.14.0/23 Deny Cloud
@@ -16642,50 +16643,36 @@ Tag: LG HelloVision Corp
 # ASNs 286, 3257 ("GTT Communications Inc").
 # Commercial multiplay network. Port scans, spam, brute-force, and webapp
 # attacks detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 6,960 (AS3257).
-# Updated: 2025.05.03 / Modified: 2025.12.16
+# Stop Forum Spam (SFS) listings: 3,365 (AS3257).
+# Updated: 2026.06.09
 
 181.214.206.0/24 Deny Attacks
 191.101.209.0/24 Deny Attacks
 Origin: AE
 176.126.74.0/24 Deny Attacks
 Origin: DE
-82.111.224.128/31 Deny Attacks
-Origin: GB
-94.131.48.26/32 Deny Attacks
-94.131.48.60/32 Deny Attacks
-94.131.48.103/32 Deny Attacks
-94.131.48.119/32 Deny Attacks
-94.131.48.172/32 Deny Attacks
-94.131.49.109/32 Deny Attacks
-94.131.49.252/32 Deny Attacks
-94.131.50.0/24 Deny Attacks
+94.131.48.0/22 Deny Attacks
 94.131.53.0/24 Deny Attacks
-94.131.56.11/32 Deny Attacks
+94.131.54.0/24 Deny Attacks
+94.131.56.0/24 Deny Attacks
 95.164.128.0/24 Deny Attacks
-95.164.201.0/24 Deny Attacks
-95.164.203.0/24 Deny Attacks
+95.164.200.0/22 Deny Attacks
 Origin: GI
-88.218.172.24/32 Deny Attacks
-88.218.172.43/32 Deny Attacks
-88.218.172.54/32 Deny Attacks
-88.218.172.236/32 Deny Attacks
+88.218.172.0/24 Deny Attacks
 Origin: NL
-84.247.105.235/32 Deny Spam
-89.149.52.156/32 Deny Spam
-Origin: RO
 185.228.192.0/22 Deny Attacks
 193.169.218.0/23 Deny Attacks
 195.160.192.0/24 Deny Attacks
 Origin: UA
-23.234.157.213/32 Deny Spam
 94.131.54.0/24 Deny Attacks
 104.153.208.0/22 Deny Attacks
-104.192.220.31/32 Deny Attacks
+104.192.220.131/32 Deny Attacks
 134.195.152.0/22 Deny Attacks
-162.244.78.27/32 Deny Attacks
-208.81.128.0/21 Deny Attacks
-216.73.172.197/32 Deny Spam
+208.81.128.31/32 Deny Attacks
+208.81.128.71/32 Deny Attacks
+208.81.128.217/32 Deny Attacks
+208.81.129.0/24 Deny Attacks
+216.73.172.0/24 Deny Attacks
 Origin: US
 Profile: Commercial;Multiplay
 Tag: GTT Communications Inc
@@ -17524,59 +17511,46 @@ Tag: Teleos-1
 # Chinese backbone/infrastructure/BGP/colo provider/carrier.
 # Brute-force, DDoS, SSH, SQLi, and webapp attacks, port scans, hacking, and
 # spam detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 225 (AS24445), 161 (AS56040), 9 (AS56042),
-# 272 (AS58466), 7 (AS135391).
-# Updated: 2025.05.07 / Modified: 2025.11.05
+# Updated: 2026.06.08
 
-14.18.119.55/32 Deny Spam
+14.18.120.11/32 Deny Attacks
 14.18.120.74/32 Deny Attacks
 14.18.120.135/32 Deny Attacks
-14.116.211.167/32 Deny Spam
-14.116.251.29/32 Deny Spam
-14.215.51.69/32 Deny Attacks
+14.215.51.19/32 Deny Attacks
 14.215.51.70/32 Deny Attacks
+14.215.51.109/32 Deny Attacks
 14.215.51.232/32 Deny Attacks
-36.133.36.166/32 Deny Spam
-106.75.135.0/24 Deny Attacks
-106.75.140.0/23 Deny Attacks
-106.75.142.34/32 Deny Attacks
-106.75.142.68/32 Deny Attacks
-106.75.142.76/32 Deny Attacks
-106.75.142.166/32 Deny Attacks
-106.75.142.232/32 Deny Attacks
-106.75.143.0/24 Deny Attacks
+106.75.135.55/32 Deny Attacks
+106.75.141.0/24 Deny Attacks
+106.75.142.0/24 Deny Attacks
+106.75.143.205/32 Deny Attacks
 106.75.144.0/24 Deny Attacks
-106.75.145.20/32 Deny Attacks
-106.75.145.121/32 Deny Attacks
-106.75.145.192/32 Deny Attacks
-106.75.146.0/23 Deny Attacks
-106.75.148.49/32 Deny Attacks
-106.75.148.141/32 Deny Attacks
-106.75.148.165/32 Deny Attacks
-106.75.148.210/32 Deny Attacks
-106.75.168.5/32 Deny Attacks
-106.75.168.62/32 Deny Attacks
-106.75.168.220/32 Deny Attacks
-106.75.168.236/32 Deny Attacks
-106.75.168.242/32 Deny Attacks
+106.75.145.17/32 Deny Attacks
+106.75.145.100/32 Deny Attacks
+106.75.145.215/32 Deny Attacks
+106.75.146.0/24 Deny Attacks
+106.75.147.73/32 Deny Attacks
+106.75.147.222/32 Deny Attacks
+106.75.147.233/32 Deny Attacks
+106.75.147.240/32 Deny Attacks
+106.75.148.0/24 Deny Attacks
+106.75.168.228/32 Deny Attacks
 106.75.169.0/24 Deny Attacks
-106.75.173.165/32 Deny Spam
-106.75.190.3/32 Deny Spam
 111.53.98.41/32 Deny Attacks
-120.197.40.219/32 Deny Spam
+111.53.98.86/32 Deny Attacks
+111.53.98.115/32 Deny Attacks
+111.53.98.203/32 Deny Attacks
 120.230.93.0/24 Deny Attacks
-121.46.25.189/32 Deny Attacks
+183.56.195.103/32 Deny Attacks
 183.56.195.106/32 Deny Attacks
 183.56.195.224/32 Deny Attacks
-183.56.249.22/32 Deny Attacks
-183.56.249.42/32 Deny Attacks
 183.56.249.124/32 Deny Attacks
 183.56.249.160/32 Deny Attacks
-183.233.177.34/32 Deny Attacks
-183.234.214.114/32 Deny Attacks
-183.239.38.216/32 Deny Attacks
+183.56.249.234/32 Deny Attacks
+183.239.38.77/32 Deny Attacks
 183.239.56.210/32 Deny Attacks
 183.239.56.247/32 Deny Attacks
+183.239.56.248/32 Deny Attacks
 223.88.82.0/24 Deny Attacks
 223.88.223.0/24 Deny Attacks
 Origin: CN
@@ -24652,11 +24626,48 @@ Tag: AS64433
 # webapp attacks, port scans, hacking, and spam detected from here.
 # Listing just the affected ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 102.
-# Updated: 2026.04.06
+# Updated: 2026.06.08
 
-103.105.100.0/23 Deny Attacks
+43.225.24.0/24 Deny Attacks
+103.12.116.170/32 Deny Attacks
+103.12.116.172/32 Deny Attacks
+103.12.116.218/32 Deny Attacks
+103.12.116.230/32 Deny Attacks
+103.105.101.0/24 Deny Attacks
 103.105.103.0/24 Deny Attacks
+103.172.202.0/23 Deny Attacks
 Origin: IN
+154.206.17.227/32 Deny Attacks
+154.206.17.228/32 Deny Attacks
+154.206.17.230/31 Deny Attacks
+154.206.17.245/32 Deny Attacks
+154.206.18.11/32 Deny Attacks
+154.206.18.101/32 Deny Attacks
+154.206.18.162/32 Deny Attacks
+154.206.18.221/32 Deny Attacks
+154.206.18.234/32 Deny Attacks
+154.206.28.50/32 Deny Attacks
+154.209.252.29/32 Deny Attacks
+154.209.252.174/32 Deny Attacks
+154.209.252.178/32 Deny Attacks
+154.209.252.182/32 Deny Attacks
+154.209.253.10/32 Deny Attacks
+154.209.253.117/32 Deny Attacks
+154.209.253.120/32 Deny Attacks
+154.209.253.127/32 Deny Attacks
+154.210.224.16/32 Deny Attacks
+154.210.225.29/32 Deny Attacks
+154.210.225.90/32 Deny Attacks
+154.210.225.148/32 Deny Attacks
+154.210.228.49/32 Deny Attacks
+154.210.229.133/32 Deny Attacks
+154.210.229.158/32 Deny Attacks
+154.210.235.114/32 Deny Attacks
+154.210.235.201/32 Deny Attacks
+154.210.236.19/32 Deny Attacks
+154.210.236.21/32 Deny Attacks
+154.210.236.124/32 Deny Attacks
+Origin: SC
 Profile: Domestic ISP
 Tag: Pioneer Elabs Ltd
 
@@ -26615,6 +26626,18 @@ Tag: MTRL GROUP LIMITED
 Origin: BG
 Profile: Domestic ISP
 Tag: Gezim Cerri
+
+
+# ASN 133304 ("Hitech Broadband").
+# Indian domestic ISP. Brute-force, SSH, IoT, honeypot, and DDoS attacks, port
+# scans, and hacking detected from here.
+# Listing just the affected ranges/addresses only.
+# Updated: 2026.06.08
+
+103.105.100.0/24 Deny Attacks
+Origin: IN
+Profile: Domestic ISP
+Tag: Hitech Broadband
 
 
 # ---

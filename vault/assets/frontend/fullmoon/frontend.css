@@ -146,7 +146,7 @@ select[class=auto]+select[class=auto]{margin-{FE_Align}:-3px;margin-{FE_Align_Re
 .gridHA.gridVA{background-color:rgba(0,0,0,.125)}
 .gridHA.gridVB{background-color:rgba(127,110,85,.3)}
 .gridVB:not(.gridHA){background-color:rgba(251,191,127,.35)}
-.configMatrixLabel.gridVB,dd code{background:linear-gradient(0deg,rgba(251,191,127,.35),rgba(0,0,0,0))}
+.configMatrixLabel.gridVB,dd code,#auxRuleList code{background:linear-gradient(0deg,rgba(251,191,127,.35),rgba(0,0,0,0))}
 .warning::before,.warning::after{content:"⚠️";font-size:24px;display:inline;line-height:100%;position:relative;top:2px}
 .warning{display:inline-block;margin:4px;font-weight:700;color:#e7ab7d;background:linear-gradient({90deg},rgba(128,92,0,0) 0,rgba(128,92,0,.8) 20% 80%,rgba(128,92,0,0) 100%);line-height:100%}
 .gridlabel,.detailedSvgIcon{transition:all .2s ease-out}
@@ -325,5 +325,5 @@ input[type=submit].linner,input[type=number].linner,select.linner{width:100%}
 .duo>.duo:hover+.h1f.canHighlight,.duo>.h1f.canHighlight:hover,.quad>.h1f.canHighlight:hover,.quad>.h1.canHighlight:hover+.h1f.canHighlight,.quad>.h1.canHighlight:hover+.h1.canHighlight+.h1f.canHighlight,.quad>.h1.canHighlight:hover+.h1.canHighlight+.h1.canHighlight+.h1f.canHighlight{background:linear-gradient({90deg},rgba(92,89,120,.5),#446)}
 .fixComCatBtnVert{position:relative;top:3px}
 input.clpbrdbtn{padding-{FE_Align}:21px;background-position:top 1px {FE_Align} 4px;background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:clipboard.svg}{/Base64Encode})}
-.flagruby{font-size:55%;margin-top: -1em;background-color:rgba(103,106,109,.5);border-radius:4px}
+.flagruby{font-size:55%;font-weight:700;margin-top:-1em;background-color:rgba(103,106,109,.5);border:1px solid rgba(255,248,0,0.2);border-radius:6px}
 input[type=checkbox],input[type=checkbox]:active,input[type=checkbox]:hover,input[type=radio],input[type=radio]:active,input[type=radio]:hover{width:13px;height:13px;padding:0}

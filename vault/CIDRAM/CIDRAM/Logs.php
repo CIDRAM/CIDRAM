@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used by the logs page (last modified: 2026.05.22).
+ * This file: Methods used by the logs page (last modified: 2026.06.10).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -302,7 +302,7 @@ trait Logs
                 if (\count($Parts[1])) {
                     foreach ($Parts[1] as $ThisPart) {
                         $Entry = \str_replace('[' . $ThisPart . ']', $this->FE['Flags'] ? (
-                            '<a href="' . $this->paginationRemoveFrom($BlockLink) . '&search=' . $this->preparePartForSearchLink($ThisPart) . '"><span class="flag ' . $ThisPart . '"></span></a>'
+                            '<ruby><a href="' . $this->paginationRemoveFrom($BlockLink) . '&search=' . $this->preparePartForSearchLink($ThisPart) . '"><span class="flag ' . $ThisPart . '"></span></a><rp>[</rp><rt class="flagruby">' . $ThisPart . '</rt><rp>]</rp></ruby>'
                         ) : (
                             '[<a href="' . $this->paginationRemoveFrom($BlockLink) . '&search=' . $this->preparePartForSearchLink($ThisPart) . '">' . $ThisPart . '</a>]'
                         ), $Entry);

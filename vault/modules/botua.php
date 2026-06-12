@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bot user agents module (last modified: 2026.05.18).
+ * This file: Bot user agents module (last modified: 2026.06.12).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -178,7 +178,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         '~007ac9|200please|360spider|3d-ftp|' .
         'a(?:6-indexer|ccelo|ffinity|ghaven|href|ipbot|naly(?:ticsseo|zer)|pp3lewebkit|rtviper|wcheck)|' .
         'b(?:abbar\.tech|acklink|arkrowler|azqux|ender|inlar|itvo|ixo|lex|nf.fr|ogahn|oitho|pimagewalker)|' .
-        'c(?:ent(?:iverse|ric)|ityreview|msworldmap|omment|ommoncrawl|overscout|r4nk|rawl(?:erbotalpha|fire)|razywebcrawler|uriousgeorge|ydral)|' .
+        'c(?:ent(?:iverse|ric)|ityreview|msworldmap|omment|overscout|r4nk|rawl(?:erbotalpha|fire)|razywebcrawler|uriousgeorge|ydral)|' .
         'd(?:ataprovider|aylife|ebate|igext|(?:cp|isco|ot|ouban|ownload)bot|otcomdotnet|otnetdotcom|owjones|tsagent)|' .
         'e(?:(?:na|uro|xperi)bot|nvolk|stimatewebstats|vaal|zoom)|' .
         'f(?:dm|etch(?:er.0|or)|ibgen)|' .
@@ -189,7 +189,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         'm(?:ahiti|ahonie|attters|egaindex|iabot|lbot|oreover|ormor|ot-v980|oz\.com|rchrome|ulticrawler)|' .
         'n(?:eofonie|ewsbot|extgensearchbot|ineconnections)|' .
         'o(?:afcrawl|fflinenavigator|odlebot|ptimizer)|' .
-        'p(?:age(?:fetch|gett|_verifi)er|agesinventory|ath2|ic(?:grabber|s|tsnapshot|turefinder)|i(?:pl|xmatch|xray)|oe-component-client-|owermarks|rofiler|roximic|(?:s|ure)bot|urity)|qqdownload|' .
+        'p(?:age(?:fetch|gett|_verifi)er|agesinventory|ath2|ic(?:grabber|s|tsnapshot|turefinder)|i(?:pl|xmatch|xray)|oe-component-client-|owermarks|rofiler|(?:s|ure)bot|urity)|qqdownload|' .
         'r(?:6_|adian6|ankivabot|ebi-shoveler|everseget|ganalytics|ocketcrawler|ogerbot|sscrawl|ulinki)|' .
         's(?:afeassign|bider|bl[.-]bot|creamingfrog|earchmetricsbot|emrush|eo(?:bulls|eng|hunt|kicks|mon|profiler|stat|tool)|erpstat|istrix|ite(?:bot|intel)|n[iy]per|olomono|pbot|search|webot)|' .
         't(?:-h-u-n|agsdir|ineye|opseo|raumacadx|urnitinbot)|' .
@@ -198,7 +198,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         'w(?:arebay|auuu|bsearchbot|eb(?:alta|capture|download|mastercoffee|meup|ripper)|ikio|indows(?:3|seven)|ise-guys|khtmlto|orldbot|otbox)|' .
         'yoofind~',
         $UANoSpace
-    ), 'Backlink/SEO/Scraper UA'); // 2022.09.19 mod 2025.11.06
+    ), 'Backlink/SEO/Scraper UA'); // 2022.09.19 mod 2026.06.12
 
     $this->trigger(\preg_match('~zombiebot~', $UANoSpace), 'Backlink/SEO'); // 2025.07.26
 
@@ -233,7 +233,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         'ontheinternet|' .
         'p(?:4bot|4load|acrawler|ageglimpse|aloalto(?:company|network)|andalytics|arsijoo|egasusmonitoring|hantomjs|hpcrawl|ingdom|rlog|ython-httpx)|' .
         'r(?:arelyused|obo(?:cop|spider)|yze)|' .
-        's(?:/got|can\.lol|can(?:ner|info)|creener|eekport|itedomain|mut|nap(?:preview)?bot|oapclient|ocial(?:ayer|searcher)|oso|pyglass|quider|treetbot|ynapse)|' .
+        's(?:/got|can\.lol|can(?:ner|info)|creener|eekport|itedomain|mut|nap(?:preview)?bot|oapclient|ocial(?:ayer|searcher)|oso|pyglass|quider|tormintelcrawler|treetbot|ynapse)|' .
         't(?:erracotta|omba|weezler|ryghost)|' .
         'urlappendbot|urltest|' .
         'vicibox|' .
@@ -244,7 +244,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     ) || \preg_match(
         '~^Mozilla/5\.0(?: [a-z]{2,5}/0\..| \(Macintosh; Intel Mac OS X \d+_\d+_\d+\) AppleWebKit/\d+\.\d+\.\d+ \(KHTML, like Gecko\))?$~i',
         $this->BlockInfo['UA']
-    ), 'Unauthorised'); // 2023.09.15 mod 2026.05.18
+    ), 'Unauthorised'); // 2023.09.15 mod 2026.06.12
 
     if ($this->trigger(\preg_match('~ivre-|masscan~', $UANoSpace), 'Port scanner and synflood tool detected')) {
         $this->Reporter->report([14, 15, 19], ['MASSCAN port scanner and synflood tool detected.'], $this->BlockInfo['IPAddr']);
@@ -290,6 +290,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     ), 'Unauthorised vulnerability scanner detected')) {
         $this->Reporter->report([15, 19, 21], ['Unauthorised vulnerability scanner detected.'], $this->BlockInfo['IPAddr']);
         $this->CIDRAM['Tracking options override'] = 'extended';
+        unset($this->CIDRAM['MarkForUseWithHCaptcha'], $this->CIDRAM['MarkForUseWithFriendlyCaptcha'], $this->CIDRAM['MarkForUseWithCloudflareTurnstile']);
     } // 2023.06.16 mod 2025.07.27
 
     $this->trigger(\preg_match('~^python/|aiohttp/|\.post0~', $UANoSpace), 'Bad context (Python/AIO clients not permitted here)'); // 2021.05.18
@@ -309,11 +310,11 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     } // 2022.05.08
 
     if ($this->trigger(\preg_match(
-        '~^(?:curlmozilla|http_get)|2bone|80legs|' .
-        'a(?:dbar|i2bot|ihitbot|i.?searchbot|liyun|ndibot|nonymous-?coward|wario|xios)|' .
+        '~^(?:curlmozilla|http_get)|\(gort\)|[-.]ai|2bone|80legs|' .
+        'a(?:dbar|gent(?:3|api|ic|ql)|i.?(?:2|agent|article|assistant|bot|chat|content|detection|dungeon|hitbot|journalist|legion|matrix|rag|research|search|seocrawler|training|web|writer)|liyun|ndibot|nonymous-?coward|wario|xios)|' .
         'b(?:anana-?bot|edrockbot|ot-?test|rands-?bot|rightbot|rings_?you|ytespider)|' .
-        'c(?:asperbot|cbot|hinaclaw|lark-?crawler|ohere-|rawler4j)|' .
-        'd(?:atenbank|eep-?research|iffbot)|' .
+        'c(?:asperbot|cbot|hinaclaw|lark-?crawler|ohere-|ommoncrawl|rawler4j)|' .
+        'd(?:atenbank|eep-?(?:ai|crawl|index|l|mind|(?:re)?search|seek)|iffbot)|' .
         'echobo[tx]|' .
         'f(?:idget-?spinner-?bot|irecrawl|lyriver|riendly-?(?:crawler|spider))|' .
         'h(?:arvest|eritrix|tt(?:pfetcher|punit|rack))|' .
@@ -321,11 +322,11 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         'jaddjabot|' .
         'k(?:angaroobot|eys-?so-?bot)|' .
         'l(?:9explore|ink(?:check|fluence))|' .
-        'm(?:amac(?:asper|yber)|istral|ozilla/0|ycentralai)|' .
+        'm(?:amac(?:asper|yber)|i[sx]tral|ozilla/0|ycentralai)|' .
         'n(?:etestate|ovaact)|' .
         'o(?:mgili|rbbot)|' .
-        'p(?:angubot|anscient|erplexity|hindbot|hxbot|lease_?block|oseidon|ublicwebcrawler)|' .
-        'q(?:ualifiedbot|uillbot)|' .
+        'p(?:angubot|anscient|erplexity|hindbot|hxbot|lease_?block|oseidon|roximic|ublicwebcrawler)|' .
+        'q(?:opywriter|ualifiedbot|uillbot)|' .
         'research.?crawler|' .
         's(?:bintuition|crap[ey]|idetrade|p(?:hi|y)der|torm-?crawler|ummalybot)|' .
         't(?:est[-_]?(?:bot|phase)|heknowledgeai|hesis-?research-?bot|hink(?:bot|chaos)|impi|iny-?(?:bot|test)|rafilatura)|' .
@@ -337,7 +338,8 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         $UANoSpace
     ), 'Scraper UA')) {
         $this->CIDRAM['Tracking options override'] = 'extended';
-    } // 2023.11.17 mod 2026.03.11
+        unset($this->CIDRAM['MarkForUseWithHCaptcha'], $this->CIDRAM['MarkForUseWithFriendlyCaptcha'], $this->CIDRAM['MarkForUseWithCloudflareTurnstile']);
+    } // 2023.11.17 mod 2026.06.12
 
     /**
      * @link https://github.com/CIDRAM/CIDRAM/issues/651
@@ -397,6 +399,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         $this->trigger(\strpos($this->BlockInfo['UA'], 'MSIECrawler') !== false, 'Hostile / Fake IE') // 2017.02.25 mod 2021.06.28
     ) {
         $this->CIDRAM['Tracking options override'] = 'extended';
+        unset($this->CIDRAM['MarkForUseWithHCaptcha'], $this->CIDRAM['MarkForUseWithFriendlyCaptcha'], $this->CIDRAM['MarkForUseWithCloudflareTurnstile']);
     }
 
     /** Reporting. */
@@ -451,6 +454,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     ) {
         $this->Reporter->report([15, 19, 20, 21], ['User agent cited by various attack tools, rootkits, backdoors, webshells, and malware detected.'], $this->BlockInfo['IPAddr']);
         $this->CIDRAM['Tracking options override'] = 'extended';
+        unset($this->CIDRAM['MarkForUseWithHCaptcha'], $this->CIDRAM['MarkForUseWithFriendlyCaptcha'], $this->CIDRAM['MarkForUseWithCloudflareTurnstile']);
     }
 
     /**
@@ -461,6 +465,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     if ($this->trigger(\preg_match('~anthropic|claude-?(?:bot|searchbot|user|web)~', $UANoSpace), 'Unauthorised AI scanner')) {
         $this->Reporter->report([4, 19], ['AI scanner notorious for flooding and DDoS attacks detected.'], $this->BlockInfo['IPAddr']);
         $this->CIDRAM['Tracking options override'] = 'extended';
+        unset($this->CIDRAM['MarkForUseWithHCaptcha'], $this->CIDRAM['MarkForUseWithFriendlyCaptcha'], $this->CIDRAM['MarkForUseWithCloudflareTurnstile']);
     } // 2023.08.10 mod 2025.07.24
 
     /**
@@ -472,6 +477,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     if ($this->trigger(\preg_match('~datasets/|hugging.*face|_hub.*(?:pyarrow|torch)~', $UANoSpace), 'Potential supply chain attack')) {
         $this->Reporter->report([4, 15, 19, 20], ['Huggingface detected (potential ML-based supply chain attack vector; caught flooding, scraping, and performing DDoS attacks).'], $this->BlockInfo['IPAddr']);
         $this->CIDRAM['Tracking options override'] = 'extended';
+        unset($this->CIDRAM['MarkForUseWithHCaptcha'], $this->CIDRAM['MarkForUseWithFriendlyCaptcha'], $this->CIDRAM['MarkForUseWithCloudflareTurnstile']);
     } // 2024.06.27
 
     if ($this->trigger(\strpos($UANoSpace, 'getodin.com') !== false, 'Unauthorised')) {

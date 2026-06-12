@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2026.06.07).
+ * This file: Optional security extras module (last modified: 2026.06.12).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -523,9 +523,9 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         } // 2025.09.03
 
         /** Probing for exposed Google API credentials. */
-        if ($this->trigger(\preg_match('~(?:^|[/?])credentials\.(?:json|txt)(?:$|[/?])~', $LCNrURI), 'Probing for exposed Google API credentials')) {
+        if ($this->trigger(\preg_match('~(?:^|[/?])(?:credentials|google_service_app)\.(?:json|txt)(?:$|[/?])~', $LCNrURI), 'Probing for exposed Google API credentials')) {
             $this->Reporter->report([15, 21], ['Caught probing for exposed Google API credentials.'], $this->BlockInfo['IPAddr']);
-        } // 2025.09.22
+        } // 2025.09.22 mod 2026.06.12
 
         /** Probing for exposed ELMAH security file. */
         if ($this->trigger(\preg_match('~(?:^|[/?])elmah\.axd(?:$|[/?])~', $LCNrURI), 'Probing for exposed ELMAH security file')) {
@@ -608,9 +608,9 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         } // 2026.04.07 mod 2026.06.07
 
         /** Probing for exposed Firebase configuration file. */
-        if ($this->trigger(\preg_match('~(?:^|[/?])firebase[-/](?:config|init)\.json(?:$|[/?])~', $LCNrURI), 'Probing for exposed Firebase configuration')) {
+        if ($this->trigger(\preg_match('~(?:^|[/?])firebase(?:[-/_](?:config|credentials?|init))?\.json(?:$|[/?])~', $LCNrURI), 'Probing for exposed Firebase configuration')) {
             $this->Reporter->report([15, 21], ['Caught probing for exposed Firebase configuration.'], $this->BlockInfo['IPAddr']);
-        } // 2026.06.07
+        } // 2026.06.07 mod 2026.06.12
 
         /** Probing for exposed Spring Boot database credentials. */
         if ($this->trigger(\preg_match('~(?:^|[/?])application\.properties(?:$|[/?])~', $LCNrURI), 'Probing for exposed Spring Boot database credentials')) {
@@ -618,9 +618,9 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         } // 2026.06.07
 
         /** Probing for exposed Google Cloud Platform credentials. */
-        if ($this->trigger(\preg_match('~(?:^|[/?])gcp-credentials\.json(?:$|[/?])~', $LCNrURI), 'Probing for exposed Google Cloud Platform credentials')) {
+        if ($this->trigger(\preg_match('~(?:^|[/?])(?:application_default_credentials|credentials/service-account|gcp-credentials|keyfile|sa(?:-private)?-key|service-account(?:-file)?)\.json(?:$|[/?])~', $LCNrURI), 'Probing for exposed Google Cloud Platform credentials')) {
             $this->Reporter->report([15, 21], ['Caught probing for exposed Google Cloud Platform credentials.'], $this->BlockInfo['IPAddr']);
-        } // 2026.06.07
+        } // 2026.06.07 mod 2026.06.12
 
         /** Probing for exposed Laravel error logs. */
         if ($this->trigger(\preg_match('~(?:^|[/?])logs/laravel\.log(?:$|[/?])~', $LCNrURI), 'Probing for exposed Laravel error logs')) {
@@ -636,6 +636,16 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         if ($this->trigger(\preg_match('~(?:^|[/?])\.envrc(?:$|[/?])~', $LCNrURI), 'Probing for exposed shell credentials')) {
             $this->Reporter->report([15, 21], ['Caught probing for exposed shell credentials.'], $this->BlockInfo['IPAddr']);
         } // 2026.06.07
+
+        /** Probing for exposed ASP.NET configuration file. */
+        if ($this->trigger(\preg_match('~(?:^|[/?])appsettings\.production\.json(?:$|[/?])~', $LCNrURI), 'Probing for exposed ASP.NET configuration')) {
+            $this->Reporter->report([15, 21], ['Caught probing for exposed ASP.NET configuration.'], $this->BlockInfo['IPAddr']);
+        } // 2026.06.12
+
+        /** Probing for exposed Node.js configuration file. */
+        if ($this->trigger(\preg_match('~(?:^|[/?])config/default\.json(?:$|[/?])~', $LCNrURI), 'Probing for exposed Node.js configuration')) {
+            $this->Reporter->report([15, 21], ['Caught probing for exposed Node.js configuration.'], $this->BlockInfo['IPAddr']);
+        } // 2026.06.12
     }
 
     /**

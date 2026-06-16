@@ -1,6 +1,6 @@
 :root{scroll-behavior:smooth;color-scheme:light{theme_mode_effects}}
 *{vertical-align:text-top}
-@media screen and (prefers-reduced-motion: reduce) {
+@media screen and (prefers-reduced-motion:reduce) {
   :root{scroll-behavior:auto}
 }
 .scrollTrans{transition:all .5s ease-in-out}
@@ -140,7 +140,7 @@ input[type=text][pattern]:invalid:not(input[type=text]:placeholder-shown){backgr
 .gridboxcheckcell{vertical-align:middle;margin:0;padding:auto}
 .gridboxcheckcell>input[type=checkbox],.gridboxcheckcell>input[type=radio],.gridlabel>input[type=checkbox],.gridlabel>input[type=radio]{position:relative;top:1px}
 .gridlabel{display:block;height:100%;width:100%}
-.gridlabel:hover{background-color:rgba(255,255,255,.4);filter:brightness(1.4)}
+.gridboxcheckcell:has(.gridlabel):is(:hover,:focus-within),.gridboxitem:has(.gridlabel,input[type=radio],input[type=checkbox]):is(:hover,:focus-within){background-color:rgba(255,255,255,.4);filter:brightness(1.4);transition:all .2s ease-out}
 .gridHA.vrte,.gridHA:not(.gridVA,.gridVB,.vrto){background:linear-gradient({90deg},rgba(0,0,0,.125) 0 40%,rgba(0,0,0,0) 80%)}
 .gridHA.vrto{background:linear-gradient({90deg},rgba(0,0,0,.125) 0 25%,rgba(0,0,0,0) 50%)}
 .gridHA.gridVA{background-color:rgba(0,0,0,.125)}
@@ -149,8 +149,7 @@ input[type=text][pattern]:invalid:not(input[type=text]:placeholder-shown){backgr
 .configMatrixLabel.gridVB,dd code,#auxRuleList code{background:linear-gradient(0deg,rgba(127,191,251,.35),rgba(0,0,0,0))}
 .warning::before,.warning::after{content:"⚠️";font-size:24px;display:inline;line-height:100%;position:relative;top:2px}
 .warning{display:inline-block;margin:4px;font-weight:700;color:#cb2431;background:linear-gradient({90deg},rgba(255,192,0,0) 0,rgba(255,192,0,.8) 20% 80%,rgba(255,192,0,0) 100%);line-height:100%}
-.gridlabel,.detailedSvgIcon{transition:all .2s ease-out}
-.detailedSvgIcon{width:18px;height:19px}
+.detailedSvgIcon{transition:all .2s ease-out;width:18px;height:19px}
 .detailedSvgIcon,.translateIcon{transform:translate3d(-1px,-3px,-1px)}
 .detailedSvgIcon:hover{filter:brightness(1.7) contrast(.8);cursor:pointer}
 @keyframes sFadeFrames{0%{opacity:1}100%{opacity:0}}
@@ -252,5 +251,5 @@ input[type=checkbox],input[type=radio]{accent-color:#1d1d1e}
 input[type=submit].linner,input[type=number].linner,select.linner{width:100%}
 .i12in16{position:relative;inset:2px 0}
 .fixComCatBtnVert{position:relative;top:3px}
-.flagruby{font-size:55%;font-weight:700;margin-top:-1em;background-color:rgba(102,153,255,.1);border:1px solid rgba(0,0,0,0.2);border-radius:6px}
+.flagruby{font-size:55%;font-weight:700;margin-top:-1em;background-color:rgba(102,153,255,.1);border:1px solid rgba(0,0,0,.2);border-radius:6px}
 input[type=checkbox],input[type=checkbox]:active,input[type=checkbox]:hover,input[type=radio],input[type=radio]:active,input[type=radio]:hover{width:13px;height:13px;padding:0}

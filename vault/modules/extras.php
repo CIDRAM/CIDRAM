@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2026.06.12).
+ * This file: Optional security extras module (last modified: 2026.06.15).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -280,9 +280,12 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         } // 2025.07.17
 
         /** Probing for vulnerable routers. */
-        if ($this->trigger(\preg_match('~(?:^|\W)HNAP1~i', $LCNrURI), 'Probing for vulnerable routers')) {
+        if (
+            $this->trigger(\preg_match('~(?:^|\W)HNAP1~i', $LCNrURI), 'Probing for vulnerable routers') || // 2022.06.05
+            $this->trigger(\preg_match('~(?:^|[/?])boaform/admin(?:$|[/?])~', $LCNrURI), 'Probing for vulnerable routers') // 2026.06.15
+        ) {
             $this->Reporter->report([15, 23], ['Caught probing for vulnerable routers.'], $this->BlockInfo['IPAddr']);
-        } // 2022.06.05
+        }
 
         /** Probing for vulnerable webapps. */
         if ($this->trigger(\preg_match('~cgi-bin/(?:get_status|(?:web)?login)\.cgi(?:$|[/?])|(?:^|[/?])manager/text/list~', $LCNrURI), 'Probing for vulnerable webapps')) {
@@ -613,9 +616,9 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         } // 2026.06.07 mod 2026.06.12
 
         /** Probing for exposed Spring Boot database credentials. */
-        if ($this->trigger(\preg_match('~(?:^|[/?])application\.properties(?:$|[/?])~', $LCNrURI), 'Probing for exposed Spring Boot database credentials')) {
+        if ($this->trigger(\preg_match('~(?:^|[/?])(?:application\.properties|actuator/(?:configprops|env|heapdump))(?:$|[/?])~', $LCNrURI), 'Probing for exposed Spring Boot database credentials')) {
             $this->Reporter->report([15, 21], ['Caught probing for exposed Spring Boot database credentials.'], $this->BlockInfo['IPAddr']);
-        } // 2026.06.07
+        } // 2026.06.07 mod 2026.06.13
 
         /** Probing for exposed Google Cloud Platform credentials. */
         if ($this->trigger(\preg_match('~(?:^|[/?])(?:application_default_credentials|credentials/service-account|gcp-credentials|keyfile|sa(?:-private)?-key|service-account(?:-file)?)\.json(?:$|[/?])~', $LCNrURI), 'Probing for exposed Google Cloud Platform credentials')) {

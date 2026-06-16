@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The signature file fixer page (last modified: 2026.03.18).
+ * This file: The signature file fixer page (last modified: 2026.06.16).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -44,13 +44,13 @@ $this->FE['styleInput'] = $PreferredSource === 'Input' ? '' : ' style="display:n
 $this->FE['submitButtonVisibility'] = empty($PreferredSource) ? ' style="display:none"' : '';
 
 /** Generate a list of currently active signature files. */
-$this->FE['ActiveSignatureFiles'] = '<div style="display:grid;margin:auto 38px;grid-template-columns:19px auto">';
+$this->FE['ActiveSignatureFiles'] = '<div style="display:grid;margin:auto 38px;grid-template-columns:auto">';
 $GIClass = 'B';
 foreach (\explode("\n", $this->Configuration['components']['ipv4'] . "\n" . $this->Configuration['components']['ipv6']) as $SigSource) {
     $GIClass = $GIClass !== 'A' ? 'A' : 'B';
     $SigSourceID = \preg_replace('~[^\da-z]~i', '_', $SigSource);
     $this->FE['ActiveSignatureFiles'] .= \sprintf(
-        '<div class="gridboxitem gridVA gridH%4$s"><span class="s gridlabel"><input type="radio" class="auto" name="sigFile" id="%1$s" value="%2$s" %3$s/></div><div class="gridboxitem gridH%4$s s"><label for="%1$s">%2$s</label></span></div>',
+        '<div class="gridboxitem gridVA gridH%4$s"><span class="s gridlabel"><input type="radio" class="auto" name="sigFile" id="%1$s" value="%2$s" %3$s/> <label for="%1$s">%2$s</label></span></div>',
         $SigSourceID,
         $SigSource,
         (!empty($_POST['sigFile']) && $_POST['sigFile'] === $SigSource) ? 'checked ' : '',

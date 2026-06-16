@@ -1,6 +1,6 @@
 :root{scroll-behavior:smooth;color-scheme:light}
 *{vertical-align:text-top}
-@media screen and (prefers-reduced-motion: reduce) {
+@media screen and (prefers-reduced-motion:reduce) {
   :root{scroll-behavior:auto}
 }
 .scrollTrans{transition:all .5s ease-in-out}
@@ -148,7 +148,7 @@ td code~input,td code~select{vertical-align:middle}
 .gridboxcheckcell{vertical-align:middle;margin:0;padding:auto}
 .gridboxcheckcell>input[type=checkbox],.gridboxcheckcell>input[type=radio],.gridlabel>input[type=checkbox],.gridlabel>input[type=radio]{position:relative;top:1px}
 .gridlabel{display:block;height:100%;width:100%}
-.gridlabel:hover{background-color:rgba(255,255,255,.25);filter:brightness(1.25)}
+.gridboxcheckcell:has(.gridlabel):is(:hover,:focus-within),.gridboxitem:has(.gridlabel,input[type=radio],input[type=checkbox]):is(:hover,:focus-within){background-color:rgba(255,255,255,.25);filter:brightness(1.25);transition:all .2s ease-out}
 .gridHA.vrte,.gridHA:not(.gridVA):not(.gridVB):not(.vrto){background:linear-gradient({90deg},rgba(0,0,0,.125) 0 40%,rgba(0,0,0,0) 80%)}
 .gridHA.vrto{background:linear-gradient({90deg},rgba(0,0,0,.125) 0 25%,rgba(0,0,0,0) 50%)}
 .gridHA.gridVA{background-color:rgba(0,0,0,.125)}

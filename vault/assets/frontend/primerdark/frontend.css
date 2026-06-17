@@ -13,7 +13,7 @@ code{background-color:rgba(255,153,102,.3);vertical-align:0;display:inline-block
 img.ico{width:16px;height:16px;border:0}
 input[type=file]{margin:0;padding:0;border:none;background:none;width:auto}
 label{font-weight:600}
-.headbox,.footbox,.mainbox{display:flex;flex-direction:row;gap:auto;flex-basis:100%;justify-content:center;align-items:stretch}
+.headbox,.footbox,.mainbox{display:flex;flex-direction:row;gap:unset;flex-basis:100%;justify-content:center;align-items:stretch}
 .mainbox{gap:24px}
 .start{text-align:{FE_Align};justify-self:start;flex-shrink:1;flex-grow:2}
 .end{text-align:{FE_Align_Reverse};justify-self:end;flex-shrink:2;flex-grow:1}
@@ -78,7 +78,7 @@ input:not([type=checkbox],[type=radio]),textarea{padding:0 8px 0 8px;font-weight
 select,option{padding:0;font-weight:700;border-radius:0}
 select,option,input:not([type=checkbox],[type=radio]),textarea,input[type=file]::file-selector-button{margin:2px;border-style:none;border-radius:6px}
 input[type=button],input[type=file]::file-selector-button,input[type=submit],input[type=reset],input[type=file]::file-selector-button{border-color:rgba(27,31,35,.4);border-style:solid;border-width:1px;box-shadow:0 1px 0 rgba(27,31,35,.04),inset 0 1px 0 rgba(255,255,255,.25);transition:background-color .2s cubic-bezier(.3,0,.5,1);filter:grayscale(.3) brightness(.9)}
-select:active,textarea:active:not([readonly]),input:active{box-shadow:inset 0 1px 0 rgba(225,228,232,.2);filter:grayscale(0) brightness(1)}
+select:active:not(:focus-within,:hover),textarea:active:not([readonly],:focus-within,:hover),input:active:not(:focus-within,:hover){box-shadow:inset 0 1px 0 rgba(225,228,232,.2);filter:grayscale(0) brightness(1)}
 select:disabled,textarea:disabled,input:disabled{filter:grayscale(1) brightness(.3)}
 select:focus,textarea:focus,input:focus,input::file-selector-button:focus{outline:1px dotted transparent;outline-offset:2px;box-shadow:0 0 0 3px rgba(3,102,214,.3);filter:grayscale(0) brightness(1)}
 select:hover,textarea:hover:not([readonly]),input,input:hover::file-selector-button:hover{text-decoration:none;filter:grayscale(0) brightness(1)}
@@ -101,7 +101,7 @@ input[type=button]:hover,input[type=submit]:hover,input[type=reset]:hover,button
 .iCntr{margin:16px 0 16px 0}
 .iCntn{margin-{FE_Align}:42px}
 @media only all and (max-width:968px) {
-  nav{display:flex;flex-direction:column;gap:2px;justify-content:start;align-items:start;flex-basis:100%;width:1fr}
+  nav{display:flex;flex-direction:column;gap:2px;justify-content:start;align-items:start;flex-basis:100%;flex:1}
   .extend{flex-basis:100%}
   .headbox,.mainbox,.footbox{flex-direction:column;height:auto}
   .footbox>.start{display:none}
@@ -148,16 +148,16 @@ input[type=text][pattern]:invalid:not(input[type=text]:placeholder-shown){backgr
 .gridboxitem,.gridboxcheckcell{min-height:19px}
 .gridboxstretch{height:100%;white-space:normal}
 .configMatrixLabel{height:auto;line-height:19px;font-weight:700}
-.gridboxcheckcell{margin:0;padding:auto}
+.gridboxcheckcell{margin:0;padding:unset}
 .gridboxcheckcell>input[type=checkbox],.gridboxcheckcell>input[type=radio],.gridlabel>input[type=checkbox],.gridlabel>input[type=radio]{position:relative;top:1px}
 .gridlabel{display:block;height:100%;width:100%}
-.gridboxcheckcell:has(.gridlabel):is(:hover,:focus-within),.gridboxitem:has(.gridlabel,input[type=radio],input[type=checkbox]):is(:hover,:focus-within){background-color:rgba(255,255,255,.25);filter:brightness(1.25);transition:all .2s ease-out}
+:is(.gridboxcheckcell,.gridboxstretch,.gridboxitem):has(.gridlabel,input[type=radio],input[type=checkbox]):is(:hover,:focus-within),.gridboxstretch:has(.gridlabel,input[type=radio],input[type=checkbox]):is(:hover,:focus-within)+.gridboxstretch,.gridboxstretch:has(.gridlabel,input[type=radio],input[type=checkbox])+.gridboxstretch:is(:hover,:focus-within),.gridboxstretch:has(.gridlabel,input[type=radio],input[type=checkbox]):has(+.gridboxstretch:is(:hover,:focus-within)),:is(.gridboxcheckcell,.gridboxstretch,.gridboxitem) :is(.gridlabel,input[type=radio],input[type=checkbox]):is(:active,:hover,:focus){background-color:rgba(255,255,255,.25);filter:brightness(1.25);transition:all .2s ease-out}
 .gridHA.vrte,.gridHA:not(.gridVA,.gridVB,.vrto){background:linear-gradient({90deg},rgba(0,0,0,.125) 0 40%,rgba(0,0,0,0) 80%)}
 .gridHA.vrto{background:linear-gradient({90deg},rgba(0,0,0,.125) 0 25%,rgba(0,0,0,0) 50%)}
 .gridHA.gridVA{background-color:rgba(0,0,0,.125)}
 .gridHA.gridVB{background-color:rgba(127,110,85,.3)}
 .gridVB:not(.gridHA){background-color:rgba(251,191,127,.35)}
-.configMatrixLabel.gridVB,dd code,#auxRuleList code{background:linear-gradient(0deg,rgba(251,191,127,.35),rgba(0,0,0,0))}
+.configMatrixLabel.gridVB,dd code,#auxRuleList code:not(:has(.auxicon)){background:linear-gradient(0deg,rgba(251,191,127,.35),rgba(0,0,0,0))}
 .warning::before,.warning::after{content:"⚠️";font-size:24px;display:inline;line-height:100%;position:relative;top:2px}
 .warning{display:inline-block;margin:4px;font-weight:700;color:#f90;background:linear-gradient({90deg},rgba(0,128,192,0) 0,rgba(0,128,192,.8) 20% 80%,rgba(0,128,192,0) 100%);line-height:100%}
 .detailedSvgIcon{transition:all .2s ease-out;width:18px;height:19px}
@@ -281,11 +281,11 @@ input[type=checkbox],input[type=radio]{accent-color:#bdc0c3}
 .clockMinutes{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:clockminutes.svg}{/Base64Encode});position:relative;inset:0 -16px}
 .clockSeconds{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:clockseconds.svg}{/Base64Encode});position:relative;inset:0 -32px}
 .clockFace{background-image:url(data:image/svg+xml;base64,{Base64Encode}{Asset:clockface.svg}{/Base64Encode});position:relative;inset:0 -48px}
-.col{display:flex;flex-direction:column;gap:2px;justify-content:start;align-items:start;flex-basis:100%;width:1fr}
+.col{display:flex;flex-direction:column;gap:2px;justify-content:start;align-items:start;flex-basis:100%;flex:1}
 .col>.col{width:100%}
 .col>.ng1,.col>.ng2,nav>.ng1,nav>.ng2,.flexstretch:not(.col>.flexstretch),.spanner:not(.col>.spanner){width:calc(100% - 10px)}
 .configInitPos{transform:scaleY(0);transform-origin:top center;opacity:0;max-height:0;margin-top:-2px}
-.configOpenPos{transform:scaleY(1);transform-origin:top center;opacity:1;max-height:auto}
+.configOpenPos{transform:scaleY(1);transform-origin:top center;opacity:1;max-height:none}
 .col>form,.quad>form,.duo>form,.spanner>form{display:contents}
 input[type=hidden],script{display:none}
 .logVis{overflow:visible auto}

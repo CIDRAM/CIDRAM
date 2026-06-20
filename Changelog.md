@@ -553,3 +553,8 @@
 - [2026.05.22]: Added ruby text for country flags shown at the logs page in fancy mode to be able to show both the flags and their relevant country codes together.
 - [2026.05.28]: Added a new configuration directive (token_difference_limit) to the BOBUAM, allowing for more granular control over CAPTCHAs (#676).
 - *Plus all the regular signature updates.*
+
+### v3.12.1
+
+- [2026.06.20]: Updated the flags CSS.
+- *Plus all the regular signature updates.*

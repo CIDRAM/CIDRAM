@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2026.05.28).
+ * This file: General methods used by the front-end (last modified: 2026.06.22).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -165,14 +165,14 @@ trait FrontEndMethods
      * Generates a list of the files in a working directory as array keys.
      *
      * @param string $Base The path to the working directory.
-     * @param bool $Rescursive Whether to search the directory recursively.
+     * @param bool $Recursive Whether to search the directory recursively.
      * @return array A list of the files in the working directory as array keys.
      */
-    private function filesAsKeys(string $Base, bool $Rescursive = true): array
+    private function filesAsKeys(string $Base, bool $Recursive = true): array
     {
         $Arr = [];
         $Offset = \strlen($Base);
-        if ($Rescursive) {
+        if ($Recursive) {
             $List = new \LimitIterator(new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator(
                 $Base,
                 \RecursiveDirectoryIterator::FOLLOW_SYMLINKS | \RecursiveDirectoryIterator::SKIP_DOTS | \RecursiveDirectoryIterator::UNIX_PATHS

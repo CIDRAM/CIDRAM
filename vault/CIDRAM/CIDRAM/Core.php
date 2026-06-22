@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2026.05.28).
+ * This file: The CIDRAM core (last modified: 2026.06.22).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -130,7 +130,7 @@ class Core
     /**
      * @var string CIDRAM version number (SemVer).
      */
-    public $ScriptVersion = '3.12.0';
+    public $ScriptVersion = '3.12.1';
 
     /**
      * @var string CIDRAM version identifier (complete notation).
@@ -1922,7 +1922,7 @@ class Core
         while (\strrpos($Dir, '/') !== false || \strrpos($Dir, '\\') !== false) {
             $Separator = (\strrpos($Dir, '/') !== false) ? '/' : '\\';
             $Dir = \substr($Dir, 0, \strrpos($Dir, $Separator));
-            if (!\is_dir($this->Vault . $Dir) || !$this->isDirEmpty($this->Vault . $Dir)) {
+            if (!\is_dir($this->Vault . $Dir) || !\is_readable($this->Vault . $Dir) || !$this->isDirEmpty($this->Vault . $Dir)) {
                 break;
             }
             \rmdir($this->Vault . $Dir);

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The file manager page (last modified: 2026.05.28).
+ * This file: The file manager page (last modified: 2026.06.22).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -120,10 +120,7 @@ if (isset($_POST['do'], $_FILES['upload-file']['name']) && $_POST['do'] === 'upl
     /** Delete a file. */
     if ($_POST['do'] === 'delete-file') {
         if (\is_dir($this->Vault . $FMData['filename'])) {
-            if (
-                $this->isDirEmpty($this->Vault . $FMData['filename']) &&
-                \rmdir($this->Vault . $FMData['filename'])
-            ) {
+            if ($this->isDirEmpty($this->Vault . $FMData['filename']) && \rmdir($this->Vault . $FMData['filename'])) {
                 $this->FE['state_msg'] = $this->L10N->getString('response.Directory successfully deleted');
             } else {
                 $this->FE['state_msg'] = $this->L10N->getString('response.Failed to delete');
@@ -149,16 +146,9 @@ if (isset($_POST['do'], $_FILES['upload-file']['name']) && $_POST['do'] === 'upl
             );
 
             /** If the destination already exists, delete it before renaming the new file. */
-            if (
-                $SafeToContinue &&
-                \file_exists($this->Vault . $FMData['filename_new']) &&
-                \is_readable($this->Vault . $FMData['filename_new'])
-            ) {
+            if ($SafeToContinue && \file_exists($this->Vault . $FMData['filename_new']) && \is_readable($this->Vault . $FMData['filename_new'])) {
                 if (\is_dir($this->Vault . $FMData['filename_new'])) {
-                    if (
-                        !$this->isDirEmpty($this->Vault . $FMData['filename_new']) ||
-                        !\rmdir($this->Vault . $FMData['filename_new'])
-                    ) {
+                    if (!$this->isDirEmpty($this->Vault . $FMData['filename_new']) || !\rmdir($this->Vault . $FMData['filename_new'])) {
                         $SafeToContinue = false;
                     }
                 } elseif (!\unlink($this->Vault . $FMData['filename_new'])) {
@@ -285,7 +275,11 @@ $this->FE['FilesData'] = '';
 $this->FE['TotalSize'] = 0;
 
 /** Fetch files data. */
-$Files = $this->fileManagerRecursiveList($this->Vault);
+try {
+    $Files = $this->fileManagerRecursiveList($this->Vault);
+} catch (\UnexpectedValueException | \Exception $Exception) {
+    $Files = [];
+}
 
 /** Cleanup. */
 unset($this->FE['MemoryLimit'], $FMData);
@@ -364,7 +358,7 @@ if (!$DoughnutFile) {
 \array_walk($Files, function ($ThisFile): void {
     $Base = '<option value="%s"%s>%s</option>';
     $ThisFile['ThisOptions'] = '';
-    if (!$ThisFile['Directory'] || $this->isDirEmpty($this->Vault . $ThisFile['Filename'])) {
+    if (!$ThisFile['Directory'] || (\is_readable($this->Vault . $ThisFile['Filename']) && $this->isDirEmpty($this->Vault . $ThisFile['Filename']))) {
         $ThisFile['ThisOptions'] .= \sprintf($Base, 'delete-file', ' class="txtRd"', $this->L10N->getString('field.Delete'));
         $ThisFile['ThisOptions'] .= \sprintf($Base, 'rename-file', $ThisFile['Directory'] && !$ThisFile['CanEdit'] ? ' selected' : '', $this->L10N->getString('field.Rename'));
     }

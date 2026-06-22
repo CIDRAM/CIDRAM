@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2026.04.20).
+ * This file: Front-end handler (last modified: 2026.06.22).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -3135,10 +3135,7 @@ if ($CIDRAM['FE']['UserState'] !== 1 && $CIDRAM['FE']['CronMode'] === '') {
         /** Delete a file. */
         if ($_POST['do'] === 'delete-file') {
             if (is_dir($CIDRAM['Vault'] . $_POST['filename'])) {
-                if (
-                    $CIDRAM['IsDirEmpty']($CIDRAM['Vault'] . $_POST['filename']) &&
-                    rmdir($CIDRAM['Vault'] . $_POST['filename'])
-                ) {
+                if ($CIDRAM['IsDirEmpty']($CIDRAM['Vault'] . $_POST['filename']) && rmdir($CIDRAM['Vault'] . $_POST['filename'])) {
                     $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_directory_deleted');
                 } else {
                     $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_delete_error');
@@ -3164,16 +3161,9 @@ if ($CIDRAM['FE']['UserState'] !== 1 && $CIDRAM['FE']['CronMode'] === '') {
                 );
 
                 /** If the destination already exists, delete it before renaming the new file. */
-                if (
-                    $CIDRAM['SafeToContinue'] &&
-                    file_exists($CIDRAM['Vault'] . $_POST['filename_new']) &&
-                    is_readable($CIDRAM['Vault'] . $_POST['filename_new'])
-                ) {
+                if ($CIDRAM['SafeToContinue'] && file_exists($CIDRAM['Vault'] . $_POST['filename_new']) && is_readable($CIDRAM['Vault'] . $_POST['filename_new'])) {
                     if (is_dir($CIDRAM['Vault'] . $_POST['filename_new'])) {
-                        if (
-                            !$CIDRAM['IsDirEmpty']($CIDRAM['Vault'] . $_POST['filename_new']) ||
-                            !rmdir($CIDRAM['Vault'] . $_POST['filename_new'])
-                        ) {
+                        if (!$CIDRAM['IsDirEmpty']($CIDRAM['Vault'] . $_POST['filename_new']) || !rmdir($CIDRAM['Vault'] . $_POST['filename_new'])) {
                             $CIDRAM['SafeToContinue'] = false;
                         }
                     } elseif (!unlink($CIDRAM['Vault'] . $_POST['filename_new'])) {
@@ -3294,7 +3284,11 @@ if ($CIDRAM['FE']['UserState'] !== 1 && $CIDRAM['FE']['CronMode'] === '') {
     $CIDRAM['FE']['TotalSize'] = 0;
 
     /** Fetch files data. */
-    $CIDRAM['FilesArray'] = $CIDRAM['FileManager-RecursiveList']($CIDRAM['Vault']);
+    try {
+        $CIDRAM['FilesArray'] = $CIDRAM['FileManager-RecursiveList']($CIDRAM['Vault']);
+    } catch (\UnexpectedValueException | \Exception $Exception) {
+        $CIDRAM['FilesArray'] = [];
+    }
 
     if (!$CIDRAM['DoughnutFile']) {
         $CIDRAM['FE']['Doughnut'] = '';
@@ -3384,7 +3378,7 @@ if ($CIDRAM['FE']['UserState'] !== 1 && $CIDRAM['FE']['CronMode'] === '') {
     array_walk($CIDRAM['FilesArray'], function ($ThisFile) use (&$CIDRAM) {
         $Base = '<option value="%s"%s>%s</option>';
         $ThisFile['ThisOptions'] = '';
-        if (!$ThisFile['Directory'] || $CIDRAM['IsDirEmpty']($CIDRAM['Vault'] . $ThisFile['Filename'])) {
+        if (!$ThisFile['Directory'] || !is_readable($CIDRAM['Vault'] . $ThisFile['Filename']) || $CIDRAM['IsDirEmpty']($CIDRAM['Vault'] . $ThisFile['Filename'])) {
             $ThisFile['ThisOptions'] .= sprintf($Base, 'delete-file', ' class="txtRd"', $CIDRAM['L10N']->getString('field_delete'));
             $ThisFile['ThisOptions'] .= sprintf($Base, 'rename-file', $ThisFile['Directory'] && !$ThisFile['CanEdit'] ? ' selected' : '', $CIDRAM['L10N']->getString('field_rename_file'));
         }

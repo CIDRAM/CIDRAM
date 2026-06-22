@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end functions file (last modified: 2026.05.22).
+ * This file: Front-end functions file (last modified: 2026.06.22).
  */
 
 /**

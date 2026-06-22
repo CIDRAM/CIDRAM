@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Functions file (last modified: 2026.04.30).
+ * This file: Functions file (last modified: 2026.06.22).
  */
 
 /** Autoloader for CIDRAM classes. */
@@ -1713,7 +1713,7 @@ $CIDRAM['DeleteDirectory'] = function (string $Dir) use (&$CIDRAM): void {
     while (strrpos($Dir, '/') !== false || strrpos($Dir, '\\') !== false) {
         $Separator = (strrpos($Dir, '/') !== false) ? '/' : '\\';
         $Dir = substr($Dir, 0, strrpos($Dir, $Separator));
-        if (!is_dir($CIDRAM['Vault'] . $Dir) || !$CIDRAM['IsDirEmpty']($CIDRAM['Vault'] . $Dir)) {
+        if (!is_dir($CIDRAM['Vault'] . $Dir) || !is_readable($CIDRAM['Vault'] . $Dir) || !$CIDRAM['IsDirEmpty']($CIDRAM['Vault'] . $Dir)) {
             break;
         }
         rmdir($CIDRAM['Vault'] . $Dir);

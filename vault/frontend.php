@@ -3286,7 +3286,9 @@ if ($CIDRAM['FE']['UserState'] !== 1 && $CIDRAM['FE']['CronMode'] === '') {
     /** Fetch files data. */
     try {
         $CIDRAM['FilesArray'] = $CIDRAM['FileManager-RecursiveList']($CIDRAM['Vault']);
-    } catch (\UnexpectedValueException | \Exception $Exception) {
+    } catch (\UnexpectedValueException $Exception) {
+        $CIDRAM['FilesArray'] = [];
+    } catch (\Exception $Exception) {
         $CIDRAM['FilesArray'] = [];
     }
 

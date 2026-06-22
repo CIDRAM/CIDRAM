@@ -577,5 +577,10 @@
 
 ### v4.2.1
 
+#### Bugs fixed.
+- [2026.06.22]: Some methods which instantiate RecursiveIteratorIterator objects which instantiate RecursiveDirectoryIterator objects could trigger fatal errors due to uncaught UnexpectedValueException exceptions, thus causing execution to end prematurely, when supplied paths to directories which contain subdirectories for which PHP doesn't have sufficient permissions to read; To prevent this in the future, the affected calls have been guarded with try/catch blocks, and where try/catch blocks aren't practical, guarded by appropriate checks.
+
+#### Other changes.
 - [2026.06.20]: Updated the flags CSS.
+- [2026.06.22]: Slightly improved the file manager's filetype detection.
 - *Plus all the regular signature updates.*

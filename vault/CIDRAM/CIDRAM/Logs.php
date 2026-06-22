@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used by the logs page (last modified: 2026.06.10).
+ * This file: Methods used by the logs page (last modified: 2026.06.22).
  */
 
 namespace CIDRAM\CIDRAM;

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2026.05.28).
+ * This file: The CIDRAM core (last modified: 2026.06.22).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -130,7 +130,7 @@ class Core
     /**
      * @var string CIDRAM version number (SemVer).
      */
-    public $ScriptVersion = '4.2.0';
+    public $ScriptVersion = '4.2.1';
 
     /**
      * @var string CIDRAM version identifier (complete notation).
@@ -1924,7 +1924,7 @@ class Core
         while (\strrpos($Dir, '/') !== false || \strrpos($Dir, '\\') !== false) {
             $Separator = (\strrpos($Dir, '/') !== false) ? '/' : '\\';
             $Dir = \substr($Dir, 0, \strrpos($Dir, $Separator));
-            if (!\is_dir($this->Vault . $Dir) || !$this->isDirEmpty($this->Vault . $Dir)) {
+            if (!\is_dir($this->Vault . $Dir) || !\is_readable($this->Vault . $Dir) || !$this->isDirEmpty($this->Vault . $Dir)) {
                 break;
             }
             \rmdir($this->Vault . $Dir);
@@ -2023,7 +2023,7 @@ class Core
         $Pattern = $this->buildLogPattern($Pattern);
         $Arr = [];
         $Offset = \strlen($this->Vault);
-        $List = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($this->Vault, \RecursiveDirectoryIterator::SKIP_DOTS), \RecursiveIteratorIterator::SELF_FIRST);
+        $List = new \Maikuolan\Common\SRII(new \RecursiveDirectoryIterator($this->Vault, \RecursiveDirectoryIterator::SKIP_DOTS), \RecursiveIteratorIterator::SELF_FIRST);
         foreach ($List as $Item => $List) {
             $ItemFixed = \str_replace('\\', '/', \substr($Item, $Offset));
             if ($ItemFixed && \preg_match($Pattern, $ItemFixed) && \is_readable($Item)) {

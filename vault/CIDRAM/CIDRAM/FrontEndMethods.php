@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2026.05.28).
+ * This file: General methods used by the front-end (last modified: 2026.06.22).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -178,7 +178,7 @@ trait FrontEndMethods
                     $Component = $this->L10N->getString('label.Safety mechanisms');
                     $NoEdit = true;
                 } elseif (\preg_match('~(?:^|\.)config\.yml$~i', $CheckAs)) {
-                    $Component = $this->L10N->getString('link.Configuration');
+                    $Component = $this->L10N->getString('purpose.Configuration file');
                     $Arr[$Key]['Icon'] = 'icon=configuration';
                     $LockIcon = true;
                 } elseif ($this->isLogFile($CheckAs)) {
@@ -212,6 +212,7 @@ trait FrontEndMethods
                 $Arr[$Key]['Component'] = $Component === '' ? $this->L10N->getString('field.Unknown') : $Component . $this->L10N->getString('field.Unknown');
                 continue;
             }
+            $Ext = \preg_replace('~[-_].+$~', '', $Ext);
             $Arr[$Key]['Component'] = $Component ?: $this->L10N->getString('field.Unknown');
             if (!$NoEdit && \preg_match('/^(?:[BD]AT|SVG|TEX|URL)$/', $Ext) && (!isset($this->FE['MemoryLimit']) || $Arr[$Key]['FS'] < $this->FE['MemoryLimit'])) {
                 $Arr[$Key]['CanEdit'] = true;
@@ -273,17 +274,17 @@ trait FrontEndMethods
                 $Arr[$Key]['Component'] = $Component . $this->L10N->getString('purpose.Database file');
             } elseif (\preg_match(
                 '/^(?:[123]86|73K|89K|A(?:6P|C[CT].*|PP|SH.*)|' .
-                'B(?:AT|IN|PL|TM)|C(?:CC|MD|OM.*|PL|SH)|D(?:LL|RV)|E(?:LF|X[E_])|G(?:AD.*|EO)|' .
+                'B(?:ASH|AT|IN|PL|TM)|C(?:CC|MD|OM.*|PL|SH)|D(?:LL|RV)|E(?:LF|X[E_])|FISH|G(?:AD.*|EO)?|' .
                 'I(?:N[SX]|PA|SU)|J(?:OB|SE)|K(?:O|SH)|LIB|' .
                 'MS[CIPT].*|N(?:ET|LM)|O(?:[CS]X|UT)|P(?:[AI]F|RG|S1)|' .
-                'R(?:EG|GS|LL|UN)|S(?:CR.*|CT|H[BS]|YS)|TLB|' .
-                'U3P|V(?:AP|B[EX])|W(?:OR.*|S[FH]?)|X(?:AP|BE|EX|PI))$/',
+                'R(?:EG|GS|LL|UN)|S(?:CR.*|CT|H[BS]?|YS)|T(?:CSH|LB|OOL)|' .
+                'U3P|V(?:AP|B[EX])|W(?:OR.*|S[FH]?)|X(?:AP|BE|EX|PI)|ZSH)$/',
                 $Ext
             )) {
                 if (!$LockIcon) {
                     $Arr[$Key]['Icon'] = 'icon=executable';
                 }
-                $Arr[$Key]['Component'] = $Component . $this->L10N->getString('purpose.Executable file');
+                $Arr[$Key]['Component'] = $Component . $this->L10N->getString('purpose.Executable file or shell script');
             } elseif (\preg_match(
                 '/^(?:16SVX|3GA|8SVX|' .
                 'A(?:A[CX]?|BC|C[3DT]|IF[CF]?|IMPPL|LA?C|L[PS]|MR|PE|S[FTX]|TMOS|UD?|UDIO|UP3?|WB?)|' .
@@ -293,7 +294,7 @@ trait FrontEndMethods
                 'E(?:NS|TF)|F(?:4A|LAC?|L[MP])|G(?:P|RIR|[SY]M)|I(?:KLAX|VS)|JAM|KERN|L(?:[AY]|OGIC)|' .
                 'M(?:3U|EI|ETADATA|IDI?|KA|M[FPR]|NG|OGG|OVPKG|P[123AC]|P?4[ABP]|SC[XZ]|SF|USX?|X6HS|XL)|' .
                 'N(?:IFF|MF|PR)|O(?:F[FRS]|G[AG]|MFI?|PUS|TS)|P(?:AC|CM|LS|SF|T[BFSX]|VD)|Q(?:AU[0A]?|UEYEAUDIO)|' .
-                'R(?:A[MW]?|EAPEAKS|F64|IN|KA|M[AJX]?|PP(?:-BAK)?)|' .
+                'R(?:A[MW]?|EAPEAKS|F64|IN|KA|M[AJX]?|PP)|' .
                 'S(?:ES|F[234KL]|HN|I[BD]|LN|MDL|MP|N[DG]|P[CX]|TF|WA|YN)|' .
                 'T(?:AK|HD|TA|XM)|USTX?|V(?:CLS|GM|O[BCX]|PR|QF|SQX?)|' .
                 'W(?:AVE?|MA|V)|X(?:PL|SPF)|YM|ZPL)$/',
@@ -316,7 +317,7 @@ trait FrontEndMethods
                     $Arr[$Key]['Icon'] = 'icon=spreadsheet';
                 }
                 $Arr[$Key]['Component'] = $Component . $this->L10N->getString('purpose.Spreadsheet file or tabular data');
-            } elseif (\preg_match('/^(?:AXX|BPW|C(?:ERT?|RT)|DER|EEA|G(?:PG|XK)|HTPASSWD|JKS|K(?:DBX?|EY|ODE)|NSIGNE?|OMF|P(?:12|7[BC]|ASS(?:WORD)?|EM|FX|GP|PK|UB|WD)|SSH|TC)$/', $Ext)) {
+            } elseif (\preg_match('/^(?:AXX|BPW|C(?:ERT?|RT|RYPT)|DER|EEA|G(?:PG|XK)|HTPASSWD|JKS|K(?:BX|DBX?|EY|ODE)~?|NSIGNE?|OMF|P(?:12|7[BC]|ASS(?:WORD)?|EM|FX|GP|PK|UB|WD)|SSH|TC)$/', $Ext)) {
                 if (!$LockIcon) {
                     $Arr[$Key]['Icon'] = 'icon=encrypted';
                 }
@@ -353,7 +354,7 @@ trait FrontEndMethods
                 'A(?:AF|CT?|EP|I|M[CFV]|N8|NIM?|OI|RT|S[EFMS]|T3|VCHD|VIF?|WG)|' .
                 'B(?:3D|DL4|FRES|IK|LOCK|LP|M[2P]|MD3|PG|RAW|RRES|TI|W)|' .
                 'C(?:4D?|AL3D|ALS|AM|CP4|D[5R]|FL|GM|IT|LIP|MX|OB|OLLAB|ORE3D|PT|R2|TM)|' .
-                'D(?:DS|EEP|FF|IB|IVX|JVU|NG?|PM?|RAWIO|R[CPW]|TS|V5?|VR(?:-MS)?|WF|XF)|' .
+                'D(?:DS|EEP|FF|IB|IVX|JVU|NG?|PM?|RAWIO|R[CPW]|TS|V5?|VR|WF|XF)|' .
                 'E(?:2D|CW|G[GT]|MF|PS?|XIF)|' .
                 'F(?:[4L][BCVP]|ACT|CP|ITS|L[ARV]|LASH|LIF|MV|S)|' .
                 'G(?:BR|IFV?|L[BM]|LTF|MV|PL|RF)|' .
@@ -370,10 +371,10 @@ trait FrontEndMethods
                 'P(?:AL|[AB]M|C[123FTX]|D[DNS]|G[FM]|I[C123X]|ICT|LD|N[GJMS]|OV|P[JM]|RT|ROCREATE|RPROJ|S[BDP]|X[MRZ]?)|' .
                 'Q(?:FX|MG|OI|T)|' .
                 'R(?:3D|APHS|AW|ENDERMAN|GB|LE|MV?B?|OQ|WX)|' .
-                'S(?:[AG]I|CT|I[ABD]|KIP|LDASM|LDPRT|M[DIK]|OL|RT|SA|TR|UF|V[AGI]|WF|XD)|' .
+                'S(?:[AG]I|CT|I[ABD]|KIP|LDASM|LDPRT|M[DIK]|OL|SA|TR|UF|V[AGI]|WF|XD)|' .
                 'T(?:ARGA|GAX?|HP|IFF?|RES)|' .
                 'U(?:3D|SD[AC]?)|' .
-                'V(?:2D|D[AX]|DOC|EG(?:-BAK)?|IDEO|ICAR|I[MV]|ND|OB|PJ|PROJ|RML97|SD[MX]?|STX|TF|UE|WX)|' .
+                'V(?:2D|D[AX]|DOC|EG|IDEO|ICAR|I[MV]|ND|OB|PJ|PROJ|RML97|SD[MX]?|STX|TF|UE|WX)|' .
                 'W(?:3D|BMP?|EB[MP]|FP|INGS|LMP|M[FPV]3?|RAP|RL|TV|VE)|' .
                 'X(?:AR|BM|CF|BMP|PM|ISF|VID|WMV)?|' .
                 'YUV|' .
@@ -394,21 +395,22 @@ trait FrontEndMethods
                 $Ext
             )) {
                 if (!$LockIcon) {
-                    $Arr[$Key]['Icon'] = 'icon=presentation';
+                    $Arr[$Key]['Icon'] = 'icon=document';
                 }
                 $Arr[$Key]['Component'] = $Component . $this->L10N->getString('purpose.Document');
             } elseif (\preg_match(
                 '/^(?:[SDMPX]?HT[AM]L?X?|A(?:D[ABS]|HK|PPLESCRIPT|SC?|SC(?:II(?:DOC)?)?|SM|TOM|U3|WK)?|' .
                 'B(?:AS|B|MX)?|C(?:A?ML|B[LP]|C|FG|SV|IA|JS|LASS|LJS?|LS|NF|OB|OFFEE|ONF(?:IG)?|PP|SS?|SPROJ|XX)?|' .
                 'D(?:ART|BA|BPRO123|IFF|ITA)?|E(?:BUILD|FS|L|NV|RB)?|' .
-                'F(?:77|90|OR|REEBASIC|RX|T[HN])?|G(?:[DO]|ED|M[6DKL])?|' .
-                'H(?:ACK|[CHSX]|PP|TACCESS|XML|XX)?|I(?:BI|CI|JS|N[CFIO]|NFO|PYNB|TCL)?|' .
+                'F(?:77|90|OR|REEBASIC|RX|T[HN])?|G(?:[DO]|ED|M[6DKL])|' .
+                'H(?:ACK|[CHSX]|PP|TACCESS|XML|XX)?|' .
+                'I(?:BI|CI|JS|N[CO]|NFO|PYNB|TCL)?|' .
                 'J(?:AVA|SX?|SFL|SON(?:LD)?)?|K(?:PRX|T)|' .
                 'L(?:GT|ISP|OG|UA)?|M(?:[4DEL]|AP|ARKDOWN|ET(?:ALINK)?|OBI|JS|SQR)?|' .
                 'N(?:EIS|EON|FO|[QT]|QP|U[CDT])?|O|' .
                 'P(?:AS|DE|HP[34578SX]?|IV|L[1I]?|[MPSY]|OL|RO|S1XML|S[CDM]1|Y[CO])?|' .
                 'R(?:[BY]|C2?|DP|EDS?|ESOURCES|ESX|EX[GPX]?|KTL?|SS?|XS)?|' .
-                'S(?:A?ML|B[23]?|CALA|C[EIM]|CPTD?|CSS?|D[7L]|[EH]|IG|K.|LK|PIN|PRITE3|PWN|TK|VELTE|WG|YJS|YPY)?|' .
+                'S(?:A?ML|B[23]?|CALA|C[EIM]|CPTD?|CSS?|D[7L]|[EH]|IG|K.|LK|PIN|PRITE3|PWN|RT|TK|VELTE|WG|YJS|YPY)?|' .
                 'T(?:CL|EXT|INI|NS|SCN|SX?|XT)?|U(?:P|TF)?|V(?:B[GP]?|[BCD]PROJ|BS|IP)?|' .
                 'W(?:ASM|AT)|X(?:A?ML|HT|HTML?|Q|SL)|Y(?:A?ML|NI)?|ZIM)$/',
                 $Ext
@@ -425,11 +427,16 @@ trait FrontEndMethods
                     $Arr[$Key]['Icon'] = 'icon=link';
                 }
                 $Arr[$Key]['Component'] = $Component . $this->L10N->getString('purpose.Shortcut file');
-            } elseif (\preg_match('/^(?:CACHE|FOO|OLD|TE?MP)(-\d+)?$/', $Ext) || \substr($Arr[$Key]['Filename'], 0, 2) === '~$') {
+            } elseif (\preg_match('/^(?:CACHE|FOO|OLD|TE?MP)$/', $Ext) || \substr($Arr[$Key]['Filename'], 0, 2) === '~$') {
                 if (!$LockIcon) {
                     $Arr[$Key]['Icon'] = 'icon=cache';
                 }
                 $Arr[$Key]['Component'] = $Component . $this->L10N->getString('label.Cache data and temporary files');
+            } elseif (\preg_match('/^(?:C(?:O?NF(?:I?G)?|FG)|GITCONFIG|IN[IF]|VDF)$/', $Ext)) {
+                if (!$LockIcon) {
+                    $Arr[$Key]['Icon'] = 'icon=configuration';
+                }
+                $Arr[$Key]['Component'] = $Component . $this->L10N->getString('purpose.Configuration file');
             } else {
                 $Arr[$Key]['Component'] = $Component . $this->L10N->getString('field.Unknown');
             }
@@ -495,14 +502,14 @@ trait FrontEndMethods
      * Generates a list of the files in a working directory as array keys.
      *
      * @param string $Base The path to the working directory.
-     * @param bool $Rescursive Whether to search the directory recursively.
+     * @param bool $Recursive Whether to search the directory recursively.
      * @return array A list of the files in the working directory as array keys.
      */
-    private function filesAsKeys(string $Base, bool $Rescursive = true): array
+    private function filesAsKeys(string $Base, bool $Recursive = true): array
     {
         $Arr = [];
         $Offset = \strlen($Base);
-        if ($Rescursive) {
+        if ($Recursive) {
             $List = new \LimitIterator(new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator(
                 $Base,
                 \RecursiveDirectoryIterator::FOLLOW_SYMLINKS | \RecursiveDirectoryIterator::SKIP_DOTS | \RecursiveDirectoryIterator::UNIX_PATHS

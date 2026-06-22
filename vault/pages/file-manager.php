@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The file manager page (last modified: 2026.05.28).
+ * This file: The file manager page (last modified: 2026.06.22).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -198,7 +198,11 @@ if (!$this->FE['ASYNC']) {
     $this->FE['FilesRow'] = $this->readFile($this->getAssetPath('_files_row.html'));
 
     /** Fetch files data. */
-    $Files = $this->fileManagerRecursiveList($this->FE['basepath']);
+    try {
+        $Files = $this->fileManagerRecursiveList($this->FE['basepath']);
+    } catch (\UnexpectedValueException | \Exception $Exception) {
+        $Files = $this->fileManagerRecursiveList($this->FE['basepath'], false);
+    }
 
     /** Whether to display recursive display controls. */
     if ($this->FE['CanShowRecursive'] === 1) {
@@ -255,7 +259,7 @@ if (!$this->FE['ASYNC']) {
                 );
             }
         }
-        if ((!$ThisFile['Directory'] || $this->isDirEmpty($this->FE['basepath'] . $ThisFile['Filename'])) && $ThisFile['Deletable']) {
+        if ((!$ThisFile['Directory'] || !\is_readable($this->FE['basepath'] . $ThisFile['Filename']) || $this->isDirEmpty($this->FE['basepath'] . $ThisFile['Filename'])) && $ThisFile['Deletable']) {
             $ThisFile['ThisOptions'][] = \sprintf(
                 '<code onclick="javascript:hideid(\'File%1$s\');hideid(\'Icon%1$s\');hideid(\'DeleteControls%1$s\');showid(\'RenameControls%1$s\');document.getElementById(\'RenameInput%1$s\').focus()"><span class="auxicon auxbl rename" title="%2$s"></span><span class="s fmicontxt">%2$s</span></code>',
                 $ThisFile['FilenameID'],
@@ -276,7 +280,7 @@ if (!$this->FE['ASYNC']) {
         } else {
             $ThisFile['Icon'] = \sprintf('<img src="?cidram-page=icon&%s&theme=%s" alt="Icon" class="ico" id="Icon%s" />', $ThisFile['Icon'], $this->FE['theme'], $ThisFile['FilenameID']);
         }
-        if ($ThisFile['Directory'] && !$this->isDirEmpty($this->FE['basepath'] . $ThisFile['Filename'])) {
+        if ($ThisFile['Directory'] && \is_readable($this->FE['basepath'] . $ThisFile['Filename']) && !$this->isDirEmpty($this->FE['basepath'] . $ThisFile['Filename'])) {
             $ThisFile['DirLinkOpen'] = '<a href="?cidram-page=file-manager&basepath=' . $this->canonical($this->FE['basepath'] . $ThisFile['Filename'] . '/') . '">';
             $ThisFile['DirLinkClose'] = '</a>';
         } else {
@@ -322,7 +326,7 @@ if (!$this->FE['ASYNC']) {
     echo $this->FE['state_msg'];
 } elseif (isset($FMData['filename'], $FMData['do_action']) && $FMData['do_action'] === 'delete-file') {
     if (\is_dir($this->FE['basepath'] . $FMData['filename'])) {
-        if ($this->isDirEmpty($this->FE['basepath'] . $FMData['filename']) && \rmdir($this->FE['basepath'] . $FMData['filename'])) {
+        if (\is_readable($this->FE['basepath'] . $FMData['filename']) && $this->isDirEmpty($this->FE['basepath'] . $FMData['filename']) && \rmdir($this->FE['basepath'] . $FMData['filename'])) {
             $this->FE['state_msg'] = 'OK';
         } else {
             $this->FE['state_msg'] = $this->L10N->getString('response.Failed to delete');

@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v4/vault/signatures/ipv6_isps.dat
 
-# Version: 2026.146.0
-# Last modified: 2026.05.27
+# Version: 2026.176.0
+# Last modified: 2026.06.26
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -211,8 +211,8 @@ Tag: Atria Convergence
 # limited ADSL connectivity also provided. A significant source of spam here,
 # caught trying to hack honeypots, brute-force, SSH, and webapp attacks, and
 # unauthorised WordPress vulnerability scanners detected from here.
-# Stop Forum Spam (SFS) listings: 294,072 (AS16276).
-# Updated: 2021.01.27 / Checked: 2026.03.23
+# Stop Forum Spam (SFS) listings: 152,078 (AS16276).
+# Updated: 2021.01.27 / Checked: 2026.06.24
 
 2607:5300::/32 Run bypasses.php
 Origin: CA
@@ -377,20 +377,6 @@ Tag: PT Telekomunikasi Indonesia
 Origin: BR
 Profile: Domestic ISP
 Tag: Click Fibra
-
-
-# ASN 9329 ("Sri Lanka Telecom Internet").
-# Sri Lankan telco. Brute-force, SSH, SQLi, and webapp attacks, port scans,
-# hacking, and spam detected from here.
-# Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 1,431.
-# Updated: 2025.06.26
-
-2402:d000:810c:3c5d::/64 Deny Spam
-2402:d000:810c:6b36::/64 Deny Spam
-Origin: LK
-Profile: Domestic ISP;Mobile ISP;Multiplay
-Tag: Sri Lanka Telecom
 
 
 # ASNs 16135, 34984, 205570 ("TURKCELL ILETISIM HIZMETLERI A.S").

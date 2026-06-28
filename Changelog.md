@@ -583,4 +583,5 @@
 #### Other changes.
 - [2026.06.20]: Updated the flags CSS.
 - [2026.06.22]: Slightly improved the file manager's filetype detection.
+- [2026.06.28]: Verification updated.
 - *Plus all the regular signature updates.*

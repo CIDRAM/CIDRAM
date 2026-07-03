@@ -650,13 +650,13 @@ Common Classes Package:
    Checksum: "d3a61a0078178d30acd1415e6e5a71afa03d9952b0a41b5c75b4c342320e571b:61106"
 IPv4:
  False Positive Risk: "Medium"
- Version: "2026.176.0"
+ Version: "2026.183.0"
  Dependencies:
   Bypasses: ">=2025.348"
  Files:
   signatures/ipv4.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/signatures/ipv4.dat"
-   Checksum: "133db7ee0c850a3fdde4f647089848e2727bfd0d068dbc67a7d3841186242173:2021019"
+   Checksum: "eb2d15d163cad4849457712b11215a93df4b1a36207059dfccc660250a99f33f:2019275"
    Used with: "ipv4"
 IPv4-Bogons:
  False Positive Risk: "Low"
@@ -668,21 +668,21 @@ IPv4-Bogons:
    Used with: "ipv4"
 IPv4-ISPs:
  False Positive Risk: "Medium"
- Version: "2026.176.0"
+ Version: "2026.183.0"
  Dependencies:
   Bypasses: ">=2025.225"
  Files:
   signatures/ipv4_isps.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/signatures/ipv4_isps.dat"
-   Checksum: "d7211df55f38790cda43d3b63b39f91a68742f7d18aad6456499c4dd9be63c62:786034"
+   Checksum: "3afc03ed90c3ae60b12855ee703b710ff02d78becf11c22759b7e3c2634a0520:781818"
    Used with: "ipv4"
 IPv4-Nonblocking:
  False Positive Risk: "Low"
- Version: "2025.361.0"
+ Version: "2026.182.0"
  Files:
   signatures/ipv4_nonblocking.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/signatures/ipv4_nonblocking.dat"
-   Checksum: "37b13378d2036b7296cea3ac7ff8b71127224bfaef2d80ba5a5468d446536d1e:592"
+   Checksum: "52109d65d2ccfe7df4bd5c0f484ad3bd93e73e4c13e4a97e79af94c507022455:5598"
    Used with: "ipv4"
 IPv4-Other:
  False Positive Risk: "Medium"
@@ -694,13 +694,13 @@ IPv4-Other:
    Used with: "ipv4"
 IPv6:
  False Positive Risk: "Low"
- Version: "2026.176.0"
+ Version: "2026.183.0"
  Dependencies:
   Bypasses: ">=2025.348"
  Files:
   signatures/ipv6.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/signatures/ipv6.dat"
-   Checksum: "adba8f3e8cf652fe7e84da1db1f8f14cff464862a25b6c4fe46634b46a7a39e2:588113"
+   Checksum: "02863117b9e2cc1d4e903554eb7321bd6c78c9b2819014b198ebdcc2a782fd7c:587663"
    Used with: "ipv6"
 IPv6-Bogons:
  False Positive Risk: "Low"
@@ -712,21 +712,21 @@ IPv6-Bogons:
    Used with: "ipv6"
 IPv6-ISPs:
  False Positive Risk: "Medium"
- Version: "2026.176.0"
+ Version: "2026.183.0"
  Dependencies:
   Bypasses: ">=2025.225"
  Files:
   signatures/ipv6_isps.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/signatures/ipv6_isps.dat"
-   Checksum: "1a476b62adfecf5d4135a2d99a7fbc3ca2ab4f4ed94f2a68588c1a889dc000ae:17375"
+   Checksum: "7e18a12e4e5eff0e53dffeec0e98bbf0491919bdcfbc9c2afe7fc772a752cc4d:16689"
    Used with: "ipv6"
 IPv6-Nonblocking:
  False Positive Risk: "Low"
- Version: "2025.361.0"
+ Version: "2026.182.0"
  Files:
   signatures/ipv6_nonblocking.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/signatures/ipv6_nonblocking.dat"
-   Checksum: "4717668cf4c6cd9e2b9f40f595515722c320406df64bb10c9cd4e2273af9492c:716"
+   Checksum: "4b74fdedd06ac33bba39311018e00dd049690a7921585181df332f996a1c16d2:581"
    Used with: "ipv6"
 IPv6-Other:
  False Positive Risk: "Low"

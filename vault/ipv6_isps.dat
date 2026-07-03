@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v4/vault/signatures/ipv6_isps.dat
 
-# Version: 2026.176.0
-# Last modified: 2026.06.26
+# Version: 2026.183.0
+# Last modified: 2026.07.03
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -314,25 +314,6 @@ Profile: Domestic ISP;Infrastructure/Transit;Multiplay
 Tag: CFPT
 
 
-# ASNs 7643, 45899, 135905, 135967 ("VietNam Post and Telecom Corporation").
-# A *major* Vietnamese domestic ISP, but also a significant source of spam,
-# hack attempts, probing, etc. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 8 (AS7643), 24,690 (AS45899),
-# 663 (AS135905), 108 (AS135967).
-# Updated: 2025.05.20
-
-2001:ee0:4776:aa70::/64 Deny Spam
-2001:ee0:48ed:ebc0::/64 Deny Spam
-2001:ee0:4a48:29b0::/64 Deny Spam
-2001:ee0:4a48:4d50::/64 Deny Spam
-2001:ee0:4a49:c5f0::/64 Deny Spam
-2001:ee0:4a49:eea0::/64 Deny Spam
-2001:ee0:4a5e:2760::/64 Deny Spam
-Origin: VN
-Profile: Domestic ISP;Infrastructure/Transit;Tor endpoints here
-Tag: VNPT Corp
-
-
 # ASNs 4224, 60729 ("The Calyx Institute", "Zwiebelfreunde e.V").
 # Offers primarily anonymous mobile internet, Tor proxy services, and internet
 # rerouting services, among various related cloud services. Brute-force, SSH,
@@ -355,8 +336,8 @@ Tag: Calyx/Zwiebelfreunde
 # ASN 7713 ("PT Telekomunikasi Indonesia").
 # Indonesian domestic ISP. Brute-force, SSH, and webapp attacks, hacking, and
 # spam detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 1,844.
-# Updated: 2025.05.27
+# Stop Forum Spam (SFS) listings: 995.
+# Updated: 2026.05.08
 
 2001:448a:50a0:678a::/64 Deny Spam
 2001:448a:50a0:8008::/64 Deny Spam

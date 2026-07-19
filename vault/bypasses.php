@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Default signature bypasses (last modified: 2026.02.14).
+ * This file: Default signature bypasses (last modified: 2026.07.19).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -175,6 +175,15 @@ $CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [], int
         ) {
             return;
         }
+
+        /** Jetpack bypass 2. */
+        if (
+            $CIDRAM['Request']->inCsv('Jetpack', $CIDRAM['Config']['bypasses']['used']) &&
+            $CIDRAM['BlockInfo']['UA'] === 'Jetpack by WordPress.com' &&
+            preg_match('~(?:^|[\\\\/?])rest_route=~i', $CIDRAM['BlockInfo']['rURI'])
+        ) {
+            return;
+        }
     }
 
     /** Azure bypasses. */
@@ -274,7 +283,7 @@ $CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [], int
             return;
         }
 
-        /** Jetpack bypass. */
+        /** Jetpack bypass 1. */
         if (
             $CIDRAM['Request']->inCsv('Jetpack', $CIDRAM['Config']['bypasses']['used']) &&
             preg_match('~^(?:jetpack|photon/)~', $CIDRAM['BlockInfo']['UALC'])

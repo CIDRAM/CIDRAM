@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Default signature bypasses (last modified: 2026.02.14).
+ * This file: Default signature bypasses (last modified: 2026.07.19).
  */
 
 /** Prevents execution from outside of the checkFactors method. */
@@ -35,7 +35,7 @@ $this->CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [
         return;
     }
 
-    $Bypasses = array_flip(explode("\n", $this->Configuration['bypasses']['used']));
+    $Bypasses = \array_flip(\explode("\n", $this->Configuration['bypasses']['used']));
 
     /**
      * OVH rules (determine which directive the signatures should fall under,
@@ -49,7 +49,7 @@ $this->CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [
         }
 
         /** ADSL hostnames (should fall under "spam" directive, since not a cloud service). */
-        if (preg_match('~(?:dsl\.ovh|ovhtelecom)\.fr$~i', $this->CIDRAM['Hostname'])) {
+        if (\preg_match('~(?:dsl\.ovh|ovhtelecom)\.fr$~i', $this->CIDRAM['Hostname'])) {
             /** Return early if spam signatures aren't set to be blocked. */
             if (!isset($this->Shorthand['Spam:Block'])) {
                 return;
@@ -106,12 +106,12 @@ $this->CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [
          * AmazonAdBot bypass.
          * @link https://github.com/CIDRAM/CIDRAM/issues/260
          */
-        if (isset($Bypasses['AmazonAdBot']) && strpos($this->BlockInfo['UALC'], 'amazonadbot/') !== false) {
+        if (isset($Bypasses['AmazonAdBot']) && \strpos($this->BlockInfo['UALC'], 'amazonadbot/') !== false) {
             return;
         }
 
         /** DuckDuckGo bypass. */
-        if (isset($Bypasses['DuckDuckBot']) && preg_match('~duckduck(?:go-favicons-)?bot~', $this->BlockInfo['UALC'])) {
+        if (isset($Bypasses['DuckDuckBot']) && \preg_match('~duckduck(?:go-favicons-)?bot~', $this->BlockInfo['UALC'])) {
             return 4;
         }
 
@@ -119,7 +119,7 @@ $this->CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [
          * Embedly bypass.
          * @link https://github.com/CIDRAM/CIDRAM/issues/80
          */
-        if (isset($Bypasses['Embedly']) && strpos($this->BlockInfo['UALC'], 'embedly') !== false) {
+        if (isset($Bypasses['Embedly']) && \strpos($this->BlockInfo['UALC'], 'embedly') !== false) {
             return;
         }
 
@@ -127,7 +127,7 @@ $this->CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [
          * Feedspot bypass.
          * @link https://udger.com/resources/ua-list/bot-detail?bot=Feedspotbot
          */
-        if (isset($Bypasses['Feedspot']) && strpos($this->BlockInfo['UA'], '+https://www.feedspot.com/fs/fetcher') !== false) {
+        if (isset($Bypasses['Feedspot']) && \strpos($this->BlockInfo['UA'], '+https://www.feedspot.com/fs/fetcher') !== false) {
             return;
         }
 
@@ -135,7 +135,7 @@ $this->CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [
          * Pinterest bypass.
          * @link https://github.com/CIDRAM/CIDRAM/issues/253
          */
-        if (isset($Bypasses['Pinterest']) && strpos($this->BlockInfo['UALC'], 'pinterest') !== false) {
+        if (isset($Bypasses['Pinterest']) && \strpos($this->BlockInfo['UALC'], 'pinterest') !== false) {
             return;
         }
 
@@ -143,7 +143,7 @@ $this->CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [
          * Redditbot bypass.
          * @link https://github.com/CIDRAM/CIDRAM/issues/243
          */
-        if (isset($Bypasses['Redditbot']) && strpos($this->BlockInfo['UALC'], 'redditbot/') !== false) {
+        if (isset($Bypasses['Redditbot']) && \strpos($this->BlockInfo['UALC'], 'redditbot/') !== false) {
             return;
         }
 
@@ -151,7 +151,12 @@ $this->CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [
          * Snapchat bypass.
          * @link https://github.com/CIDRAM/CIDRAM/issues/422
          */
-        if (isset($Bypasses['Snapchat']) && preg_match('~developers\.snap\.com/robots$~', $this->BlockInfo['UALC'])) {
+        if (isset($Bypasses['Snapchat']) && \preg_match('~developers\.snap\.com/robots$~', $this->BlockInfo['UALC'])) {
+            return;
+        }
+
+        /** Jetpack bypass 2. */
+        if (isset($Bypasses['Jetpack']) && $this->BlockInfo['UA'] === 'Jetpack by WordPress.com' && \preg_match('~(?:^|[\\\\/?])rest_route=~i', $this->BlockInfo['rURI'])) {
             return;
         }
     }
@@ -167,8 +172,8 @@ $this->CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [
                 $this->CIDRAM['Hostname'] = $this->dnsReverse($this->BlockInfo['IPAddr']);
             }
             if (
-                preg_match('~^msnbot-\d+-\d+-\d+-\d+\.search\.msn\.com$~i', $this->CIDRAM['Hostname']) ||
-                preg_match('~(?:msn|bing)bot|bingpreview~', $this->BlockInfo['UALC'])
+                \preg_match('~^msnbot-\d+-\d+-\d+-\d+\.search\.msn\.com$~i', $this->CIDRAM['Hostname']) ||
+                \preg_match('~(?:msn|bing)bot|bingpreview~', $this->BlockInfo['UALC'])
             ) {
                 $this->addProfileEntry('Bypass flagged');
                 $this->CIDRAM['Flag-Bypass-Bingbot-Check'] = true;
@@ -180,7 +185,7 @@ $this->CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [
          * DuckDuckGo bypass.
          * @link https://duckduckgo.com/duckduckbot
          */
-        if (isset($Bypasses['DuckDuckBot']) && preg_match('~duckduck(?:go-favicons-)?bot~', $this->BlockInfo['UALC'])) {
+        if (isset($Bypasses['DuckDuckBot']) && \preg_match('~duckduck(?:go-favicons-)?bot~', $this->BlockInfo['UALC'])) {
             return 4;
         }
     }
@@ -192,7 +197,7 @@ $this->CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [
             if (empty($this->CIDRAM['Hostname'])) {
                 $this->CIDRAM['Hostname'] = $this->dnsReverse($this->BlockInfo['IPAddr']);
             }
-            if (preg_match('~(?:^|\.)google(?:bot)?\.com$~i', $this->CIDRAM['Hostname'])) {
+            if (\preg_match('~(?:^|\.)google(?:bot)?\.com$~i', $this->CIDRAM['Hostname'])) {
                 return 2;
             }
         }
@@ -202,7 +207,7 @@ $this->CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [
             if (empty($this->CIDRAM['Hostname'])) {
                 $this->CIDRAM['Hostname'] = $this->dnsReverse($this->BlockInfo['IPAddr']);
             }
-            if (preg_match('~(?:^|\.)googlefiber\.net$~i', $this->CIDRAM['Hostname'])) {
+            if (\preg_match('~(?:^|\.)googlefiber\.net$~i', $this->CIDRAM['Hostname'])) {
                 return 2;
             }
         }
@@ -219,8 +224,8 @@ $this->CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [
                 $this->CIDRAM['Hostname'] = $this->dnsReverse($this->BlockInfo['IPAddr']);
             }
             if (
-                preg_match('~(?:^|\.)(?:aspiegel|petalsearch)\.com$~i', $this->CIDRAM['Hostname']) ||
-                strpos($this->BlockInfo['UALC'], 'petalbot') !== false
+                \preg_match('~(?:^|\.)(?:aspiegel|petalsearch)\.com$~i', $this->CIDRAM['Hostname']) ||
+                \strpos($this->BlockInfo['UALC'], 'petalbot') !== false
             ) {
                 return 4;
             }
@@ -233,12 +238,12 @@ $this->CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [
      */
     if ($Tag === 'Automattic' || $Tag === 'SingleHop, Inc') {
         /** Feedbot bypass. */
-        if (isset($Bypasses['Feedbot']) && strpos($this->BlockInfo['UALC'], 'wp.com feedbot/1.0 (+https://wp.com)') !== false) {
+        if (isset($Bypasses['Feedbot']) && \strpos($this->BlockInfo['UALC'], 'wp.com feedbot/1.0 (+https://wp.com)') !== false) {
             return;
         }
 
-        /** Jetpack bypass. */
-        if (isset($Bypasses['Jetpack']) && preg_match('~^(?:jetpack|photon/)~', $this->BlockInfo['UALC'])) {
+        /** Jetpack bypass 1. */
+        if (isset($Bypasses['Jetpack']) && \preg_match('~^(?:jetpack|photon/)~', $this->BlockInfo['UALC'])) {
             return;
         }
     }
@@ -253,7 +258,7 @@ $this->CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [
         if (empty($this->CIDRAM['Hostname'])) {
             $this->CIDRAM['Hostname'] = $this->dnsReverse($this->BlockInfo['IPAddr']);
         }
-        if (preg_match('~(?:^|\.)yandex\.(?:com|net|ru)$~i', $this->CIDRAM['Hostname']) && strpos($this->BlockInfo['UALC'], 'yandex') !== false) {
+        if (\preg_match('~(?:^|\.)yandex\.(?:com|net|ru)$~i', $this->CIDRAM['Hostname']) && \strpos($this->BlockInfo['UALC'], 'yandex') !== false) {
             return;
         }
     }
@@ -263,7 +268,7 @@ $this->CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [
         if (empty($this->CIDRAM['Hostname'])) {
             $this->CIDRAM['Hostname'] = $this->dnsReverse($this->BlockInfo['IPAddr']);
         }
-        if (preg_match('~(?:^|\.)baidu\.(?:com|jp)$~i', $this->CIDRAM['Hostname']) && strpos($this->BlockInfo['UALC'], 'baiduspider') !== false) {
+        if (\preg_match('~(?:^|\.)baidu\.(?:com|jp)$~i', $this->CIDRAM['Hostname']) && \strpos($this->BlockInfo['UALC'], 'baiduspider') !== false) {
             return;
         }
     }
@@ -273,7 +278,7 @@ $this->CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [
         if (empty($this->CIDRAM['Hostname'])) {
             $this->CIDRAM['Hostname'] = $this->dnsReverse($this->BlockInfo['IPAddr']);
         }
-        if (preg_match('~(?:^|\.)sogou\.com$~i', $this->CIDRAM['Hostname']) && strpos($this->BlockInfo['UALC'], 'sogou') !== false) {
+        if (\preg_match('~(?:^|\.)sogou\.com$~i', $this->CIDRAM['Hostname']) && \strpos($this->BlockInfo['UALC'], 'sogou') !== false) {
             return;
         }
     }
@@ -283,7 +288,7 @@ $this->CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [
      * @link https://github.com/CIDRAM/CIDRAM/discussions/654
      */
     if ($Tag === 'Cloudflare, Inc') {
-        if (isset($Bypasses['iCloud'], $this->BlockInfo['UA']) && preg_match('%^(?=.*iPhone[; ])(?=.*Safari\/).*$%', $this->BlockInfo['UA'])) {
+        if (isset($Bypasses['iCloud'], $this->BlockInfo['UA']) && \preg_match('%^(?=.*iPhone[; ])(?=.*Safari\/).*$%', $this->BlockInfo['UA'])) {
             return;
         }
     }

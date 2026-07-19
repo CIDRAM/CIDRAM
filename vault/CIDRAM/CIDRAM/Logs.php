@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used by the logs page (last modified: 2026.06.10).
+ * This file: Methods used by the logs page (last modified: 2026.07.19).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -179,7 +179,7 @@ trait Logs
                 foreach ($Parts[1] as $ThisPart) {
                     $Section = \str_replace(
                         '[' . $ThisPart . ']',
-                        sprintf($FFormat, $this->paginationRemoveFrom($BlockLink), $this->preparePartForSearchLink($ThisPart), $ThisPart),
+                        \sprintf($FFormat, $this->paginationRemoveFrom($BlockLink), $this->preparePartForSearchLink($ThisPart), $ThisPart),
                         $Section
                     );
                 }

@@ -562,4 +562,5 @@
 #### Other changes.
 - [2026.06.20]: Updated the flags CSS.
 - [2026.06.28]: Verification updated.
+- [2026.07.19]: Default signature bypasses updated.
 - *Plus all the regular signature updates.*

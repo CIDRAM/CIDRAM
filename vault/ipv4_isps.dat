@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v4/vault/signatures/ipv4_isps.dat
 
-# Version: 2026.202.0
-# Last modified: 2026.07.22
+# Version: 2026.204.0
+# Last modified: 2026.07.24
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -22139,12 +22139,16 @@ Tag: EZECOM limited
 # ASN 208972 ("GIBIRNET ILETISIM HIZMETLERI SANAYI VE TICARET LIMITED SIRKETI").
 # Scrapers and spam detected from here. Hostname registered as localhost
 # detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 30.
-# Updated: 2025.08.03 / Checked: 2026.05.23
+# Stop Forum Spam (SFS) listings: 15.
+# Updated: 2026.07.24
 
+149.34.216.0/24 Deny Attacks
 149.86.139.0/24 Deny Attacks
+178.210.162.2/32 Deny Attacks
+178.210.162.13/32 Deny Attacks
+178.210.162.20/32 Deny Attacks
 Origin: TR
-Profile: Restricted/Unidentifiable
+Profile: Domestic ISP
 Tag: GIBIRNET ILETISIM
 
 
@@ -23463,8 +23467,8 @@ Tag: MobileOne Ltd
 # ASN 204457 ("Atlantis Telekomunikasyon Bilisim Hizmetleri San. Tic. Ltd").
 # Turkish domestic mobile ISP. Brute-force, SSH attacks, hacking, port scans,
 # and spam detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 19.
-# Updated: 2025.05.12 / Checked: 2026.05.27
+# Stop Forum Spam (SFS) listings: 16.
+# Updated: 2026.07.24
 
 94.103.124.0/24 Deny Attacks
 Origin: BG
@@ -23472,7 +23476,7 @@ Origin: BG
 45.94.7.0/24 Deny Attacks
 45.156.30.0/23 Deny Attacks
 185.248.12.0/22 Deny Attacks
-188.125.170.0/24 Deny Attacks
+188.125.168.0/22 Deny Attacks
 194.4.153.0/24 Deny Attacks
 213.134.12.0/24 Deny Attacks
 Origin: TR
@@ -26478,6 +26482,18 @@ Tag: LLC VASH KREDIT BANK
 Origin: IN
 Profile: Domestic ISP
 Tag: Clear Beam Communications
+
+
+# ASN 58261 ("SALIHLI WIFI TELEKOMUNIKASYON ILETISIM HIZ SAN TIC LTD STI").
+# Turkey WiFi provider. Brute-force, webapp attacks, and hacking detected from
+# here. Entire network (which is just two /24s) affected.
+# Updated: 2026.07.24
+
+178.210.164.0/24 Deny Attacks
+185.218.141.0/24 Deny Attacks
+Origin: TR
+Profile: Domestic ISP
+Tag: SALIHLI WIFI
 
 
 # ---

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bot user agents module (last modified: 2026.06.22).
+ * This file: Bot user agents module (last modified: 2026.07.30).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -324,13 +324,13 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         'j(?:addjabot|anitorai|enniai|uliusai)|' .
         'k(?:afkai|angaroobot|eys-?so-?bot|eyworddensity)|' .
         'l(?:9explore|anguageai|ightrag|ink(?:check|fluence)|ocalrag)|' .
-        'm(?:amac(?:asper|yber)|bzuai|etaai|i[sx]tral|ozilla/0|ycentralai)|' .
+        'm(?:amac(?:asper|yber)|bzuai|etaai|i[sx]tral|odel[_-]?training|ozilla/0|ycentralai)|' .
         'n(?:etestate|injaai|ovaact)|' .
-        'o(?:mgili|rbbot)|' .
-        'p(?:angubot|anscient|erplexity|hindbot|hxbot|lease_?block|oseidon|roximic|ublicwebcrawler|ythonai)|' .
+        'o(?:mgili|pen(?:agi|bot|interpreter|pi|router|textai)|rbbot)|' .
+        'p(?:angubot|anscient|erflexity|erplexity|hindbot|hxbot|lease_?block|oseidon|roximic|ublicwebcrawler|ythonai)|' .
         'q(?:opywriter|ualifiedbot|uillbot)|' .
         'r(?:ag(?:[-_]|agent|azure|chat|data|is|pipe|search|with)|esearch.?crawler)|' .
-        's(?:aplingai|bintuition|crap[ey]|idetrade|implifiedai|p(?:hi|y)der|torm-?crawler|ummalybot|urferai)|' .
+        's(?:aplingai|bintuition|crap[ey]|idetrade|implifiedai|p(?:hi|y)der|tablediffusion|tealth|torm-?crawler|ummalybot|urferai)|' .
         't(?:erracotta|est[-_]?(?:bot|phase)|heknowledgeai|hesis-?research-?bot|hink(?:bot|chaos)|impi|iny-?(?:bot|test)|rafilatura)|' .
         'v(?:elenpublic|enuschub|idnami|isionrag)|' .
         'w(?:ardbot|ebsite[-_]?scraper|ebzio|hatstuffwherebot|inhttp|ordai)|' .
@@ -340,7 +340,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         $UANoSpace
     ), 'Scraper UA')) {
         $this->CIDRAM['Tracking options override'] = 'extended';
-    } // 2023.11.17 mod 2026.06.22
+    } // 2023.11.17 mod 2026.07.30
 
     /**
      * @link https://github.com/CIDRAM/CIDRAM/issues/651

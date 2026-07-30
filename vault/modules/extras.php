@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2026.06.15).
+ * This file: Optional security extras module (last modified: 2026.07.30).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -134,18 +134,22 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
                 'v(?:endor/bin/loader|zlateam)|' .
                 'w(?:[0o]rm\d+|0rdpr3ssnew|alker-nva|ebshell-[a-z\d]+|idgets-nva|idwsisw|loymzuk|orksec|p_wrong_datlib|(?:p-w)?s[aou](?:yanz)?[\d.]*(?:[\da-z]{4,})?|wdv)|' .
                 'wp[-_](?:2019|22|(?:admin(?:/images)?|content|css(?:/colors)?|includes(?:/ixr|/customize|/pomo)?|js(?:/widgets)?|network)/(?:[^?]*wp-login|0|aaa|cof|css/(?:about|acces|bgfbmo|colors/blue/file|dist/niil|gecko|ok)|dropdown|fgertreyersd|id3/about|(?:images|widgets)/include|includes/lint-branch|install|js/(?:codemirror/\d+|jcrop/jcrop|privacy-tools\.min)|mah|maint/(?:aaa|fie|fw|lint-branch|lmfi2)|(?:random_compat/|requests/)?class(?:_api|-wp-page-[\da-z]{5,})|repeater|rk2|simple|text/(?:about|diff/renderer/last)|themes/hello-element/footer|uploads/(?:admin|error_log)|vuln)|conflg|content/plugins/(?:about|backup-backup/includes/hro|cache/dropdown|contact-form-7/.+styles-rtl|contus-hd-flv-player/uploadvideo|(?:core-plugin/|wordpresscore/)?include|dzs-zoomsounds/savepng|fix/up|(?:view-more/)?ioxi|wp-automatic/inc/csv|wp-file-manager/lib/php/connector\.minimal|wp-content/uploads/.+)|filemanager|setups|sigunq|sts|p)|' .
-                'wp-(?:aa|beckup|configs|(?:content/uploads|includes/(?:customize|js))/(?:autoload_classmap|wp-stream)|l0gins?|mail\.php/wp-includes(?:/id3/[\da-z]+)?|mna|red|zett)|' .
+                'wp-(?:aa|beckup|configs|(?:content/uploads|includes/(?:customize|js))/(?:autoload_classmap|wp-stream)|god|l0gins?|mail\.php/wp-includes(?:/id3/[\da-z]+)?|mna|red|zett)|' .
                 'x(?:iaom|ichang/x|m(?:lrpcs|lrpz|rlpc)|s?hell|w|x{2,}|x*l(?:\d+|eet(?:mailer|-shell)?x?))|' .
                 'ya?nz|yyobang/mar|' .
                 'zone_hackbar(?:_beutify_other)?|' .
                 '(?:plugins|themes)/(?:ccx|ioptimization|yyobang)|' .
                 '版iisspy|大马|一句话(?:木马|扫描脚本程序)?' .
                 ')\.php[578]?(?:$|[/?])|' .
-                'funs\.php[578]?(?:$|[/?])~',
+                'funs\.php[578]?(?:$|[/?])|' .
+                '(?:^|[/?])(?:brutalshell|css/dmtixucz/golden-access|fierzashell\.html?|perl.alfa|rr\.php56|search/label/php-shells|wp-content/patior)(?:$|[/?])|' .
+                '(?:^|[/?])(?:moon\.php|ss\.php)\?(?:f_c|p)=|' .
+                '(?:^|[/?])(?:ani\.htm|dialoghandler|shell|spy|telerik\.web\.ui\.dialoghandler)\.aspx?(?:$|[/?])|' .
+                '(?:^|[/?])(?:mek|veno|wp-ksv1i|wp-room)\.ph(?:$|[/?])|' .
+                '(?:^|[/?])(?:@|\d+|anu|by(?:pass)?|ee|ez0y|fx?|gel[4a]y|lloh|mini(?:shell)?|pas|priv8|wp-about|wso|xl[3e]{2}t(?:[_-]shell)?)\.phtml(?:$|[/?])|' .
+                '(?:^|[/?])(?:cgi(?:shell)?|domaine|perlcgi|shell|symlink|xx)\.pl(?:$|[/?])~',
                 $LCNrURI
-            ), 'Probing for webshells/backdoors') || // 2023.08.18 mod 2026.03.11
-            $this->trigger(\preg_match('~(?:^|[/?])(?:brutalshell|css/dmtixucz/golden-access|fierzashell\.html?|perl.alfa|search/label/php-shells|wp-content/patior|wp-ksv1i\.ph)(?:$|[/?])~', $LCNrURI), 'Probing for webshells/backdoors') || // 2025.05.12 mod 2025.12.15
-            $this->trigger(\preg_match('~(?:^|[/?])(?:moon\.php|ss\.php)\?(?:f_c|p)=~', $LCNrURI), 'Probing for webshells/backdoors') // 2025.08.07
+            ), 'Probing for webshells/backdoors') // 2023.08.18 mod 2026.07.30
         ) {
             $this->Reporter->report([15, 20, 21], ['Caught probing for webshells/backdoors. Host might be compromised.'], $this->BlockInfo['IPAddr']);
         } elseif ($this->trigger(\preg_match('~(?:^|[/?])(?:\.well-known(?:new\d*|old\d*)|[1-9cefimnptuwx]{27}\.jsp|alfa_data/alfacgiapi|alfa-?rexhp\d\.p|(?:send-)?ses\.sh)(?:$|[/?])~', $LCNrURI), 'Probing for webshells/backdoors')) { // 2024.02.18 mod 2025.07.06
@@ -155,6 +159,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         /** Probing for common vulnerabilities and exploits. */
         if (
             $this->trigger(\preg_match('~(?:^|[/?])Telerik\.Web\.UI\.WebResource\.axd(?:$|[/?])~i', $LCNrURI), $Exploit = 'CVE-2019-18935') || // 2024.10.30 mod 2025.08.07
+            $this->trigger(\preg_match('~(?:^|[/?])\$\$\$call\$\$\$/wizard(?:$|[/?])~', $LCNrURI), $Exploit = 'CVE-2025-48757') || // 2027.06.07
             $this->trigger(\preg_match('~(?:^|[/?])_ignition/execute-solution(?:$|[/?])~i', $LCNrURI), $Exploit = 'CVE-2021-3129') || // 2026.03.20
             $this->trigger(\preg_match('~(?:^|[/?])assets/images/accesson\.php[57]?(?:$|[/?])~', $LCNrURI), $Exploit = 'CVE-2025-54068') || // 2026.03.11
             $this->trigger(\preg_match('~(?:^|[/?])cgi-bin/php5(?:$|[/?])~i', $LCNrURI), $Exploit = 'CVE-2012-1823') || // 2026.03.19
@@ -324,9 +329,9 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         } // 2025.08.02
 
         /** Probing for env file. */
-        if ($this->trigger(\preg_match('~(?:^|[/?=])(?:(?:config|secrets?|server)?\.env|env\.backup)(?:\.[\da-z]+)*(?:$|[/?])~', $LCNrURI), 'Probing for env file')) {
+        if ($this->trigger(\preg_match('~(?:^|[/?=])(?:(?:config|secrets?|server)?\.env|env\.backup)(?:_copy)?\d*(?:\.[\da-z]+)*(?:$|[/?])~', $LCNrURI), 'Probing for env file')) {
             $this->Reporter->report([15, 21], ['Caught probing for env file.'], $this->BlockInfo['IPAddr']);
-        } // 2025.03.18 mod 2026.06.07
+        } // 2025.03.18 mod 2026.07.30
 
         /** Probing for unsecured configuration file. */
         if ($this->trigger(\preg_match('~(?:^|[/?])\.?config.ya?ml(?:$|[/?])~', $LCNrURI), 'Probing for unsecured configuration file')) {
@@ -456,9 +461,9 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         } // 2025.08.13
 
         /** Probing for exposed error logs. */
-        if ($this->trigger(\preg_match('~(?:^|[/?])(?:tmp/errors[._]log|php_error_log)(?:$|[/?])~', $LCNrURI), 'Probing for exposed error logs')) {
+        if ($this->trigger(\preg_match('~(?:^|[/?])(?:tmp/errors[._]log|php_error_log|var/log/error\.log)(?:$|[/?])~', $LCNrURI), 'Probing for exposed error logs')) {
             $this->Reporter->report([15, 21], ['Caught probing for exposed error logs.'], $this->BlockInfo['IPAddr']);
-        } // 2025.08.13
+        } // 2025.08.13 mod 2026.07.30
 
         /** Probing for exposed shell/bash configuration/setup files. */
         if ($this->trigger(\preg_match('~(?:^|[/?])config\.sh(?:$|[/?])~', $LCNrURI), 'Probing for exposed shell/bash configuration/setup files')) {
@@ -649,6 +654,16 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         if ($this->trigger(\preg_match('~(?:^|[/?])config/default\.json(?:$|[/?])~', $LCNrURI), 'Probing for exposed Node.js configuration')) {
             $this->Reporter->report([15, 21], ['Caught probing for exposed Node.js configuration.'], $this->BlockInfo['IPAddr']);
         } // 2026.06.12
+
+        /** Probing for exposed Symfony Web Profiler debug information. */
+        if ($this->trigger(\preg_match('~(?:^|[/?])_profiler/phpinfo(?:$|[/?])~', $LCNrURI), 'Probing for exposed Symfony Web Profiler debug information')) {
+            $this->Reporter->report([15, 21], ['Caught probing for exposed Symfony Web Profiler debug information.'], $this->BlockInfo['IPAddr']);
+        } // 2026.07.30
+
+        /** Probing for exposed Quarto Projects credentials. */
+        if ($this->trigger(\preg_match('~(?:^|[/?])_environment(?:$|[/?])~', $LCNrURI), 'Probing for exposed Quarto Projects credentials')) {
+            $this->Reporter->report([15, 21], ['Caught probing for exposed Quarto Projects credentials.'], $this->BlockInfo['IPAddr']);
+        } // 2026.07.30
     }
 
     /**

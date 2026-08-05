@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bot user agents module (last modified: 2026.07.30).
+ * This file: Bot user agents module (last modified: 2026.08.05).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -24,7 +24,12 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
      * UA-based signatures start from here (UA = User Agent).
      * Please report all false positives to https://github.com/CIDRAM/CIDRAM/issues
      */
-    if (!$this->BlockInfo['UA'] || $this->trigger(\strlen($this->BlockInfo['UA']) > 4096, 'Bad UA', 'User agent string is too long!')) {
+    if ($this->BlockInfo['UA'] === '') {
+        return;
+    }
+    if ($this->trigger(\strlen($this->BlockInfo['UA']) > 4096, 'Bad UA', 'User agent string is too long')) {
+        $this->Reporter->report([15, 19, 20, 21], ['User agent header flooding detected.'], $this->BlockInfo['IPAddr']);
+        $this->enactOptions('', ['ForciblyDisableAll' => true]);
         return;
     }
 
@@ -58,16 +63,9 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     $this->trigger(\strpos($UANoSpace, '_contents') !== false, 'UA command injection'); // 2017.01.02
 
     $this->trigger(\preg_match('/%(?:0[0-8bcef]|1)/i', $this->BlockInfo['UA']), 'Non-printable characters in UA'); // 2017.01.02
+    $this->trigger(\preg_match('/(?:<(\?|body|i?frame|object|script)|(body|i?frame|object|script)>)/', $UANoSpace), 'UA script injection'); // 2017.01.08
 
-    $this->trigger(\preg_match(
-        '/(?:<(\?|body|i?frame|object|script)|(body|i?frame|object|script)>)/',
-        $UANoSpace
-    ), 'UA script injection'); // 2017.01.08
-
-    if ($this->trigger(\preg_match(
-        '/(?:globals|_(cookie|env|files|get|post|request|se(rver|ssion)))\[/',
-        $UANoSpace
-    ), 'UA global variable hack')) {
+    if ($this->trigger(\preg_match('/(?:globals|_(cookie|env|files|get|post|request|se(rver|ssion)))\[/', $UANoSpace), 'UA global variable hack')) {
         $this->Reporter->report([15], ['Globvar hack detected in user agent.'], $this->BlockInfo['IPAddr']);
     } // 2017.01.13
 
@@ -312,7 +310,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     if ($this->trigger(\preg_match(
         '~^(?:curlmozilla|http_get)|\(gort\)|[-.]ai|2bone|80legs|' .
         'a(?:dbar|gent(?:3|api|ic|ql)|i.?(?:2|agent|article|assistant|bot|chat|content|detection|dungeon|hitbot|journalist|legion|matrix|rag|research|search|seocrawler|training|web|writer)|liyun|lphaai|nalyzerai|ndibot|nonymous-?(?:ai|coward)|riaai|skai|uto(?:nomous)?rag|wario|xios)|' .
-        'b(?:anana-?bot|asicrag|edrockbot|ot-?test|rands-?bot|rightbot|rings_?you|ytespider)|' .
+        'b(?:aby(?:cat)?agi|anana-?bot|asicrag|edrockbot|ot-?test|rands-?bot|rightbot|rings_?you|ytespider)|' .
         'c(?:arynai|asperbot|cbot|harstar|hinaclaw|lark-?crawler|ognitive|ohere-|ommoncrawl|ontentsamurai|onversionai|opyai|orrectiverag|rawl[4q]ai|rawler4j|rewai|rushonai)|' .
         'd(?:atenbank|eep-?(?:ai|crawl|index|l|mind|(?:re)?search|seek)|iffbot|oubaoai)|' .
         'echobo[tx]|' .
@@ -323,14 +321,15 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         'j(?:addjabot|anitorai|enniai|uliusai)|' .
         'k(?:afkai|angaroobot|eys-?so-?bot|eyworddensity)|' .
         'l(?:9explore|anguageai|ightrag|ink(?:check|fluence)|ocalrag)|' .
-        'm(?:amac(?:asper|yber)|bzuai|etaai|i[sx]tral|odel[_-]?training|ozilla/0|ycentralai)|' .
+        'm(?:amac(?:asper|yber)|bzuai|etaai|idjourney|iniagi|i[sx]tral|odel[_-]?training|ozilla/0|ycentralai)|' .
         'n(?:etestate|injaai|ovaact)|' .
         'o(?:mgili|pen(?:agi|bot|interpreter|pi|router|textai)|rbbot)|' .
-        'p(?:angubot|anscient|erflexity|erplexity|hindbot|hxbot|lease_?block|oseidon|roximic|ublicwebcrawler|ythonai)|' .
+        'p(?:angubot|anscient|araphraser|erflexity|erplexity|hindbot|hxbot|lease_?block|oseidon|roximic|ublicwebcrawler|ythonai)|' .
         'q(?:opywriter|ualifiedbot|uillbot)|' .
         'r(?:ag(?:[-_]|agent|azure|chat|data|is|pipe|search|with)|esearch.?crawler)|' .
-        's(?:aplingai|bintuition|crap[ey]|idetrade|implifiedai|p(?:hi|y)der|tablediffusion|tealth|torm-?crawler|ummalybot|urferai)|' .
-        't(?:erracotta|est[-_]?(?:bot|phase)|heknowledgeai|hesis-?research-?bot|hink(?:bot|chaos)|impi|iny-?(?:bot|test)|rafilatura)|' .
+        's(?:aplingai|bintuition|crap[ey]|idetrade|implifiedai|p(?:hi|y)der|pinbot|tability|tablediffusion|tealth|torm-?crawler|ummalybot|urferai)|' .
+        't(?:erracotta|est[-_]?(?:bot|phase)|heknowledgeai|hesis-?research-?bot|hink(?:bot|chaos)|impi|iny-?(?:bot|test)|rafilatura|urnitin|winagent)|' .
+        'u(?:agents|i-tars)|' .
         'v(?:elenpublic|enuschub|idnami|isionrag)|' .
         'w(?:ardbot|ebsite[-_]?scraper|ebzio|hatstuffwherebot|inhttp|ordai)|' .
         'x(?:ai|tractorpro)|' .
@@ -340,7 +339,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     ), 'Scraper UA')) {
         $this->CIDRAM['Tracking options override'] = 'extended';
         unset($this->CIDRAM['MarkForUseWithHCaptcha'], $this->CIDRAM['MarkForUseWithFriendlyCaptcha'], $this->CIDRAM['MarkForUseWithCloudflareTurnstile']);
-    } // 2023.11.17 mod 2026.07.30
+    } // 2023.11.17 mod 2026.08.05
 
     /**
      * @link https://github.com/CIDRAM/CIDRAM/issues/651
@@ -424,7 +423,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         } elseif (\strpos($this->BlockInfo['WhyReason'], 'Hack UA') !== false) {
             $this->Reporter->report([15, 19, 21], ['Hack identifier detected in user agent.'], $this->BlockInfo['IPAddr']);
         } elseif (\strpos($this->BlockInfo['WhyReason'], 'UASQLi') !== false) {
-            $this->Reporter->report([16], ['SQLi attempt detected in user agent.'], $this->BlockInfo['IPAddr']);
+            $this->Reporter->report([15, 16], ['SQLi attempt detected in user agent.'], $this->BlockInfo['IPAddr']);
         } elseif (\strpos($this->BlockInfo['WhyReason'], 'Probe UA') !== false) {
             $this->Reporter->report([19], ['Probe detected.'], $this->BlockInfo['IPAddr']);
         } elseif (\strpos($this->BlockInfo['WhyReason'], 'Bash/Shellshock UA') !== false) {
@@ -484,6 +483,20 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     if ($this->trigger(\strpos($UANoSpace, 'getodin.com') !== false, 'Unauthorised')) {
         $this->Reporter->report([15, 19, 23], ['Strange bot caught probing for vulnerable routers and webservices detected.'], $this->BlockInfo['IPAddr']);
     } // 2024.07.07
+
+    if ($this->trigger(\preg_match('~crusader[-_]?worker~', $UANoSpace), 'Brute-force hacktool')) {
+        $this->Reporter->report([15, 18, 19, 21], ['Brute-force hacktool detected.'], $this->BlockInfo['IPAddr']);
+        $this->CIDRAM['Tracking options override'] = 'extended';
+        $this->enactOptions('', ['ForciblyDisableAll' => true]);
+    } // 2026.08.05
+
+    if (
+        $this->trigger(\preg_match('~vuln[-_]?scanner/|2026-4020~i', $UANoSpace), $Exploit = 'CVE-2026-4020') || // 2026.08.05
+        $this->trigger(\preg_match('~wp2shell[-_]?check/~i', $UANoSpace), $Exploit = 'CVE-2026-60137/CVE-2026-63030') // 2026.08.05
+    ) {
+        $this->Reporter->report([15, 19, 21], ['Caught probing for ' . $Exploit . ' vulnerability.'], $this->BlockInfo['IPAddr']);
+        $this->enactOptions('', ['ForciblyDisableAll' => true]);
+    }
 };
 
 /** Execute closure. */

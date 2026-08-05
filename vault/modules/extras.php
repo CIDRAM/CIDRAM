@@ -142,14 +142,14 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
                 '版iisspy|大马|一句话(?:木马|扫描脚本程序)?' .
                 ')\.php[578]?(?:$|[/?])|' .
                 'funs\.php[578]?(?:$|[/?])|' .
-                '(?:^|[/?])(?:brutalshell|css/dmtixucz/golden-access|fierzashell\.html?|perl.alfa|rr\.php56|search/label/php-shells|wp-content/patior)(?:$|[/?])|' .
+                '(?:^|[/?])(?:brutalshell|css/dmtixucz/golden-access|fierzashell\.html?|perl.alfa|plugins/yfsmxkj|rr\.php56|search/label/php-shells|wp-content/patior)(?:$|[/?])|' .
                 '(?:^|[/?])(?:moon\.php|ss\.php)\?(?:f_c|p)=|' .
                 '(?:^|[/?])(?:ani\.htm|dialoghandler|shell|spy|telerik\.web\.ui\.dialoghandler)\.aspx?(?:$|[/?])|' .
                 '(?:^|[/?])(?:mek|veno|wp-ksv1i|wp-room)\.ph(?:$|[/?])|' .
                 '(?:^|[/?])(?:@|\d+|anu|by(?:pass)?|ee|ez0y|fx?|gel[4a]y|lloh|mini(?:shell)?|pas|priv8|wp-about|wso|xl[3e]{2}t(?:[_-]shell)?)\.phtml(?:$|[/?])|' .
                 '(?:^|[/?])(?:cgi(?:shell)?|domaine|perlcgi|shell|symlink|xx)\.pl(?:$|[/?])~',
                 $LCNrURI
-            ), 'Probing for webshells/backdoors') // 2023.08.18 mod 2026.07.30
+            ), 'Probing for webshells/backdoors') // 2023.08.18 mod 2026.08.05
         ) {
             $this->Reporter->report([15, 20, 21], ['Caught probing for webshells/backdoors. Host might be compromised.'], $this->BlockInfo['IPAddr']);
         } elseif ($this->trigger(\preg_match('~(?:^|[/?])(?:\.well-known(?:new\d*|old\d*)|[1-9cefimnptuwx]{27}\.jsp|alfa_data/alfacgiapi|alfa-?rexhp\d\.p|(?:send-)?ses\.sh)(?:$|[/?])~', $LCNrURI), 'Probing for webshells/backdoors')) { // 2024.02.18 mod 2025.07.06
@@ -168,13 +168,15 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $this->trigger(\preg_match('~(?:^|[/?])ecp/current/exporttool/microsoft.exchange.ediscovery.exporttool.application(?:$|[/?])~', $LCNrURI), $Exploit = 'CVE-2021-28481') || // 2025.07.17 mod 2025.08.07
             $this->trigger(\preg_match('~(?:^|[/?])elfinder/php/connector(?:\.minimal)?\.php[57]?(?:$|[/?])~', $LCNrURI), $Exploit = 'elFinder') || // 2025.07.07 mod 2025.11.06 (possible matches: CVE-2019-1010178, CVE-2020-25213, CVE-2020-35235, CVE-2021-32682)
             $this->trigger(\preg_match('~(?:^|[/?])fckeditor/editor/filemanager(?:$|[/?])~', $LCNrURI), $Exploit = 'FCKeditor') || // 2025.07.20 mod 2025.08.07
+            $this->trigger(\preg_match('~(?:^|[/?])inc/admin/phpinfo\.php(?:$|[/?])~i', $LCNrURI), $Exploit = 'CVE-2014-4942') || // 2026.08.05
             $this->trigger(\preg_match('~(?:^|[/?])includes/openflashchart/php-ofc-library/ofc_upload_image\.php[57]?(?:$|[/?])~', $LCNrURI), $Exploit = 'SA53428') || // 2025.07.10 mod 2025.08.07
             $this->trigger(\preg_match('~(?:^|[/?])ipfs/bafkreicyqcbhpicbos7ev4mrxofwqx6hvvge7pahpta6xuspr44crai5by(?:$|[/?])~i', $LCNrURI), $Exploit = 'CVE-2016-10563') || // 2025.11.13
             $this->trigger(\preg_match('~(?:^|[/?])library/openflashchart/php-ofc-library/ofc_upload_image\.php[57]?(?:$|[/?])~', $LCNrURI), $Exploit = 'ZSL-2013-5126') || // 2025.07.10 mod 2025.08.07
             $this->trigger(\preg_match('~(?:^|[/?])modules/mod_footer/tmpl$~i', $LCNrURI), $Exploit = 'CVE-2021-26035') || // 2026.03.20
             $this->trigger(\preg_match('~(?:^|[/?])modules/mod_simplefileuploadv1\.3/elements(?:$|[/?])~', $LCNrURI), $Exploit = 'CVE-2011-5148') || // 2025.07.20 mod 2025.08.07
             $this->trigger(\preg_match('~(?:^|[/?])tinymce/plugins/filemanager/dialog\.php[57]?(?:$|[/?])~', $LCNrURI), $Exploit = 'TinyMCE Filemanager') || // 2025.07.07 mod 2025.08.07
-            $this->trigger(\preg_match('~(?:^|[/?])util/php/eval-stdin\.php[57]?(?:$|[/?])~', $LCNrURI), $Exploit = 'CVE-2017-9841') // 2025.07.16 mod 2025.08.07
+            $this->trigger(\preg_match('~(?:^|[/?])util/php/eval-stdin\.php[57]?(?:$|[/?])~', $LCNrURI), $Exploit = 'CVE-2017-9841') || // 2025.07.16 mod 2025.08.07
+            $this->trigger(\preg_match('~(?:^|[/?])wp-json/gravitysmtp/v1/tests/mock-data\?page=gravitysmtp-settings~i', $LCNrURI), $Exploit = 'CVE-2026-4020') // 2026.08.05
         ) {
             $this->Reporter->report([15, 21], ['Caught probing for ' . $Exploit . ' vulnerability.'], $this->BlockInfo['IPAddr']);
         }
@@ -349,6 +351,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         $this->trigger(\preg_match('~(?:^|[/?])\.htaccess(?:$|[/?])~', $LCNrURI), 'Unauthorised'); // 2025.07.27 mod 2025.08.07
         $this->trigger(\preg_match('~(?:^|[/?])\.?(?:docker-compose(?:\.dev|\.prod(?:uction)?)?|gitlab-ci)\.yml(?:$|[/?])~', $LCNrURI), 'Unauthorised'); // 2025.07.27 mod 2025.08.10
         $this->trigger(\preg_match('~(?:^|[/?])phpunit/phpunit\.xsd(?:$|[/?])~', $LCNrURI), 'Unauthorised'); // 2025.07.16 mod 2025.08.07
+        $this->trigger(\preg_match('~(?:^|[/?])\.(?:bod/\.ll|tmb)(?:$|[/?])~', $LCNrURI), 'Unauthorised'); // 2026.08.05
 
         /** Probing for exposed Rails app secrets. */
         if ($this->trigger(\preg_match('~(?:^|[/?])secrets\.yml(?:$|[/?])~', $LCNrURI), 'Probing for exposed Rails app secrets')) {
@@ -664,6 +667,16 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         if ($this->trigger(\preg_match('~(?:^|[/?])_environment(?:$|[/?])~', $LCNrURI), 'Probing for exposed Quarto Projects credentials')) {
             $this->Reporter->report([15, 21], ['Caught probing for exposed Quarto Projects credentials.'], $this->BlockInfo['IPAddr']);
         } // 2026.07.30
+
+        /** Conditional to an empty user agent. */
+        if ($this->BlockInfo['UA'] === '') {
+            if ($this->trigger(\preg_match('~(?:^|[/?])wp-content/uploads(?:$|[/?])~', $LCNrURI), 'Caught scraping')) {
+                $this->Reporter->report([19], ['Caught scraping for WordPress user uploaded media.'], $this->BlockInfo['IPAddr']);
+            } // 2026.08.05
+            if ($this->trigger(\preg_match('~(?:^|[/?])(?:wp-admin/css/colors/blue|wp-includes/(?:assets|block-bindings|l10n|sodium_compat))(?:$|[/?])~', $LCNrURI), 'Suspected hack attempt')) {
+                $this->Reporter->report([15, 19], ['Suspected hack attempt detected.'], $this->BlockInfo['IPAddr']);
+            } // 2026.08.05
+        }
     }
 
     /**

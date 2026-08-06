@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bot user agents module (last modified: 2026.08.05).
+ * This file: Bot user agents module (last modified: 2026.08.06).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -491,7 +491,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     } // 2026.08.05
 
     if (
-        $this->trigger(\preg_match('~vuln[-_]?scanner/|2026-4020~i', $UANoSpace), $Exploit = 'CVE-2026-4020') || // 2026.08.05
+        (\strpos($this->BlockInfo['WhyReason'], 'CVE-2026-4020') === false && $this->trigger(\preg_match('~vuln[-_]?scanner/|2026-4020~i', $UANoSpace), $Exploit = 'CVE-2026-4020')) || // 2026.08.05 mod 2026.08.06
         $this->trigger(\preg_match('~wp2shell[-_]?check/~i', $UANoSpace), $Exploit = 'CVE-2026-60137/CVE-2026-63030') // 2026.08.05
     ) {
         $this->Reporter->report([15, 19, 21], ['Caught probing for ' . $Exploit . ' vulnerability.'], $this->BlockInfo['IPAddr']);

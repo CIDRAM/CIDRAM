@@ -635,7 +635,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         } // 2026.06.07 mod 2026.06.13
 
         /** Probing for exposed Google Cloud Platform credentials. */
-        if ($this->trigger(\preg_match('~(?:^|[/?])(?:application_default_credentials|gcp-credentials|(?:google-)?service[-_]?account(?:[-_]?(?:file|key))?|keyfile|sa(?:-private)?-key)\.json(?:$|[/?])~', $LCNrURI), 'Probing for exposed Google Cloud Platform credentials')) {
+        if ($this->trigger(\preg_match('~(?:^|[/?])(?:application_default_credentials|gcp-(?:credentials|service)|(?:google-)?service[-_]?account(?:[-_]?(?:file|key))?|keyfile|sa(?:-private)?-key)\.json(?:$|[/?])~', $LCNrURI), 'Probing for exposed Google Cloud Platform credentials')) {
             $this->Reporter->report([15, 21], ['Caught probing for exposed Google Cloud Platform credentials.'], $this->BlockInfo['IPAddr']);
         } // 2026.06.07 mod 2026.08.15
 
@@ -679,9 +679,9 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             if ($this->trigger(\preg_match('~(?:^|[/?])wp-content/uploads(?:$|[/?])~', $LCNrURI), 'Caught scraping')) {
                 $this->Reporter->report([19], ['Caught scraping for WordPress user uploaded media.'], $this->BlockInfo['IPAddr']);
             } // 2026.08.05
-            if ($this->trigger(\preg_match('~(?:^|[/?])(?:wp-admin/css/colors/blue|wp-includes/(?:assets|block-bindings|l10n|php-compat|sodium_compat))(?:$|[/?])~', $LCNrURI), 'Suspected hack attempt')) {
+            if ($this->trigger(\preg_match('~(?:^|[/?])(?:wp-admin/(?:css/colors/blue|network|options-privacy\.php)|wp-includes/(?:assets|block-bindings|l10n|php-compat|sodium_compat))(?:$|[/?])~', $LCNrURI), 'Suspected hack attempt')) {
                 $this->Reporter->report([15, 19], ['Suspected hack attempt detected.'], $this->BlockInfo['IPAddr']);
-            } // 2026.08.05 mod 2026.08.11
+            } // 2026.08.05 mod 2026.08.15
         }
 
         /** Probing for exposed GitHub workflows file. */

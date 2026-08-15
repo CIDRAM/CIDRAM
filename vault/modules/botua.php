@@ -496,6 +496,10 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     ) {
         $this->Reporter->report([15, 19, 21], ['Caught probing for ' . $Exploit . ' vulnerability.'], $this->BlockInfo['IPAddr']);
     }
+
+    if ($this->trigger(\preg_match('~authori[sz]ed[-_]?self[-_]?check|contact:local[-_]?admin~', $UANoSpace), 'Unauthorised')) {
+        $this->Reporter->report([19], ['Suspicious bot seen citing "authorized self-check" and "contact: local-admin" in its user agent (request was neither authorised nor initiated by the "local admin"). Implying that the one reading the logs should contact *themselves* for further information about said bot (and supposedly authorised by whom? said detail unclear): A harmless prank? A poor attempt to avoid scrutiny leading up to an attack or hack? No idea. Elicits doubt to its purpose and intent, in any case.'], $this->BlockInfo['IPAddr']);
+    } // 2025.08.15
 };
 
 /** Execute closure. */

@@ -1,8 +1,8 @@
 # IPv4 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v4/vault/signatures/ipv4.dat
 
-# Version: 2026.218.0
-# Last modified: 2026.08.07
+# Version: 2026.226.0
+# Last modified: 2026.08.15
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -20721,34 +20721,23 @@ Profile: Webhosting
 Tag: Transip B.V
 
 
-# ASN 207083 ("HostSlim BV").
-# Stop Forum Spam (SFS) listings: 183.
-# Updated: 2025.06.11
+# ASN 207083 ("HostSlim OU").
+# Stop Forum Spam (SFS) listings: 43.
+# Updated: 2026.08.15
 
 2.59.254.0/24 Deny Cloud
-91.92.34.0/24 Deny Cloud
 Origin: BG
+82.47.22.0/24 Deny Cloud
+Origin: GB
 103.214.4.0/22 Deny Cloud
 103.219.152.0/22 Deny Cloud
 185.169.79.0/24 Deny Cloud
 193.3.189.0/24 Deny Cloud
 Origin: NL
-193.23.3.0/24 Deny Cloud
-Origin: RU
-66.248.194.0/24 Deny Cloud
-66.248.196.0/24 Deny Cloud
-69.12.83.0/24 Deny Cloud
-69.174.98.0/23 Deny Cloud
-69.174.100.0/23 Deny Cloud
-72.11.156.0/23 Deny Cloud
-104.223.80.0/23 Deny Cloud
-144.34.86.0/24 Deny Cloud
-155.94.209.0/24 Deny Cloud
-162.33.20.0/24 Deny Cloud
+2.27.170.0/24 Deny Cloud
+31.77.254.0/24 Deny Cloud
 173.205.82.0/23 Deny Cloud
-192.135.116.0/24 Deny Cloud
-216.144.231.0/24 Deny Cloud
-216.201.78.0/23 Deny Cloud
+206.123.128.0/24 Deny Cloud
 Origin: US
 Profile: Dedicated;Webhosting
 Tag: HostSlim BV
@@ -21244,11 +21233,9 @@ Tag: NewMedia Express
 
 # ASN 49467 ("Inetmar internet Hizmetleri San. Tic. Ltd. Sti").
 # Caught trying to DDoS SFS.
-# Stop Forum Spam (SFS) listings: 5.
-# Updated: 2023.06.02 / Checked: 2025.05.16
+# Updated: 2026.08.11
 
-37.152.72.0/22 Deny Cloud
-37.152.76.0/24 Deny Cloud
+37.152.72.0/21 Deny Cloud
 85.95.224.0/23 Deny Cloud
 85.95.226.0/24 Deny Cloud
 85.95.228.0/24 Deny Cloud
@@ -24135,8 +24122,7 @@ Tag: Atlantic.net, Inc
 
 # ASN 52284 ("Panamaserver.com").
 # Caught faking as Googlebot.
-# Stop Forum Spam (SFS) listings: 1.
-# Updated: 2021.08.23 / Checked: 2025.05.28
+# Updated: 2021.08.23 / Checked: 2026.08.15
 
 190.123.44.0/22 Deny Cloud
 Origin: PA
@@ -30790,8 +30776,8 @@ Tag: SOFTplus
 
 
 # ASN 263735 ("SOCIEDAD BUENA HOSTING, S.A").
-# Stop Forum Spam (SFS) listings: 1,701.
-# Updated: 2018.04.06 / Checked: 2025.05.20
+# Stop Forum Spam (SFS) listings: 1,328.
+# Updated: 2018.04.06 / Checked: 2026.08.11
 
 181.177.64.0/18 Deny Cloud
 Origin: BZ
@@ -32468,7 +32454,7 @@ Tag: BelCloud
 # ASN 200052 ("Feral.io Ltd").
 # Port scans, brute-force attacks, and faking as Googlebot detected from here.
 # Webhosting provider also used as a traffic rerouter.
-# Updated: 2023.06.19 / Checked: 2025.05.17
+# Updated: 2023.06.19 / Checked: 2026.08.11
 
 185.21.216.0/22 Deny Cloud
 Origin: GB
@@ -53317,7 +53303,7 @@ Tag: Layer7 Networks GmbH
 
 # ASN 395336 ("MacStadium, Inc").
 # US cloud provider caught probing for ".env" files.
-# Updated: 2023.06.20 / Checked: 2025.05.28
+# Updated: 2023.06.20 / Checked: 2026.08.15
 
 63.135.166.0/24 Deny Cloud
 63.135.168.0/23 Deny Cloud
@@ -60500,7 +60486,8 @@ Tag: Papyrus VIP
 
 # ASN 56430 ("Chroot Network SRL").
 # Flooding and probing for exploits detected from here.
-# Updated: 2024.04.22 / Checked: 2025.05.13
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2024.04.22 / Checked: 2026.08.11
 
 77.81.64.0/24 Deny Cloud
 86.105.152.0/23 Deny Cloud
@@ -69764,15 +69751,15 @@ Profile: Commercial
 Tag: TAWSIE/BEOGRAD
 
 
-# ASNs 203038, 214503 ("QuxLabs UG", "QuxLabs AB").
+# ASN 214503 ("QuxLabs AB").
 # Brute-force, SSH, DDoS, Joomla, WordPress/XMLRPC, and webapp attacks,
 # scraping, port scans, hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 4,341.
-# Updated: 2025.09.06
+# Stop Forum Spam (SFS) listings: 1,539.
+# Updated: 2026.08.11
 
 185.243.23.0/24 Deny Cloud
 Origin: DE
-45.84.107.0/24 Deny Cloud
+45.84.106.0/23 Deny Cloud
 81.27.77.0/24 Deny Cloud
 193.182.61.0/24 Deny Cloud
 Origin: SE
@@ -73084,7 +73071,7 @@ Tag: OC NETWORKS LIMITED
 # ASN 207043 ("DEDIK SERVICES LIMITED").
 # Brute-force, DDoS, and webapp attacks, port scans, and spam detected from here.
 # Stop Forum Spam (SFS) listings: 8.
-# Updated: 2026.07.13
+# Updated: 2026.08.15
 
 151.240.151.0/24 Deny Cloud
 151.243.18.0/24 Deny Cloud
@@ -73117,6 +73104,7 @@ Origin: NL
 2.27.248.0/24 Deny Cloud
 23.94.145.0/24 Deny Cloud
 23.94.252.0/24 Deny Cloud
+96.62.71.0/24 Deny Cloud
 96.62.218.0/24 Deny Cloud
 167.148.195.0/24 Deny Cloud
 Origin: US

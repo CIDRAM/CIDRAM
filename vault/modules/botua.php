@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bot user agents module (last modified: 2026.08.06).
+ * This file: Bot user agents module (last modified: 2026.08.15).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -308,9 +308,11 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         $this->Reporter->report([21], ['Caught attempting to expose honeypot via reporting mechanism.'], $this->BlockInfo['IPAddr']);
     } // 2022.05.08
 
+    $OAIBypass = ((strpos($this->Configuration['verification']['other'], 'OAI-SearchBot:BlockNonVerified') !== false) && (strpos($this->Configuration['verification']['other'], 'OAI-SearchBot:Verify') === false)) ? '' : '(?!bot)';
+
     if ($this->trigger(\preg_match(
         '~^(?:curlmozilla|http_get)|\(gort\)|[-.]ai|2bone|80legs|' .
-        'a(?:dbar|gent(?:3|api|ic|ql)|i.?(?:2|agent|article|assistant|bot|chat|content|detection|dungeon|hitbot|journalist|legion|matrix|rag|research|search|seocrawler|training|web|writer)|liyun|lphaai|nalyzerai|ndibot|nonymous-?(?:ai|coward)|riaai|skai|uto(?:nomous)?rag|wario|xios)|' .
+        'a(?:dbar|gent(?:3|api|ic|ql)|i.?(?:2|agent|article|assistant|bot|chat|content|detection|dungeon|hitbot|journalist|legion|matrix|rag|research|search' . $OAIBypass . '|seocrawler|training|web|writer)|liyun|lphaai|nalyzerai|ndibot|nonymous-?(?:ai|coward)|riaai|skai|uto(?:nomous)?rag|wario|xios)|' .
         'b(?:aby(?:cat)?agi|anana-?bot|asicrag|edrockbot|ot-?test|rands-?bot|rightbot|rings_?you|ytespider)|' .
         'c(?:arynai|asperbot|cbot|harstar|hinaclaw|lark-?crawler|ognitive|ohere-|ommoncrawl|ontentsamurai|onversionai|opyai|orrectiverag|rawl[4q]ai|rawler4j|rewai|rushonai)|' .
         'd(?:atenbank|eep-?(?:ai|crawl|index|l|mind|(?:re)?search|seek)|iffbot|oubaoai)|' .
@@ -325,7 +327,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         'm(?:amac(?:asper|yber)|bzuai|etaai|idjourney|iniagi|i[sx]tral|odel[_-]?training|ozilla/0|ycentralai)|' .
         'n(?:etestate|injaai|ovaact)|' .
         'o(?:mgili|pen(?:agi|bot|interpreter|pi|router|textai)|rbbot)|' .
-        'p(?:angubot|anscient|araphraser|erflexity|erplexity|hindbot|hxbot|lease_?block|oseidon|roximic|ublicwebcrawler|ythonai)|' .
+        'p(?:angubot|anscient|araphraser|er[fp]lexity|hindbot|hxbot|lease_?block|oseidon|roximic|ublicwebcrawler|ythonai)|' .
         'q(?:opywriter|ualifiedbot|uillbot)|' .
         'r(?:ag(?:[-_]|agent|azure|chat|data|is|pipe|search|with)|esearch.?crawler)|' .
         's(?:aplingai|bintuition|crap[ey]|idetrade|implifiedai|p(?:hi|y)der|pinbot|tability|tablediffusion|tealth|torm-?crawler|ummalybot|urferai)|' .
@@ -339,7 +341,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         $UANoSpace
     ), 'Scraper UA', '', $UnmarkCaptcha)) {
         $this->CIDRAM['Tracking options override'] = 'extended';
-    } // 2023.11.17 mod 2026.08.05
+    } // 2023.11.17 mod 2026.08.15
 
     /**
      * @link https://github.com/CIDRAM/CIDRAM/issues/651
@@ -437,6 +439,9 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $this->Reporter->report([19], ['Misbehaving bot detected.'], $this->BlockInfo['IPAddr']);
         } elseif (\strpos($this->BlockInfo['WhyReason'], 'Scraper UA') !== false) {
             $this->Reporter->report([19], ['Scraper detected.'], $this->BlockInfo['IPAddr']);
+            if (\strpos($UANoSpace, 'perplexity-user') !== false) {
+                $this->Reporter->report([4, 15, 18], ['User agent regularly (and almost exclusively) cited by requests for sensitive files, vulnerable/exploitable endpoints, during brute-force attacks, and hack attempts.'], $this->BlockInfo['IPAddr']);
+            }
         } elseif (\strpos($this->BlockInfo['WhyReason'], 'Hack attempt') !== false) {
             $this->Reporter->report([15, 19, 21], ['Hack attempt detected.'], $this->BlockInfo['IPAddr']);
         }

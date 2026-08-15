@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v4/vault/signatures/ipv6.dat
 
-# Version: 2026.218.0
-# Last modified: 2026.08.07
+# Version: 2026.226.0
+# Last modified: 2026.08.15
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -4172,18 +4172,19 @@ Profile: Webhosting
 Tag: Transip B.V
 
 
-# ASN 207083 ("HostSlim BV").
-# Stop Forum Spam (SFS) listings: 183.
-# Updated: 2025.06.11
+# ASN 207083 ("HostSlim OU").
+# Stop Forum Spam (SFS) listings: 43.
+# Updated: 2026.08.15
 
+2a06:4140::/29 Deny Cloud
 2a06:5b80::/29 Deny Cloud
 2a09:3c00::/29 Deny Cloud
+2a0d:7fc0::/29 Deny Cloud
 Origin: NL
 2406:17c0::/32 Deny Cloud
-Origin: SG
-2a09:54c6:a000::/48 Deny Cloud
-2a09:54c6:a700::/48 Deny Cloud
-2a0a:6040:1d00::/40 Deny Cloud
+2a0f:6282:f000::/36 Deny Cloud
+2a0f:6283:1102::/48 Deny Cloud
+2a0f:6284:4213::/48 Deny Cloud
 Origin: US
 Profile: Dedicated;Webhosting
 Tag: HostSlim BV
@@ -4680,8 +4681,7 @@ Tag: Atlantic.net, Inc
 
 # ASN 52284 ("Panamaserver.com").
 # Caught faking as Googlebot.
-# Stop Forum Spam (SFS) listings: 1.
-# Updated: 2016.07.10 / Checked: 2025.05.28
+# Updated: 2016.07.10 / Checked: 2026.08.15
 
 2803:200::/32 Deny Cloud
 Origin: PA
@@ -5931,8 +5931,8 @@ Tag: SOFTplus
 
 
 # ASN 263735 ("SOCIEDAD BUENA HOSTING, S.A").
-# Stop Forum Spam (SFS) listings: 1,701.
-# Updated: 2023.06.24 / Checked: 2025.05.20
+# Stop Forum Spam (SFS) listings: 1,328.
+# Updated: 2023.06.24 / Checked: 2026.08.11
 
 2803:9f80::/32 Deny Cloud
 Origin: HN
@@ -11859,7 +11859,7 @@ Tag: Layer7 Networks GmbH
 
 # ASN 395336 ("MacStadium, Inc").
 # US cloud provider caught probing for ".env" files.
-# Updated: 2022.06.24 / Checked: 2025.05.28
+# Updated: 2022.06.24 / Checked: 2026.08.15
 
 2607:6480::/35 Deny Cloud
 Origin: US
@@ -13774,8 +13774,10 @@ Tag: StormyCloud Inc
 
 # ASN 56430 ("Chroot Network SRL").
 # Flooding and probing for exploits detected from here.
-# Updated: 2024.04.22 / Checked: 2025.05.13
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2026.08.11
 
+2001:7f8:49::/48 Deny Cloud
 2a05:91c0::/32 Deny Cloud
 2a05:91c4::/32 Deny Cloud
 2a09:1340::/29 Deny Cloud
@@ -17958,17 +17960,17 @@ Profile: Webhosting
 Tag: Catalyst Host LLC
 
 
-# ASNs 203038, 214503 ("QuxLabs UG", "QuxLabs AB").
+# ASN 214503 ("QuxLabs AB").
 # Brute-force, SSH, DDoS, Joomla, WordPress/XMLRPC, and webapp attacks,
 # scraping, port scans, hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 4,341.
-# Updated: 2025.09.06
+# Stop Forum Spam (SFS) listings: 1,539.
+# Updated: 2026.08.11
 
 2a0a:3507:1::/48 Deny Cloud
 2a0d:bbc0:1::/48 Deny Cloud
 2a0d:bbc0:2::/48 Deny Cloud
 2a0d:bbc1::/48 Deny Cloud
-2a0d:bbc7::/48 Deny Cloud
+2a0d:bbc7::/47 Deny Cloud
 Origin: SE
 Profile: Tor endpoints here
 Tag: QuxLabs
@@ -18701,6 +18703,17 @@ Tag: RadWeb, LLC
 Origin: GB
 Profile: Webhosting
 Tag: OC NETWORKS LIMITED
+
+
+# ASN 207043 ("DEDIK SERVICES LIMITED").
+# Brute-force, DDoS, and webapp attacks, port scans, and spam detected from here.
+# Stop Forum Spam (SFS) listings: 8.
+# Updated: 2026.08.15
+
+2a03:5840:129::/48 Deny Cloud
+Origin: FR
+Profile: Dedicated;Infrastructure/Transit;Webhosting
+Tag: DEDIK SERVICES LIMITED
 
 
 # ASN 198120 ("Smart Host Teknoloji Ithalat Ihracat Limited Sirketi").

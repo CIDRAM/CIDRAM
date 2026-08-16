@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: AbuseIPDB module (last modified: 2026.03.18).
+ * This file: AbuseIPDB module (last modified: 2026.08.16).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -147,7 +147,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         $this->Configuration['abuseipdb']['build_profiles_from_usage_type'] &&
         !empty($this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']]['usageType'])
     ) {
-        $this->addProfileEntry($this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']]['usageType']);
+        $this->addProfileEntry($this->CIDRAM['AbuseIPDB-' . $this->BlockInfo['IPAddr']]['usageType'], 'AbuseIPDB module');
     }
 };
 

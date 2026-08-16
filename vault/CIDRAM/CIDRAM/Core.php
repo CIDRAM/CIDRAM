@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2026.06.22).
+ * This file: The CIDRAM core (last modified: 2026.08.16).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -201,6 +201,11 @@ class Core
      * @var array Request profiling to provide greater nuance for block events.
      */
     public $Profiles = [];
+
+    /**
+     * @var array The source for profiles (helpful for debugging at the IP testing page).
+     */
+    public $ProfileSources = [];
 
     /**
      * @var array Sometimes used with certain kinds of blocked requests.
@@ -2353,7 +2358,7 @@ class Core
 
         /** Profile the request. */
         if ($Action === 'Profile') {
-            $this->addProfileEntry($Name);
+            $this->addProfileEntry($Name, 'Aux');
         }
 
         return false;
@@ -2973,13 +2978,17 @@ class Core
     /**
      * Adds entries to the profiles list.
      *
-     * @param string $Entries The entries to add.
+     * @param string $Entries The entries to add (delimited by a semicolon).
+     * @param string $Source The entry's source (optional).
      * @return void
      */
-    public function addProfileEntry(string $Entries): void
+    public function addProfileEntry(string $Entries, string $Source = ''): void
     {
         foreach (\explode(';', $Entries) as $Profile) {
             $this->Profiles[] = $Profile;
+            if ($Source !== '' && !isset($this->ProfileSources[$Profile])) {
+                $this->ProfileSources[$Profile] = $Source;
+            }
         }
         \sort($this->Profiles, \SORT_STRING);
         $this->Profiles = \array_unique($this->Profiles);

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bad hosts blocker module (last modified: 2026.06.02).
+ * This file: Bad hosts blocker module (last modified: 2026.08.16).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -104,11 +104,11 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     if (
         $this->trigger(\preg_match('~\.google(?:domains|usercontent)\.com$~', $HN), 'Google user content not permitted here') // 2022.06.22
     ) {
-        $this->addProfileEntry('Webhosting');
+        $this->addProfileEntry('Webhosting', 'Bad hosts blocker module');
     }
 
     if ($this->trigger(\preg_match('/anonine\.com$|thefreevpn\.org$|vpn(?:999\.com|gate)/', $HN), 'Risky VPN Host')) {
-        $this->addProfileEntry('VPNs here');
+        $this->addProfileEntry('VPNs here', 'Bad hosts blocker module');
     } // 2023.08.12
 
     $this->trigger(\preg_match('~shadowserver\.org$~', $HN), 'Regular unauthorised proxy tunnel attempts'); // 2023.09.15
@@ -173,7 +173,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         !\preg_match('~^(?:google|rate-limited)-proxy-.*\.google\.com$~i', $HN)
     ) {
         if ($this->trigger(\preg_match('~(?<!\w)tor(?!\w)|anonym|makesecure\.nl$|proxy~i', $HN), 'Proxy host')) {
-            $this->addProfileEntry('Tor endpoints here');
+            $this->addProfileEntry('Tor endpoints here', 'Bad hosts blocker module');
         } // 2021.03.18 mod 2022.07.07
     }
 

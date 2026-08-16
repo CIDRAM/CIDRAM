@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Quic cloud compatibility module (last modified: 2026.03.24).
+ * This file: Quic cloud compatibility module (last modified: 2026.08.16).
  *
  * False positive risk (an approximate, rough estimate only): « [x]Low [ ]Medium [ ]High »
  */
@@ -43,7 +43,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         $this->CIDRAM['SkipVerification'] = true;
 
         /** Profiling. */
-        $this->addProfileEntry('Content Delivery Network');
+        $this->addProfileEntry('Content Delivery Network', 'Quic cloud compatibility module');
 
         /** Bypass the request. */
         if ($this->Configuration['quic']['positive_action'] === 'bypass') {

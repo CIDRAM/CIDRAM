@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: IP-API module (last modified: 2026.03.18).
+ * This file: IP-API module (last modified: 2026.08.16).
  *
  * False positive risk (an approximate, rough estimate only): « [x]Low [ ]Medium [ ]High »
  */
@@ -190,7 +190,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     /** Profiling. */
     if (isset($this->CIDRAM['IPAPI-' . $ToCheck]['Profiles'])) {
         foreach ($this->CIDRAM['IPAPI-' . $ToCheck]['Profiles'] as $Profile) {
-            $this->addProfileEntry($Profile);
+            $this->addProfileEntry($Profile, 'IP-API module');
         }
     }
 

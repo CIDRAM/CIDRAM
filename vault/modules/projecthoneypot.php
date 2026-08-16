@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Project Honeypot module (last modified: 2026.03.18).
+ * This file: Project Honeypot module (last modified: 2026.08.16).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -138,7 +138,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         $Try = (int)$this->CIDRAM['Project Honeypot-' . $this->BlockInfo['IPAddr']]['Type of visitor'];
         $Visitor = ['SearchEngine' => $Try === 0, 'Suspicious' => false, 'Harvester' => false, 'CommentSpammer' => false, 'Other' => false];
         if ($Visitor['SearchEngine'] && isset($this->CIDRAM['PHVC']['SearchEngine:Profile'])) {
-            $this->addProfileEntry('Search Engine');
+            $this->addProfileEntry('Search Engine', 'Project Honeypot module');
         }
         if ($Try > 7) {
             $Visitor['Other'] = true;
@@ -148,20 +148,20 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $Visitor['CommentSpammer'] = true;
             $Try -= 4;
             if (isset($this->CIDRAM['PHVC']['CommentSpammer:Profile'])) {
-                $this->addProfileEntry('Comment Spammer');
+                $this->addProfileEntry('Comment Spammer', 'Project Honeypot module');
             }
         }
         if ($Try > 1) {
             $Visitor['Harvester'] = true;
             $Try -= 2;
             if (isset($this->CIDRAM['PHVC']['Harvester:Profile'])) {
-                $this->addProfileEntry('Harvester');
+                $this->addProfileEntry('Harvester', 'Project Honeypot module');
             }
         }
         if ($Try > 0) {
             $Visitor['Suspicious'] = true;
             if (isset($this->CIDRAM['PHVC']['Suspicious:Profile'])) {
-                $this->addProfileEntry('Suspicious');
+                $this->addProfileEntry('Suspicious', 'Project Honeypot module');
             }
         }
     }

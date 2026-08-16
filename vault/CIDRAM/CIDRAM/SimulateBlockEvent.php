@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used to simulate block events (last modified: 2026.05.18).
+ * This file: Methods used to simulate block events (last modified: 2026.08.17).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -83,11 +83,12 @@ trait SimulateBlockEvent
             $this->$InitialiseKey = $InitialiseValue;
         }
 
-        /** To be populated by webhooks. */
-        $this->Webhooks = [];
-
         /** Reset request profiling. */
         $this->Profiles = [];
+        $this->ProfileSources = [];
+
+        /** Reset webhooks. */
+        $this->Webhooks = [];
 
         /** Reset factors. */
         $this->CIDRAM['Factors'] = [];

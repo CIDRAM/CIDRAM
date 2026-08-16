@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional cookie scanner module (last modified: 2026.03.18).
+ * This file: Optional cookie scanner module (last modified: 2026.08.16).
  *
  * False positive risk (an approximate, rough estimate only): « [x]Low [ ]Medium [ ]High »
  *
@@ -27,8 +27,14 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     /** Count cookies. */
     $Cookies = \count($_COOKIE);
 
-    /** Guard and protection against flooding. */
-    if (!$Cookies || $this->trigger($Cookies > 30, 'Cookie flood', 'Cookie flood detected!')) {
+    /** No need to continue if there aren't any cookies. */
+    if (!$Cookies) {
+        return;
+    }
+
+    /** Guard against flooding. */
+    if ($this->trigger($Cookies > 30, 'Cookie flood', 'Cookie flood detected!')) {
+        $this->Reporter->report([15], ['Cookie flood detected.'], $this->BlockInfo['IPAddr']);
         return;
     }
 

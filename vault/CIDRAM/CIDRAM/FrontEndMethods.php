@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2026.06.22).
+ * This file: General methods used by the front-end (last modified: 2026.08.17).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -174,6 +174,12 @@ trait FrontEndMethods
             if ($CheckAs !== '' && isset($this->Components['Files'])) {
                 if (isset($this->Components['Files'][$CheckAs])) {
                     $Component = $this->Components['Files'][$CheckAs];
+                    if (isset($this->Components['UsedWith'][$CheckAs])) {
+                        if ($this->Components['UsedWith'][$CheckAs] === 'modules') {
+                            $Arr[$Key]['Icon'] = 'icon=module';
+                            $LockIcon = true;
+                        }
+                    }
                 } elseif (\preg_match('~^\.ht|\.safety$|^salt\.dat$~i', $CheckAs)) {
                     $Component = $this->L10N->getString('label.Safety mechanisms');
                     $NoEdit = true;

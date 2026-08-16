@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The file manager page (last modified: 2026.06.22).
+ * This file: The file manager page (last modified: 2026.08.17).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -50,7 +50,7 @@ if (!$this->FE['ASYNC']) {
     $this->FE['JS'] .= $this->readFile($this->getAssetPath('fm.js'));
 
     /** Prepare components metadata working array. */
-    $this->Components = ['Files' => [], 'Components' => [], 'Names' => []];
+    $this->Components = ['Files' => [], 'Components' => [], 'Names' => [], 'UsedWith' => []];
 
     /** Fetch components metadata. */
     $this->readInstalledMetadata($this->Components['Components']);
@@ -62,6 +62,7 @@ if (!$this->FE['ASYNC']) {
             foreach ($ComponentData['Files'] as $ThisFile => $FileData) {
                 $ThisFile = $this->canonical($ThisFile);
                 $this->Components['Files'][$ThisFile] = $ComponentData['Name'] ?: $ComponentName;
+                $this->Components['UsedWith'][$ThisFile] = $FileData['Used with'] ?? '';
             }
         }
     }

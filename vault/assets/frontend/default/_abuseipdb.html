@@ -40,8 +40,8 @@
         </div>
         <label class="s flexstretch ng1">
           {field.Comment}{pair_separator}<span style="float:{FE_Align_Reverse}">{label.Characters left}{pair_separator}<span id="commentLenSpan"></span>/<span id="commentMaxSpan"></span></span><br /><br />
-          <textarea name="comment" id="comment" class="half" autocomplete="off" placeholder="{tip.Server log snippets, abuse details, etc}" maxlength="1024" onchange="javascript:w('commentLenSpan',nft((1024-this.value.length).toString()).toString());" onkeyup="javascript:w('commentLenSpan',nft((1024-this.value.length).toString()).toString());">{comment}</textarea>
-          <script type="text/javascript">w('commentLenSpan',nft((1024-document.getElementById('comment').value.length).toString()).toString());w('commentMaxSpan',nft('1024').toString());</script>
+          <textarea name="comment" id="comment" class="half" autocomplete="off" placeholder="{tip.Server log snippets, abuse details, etc}" maxlength="1024" onchange="javascript:w('commentLenSpan',nft((1024-this.value.length).toString()).toString())" onkeyup="javascript:w('commentLenSpan',nft((1024-this.value.length).toString()).toString());">{comment}</textarea>
+          <script type="text/javascript">w('commentLenSpan',nft((1024-document.getElementById('comment').value.length).toString()).toString());w('commentMaxSpan',nft('1024').toString())</script>
         </label>
         <label class="s flexstretch ng2">
           {field.API key}{pair_separator}<br /><br />

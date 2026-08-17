@@ -563,4 +563,5 @@
 - [2026.06.20]: Updated the flags CSS.
 - [2026.06.28]: Verification updated.
 - [2026.07.19]: Default signature bypasses updated.
+- [2026.08.17]: Added some missing components L10N.
 - *Plus all the regular signature updates.*

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bot user agents module (last modified: 2026.08.15).
+ * This file: Bot user agents module (last modified: 2026.08.17).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -311,10 +311,10 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
     if ($this->trigger(\preg_match(
         '~^(?:curlmozilla|http_get)|\(gort\)|[-.]ai|2bone|80legs|' .
-        'a(?:dbar|gent(?:3|api|ic|ql)|i.?(?:2|agent|article|assistant|bot|chat|content|detection|dungeon|hitbot|journalist|legion|matrix|rag|research|search' . $OAIBypass . '|seocrawler|training|web|writer)|liyun|lphaai|nalyzerai|ndibot|nonymous-?(?:ai|coward)|riaai|skai|uto(?:nomous)?rag|wario|xios)|' .
+        'a(?:dbar|gent(?:3|api|ic|ql)|i.?(?:2|agent|article|assistant|bot|chat|content|detection|dungeon|hitbot|journalist|legion|matrix|rag|research|search' . $OAIBypass . '|seocrawler|training|web|writer)|liyun|lphaai|nalyzerai|ndibot|nonymous-?(?:ai|coward)|riaai|skai|utomatedwriter|uto(?:nomous)?rag|wario|wstrainium|xios)|' .
         'b(?:aby(?:cat)?agi|anana-?bot|asicrag|edrockbot|ot-?test|rands-?bot|rightbot|rings_?you|ytespider)|' .
-        'c(?:arynai|asperbot|cbot|harstar|hinaclaw|lark-?crawler|ognitive|ohere-|ommoncrawl|ontentsamurai|onversionai|opyai|orrectiverag|rawl[4q]ai|rawler4j|rewai|rushonai)|' .
-        'd(?:atenbank|eep-?(?:ai|crawl|index|l|mind|(?:re)?search|seek)|iffbot|oubaoai)|' .
+        'c(?:arynai|asperbot|cbot|harstar|hinaclaw|lark-?crawler|laude|ognitive|ohere-|ommoncrawl|ontent(?:atscale|bot|edge|harmony|king|samurai|shake)|onversionai|opilot|opy(?:ai|matic|scape)|oreweave|orrectiverag|otoyogi|rawl[4q]ai|rawler4j|rewai|rushonai)|' .
+        'd(?:all[-_]e|atenbank|eep-?(?:ai|crawl|index|l|mind|(?:re)?search|seek)|iffbot|oubaoai)|' .
         'echobo[tx]|' .
         'f(?:idget-?spinner-?bot|irecrawl|lyriver|raseai|riendly-?(?:crawler|spider))|' .
         'genai|' .
@@ -322,7 +322,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         'i(?:askspider|magesift|mg2dataset|p_address)|' .
         'j(?:addjabot|anitorai|enniai|uliusai)|' .
         'k(?:afkai|angaroobot|eys-?so-?bot|eyworddensity)|' .
-        'l(?:9explore|anguageai|ightrag|ink(?:check|fluence)|ocalrag)|' .
+        'l(?:9explore|anguageai|ightrag|ink(?:check|fluence)|lama|lm|ocalrag)|' .
         'm(?:amac(?:asper|yber)|bzuai|etaai|idjourney|iniagi|i[sx]tral|odel[_-]?training|ozilla/0|ycentralai)|' .
         'n(?:etestate|injaai|ovaact)|' .
         'o(?:mgili|pen(?:agi|bot|interpreter|pi|router|textai)|rbbot)|' .
@@ -341,7 +341,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     ), 'Scraper UA')) {
         $this->CIDRAM['Tracking options override'] = 'extended';
         unset($this->CIDRAM['MarkForUseWithHCaptcha'], $this->CIDRAM['MarkForUseWithFriendlyCaptcha'], $this->CIDRAM['MarkForUseWithCloudflareTurnstile']);
-    } // 2023.11.17 mod 2026.08.15
+    } // 2023.11.17 mod 2026.08.17
 
     /**
      * @link https://github.com/CIDRAM/CIDRAM/issues/651

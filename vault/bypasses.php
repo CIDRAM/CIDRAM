@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Default signature bypasses (last modified: 2026.07.19).
+ * This file: Default signature bypasses (last modified: 2026.08.17).
  */
 
 /** Prevents execution from outside of the checkFactors method. */
@@ -60,7 +60,7 @@ $this->CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [
                 $this->BlockInfo['WhyReason'] .= ', ';
             }
             $this->BlockInfo['WhyReason'] .= $this->L10N->getString('Short.Spam') . $LN;
-            $this->addProfileEntry('Spam');
+            $this->addProfileEntry('Spam', 'Sig');
             if (!empty($this->BlockInfo['Signatures'])) {
                 $this->BlockInfo['Signatures'] .= ', ';
             }
@@ -81,7 +81,7 @@ $this->CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [
             $this->BlockInfo['WhyReason'] .= ', ';
         }
         $this->BlockInfo['WhyReason'] .= $this->L10N->getString('Short.Cloud') . $LN;
-        $this->addProfileEntry('Cloud');
+        $this->addProfileEntry('Cloud', 'Sig');
         if (!empty($this->BlockInfo['Signatures'])) {
             $this->BlockInfo['Signatures'] .= ', ';
         }
@@ -175,7 +175,7 @@ $this->CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [
                 \preg_match('~^msnbot-\d+-\d+-\d+-\d+\.search\.msn\.com$~i', $this->CIDRAM['Hostname']) ||
                 \preg_match('~(?:msn|bing)bot|bingpreview~', $this->BlockInfo['UALC'])
             ) {
-                $this->addProfileEntry('Bypass flagged');
+                $this->addProfileEntry('Bypass flagged', 'Sig');
                 $this->CIDRAM['Flag-Bypass-Bingbot-Check'] = true;
                 return 4;
             }
@@ -298,7 +298,7 @@ $this->CIDRAM['RunParamResCache']['bypasses.php'] = function (array $Factors = [
         $this->BlockInfo['WhyReason'] .= ', ';
     }
     $this->BlockInfo['WhyReason'] .= $this->L10N->getString('Short.Cloud') . $LN;
-    $this->addProfileEntry('Cloud');
+    $this->addProfileEntry('Cloud', 'Sig');
     if (!empty($this->BlockInfo['Signatures'])) {
         $this->BlockInfo['Signatures'] .= ', ';
     }

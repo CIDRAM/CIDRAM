@@ -32,7 +32,7 @@ CIDRAM Core:
    Checksum: "7046b887b6861b29163e83c8dff25bf4aa687717fb2fe60033f7eeba3c1e5c9c:11678"
   CIDRAM/CIDRAM/Core.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/CIDRAM/CIDRAM/Core.php"
-   Checksum: "41a08977d3ae6e78cfa8eb52653889e3f42e6910c79ac3c905953895d72a7c3a:146913"
+   Checksum: "b45d68422b8a68bb0375b68e202599a9d7d32722e93bc60cb2cdcd8edc00b385:146934"
   CIDRAM/CIDRAM/Duration.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/CIDRAM/CIDRAM/Duration.php"
    Checksum: "1f6bc22975326486947b7e36028e1546304c1604698b8ff11357e7f005dc057c:11664"
@@ -139,7 +139,7 @@ CIDRAM Front-End:
    Checksum: "a00ab1bd4b17d3db7dc18ccf6907156cb240fe61d9c18934a833eed3514a1212:1557"
   assets/frontend/default/_ip_testing.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/assets/frontend/default/_ip_testing.html"
-   Checksum: "eea441059e4183637aa783c5593984ed0573b6a7c7c84b98222ee976c2434902:7869"
+   Checksum: "8a8934318972d022e67aea2cc3689c749c18c1ecb4760082a0d76ed4ce0b3284:8086"
   assets/frontend/default/_ip_testing_row.html:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/assets/frontend/default/_ip_testing_row.html"
    Checksum: "f89a2bf2dd256888af283482d6301cfc5a3a6457f42eed1b17ccb2e5c7c26d46:689"
@@ -571,7 +571,7 @@ CIDRAM Front-End:
    Checksum: "55e4e98ba0220f29c299961efba150962dbb49cfb18ce720aa96977e56484194:3339"
   pages/ip-testing.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/pages/ip-testing.php"
-   Checksum: "701f897322f28db3e6350b8d07c3e18109f333163b998ef7a82e0c3a83379e95:21696"
+   Checksum: "0882db691a5d4215fbb403965a71621e81bd6e2c691d9d06440273e210a6a61e:21883"
   pages/ip-tracking.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/pages/ip-tracking.php"
    Checksum: "e274a128f83ffeeb9a048b2258db88a1743910241a4bfe62121a8bdf850c5bee:12032"
@@ -740,16 +740,16 @@ IPv6-Other:
    Checksum: "ba7fa4bcbed3ebdf668fffc8654ebda66a3964dfb9d11a807b0f9d218a59ceca:5786"
    Used with: "ipv6"
 Bypasses:
- Version: "2026.199.0"
+ Version: "2026.228.0"
  Dependencies:
   PHP: "^7.2|^8"
-  CIDRAM Core: "^4"
+  CIDRAM Core: "^4.2.1-DEV+262270"
  When Update Succeeds:
   - "if {Components.Meta.Bypasses.Version}<2025.348&&{Components.RemoteMeta.Bypasses.Version}>=2025.348 then queue message <span dir="ltr" lang="en-AU">[Bypasses 2025.348.0] Added a new default signature bypass, "iCloud (iPhone Safari Bypass)" (configuration settings should be revised accordingly).</span>"
  Files:
   bypasses.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/bypasses.php"
-   Checksum: "4c076a219d997f4f84938892491a846c9c60917fe4a2d9591b3de5e84c01ae96:11365"
+   Checksum: "98ee38a46f01c7b0afca061e7dff0c6ff53d0e5f6407b6c4bb49c98349ad0e19:11393"
   imports/bypasses.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/imports/bypasses.yml"
    Checksum: "3cdda9b19236b7b10bbd76c6ea3a16e3ffc1a8d59b86b166738e28811839290c:1110"

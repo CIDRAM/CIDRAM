@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2026.08.16).
+ * This file: The CIDRAM core (last modified: 2026.08.17).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -678,7 +678,7 @@ class Core
                         }
                     }
                     if ($Profile = $this->getter($Files[$FileIndex], $PosA, 'Profile', '')) {
-                        $this->addProfileEntry($Profile);
+                        $this->addProfileEntry($Profile, 'Sig');
                     }
                     $Tag = $this->getter($Files[$FileIndex], $PosA, 'Tag', $DefTag);
                     if (
@@ -763,10 +763,10 @@ class Core
                             !isset($this->CIDRAM['Config Defaults']['signatures']['shorthand']['nonsense'][$Signature . ':Profile'])
                         ) {
                             if (isset($this->Shorthand[$Signature . ':Profile'])) {
-                                $this->addProfileEntry($Signature);
+                                $this->addProfileEntry($Signature, 'Sig');
                             }
                         } elseif (isset($this->Shorthand['Other:Profile'])) {
-                            $this->addProfileEntry($Signature);
+                            $this->addProfileEntry($Signature, 'Sig');
                         }
                         $DenyMatched = false;
                         if (

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2026.08.15).
+ * This file: Optional security extras module (last modified: 2026.08.17).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -674,14 +674,14 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $this->Reporter->report([15, 21], ['Caught probing for exposed Quarto Projects credentials.'], $this->BlockInfo['IPAddr']);
         } // 2026.07.30
 
-        /** Conditional to an empty user agent. */
+        /** Contingent on the user agent being empty. */
         if ($this->BlockInfo['UA'] === '') {
             if ($this->trigger(\preg_match('~(?:^|[/?])wp-content/uploads(?:$|[/?])~', $LCNrURI), 'Caught scraping')) {
                 $this->Reporter->report([19], ['Caught scraping for WordPress user uploaded media.'], $this->BlockInfo['IPAddr']);
             } // 2026.08.05
-            if ($this->trigger(\preg_match('~(?:^|[/?])(?:wp-admin/(?:css/colors/blue|network|options-privacy\.php)|wp-includes/(?:assets|block-bindings|l10n|php-compat|sodium_compat))(?:$|[/?])~', $LCNrURI), 'Suspected hack attempt')) {
+            if ($this->trigger(\preg_match('~(?:^|[/?])(?:wp-admin/(?:css/colors/(?:blue|midnight)|network|options-privacy\.php)|wp-includes/(?:assets|block-bindings|id3|l10n|php-compat|pomo|sodium_compat))(?:$|[/?])~', $LCNrURI), 'Suspected hack attempt')) {
                 $this->Reporter->report([15, 19], ['Suspected hack attempt detected.'], $this->BlockInfo['IPAddr']);
-            } // 2026.08.05 mod 2026.08.15
+            } // 2026.08.05 mod 2026.08.17
         }
 
         /** Probing for exposed GitHub workflows file. */

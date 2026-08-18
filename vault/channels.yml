@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Alternative channels data for failed curl requests (last modified: 2025.08.14).
+# This file: Alternative channels data for failed curl requests (last modified: 2026.08.18).
 ##/
 
 Triggers:
@@ -15,11 +15,9 @@ Triggers:
  BitBucket: "https://bitbucket.org/"
  Codeberg: "https://codeberg.org/"
  GoogleDNS: "https://dns.google.com/resolve"
+ dan.me.uk: "https://www.dan.me.uk/"
+ opendbl.net: "https://opendbl.net/"
 GitHub:
- v3 components:
-  GitHub: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/"
-  BitBucket: "https://bitbucket.org/Maikuolan/cidram/raw/v3/vault/"
-  Codeberg: "https://codeberg.org/Maikuolan/CIDRAM/raw/branch/v3/vault/"
  v4 components:
   GitHub: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/"
   BitBucket: "https://bitbucket.org/Maikuolan/cidram/raw/v4/vault/"
@@ -30,6 +28,19 @@ GitHub:
  Charts:
   GitHub: "https://raw.githubusercontent.com/Maikuolan/Compatibility-Charts/"
   BitBucket: "https://bitbucket.org/Maikuolan/compatibility-charts/raw/"
+BitBucket:
+ v4 components:
+  BitBucket: "https://bitbucket.org/Maikuolan/cidram/raw/v4/vault/"
+  Codeberg: "https://codeberg.org/Maikuolan/CIDRAM/raw/branch/v4/vault/"
 GoogleDNS:
  Used to forcibly disable Gooogle DNS (no alternative channels):
   GoogleDNS: "https://dns.google.com/resolve"
+dan.me.uk:
+ Tor lists:
+  dan.me.uk: "https://www.dan.me.uk/torlist/?exit"
+  opendbl.net: "https://opendbl.net/lists/tor-exit.list"
+  ip1.info: "https://ip1.info/tor-ips/tor-ips.txt"
+opendbl.net:
+ Tor lists:
+  opendbl.net: "https://opendbl.net/lists/tor-exit.list"
+  ip1.info: "https://ip1.info/tor-ips/tor-ips.txt"

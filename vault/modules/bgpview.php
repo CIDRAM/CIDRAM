@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: BGPView module (last modified: 2026.03.18).
+ * This file: BGPView module (last modified: 2026.08.18).
  *
  * False positive risk (an approximate, rough estimate only): « [x]Low [ ]Medium [ ]High »
  */
@@ -46,10 +46,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
      * range, and if the lookup limit hasn't already been exceeded (reduces
      * superfluous lookups).
      */
-    if (
-        $this->CIDRAM['BGPView-429'] ||
-        filter_var($this->BlockInfo['IPAddr'], \FILTER_VALIDATE_IP, \FILTER_FLAG_NO_PRIV_RANGE | \FILTER_FLAG_NO_RES_RANGE) === false
-    ) {
+    if ($this->CIDRAM['BGPView-429'] || \filter_var($this->BlockInfo['IPAddr'], \FILTER_VALIDATE_IP, \FILTER_FLAG_NO_PRIV_RANGE | \FILTER_FLAG_NO_RES_RANGE) === false) {
         return;
     }
 
@@ -164,11 +161,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
                     if (!empty($this->BlockInfo['WhyReason'])) {
                         $this->BlockInfo['WhyReason'] .= ', ';
                     }
-                    $this->BlockInfo['WhyReason'] .= \sprintf(
-                        '%s (BGPView, "%d")',
-                        $this->L10N->getString('Short.Generic'),
-                        $this->CIDRAM['BGPView-' . $Factor]['ASN']
-                    );
+                    $this->BlockInfo['WhyReason'] .= \sprintf('%s (BGPView, "%d")', $this->L10N->getString('Short.Generic'), $this->CIDRAM['BGPView-' . $Factor]['ASN']);
                     if (!empty($this->BlockInfo['Signatures'])) {
                         $this->BlockInfo['Signatures'] .= ', ';
                     }
@@ -194,10 +187,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
                 /** Origin is blocked. */
                 if (isset($this->CIDRAM['BGPConfig']['blocked_ccs'][$this->CIDRAM['BGPView-' . $Factor]['CC']])) {
-                    $this->BlockInfo['ReasonMessage'] = \sprintf(
-                        $this->L10N->getString('why_no_access_allowed_from'),
-                        $this->CIDRAM['BGPView-' . $Factor]['CC']
-                    );
+                    $this->BlockInfo['ReasonMessage'] = \sprintf($this->L10N->getString('why_no_access_allowed_from'), $this->CIDRAM['BGPView-' . $Factor]['CC']);
                     if (!empty($this->BlockInfo['WhyReason'])) {
                         $this->BlockInfo['WhyReason'] .= ', ';
                     }

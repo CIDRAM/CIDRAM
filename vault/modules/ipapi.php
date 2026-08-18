@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: IP-API module (last modified: 2026.08.16).
+ * This file: IP-API module (last modified: 2026.08.18).
  *
  * False positive risk (an approximate, rough estimate only): « [x]Low [ ]Medium [ ]High »
  */
@@ -46,10 +46,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
      * range, and if the lookup limit hasn't already been exceeded (reduces
      * superfluous lookups).
      */
-    if (
-        $this->CIDRAM['IPAPI-429'] ||
-        filter_var($this->BlockInfo['IPAddr'], \FILTER_VALIDATE_IP, \FILTER_FLAG_NO_PRIV_RANGE | \FILTER_FLAG_NO_RES_RANGE) === false
-    ) {
+    if ($this->CIDRAM['IPAPI-429'] || \filter_var($this->BlockInfo['IPAddr'], \FILTER_VALIDATE_IP, \FILTER_FLAG_NO_PRIV_RANGE | \FILTER_FLAG_NO_RES_RANGE) === false) {
         return;
     }
 
@@ -141,11 +138,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             if (!empty($this->BlockInfo['WhyReason'])) {
                 $this->BlockInfo['WhyReason'] .= ', ';
             }
-            $this->BlockInfo['WhyReason'] .= \sprintf(
-                '%s (IP-API, "%d")',
-                $this->L10N->getString('Short.Generic'),
-                $this->CIDRAM['IPAPI-' . $ToCheck]['ASN']
-            );
+            $this->BlockInfo['WhyReason'] .= \sprintf('%s (IP-API, "%d")', $this->L10N->getString('Short.Generic'), $this->CIDRAM['IPAPI-' . $ToCheck]['ASN']);
             if (!empty($this->BlockInfo['Signatures'])) {
                 $this->BlockInfo['Signatures'] .= ', ';
             }

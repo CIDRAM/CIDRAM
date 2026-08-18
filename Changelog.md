@@ -564,4 +564,5 @@
 - [2026.06.28]: Verification updated.
 - [2026.07.19]: Default signature bypasses updated.
 - [2026.08.17]: Added some missing components L10N.
+- [2026.08.18]: The Tor blocker module has been rewritten to use lists instead of DNSEL, its overall behaviour and available configuration modified (#687).
 - *Plus all the regular signature updates.*

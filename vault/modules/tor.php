@@ -4,13 +4,14 @@
  * Homepage: https://cidram.github.io/
  *
  * CIDRAM COPYRIGHT 2016 and beyond by Caleb Mazalevskis (Maikuolan).
- * Tor Project Block Module Copyright 2018~2021 by D. MacMathan.
+ * Tor blocker module COPYRIGHT 2018~2021 by D. MacMathan.
  * Bundled/Merged with CIDRAM's main repository since 2022.
+ * Rewritten in 2026 to use lists instead of DNSEL.
  *
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Tor blocker module (last modified: 2026.05.02).
+ * This file: Tor blocker module (last modified: 2026.08.18).
  *
  * False positive risk (an approximate, rough estimate only): « [x]Low [ ]Medium [ ]High »
  */
@@ -27,44 +28,39 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         return;
     }
 
-    /** Don't waste time by looking up invalid, private, or reserved ranges. */
-    if (filter_var($this->BlockInfo['IPAddr'], \FILTER_VALIDATE_IP, \FILTER_FLAG_NO_PRIV_RANGE | \FILTER_FLAG_NO_RES_RANGE) === false) {
+    /**
+     * Normalised, lower-cased request URI; Used to determine whether the
+     * module needs to do anything for the request.
+     */
+    $LCURI = \preg_replace('/\s/', '', \strtolower($this->BlockInfo['rURI']));
+
+    /**
+     * If the request isn't attempting to access a sensitive page (login,
+     * registration page, etc), exit.
+     */
+    if ($this->Configuration['tor']['lookup_strategy'] !== 1 && !$this->isSensitive($LCURI)) {
         return;
     }
 
-    $IsTor = false;
-    if (\strpos($this->BlockInfo['IPAddr'], ':') !== false) {
-        $Packed = \unpack('H*hex', \inet_pton($this->BlockInfo['IPAddr']));
-        $LookupName = \implode('.', \array_reverse(\str_split($Packed['hex']))) . '.torexit.dan.me.uk';
-        if (!isset($this->CIDRAM['Tor-' . $LookupName])) {
-            if (($Try = $this->Cache->getEntry('Tor-' . $LookupName)) !== false) {
-                $this->CIDRAM['Tor-' . $LookupName] = $Try;
-            } else {
-                $this->CIDRAM['Tor-' . $LookupName] = \gethostbyname($LookupName);
-                $this->Cache->setEntry('Tor-' . $LookupName, $this->CIDRAM['Tor-' . $LookupName], 21600);
-            }
-        }
+    /**
+     * Only execute if not already blocked for some other reason, if the IP is
+     * valid, and not from a private or reserved range.
+     */
+    if (!$this->honourLookup() || \filter_var($this->BlockInfo['IPAddr'], \FILTER_VALIDATE_IP, \FILTER_FLAG_NO_PRIV_RANGE | \FILTER_FLAG_NO_RES_RANGE) === false) {
+        return;
+    }
 
-        /** Check IPv6 address. */
-        if ($this->trigger($this->CIDRAM['Tor-' . $LookupName] === '127.0.0.100', 'Tor exit node', $this->L10N->getString('why_tor_project_exit_node'))) {
-            $IsTor = true;
-        }
-    } elseif (\strpos($this->BlockInfo['IPAddr'], '.') !== false) {
-        $LookupName = \implode('.', \array_reverse(\explode('.', $this->BlockInfo['IPAddr']))) . '.torexit.dan.me.uk';
-        if (!isset($this->CIDRAM['Tor-' . $LookupName])) {
-            if (($Try = $this->Cache->getEntry('Tor-' . $LookupName)) !== false) {
-                $this->CIDRAM['Tor-' . $LookupName] = $Try;
-            } else {
-                $this->CIDRAM['Tor-' . $LookupName] = \gethostbyname($LookupName);
-                $this->Cache->setEntry('Tor-' . $LookupName, $this->CIDRAM['Tor-' . $LookupName], 21600);
-            }
-        }
-
-        /** Check IPv4 address. */
-        if ($this->trigger($this->CIDRAM['Tor-' . $LookupName] === '127.0.0.100', 'Tor exit node', $this->L10N->getString('why_tor_project_exit_node'))) {
-            $IsTor = true;
+    /** Fetch tor exit nodes list. */
+    if (!isset($this->CIDRAM['TorExitNodes'])) {
+        $this->CIDRAM['TorExitNodes'] = $this->Cache->getEntry('TorExitNodes');
+        if ($this->CIDRAM['TorExitNodes'] === false) {
+            $this->CIDRAM['TorExitNodes'] = $this->Request->request('https://www.dan.me.uk/torlist/?exit', [], $this->Configuration['tor']['timeout_limit']) ?: '';
+            $this->Cache->setEntry('TorExitNodes', $this->CIDRAM['TorExitNodes'], 21600);
         }
     }
+
+    /** Check whether the IP address of the request is on the list. */
+    $IsTor = $this->trigger(\strpos("\n" . $this->CIDRAM['TorExitNodes'] . "\n", $this->BlockInfo['IPAddr']) !== false, 'Tor exit node', $this->L10N->getString('why_tor_project_exit_node'));
 
     if (!$IsTor) {
         /** Fetch hostname. */
@@ -72,18 +68,16 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $this->CIDRAM['Hostname'] = $this->dnsReverse($this->BlockInfo['IPAddr']);
         }
 
-        if ($this->trigger(
+        $IsTor = $this->trigger(
             \preg_match('%(?i)^(?:tor(?:\d?\.|[-_]?(?:exit|node|cloud|[a-z]{3}\.))|.*\.(?:gtor|tor[-]?(?:relays|servers|proxy))\.|exit\d*\.tor)%', $this->CIDRAM['Hostname']),
             'Looks like Tor exit node',
             $this->L10N->getString('why_tor_project_exit_node')
-        )) {
-            $IsTor = true;
-        }
+        );
     }
 
     if ($IsTor) {
         /** Profiling. */
-        $this->addProfileEntry('Tor endpoints here');
+        $this->addProfileEntry('Tor endpoints here', 'Tor blocker module');
 
         /** Fetch options. */
         $this->enactOptions('', \array_flip(\explode("\n", $this->Configuration['tor']['options'])));

@@ -7,11 +7,22 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Tor blocker defaults file (last modified: 2025.08.06).
+# This file: Tor blocker defaults file (last modified: 2026.08.18).
 ##/
 
 Config Defaults:
  tor:
+  lookup_strategy:
+   type: "int"
+   default: 2
+   choices:
+    1: "label.Every request"
+    2: "label.Requests for sensitive pages only"
+   style: "radio"
+   hints: "hints_sensitive_pages"
+  timeout_limit:
+   type: "int"
+   default: 12
   options:
    type: "checkbox"
    default: ""

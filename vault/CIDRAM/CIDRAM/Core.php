@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM core (last modified: 2026.08.17).
+ * This file: The CIDRAM core (last modified: 2026.08.19).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -1296,7 +1296,7 @@ class Core
             /** Block non-verified requests. */
             if (isset($this->CIDRAM['VPermissions'][$Friendly . ':BlockNonVerified'])) {
                 $this->trigger(true, \sprintf($this->L10N->getString('Short.Unverified_UA'), $Friendly));
-                $this->addProfileEntry('Blocked Non-Verified');
+                $this->addProfileEntry('Blocked Non-Verified', 'Verification');
             }
 
             return;
@@ -1332,7 +1332,7 @@ class Core
                 /** Populate "verified" field. */
                 if (isset($this->BlockInfo['Verified'])) {
                     $this->BlockInfo['Verified'] = $Friendly;
-                    $this->addProfileEntry('Verified');
+                    $this->addProfileEntry('Verified', 'Verification');
                 }
 
                 /** Single-hit bypass. */
@@ -1353,7 +1353,7 @@ class Core
                 /** Block non-verified requests. */
                 if (isset($this->CIDRAM['VPermissions'][$Friendly . ':BlockNonVerified'])) {
                     $this->trigger(true, \sprintf($this->L10N->getString('Short.Unverified_UA'), $Friendly));
-                    $this->addProfileEntry('Blocked Non-Verified');
+                    $this->addProfileEntry('Blocked Non-Verified', 'Verification');
                 }
 
                 return;
@@ -1369,7 +1369,7 @@ class Core
                 /** Populate "verified" field. */
                 if (isset($this->BlockInfo['Verified'])) {
                     $this->BlockInfo['Verified'] = $Friendly;
-                    $this->addProfileEntry('Verified');
+                    $this->addProfileEntry('Verified', 'Verification');
                 }
 
                 /** Single-hit bypass. */
@@ -1386,7 +1386,7 @@ class Core
         /** It's a fake; Block it. */
         if (isset($this->CIDRAM['VPermissions'][$Friendly . ':BlockNegatives'])) {
             $this->trigger(true, \sprintf($this->L10N->getString('Short.Fake_UA'), $Friendly));
-            $this->addProfileEntry('Blocked Negative');
+            $this->addProfileEntry('Blocked Negative', 'Verification');
 
             /** Reporting. */
             $this->Reporter->report([19], ['Caught masquerading as ' . $Friendly . '.'], $this->BlockInfo['IPAddr']);
@@ -3326,7 +3326,7 @@ class Core
                 /** Populate "verified" field. */
                 if (isset($this->BlockInfo['Verified'])) {
                     $this->BlockInfo['Verified'] = $Friendly;
-                    $this->addProfileEntry('Verified');
+                    $this->addProfileEntry('Verified', 'Verification');
                 }
 
                 /** Single-hit bypass. */
@@ -3343,7 +3343,7 @@ class Core
         /** Nothing matched. Block it. */
         if (isset($this->CIDRAM['VPermissions'][$Friendly . ':BlockNegatives'])) {
             $this->trigger(true, \sprintf($this->L10N->getString('Short.Fake_UA'), $Friendly));
-            $this->addProfileEntry('Blocked Negative');
+            $this->addProfileEntry('Blocked Negative', 'Verification');
 
             /** Reporting. */
             $this->Reporter->report([19], ['Caught masquerading as ' . $Friendly . '.'], $this->BlockInfo['IPAddr']);
@@ -3393,7 +3393,7 @@ class Core
                     $this->{$Values['Method']}($Values['Valid domains'], $Name, $Values);
                 } elseif (isset($this->CIDRAM['VPermissions'][$Name . ':BlockNonVerified'])) {
                     $this->trigger(true, \sprintf($this->L10N->getString('Short.Unverified_UA'), $Name));
-                    $this->addProfileEntry('Blocked Non-Verified');
+                    $this->addProfileEntry('Blocked Non-Verified', 'Verification');
                 }
             }
         }

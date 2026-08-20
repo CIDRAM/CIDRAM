@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2026.08.17).
+ * This file: Optional security extras module (last modified: 2026.08.18).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -679,9 +679,16 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             if ($this->trigger(\preg_match('~(?:^|[/?])wp-content/uploads(?:$|[/?])~', $LCNrURI), 'Caught scraping')) {
                 $this->Reporter->report([19], ['Caught scraping for WordPress user uploaded media.'], $this->BlockInfo['IPAddr']);
             } // 2026.08.05
-            if ($this->trigger(\preg_match('~(?:^|[/?])(?:wp-admin/(?:css/colors/(?:blue|midnight)|network|options-privacy\.php)|wp-includes/(?:assets|block-bindings|id3|l10n|php-compat|pomo|sodium_compat))(?:$|[/?])~', $LCNrURI), 'Suspected hack attempt')) {
+            if ($this->trigger(\preg_match(
+                '~(?:^|[/?])(?:' .
+                'admin/controller/extension|' .
+                'wp-admin/(?:css/colors/(?:blue|midnight)|maint|network|options-privacy\.php)|' .
+                'wp-includes/(?:assets|block-bindings|id3|l10n|php-compat|pomo|sodium_compat)' .
+                ')(?:$|[/?])~',
+                $LCNrURI
+            ), 'Suspected hack attempt')) {
                 $this->Reporter->report([15, 19], ['Suspected hack attempt detected.'], $this->BlockInfo['IPAddr']);
-            } // 2026.08.05 mod 2026.08.17
+            } // 2026.08.05 mod 2026.08.18
         }
 
         /** Probing for exposed GitHub workflows file. */

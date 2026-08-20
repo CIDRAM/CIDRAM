@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bot user agents module (last modified: 2026.08.17).
+ * This file: Bot user agents module (last modified: 2026.08.20).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -215,7 +215,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         $UANoSpace
     ), 'Malware UA'); // 2017.04.23
 
-    $this->trigger(\preg_match(
+    $this->trigger(\strpos($this->BlockInfo['WhyReason'], 'Banned UA') === false && (\preg_match(
         '~\.buzz|(?<!amazona)dbot/|(?:\W|^)(?:curl|libwww|perl)(?:\W|$)|#boss#|' .
         '^(?:[aim]$|(?!linkedinbot).*http-?(?:agent|client))|-xpanse|' .
         'a(?:bonti|ccserver|cme.spider|dreview/\d|jbaxy|nthill$|nyevent-http|ppengine)|' .
@@ -230,7 +230,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         'l(?:9scan|eak(?:\.info|ix)|exxebot|ivelapbot|wp)|' .
         'm(?:acinroyprivacyauditors|etaintelligence|ultipletimes)|' .
         'n(?:etcraft|ettrapport|icebot|mapscriptingengine|rsbot)|' .
-        'ontheinternet|' .
+        'o(?:ntheinternet|sentix)|' .
         'p(?:4bot|4load|acrawler|ageglimpse|aloalto(?:company|network)|andalytics|arsijoo|egasusmonitoring|hantomjs|hpcrawl|ingdom|rlog|ython-httpx)|' .
         'r(?:arelyused|obo(?:cop|spider)|yze)|' .
         's(?:/got|can\.lol|can(?:ner|info)|creener|eekport|itedomain|mut|nap(?:preview)?bot|oapclient|ocial(?:ayer|searcher)|oso|pyglass|quider|tormintelcrawler|treetbot|ynapse)|' .
@@ -244,7 +244,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     ) || \preg_match(
         '~^Mozilla/5\.0(?: [a-z]{2,5}/0\..| \(Macintosh; Intel Mac OS X \d+_\d+_\d+\) AppleWebKit/\d+\.\d+\.\d+ \(KHTML, like Gecko\))?$~i',
         $this->BlockInfo['UA']
-    ), 'Unauthorised'); // 2023.09.15 mod 2026.06.20
+    )), 'Unauthorised'); // 2023.09.15 mod 2026.08.20
 
     if ($this->trigger(\preg_match('~ivre-|masscan~', $UANoSpace), 'Port scanner and synflood tool detected')) {
         $this->Reporter->report([14, 15, 19], ['MASSCAN port scanner and synflood tool detected.'], $this->BlockInfo['IPAddr']);
@@ -312,7 +312,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
     if ($this->trigger(\preg_match(
         '~^(?:curlmozilla|http_get)|\(gort\)|[-.]ai|2bone|80legs|' .
-        'a(?:dbar|gent(?:3|api|ic|ql)|i.?(?:2|agent|article|assistant|bot|chat|content|detection|dungeon|hitbot|journalist|legion|matrix|rag|research|search' . $OAIBypass . '|seocrawler|training|web|writer)|liyun|lphaai|nalyzerai|ndibot|nonymous-?(?:ai|coward)|riaai|skai|utomatedwriter|uto(?:nomous)?rag|wario|wstrainium|xios)|' .
+        'a(?:dbar|gent(?:[-_3]|api|ic|ql)|i.?(?:2|agent|article|assistant|bot|chat|content|detection|dungeon|hitbot|journalist|legion|matrix|rag|research|search' . $OAIBypass . '|seocrawler|training|web|writer)|liyun|lphaai|nalyzerai|ndibot|nonymous-?(?:ai|coward)|riaai|skai|utomatedwriter|uto(?:nomous)?rag|wario|wstrainium|xios)|' .
         'b(?:aby(?:cat)?agi|anana-?bot|asicrag|edrockbot|ot-?test|rands-?bot|rightbot|rings_?you|ytespider)|' .
         'c(?:arynai|asperbot|cbot|harstar|hinaclaw|lark-?crawler|laude|ognitive|ohere-|ommoncrawl|ontent(?:atscale|bot|edge|harmony|king|samurai|shake)|onversionai|opilot|opy(?:ai|matic|scape)|oreweave|orrectiverag|otoyogi|rawl[4q]ai|rawler4j|rewai|rushonai)|' .
         'd(?:all[-_]e|atenbank|eep-?(?:ai|crawl|index|l|mind|(?:re)?search|seek)|iffbot|oubaoai)|' .
@@ -341,7 +341,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         $UANoSpace
     ), 'Scraper UA', '', $UnmarkCaptcha)) {
         $this->CIDRAM['Tracking options override'] = 'extended';
-    } // 2023.11.17 mod 2026.08.17
+    } // 2023.11.17 mod 2026.08.20
 
     /**
      * @link https://github.com/CIDRAM/CIDRAM/issues/651

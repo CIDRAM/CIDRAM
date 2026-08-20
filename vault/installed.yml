@@ -1,6 +1,6 @@
 CIDRAM Core:
  Name: "CIDRAM Core"
- Version: "3.12.1-DEV+262270"
+ Version: "3.12.1"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Front-End: "Latest"
@@ -9,7 +9,7 @@ CIDRAM Core:
  Changelog: "https://github.com/CIDRAM/CIDRAM/blob/v3/Changelog.md"
  Release Notes For: ["3.8.1", "3.9.0", "3.9.1", "3.10.0", "3.10.1", "3.10.2", "3.11.0", "3.12.0", "3.12.1"]
  When Update Succeeds:
-  - "wpVer 4.8 7.0.4 3.12.0 7.2"
+  - "wpVer 4.8 7.1 3.12.1 7.2"
   - "foreach {Components.RemoteMeta.CIDRAM Core.Release Notes For} as Key => Value if {Components.Meta.CIDRAM Core.Version}<{Value}&&{Components.RemoteMeta.CIDRAM Core.Version}>={Value} then queue message response.release_notes https://github.com/CIDRAM/CIDRAM/releases/tag/v{Value} CIDRAM v{Value}"
   - "if {Components.Meta.CIDRAM Core.Version}<3.10.3-DEV+260440&&{Components.RemoteMeta.CIDRAM Core.Version}>=3.10.3-DEV+260440 then queue message <span dir="ltr" lang="en-AU">[CIDRAM Core 3.10.3-DEV+260440] UptimeRobot's default signature bypass has been replaced with full verification support. Pressing <span class="txtRd">↺ Reset</span> on <code class="s">verification➡other</code> at the configuration page and then update is recommended.</span>"
  Uninstallable: false
@@ -64,7 +64,7 @@ CIDRAM Core:
    Checksum: "8772ea1cd9695785ea578ad464b65e3373a6a367de714dd4d354d2eaf0a44710:20788"
 CIDRAM Front-End:
  Name: "CIDRAM Front-End"
- Version: "3.12.1-DEV+262270"
+ Version: "3.12.1"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "Latest"
@@ -1562,9 +1562,10 @@ Tor blocker module:
  Version: "2026.228.0"
  Dependencies:
   PHP: "^7.2|^8"
-  CIDRAM Core: "^3.12.1-DEV+262270"
+  CIDRAM Core: "^3.12.1"
  When Install Succeeds: ["queue message response.please_check_config"]
- When Update Succeeds: ["if {Components.Meta.Tor blocker module.Version}<2026.228&&{Components.RemoteMeta.Tor blocker module.Version}>=2026.228 then queue message <span dir="ltr" lang="en-AU">Since the previous update, the Tor blocker module has been rewritten, both its behaviour and its configuration options modified. After this update, reviewing its currently set configuration may be advisable.</span>"]
+ When Update Succeeds:
+  - "if {Components.Meta.Tor blocker module.Version}<2026.228&&{Components.RemoteMeta.Tor blocker module.Version}>=2026.228 then queue message <span dir="ltr" lang="en-AU">Since the previous update, the Tor blocker module has been rewritten, both its behaviour and its configuration options modified. After this update, reviewing its currently set configuration may be advisable.</span>"
  Files:
   imports/tor.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/imports/tor.yml"

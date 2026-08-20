@@ -1,6 +1,6 @@
 CIDRAM Core:
  Name: "CIDRAM Core"
- Version: "4.2.1-DEV+262300"
+ Version: "4.2.1"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Front-End: "Latest"
@@ -9,7 +9,7 @@ CIDRAM Core:
  Changelog: "https://github.com/CIDRAM/CIDRAM/blob/v4/Changelog.md"
  Release Notes For: ["4.0.0", "4.0.1", "4.1.0", "4.2.0", "4.2.1"]
  When Update Succeeds:
-  - "wpVer 4.8 7.0.4 4.2.0 7.2"
+  - "wpVer 4.8 7.1 4.2.1 7.2"
   - "foreach {Components.RemoteMeta.CIDRAM Core.Release Notes For} as Key => Value if {Components.Meta.CIDRAM Core.Version}<{Value}&&{Components.RemoteMeta.CIDRAM Core.Version}>={Value} then queue message response.release_notes https://github.com/CIDRAM/CIDRAM/releases/tag/v{Value} CIDRAM v{Value}"
   - "if {Components.Meta.CIDRAM Core.Version}<4.0.0-DEV&&{Components.RemoteMeta.CIDRAM Core.Version}>=4.0.0-DEV then set Configuration.captcha={Configuration.hcaptcha};executeMacro uninstall_no_longer_available;set Configuration.captcha.hcaptcha_secret="{Configuration.captcha.secret}";set Configuration.captcha.hcaptcha_sitekey="{Configuration.captcha.sitekey}";set Configuration.captcha.usemode.hcaptcha={Configuration.captcha.usemode};set Configuration.captcha.nonblocked_status_code.hcaptcha={Configuration.captcha.nonblocked_status_code};set Configuration.captcha.api.hcaptcha="{Configuration.captcha.api}";set Configuration.recaptcha="";set Configuration.hcaptcha="";set Configuration.general.http_response_header_code.default={Configuration.general.http_response_header_code};set Configuration.general.statistics={CIDRAM.Config Defaults.general.statistics.default};updateConfiguration"
   - "if {Components.Meta.CIDRAM Core.Version}<4.1.0-DEV+260440&&{Components.RemoteMeta.CIDRAM Core.Version}>=4.1.0-DEV+260440 then queue message <span dir="ltr" lang="en-AU">[CIDRAM Core 4.1.0-DEV+260440] UptimeRobot's default signature bypass has been replaced with full verification support. Pressing <span class="txtRd">↺ Reset</span> on <code class="s">verification➡other</code> at the configuration page and then update is recommended.</span>"
@@ -68,7 +68,7 @@ CIDRAM Core:
    Checksum: "8772ea1cd9695785ea578ad464b65e3373a6a367de714dd4d354d2eaf0a44710:20788"
 CIDRAM Front-End:
  Name: "CIDRAM Front-End"
- Version: "4.2.1-DEV+262300"
+ Version: "4.2.1"
  Dependencies:
   PHP: "^7.2|^8"
   CIDRAM Core: "Latest"
@@ -746,7 +746,7 @@ Bypasses:
  Version: "2026.228.0"
  Dependencies:
   PHP: "^7.2|^8"
-  CIDRAM Core: "^4.2.1-DEV+262270"
+  CIDRAM Core: "^4.2.1"
  When Update Succeeds:
   - "if {Components.Meta.Bypasses.Version}<2025.348&&{Components.RemoteMeta.Bypasses.Version}>=2025.348 then queue message <span dir="ltr" lang="en-AU">[Bypasses 2025.348.0] Added a new default signature bypass, "iCloud (iPhone Safari Bypass)" (configuration settings should be revised accordingly).</span>"
  Files:
@@ -1338,7 +1338,7 @@ AbuseIPDB module:
  Version: "2026.227.0"
  Dependencies:
   PHP: "^7.2|^8"
-  CIDRAM Core: "^4.2.1-DEV+262270"
+  CIDRAM Core: "^4.2.1"
   l10n/frontend/{lang}: ">=2026.44"
  When Install Succeeds: ["queue message response.please_check_config"]
  Files:
@@ -1365,7 +1365,7 @@ Bad hosts blocker module:
  Version: "2026.227.0"
  Dependencies:
   PHP: "^7.2|^8"
-  CIDRAM Core: "^4.2.1-DEV+262270"
+  CIDRAM Core: "^4.2.1"
  Files:
   modules/badhosts.php:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/modules/badhosts.php"
@@ -1414,7 +1414,7 @@ BunnyCDN compatibility module:
  Version: "2026.227.0"
  Dependencies:
   PHP: "^7.2|^8"
-  CIDRAM Core: "^4.2.1-DEV+262270"
+  CIDRAM Core: "^4.2.1"
  When Install Succeeds: ["queue message response.please_check_config"]
  Files:
   imports/bunnycdn.yml:
@@ -1441,7 +1441,7 @@ IP-API module:
  Version: "2026.227.0"
  Dependencies:
   PHP: "^7.2|^8"
-  CIDRAM Core: "^4.2.1-DEV+262270"
+  CIDRAM Core: "^4.2.1"
  When Install Succeeds: ["queue message response.please_check_config"]
  Files:
   imports/ipapi.yml:
@@ -1473,7 +1473,7 @@ Project Honeypot module:
  Version: "2026.227.0"
  Dependencies:
   PHP: "^7.2|^8"
-  CIDRAM Core: "^4.2.1-DEV+262270"
+  CIDRAM Core: "^4.2.1"
  When Install Succeeds: ["queue message response.please_check_config"]
  Files:
   imports/projecthoneypot.yml:
@@ -1523,7 +1523,7 @@ Quic cloud compatibility module:
  Version: "2026.227.0"
  Dependencies:
   PHP: "^7.2|^8"
-  CIDRAM Core: "^4.2.1-DEV+262270"
+  CIDRAM Core: "^4.2.1"
  When Install Succeeds: ["queue message response.please_check_config"]
  Files:
   imports/quic.yml:
@@ -1539,9 +1539,10 @@ Tor blocker module:
  Version: "2026.228.0"
  Dependencies:
   PHP: "^7.2|^8"
-  CIDRAM Core: "^4.2.1-DEV+262270"
+  CIDRAM Core: "^4.2.1"
  When Install Succeeds: ["queue message response.please_check_config"]
- When Update Succeeds: ["if {Components.Meta.Tor blocker module.Version}<2026.228&&{Components.RemoteMeta.Tor blocker module.Version}>=2026.228 then queue message <span dir="ltr" lang="en-AU">Since the previous update, the Tor blocker module has been rewritten, both its behaviour and its configuration options modified. After this update, reviewing its currently set configuration may be advisable.</span>"]
+ When Update Succeeds:
+  - "if {Components.Meta.Tor blocker module.Version}<2026.228&&{Components.RemoteMeta.Tor blocker module.Version}>=2026.228 then queue message <span dir="ltr" lang="en-AU">Since the previous update, the Tor blocker module has been rewritten, both its behaviour and its configuration options modified. After this update, reviewing its currently set configuration may be advisable.</span>"
  Files:
   imports/tor.yml:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/imports/tor.yml"

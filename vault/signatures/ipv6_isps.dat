@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v4/vault/signatures/ipv6_isps.dat
 
-# Version: 2026.202.0
-# Last modified: 2026.07.22
+# Version: 2026.236.0
+# Last modified: 2026.08.25
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -287,17 +287,26 @@ Tag: PJSC Moscow city
 # Indian domestic ISP. Brute-force, SSH, FTP, SQLi, and webapp attacks, port
 # scans, hacking, and spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 4,021 (AS18209), 2,245 (AS24309),
-# 464 (AS55577), 261 (AS131269).
-# Updated: 2025.06.04
+# Stop Forum Spam (SFS) listings: 1,228 (AS18209), 820 (AS24309),
+# 132 (AS55577), 64 (AS131269).
+# Updated: 2026.08.22
 
-2406:7400:54:1fd::/64 Deny Spam
-2406:b400:71:18c::/64 Deny Spam
-2406:b400:71:b718::/64 Deny Spam
-2406:b400:71:bdce::/64 Deny Spam
-2406:b400:72:1abe::/64 Deny Spam
-2406:b400:72:38d9::/64 Deny Spam
-2406:b400:d1:296f::/64 Deny Spam
+2406:7400:ca:be47::/64 Deny Spam
+2406:7400:10a:2aaa::/64 Deny Spam
+2406:7400:10a:533e::/64 Deny Spam
+2406:7400:10a:d1ab::/64 Deny Spam
+2406:7400:11d:8c40::/64 Deny Spam
+2406:7400:11d:990f::/64 Deny Spam
+2406:7400:11d:ef8f::/64 Deny Spam
+2406:b400:71:2e6c::/64 Deny Spam
+2406:b400:71:51c0::/64 Deny Spam
+2406:b400:71:8469::/64 Deny Spam
+2406:b400:75:e3::/64 Deny Spam
+2406:b400:75:48f6::/64 Deny Spam
+2406:b400:75:62b8::/64 Deny Spam
+2406:b400:75:80cf::/64 Deny Spam
+2406:b400:75:95b0::/64 Deny Spam
+2406:b400:75:ff12::/64 Deny Spam
 Origin: IN
 Profile: Domestic ISP
 Tag: Atria Convergence
@@ -455,19 +464,6 @@ Tag: PT Telekomunikasi Indonesia
 Origin: BR
 Profile: Domestic ISP
 Tag: Click Fibra
-
-
-# ASNs 16135, 34984, 205570 ("TURKCELL ILETISIM HIZMETLERI A.S").
-# Turkish multiplay network, ISP, TV, and mobile data provider.
-# Brute-force, SSH attacks, port scans, hacking, and spam detected from here.
-# Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 373 (AS16135), 1,177 (AS34984).
-# Updated: 2025.06.26
-
-2a02:4e0:2d9c:1204::/64 Deny Spam
-Origin: TR
-Profile: Domestic ISP;Mobile ISP;Multiplay
-Tag: TURKCELL ILETISIM HIZMETLERI
 
 
 # ASN 45916 ("Gujarat Telelink Pvt Ltd").

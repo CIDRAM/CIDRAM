@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2026.08.18).
+ * This file: Optional security extras module (last modified: 2026.08.26).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -130,7 +130,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
                 'o(?:ld(?:/wp-admin/install|-up-ova)|va-uname|rvx(?:-shell)?|thiondwmek)|' .
                 'p(?:erl\.alfa|hp(?:1|_niu_\d+)|huploader|lugins/(?:backup_index|vwcleanerplugin/bump|zedd/\d+)|oison|rayer_intentions|riv8|wnd|zaiihfi)|' .
                 'qxuho|' .
-                'r(?:andkeyword|endixd)|' .
+                'r(?:andkeyword|endixd|etu\d+)|' .
                 's(?:_n?e|eoplugins/mar|ession91|h[3e]ll[sxz]?\d*|hrift|idwso|ilic|kipper(?:shell)?|llolx|onarxleetxd|pammervip|rc/util/php/(?:eval(?:-stdin)?|kill)|ystem_log)|' .
                 't(?:62|aptap-null|enda\.sh.*tenda\.sh|emplates/beez/index|hemes/(?:finley/min|pridmag/db|universal-news/www)|ermps|homs|hreefox(?:_exploit/index)?|inymce/(?:langs/about|plugins/compat3x/css/index)|k_dencode_\d+|mp/vuln|opxoh/(?:drsx|wdr))|' .
                 'u(?:bh/up|nisibfu|pfile(?:_\\(\d\\))?|pgrade-temp-backup/wp-login|ploader_by_cloud7_agath|tchiha(?:_uploader)?)|' .
@@ -153,7 +153,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
                 '(?:^|[/?])(?:@|\d+|anu|by(?:pass)?|ee|ez0y|fx?|gel[4a]y|lloh|mini(?:shell)?|pas|priv8|wp-about|wso|xl[3e]{2}t(?:[_-]shell)?)\.phtml(?:$|[/?])|' .
                 '(?:^|[/?])(?:cgi(?:shell)?|domaine|perlcgi|shell|symlink|xx)\.pl(?:$|[/?])~',
                 $LCNrURI
-            ), 'Probing for webshells/backdoors') // 2023.08.18 mod 2026.08.15
+            ), 'Probing for webshells/backdoors') // 2023.08.18 mod 2026.08.26
         ) {
             $this->Reporter->report([15, 20, 21], ['Caught probing for webshells/backdoors. Host might be compromised.'], $this->BlockInfo['IPAddr']);
         } elseif ($this->trigger(\preg_match('~(?:^|[/?])(?:\.well-known(?:new\d*|old\d*)|[1-9cefimnptuwx]{27}\.jsp|alfa_data/alfacgiapi|alfa-?rexhp\d\.p|(?:send-)?ses\.sh)(?:$|[/?])~', $LCNrURI), 'Probing for webshells/backdoors')) { // 2024.02.18 mod 2025.07.06
@@ -682,13 +682,13 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             if ($this->trigger(\preg_match(
                 '~(?:^|[/?])(?:' .
                 'admin/controller/extension|' .
-                'wp-admin/(?:css/colors/(?:blue|midnight)|maint|network|options-privacy\.php)|' .
-                'wp-includes/(?:assets|block-bindings|id3|l10n|php-compat|pomo|sodium_compat)' .
+                'wp-admin/(?:css/colors/(?:blue|midnight)|maint|network|(?:options-)?privacy\.php)|' .
+                'wp-includes/(?:assets|block-bindings|id3|js/tinymce/themes|l10n|php-compat|pomo|sodium_compat)' .
                 ')(?:$|[/?])~',
                 $LCNrURI
             ), 'Suspected hack attempt')) {
                 $this->Reporter->report([15, 19], ['Suspected hack attempt detected.'], $this->BlockInfo['IPAddr']);
-            } // 2026.08.05 mod 2026.08.18
+            } // 2026.08.05 mod 2026.08.26
         }
 
         /** Probing for exposed GitHub workflows file. */

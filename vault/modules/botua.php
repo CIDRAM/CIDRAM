@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bot user agents module (last modified: 2026.08.20).
+ * This file: Bot user agents module (last modified: 2026.08.29).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -223,7 +223,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         'c(?:astlebot|atexplorador|cleaner|eramic|k=\{\}|lickagy|liqzbot|ms-?checker|ontextad|orporama|ortex/\d|rowsnest|yberpatrol)|' .
         'd(?:eepfield|le_spider|nbcrawler|omainappender|ummyconnection|umprendertree)|' .
         'expanse|' .
-        'f(?:lightdeckreportsbot|luid/|orms\.gle)|' .
+        'f(?:lightdeckreportsbot|lowiq|luid/|orms\.gle)|' .
         'g(?:atheranalyzeprovide|enomecrawler|dnplus|imme60|lobalipv[46]space|ooglebenjojo|tbdfffgtb.?$)|' .
         'i(?:nfrawatch|nternaldummy|nternet(?:census|measurement)|ps-agent|sitwp)|' .
         'k2spider|kemvi|' .
@@ -233,7 +233,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         'o(?:ntheinternet|sentix)|' .
         'p(?:4bot|4load|acrawler|ageglimpse|aloalto(?:company|network)|andalytics|arsijoo|egasusmonitoring|hantomjs|hpcrawl|ingdom|rlog|ython-httpx)|' .
         'r(?:arelyused|obo(?:cop|spider)|yze)|' .
-        's(?:/got|can\.lol|can(?:ner|info)|creener|eekport|itedomain|mut|nap(?:preview)?bot|oapclient|ocial(?:ayer|searcher)|oso|pyglass|quider|tormintelcrawler|treetbot|ynapse)|' .
+        's(?:/got|can\.lol|can(?:ner|ning-?info|info)|creener|eekport|itedomain|mut|nap(?:preview)?bot|oapclient|ocial(?:ayer|searcher)|oso|pyglass|quider|tormintelcrawler|treetbot|ynapse)|' .
         't(?:omba|weezler|ryghost)|' .
         'urlappendbot|urltest|' .
         'vicibox|' .
@@ -244,7 +244,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
     ) || \preg_match(
         '~^Mozilla/5\.0(?: [a-z]{2,5}/0\..| \(Macintosh; Intel Mac OS X \d+_\d+_\d+\) AppleWebKit/\d+\.\d+\.\d+ \(KHTML, like Gecko\))?$~i',
         $this->BlockInfo['UA']
-    )), 'Unauthorised'); // 2023.09.15 mod 2026.08.20
+    )), 'Unauthorised'); // 2023.09.15 mod 2026.08.29
 
     if ($this->trigger(\preg_match('~ivre-|masscan~', $UANoSpace), 'Port scanner and synflood tool detected')) {
         $this->Reporter->report([14, 15, 19], ['MASSCAN port scanner and synflood tool detected.'], $this->BlockInfo['IPAddr']);

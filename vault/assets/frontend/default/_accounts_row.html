@@ -2,7 +2,7 @@
       <input id="{AccID}username" type="hidden" value="{AccUsername}" />
       <td class="h1 big"><div class="s">{AccUsername}</div><small>{AccWarnings}</small></td>
       <td class="h1 big"><div class="s">{AccPermissions}</div></td>
-      <td class="h1 big"><input id="{AccID}password" type="password" placeholder="{field.Password}" autocomplete="new-password" /></td>
+      <td class="h1 big"><input id="{AccID}password" type="password" placeholder="{field.Password}" autocomplete="new-password" onchange="javascript:w('pwdWarn{AccID}',vulnerablePasswords.includes(this.value)||(this.value.length>0&&this.value.length<8)?'{PassInOnListWarn}':'')" onkeyup="javascript:w('pwdWarn{AccID}',vulnerablePasswords.includes(this.value)||(this.value.length>0&&this.value.length<8)?'{PassInOnListWarn}':'')"/><small><br /><span id="pwdWarn{AccID}" class="txtRd"></span></small></td>
       <td class="h1f extend">
         <div class="s big">
           <select id="{AccID}do" class="auto" title="{field.Options}">
@@ -11,7 +11,7 @@
         </div>
         <div class="s mob">
           <div class="s">{AccUsername}</div><small>{AccWarnings}</small><br /><em>{AccPermissions}</em><br />
-          <input id="{AccID}passwordmob" type="password" placeholder="{field.Password}" autocomplete="new-password" /><br />
+          <input id="{AccID}passwordmob" type="password" placeholder="{field.Password}" autocomplete="new-password" onchange="javascript:w('pwdWarn{AccID}Mob',vulnerablePasswords.includes(this.value)||(this.value.length>0&&this.value.length<8)?'{PassInOnListWarn}':'')" onkeyup="javascript:w('pwdWarn{AccID}Mob',vulnerablePasswords.includes(this.value)||(this.value.length>0&&this.value.length<8)?'{PassInOnListWarn}':'')"/><small><br /><span id="pwdWarn{AccID}Mob" class="txtRd"></span></small><br />
           <select id="{AccID}domob" class="auto" title="{field.Options}"><option value="update-password">{field.Set new password}</option><option value="delete-account">{field.Delete account}</option></select><br />
           <input type="button" value="{field.OK}" class="auto" onclick="javascript:acc('{AccID}username','{AccID}passwordmob','{AccID}','{AccID}domob')" />
         </div>

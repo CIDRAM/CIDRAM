@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2026.06.22).
+ * This file: General methods used by the front-end (last modified: 2026.08.30).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -632,6 +632,19 @@ trait FrontEndMethods
                 $Template = \substr($Template, 0, $BPos) . \substr($Template, $EPos + \strlen($Segment) + 13);
             }
         }
+
+        /** Prepare warnings. */
+        if (isset($this->CIDRAM['Warnings']) && \is_array($this->CIDRAM['Warnings'])) {
+            /** Default password warning. */
+            if (!empty($this->FE['User']) && isset($this->Configuration['user.' . $this->FE['User']]['password']) && $this->Configuration['user.' . $this->FE['User']]['password'] === $this->FE['DefaultPassword']) {
+                $this->CIDRAM['Warnings'][] = $this->L10N->getString('warning.Using the default password');
+            }
+
+            $this->FE['Warnings'] = \count($this->CIDRAM['Warnings']) ? "\n<div class=\"center\"><div class=\"warning\">" . \implode("</div>\n<div class=\"warning\">", $this->CIDRAM['Warnings']) . '</div></div><hr />' : '';
+        } else {
+            $this->FE['Warnings'] = '';
+        }
+
         return $this->embedAssets($this->parseVars($this->FE, $Template, true));
     }
 

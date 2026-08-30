@@ -522,7 +522,7 @@
 - [2026.02.16]: Added support for suggestions for the ignore condition source at the auxiliary rules page.
 - [2026.02.18]: Improved the hinting for the usemode configuration directive (#657).
 - [2026.02.22]: CIDRAM can now account for X-Forwarded-Proto when handling the request's protocol (#673).
-- [2026.02.24]: The cache data page can now manage flatfile caching and APCU caching alongside whatever else is enabled at the same time (sometimes useful for when switching between different caching mechanisms but needing to manage entries from both mechanisms or others at the same time).
+- [2026.02.24]: The cache data page can now manage flatfile caching and APCu caching alongside whatever else is enabled at the same time (sometimes useful for when switching between different caching mechanisms but needing to manage entries from both mechanisms or others at the same time).
 - [2026.02.26]: Refactored BOBUAM, removing three configuration directives (sanity_check, block_bots, and block_eol_browsers), and adding a new configuration directive (what_to_block) as a replacement (#675).
 - [2026.02.28]: Refactored some of the L10N data.
 - [2026.03.13]: Added the ability to duplicate cache data across different cache mechanisms at the front-end cache data page.
@@ -566,3 +566,8 @@
 - [2026.08.17]: Added some missing components L10N.
 - [2026.08.18]: The Tor blocker module has been rewritten to use lists instead of DNSEL, its overall behaviour and available configuration modified (#687).
 - *Plus all the regular signature updates.*
+
+### v3.12.2
+
+#### Security.
+- [2026.08.30]: The default password usage warning now shows not only at the accounts page, but across the entire front-end when logged into an affected account in the hopes of more strongly encouraging any users which haven't yet set a proper password to do so. Furthermore, when any password field at the accounts page contains more than 0 but less than 8 characters, or when its content matches an entry from a predefined "list of the most common passwords", a warning will now be displayed that "extremely common passwords should be avoided".

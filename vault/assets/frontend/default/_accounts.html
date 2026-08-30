@@ -14,7 +14,7 @@
       <form action="?cidram-page=accounts" method="POST"><input name="cidram-form-target" type="hidden" value="accounts" /><input name="do" type="hidden" value="create-account" />
         <div class="h1"><input name="username" type="text" placeholder="{field.Username}" autocomplete="username" /></div>
         <div class="h1"><select name="permissions" title="{field.Permissions}"><option value="1">{label.Complete access}</option><option value="2">{label.Logs access only}</option><option value="3">Cronable</option></select></div>
-        <div class="h1"><input name="password" type="password" placeholder="{field.Password}" autocomplete="new-password" /></div>
+        <div class="h1"><input name="password" type="password" placeholder="{field.Password}" autocomplete="new-password" onchange="javascript:w('pwdWarn',vulnerablePasswords.includes(this.value)||(this.value.length>0&&this.value.length<8)?'{PassInOnListWarn}':'')" onkeyup="javascript:w('pwdWarn',vulnerablePasswords.includes(this.value)||(this.value.length>0&&this.value.length<8)?'{PassInOnListWarn}':'')"/><small><br /><span id="pwdWarn" class="txtRd"></span></small></div>
         <div class="h1f"><input type="submit" class="auto" value="{field.Create new account}" /></div>
       </form>
 {Accounts}

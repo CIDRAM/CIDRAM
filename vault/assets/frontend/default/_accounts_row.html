@@ -1,6 +1,6 @@
         <div class="h1 s canHighlight" id="q1{AccID}"><input id="{AccID}username" type="hidden" value="{AccUsername}" />{AccUsername}<small>{AccWarnings}</small></div>
         <div class="h1 s canHighlight" id="q2{AccID}">{AccPermissions}</div>
-        <div class="h1 s canHighlight" id="q3{AccID}"><input id="{AccID}password" type="password" placeholder="{field.Password}" autocomplete="new-password" /></div>
+        <div class="h1 s canHighlight" id="q3{AccID}"><input id="{AccID}password" type="password" placeholder="{field.Password}" autocomplete="new-password" onchange="javascript:w('pwdWarn{AccID}',vulnerablePasswords.includes(this.value)||(this.value.length>0&&this.value.length<8)?'{PassInOnListWarn}':'')" onkeyup="javascript:w('pwdWarn{AccID}',vulnerablePasswords.includes(this.value)||(this.value.length>0&&this.value.length<8)?'{PassInOnListWarn}':'')"/><small><br /><span id="pwdWarn{AccID}" class="txtRd"></span></small></div>
         <div class="h1f canHighlight" id="q4{AccID}">
           <select id="{AccID}do" class="auto" title="{field.Options}">
             <option value="update-password">{field.Set new password}</option><option value="delete-account">{field.Delete account}</option>

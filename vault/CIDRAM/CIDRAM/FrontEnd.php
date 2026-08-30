@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2026.05.28).
+ * This file: The CIDRAM front-end (last modified: 2026.08.30).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -399,15 +399,6 @@ class FrontEnd extends Core
             /** Process all warning conditions. */
             $this->executor($this->CIDRAM['Problems']);
         }
-
-        /** Prepare warnings. */
-        $this->FE['Warnings'] = \count($this->CIDRAM['Warnings']) ? "\n<div class=\"center\"><div class=\"warning\">" . \implode(
-            "</div>\n<div class=\"warning\">",
-            $this->CIDRAM['Warnings']
-        ) . '</div></div><hr />' : '';
-
-        /** Cleanup. */
-        unset($this->CIDRAM['Warnings']);
 
         /** Initialise statistics tracked. */
         $this->StatisticsTracked = \array_flip(\explode("\n", $this->Configuration['general']['statistics']));

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2026.08.26).
+ * This file: Optional security extras module (last modified: 2026.09.01).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -633,9 +633,9 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         } // 2026.06.07 mod 2026.06.13
 
         /** Probing for exposed Google Cloud Platform credentials. */
-        if ($this->trigger(\preg_match('~(?:^|[/?])(?:application_default_credentials|gcp-(?:credentials|service)|(?:google-)?service[-_]?account(?:[-_]?(?:file|key))?|keyfile|sa(?:-private)?-key)\.json(?:$|[/?])~', $LCNrURI), 'Probing for exposed Google Cloud Platform credentials')) {
+        if ($this->trigger(\preg_match('~(?:^|[/?])(?:application_default_credentials|gcp-(?:credentials|key|sa|service)|google-?(?:key|credentials?)|(?:google-)?service[-_]?account(?:[-_]?(?:file|key))?|keyfile|sa(?:-private)?-key)\.json(?:$|[/?])~', $LCNrURI), 'Probing for exposed Google Cloud Platform credentials')) {
             $this->Reporter->report([15, 21], ['Caught probing for exposed Google Cloud Platform credentials.'], $this->BlockInfo['IPAddr']);
-        } // 2026.06.07 mod 2026.08.15
+        } // 2026.06.07 mod 2026.09.01
 
         /** Probing for exposed Laravel error logs. */
         if ($this->trigger(\preg_match('~(?:^|[/?])logs/laravel\.log(?:$|[/?])~', $LCNrURI), 'Probing for exposed Laravel error logs')) {
@@ -680,13 +680,14 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             if ($this->trigger(\preg_match(
                 '~(?:^|[/?])(?:' .
                 'admin/controller/extension|' .
-                'wp-admin/(?:css/colors/(?:blue|midnight)|maint|network|(?:options-)?privacy\.php)|' .
-                'wp-includes/(?:assets|block-bindings|id3|js/tinymce/themes|l10n|php-compat|pomo|sodium_compat)' .
+                'wp-admin/(?:css/colors/(?:blue|midnight)|maint|network|(?:options-)?privacy\.php|user)|' .
+                'wp-includes/(?:assets|block-bindings|id3|js/tinymce/themes|l10n|php-compat|pomo|sodium_compat)|' .
+                'wp-signup\.php' .
                 ')(?:$|[/?])~',
                 $LCNrURI
             ), 'Suspected hack attempt')) {
                 $this->Reporter->report([15, 19], ['Suspected hack attempt detected.'], $this->BlockInfo['IPAddr']);
-            } // 2026.08.05 mod 2026.08.26
+            } // 2026.08.05 mod 2026.09.01
         }
 
         /** Probing for exposed GitHub workflows file. */

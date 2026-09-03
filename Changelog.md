@@ -595,3 +595,7 @@
 #### Security.
 - [2026.08.30]: The default password usage warning now shows not only at the accounts page, but across the entire front-end when logged into an affected account in the hopes of more strongly encouraging any users which haven't yet set a proper password to do so. Furthermore, when any password field at the accounts page contains more than 0 but less than 8 characters, or when its content matches an entry from a predefined "list of the most common passwords", a warning will now be displayed that "extremely common passwords should be avoided".
 - [2026.09.03]: Password fields at the front-end accounts page now include a basic strenth check.
+
+#### Other changes.
+- [2026.09.04]: Verification updated.
+- *Plus all the regular signature updates.*

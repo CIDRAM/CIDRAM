@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The accounts page (last modified: 2026.08.30).
+ * This file: The accounts page (last modified: 2026.09.03).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -80,11 +80,16 @@ if (!$this->FE['ASYNC']) {
     $this->initialPrepwork($this->L10N->getString('link.Accounts'), $this->L10N->getString('tip.Accounts'));
 
     /** Append JavaScript specific to the accounts page. */
-    $this->FE['JS'] .= $this->parseVars(['Loading' => $this->L10N->getString('label.Loading_')], $this->readFile($this->getAssetPath('accounts.js')));
+    $this->FE['JS'] .= $this->parseVars([
+        'Loading' => $this->L10N->getString('label.Loading_'),
+        'PasswordStrengthLow' => $this->L10N->getString('label.Password strength') . $this->L10N->getString('label.risk.Low'),
+        'PasswordStrengthMedium' => $this->L10N->getString('label.Password strength') . $this->L10N->getString('label.risk.Medium'),
+        'PasswordStrengthHigh' => $this->L10N->getString('label.Password strength') . $this->L10N->getString('label.risk.High')
+    ], $this->readFile($this->getAssetPath('accounts.js')));
 
     $this->FE['AccountsRow'] = $this->readFile($this->getAssetPath('_accounts_row.html'));
     $this->FE['Accounts'] = '';
-    $this->FE['PassInOnListWarn'] = \str_replace('\'', '\\\'', $this->L10N->getString('warning.Extremely common passwords should be avoided'));
+    $this->FE['PassInOnListWarn'] = '<br \>' . \str_replace('\'', '\\\'', $this->L10N->getString('warning.Extremely common passwords should be avoided'));
 
     $LI = ['Possible' => []];
     foreach ($this->Cache->getAllEntries() as $LI['KeyName'] => $LI['KeyData']) {

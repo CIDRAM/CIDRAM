@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The configuration page (last modified: 2026.05.23).
+ * This file: The configuration page (last modified: 2026.09.04).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -645,32 +645,6 @@ foreach ($this->CIDRAM['Config Defaults'] as $CatKey => $CatValue) {
         }
         $ThisDir['FieldOut'] .= $ThisDir['Preview'];
 
-        /** Check extension and class requirements. */
-        if (!empty($DirValue['required'])) {
-            $ThisDir['FieldOut'] .= '<small>';
-            foreach ($DirValue['required'] as $DirValue['Requirement'] => $DirValue['Friendly']) {
-                if (isset($ReqsLookupCache[$DirValue['Requirement']])) {
-                    $ThisDir['FieldOut'] .= $ReqsLookupCache[$DirValue['Requirement']];
-                    continue;
-                }
-                if (\extension_loaded($DirValue['Requirement'])) {
-                    $DirValue['ReqVersion'] = (new \ReflectionExtension($DirValue['Requirement']))->getVersion();
-                    $ReqsLookupCache[$DirValue['Requirement']] = '<br /><span class="txtGn">✔️ ' . \sprintf(
-                        $this->L10N->getString('label.%s is available (%s)'),
-                        $DirValue['Friendly'],
-                        $DirValue['ReqVersion']
-                    ) . '</span>';
-                } else {
-                    $ReqsLookupCache[$DirValue['Requirement']] = '<br /><span class="txtRd">❌ ' . \sprintf(
-                        $this->L10N->getString('label.%s is not available'),
-                        $DirValue['Friendly']
-                    ) . '</span>';
-                }
-                $ThisDir['FieldOut'] .= $ReqsLookupCache[$DirValue['Requirement']];
-            }
-            $ThisDir['FieldOut'] .= '</small>';
-        }
-
         /** Automatic duration hinting. */
         if ($DirValue['type'] === 'duration' && !isset($DirValue['hints']) && $DirKey !== 'expire_good' && $DirKey !== 'expire_bad') {
             $DirValue['hints'] = 'hints_duration';
@@ -698,6 +672,44 @@ foreach ($this->CIDRAM['Config Defaults'] as $CatKey => $CatValue) {
                     );
                 }
             }
+        }
+
+        /** Check extension and class requirements. */
+        if (!empty($DirValue['required'])) {
+            $ThisDir['FieldOut'] .= '<br /><br /><small><span class="s">' . $this->L10N->getString('label.Required') . '</span>';
+            foreach ($DirValue['required'] as $DirValue['Requirement'] => $DirValue['Friendly']) {
+                if (isset($ReqsLookupCache[$DirValue['Requirement']])) {
+                    $ThisDir['FieldOut'] .= $ReqsLookupCache[$DirValue['Requirement']];
+                    continue;
+                }
+                if (\substr($DirValue['Requirement'], 0, 7) === 'module/') {
+                    $DirValue['Requirement'] = \substr($DirValue['Requirement'], 7);
+                    if (!isset($ReqsLookupCache['InstalledMetadata'])) {
+                        $ReqsLookupCache['InstalledMetadata'] = [];
+                        $this->readInstalledMetadata($ReqsLookupCache['InstalledMetadata']);
+                    }
+                    if (isset($ReqsLookupCache['InstalledMetadata'][$DirValue['Requirement']]['Version'])) {
+                        $ReqsLookupCache[$DirValue['Requirement']] = '<br /><span class="txtGn">✔️ <a href="?cidram-page=updates#' . $DirValue['Requirement'] . '" target="_blank">' . \sprintf(
+                            $this->L10N->getString('label.%s is available (%s)'),
+                            $DirValue['Friendly'],
+                            $ReqsLookupCache['InstalledMetadata'][$DirValue['Requirement']]['Version']
+                        ) . '</a></span>';
+                    } else {
+                        $ReqsLookupCache[$DirValue['Requirement']] = '<br /><span class="txtRd">❌ <a href="?cidram-page=updates#' . $DirValue['Requirement'] . '" target="_blank">' . \sprintf($this->L10N->getString('label.%s is not installed'), $DirValue['Friendly']) . '</a></span>';
+                    }
+                } elseif (\extension_loaded($DirValue['Requirement'])) {
+                    $DirValue['ReqVersion'] = (new \ReflectionExtension($DirValue['Requirement']))->getVersion();
+                    $ReqsLookupCache[$DirValue['Requirement']] = '<br /><span class="txtGn">✔️ ' . \sprintf(
+                        $this->L10N->getString('label.%s is available (%s)'),
+                        $DirValue['Friendly'],
+                        $DirValue['ReqVersion']
+                    ) . '</span>';
+                } else {
+                    $ReqsLookupCache[$DirValue['Requirement']] = '<br /><span class="txtRd">❌ ' . \sprintf($this->L10N->getString('label.%s is not available'), $DirValue['Friendly']) . '</span>';
+                }
+                $ThisDir['FieldOut'] .= $ReqsLookupCache[$DirValue['Requirement']];
+            }
+            $ThisDir['FieldOut'] .= '</small>';
         }
 
         /** Provide additional information, useful for users to better understand the directive at hand. */

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2026.09.03).
+# This file: Korean language data for the front-end (last modified: 2026.09.04).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -549,16 +549,16 @@ Some useful links: |+
        <li><span class="comCat" role="region" aria-controls="menuGFC" aria-expanded="false">그룹, 포럼, 커뮤니티, 등.</span>
          <ul class="comSub" id="menuGFC">
            <li>{{Links.PHP.Earth.Facebook}} – PHP 학습 자원과 토론.</li>
-           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">메세지 보드@Stop Forum Spam</a> – 포럼 스팸 정지에 관한 유용한 토론 포럼.</li>
+           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external" target="_blank">메세지 보드@Stop Forum Spam</a> – 포럼 스팸 정지에 관한 유용한 토론 포럼.</li>
          </ul>
        </li>
        <li><span class="comCat" role="region" aria-controls="menuOUTRS" aria-expanded="false">기타 유용한 도구, 자원, 서비스, 등.</span>
          <ul class="comSub" id="menuOUTRS">
            <li>{{Links.SFS}} – 알려진 포럼 스패머 데이터베이스를 유지 관리합니다. 스패머에 대한 보호 웹 사이트 및 포럼 보호에 유용합니다.</li>
-           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – ASN에서 CIDR을 취득하는 ASN 관계를 결정하는 네트워크 이름에 따라 ASN을 감지, 등등.</li>
+           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external" target="_blank">Hurricane Electric BGP Toolkit</a> – ASN에서 CIDR을 취득하는 ASN 관계를 결정하는 네트워크 이름에 따라 ASN을 감지, 등등.</li>
            <li>{{Links.BGPView}} – ASN에서 CIDR을 취득하는 ASN 관계를 결정하는 네트워크 이름에 따라 ASN을 감지, 등등.</li>
-           <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Qrator의 Radar</a> – ASN의 연결을 확인하는 데 유용한 도구; ASN에 관한 기타 다양한 정보.</li>
-           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Spamhaus 프로젝트</a> – ASN의 봇넷 감염 속도에 대한 보고서를 표시합니다.</li>
+           <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external" target="_blank">Qrator의 Radar</a> – ASN의 연결을 확인하는 데 유용한 도구; ASN에 관한 기타 다양한 정보.</li>
+           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external" target="_blank">Spamhaus 프로젝트</a> – ASN의 봇넷 감염 속도에 대한 보고서를 표시합니다.</li>
            <li>{{Links.AbuseIPDB}} – 알려진 위험한 IP 주소의 데이터베이스를 유지합니다; IP 주소를 확인하고보고하기위한 API를 제공합니다.</li>
            <li>{{Links.IP-API}} – 국가 코드, 지역 이름, 경도, 위도, 조직 이름, 등과 같은 IP 주소 또는 호스트 이름에 대한 정보를 가져옵니다.</li>
          </ul>
@@ -567,8 +567,8 @@ Some useful links: |+
          <ul class="comSub" id="menuILR">
            <li>{{Links.PHP.Earth.Website}} – PHP 학습 자원과 토론.</li>
            <li>{{Links.MDN.Homepage}} – 개발자를 위한, 개발자에 의한 리소스입니다. HTML, CSS, JavaScript, 접근성, 등에 대해 배울 수 있는 환상적인 리소스입니다.</li>
-           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">취약점 차트</a> – 다양한 패키지의 안전하고 안전하지 않은 버전을 나열합니다 (HHVM, PHP, phpMyAdmin, Python, 기타).</li>
-           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">호환성 차트</a> – 다양한 패키지에 대한 호환성 정보를 나열합니다 (CIDRAM, phpMussel, 기타).</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external" target="_blank">취약점 차트</a> – 다양한 패키지의 안전하고 안전하지 않은 버전을 나열합니다 (HHVM, PHP, phpMyAdmin, Python, 기타).</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external" target="_blank">호환성 차트</a> – 다양한 패키지에 대한 호환성 정보를 나열합니다 (CIDRAM, phpMussel, 기타).</li>
          </ul>
        </li>
      </ul>
@@ -579,6 +579,7 @@ label:
  %s is available (%s): "%s를 사용할 수 있습니다 (%s)."
  %s is available: "%s를 사용할 수 있습니다."
  %s is not available: "%s는 사용할 수 없습니다."
+ %s is not installed: "%s가 설치되어 있지 않습니다."
  %s signature: "%s 개의 서명"
  200 OK: "200 OK\n가장 덜 강력하지만 가장 사용자 친화적입니다. 자동화된 요청은 이 응답을 요청이 성공했다는 표시로 해석할 가능성이 큽니다. 차단되지 않은 요청에 권장됩니다."
  301 Moved Permanently: "301 Moved Permanently (영구 이동)\n리디렉션이 영구적임을 클라이언트에 지시합니다. 리디렉션 및 초기 요청의 요청 방법은 다를 수 있습니다."
@@ -719,6 +720,7 @@ label:
  Requests for sensitive pages only: "민감한 페이지만 요청 (예: 로그인 페이지, 등록 양식, 등등).\n덜 엄격하고 철저하지만, 할당량 및 제한 측면에서보다 보수적이며, 성능에 부정적인 영향을 미칠 가능성이 작습니다. 대부분의 경우 권장되는 전략입니다."
  Requests passed: "허용된 요청"
  Requests reported to external APIs: "외부 API에 보고된 요청"
+ Required: "필수 사항:"
  SAPI used: "사용된 SAPI:"
  Safety mechanisms: "안전 장치"
  Sanity check: "건강 검사"

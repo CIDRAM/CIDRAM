@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Afrikaans language data for the front-end (last modified: 2026.09.03).
+# This file: Afrikaans language data for the front-end (last modified: 2026.09.04).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -549,16 +549,16 @@ Some useful links: |+
        <li><span class="comCat" role="region" aria-controls="menuGFC" aria-expanded="false">Groepe, forums, gemeenskappe, ens.</span>
          <ul class="comSub" id="menuGFC">
            <li>{{Links.PHP.Earth.Facebook}} – PHP leerhulpbronne en bespreking.</li>
-           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Forum@Stop Forum Spam</a> – Nuttige besprekingsforum oor die stop van spam.</li>
+           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external" target="_blank">Forum@Stop Forum Spam</a> – Nuttige besprekingsforum oor die stop van spam.</li>
          </ul>
        </li>
        <li><span class="comCat" role="region" aria-controls="menuOUTRS" aria-expanded="false">Ander nuttige gereedskap, hulpbronne, dienste, ens.</span>
          <ul class="comSub" id="menuOUTRS">
            <li>{{Links.SFS}} – Onderhou 'n databasis van bekende forum spammers. Nuttig om webwerwe en forums teen spammers te beskerm.</li>
-           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Gereedskapstel</a> – Kry CIDR's van ASN'e, bepaal ASN-verwantskappe, ontdek ASN's gebaseer op netwerkname, ens.</li>
+           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external" target="_blank">Hurricane Electric BGP Gereedskapstel</a> – Kry CIDR's van ASN'e, bepaal ASN-verwantskappe, ontdek ASN's gebaseer op netwerkname, ens.</li>
            <li>{{Links.BGPView}} – Kry CIDR's van ASN'e, bepaal ASN-verwantskappe, ontdek ASN's gebaseer op netwerkname, ens.</li>
-           <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar deur Qrator</a> – Nuttige hulpmiddel om die konnektiwiteit van ASN'e na te gaan, asook vir verskeie ander inligting oor ASN'e.</li>
-           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Die Spamhaus Projek</a> – Vertoon verslae oor botnet-infeksiekoerse vir ASN'e.</li>
+           <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external" target="_blank">Radar deur Qrator</a> – Nuttige hulpmiddel om die konnektiwiteit van ASN'e na te gaan, asook vir verskeie ander inligting oor ASN'e.</li>
+           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external" target="_blank">Die Spamhaus Projek</a> – Vertoon verslae oor botnet-infeksiekoerse vir ASN'e.</li>
            <li>{{Links.AbuseIPDB}} – Onderhou 'n databasis van bekende beledigende IP's; Verskaf 'n API om IP's na te gaan en aan te meld.</li>
            <li>{{Links.IP-API}} – Kry inligting oor IP-adresse of gasheername soos landkode, streeknaam, lengtegraad, breedtegraad, organisasienaam, ens.</li>
          </ul>
@@ -567,8 +567,8 @@ Some useful links: |+
          <ul class="comSub" id="menuILR">
            <li>{{Links.PHP.Earth.Website}} – PHP leerhulpbronne en bespreking.</li>
            <li>{{Links.MDN.Homepage}} – Hulpbronne vir ontwikkelaars, deur ontwikkelaars. Fantastiese hulpbron om te leer oor HTML, CSS, JavaScript, toeganklikheid, en meer.</li>
-           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Kwesbaarheidskaarte</a> – Lys veilige/onveilige weergawes van verskeie pakkette (HHVM, PHP, phpMyAdmin, Python, ens).</li>
-           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Verenigbaarheidskaarte</a> – Lys versoenbaarheidsinligting vir verskeie pakkette (CIDRAM, phpMussel, ens).</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external" target="_blank">Kwesbaarheidskaarte</a> – Lys veilige/onveilige weergawes van verskeie pakkette (HHVM, PHP, phpMyAdmin, Python, ens).</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external" target="_blank">Verenigbaarheidskaarte</a> – Lys versoenbaarheidsinligting vir verskeie pakkette (CIDRAM, phpMussel, ens).</li>
          </ul>
        </li>
      </ul>
@@ -581,6 +581,7 @@ label:
  %s is available (%s): "%s beskikbaar is (%s)."
  %s is available: "%s beskikbaar is."
  %s is not available: "%s is nie beskikbaar nie."
+ %s is not installed: "%s is nie geïnstalleer nie."
  %s signature:
   - "%s handtekening"
   - "%s handtekeninge"
@@ -727,6 +728,7 @@ label:
  Requests for sensitive pages only: "Slegs versoeke vir sensitiewe bladsye (bv., intekenbladsye, registrasievorms, ens).\nMinder streng en deeglik, maar meer konserwatief in terme van kwotas en limiete, en minder geneig om prestasie negatief te beïnvloed. Die aanbevole strategie in die meeste gevalle."
  Requests passed: "Versoeke geslaag"
  Requests reported to external APIs: "Versoeke gerapporteer aan eksterne API's"
+ Required: "Vereis:"
  SAPI used: "SAPI gebruik:"
  Safety mechanisms: "Veiligheidsmeganismes"
  Sanity check: "Gesondheidskontrole"

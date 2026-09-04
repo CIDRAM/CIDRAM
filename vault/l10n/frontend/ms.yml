@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malay language data for the front-end (last modified: 2026.09.03).
+# This file: Malay language data for the front-end (last modified: 2026.09.04).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -521,16 +521,16 @@ Some useful links: |+
        <li><span class="comCat" role="region" aria-controls="menuGFC" aria-expanded="false">Kumpulan, forum, komuniti, dll.</span>
          <ul class="comSub" id="menuGFC">
            <li>{{Links.PHP.Earth.Facebook}} – Sumber pembelajaran dan perbincangan PHP.</li>
-           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Forum@Stop Forum Spam</a> – Forum perbincangan berguna tentang menghentikan spam forum.</li>
+           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external" target="_blank">Forum@Stop Forum Spam</a> – Forum perbincangan berguna tentang menghentikan spam forum.</li>
          </ul>
        </li>
        <li><span class="comCat" role="region" aria-controls="menuOUTRS" aria-expanded="false">Alat berguna, sumber, perkhidmatan, dll lain.</span>
          <ul class="comSub" id="menuOUTRS">
            <li>{{Links.SFS}} – Mengekalkan pangkalan data spammer forum yang diketahui. Berguna untuk melindungi tapak web dan forum terhadap spammer.</li>
-           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Dapatkan CIDR daripada ASN, tentukan perhubungan ASN, temui ASN berdasarkan nama rangkaian, dll.</li>
+           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external" target="_blank">Hurricane Electric BGP Toolkit</a> – Dapatkan CIDR daripada ASN, tentukan perhubungan ASN, temui ASN berdasarkan nama rangkaian, dll.</li>
            <li>{{Links.BGPView}} – Dapatkan CIDR daripada ASN, tentukan perhubungan ASN, temui ASN berdasarkan nama rangkaian, dll.</li>
-           <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar oleh Qrator</a> – Alat berguna untuk menyemak ketersambungan ASN serta pelbagai maklumat lain tentang ASN.</li>
-           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Projek Spamhaus</a> – Memaparkan laporan mengenai kadar jangkitan botnet untuk ASN.</li>
+           <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external" target="_blank">Radar oleh Qrator</a> – Alat berguna untuk menyemak ketersambungan ASN serta pelbagai maklumat lain tentang ASN.</li>
+           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external" target="_blank">Projek Spamhaus</a> – Memaparkan laporan mengenai kadar jangkitan botnet untuk ASN.</li>
            <li>{{Links.AbuseIPDB}} – Mengekalkan pangkalan data untuk IP kesat diketahui; Menyediakan API untuk menyemak dan melaporkan IP.</li>
            <li>{{Links.IP-API}} – Dapatkan maklumat tentang alamat IP atau nama hos seperti kod negara, nama wilayah, longitud, latitud, nama organisasi, dll.</li>
          </ul>
@@ -539,8 +539,8 @@ Some useful links: |+
          <ul class="comSub" id="menuILR">
            <li>{{Links.PHP.Earth.Website}} – Sumber pembelajaran dan perbincangan PHP.</li>
            <li>{{Links.MDN.Homepage}} – Sumber untuk pembangun, oleh pembangun. Sumber yang hebat untuk belajar tentang HTML, CSS, JavaScript, kebolehaksesan dan banyak lagi.</li>
-           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Carta Kerentanan</a> – Menyenaraikan pelbagai versi daripada pakej yang selamat dan tidak selamat (HHVM, PHP, phpMyAdmin, Python, dsb).</li>
-           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Carta Keserasian</a> – Menyenaraikan maklumat keserasian untuk pelbagai pakej (CIDRAM, phpMussel, dsb).</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external" target="_blank">Carta Kerentanan</a> – Menyenaraikan pelbagai versi daripada pakej yang selamat dan tidak selamat (HHVM, PHP, phpMyAdmin, Python, dsb).</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external" target="_blank">Carta Keserasian</a> – Menyenaraikan maklumat keserasian untuk pelbagai pakej (CIDRAM, phpMussel, dsb).</li>
          </ul>
        </li>
      </ul>
@@ -551,6 +551,7 @@ label:
  %s is available (%s): "%s tersedia (%s)."
  %s is available: "%s tersedia."
  %s is not available: "%s tidak tersedia."
+ %s is not installed: "%s tidak dipasang."
  %s signature: "%s tandatangan"
  200 OK: "200 OK\nPaling tidak teguh, tetapi paling mesra-pengguna. Permintaan automatik kemungkinan besar akan mentafsirkan respons ini sebagai petunjuk bahawa permintaan berjaya."
  301 Moved Permanently: "301 Moved Permanently (Berpindah secara tetap)\nMengarahkan klien bahawa ubah hala adalah KEKAL, dan kaedah permintaan yang digunakan untuk ubah hala MUNGKIN berbeza daripada kaedah permintaan yang digunakan untuk permintaan awal."
@@ -680,6 +681,7 @@ label:
  Requests for sensitive pages only: "Permintaan untuk halaman sensitif sahaja (cth., halaman login, borang pendaftaran, dll).\nKurang ketat dan teliti, tetapi lebih konservatif dari segi kuota dan had, dan kurang berkemungkinan menjejaskan prestasi secara negatif. Strategi yang disyorkan dalam kebanyakan kes."
  Requests passed: "Permintaan diluluskan"
  Requests reported to external APIs: "Permintaan dilaporkan kepada API luaran"
+ Required: "Diperlukan:"
  SAPI used: "SAPI digunakan:"
  Safety mechanisms: "Mekanisme keselamatan"
  Sanity check: "Pemeriksaan kewarasan"

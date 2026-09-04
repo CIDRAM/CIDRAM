@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2026.09.03).
+# This file: Latvian language data for the front-end (last modified: 2026.09.04).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -519,16 +519,16 @@ Some useful links: |+
        <li><span class="comCat" role="region" aria-controls="menuGFC" aria-expanded="false">Grupas, forumi, kopienas, utt.</span>
          <ul class="comSub" id="menuGFC">
            <li>{{Links.PHP.Earth.Facebook}} – PHP mācību resursi un diskusija.</li>
-           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Forum@Stop Forum Spam</a> – Noderīgs diskusiju forums par foruma mēstuļu apturēšanu.</li>
+           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external" target="_blank">Forum@Stop Forum Spam</a> – Noderīgs diskusiju forums par foruma mēstuļu apturēšanu.</li>
          </ul>
        </li>
        <li><span class="comCat" role="region" aria-controls="menuOUTRS" aria-expanded="false">Citi noderīgi rīki, resursi, pakalpojumi, utt.</span>
          <ul class="comSub" id="menuOUTRS">
            <li>{{Links.SFS}} – Uztur zināmu forumu surogātpasta izplatītāju datu bāzi. Noderīga vietņu un forumu aizsardzībai pret surogātpastu izplatītājiem.</li>
-           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Saņemiet CIDR no ASN, nosakiet ASN attiecības, atklājiet ASN pamatojoties uz tīkla nosaukumiem, utt.</li>
+           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external" target="_blank">Hurricane Electric BGP Toolkit</a> – Saņemiet CIDR no ASN, nosakiet ASN attiecības, atklājiet ASN pamatojoties uz tīkla nosaukumiem, utt.</li>
            <li>{{Links.BGPView}} – Saņemiet CIDR no ASN, nosakiet ASN attiecības, atklājiet ASN pamatojoties uz tīkla nosaukumiem, utt.</li>
-           <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar by Qrator</a> – Noderīgs rīks, lai pārbaudītu informāciju par ASN, pārbaudītu ASN savienojumu, utt.</li>
-           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">The Spamhaus Project</a> – Parāda ziņojumus par robottīkla inficēšanās biežumu ASN.</li>
+           <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external" target="_blank">Radar by Qrator</a> – Noderīgs rīks, lai pārbaudītu informāciju par ASN, pārbaudītu ASN savienojumu, utt.</li>
+           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external" target="_blank">The Spamhaus Project</a> – Parāda ziņojumus par robottīkla inficēšanās biežumu ASN.</li>
            <li>{{Links.AbuseIPDB}} – Uztur zināmu ļaunprātīgu IP datu bāzi; Viņu API var izmantot, lai pārbaudītu un ziņotu par IP.</li>
            <li>{{Links.IP-API}} – Iegūstiet informāciju par IP adresēm vai resursdatora nosaukumiem, piemēram, valsts kodu, reģiona nosaukumu, garumu, platumu, organizācijas nosaukumu, utt.</li>
          </ul>
@@ -537,8 +537,8 @@ Some useful links: |+
          <ul class="comSub" id="menuILR">
            <li>{{Links.PHP.Earth.Website}} – PHP mācību resursi un diskusija.</li>
            <li>{{Links.MDN.Homepage}} – Izstrādātāju resursi izstrādātājiem. Lielisks resurss, lai uzzinātu par HTML, CSS, JavaScript, pieejamību, un daudz ko citu.</li>
-           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Ievainojamības Diagrammas</a> – Saraksta dažādu programmatūras pakotņu drošas/nedrošas versijas (HHVM, PHP, phpMyAdmin, Python, utt).</li>
-           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Saderības Diagrammas</a> – Saraksta informācija par saderību par dažādām programmatūras pakotnēm (CIDRAM, phpMussel, utt).</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external" target="_blank">Ievainojamības Diagrammas</a> – Saraksta dažādu programmatūras pakotņu drošas/nedrošas versijas (HHVM, PHP, phpMyAdmin, Python, utt).</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external" target="_blank">Saderības Diagrammas</a> – Saraksta informācija par saderību par dažādām programmatūras pakotnēm (CIDRAM, phpMussel, utt).</li>
          </ul>
        </li>
      </ul>
@@ -551,6 +551,7 @@ label:
  %s is available (%s): "%s ir pieejams (%s)."
  %s is available: "%s ir pieejams."
  %s is not available: "%s nav pieejams."
+ %s is not installed: "%s nav instalēts."
  %s signature:
   - "%s paraksts"
   - "%s paraksti"
@@ -686,6 +687,7 @@ label:
  Requests for sensitive pages only: "Pieprasījumi tikai sensitīvām lapām (piemēram, ielogošanās lapām, reģistrācijas veidlapām, utt).\nMazāk stingrs un rūpīgs, taču konservatīvāks kvotu un ierobežojumu ziņā un mazāk ticams, ka tas negatīvi ietekmēs vietnes veiktspēju. Vairumā gadījumu ieteicamā stratēģija."
  Requests passed: "Atļautie pieprasījumu skaits"
  Requests reported to external APIs: "Pieprasījumu skaits ziņots ārējām API"
+ Required: "Nepieciešams:"
  SAPI used: "Izmantotā SAPI:"
  Safety mechanisms: "Drošības mehānismi"
  Sanity check: "Saprāta pārbaude"

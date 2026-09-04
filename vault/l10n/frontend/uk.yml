@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Ukrainian language data for the front-end (last modified: 2026.09.03).
+# This file: Ukrainian language data for the front-end (last modified: 2026.09.04).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -527,16 +527,16 @@ Some useful links: |+
        <li><span class="comCat" role="region" aria-controls="menuGFC" aria-expanded="false">Групи, форуми, спільноти, тощо.</span>
          <ul class="comSub" id="menuGFC">
            <li>{{Links.PHP.Earth.Facebook}} – Навчальні ресурси та обговорення для PHP.</li>
-           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Forum@Stop Forum Spam</a> – Корисний дискусійний форум про припинення спаму на форумі.</li>
+           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external" target="_blank">Forum@Stop Forum Spam</a> – Корисний дискусійний форум про припинення спаму на форумі.</li>
          </ul>
        </li>
        <li><span class="comCat" role="region" aria-controls="menuOUTRS" aria-expanded="false">Інші корисні інструменти, ресурси, сервіси, тощо.</span>
          <ul class="comSub" id="menuOUTRS">
            <li>{{Links.SFS}} – Веде базу даних відомих форумних спамерів. Корисно для захисту веб-сайтів і форумів від спамерів.</li>
-           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Отримувати CIDR з ASN, визначати зв'язки ASN, виявляти ASN на основі імен мереж, тощо.</li>
+           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external" target="_blank">Hurricane Electric BGP Toolkit</a> – Отримувати CIDR з ASN, визначати зв'язки ASN, виявляти ASN на основі імен мереж, тощо.</li>
            <li>{{Links.BGPView}} – Отримувати CIDR з ASN, визначати зв'язки ASN, виявляти ASN на основі імен мереж, тощо.</li>
-           <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar від Qrator</a> – Корисний інструмент для перевірки підключення ASN, а також для іншої іншої інформації про ASN.</li>
-           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Проект Spamhaus</a> – Відображає звіти про рівень зараження ботнетів для ASN.</li>
+           <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external" target="_blank">Radar від Qrator</a> – Корисний інструмент для перевірки підключення ASN, а також для іншої іншої інформації про ASN.</li>
+           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external" target="_blank">Проект Spamhaus</a> – Відображає звіти про рівень зараження ботнетів для ASN.</li>
            <li>{{Links.AbuseIPDB}} – Підтримує базу даних відомих зловмисних IP-адрес; Надає API для перевірки IP-адрес і звітування про них.</li>
            <li>{{Links.IP-API}} – Отримайте інформацію про IP-адреси або імена хостів, наприклад код країни, назву регіону, довготу, широту, назву організації, тощо.</li>
          </ul>
@@ -545,8 +545,8 @@ Some useful links: |+
          <ul class="comSub" id="menuILR">
            <li>{{Links.PHP.Earth.Website}} – Навчальні ресурси та обговорення для PHP.</li>
            <li>{{Links.MDN.Homepage}} – Ресурси для розробників, за розробниками. Чудовий ресурс для вивчення HTML, CSS, JavaScript, доступність, тощо.</li>
-           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Таблиці Вразливостей</a> – Перераховує безпечні/небезпечні версії різних пакетів (HHVM, PHP, phpMyAdmin, Python, тощо).</li>
-           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Таблиці Сумісності</a> – Перераховує інформацію про сумісність для різних пакетів (CIDRAM, phpMussel, тощо).</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external" target="_blank">Таблиці Вразливостей</a> – Перераховує безпечні/небезпечні версії різних пакетів (HHVM, PHP, phpMyAdmin, Python, тощо).</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external" target="_blank">Таблиці Сумісності</a> – Перераховує інформацію про сумісність для різних пакетів (CIDRAM, phpMussel, тощо).</li>
          </ul>
        </li>
      </ul>
@@ -560,6 +560,7 @@ label:
  %s is available (%s): "%s доступний (%s)."
  %s is available: "%s доступний."
  %s is not available: "%s недоступний."
+ %s is not installed: "%s не встановлено."
  %s signature:
   - "%s сигнатур"
   - "%s сигнатури"
@@ -698,6 +699,7 @@ label:
  Requests for sensitive pages only: "Запити лише для конфіденційних сторінок (наприклад, сторінки входу, реєстраційні форми, тощо).\nМенш суворий і ретельний, але більш консервативний щодо квот і обмежень, і менша ймовірність негативного впливу на роботу веб-сайту. Рекомендована стратегія в більшості випадків."
  Requests passed: "Запити прийняті"
  Requests reported to external APIs: "Запити надіслано до зовнішніх API"
+ Required: "Необхідно:"
  SAPI used: "Використана SAPI:"
  Safety mechanisms: "Механізми безпеки"
  Sanity check: "Перевірка осудності"

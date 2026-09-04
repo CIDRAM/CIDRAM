@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Defaults file (last modified: 2026.05.25).
+# This file: Defaults file (last modified: 2026.09.04).
 ##/
 
 Config Defaults:
@@ -197,6 +197,9 @@ Config Defaults:
     - "hints_inspection"
     - "hints_asnlookup"
     - "hints_client_hints"
+   required:
+    module/IP-API module: "IP-API module"
+    module/BGPView module: "BGPView module"
   timezone:
    type: "timezone"
    default: "SYSTEM"
@@ -570,9 +573,13 @@ Config Defaults:
   email_notification_address:
    type: "string"
    default: ""
+   required:
+    module/PHPMailer: "PHPMailer"
   email_notification_name:
    type: "string"
    default: ""
+   required:
+    module/PHPMailer: "PHPMailer"
   email_notification_when:
    type: "string"
    default: "Immediately"
@@ -581,6 +588,8 @@ Config Defaults:
     After24Hours: "field.After 24 hours, bundled together"
     ManuallyOnly: "field.Only when triggered manually"
    style: "radio"
+   required:
+    module/PHPMailer: "PHPMailer"
  components:
   ipv4:
    type: "string"
@@ -711,6 +720,8 @@ Config Defaults:
   enable_two_factor:
    type: "bool"
    default: false
+   required:
+    module/PHPMailer: "PHPMailer"
  signatures:
   shorthand:
    type: "checkbox"
@@ -884,6 +895,9 @@ Config Defaults:
     - "hints_has_bypass"
     - "hints_asnlookup"
     - "hints_cause_fp iMessage"
+   required:
+    module/IP-API module: "IP-API module"
+    module/BGPView module: "BGPView module"
   other:
    type: "checkbox"
    default: |
@@ -1363,17 +1377,17 @@ Provide:
     Disable this rule:
      Label: "label.aux.Disable this rule"
 Links: !lazy
- AbuseIPDB: "<a href="https://abuseipdb.com/" dir="ltr" hreflang="en-US" rel="noopener noreferrer external">AbuseIPDB</a>"
- BGPView: "<a href="https://bgpview.io/" dir="ltr" hreflang="en-US" rel="noopener noreferrer external">BGPView</a>"
+ AbuseIPDB: "<a href="https://abuseipdb.com/" dir="ltr" hreflang="en-US" rel="noopener noreferrer external" target="_blank">AbuseIPDB</a>"
+ BGPView: "<a href="https://bgpview.io/" dir="ltr" hreflang="en-US" rel="noopener noreferrer external" target="_blank">BGPView</a>"
  Chart:
-  js: "<a href="https://github.com/chartjs/Chart.js" dir="ltr" hreflang="en-US" rel="noopener noreferrer external">Chart.js</a>"
+  js: "<a href="https://github.com/chartjs/Chart.js" dir="ltr" hreflang="en-US" rel="noopener noreferrer external" target="_blank">Chart.js</a>"
  CIDRAM:
-  Bitbucket: "<a href="https://bitbucket.org/Maikuolan/cidram" dir="ltr" hreflang="en" rel="noopener noreferrer external">bitbucket.org/Maikuolan/cidram</a>"
-  Codeberg: "<a href="https://codeberg.org/Maikuolan/CIDRAM" dir="ltr" hreflang="en" rel="noopener noreferrer external">codeberg.org/Maikuolan/CIDRAM</a>"
+  Bitbucket: "<a href="https://bitbucket.org/Maikuolan/cidram" dir="ltr" hreflang="en" rel="noopener noreferrer external" target="_blank">bitbucket.org/Maikuolan/cidram</a>"
+  Codeberg: "<a href="https://codeberg.org/Maikuolan/CIDRAM" dir="ltr" hreflang="en" rel="noopener noreferrer external" target="_blank">codeberg.org/Maikuolan/CIDRAM</a>"
   Docs Base Path: "https://github.com/CIDRAM/Docs/blob/v4.0.0/"
-  Extras: "<a href="https://github.com/CIDRAM/CIDRAM-Extras" dir="ltr" hreflang="en" rel="noopener noreferrer external">github.com/CIDRAM/CIDRAM-Extras</a>"
-  Issues: "<a href="https://github.com/CIDRAM/CIDRAM/issues" dir="ltr" hreflang="en" rel="noopener noreferrer external">github.com/CIDRAM/CIDRAM/issues</a>"
-  WordPress: "<a href="https://wordpress.org/plugins/cidram/" dir="ltr" hreflang="en" rel="noopener noreferrer external">wordpress.org/plugins/cidram</a>"
+  Extras: "<a href="https://github.com/CIDRAM/CIDRAM-Extras" dir="ltr" hreflang="en" rel="noopener noreferrer external" target="_blank">github.com/CIDRAM/CIDRAM-Extras</a>"
+  Issues: "<a href="https://github.com/CIDRAM/CIDRAM/issues" dir="ltr" hreflang="en" rel="noopener noreferrer external" target="_blank">github.com/CIDRAM/CIDRAM/issues</a>"
+  WordPress: "<a href="https://wordpress.org/plugins/cidram/" dir="ltr" hreflang="en" rel="noopener noreferrer external" target="_blank">wordpress.org/plugins/cidram</a>"
  ConfigRef:
   sensitive: "<a onclick="javascript:toggleconfigNav('generalRow','generalShowLink')" href="\#config_general_sensitive"><code dir="ltr">general➡sensitive</code></a>"
   sensitive_rtl: "<a onclick="javascript:toggleconfigNav('generalRow','generalShowLink')" href="\#config_general_sensitive"><code dir="rtl">sensitive⬅general</code></a>"
@@ -1381,22 +1395,22 @@ Links: !lazy
   time_format_rtl: "<a onclick="javascript:toggleconfigNav('generalRow','generalShowLink')" href="\#config_general_time_format"><code dir="rtl">time_format⬅general</code></a>"
  Discussions: "https://github.com/CIDRAM/CIDRAM/discussions"
  Documentation: "https://cidram.github.io/\#documentation"
- IP-API: "<a href="https://ip-api.com/" dir="ltr" hreflang="en-US" rel="noopener noreferrer external">IP-API</a>"
+ IP-API: "<a href="https://ip-api.com/" dir="ltr" hreflang="en-US" rel="noopener noreferrer external" target="_blank">IP-API</a>"
  ISO:
   3166: "<a href="https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes" dir="ltr" hreflang="en-US" rel="nofollow noopener noreferrer external" target="_blank">ISO-3166</a>"
  MDN:
-  Client hints: "<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-CH-UA\#browser_compatibility" dir="ltr" hreflang="en-US" rel="noopener noreferrer external">Sec-CH-UA - HTTP | MDN</a>"
-  Homepage: "<a href="https://developer.mozilla.org/en-US/" dir="ltr" hreflang="en-US" rel="noopener noreferrer external">MDN Web Docs</a>"
- MIT: "<a href="https://opensource.org/licenses/MIT" dir="ltr" hreflang="en-US" rel="noopener noreferrer external">MIT</a>"
+  Client hints: "<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-CH-UA\#browser_compatibility" dir="ltr" hreflang="en-US" rel="noopener noreferrer external" target="_blank">Sec-CH-UA - HTTP | MDN</a>"
+  Homepage: "<a href="https://developer.mozilla.org/en-US/" dir="ltr" hreflang="en-US" rel="noopener noreferrer external" target="_blank">MDN Web Docs</a>"
+ MIT: "<a href="https://opensource.org/licenses/MIT" dir="ltr" hreflang="en-US" rel="noopener noreferrer external" target="_blank">MIT</a>"
  PHP:
   Earth:
-   Facebook: "<a href="https://www.facebook.com/groups/2204685680/" dir="ltr" rel="noopener noreferrer external">PHP.earth@Facebook</a>"
-   Website: "<a href="https://php.earth/" dir="ltr" hreflang="en" rel="noopener noreferrer external">PHP.earth</a>"
+   Facebook: "<a href="https://www.facebook.com/groups/2204685680/" dir="ltr" rel="noopener noreferrer external" target="_blank">PHP.earth@Facebook</a>"
+   Website: "<a href="https://php.earth/" dir="ltr" hreflang="en" rel="noopener noreferrer external" target="_blank">PHP.earth</a>"
  PHPMailer:
   License: "<a href="https://github.com/PHPMailer/PHPMailer/blob/master/LICENSE" dir="ltr" hreflang="en-US" rel="noopener external">LGPLv2.1</a>"
-  PHPMailer: "<a href="https://github.com/PHPMailer/PHPMailer" dir="ltr" hreflang="en-US" rel="noopener noreferrer external">PHPMailer</a>"
- RFC2324: "<a href="https://tools.ietf.org/html/rfc2324" dir="ltr" hreflang="en-US" rel="noopener noreferrer external">RFC 2324</a>"
- SFS: "<a href="https://www.stopforumspam.com/" dir="ltr" rel="noopener noreferrer external">Stop Forum Spam</a>"
+  PHPMailer: "<a href="https://github.com/PHPMailer/PHPMailer" dir="ltr" hreflang="en-US" rel="noopener noreferrer external" target="_blank">PHPMailer</a>"
+ RFC2324: "<a href="https://tools.ietf.org/html/rfc2324" dir="ltr" hreflang="en-US" rel="noopener noreferrer external" target="_blank">RFC 2324</a>"
+ SFS: "<a href="https://www.stopforumspam.com/" dir="ltr" rel="noopener noreferrer external" target="_blank">Stop Forum Spam</a>"
  Website: "<a href="https://cidram.github.io/" hreflang="en-US" rel="noopener external"><span class="navicon link"></span>cidram.github.io</a>"
 Extra SVG Icons:
  IP Testing: "<span onclick="javascript:{document.getElementById('ipTestFormInput').value='%s';document.getElementById('ipTestForm').submit()}" title="{link.IP Testing}" class="translateIcon navicon test" tabindex="0" role="button"></span>"

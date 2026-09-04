@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2026.09.03).
+# This file: Norwegian language data for the front-end (last modified: 2026.09.04).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -519,16 +519,16 @@ Some useful links: |+
        <li><span class="comCat" role="region" aria-controls="menuGFC" aria-expanded="false">Grupper, fora, fellesskap, osv.</span>
          <ul class="comSub" id="menuGFC">
            <li>{{Links.PHP.Earth.Facebook}} – PHP læringsressurser og diskusjon.</li>
-           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">Forum@Stop Forum Spam</a> – Nyttig diskusjonsforum om å stoppe forum spam.</li>
+           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external" target="_blank">Forum@Stop Forum Spam</a> – Nyttig diskusjonsforum om å stoppe forum spam.</li>
          </ul>
        </li>
        <li><span class="comCat" role="region" aria-controls="menuOUTRS" aria-expanded="false">Andre nyttige verktøy, ressurser, tjenester, osv.</span>
          <ul class="comSub" id="menuOUTRS">
            <li>{{Links.SFS}} – Opprettholder en database med kjente forumspammere. Nyttig for å beskytte nettsteder og fora mot spammere.</li>
-           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – Få CIDRer fra ASNer, fastslå ASN-relasjoner, oppdag ASN basert på nettverksnavn, osv.</li>
+           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external" target="_blank">Hurricane Electric BGP Toolkit</a> – Få CIDRer fra ASNer, fastslå ASN-relasjoner, oppdag ASN basert på nettverksnavn, osv.</li>
            <li>{{Links.BGPView}} – Få CIDRer fra ASNer, fastslå ASN-relasjoner, oppdag ASN basert på nettverksnavn, osv.</li>
-           <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Radar by Qrator</a> – Nyttig verktøy for å sjekke ASN-tilkobling og annen informasjon relatert til ASNer.</li>
-           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">The Spamhaus Project</a> – Viser rapporter om botnets infeksjonsrate for ASNer.</li>
+           <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external" target="_blank">Radar by Qrator</a> – Nyttig verktøy for å sjekke ASN-tilkobling og annen informasjon relatert til ASNer.</li>
+           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external" target="_blank">The Spamhaus Project</a> – Viser rapporter om botnets infeksjonsrate for ASNer.</li>
            <li>{{Links.AbuseIPDB}} – Opprettholder en database med kjente farlige IPer; Gir en API for å sjekke og rapportere IPer.</li>
            <li>{{Links.IP-API}} – Få informasjon om IP-adresser eller vertsnavn som landskode, regionnavn, lengdegrad, breddegrad, organisasjonsnavn, osv.</li>
          </ul>
@@ -537,8 +537,8 @@ Some useful links: |+
          <ul class="comSub" id="menuILR">
            <li>{{Links.PHP.Earth.Website}} – PHP læringsressurser og diskusjon.</li>
            <li>{{Links.MDN.Homepage}} – Ressurser for utviklere, etter utviklere. En fantastisk ressurs for å lære om HTML, CSS, JavaScript, tilgjengelighet, og mer.</li>
-           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Sårbarhetskart</a> – Viser sikker/usikker versjon av ulike pakker (HHVM, PHP, phpMyAdmin, Python, osv).</li>
-           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">Kompatibilitetskart</a> – Viser kompatibilitetsinformasjon for ulike pakker (CIDRAM, phpMussel, osv).</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external" target="_blank">Sårbarhetskart</a> – Viser sikker/usikker versjon av ulike pakker (HHVM, PHP, phpMyAdmin, Python, osv).</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external" target="_blank">Kompatibilitetskart</a> – Viser kompatibilitetsinformasjon for ulike pakker (CIDRAM, phpMussel, osv).</li>
          </ul>
        </li>
      </ul>
@@ -551,6 +551,7 @@ label:
  %s is available (%s): "%s er tilgjengelig (%s)."
  %s is available: "%s er tilgjengelig."
  %s is not available: "%s er ikke tilgjengelig."
+ %s is not installed: "%s er ikke installert."
  %s signature:
   - "%s signature"
   - "%s signaturer"
@@ -686,6 +687,7 @@ label:
  Requests for sensitive pages only: "Kun forespørsler om sensitive sider (f.eks., innloggingssiden, registreringsskjemaer, osv).\nMindre strenge og grundige, men mer konservative når det gjelder kvoter og grenser, og mindre sannsynlighet for å påvirke ytelsen negativt. Den anbefalte strategien i de fleste tilfeller."
  Requests passed: "Forespørsler bestått"
  Requests reported to external APIs: "Forespørsler rapportert til eksterne APIer"
+ Required: "Nødvendig:"
  SAPI used: "SAPI brukt:"
  Safety mechanisms: "Sikkerhetsmekanismer"
  Sanity check: "Forstandssjekker"

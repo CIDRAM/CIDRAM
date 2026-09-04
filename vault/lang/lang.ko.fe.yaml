@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2026.05.13).
+# This file: Korean language data for the front-end (last modified: 2026.09.04).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -324,16 +324,16 @@ info_some_useful_links: |+
        <li><span class="comCat" role="region" aria-controls="menuGFC" aria-expanded="false">그룹, 포럼, 커뮤니티, 등.</span>
          <ul class="comSub" id="menuGFC">
            <li>{{Links.PHP.Earth.Facebook}} – PHP 학습 자원과 토론.</li>
-           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external">메세지 보드@Stop Forum Spam</a> – 포럼 스팸 정지에 관한 유용한 토론 포럼.</li>
+           <li><a href="https://www.stopforumspam.com/forum/" rel="noopener noreferrer external" target="_blank">메세지 보드@Stop Forum Spam</a> – 포럼 스팸 정지에 관한 유용한 토론 포럼.</li>
          </ul>
        </li>
        <li><span class="comCat" role="region" aria-controls="menuOUTRS" aria-expanded="false">기타 유용한 도구, 자원, 서비스, 등.</span>
          <ul class="comSub" id="menuOUTRS">
            <li>{{Links.SFS}} – 알려진 포럼 스패머 데이터베이스를 유지 관리합니다. 스패머에 대한 보호 웹 사이트 및 포럼 보호에 유용합니다.</li>
-           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external">Hurricane Electric BGP Toolkit</a> – ASN에서 CIDR을 취득하는 ASN 관계를 결정하는 네트워크 이름에 따라 ASN을 감지, 등등.</li>
+           <li><a href="https://bgp.he.net/" hreflang="en-US" rel="noopener noreferrer external" target="_blank">Hurricane Electric BGP Toolkit</a> – ASN에서 CIDR을 취득하는 ASN 관계를 결정하는 네트워크 이름에 따라 ASN을 감지, 등등.</li>
            <li>{{Links.BGPView}} – ASN에서 CIDR을 취득하는 ASN 관계를 결정하는 네트워크 이름에 따라 ASN을 감지, 등등.</li>
-           <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external">Qrator의 Radar</a> – ASN의 연결을 확인하는 데 유용한 도구; ASN에 관한 기타 다양한 정보.</li>
-           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external">Spamhaus 프로젝트</a> – ASN의 봇넷 감염 속도에 대한 보고서를 표시합니다.</li>
+           <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external" target="_blank">Qrator의 Radar</a> – ASN의 연결을 확인하는 데 유용한 도구; ASN에 관한 기타 다양한 정보.</li>
+           <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external" target="_blank">Spamhaus 프로젝트</a> – ASN의 봇넷 감염 속도에 대한 보고서를 표시합니다.</li>
            <li>{{Links.AbuseIPDB}} – 알려진 위험한 IP 주소의 데이터베이스를 유지합니다; IP 주소를 확인하고보고하기위한 API를 제공합니다.</li>
            <li>{{Links.IP-API}} – 국가 코드, 지역 이름, 경도, 위도, 조직 이름, 등과 같은 IP 주소 또는 호스트 이름에 대한 정보를 가져옵니다.</li>
          </ul>
@@ -342,8 +342,8 @@ info_some_useful_links: |+
          <ul class="comSub" id="menuILR">
            <li>{{Links.PHP.Earth.Website}} – PHP 학습 자원과 토론.</li>
            <li>{{Links.MDN.Homepage}} – 개발자를 위한, 개발자에 의한 리소스입니다. HTML, CSS, JavaScript, 접근성, 등에 대해 배울 수 있는 환상적인 리소스입니다.</li>
-           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external">취약점 차트</a> – 다양한 패키지의 안전하고 안전하지 않은 버전을 나열합니다 (HHVM, PHP, phpMyAdmin, Python, 기타).</li>
-           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external">호환성 차트</a> – 다양한 패키지에 대한 호환성 정보를 나열합니다 (CIDRAM, phpMussel, 기타).</li>
+           <li><a href="https://maikuolan.github.io/Vulnerability-Charts/" hreflang="en-AU" rel="noopener noreferrer external" target="_blank">취약점 차트</a> – 다양한 패키지의 안전하고 안전하지 않은 버전을 나열합니다 (HHVM, PHP, phpMyAdmin, Python, 기타).</li>
+           <li><a href="https://maikuolan.github.io/Compatibility-Charts/" hreflang="en-AU" rel="noopener noreferrer external" target="_blank">호환성 차트</a> – 다양한 패키지에 대한 호환성 정보를 나열합니다 (CIDRAM, phpMussel, 기타).</li>
          </ul>
        </li>
      </ul>
@@ -473,6 +473,7 @@ label_rl_bandwidth: "사용된 대역폭: %s – 사용 가능한 대역폭: %s"
 label_rl_requests: "보낸 요청: %s – 사용 가능한 요청: %s"
 label_rl_when: "최신 기록: %s (만료: %s).<br />가장 오래된 기록: %s (만료: %s)."
 label_sanity_check: "건강 검사:"
+label_required: "필수 사항:"
 label_sapi: "사용된 SAPI:"
 label_sections_across_x_files: "%2$s 개 파일에 %1$s"
 label_sections_x_signatures: "%s 개의 서명"

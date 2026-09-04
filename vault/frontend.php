@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2026.06.22).
+ * This file: Front-end handler (last modified: 2026.09.04).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -317,16 +317,14 @@ if (($CIDRAM['Failed2FA'] = (int)$CIDRAM['FECacheGet'](
     die('[CIDRAM] ' . $CIDRAM['L10N']->getString('max_login_attempts_exceeded'));
 }
 
-/** Attempt to log in the user. */
+/** Attempt to log the user in. */
 if ($CIDRAM['FE']['FormTarget'] === 'login' || $CIDRAM['FE']['CronMode'] !== '') {
+    $CIDRAM['FE']['UserState'] = -1;
     if (!empty($_POST['username']) && empty($_POST['password'])) {
-        $CIDRAM['FE']['UserState'] = -1;
         $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_login_password_field_empty');
     } elseif (empty($_POST['username']) && !empty($_POST['password'])) {
-        $CIDRAM['FE']['UserState'] = -1;
         $CIDRAM['FE']['state_msg'] = $CIDRAM['L10N']->getString('response_login_username_field_empty');
     } elseif (!empty($_POST['username']) && !empty($_POST['password'])) {
-        $CIDRAM['FE']['UserState'] = -1;
         $CIDRAM['FE']['UserRaw'] = $_POST['username'];
         $CIDRAM['FE']['User'] = base64_encode($CIDRAM['FE']['UserRaw']);
         $CIDRAM['FE']['UserPos'] = strpos($CIDRAM['FE']['UserList'], "\n" . $CIDRAM['FE']['User'] . ',');
@@ -1651,9 +1649,25 @@ if ($CIDRAM['FE']['UserState'] !== 1 && $CIDRAM['FE']['CronMode'] === '') {
             }
             $CIDRAM['ThisDir']['FieldOut'] .= $CIDRAM['ThisDir']['Preview'];
 
+            /** Provide hints, useful for users to better understand the directive at hand. */
+            if (!empty($CIDRAM['DirValue']['hints'])) {
+                $CIDRAM['ThisDir']['Hints'] = $CIDRAM['L10N']->arrayFromL10nToArray($CIDRAM['DirValue']['hints']);
+                foreach ($CIDRAM['ThisDir']['Hints'] as $CIDRAM['ThisDir']['HintKey'] => $CIDRAM['ThisDir']['HintValue']) {
+                    if (is_int($CIDRAM['ThisDir']['HintKey'])) {
+                        $CIDRAM['ThisDir']['FieldOut'] .= sprintf("<br /><br />\n        %s", $CIDRAM['ThisDir']['HintValue']);
+                        continue;
+                    }
+                    $CIDRAM['ThisDir']['FieldOut'] .= sprintf(
+                        "<br /><br />\n        <span class=\"s\">%s</span> %s",
+                        $CIDRAM['ThisDir']['HintKey'],
+                        $CIDRAM['ThisDir']['HintValue']
+                    );
+                }
+            }
+
             /** Check extension and class requirements. */
             if (!empty($CIDRAM['DirValue']['required'])) {
-                $CIDRAM['ThisDir']['FieldOut'] .= '<small>';
+                $CIDRAM['ThisDir']['FieldOut'] .= '<br /><br /><small><span class="s">' . $CIDRAM['L10N']->getString('label_required') . '</span>';
                 foreach ($CIDRAM['DirValue']['required'] as $CIDRAM['DirValue']['Requirement'] => $CIDRAM['DirValue']['Friendly']) {
                     if (isset($CIDRAM['ReqsLookupCache'][$CIDRAM['DirValue']['Requirement']])) {
                         $CIDRAM['ThisDir']['FieldOut'] .= $CIDRAM['ReqsLookupCache'][$CIDRAM['DirValue']['Requirement']];
@@ -1680,22 +1694,6 @@ if ($CIDRAM['FE']['UserState'] !== 1 && $CIDRAM['FE']['CronMode'] === '') {
                     $CIDRAM['ThisDir']['FieldOut'] .= $CIDRAM['ReqsLookupCache'][$CIDRAM['DirValue']['Requirement']];
                 }
                 $CIDRAM['ThisDir']['FieldOut'] .= '</small>';
-            }
-
-            /** Provide hints, useful for users to better understand the directive at hand. */
-            if (!empty($CIDRAM['DirValue']['hints'])) {
-                $CIDRAM['ThisDir']['Hints'] = $CIDRAM['L10N']->arrayFromL10nToArray($CIDRAM['DirValue']['hints']);
-                foreach ($CIDRAM['ThisDir']['Hints'] as $CIDRAM['ThisDir']['HintKey'] => $CIDRAM['ThisDir']['HintValue']) {
-                    if (is_int($CIDRAM['ThisDir']['HintKey'])) {
-                        $CIDRAM['ThisDir']['FieldOut'] .= sprintf("<br /><br />\n        %s", $CIDRAM['ThisDir']['HintValue']);
-                        continue;
-                    }
-                    $CIDRAM['ThisDir']['FieldOut'] .= sprintf(
-                        "<br /><br />\n        <span class=\"s\">%s</span> %s",
-                        $CIDRAM['ThisDir']['HintKey'],
-                        $CIDRAM['ThisDir']['HintValue']
-                    );
-                }
             }
 
             /** Provide additional information, useful for users to better understand the directive at hand. */

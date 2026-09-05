@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2026.08.30).
+ * This file: The CIDRAM front-end (last modified: 2026.09.05).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -60,6 +60,16 @@ class FrontEnd extends Core
      * @var int Highest possible two-factor authentication code.
      */
     private const TWO_FACTOR_MAX_INT = 99999999;
+
+    /**
+     * @var int How many seconds until a session expires.
+     */
+    private const SESSION_TTL = 604800;
+
+    /**
+     * @var int How many seconds until a two-factor authentication codes expire.
+     */
+    private const TWO_FACTOR_TTL = 600;
 
     /**
      * @var string Regular expression used to separate signature sections and tags.
@@ -149,10 +159,10 @@ class FrontEnd extends Core
 
             /**
              * The current user state.
-             * -1 = Attempted and failed to log in.
-             * 0 = Not logged in.
-             * 1 = Logged in.
-             * 2 = Logged in, but awaiting two-factor authentication.
+             * -1 = Attempted to log in, but login failed (e.g., due to bad credentials).
+             *  0 = Not logged in.
+             *  1 = Logged in.
+             *  2 = Logged in, but awaiting two-factor authentication.
              */
             'UserState' => 0,
 
@@ -164,9 +174,12 @@ class FrontEnd extends Core
              * 0 = Not logged in, or awaiting two-factor authentication.
              * 1 = Complete access.
              * 2 = Logs access only.
-             * 3 = Cronable.
+             * 3 = Cronable account.
              */
             'Permissions' => 0,
+
+            /** User permissions map. */
+            'PermissionsMap' => [],
 
             /** Will be populated by messages reflecting the current request state. */
             'state_msg' => '',
@@ -418,19 +431,16 @@ class FrontEnd extends Core
             die('[CIDRAM] ' . $this->L10N->getString('response.Maximum number of login attempts exceeded'));
         }
 
-        /** Attempt to log in the user. */
+        /** Attempt to log the user in. */
         if ($this->FE['FormTarget'] === 'login' || $this->FE['CronMode'] !== '') {
+            $this->FE['UserState'] = -1;
             if (!empty($_POST['username']) && empty($_POST['password'])) {
-                $this->FE['UserState'] = -1;
                 $this->FE['state_msg'] = $this->L10N->getString('response.Password field empty');
             } elseif (empty($_POST['username']) && !empty($_POST['password'])) {
-                $this->FE['UserState'] = -1;
                 $this->FE['state_msg'] = $this->L10N->getString('response.Username field empty');
             } elseif (!empty($_POST['username']) && !empty($_POST['password'])) {
-                $this->FE['UserState'] = -1;
                 $this->FE['LP'] = ['ConfigUserPath' => 'user.' . $this->desabotage($_POST['username'])];
                 if (isset(
-                    $this->Configuration[$this->FE['LP']['ConfigUserPath']],
                     $this->Configuration[$this->FE['LP']['ConfigUserPath']]['password'],
                     $this->Configuration[$this->FE['LP']['ConfigUserPath']]['permissions']
                 ) &&
@@ -440,9 +450,8 @@ class FrontEnd extends Core
                     if (\password_verify($_POST['password'], $this->Configuration[$this->FE['LP']['ConfigUserPath']]['password'])) {
                         $this->Cache->deleteEntry('LoginAttempts' . $this->ipAddr);
                         $this->FE['Permissions'] = $this->Configuration[$this->FE['LP']['ConfigUserPath']]['permissions'];
-                        if (($this->FE['Permissions'] === 3 && (
-                            $this->FE['CronMode'] === '' || \substr($this->FE['UA'], 0, 10) !== 'Cronable v'
-                        )) || !($this->FE['Permissions'] > 0 && $this->FE['Permissions'] <= 3)) {
+                        $LooksLikeCronable = $this->FE['CronMode'] !== '' && \substr($this->FE['UA'], 0, 10) === 'Cronable v';
+                        if (($this->FE['Permissions'] === 3 && !$LooksLikeCronable) || ($this->FE['Permissions'] !== 3 && $LooksLikeCronable)) {
                             $this->FE['Permissions'] = 0;
                             $this->FE['state_msg'] = $this->L10N->getString('response.Wrong endpoint');
                         } else {
@@ -450,7 +459,7 @@ class FrontEnd extends Core
                             if ($this->FE['CronMode'] === '') {
                                 $this->FE['SessionKey'] = \hash('sha256', $this->generateSalt());
                                 $this->FE['Cookie'] = $this->FE['User'] . $this->FE['SessionKey'];
-                                \setcookie('CIDRAM-ADMIN', $this->FE['Cookie'], $this->Now + 604800, '/', $this->CIDRAM['HostnameOverride'] ?: $this->CIDRAM['HTTP_HOST'], false, true);
+                                \setcookie('CIDRAM-ADMIN', $this->FE['Cookie'], $this->Now + self::SESSION_TTL, '/', $this->CIDRAM['HostnameOverride'] ?: $this->CIDRAM['HTTP_HOST'], false, true);
                                 $this->FE['ThisSession'] = $this->FE['User'] . ',' . \password_hash($this->FE['SessionKey'], $this->DefaultAlgo);
 
                                 /** Prepare 2FA email. */
@@ -462,7 +471,7 @@ class FrontEnd extends Core
                                 ) {
                                     $this->FE['LP']['TwoFactorState'] = ['Number' => $this->twoFactorNumber()];
                                     $this->FE['LP']['TwoFactorState']['Hash'] = \password_hash($this->FE['LP']['TwoFactorState']['Number'], $this->DefaultAlgo);
-                                    $this->Cache->setEntry('TwoFactorState:' . $this->FE['Cookie'], '0' . $this->FE['LP']['TwoFactorState']['Hash'], 600);
+                                    $this->Cache->setEntry('TwoFactorState:' . $this->FE['Cookie'], '0' . $this->FE['LP']['TwoFactorState']['Hash'], self::TWO_FACTOR_TTL);
                                     $this->FE['LP']['TwoFactorState']['Template'] = \sprintf(
                                         $this->FE['LP']['TwoFactorMessage'],
                                         $this->FE['User'],
@@ -491,7 +500,7 @@ class FrontEnd extends Core
 
                                 /** Need to set a cache item to correspond with the cookie value. */
                                 if ($this->FE['UserState'] === 1 || $this->FE['UserState'] === 2) {
-                                    $this->Cache->setEntry($this->FE['Cookie'], $this->FE['ThisSession'], 604800);
+                                    $this->Cache->setEntry($this->FE['Cookie'], $this->FE['ThisSession'], self::SESSION_TTL);
                                 } else {
                                     $this->FE['Permissions'] = 0;
                                 }
@@ -515,16 +524,14 @@ class FrontEnd extends Core
                 $this->CIDRAM['LoginAttempts']++;
                 $this->CIDRAM['TimeToAdd'] = ($this->CIDRAM['LoginAttempts'] > 4) ? ($this->CIDRAM['LoginAttempts'] - 4) * 86400 : 86400;
                 $this->Cache->setEntry('LoginAttempts' . $this->ipAddr, $this->CIDRAM['LoginAttempts'], $this->CIDRAM['TimeToAdd']);
-                if ($this->Configuration['frontend']['frontend_log']) {
-                    $LoggerMessage = $this->FE['state_msg'];
-                }
+                $LoggerMessage = $this->FE['state_msg'];
                 if ($this->FE['CronMode'] === '') {
                     $this->FE['state_msg'] = '<div class="txtRd">' . $this->FE['state_msg'] . '<br /><br /></div>';
                 }
-            } elseif ($this->Configuration['frontend']['frontend_log']) {
+            } else {
                 $LoggerMessage = $this->L10N->getString((
                     $this->Configuration['frontend']['enable_two_factor'] &&
-                    $this->FE['Permissions'] === 0
+                    $this->FE['UserState'] === 2
                 ) ? 'label.Logged in, 2FA pending' : 'label.Logged in');
             }
 
@@ -538,43 +545,39 @@ class FrontEnd extends Core
             unset($NameToLog, $LoggerMessage);
         } elseif (!empty($_COOKIE['CIDRAM-ADMIN'])) {
             $this->FE['UserState'] = -1;
-            $this->FE['LP'] = [];
+            $LP = [];
             if (
-                ($this->FE['LP']['TrySession'] = $this->Cache->getEntry($_COOKIE['CIDRAM-ADMIN'])) &&
-                ($this->FE['LP']['SessionDel'] = \strpos($this->FE['LP']['TrySession'], ',')) !== false
+                ($LP['TrySession'] = $this->Cache->getEntry($_COOKIE['CIDRAM-ADMIN'])) &&
+                ($LP['SessionDel'] = \strpos($LP['TrySession'], ',')) !== false
             ) {
-                $this->FE['LP']['SessionHash'] = \substr($this->FE['LP']['TrySession'], $this->FE['LP']['SessionDel'] + 1);
-                $this->FE['LP']['SessionUser'] = \substr($this->FE['LP']['TrySession'], 0, $this->FE['LP']['SessionDel']);
+                $LP['SessionHash'] = \substr($LP['TrySession'], $LP['SessionDel'] + 1);
+                $LP['SessionUser'] = \substr($LP['TrySession'], 0, $LP['SessionDel']);
             }
-            if (!empty($this->FE['LP']['SessionHash']) && !empty($this->FE['LP']['SessionUser'])) {
-                $this->FE['LP']['SessionUserLen'] = \strlen($this->FE['LP']['SessionUser']);
-                $this->FE['LP']['SessionKey'] = \substr($_COOKIE['CIDRAM-ADMIN'], $this->FE['LP']['SessionUserLen']);
-                $this->FE['LP']['CookieUser'] = \substr($_COOKIE['CIDRAM-ADMIN'], 0, $this->FE['LP']['SessionUserLen']);
-                $this->FE['LP']['ConfigUserPath'] = 'user.' . $this->FE['LP']['CookieUser'];
+            if (!empty($LP['SessionHash']) && !empty($LP['SessionUser'])) {
+                $LP['SessionUserLen'] = \strlen($LP['SessionUser']);
+                $LP['SessionKey'] = \substr($_COOKIE['CIDRAM-ADMIN'], $LP['SessionUserLen']);
+                $LP['CookieUser'] = \substr($_COOKIE['CIDRAM-ADMIN'], 0, $LP['SessionUserLen']);
+                $LP['ConfigUserPath'] = 'user.' . $LP['CookieUser'];
                 if (
-                    $this->FE['LP']['CookieUser'] === $this->FE['LP']['SessionUser'] &&
-                    \password_verify($this->FE['LP']['SessionKey'], $this->FE['LP']['SessionHash']) &&
-                    isset(
-                        $this->Configuration[$this->FE['LP']['ConfigUserPath']],
-                        $this->Configuration[$this->FE['LP']['ConfigUserPath']]['permissions']
-                    )
+                    $LP['CookieUser'] === $LP['SessionUser'] &&
+                    \password_verify($LP['SessionKey'], $LP['SessionHash']) &&
+                    isset($this->Configuration[$LP['ConfigUserPath']]['permissions'])
                 ) {
-                    $this->FE['Permissions'] = $this->Configuration[$this->FE['LP']['ConfigUserPath']]['permissions'];
-                    $this->FE['User'] = $this->FE['LP']['SessionUser'];
+                    $this->FE['Permissions'] = $this->Configuration[$LP['ConfigUserPath']]['permissions'];
+                    $this->FE['User'] = $LP['SessionUser'];
 
                     /** Handle 2FA stuff here. */
-                    if ($this->Configuration['frontend']['enable_two_factor'] && \preg_match('~^.+@.+$~', $this->FE['LP']['SessionUser'])) {
-                        $this->FE['LP']['TwoFactorState'] = $this->Cache->getEntry('TwoFactorState:' . $_COOKIE['CIDRAM-ADMIN']);
-                        $this->FE['LP']['Try'] = (int)\substr($this->FE['LP']['TwoFactorState'], 0, 1);
-                        $this->FE['UserState'] = ((int)$this->FE['LP']['TwoFactorState'] === 1) ? 1 : 2;
+                    if ($this->Configuration['frontend']['enable_two_factor'] && \preg_match('~^.+@.+$~', $LP['SessionUser'])) {
+                        $LP['TwoFactorState'] = $this->Cache->getEntry('TwoFactorState:' . $_COOKIE['CIDRAM-ADMIN']);
+                        $LP['Try'] = (int)\substr($LP['TwoFactorState'], 0, 1);
+                        $this->FE['UserState'] = ((int)$LP['TwoFactorState'] === 1) ? 1 : 2;
                         if ($this->FE['UserState'] === 2 && $this->FE['FormTarget'] === '2fa' && !empty($_POST['2fa'])) {
                             /** User has submitted a 2FA code. Attempt to verify it. */
-                            if (\password_verify($_POST['2fa'], \substr($this->FE['LP']['TwoFactorState'], 1))) {
-                                $this->Cache->setEntry('TwoFactorState:' . $_COOKIE['CIDRAM-ADMIN'], '1', 604800);
+                            if (\password_verify($_POST['2fa'], \substr($LP['TwoFactorState'], 1))) {
+                                $this->Cache->setEntry('TwoFactorState:' . $_COOKIE['CIDRAM-ADMIN'], '1', self::SESSION_TTL);
                                 $this->FE['UserState'] = 1;
                             }
                         }
-                        unset($this->FE['LP']['TwoFactorState']);
                     } else {
                         $this->FE['UserState'] = 1;
                     }
@@ -590,22 +593,17 @@ class FrontEnd extends Core
             if ($this->FE['FormTarget'] === '2fa' && !empty($_POST['2fa'])) {
                 if ($this->FE['UserState'] === 2) {
                     $this->CIDRAM['Failed2FA']++;
-                    $this->CIDRAM['TimeToAdd'] = ($this->CIDRAM['Failed2FA'] > 4) ? ($this->CIDRAM['Failed2FA'] - 4) * 86400 : 86400;
-                    $this->Cache->setEntry('Failed2FA' . $this->ipAddr, $this->CIDRAM['Failed2FA'], $this->CIDRAM['TimeToAdd']);
-                    if ($this->Configuration['frontend']['frontend_log']) {
-                        $this->frontendLogger($this->ipAddr, $this->FE['User'], $this->L10N->getString('response.Incorrect 2FA code entered'));
-                    }
+                    $this->Cache->setEntry('Failed2FA' . $this->ipAddr, $this->CIDRAM['Failed2FA'], ($this->CIDRAM['Failed2FA'] > 4) ? ($this->CIDRAM['Failed2FA'] - 4) * 86400 : 86400);
+                    $this->frontendLogger($this->ipAddr, $this->FE['User'], $this->L10N->getString('response.Incorrect 2FA code entered'));
                     $this->FE['state_msg'] = '<div class="txtRd">' . $this->L10N->getString('response.Incorrect 2FA code entered') . '<br /><br /></div>';
                 } else {
                     $this->Cache->deleteEntry('Failed2FA' . $this->ipAddr);
-                    if ($this->Configuration['frontend']['frontend_log']) {
-                        $this->frontendLogger($this->ipAddr, $this->FE['User'], $this->L10N->getString('response.Successfully authenticated'));
-                    }
+                    $this->frontendLogger($this->ipAddr, $this->FE['User'], $this->L10N->getString('response.Successfully authenticated'));
                 }
             }
 
             /** Cleanup. */
-            unset($this->FE['LP']);
+            unset($LP);
         }
 
         /** The user is attempting an asynchronous request without adequate permissions. */
@@ -634,16 +632,19 @@ class FrontEnd extends Core
                 $this->FE['User'] = '';
             }
 
-            if ($this->FE['Permissions'] === 1) {
-                /** If the user has complete access. */
-                $this->FE['nav'] = $this->parseVars($this->FE, $this->readFile($this->getAssetPath('_nav_complete_access.html')), true);
-            } elseif ($this->FE['Permissions'] === 2) {
-                /** If the user has logs access only. */
-                $this->FE['nav'] = $this->parseVars($this->FE, $this->readFile($this->getAssetPath('_nav_logs_access_only.html')), true);
-            } else {
-                /** No valid navigation state. */
-                $this->FE['nav'] = '';
-            }
+            /** Page navigation menu. */
+            $this->FE['nav'] = $this->FE['Permissions'] > 0 ? $this->parseVars($this->FE, $this->readFile($this->getAssetPath('_nav.html')), true) : '';
+        }
+
+        /** Map permissions flags from permissions integer. */
+        $this->FE['PermissionsMap'] = $this->flagIntToArray(['Complete access' => false, 'Logs' => false, 'Statistics' => false, 'IP Testing' => false, 'Range tools' => false, 'Glossary' => false], $this->FE['Permissions']);
+        $this->FE['PermissionsMap']['Cronable'] = $this->FE['PermissionsMap']['Complete access'] && $this->FE['PermissionsMap']['Logs'];
+        if ($this->FE['PermissionsMap']['Complete access']) {
+            $this->FE['PermissionsMap']['Logs'] = true;
+            $this->FE['PermissionsMap']['Statistics'] = true;
+            $this->FE['PermissionsMap']['IP Testing'] = true;
+            $this->FE['PermissionsMap']['Range tools'] = true;
+            $this->FE['PermissionsMap']['Glossary'] = true;
         }
 
         /** Only execute this code block for already logged in users. */
@@ -756,13 +757,12 @@ class FrontEnd extends Core
         $this->CIDRAM['Updater-IO'] = new \Maikuolan\Common\DelayedIO();
 
         if ($this->FE['UserState'] !== 1 && $this->FE['CronMode'] === '') {
-            /** The user hasn't logged in, or hasn't authenticated yet. */
-            $this->initialPrepwork($this->L10N->getString('label.Login'), '', false);
-
             /** Hide warnings from non-logged in users. */
             $this->FE['Warnings'] = '';
 
             if ($this->FE['UserState'] === 2) {
+                $this->initialPrepwork($this->L10N->getString('label.Login'));
+
                 /** Provide the option to log out (omit home link). */
                 $this->FE['bNav'] = $this->FE['LogoutButton'];
 
@@ -772,6 +772,8 @@ class FrontEnd extends Core
                 /** Show them the two-factor authentication page. */
                 $this->FE['FE_Content'] = $this->parseVars($this->FE, $this->readFile($this->getAssetPath('_2fa.html')), true);
             } else {
+                $this->initialPrepwork($this->L10N->getString('label.Login'), '', false);
+
                 /** Omit the log out and home links. */
                 $this->FE['bNav'] = '';
 
@@ -795,10 +797,10 @@ class FrontEnd extends Core
             $this->FE['info_php'] = \PHP_VERSION;
 
             /** SAPI used. */
-            $this->FE['info_sapi'] = php_sapi_name();
+            $this->FE['info_sapi'] = \php_sapi_name();
 
             /** Operating system used. */
-            $this->FE['info_os'] = php_uname();
+            $this->FE['info_os'] = \php_uname();
 
             /** Provide the option to log out (omit home link). */
             $this->FE['bNav'] = $this->FE['LogoutButton'];

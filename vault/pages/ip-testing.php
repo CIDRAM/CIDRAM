@@ -8,12 +8,12 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The IP testing page (last modified: 2026.08.19).
+ * This file: The IP testing page (last modified: 2026.09.05).
  */
 
 namespace CIDRAM\CIDRAM;
 
-if (!isset($this->FE['Permissions'], $this->CIDRAM['QueryVars']['cidram-page']) || $this->CIDRAM['QueryVars']['cidram-page'] !== 'ip-testing' || $this->FE['Permissions'] !== 1) {
+if (!isset($this->CIDRAM['QueryVars']['cidram-page']) || $this->CIDRAM['QueryVars']['cidram-page'] !== 'ip-testing' || empty($this->FE['PermissionsMap']['IP Testing'])) {
     die;
 }
 

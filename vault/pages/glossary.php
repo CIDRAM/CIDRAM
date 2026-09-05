@@ -8,12 +8,12 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Glossary for CIDRAM (last modified: 2026.05.31).
+ * This file: Glossary for CIDRAM (last modified: 2026.09.05).
  */
 
 namespace CIDRAM\CIDRAM;
 
-if (!isset($this->FE['Permissions'], $this->CIDRAM['QueryVars']['cidram-page']) || $this->CIDRAM['QueryVars']['cidram-page'] !== 'glossary' || $this->FE['Permissions'] <= 0) {
+if (!isset($this->CIDRAM['QueryVars']['cidram-page']) || $this->CIDRAM['QueryVars']['cidram-page'] !== 'glossary' || empty($this->FE['PermissionsMap']['Glossary'])) {
     die;
 }
 

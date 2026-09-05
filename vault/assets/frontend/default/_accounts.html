@@ -13,8 +13,17 @@
       <div class="h2f s big">{field.Options}</div>
       <form action="?cidram-page=accounts" method="POST"><input name="cidram-form-target" type="hidden" value="accounts" /><input name="do" type="hidden" value="create-account" />
         <div class="h1"><input name="username" type="text" placeholder="{field.Username}" autocomplete="username" /></div>
-        <div class="h1"><select name="permissions" title="{field.Permissions}"><option value="1">{label.Complete access}</option><option value="2">{label.Logs access only}</option><option value="3">Cronable</option></select></div>
-        <div class="h1"><input name="password" type="password" placeholder="{field.Password}" autocomplete="new-password" onchange="javascript:this.value.length>0?(w('pwdWarn',calculatePasswordEntropy(this.value)+(vulnerablePasswords.includes(this.value.toLowerCase())||this.value.length<8?'<span class=\u{22}txtRd\u{22}>{PassInOnListWarn}</span>':''))):w('pwdWarn','')" onkeyup="javascript:this.value.length>0?(w('pwdWarn',calculatePasswordEntropy(this.value)+(vulnerablePasswords.includes(this.value.toLowerCase())||this.value.length<8?'<span class=\u{22}txtRd\u{22}>{PassInOnListWarn}</span>':''))):w('pwdWarn','')" /><small><br /><span id="pwdWarn"></span></small></div>
+        <div class="h1">
+          <select name="permissions" title="{field.Permissions}" onchange="javascript:var x=document.getElementById('permsOther');this.value==='0'?(x.classList.add('configOpenPos'),x.classList.remove('configInitPos')):(x.classList.add('configInitPos'),x.classList.remove('configOpenPos'))"><option value="1">{label.Complete access}</option><option value="3">Cronable API</option><option value="0">{label.Partial access}</option></select>
+          <div id="permsOther" class="configInitPos scrollTrans">
+            <input type="checkbox" id="permLogs" name="permLogs" /> <label class="s" for="permLogs">{link.Logs}</label><br />
+            <input type="checkbox" id="permStatistics" name="permStatistics" /> <label class="s" for="permStatistics">{link.Statistics} (+{field.Clear all})</label><br />
+            <input type="checkbox" id="permIPTesting" name="permIPTesting" /> <label class="s" for="permIPTesting">{link.IP Testing}</label><br />
+            <input type="checkbox" id="permRangeTools" name="permRangeTools" /> <label class="s" for="permRangeTools">{label.Range tools}</label><br />
+            <input type="checkbox" id="permGlossary" name="permGlossary" /> <label class="s" for="permGlossary">{link.Glossary}</label>
+          </div>
+        </div>
+        <div class="h1"><input name="password" type="password" placeholder="{field.Password}" autocomplete="new-password" onchange="javascript:this.value.length>0?(w('pwdWarn',calculatePasswordEntropy(this.value)+(vulnerablePasswords.includes(this.value.toLowerCase())||this.value.length<8?'<span class=\u{22}txtRd\u{22}>{PassInOnListWarn}</span>':'')),document.getElementById('pwdBar').style.background=calculatePasswordEntropy(this.value,1)):(w('pwdWarn',''),document.getElementById('pwdBar').style.background='none')" onkeyup="javascript:this.value.length>0?(w('pwdWarn',calculatePasswordEntropy(this.value)+(vulnerablePasswords.includes(this.value.toLowerCase())||this.value.length<8?'<span class=\u{22}txtRd\u{22}>{PassInOnListWarn}</span>':'')),document.getElementById('pwdBar').style.background=calculatePasswordEntropy(this.value,1)):(w('pwdWarn',''),document.getElementById('pwdBar').style.background='none')" /><small><br /><span id="pwdWarn"></span></small><div id="pwdBar" style="width:150px;height:2px;overflow:visible"></div></div>
         <div class="h1f"><input type="submit" class="auto" value="{field.Create new account}" /></div>
       </form>
 {Accounts}

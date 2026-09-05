@@ -8,12 +8,12 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The auxiliary rules edit mode page (last modified: 2026.03.18).
+ * This file: The auxiliary rules edit mode page (last modified: 2026.09.05).
  */
 
 namespace CIDRAM\CIDRAM;
 
-if (!isset($this->FE['Permissions'], $this->CIDRAM['QueryVars']['cidram-page']) || $this->CIDRAM['QueryVars']['cidram-page'] !== 'aux-edit' || $this->FE['Permissions'] !== 1) {
+if (!isset($this->CIDRAM['QueryVars']['cidram-page']) || $this->CIDRAM['QueryVars']['cidram-page'] !== 'aux-edit' || empty($this->FE['PermissionsMap']['Complete access'])) {
     die;
 }
 

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: General methods used by the front-end (last modified: 2026.08.30).
+ * This file: General methods used by the front-end (last modified: 2026.09.05).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -955,15 +955,22 @@ trait FrontEndMethods
         if ($this->FE['JS']) {
             $this->FE['JS'] = "\n<script type=\"text/javascript\">" . $this->FE['JS'] . '</script>';
         }
-        $Template = $this->FE['Template'];
+        $Template = \str_replace('{FE_Content}', $this->FE['FE_Content'], $this->FE['Template']);
         $Labels = [];
         $Segments = [];
-        if (isset($this->FE['UserState']) && ($this->FE['UserState'] === 1 || $this->FE['UserState'] === 2)) {
+        if ($this->FE['UserState'] === 1 || $this->FE['UserState'] === 2) {
             $Labels[] = 'Logged In';
             $Segments[] = 'Logged Out';
         } else {
             $Labels[] = 'Logged Out';
             $Segments[] = 'Logged In';
+        }
+        foreach ($this->FE['PermissionsMap'] as $Key => $Value) {
+            if ($Value) {
+                $Labels[] = $Key;
+            } else {
+                $Segments[] = $Key;
+            }
         }
         foreach ($Labels as $Label) {
             $Template = \str_replace(['<!-- ' . $Label . ' Begin -->', '<!-- ' . $Label . ' End -->'], '', $Template);
@@ -2041,5 +2048,41 @@ trait FrontEndMethods
             return $Err === false ? $this->L10N->getString('response.File successfully duplicated') : $this->L10N->getString('response.Failed to duplicate');
         }
         return \copy($Origin, $Target) ? $this->L10N->getString('response.File successfully duplicated') : $this->L10N->getString('response.Failed to duplicate');
+    }
+
+    /**
+     * Populate an array of flags by an integer.
+     *
+     * @param array $Arr The array to map over.
+     * @param int $Flags An integer representing the flags.
+     * @return array The mapped array.
+     */
+    private function flagIntToArray(array $Arr = [], int $Flags = 0): array
+    {
+        $AsBin = \decbin($Flags);
+        foreach ($Arr as &$Entry) {
+            if ($AsBin === '') {
+                $Entry = false;
+                continue;
+            }
+            $Entry = (bool)\substr($AsBin, -1);
+            $AsBin = \substr($AsBin, 0, -1);
+        }
+        return $Arr;
+    }
+
+    /**
+     * Generate an integer from an array of flags.
+     *
+     * @param array $Arr The array to generate from.
+     * @return int The generated integer.
+     */
+    private function flagArrayToInt(array $Arr = []): int
+    {
+        $Flags = '';
+        foreach ($Arr as $Entry) {
+            $Flags = ($Entry ? '1' : '0') . $Flags;
+        }
+        return \bindec($Flags);
     }
 }

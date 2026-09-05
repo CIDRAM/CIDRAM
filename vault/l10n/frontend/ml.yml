@@ -894,7 +894,7 @@ macro: !lazy
 msg_subject_2fa: "രണ്ട്-ഘടക പ്രാമാണീകരണം"
 msg_template_2fa: |
  <center><p>ഹലോ, %s.<br /><br />
- CIDRAM ഫ്രണ്ട്-എൻഡിലേക്ക് ലോഗിൻ ചെയ്യുന്നതിനുള്ള നിങ്ങളുടെ ടു-ഫാക്ടർ ഓതന്റിക്കേഷൻ കോഡ്:</p>
+ CIDRAM ഫ്രണ്ട്-എൻഡിലേക്ക് ലോഗിൻ ചെയ്യുന്നതിനുള്ള നിങ്ങളുടെ രണ്ട്-ഘടക പ്രാമാണീകരണ കോഡ്:</p>
  <h1>%s</h1>
  <p>ഈ കോഡ് 10 മിനിറ്റിനുള്ളിൽ കാലഹരണപ്പെടും.</p></center>
 notice_new_major_version: "അറിയിപ്പ്: %s ഇപ്പോൾ ലഭ്യമാണ് (നിങ്ങൾ %s ഉപയോഗിക്കുന്നു). ഈ പതിപ്പിന്റെ ഏറ്റവും കുറഞ്ഞ PHP ആവശ്യകത നിങ്ങൾ നിറവേറ്റുന്നു. <em>കാണുക: <a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#10-upgrading-from-previous-major-versions" hreflang="en"><span class="navicon link"></span>UPGRADING FROM PREVIOUS MAJOR VERSIONS</a>.</em>"
@@ -1036,6 +1036,7 @@ response:
  There_s nothing to write, sorry: "എഴുതാൻ ഒന്നുമില്ല, ക്ഷമിക്കണം."
  Tracking cleared: "ട്രാക്കിംഗ് മായ്ച്ചു."
  Unable to determine: "നിർണ്ണയിക്കാൻ കഴിയുന്നില്ല."
+ Unable to send two-factor authentication code because an email event handler isn_t available: "ഇമെയിൽ ഇവന്റ് ഹാൻഡ്‌ലർ ലഭ്യമല്ലാത്തതിനാൽ രണ്ട്-ഘടക പ്രാമാണീകരണ കോഡ് അയയ്ക്കാൻ കഴിയുന്നില്ല!"
  Unknown error: "അജ്ഞാത പിശക്!"
  Username doesn_t exist: "ലോഗിൻ പരാജയം! ഉപയോക്തൃനാമം നിലവിലില്ല!"
  Username field empty: "ഉപയോക്തൃനാമ ഫീൽഡ് ശൂന്യമാണ്!"

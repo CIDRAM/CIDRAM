@@ -8,12 +8,12 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The backup page (last modified: 2026.05.28).
+ * This file: The backup page (last modified: 2026.09.05).
  */
 
 namespace CIDRAM\CIDRAM;
 
-if (!isset($this->FE['Permissions'], $this->CIDRAM['QueryVars']['cidram-page']) || $this->CIDRAM['QueryVars']['cidram-page'] !== 'backup' || $this->FE['Permissions'] !== 1) {
+if (!isset($this->CIDRAM['QueryVars']['cidram-page']) || $this->CIDRAM['QueryVars']['cidram-page'] !== 'backup' || empty($this->FE['PermissionsMap']['Complete access'])) {
     die;
 }
 

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: CIDRAM CLI mode (last modified: 2026.05.28).
+ * This file: CIDRAM CLI mode (last modified: 2026.09.04).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -23,14 +23,14 @@ trait CLI
     public function cli(): never
     {
         /** Guard against access from the wrong endpoint. */
-        if (!empty($_SERVER['REQUEST_METHOD']) || \substr(php_sapi_name(), 0, 3) !== 'cli' || !empty($_SERVER['HTTP_USER_AGENT'])) {
+        if (!empty($_SERVER['REQUEST_METHOD']) || \substr(\php_sapi_name(), 0, 3) !== 'cli' || !empty($_SERVER['HTTP_USER_AGENT'])) {
             \header('Content-Type: text/plain');
             die('[CIDRAM CLI] Webserver access not permitted.');
         }
 
         $ML = false;
         $Chain = '';
-        $this->NoColor = !empty(getenv('NO_COLOR'));
+        $this->NoColor = !empty(\getenv('NO_COLOR'));
 
         /** Load CIDRAM front-end L10N data. */
         $this->loadL10N($this->Vault . 'l10n' . \DIRECTORY_SEPARATOR . 'frontend' . \DIRECTORY_SEPARATOR);

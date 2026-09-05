@@ -8,12 +8,12 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The updates page (last modified: 2026.05.28).
+ * This file: The updates page (last modified: 2026.09.05).
  */
 
 namespace CIDRAM\CIDRAM;
 
-if (!isset($this->FE['Permissions'], $this->CIDRAM['QueryVars']['cidram-page']) || $this->CIDRAM['QueryVars']['cidram-page'] !== 'updates' || !($this->FE['Permissions'] === 1 || ($this->FE['Permissions'] === 3 && $this->FE['CronMode'] !== ''))) {
+if (!isset($this->CIDRAM['QueryVars']['cidram-page']) || $this->CIDRAM['QueryVars']['cidram-page'] !== 'updates' || (empty($this->FE['PermissionsMap']['Complete access']) && empty($this->FE['PermissionsMap']['Cronable API']))) {
     die;
 }
 

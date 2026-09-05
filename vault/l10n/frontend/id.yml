@@ -250,7 +250,7 @@ config: !lazy
  logging_serialised_log: "File serial untuk mencatat semua upaya akses diblokir. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
  logging_standard_log: "File yang dapat dibaca oleh manusia untuk mencatat semua upaya akses diblokir. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
  logging_truncate: "Memotong file log ketika mereka mencapai ukuran tertentu? Nilai adalah ukuran maksimum dalam B/KB/MB/GB/TB yang bisa ditambahkan untuk file log sebelum dipotong. Nilai default 0KB menonaktifkan pemotongan (file log dapat tumbuh tanpa batas waktu). Catat: Berlaku untuk file log individu! Ukuran file log tidak dianggap secara kolektif."
- phpmailer: "Konfigurasi untuk PHPMailer (digunakan untuk otentikasi dua-faktor dan untuk pemberitahuan email)."
+ phpmailer: "Konfigurasi untuk PHPMailer (digunakan untuk autentikasi dua-faktor dan untuk pemberitahuan email)."
  phpmailer_add_reply_to_address: "Alamat balasan yang dikutip saat mengirim email melalui SMTP."
  phpmailer_add_reply_to_name: "Nama balasan yang dikutip saat mengirim email melalui SMTP."
  phpmailer_event_log: "File untuk mencatat semua kejadian yang terkait dengan PHPMailer. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
@@ -259,8 +259,8 @@ config: !lazy
  phpmailer_port: "Nomor port yang digunakan untuk email keluar. Default = 587."
  phpmailer_set_from_address: "Alamat pengirim yang dikutip saat mengirim email melalui SMTP."
  phpmailer_set_from_name: "Nama pengirim yang dikutip saat mengirim email melalui SMTP."
- phpmailer_skip_auth_process: "Pengaturan direktif ini ke <code>true</code> menginstruksikan PHPMailer untuk melewati proses otentikasi yang biasanya terjadi ketika mengirim email melalui SMTP. Ini harus dihindari, karena melewatkan proses ini dapat mengekspos email keluar ke serangan MITM, tetapi mungkin diperlukan dalam kasus dimana proses ini mencegah PHPMailer menghubungkan ke server SMTP."
- phpmailer_smtp_auth: "Direktif ini menentukan apakah akan mengotentikasi sesi SMTP (biasanya harus dibiarkan sendiri)."
+ phpmailer_skip_auth_process: "Pengaturan direktif ini ke <code>true</code> menginstruksikan PHPMailer untuk melewati proses autentikasi yang biasanya terjadi ketika mengirim email melalui SMTP. Ini harus dihindari, karena melewatkan proses ini dapat mengekspos email keluar ke serangan MITM, tetapi mungkin diperlukan dalam kasus dimana proses ini mencegah PHPMailer menghubungkan ke server SMTP."
+ phpmailer_smtp_auth: "Direktif ini menentukan apakah akan mengautentikasi sesi SMTP (biasanya harus dibiarkan sendiri)."
  phpmailer_smtp_secure: "Protokol yang digunakan saat mengirim email melalui SMTP (TLS atau SSL)."
  phpmailer_username: "Nama pengguna yang digunakan saat mengirim email melalui SMTP."
  projecthoneypot: "Konfigurasi untuk modul Project Honeypot."
@@ -830,10 +830,10 @@ macro: !lazy
   uninstall_modules: "Uninstal semua modul yang tidak aktif."
   uninstall_no_longer_available: "Uninstal komponen yang tidak lagi tersedia."
   uninstall_signatures: "Uninstal semua file tanda tangan yang tidak aktif."
-msg_subject_2fa: "Otentikasi Dua-Faktor"
+msg_subject_2fa: "Autentikasi Dua-Faktor"
 msg_template_2fa: |
  <center><p>Salam, %s.<br /><br />
- Kode otentikasi dua-faktor Anda untuk masuk ke depan CIDRAM:</p>
+ Kode autentikasi dua-faktor Anda untuk masuk ke depan CIDRAM:</p>
  <h1>%s</h1>
  <p>Kode ini berakhir dalam 10 menit.</p></center>
 notice_new_major_version: "Perhatian: %s sekarang tersedia (Anda menggunakan %s). Anda memenuhi persyaratan PHP minimum versi ini. <em>Melihat: <a href="{{Links.CIDRAM.Docs Base Path}}readme.id.md\#10-memutakhirkan-dari-versi-utama-sebelumnya" hreflang="id-ID"><span class="navicon link"></span>MEMUTAKHIRKAN DARI VERSI UTAMA SEBELUMNYA</a>.</em>"
@@ -909,7 +909,7 @@ response:
  Finished writing to %s: "Selesai menulis ke "%s"."
  I can_t write to %s, sorry: "Saya tidak dapat menulis ke "%s", maaf."
  I don_t understand that command, sorry: "Saya tidak mengerti perintah ini, maaf."
- Incorrect 2FA code entered: "Kode 2FA salah dimasukkan. Otentikasi gagal."
+ Incorrect 2FA code entered: "Kode 2FA salah dimasukkan. Autentikasi gagal."
  Invalid API key: "Kunci API tidak valid!"
  Invalid password: "Kegagalan masuk! Kata sandi salah!"
  Invalid timestamp: "Stempel waktu tidak valid!"
@@ -953,6 +953,7 @@ response:
  There_s nothing to write, sorry: "Tidak punya apa-apa untuk ditulis, maaf."
  Tracking cleared: "Pelacakan dicabut."
  Unable to determine: "Tidak dapat menentukan."
+ Unable to send two-factor authentication code because an email event handler isn_t available: "Kode autentikasi dua-faktor tidak dapat dikirim karena penangan peristiwa email tidak tersedia!"
  Unknown error: "Kesalahan yang tidak diketahui!"
  Username doesn_t exist: "Kegagalan masuk! Nama pengguna tidak ada!"
  Username field empty: "Nama pengguna yang kosong!"
@@ -1014,7 +1015,7 @@ time_seconds_from_now: "%s detik dari sekarang"
 time_years_ago: "%s tahun yang lalu"
 time_years_from_now: "%s tahun dari sekarang"
 tip:
- 2FA Sent: "Email yang berisi kode otentikasi dua-faktor telah dikirim ke alamat email Anda. Silakan mengkonfirmasikan kode ini dibawah untuk mendapatkan akses ke bagian depan. Jika Anda tidak menerima email ini, coba keluar, tunggu 10 menit, dan masuk lagi untuk menerima email baru yang berisi kode baru."
+ 2FA Sent: "Email yang berisi kode autentikasi dua-faktor telah dikirim ke alamat email Anda. Silakan mengkonfirmasikan kode ini dibawah untuk mendapatkan akses ke bagian depan. Jika Anda tidak menerima email ini, coba keluar, tunggu 10 menit, dan masuk lagi untuk menerima email baru yang berisi kode baru."
  Accounts: "Halaman akun memungkinkan Anda untuk mengontrol siapa dapat mengakses bagian depan CIDRAM."
  Actions menu: "Memblokir menambahkan 1 ke penghitungan tanda tangan. Melewati mengurangi 1 dari penghitungan tanda tangan. Mendaftar putih menetapkan penghitungan tanda tangan ke 0 dan menghentikan pemrosesan, sehingga melewatkan aturan selanjutnya sepenuhnya. Mendaftar abu-abu menetapkan penghitungan tanda tangan ke 0, tetapi tidak menghentikan pemrosesan. Memprofilkan tidak memengaruhi penghitungan tanda tangan, tetapi berguna ketika logika yang lebih kompleks mungkin dibutuhkan untuk menentukan apakah akan melakukan jenis tindakan lain, karena profil yang dihasilkan dapat digunakan dengan kondisi aturan berikutnya. Setelah diproses, jika penghitungan tanda tangan 1 atau lebih besar, permintaan akan diblokir."
  Aggregator: "Agregator memungkinkan Anda mengekspresikan IP, CIDR, dan topeng jaring dengan cara sekecil mungkin. Masukkan data yang akan diagregatkan dan tekan "OK"."
@@ -1065,7 +1066,7 @@ tip:
  When available, the value of the country code lookup: "Jika tersedia, nilai pencarian kode negara adalah kode negara {{Links.ISO.3166}} 2 digit. Misalnya, US untuk Amerika Serikat, RU untuk Rusia, CN untuk Tiongkok, dsb."
 warning: !lazy
  API_Rate_Limited: "Peringatan: Akses ke %s API tampaknya saat ini dibatasi tarifnya."
- Cookies: "Catat: CIDRAM menggunakan cookie untuk mengotentikasi semua login. Saat kamu masuk, Anda memberikan izin agar cookie dibuat dan disimpan oleh browser Anda."
+ Cookies: "Catat: CIDRAM menggunakan cookie untuk mengautentikasi semua login. Saat kamu masuk, Anda memberikan izin agar cookie dibuat dan disimpan oleh browser Anda."
  Editing PHP files: "Peringatan: Beberapa solusi keamanan webhosting diketahui secara otomatis melarang alamat IP setelah mendeteksi tag PHP dalam permintaan (misalnya, ketika memodifikasi file PHP melalui browser). CIDRAM tidak memiliki cara untuk mengetahui apakah layanan webhosting Anda menggunakan solusi keamanan seperti ini. Untuk menghindari masalah seperti tersebut, disarankan jangan mengedit file PHP sedemikian rupa jika memungkinkan."
  Extremely common passwords should be avoided: "Peringatan: Kata sandi yang sangat umum sebaiknya dihindari."
  IP tests are disabled: "Peringatan: IP test dinonaktifkan! File tanda tangan tidak dapat digunakan sampai masalah ini diselesaikan."

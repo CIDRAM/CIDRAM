@@ -466,31 +466,31 @@ class FrontEnd extends Core
                                     ($this->FE['LP']['TwoFactorMessage'] = $this->L10N->getString('msg_template_2fa')) &&
                                     ($this->FE['LP']['TwoFactorSubject'] = $this->L10N->getString('msg_subject_2fa'))
                                 ) {
-                                    $this->FE['LP']['TwoFactorState'] = ['Number' => $this->twoFactorNumber()];
-                                    $this->FE['LP']['TwoFactorState']['Hash'] = \password_hash($this->FE['LP']['TwoFactorState']['Number'], $this->DefaultAlgo);
-                                    $this->Cache->setEntry('TwoFactorState:' . $this->FE['Cookie'], '0' . $this->FE['LP']['TwoFactorState']['Hash'], self::TWO_FACTOR_TTL);
-                                    $this->FE['LP']['TwoFactorState']['Template'] = \sprintf(
-                                        $this->FE['LP']['TwoFactorMessage'],
-                                        $this->FE['User'],
-                                        $this->FE['LP']['TwoFactorState']['Number']
-                                    );
-                                    if (\preg_match('~^[^<>]+<[^<>]+>$~', $this->FE['User'])) {
-                                        $this->FE['LP']['TwoFactorState']['Name'] = \trim(\preg_replace('~^([^<>]+)<[^<>]+>$~', '\1', $this->FE['User']));
-                                        $this->FE['LP']['TwoFactorState']['Address'] = \trim(\preg_replace('~^[^<>]+<([^<>]+)>$~', '\1', $this->FE['User']));
+                                    if ($this->Events->assigned('sendEmail')) {
+                                        $this->FE['LP']['TwoFactorState'] = ['Number' => $this->twoFactorNumber()];
+                                        $this->FE['LP']['TwoFactorState']['Hash'] = \password_hash($this->FE['LP']['TwoFactorState']['Number'], $this->DefaultAlgo);
+                                        $this->Cache->setEntry('TwoFactorState:' . $this->FE['Cookie'], '0' . $this->FE['LP']['TwoFactorState']['Hash'], self::TWO_FACTOR_TTL);
+                                        $this->FE['LP']['TwoFactorState']['Template'] = \sprintf($this->FE['LP']['TwoFactorMessage'], $this->FE['User'], $this->FE['LP']['TwoFactorState']['Number']);
+                                        if (\preg_match('~^[^<>]+<[^<>]+>$~', $this->FE['User'])) {
+                                            $this->FE['LP']['TwoFactorState']['Name'] = \trim(\preg_replace('~^([^<>]+)<[^<>]+>$~', '\1', $this->FE['User']));
+                                            $this->FE['LP']['TwoFactorState']['Address'] = \trim(\preg_replace('~^[^<>]+<([^<>]+)>$~', '\1', $this->FE['User']));
+                                        } else {
+                                            $this->FE['LP']['TwoFactorState']['Name'] = \trim($this->FE['User']);
+                                            $this->FE['LP']['TwoFactorState']['Address'] = $this->FE['LP']['TwoFactorState']['Name'];
+                                        }
+                                        $EventData = [
+                                            [['Name' => $this->FE['LP']['TwoFactorState']['Name'], 'Address' => $this->FE['LP']['TwoFactorState']['Address']]],
+                                            $this->FE['LP']['TwoFactorSubject'],
+                                            $this->FE['LP']['TwoFactorState']['Template'],
+                                            \strip_tags($this->FE['LP']['TwoFactorState']['Template']),
+                                            ''
+                                        ];
+                                        $this->Events->fireEvent('sendEmail', '', ...$EventData);
+                                        unset($EventData);
+                                        $this->FE['UserState'] = 2;
                                     } else {
-                                        $this->FE['LP']['TwoFactorState']['Name'] = \trim($this->FE['User']);
-                                        $this->FE['LP']['TwoFactorState']['Address'] = $this->FE['LP']['TwoFactorState']['Name'];
+                                        $this->FE['state_msg'] = $this->L10N->getString('response.Unable to send two-factor authentication code because an email event handler isn_t available');
                                     }
-                                    $EventData = [
-                                        [['Name' => $this->FE['LP']['TwoFactorState']['Name'], 'Address' => $this->FE['LP']['TwoFactorState']['Address']]],
-                                        $this->FE['LP']['TwoFactorSubject'],
-                                        $this->FE['LP']['TwoFactorState']['Template'],
-                                        \strip_tags($this->FE['LP']['TwoFactorState']['Template']),
-                                        ''
-                                    ];
-                                    $this->Events->fireEvent('sendEmail', '', ...$EventData);
-                                    unset($EventData);
-                                    $this->FE['UserState'] = 2;
                                 } else {
                                     $this->FE['UserState'] = 1;
                                 }

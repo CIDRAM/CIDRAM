@@ -569,6 +569,9 @@
 
 ### v3.12.2
 
+#### Bugs fixed.
+- [2026.09.05]: When logging into the front-end with an account which uses two-factor authentication, the login system would blindly trust in the availability of an appropriate email event handler (e.g., as provided by PHPMailer). As a result, the login system would inform the user of a two-factor authentication code being sent even when it wasn't possible to do so due to no email event handler being available, whereas the better expectation would be for the login system to produce an error message, informing the user that no email event handler is available (although in either case, logging in would remain impossible regardless). This has now been fixed (i.e., availability checked and an error message produced when unavailable).
+
 #### Security.
 - [2026.08.30]: The default password usage warning now shows not only at the accounts page, but across the entire front-end when logged into an affected account in the hopes of more strongly encouraging any users which haven't yet set a proper password to do so. Furthermore, when any password field at the accounts page contains more than 0 but less than 8 characters, or when its content matches an entry from a predefined "list of the most common passwords", a warning will now be displayed that "extremely common passwords should be avoided".
 - [2026.09.03]: Password fields at the front-end accounts page now include a basic strength check.

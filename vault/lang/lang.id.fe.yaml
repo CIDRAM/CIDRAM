@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2026.09.04).
+# This file: Indonesian language data for the front-end (last modified: 2026.09.05).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -79,7 +79,7 @@ Name module_projecthoneypot.php: "Modul Project Honeypot."
 Name module_refspam.php: "Modul spam pengarah."
 Name module_sfs.php: "Modul Stop Forum Spam."
 checkbox_label_sensitive: "Menguji sebagai permintaan sensitif"
-config_PHPMailer: "Konfigurasi untuk PHPMailer (digunakan untuk otentikasi dua-faktor)."
+config_PHPMailer: "Konfigurasi untuk PHPMailer (digunakan untuk autentikasi dua-faktor)."
 config_PHPMailer_add_reply_to_address: "Alamat balasan yang dikutip saat mengirim email melalui SMTP."
 config_PHPMailer_add_reply_to_name: "Nama balasan yang dikutip saat mengirim email melalui SMTP."
 config_PHPMailer_enable_two_factor: "Direktif ini menentukan apakah akan menggunakan 2FA untuk akun depan."
@@ -89,8 +89,8 @@ config_PHPMailer_password: "Kata sandi yang digunakan saat mengirim email melalu
 config_PHPMailer_port: "Nomor port yang digunakan untuk email keluar. Default = 587."
 config_PHPMailer_set_from_address: "Alamat pengirim yang dikutip saat mengirim email melalui SMTP."
 config_PHPMailer_set_from_name: "Nama pengirim yang dikutip saat mengirim email melalui SMTP."
-config_PHPMailer_skip_auth_process: "Pengaturan direktif ini ke <code>true</code> menginstruksikan PHPMailer untuk melewati proses otentikasi yang biasanya terjadi ketika mengirim email melalui SMTP. Ini harus dihindari, karena melewatkan proses ini dapat mengekspos email keluar ke serangan MITM, tetapi mungkin diperlukan dalam kasus dimana proses ini mencegah PHPMailer menghubungkan ke server SMTP."
-config_PHPMailer_smtp_auth: "Direktif ini menentukan apakah akan mengotentikasi sesi SMTP (biasanya harus dibiarkan sendiri)."
+config_PHPMailer_skip_auth_process: "Pengaturan direktif ini ke <code>true</code> menginstruksikan PHPMailer untuk melewati proses autentikasi yang biasanya terjadi ketika mengirim email melalui SMTP. Ini harus dihindari, karena melewatkan proses ini dapat mengekspos email keluar ke serangan MITM, tetapi mungkin diperlukan dalam kasus dimana proses ini mencegah PHPMailer menghubungkan ke server SMTP."
+config_PHPMailer_smtp_auth: "Direktif ini menentukan apakah akan mengautentikasi sesi SMTP (biasanya harus dibiarkan sendiri)."
 config_PHPMailer_smtp_secure: "Protokol yang digunakan saat mengirim email melalui SMTP (TLS atau SSL)."
 config_PHPMailer_username: "Nama pengguna yang digunakan saat mengirim email melalui SMTP."
 config_bypasses: "Konfigurasi untuk bypass tanda tangan default."
@@ -534,10 +534,10 @@ logs_logfile_doesnt_exist: "File log yang dipilih tidak ada!"
 logs_no_logfile_selected: "Tidak ada file log dipilih."
 logs_no_logfiles_available: "Tidak ada file log tersedia."
 max_login_attempts_exceeded: "Jumlah maksimum upaya untuk memasukkan tercapai; Akses ditolak."
-msg_subject_2fa: "Otentikasi Dua-Faktor"
+msg_subject_2fa: "Autentikasi Dua-Faktor"
 msg_template_2fa: |
  <center><p>Salam, %s.<br /><br />
- Kode otentikasi dua-faktor Anda untuk masuk ke depan CIDRAM:</p>
+ Kode autentikasi dua-faktor Anda untuk masuk ke depan CIDRAM:</p>
  <h1>%s</h1>
  <p>Kode ini berakhir dalam 10 menit.</p></center>
 notice_click_here: "Klik disini untuk informasi lebih lanjut."
@@ -549,7 +549,7 @@ previewer_months: "Bulan"
 previewer_seconds: "Detik"
 previewer_weeks: "Minggu"
 previewer_years: "Tahun"
-response_2fa_invalid: "Kode 2FA salah dimasukkan. Otentikasi gagal."
+response_2fa_invalid: "Kode 2FA salah dimasukkan. Autentikasi gagal."
 response_2fa_valid: "Berhasil dikonfirmasi."
 response_accounts_already_exists: "Akun dengan nama pengguna ini sudah ada!"
 response_accounts_created: "Akun berhasil dibuat!"
@@ -670,7 +670,7 @@ time_seconds_ago: "%s detik yang lalu"
 time_seconds_from_now: "%s detik dari sekarang"
 time_years_ago: "%s tahun yang lalu"
 time_years_from_now: "%s tahun dari sekarang"
-tip_2fa_sent: "Email yang berisi kode otentikasi dua-faktor telah dikirim ke alamat email Anda. Silakan mengkonfirmasikan kode ini dibawah untuk mendapatkan akses ke bagian depan. Jika Anda tidak menerima email ini, coba keluar, tunggu 10 menit, dan masuk lagi untuk menerima email baru yang berisi kode baru."
+tip_2fa_sent: "Email yang berisi kode autentikasi dua-faktor telah dikirim ke alamat email Anda. Silakan mengkonfirmasikan kode ini dibawah untuk mendapatkan akses ke bagian depan. Jika Anda tidak menerima email ini, coba keluar, tunggu 10 menit, dan masuk lagi untuk menerima email baru yang berisi kode baru."
 tip_accounts: "Salam, {username}.<br />Halaman akun memungkinkan Anda untuk mengontrol siapa dapat mengakses bagian depan CIDRAM."
 tip_aux: "Salam, {username}.<br />Anda dapat menggunakan halaman ini untuk membuat, menghapus, dan mengubah aturan tambahan untuk CIDRAM."
 tip_aux_priority: "Prioritas (maksimum➡(sama🔄setara)➡terendah):"
@@ -688,7 +688,7 @@ tip_enter_input_here: "Masukkan input disini."
 tip_enter_ip_here: "Masukkan alamat IP disini."
 tip_enter_ips_here: "Masukkan alamat IP disini."
 tip_expiry_placeholder: "Jumlah detik hingga kedaluwarsa."
-tip_fe_cookie_warning: "Catat: CIDRAM menggunakan cookie untuk mengotentikasi semua login. Saat kamu masuk, Anda memberikan izin agar cookie dibuat dan disimpan oleh browser Anda."
+tip_fe_cookie_warning: "Catat: CIDRAM menggunakan cookie untuk mengautentikasi semua login. Saat kamu masuk, Anda memberikan izin agar cookie dibuat dan disimpan oleh browser Anda."
 tip_file_manager: "Salam, {username}.<br />Manajer file memungkinkan Anda untuk menghapus, mengedit, mengupload, dan mendownload file. Gunakan dengan hati-hati (Anda bisa istirahat instalasi Anda dengan ini)."
 tip_fixer: "Salam, {username}.<br />Alat perbaikan file tanda tangan menyediakan cara untuk mendeteksi dan memperbaiki potensi masalah dalam file tanda tangan."
 tip_home: "Salam, {username}.<br />Ini adalah halaman utama untuk CIDRAM bagian depan. Pilih link dari menu navigasi di sisi kiri untuk melanjutkan."

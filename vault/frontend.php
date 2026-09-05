@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2026.09.04).
+ * This file: Front-end handler (last modified: 2026.09.05).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1047,10 +1047,10 @@ if ($CIDRAM['FE']['UserState'] !== 1 && $CIDRAM['FE']['CronMode'] === '') {
             $CIDRAM['RowInfo']['AccPermissions'] = (int)substr($CIDRAM['RowInfo']['AccPassword'], -1);
             if ($CIDRAM['RowInfo']['AccPermissions'] === 1) {
                 $CIDRAM['RowInfo']['AccPermissions'] = $CIDRAM['L10N']->getString('state_complete_access');
+            } elseif ($CIDRAM['RowInfo']['AccPermissions'] === 3) {
+                $CIDRAM['RowInfo']['AccPermissions'] = 'Cronable API';
             } elseif ($CIDRAM['RowInfo']['AccPermissions'] === 2) {
                 $CIDRAM['RowInfo']['AccPermissions'] = $CIDRAM['L10N']->getString('state_logs_access_only');
-            } elseif ($CIDRAM['RowInfo']['AccPermissions'] === 3) {
-                $CIDRAM['RowInfo']['AccPermissions'] = 'Cronable';
             } else {
                 $CIDRAM['RowInfo']['AccPermissions'] = $CIDRAM['L10N']->getString('response_error');
             }

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The CIDRAM front-end (last modified: 2026.09.05).
+ * This file: The CIDRAM front-end (last modified: 2026.09.06).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -638,13 +638,19 @@ class FrontEnd extends Core
 
         /** Map permissions flags from permissions integer. */
         $this->FE['PermissionsMap'] = $this->flagIntToArray(['Complete access' => false, 'Logs' => false, 'Statistics' => false, 'IP Testing' => false, 'Range tools' => false, 'Glossary' => false], $this->FE['Permissions']);
-        $this->FE['PermissionsMap']['Cronable'] = $this->FE['PermissionsMap']['Complete access'] && $this->FE['PermissionsMap']['Logs'];
+        $this->FE['PermissionsMap']['Cronable API'] = false;
         if ($this->FE['PermissionsMap']['Complete access']) {
-            $this->FE['PermissionsMap']['Logs'] = true;
-            $this->FE['PermissionsMap']['Statistics'] = true;
-            $this->FE['PermissionsMap']['IP Testing'] = true;
-            $this->FE['PermissionsMap']['Range tools'] = true;
-            $this->FE['PermissionsMap']['Glossary'] = true;
+            if ($this->FE['PermissionsMap']['Logs']) {
+                $this->FE['PermissionsMap']['Complete access'] = false;
+                $this->FE['PermissionsMap']['Logs'] = false;
+                $this->FE['PermissionsMap']['Cronable API'] = true;
+            } else {
+                $this->FE['PermissionsMap']['Logs'] = true;
+                $this->FE['PermissionsMap']['Statistics'] = true;
+                $this->FE['PermissionsMap']['IP Testing'] = true;
+                $this->FE['PermissionsMap']['Range tools'] = true;
+                $this->FE['PermissionsMap']['Glossary'] = true;
+            }
         }
 
         /** Only execute this code block for already logged in users. */

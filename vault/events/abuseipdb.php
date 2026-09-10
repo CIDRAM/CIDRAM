@@ -74,7 +74,6 @@ $this->Events->addHandler('reporterFinished', function (): void {
     if ($Count === 0) {
         return;
     }
-    $OK = false;
     $TryBulk = false;
     if ($Count > 4 && \class_exists('\CURLStringFile')) {
         if (!isset($this->CIDRAM['AbuseIPDB-Daily Bulk Quota'])) {
@@ -96,9 +95,6 @@ $this->Events->addHandler('reporterFinished', function (): void {
             'Accept: application/json'
         ]);
         if (\preg_match('~"savedReports":(\d+)~', $Status, $Success) && isset($Success[1])) {
-            if ($Success[1] > 0) {
-                $OK = true;
-            }
             if (!isset($this->CIDRAM['Report OK'])) {
                 $this->CIDRAM['Report OK'] = 0;
             }
@@ -131,7 +127,6 @@ $this->Events->addHandler('reporterFinished', function (): void {
                 $this->CIDRAM['Report OK'] = 0;
             }
             $this->CIDRAM['Report OK']++;
-            $OK = true;
             continue;
         }
         if (!isset($this->CIDRAM['Report Failed'])) {

@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2026.09.01).
+ * This file: Optional security extras module (last modified: 2026.09.07).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -623,9 +623,9 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         } // 2026.04.07 mod 2026.06.07
 
         /** Probing for exposed Firebase configuration file. */
-        if ($this->trigger(\preg_match('~(?:^|[/?])firebase(?:[-/_](?:admin(?:sdk)?|config|credentials?|init|service[-_]?account))?\.json(?:$|[/?])~', $LCNrURI), 'Probing for exposed Firebase configuration')) {
+        if ($this->trigger(\preg_match('~(?:^|[/?])firebase(?:[-/_](?:admin(?:sdk)?|config|credentials?|init|key|service[-_]?account))?\.json(?:$|[/?])~', $LCNrURI), 'Probing for exposed Firebase configuration')) {
             $this->Reporter->report([15, 21], ['Caught probing for exposed Firebase configuration.'], $this->BlockInfo['IPAddr']);
-        } // 2026.06.07 mod 2026.08.15
+        } // 2026.06.07 mod 2026.09.07
 
         /** Probing for exposed Spring Boot database credentials. */
         if ($this->trigger(\preg_match('~(?:^|[/?])(?:application\.properties|actuator/(?:configprops|env|heapdump))(?:$|[/?])~', $LCNrURI), 'Probing for exposed Spring Boot database credentials')) {

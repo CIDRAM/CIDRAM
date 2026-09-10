@@ -646,7 +646,6 @@ class FrontEnd extends Core
                 $this->FE['PermissionsMap']['Statistics'] = true;
                 $this->FE['PermissionsMap']['IP Testing'] = true;
                 $this->FE['PermissionsMap']['Range tools'] = true;
-                $this->FE['PermissionsMap']['Glossary'] = true;
             }
         }
 

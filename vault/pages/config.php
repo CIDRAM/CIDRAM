@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: The configuration page (last modified: 2026.09.05).
+ * This file: The configuration page (last modified: 2026.09.10).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -191,7 +191,7 @@ foreach ($this->CIDRAM['Config Defaults'] as $CatKey => $CatValue) {
                     ' \'+nft(r.toString())+\' %5$s – \'+nft(d.toString())+\' %6$s – \'+nft(i.' .
                     'toString())+\' %7$s – \'+nft(f.toString())+\' %8$s\';%9$s?%9$s(\'%1$s_pr' .
                     'eview\').innerHTML=a:%10$s&&!%9$s?%10$s.%1$s_preview.innerHTML=a:\'\'}' .
-                    '%1$s_function();</script>',
+                    '%1$s_function()</script>',
                     $ThisDir['DirLangKey'],
                     $this->L10N->getString('previewer.Years'),
                     $this->L10N->getString('previewer.Months'),
@@ -238,7 +238,7 @@ foreach ($this->CIDRAM['Config Defaults'] as $CatKey => $CatValue) {
                     'g())+\' %3$s – \'+nft(l.toString())+\' %4$s – \'+nft(r.toString())+\' ' .
                     '%5$s – \'+nft(d.toString())+\' %6$s – \'+nft(i.toString())+\' %7$s – \'+' .
                     'nft(f.toString())+\' %8$s\';%9$s?%9$s(\'%1$s_preview\').innerHTML=a:' .
-                    '%10$s&&!%9$s?%10$s.%1$s_preview.innerHTML=a:\'\'}%1$s_function();</script>',
+                    '%10$s&&!%9$s?%10$s.%1$s_preview.innerHTML=a:\'\'}%1$s_function()</script>',
                     $ThisDir['DirLangKey'],
                     $this->L10N->getString('previewer.Years'),
                     $this->L10N->getString('previewer.Months'),
@@ -252,7 +252,7 @@ foreach ($this->CIDRAM['Config Defaults'] as $CatKey => $CatValue) {
                 );
             } elseif ($DirValue['preview'] === 'allow_other') {
                 $ThisDir['Preview'] .= \sprintf(
-                    '<script type="text/javascript">function %1$s_function(){var e=%2$s?%2$s(\'%1$s_field\').value:%3$s&&!%2$s?%3$s.%1$s_field.value:\'\';e==\'Other\'?showid(\'%4$s_field\'):hideid(\'%4$s_field\')};%1$s_function();</script>',
+                    '<script type="text/javascript">function %1$s_function(){var e=%2$s?%2$s(\'%1$s_field\').value:%3$s&&!%2$s?%3$s.%1$s_field.value:\'\';e==\'Other\'?showid(\'%4$s_field\'):hideid(\'%4$s_field\')};%1$s_function()</script>',
                     $ThisDir['DirLangKey'],
                     'document.getElementById',
                     'document.all',
@@ -295,7 +295,7 @@ foreach ($this->CIDRAM['Config Defaults'] as $CatKey => $CatValue) {
                 '\' %4$s – \'+nft(r.toString())+\' %5$s – \'+nft(d.toString())+\' %6$s – \'+n' .
                 'ft(i.toString())+\' %7$s – \'+nft(f.toString())+\' %8$s\';%9$s?%9$s(\'%1$s_p' .
                 'review\').innerHTML=a:%10$s&&!%9$s?%10$s.%1$s_preview.innerHTML=a:\'\';}%1$s' .
-                '_function();</script>',
+                '_function()</script>',
                 $ThisDir['DirLangKey'],
                 $this->L10N->getString('previewer.Years'),
                 $this->L10N->getString('previewer.Months'),
@@ -325,7 +325,7 @@ foreach ($this->CIDRAM['Config Defaults'] as $CatKey => $CatValue) {
                 'ixed=Math.floor(fixed)}for(var i=0,p=unitNames[i];fixed>=1024;){fixed=fixed/' .
                 '1024;i++;p=unitNames[i];if(i>=5)break}t=nft(fixed.toFixed(i===0?0:2))+\' \'+' .
                 'p;%8$s?%8$s(\'%1$s_preview\').innerHTML=t:%9$s&&!%8$s?%9$s.%1$s_preview.inne' .
-                'rHTML=t:\'\';};%1$s_function();</script>',
+                'rHTML=t:\'\';};%1$s_function()</script>',
                 $ThisDir['DirLangKey'],
                 $this->L10N->getPlural(0, 'field.size.bytes'),
                 $this->L10N->getString('field.size.KB'),
@@ -665,11 +665,7 @@ foreach ($this->CIDRAM['Config Defaults'] as $CatKey => $CatValue) {
                         $ThisDir['FieldOut'] .= "        <br /><br />\n        " . $ThisDir['HintValue'];
                         continue;
                     }
-                    $ThisDir['FieldOut'] .= \sprintf(
-                        "<br /><br />\n        <span class=\"s\">%s</span> %s",
-                        $ThisDir['HintKey'],
-                        $ThisDir['HintValue']
-                    );
+                    $ThisDir['FieldOut'] .= \sprintf("<br /><br />\n        <span class=\"s\">%s</span> %s", $ThisDir['HintKey'], $ThisDir['HintValue']);
                 }
             }
         }
@@ -714,10 +710,10 @@ foreach ($this->CIDRAM['Config Defaults'] as $CatKey => $CatValue) {
 
         /** Provide additional information, useful for users to better understand the directive at hand. */
         if (!empty($DirValue['See also']) && \is_array($DirValue['See also'])) {
-            $ThisDir['FieldOut'] .= \sprintf("<br />\n        %s<ul>\n", isset($DirValue['hints']) ? '' : $this->L10N->getString('label.See also'));
+            $ThisDir['FieldOut'] .= \sprintf("<br /><br />\n        %s<ul>\n", isset($DirValue['hints']) ? '' : $this->L10N->getString('label.See also'));
             foreach ($DirValue['See also'] as $DirValue['Ref key'] => $DirValue['Ref link']) {
                 $ThisDir['FieldOut'] .= \sprintf(
-                    '          <li><a dir="ltr" href="%s"><span class="navicon link"></span>%s</a></li>',
+                    '          <li><a dir="ltr" href="%s" target="_blank" rel="noopener external"><span class="navicon link"></span>%s</a></li>',
                     $DirValue['Ref link'],
                     $this->L10N->getString($DirValue['Ref key']) ?: $DirValue['Ref key']
                 ) . "\n";

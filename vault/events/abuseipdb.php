@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: AbuseIPDB event handlers (last modified: 2026.04.19).
+ * This file: AbuseIPDB event handlers (last modified: 2026.09.10).
  */
 
 /**
@@ -126,7 +126,7 @@ $this->Events->addHandler('reporterFinished', function (): void {
             'Key: ' . $this->Configuration['abuseipdb']['api_key'],
             'Accept: application/json'
         ]);
-        if (\strpos($Status, '"ipAddress":"' . $Report['IP'] . '"') !== false && \strpos($Status, '"errors":') === false) {
+        if (\strpos($Status, '"ipAddress":"' . $Entry[1] . '"') !== false && \strpos($Status, '"errors":') === false) {
             if (!isset($this->CIDRAM['Report OK'])) {
                 $this->CIDRAM['Report OK'] = 0;
             }

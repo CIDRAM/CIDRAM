@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Front-end handler (last modified: 2026.09.05).
+ * This file: Front-end handler (last modified: 2026.09.10).
  */
 
 /** Prevents execution from outside of CIDRAM. */
@@ -1279,7 +1279,7 @@ if ($CIDRAM['FE']['UserState'] !== 1 && $CIDRAM['FE']['CronMode'] === '') {
                         ' \'+nft(r.toString())+\' %5$s – \'+nft(d.toString())+\' %6$s – \'+nft(i.' .
                         'toString())+\' %7$s – \'+nft(f.toString())+\' %8$s\';%9$s?%9$s(\'%1$s_pr' .
                         'eview\').innerHTML=a:%10$s&&!%9$s?%10$s.%1$s_preview.innerHTML=a:\'\'}' .
-                        '%1$s_function();</script>',
+                        '%1$s_function()</script>',
                         $CIDRAM['ThisDir']['DirLangKey'],
                         $CIDRAM['L10N']->getString('previewer_years'),
                         $CIDRAM['L10N']->getString('previewer_months'),
@@ -1326,7 +1326,7 @@ if ($CIDRAM['FE']['UserState'] !== 1 && $CIDRAM['FE']['CronMode'] === '') {
                         'g())+\' %3$s – \'+nft(l.toString())+\' %4$s – \'+nft(r.toString())+\' ' .
                         '%5$s – \'+nft(d.toString())+\' %6$s – \'+nft(i.toString())+\' %7$s – \'+' .
                         'nft(f.toString())+\' %8$s\';%9$s?%9$s(\'%1$s_preview\').innerHTML=a:' .
-                        '%10$s&&!%9$s?%10$s.%1$s_preview.innerHTML=a:\'\'}%1$s_function();</script>',
+                        '%10$s&&!%9$s?%10$s.%1$s_preview.innerHTML=a:\'\'}%1$s_function()</script>',
                         $CIDRAM['ThisDir']['DirLangKey'],
                         $CIDRAM['L10N']->getString('previewer_years'),
                         $CIDRAM['L10N']->getString('previewer_months'),
@@ -1342,7 +1342,7 @@ if ($CIDRAM['FE']['UserState'] !== 1 && $CIDRAM['FE']['CronMode'] === '') {
                     $CIDRAM['ThisDir']['Preview'] .= sprintf(
                         '<script type="text/javascript">function %1$s_function(){var e=%2$s?%2$s(' .
                         '\'%1$s_field\').value:%3$s&&!%2$s?%3$s.%1$s_field.value:\'\';e==\'Other\'' .
-                        '?showid(\'%4$s_field\'):hideid(\'%4$s_field\')};%1$s_function();</script>',
+                        '?showid(\'%4$s_field\'):hideid(\'%4$s_field\')};%1$s_function()</script>',
                         $CIDRAM['ThisDir']['DirLangKey'],
                         'document.getElementById',
                         'document.all',
@@ -1369,7 +1369,7 @@ if ($CIDRAM['FE']['UserState'] !== 1 && $CIDRAM['FE']['CronMode'] === '') {
                     'ixed=Math.floor(fixed)}for(var i=0,p=unitNames[i];fixed>=1024;){fixed=fixed/' .
                     '1024;i++;p=unitNames[i];if(i>=5)break}t=nft(fixed.toFixed(i===0?0:2))+\' \'+' .
                     'p;%8$s?%8$s(\'%1$s_preview\').innerHTML=t:%9$s&&!%8$s?%9$s.%1$s_preview.inne' .
-                    'rHTML=t:\'\';};%1$s_function();</script>',
+                    'rHTML=t:\'\';};%1$s_function()</script>',
                     $CIDRAM['ThisDir']['DirLangKey'],
                     $CIDRAM['L10N']->getPlural(0, 'field_size_bytes'),
                     $CIDRAM['L10N']->getString('field_size_KB'),
@@ -1657,11 +1657,7 @@ if ($CIDRAM['FE']['UserState'] !== 1 && $CIDRAM['FE']['CronMode'] === '') {
                         $CIDRAM['ThisDir']['FieldOut'] .= sprintf("<br /><br />\n        %s", $CIDRAM['ThisDir']['HintValue']);
                         continue;
                     }
-                    $CIDRAM['ThisDir']['FieldOut'] .= sprintf(
-                        "<br /><br />\n        <span class=\"s\">%s</span> %s",
-                        $CIDRAM['ThisDir']['HintKey'],
-                        $CIDRAM['ThisDir']['HintValue']
-                    );
+                    $CIDRAM['ThisDir']['FieldOut'] .= sprintf("<br /><br />\n        <span class=\"s\">%s</span> %s", $CIDRAM['ThisDir']['HintKey'], $CIDRAM['ThisDir']['HintValue']);
                 }
             }
 
@@ -1698,13 +1694,13 @@ if ($CIDRAM['FE']['UserState'] !== 1 && $CIDRAM['FE']['CronMode'] === '') {
 
             /** Provide additional information, useful for users to better understand the directive at hand. */
             if (!empty($CIDRAM['DirValue']['See also']) && is_array($CIDRAM['DirValue']['See also'])) {
-                $CIDRAM['ThisDir']['FieldOut'] .= sprintf("<br />\n        %s<ul>\n", isset($CIDRAM['DirValue']['hints']) ? '' : $CIDRAM['L10N']->getString('label_see_also'));
+                $CIDRAM['ThisDir']['FieldOut'] .= sprintf("<br /><br />\n        %s<ul>\n", isset($CIDRAM['DirValue']['hints']) ? '' : $CIDRAM['L10N']->getString('label_see_also'));
                 foreach ($CIDRAM['DirValue']['See also'] as $CIDRAM['DirValue']['Ref key'] => $CIDRAM['DirValue']['Ref link']) {
                     if (isset($CIDRAM['L10N']->Data[$CIDRAM['DirValue']['Ref key']])) {
                         $CIDRAM['DirValue']['Ref key'] = $CIDRAM['L10N']->Data[$CIDRAM['DirValue']['Ref key']];
                     }
                     $CIDRAM['ThisDir']['FieldOut'] .= sprintf(
-                        '          <li><a dir="ltr" href="%s">%s</a></li>',
+                        '          <li><a dir="ltr" href="%s" target="_blank" rel="noopener external">%s</a></li>',
                         $CIDRAM['DirValue']['Ref link'],
                         $CIDRAM['DirValue']['Ref key']
                     ) . "\n";
@@ -1735,10 +1731,7 @@ if ($CIDRAM['FE']['UserState'] !== 1 && $CIDRAM['FE']['CronMode'] === '') {
             }
 
             /** Finalise configuration row. */
-            $CIDRAM['FE']['ConfigFields'] .= $CIDRAM['ParseVars'](
-                $CIDRAM['L10N']->Data + $CIDRAM['ThisDir'],
-                $CIDRAM['FE']['ConfigRow']
-            );
+            $CIDRAM['FE']['ConfigFields'] .= $CIDRAM['ParseVars']($CIDRAM['L10N']->Data + $CIDRAM['ThisDir'], $CIDRAM['FE']['ConfigRow']);
         }
         $CIDRAM['CatKeyFriendly'] = $CIDRAM['L10N']->getString('config_' . $CIDRAM['CatKey'] . '_label') ?: (
             $CIDRAM['FromModuleConfigL10N']('config_' . $CIDRAM['CatKey'] . '_label')

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2026.09.05).
+# This file: English language data for the front-end (last modified: 2026.09.12).
 ##/
 
 Abuse category: !lazy
@@ -127,6 +127,7 @@ Name: !lazy
  Protocol blocker module: "Protocol blocker module."
  Quic cloud compatibility module: "Quic cloud compatibility module."
  Referrer spam module: "Referrer spam module."
+ ShodanDB module: ShodanDB module."
  Stop Forum Spam module: "Stop Forum Spam module."
  Tor blocker module: "Tor blocker module."
 bobuam_hint_default_value: "When set to 0, the module will defer to the currently recommended value."
@@ -326,6 +327,23 @@ config: !lazy
  rate_limiting_precision_ipv6: "The precision to use for tracking IPv6 usage. Value mirrors CIDR block size. Set to 128 for best precision. Default = 128."
  rate_limiting_segregate: "Should quotas for different domains and hosts be segregated or shared? True = Quotas will be segregated. False = Quotas will be shared [Default]."
  sfs: "Configuration for the Stop Forum Spam module."
+ shodandb: "Configuration for the ShodanDB (Shodan InternetDB) module."
+ shodandb_api_base: "The base URL for Shodan InternetDB lookups (or a compatible endpoint). Default = https://internetdb.shodan.io."
+ shodandb_api_header: "An optional HTTP header to send with lookup requests (e.g., for authentication against a self-hosted or proxied endpoint). Leave blank if not needed."
+ shodandb_expire_bad: "How long to cache a ShodanDB lookup result for when no ports/data were found. Default = 1 hour."
+ shodandb_expire_good: "How long to cache a ShodanDB lookup result for when ports were found. Default = 1 day."
+ shodandb_flag_any_open_port: "When enabled, ANY reported open port on a requesting IP counts as a match, bypassing both the \"ports_to_detect\" list and the \"proxy_ports\" check below entirely (a proxy port would already be covered by the \"any open port\" match, so checking it separately would just be redundant)."
+ shodandb_lookup_strategy: "When should ShodanDB lookups be performed?"
+ shodandb_options: "Mark this module for use with specific CAPTCHA providers (relevant only when an action above is set to \"CAPTCHA challenge\")."
+ shodandb_ports_action: "What to do when a requesting IP has one or more of the configured \"ports of interest\" open (or, if \"flag_any_open_port\" is enabled, any open port at all). This category never reports to AbuseIPDB, regardless of the action chosen — an open port alone isn't a reliable abuse signal on its own (plenty of benign IPs run a webserver, game server, TeamSpeak, etc)."
+ shodandb_ports_to_detect: "A comma-separated list of ports (and/or port ranges, e.g., 3389-3395) considered noteworthy or high-risk when found open on a requesting IP (e.g., remote admin, IoT, database ports)."
+ shodandb_proxy_ports: "A comma-separated list of ports (and/or port ranges, e.g., 3389-3395) commonly associated with open proxies, SOCKS servers, or other anonymising relays. Not used while \"flag_any_open_port\" is enabled."
+ shodandb_proxy_ports_action: "What to do when a requesting IP has one or more of the configured proxy ports open."
+ shodandb_proxy_report_abuseipdb: "Report matched proxy ports to AbuseIPDB (in addition to whatever action is chosen below). A proxy port is a stronger abuse signal than a generic open port, so this defaults to enabled — unlike the \"ports_to_detect\" category above, which never reports to AbuseIPDB."
+ shodandb_timeout_limit: "Timeout (in seconds) for ShodanDB lookup requests. Default = 12."
+ shodandb_timeout_rl: "How long to suspend lookups for after the lookup limit has been exceeded (HTTP 429). Default = 1 hour."
+ shodandb_tr069_ports: "A comma-separated list of ports (and/or port ranges) considered to be TR-069 / CPE WAN Management Protocol ports, to be whitelisted when \"tr069_whitelist\" is enabled. Default = 7547 (the standard/IANA-registered CWMP port) and 30005 (a common non-standard alternate used by some ISPs/devices)."
+ shodandb_tr069_whitelist: "Skip TR-069 (CPE WAN Management Protocol) ports before matching against either list below. Most residential ISPs remotely manage customer routers via this protocol (typically port 7547), so a router having it open is normal and expected — not a sign of anything suspicious. Recommended to leave this enabled, especially if \"flag_any_open_port\" is also enabled."
  signatures: "Configuration for signatures, signature files, modules, etc."
  signatures_conflict_response: "When there are too many simultaneous attempts to access the same resources (e.g., simultaneous requests to multiple PHP processes at the same machine for the same resources), some of those attempts may fail. In the rare and unlikely event that this affects signature files or modules, CIDRAM may be prevented from making an effective determination about the request. If this happens, should the request be blocked, and which HTTP status message should CIDRAM send?"
  signatures_default_tracktime: "The duration that IP addresses should be tracked for. Default = 7d0°0′0″ (1 week)."
@@ -640,9 +658,11 @@ label:
  Bandwidth: "Bandwidth used: %s – Bandwidth available: %s"
  Branch latest stable: "Branch latest stable:"
  CAPTCHA attempts: "CAPTCHA attempts"
+ CAPTCHA challenge: "CAPTCHA challenge."
  CIDRAM version used: "CIDRAM version used:"
  Cache data and temporary files: "Cache data and temporary files"
  Cancel: "Cancel"
+ Detect only (log &amp; profile, don't block): "Detect only (log &amp; profile, don't block)."
  Characters left: "Characters left"
  Checkbox: "Checkbox"
  Checksum after: "Checksum after"

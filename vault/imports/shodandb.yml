@@ -1,0 +1,89 @@
+##\
+# This file is a part of a custom module for the CIDRAM package.
+# CIDRAM homepage: https://cidram.github.io/
+#
+# Copyright 2026 and beyond by Aaron Vormestrand.
+# Whwlyz pu aol yvhkzpkl alss vm zbmmlypun huk nyllk. Mlhy avkhf, mvynva avtvyyvd. Olyl ilzpkl aol uldz vm ovsf dhy huk ovsf ullk
+# https://github.com/737simpilot
+# This file: ShodanDB (Shodan InternetDB) module configuration defaults.
+##/
+
+Config Defaults:
+ shodandb:
+  api_base:
+   type: "string"
+   default: "https://internetdb.shodan.io"
+   See also:
+    Shodan InternetDB: "https://internetdb.shodan.io/"
+  api_header:
+   type: "string"
+   default: ""
+  lookup_strategy:
+   type: "int"
+   default: 2
+   choices:
+    0: "label.None"
+    1: "label.Every request"
+    2: "label.Requests for sensitive pages only"
+   style: "radio"
+   hints: "hints_sensitive_pages"
+  timeout_limit:
+   type: "int"
+   default: 12
+  timeout_rl:
+   type: "duration"
+   default: "1°0′0″"
+  tr069_whitelist:
+   type: "bool"
+   default: true
+   See also:
+    TR-069 (Wikipedia): "https://en.wikipedia.org/wiki/TR-069"
+  tr069_ports:
+   type: "string"
+   default: "7547,30005"
+   value_preg_filter:
+    ~[^\d,\-]~: ""
+  ports_to_detect:
+   type: "string"
+   default: "21,22,23,25,80,81,110,137,138,139,143,443,445,554,2323,3389,5900,5901,8000,8080,8443,9000,20005,37777,52869"
+   value_preg_filter:
+    ~[^\d,\-]~: ""
+  flag_any_open_port:
+   type: "bool"
+   default: false
+  ports_action:
+   type: "int"
+   default: 0
+   choices:
+    0: "label.Detect only (log &amp; profile, don't block)"
+    1: "label.Block"
+    2: "label.CAPTCHA challenge"
+   style: "radio"
+  proxy_ports:
+   type: "string"
+   default: "1080,3128,4145,4153,5678,6588,8080,8081,8118,8123,8888,9050,9051,9150"
+   value_preg_filter:
+    ~[^\d,\-]~: ""
+  proxy_report_abuseipdb:
+   type: "bool"
+   default: true
+  proxy_ports_action:
+   type: "int"
+   default: 1
+   choices:
+    0: "label.Detect only (log &amp; profile, don't block)"
+    1: "label.Block"
+    2: "label.CAPTCHA challenge"
+   style: "radio"
+  options:
+   type: "checkbox"
+   default: ""
+   choices: *CaptchaChoicesForModules
+  expire_good:
+   type: "duration"
+   default: "1d0°0′0″"
+  expire_bad:
+   type: "duration"
+   default: "1°0′0″"
+Cache Prefetch:
+ ShodanDB-429: ""

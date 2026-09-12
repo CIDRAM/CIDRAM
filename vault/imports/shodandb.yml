@@ -87,3 +87,5 @@ Config Defaults:
    default: "1°0′0″"
 Cache Prefetch:
  ShodanDB-429: ""
+Problems:
+ - "if {CIDRAM.Cache Prefetch.ShodanDB-429}==1 then warn warning.API_Rate_Limited ShodanDB module"

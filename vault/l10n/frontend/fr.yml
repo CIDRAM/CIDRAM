@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2026.09.05).
+# This file: French language data for the front-end (last modified: 2026.09.12).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -87,6 +87,7 @@ Extended Description: !lazy
  Protocol blocker module: "Fournit la possibilité de bloquer des protocoles de requête spécifiques via la configuration (par exemple, HTTP/0.9, HTTP/1.1, SPDY/3.0, etc)."
  Quic cloud compatibility module: "Contribue à garantir le bon fonctionnement de CIDRAM sur les sites fonctionnant derrière Quic cloud. Ce module ne sera pas nécessaire pour les sites n'utilisant pas Quic cloud."
  Referrer spam module: "Le blocage basé sur le spam référent ne procure généralement aucun avantage de sécurité significatif, mais dans certains cas, cela pourrait être utile à certains utilisateurs pour rassembler plus d'informations sur les requêtes et pour pouvoir les rapporter."
+ ShodanDB module: "Recherche l'adresse IP de la requête via l'API Shodan InternetDB."
  Stop Forum Spam module: "Protège l'enregistrement et les pages de connexion contre les adresses IP répertoriées par SFS."
  Tor blocker module: "Interdit l'accès à partir des nœuds de sortie Tor."
 Glossary: !lazy
@@ -146,6 +147,7 @@ Name: !lazy
  Protocol blocker module: "Module bloqueur de protocoles."
  Quic cloud compatibility module: "Quic cloud module de compatibilité."
  Referrer spam module: "Module spam référent."
+ ShodanDB module: "Module ShodanDB."
  Stop Forum Spam module: "Module Stop Forum Spam."
  Tor blocker module: "Module bloqueur de Tor."
 bobuam_hint_default_value: "Lorsqu'il est réglé sur 0, le module prendra la valeur actuellement recommandé."
@@ -354,6 +356,9 @@ config: !lazy
  rate_limiting_precision_ipv6: "La précision à utiliser lors de la surveillance de l'utilisation d'IPv6. La valeur reflète la taille du bloc CIDR. Réglez sur 128 pour une meilleure précision. Défaut = 128."
  rate_limiting_segregate: "Les quotas pour différents domaines et hôtes doivent-ils être séparés ou partagés\_? True = Les quotas seront séparés. False = Les quotas seront partagés [Défaut]."
  sfs: "Configuration du module Stop Forum Spam."
+ shodandb: "Configuration du module ShodanDB (Shodan InternetDB)."
+ shodandb_api_base: "L'URL de base pour les recherches Shodan InternetDB (ou un point de terminaison compatible). Défaut = <code class="s">https://internetdb.shodan.io</code>."
+ shodandb_api_header: "En-tête HTTP facultatif à envoyer avec les requêtes de recherche (par exemple, pour l'authentification auprès d'un point de terminaison auto-hébergé ou proxy). Laisser vide si ce n'est pas nécessaire."
  signatures: "Configuration pour les signatures, fichiers de signatures, modules, etc."
  signatures_conflict_response: "Lorsqu'il y a trop de tentatives simultanées pour accéder aux mêmes ressources (par exemple, des requêtes simultanées à plusieurs processus PHP sur la même machine pour les mêmes ressources), certaines de ces tentatives peuvent échouer. Dans le cas rare et peu probable où cela affecte les fichiers de signature ou les modules, CIDRAM peut être empêché de prendre une décision efficace concernant la requête. Dans un tel cas, la requête doit-elle être bloquée, et quel message d'état HTTP CIDRAM doit-il envoyer\_?"
  signatures_default_tracktime: "La durée pendant laquelle les adresses IP doivent être suivies. Défaut = 7d0°0′0″ (1 semaine)."
@@ -667,9 +672,11 @@ label:
  Bandwidth: "Bande passante utilisée\_: %s – Bande passante disponible\_: %s"
  Branch latest stable: "Dernier stable de branche\_:"
  CAPTCHA attempts: "Tentatives de CAPTCHA"
+ CAPTCHA challenge: "CAPTCHA challenge."
  CIDRAM version used: "Version CIDRAM utilisée\_:"
  Cache data and temporary files: "Données cache et fichiers temporaires"
  Cancel: "Annuler"
+ Detect only (log &amp; profile, don't block): "Detect only (log &amp; profile, don't block)."
  Characters left: "Caractères restants"
  Checkbox: "Case à cocher"
  Checksum after: "Somme de contrôle après"

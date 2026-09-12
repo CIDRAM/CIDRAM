@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2026.09.05).
+# This file: Spanish language data for the front-end (last modified: 2026.09.12).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -77,6 +77,7 @@ Extended Description: !lazy
  Protocol blocker module: "Proporciona la capacidad de bloquear protocolos de solicitud específicos a través de la configuración (p.ej., HTTP/0.9, HTTP/1.1, SPDY/3.0, etc)."
  Quic cloud compatibility module: "Ayuda a garantizar que CIDRAM funcione correctamente en los sitios que operan detrás de Quic cloud. Para los sitios que no operan detrás de Quic cloud, este módulo no será necesario."
  Referrer spam module: "El bloqueo basado en spam de referencia generalmente no proporcionará ningún beneficio de seguridad significativo, pero en algunos casos, podría ser útil para algunos usuarios, para recopilar más información sobre solicitudes y para poder reporta los."
+ ShodanDB module: "Consulta la dirección IP de la solicitud en la API Shodan InternetDB."
  Stop Forum Spam module: "Protege las páginas de registro y de inicio de sesión de las IP listadas por SFS."
  Tor blocker module: "Prohíbe el acceso desde los nodos de salida Tor."
 Glossary: !lazy
@@ -136,6 +137,7 @@ Name: !lazy
  Protocol blocker module: "Módulo bloqueador de protocolos."
  Quic cloud compatibility module: "Quic cloud módulo de compatibilidad."
  Referrer spam module: "Módulo de spam de referencia."
+ ShodanDB module: "Módulo ShodanDB."
  Stop Forum Spam module: "Módulo Stop Forum Spam."
  Tor blocker module: "Módulo bloqueador de Tor."
 bobuam_hint_default_value: "Cuando se establece en 0, el módulo deferirá al valor recomendado actualmente."
@@ -316,6 +318,9 @@ config: !lazy
  rate_limiting_precision_ipv6: "La precisión a utilizar cuando se monitorea el uso de IPv6. El valor refleja el tamaño del bloque CIDR. Establecer en 128 para la mejor precisión. Predefinido = 128."
  rate_limiting_segregate: "¿Deberían segregarse o compartirse las cuotas para diferentes dominios y hosts? True = Las cuotas serán segregadas. False = Las cuotas serán compartidas [Predefinido]."
  sfs: "Configuración para el módulo Stop Forum Spam."
+ shodandb: "Configuración para el módulo ShodanDB (Shodan InternetDB)."
+ shodandb_api_base: "La URL base para las consultas a Shodan InternetDB (o un endpoint compatible). Predefinido = <code class="s">https://internetdb.shodan.io</code>."
+ shodandb_api_header: "Un encabezado HTTP opcional para enviar con las solicitudes de búsqueda (por ejemplo, para la autenticación a un punto de conexión autohospedado o que utiliza un proxy). Deje en blanco si no es necesario."
  signatures: "Configuración para firmas, archivos de firma, módulos, etc."
  signatures_conflict_response: "Cuando hay demasiados intentos simultáneos de acceder a los mismos recursos (por ejemplo, solicitudes simultáneas a múltiples procesos PHP en la misma máquina para los mismos recursos), algunos de esos intentos pueden fallar. En el caso poco común y poco probable de que esto afecte a los archivos de firma o los módulos, es posible que CIDRAM no pueda tomar una determinación efectiva sobre la solicitud. ¿Si esto sucede, se debe bloquear la solicitud, y qué mensaje de estado HTTP debe enviar CIDRAM?"
  signatures_default_tracktime: "La duración que se deben seguir las direcciones IP. Predefinido = 7d0°0′0″ (1 semana)."
@@ -614,9 +619,11 @@ label:
  Bandwidth: "Ancho de banda utilizado: %s – Ancho de banda disponible: %s"
  Branch latest stable: "Branch más nuevo estable:"
  CAPTCHA attempts: "Intentos de CAPTCHA"
+ CAPTCHA challenge: "CAPTCHA challenge."
  CIDRAM version used: "Versión CIDRAM utilizada:"
  Cache data and temporary files: "Datos de caché y archivos temporales"
  Cancel: "Cancelar"
+ Detect only (log &amp; profile, don't block): "Detect only (log &amp; profile, don't block)."
  Characters left: "Caracteres restantes"
  Checkbox: "Casilla de verificación"
  Checksum after: "La suma de comprobación después"

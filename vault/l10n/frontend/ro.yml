@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Romanian language data for the front-end (last modified: 2026.09.05).
+# This file: Romanian language data for the front-end (last modified: 2026.09.12).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -77,6 +77,7 @@ Extended Description: !lazy
  Protocol blocker module: "Oferă posibilitatea de a bloca anumite protocoale de solicitare prin intermediul configurației (de exemplu, HTTP/0.9, HTTP/1.1, SPDY/3.0, etc)."
  Quic cloud compatibility module: "Ajută la asigurarea funcționării corecte a CIDRAM pe site-urile care operează în spatele Quic cloud. Pentru site-urile care nu funcționează în spatele Quic cloud, acest modul nu va fi necesar."
  Referrer spam module: "Blocarea bazată pe spam de referință nu va oferi, în general, niciun beneficiu semnificativ de securitate, dar în unele cazuri, ar putea fi utilă pentru unii utilizatori, pentru a colecta mai multe informații despre solicitări și pentru a le putea raporta."
+ ShodanDB module: "Verifică adresa IP a solicitării în API-ul Shodan InternetDB."
  Stop Forum Spam module: "Protejează paginile de înregistrare și autentificare împotriva IP-urilor enumerate de SFS."
  Tor blocker module: "Refuză accesul de la nodurile de ieșire Tor."
 Glossary: !lazy
@@ -133,6 +134,7 @@ Name: !lazy
  Protocol blocker module: "Modul de blocare a protocolului."
  Quic cloud compatibility module: "Modul de compatibilitate Quic cloud."
  Referrer spam module: "Modul de spam referitor."
+ ShodanDB module: "Modul ShodanDB."
  Stop Forum Spam module: "Modul Stop Forum Spam."
  Tor blocker module: "Modul de blocare Tor."
 bobuam_hint_default_value: "Când este setat la 0, modulul va amâna la valoarea recomandată în prezent."
@@ -313,6 +315,9 @@ config: !lazy
  rate_limiting_precision_ipv6: "Precizia de utilizat pentru urmărirea utilizării IPv6. Valoarea reflectă dimensiunea blocului CIDR. Setați la 128 pentru cea mai bună precizie. Implicit = 128."
  rate_limiting_segregate: "Ar trebui să fie separate sau partajate cotele pentru diferite domenii și gazde? True = Cotele vor fi separate. False = Cotele vor fi partajate [Implicit]."
  sfs: "Configurare pentru modulul Stop Forum Spam."
+ shodandb: "Configurație pentru modulul ShodanDB (Shodan InternetDB)."
+ shodandb_api_base: "URL-ul de bază pentru interogările Shodan InternetDB (sau un punct final compatibil). Implicit = <code class="s">https://internetdb.shodan.io</code>."
+ shodandb_api_header: "Un antet HTTP opțional de transmis împreună cu solicitările de căutare (de exemplu, pentru autentificarea la un punct final găzduit local sau accesat printr-un proxy). Lăsați necompletat dacă nu este necesar."
  signatures: "Configurare pentru semnături, fișiere de semnătură, module, etc."
  signatures_conflict_response: "Când există prea multe încercări simultane de a accesa aceleași resurse (de exemplu, solicitări simultane către mai multe procese PHP de la aceeași mașină pentru aceleași resurse), unele dintre aceste încercări pot eșua. În cazul rar și puțin probabil în care acest lucru afectează fișierele de semnătură sau modulele, CIDRAM poate fi împiedicat să ia o decizie eficientă cu privire la solicităre. Dacă se întâmplă acest lucru, solicitărea ar trebui să fie blocată, și ce mesaj de stare HTTP ar trebui să trimită CIDRAM?"
  signatures_default_tracktime: "Durata pentru care trebuie urmărite adresele IP. Implicit = 7d0°0′0″ (1 săptămână)."
@@ -621,9 +626,11 @@ label:
  Bandwidth: "Lățimea de bandă utilizată: %s – Lățimea de bandă disponibilă: %s"
  Branch latest stable: "Cel mai recent ramura stabilă:"
  CAPTCHA attempts: "încercări CAPTCHA"
+ CAPTCHA challenge: "CAPTCHA challenge."
  CIDRAM version used: "Versiunea CIDRAM utilizată:"
  Cache data and temporary files: "Datele în cache și fișierele temporare"
  Cancel: "Anula"
+ Detect only (log &amp; profile, don't block): "Detect only (log &amp; profile, don't block)."
  Characters left: "Caractere rămase"
  Checkbox: "Caseta de bifat"
  Checksum after: "Suma de control după"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Afrikaans language data for the front-end (last modified: 2026.09.05).
+# This file: Afrikaans language data for the front-end (last modified: 2026.09.12).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -77,6 +77,7 @@ Extended Description: !lazy
  Protocol blocker module: "Bied die vermoë om spesifieke versoekprotokolle via die konfigurasie te blokkeer (bv., HTTP/0.9, HTTP/1.1, SPDY/3.0, ens)."
  Quic cloud compatibility module: "Help verseker dat CIDRAM korrek sal werk op webwerwe wat agter Quic cloud werk. Vir webwerwe wat nie agter Quic cloud werk nie, sal hierdie module nie nodig wees nie."
  Referrer spam module: "Blokkering gebaseer op verwyser-strooipos sal oor die algemeen geen betekenisvolle sekuriteitsvoordeel bied nie, maar in sommige gevalle kan dit nuttig wees vir sommige gebruikers, om meer inligting oor versoeke in te samel en om dit te kan rapporteer."
+ ShodanDB module: "Soek die IP-adres van die versoek op via die Shodan InternetDB-API."
  Stop Forum Spam module: "Beskerm registrasie en intekenbladsye teen IP's wat deur SFS gelys word."
  Tor blocker module: "Verbied toegang vanaf Tor-uitgangsnodusse."
 Glossary: !lazy
@@ -134,6 +135,7 @@ Name: !lazy
  Protocol blocker module: "Protokol-blokker module."
  Quic cloud compatibility module: "Quic cloud versoenbaarheidsmodule."
  Referrer spam module: "Verwyser spam module."
+ ShodanDB module: "ShodanDB module."
  Stop Forum Spam module: "Stop Forum Spam module."
  Tor blocker module: "Tor-blokker module."
 bobuam_hint_default_value: "Wanneer dit op 0 gestel is, sal die module uitstel na die tans aanbevole waarde."
@@ -314,6 +316,9 @@ config: !lazy
  rate_limiting_precision_ipv6: "Die akkuraatheid om te gebruik vir die dop van IPv6-gebruik. Waarde weerspieël CIDR-blokgrootte. Stel op 128 vir die beste akkuraatheid. Verstek = 128."
  rate_limiting_segregate: "Moet kwotas vir verskillende domeine en gashere geskei of gedeel word? True = Kwotas sal geskei word. False = Kwotas sal gedeel word [Verstek]."
  sfs: "Konfigurasie vir die Stop Forum Spam module."
+ shodandb: "Konfigurasie vir die ShodanDB (Shodan InternetDB) module."
+ shodandb_api_base: "Die basis-URL vir Shodan InternetDB-opsoeke (of 'n versoenbare eindpunt). Verstek = <code class="s">https://internetdb.shodan.io</code>."
+ shodandb_api_header: "Opsionele HTTP-kopskrif om saam met opsoekversoeke te stuur (bv., vir stawing teen 'n selfgehuisveste of volmag-eindpunt). Laat leeg indien nie nodig nie."
  signatures: "Konfigurasie vir handtekeninge, handtekeninglêers, modules, ens."
  signatures_conflict_response: "Wanneer daar te veel gelyktydige pogings is om toegang tot dieselfde hulpbronne te verkry (bv., gelyktydige versoeke na verskeie PHP-prosesse by dieselfde masjien vir dieselfde hulpbronne), kan sommige van daardie pogings misluk. In die seldsame en onwaarskynlike geval dat dit handtekeninglêers of modules raak, kan CIDRAM verhinder word om 'n effektiewe bepaling oor die versoek te maak. Indien dit gebeur, moet die versoek geblokkeer word, en watter HTTP-statusboodskap moet CIDRAM stuur?"
  signatures_default_tracktime: "Die tydsduur waarvoor IP-adresse nagespoor moet word. Verstek = 7d0°0′0″ (1 week)."
@@ -612,9 +617,11 @@ label:
  Bandwidth: "Bandwydte gebruik: %s – Bandwydte beskikbaar: %s"
  Branch latest stable: "Tak nuutste stabiele:"
  CAPTCHA attempts: "CAPTCHA-pogings"
+ CAPTCHA challenge: "CAPTCHA challenge."
  CIDRAM version used: "CIDRAM weergawe gebruik:"
  Cache data and temporary files: "Kas data en tydelike lêers"
  Cancel: "Kanselleer"
+ Detect only (log &amp; profile, don't block): "Detect only (log &amp; profile, don't block)."
  Characters left: "Karakters oor"
  Checkbox: "Merkblokkie"
  Checksum after: "Kontrolesom na"

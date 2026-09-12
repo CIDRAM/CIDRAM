@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malay language data for the front-end (last modified: 2026.09.05).
+# This file: Malay language data for the front-end (last modified: 2026.09.12).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -77,6 +77,7 @@ Extended Description: !lazy
  Protocol blocker module: "Menyediakan keupayaan untuk menyekat protokol permintaan tertentu melalui konfigurasi (cth., HTTP/0.9, HTTP/1.1, SPDY/3.0, dsb)."
  Quic cloud compatibility module: "Membantu memastikan CIDRAM akan beroperasi dengan betul di tapak web yang beroperasi di sebalik Quic cloud. Tapak web yang tidak beroperasi di sebalik Quic cloud tidak memerlukan modul ini."
  Referrer spam module: "Menyekat berdasarkan spam perujuk pada umumnya tidak akan memberikan sebarang manfaat keselamatan yang bermakna, tetapi dalam beberapa kes, mungkin berguna untuk sesetengah pengguna, untuk mengumpulkan lebih banyak maklumat tentang permintaan, dan untuk dapat melaporkannya."
+ ShodanDB module: "Menyemak alamat IP permintaan tersebut dengan API Shodan InternetDB."
  Stop Forum Spam module: "Melindungi halaman pendaftaran dan log masuk daripada IP yang disenaraikan oleh SFS."
  Tor blocker module: "Melarang akses daripada nod keluar Tor."
 Glossary: !lazy
@@ -133,6 +134,7 @@ Name: !lazy
  Protocol blocker module: "Modul penyekat protokol."
  Quic cloud compatibility module: "Modul keserasian Quic cloud."
  Referrer spam module: "Modul spam perujuk."
+ ShodanDB module: "Modul ShodanDB."
  Stop Forum Spam module: "Modul Stop Forum Spam."
  Tor blocker module: "Modul penyekat Tor."
 bobuam_hint_default_value: "Apabila ditetapkan kepada 0, modul akan menggunakan nilai yang disyorkan pada masa ini."
@@ -313,6 +315,9 @@ config: !lazy
  rate_limiting_precision_ipv6: "Ketepatan yang digunakan untuk menjejaki penggunaan IPv6. Nilai mencerminkan saiz blok CIDR. Tetapkan kepada 128 untuk ketepatan terbaik. Lalai = 128."
  rate_limiting_segregate: "Patutkah kuota untuk domain dan hos yang berbeza dipisahkan atau dikongsi? True = Kuota akan diasingkan. False = Kuota akan dikongsi [Lalai]."
  sfs: "Konfigurasi untuk modul Stop Forum Spam."
+ shodandb: "Konfigurasi untuk modul ShodanDB (Shodan InternetDB)."
+ shodandb_api_base: "URL asas untuk carian Shodan InternetDB (atau titik akhir yang serasi). Lalai = <code class="s">https://internetdb.shodan.io</code>."
+ shodandb_api_header: "Pengepala HTTP pilihan untuk dihantar bersama permintaan carian (contohnya, untuk pengesahan terhadap titik akhir yang dihoskan sendiri atau melalui proksi). Biarkan kosong jika tidak diperlukan."
  signatures: "Konfigurasi untuk tandatangan, fail tandatangan, modul, dll."
  signatures_conflict_response: "Apabila terdapat terlalu banyak percubaan serentak untuk mengakses sumber yang sama (cth., permintaan serentak kepada berbilang proses PHP pada mesin yang sama untuk sumber yang sama), beberapa percubaan tersebut mungkin gagal. Apabila ini menjejaskan fail tandatangan atau modul, CIDRAM mungkin dihalang daripada membuat penentuan yang berkesan tentang permintaan tersebut. Jika ini berlaku, adakah permintaan tersebut harus disekat, dan manakah mesej status HTTP harus dihantar oleh CIDRAM?"
  signatures_default_tracktime: "Tempoh yang alamat IP harus dijejaki. Lalai = 7d0°0′0″ (1 minggu)."
@@ -610,9 +615,11 @@ label:
  Bandwidth: "Lebar jalur yang digunakan: %s – Lebar jalur tersedia: %s"
  Branch latest stable: "Cawangan terkini stabil:"
  CAPTCHA attempts: "Percubaan CAPTCHA"
+ CAPTCHA challenge: "CAPTCHA challenge."
  CIDRAM version used: "Versi CIDRAM digunakan:"
  Cache data and temporary files: "Data cache dan fail sementara"
  Cancel: "Batalkan"
+ Detect only (log &amp; profile, don't block): "Detect only (log &amp; profile, don't block)."
  Characters left: "Aksara tersedia"
  Checkbox: "Kotak semak"
  Checksum after: "Checksum selepas"

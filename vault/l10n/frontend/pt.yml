@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2026.09.05).
+# This file: Portuguese language data for the front-end (last modified: 2026.09.12).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -89,6 +89,7 @@ Extended Description: !lazy
  Referrer spam module:
   pt-BR: "O bloqueio baseado em spam de referência geralmente não fornece nenhum benefício de segurança significativo, mas, em alguns casos, pode ser útil para alguns usuários, para coletar mais informações sobre solicitações e para relatá-las."
   pt-PT: "O bloqueio baseado em spam de referência geralmente não fornece nenhum benefício de segurança significativo, mas, em alguns casos, pode ser útil para alguns utilizadores, para coletar mais informações sobre solicitações e para relatá-las."
+ ShodanDB module: "Consulta o endereço IP da solicitação na API Shodan InternetDB."
  Stop Forum Spam module: "Protege as páginas de registro e login contra IPs listados pelo SFS."
  Tor blocker module: "Proíbe o acesso de nós de saída do Tor."
 Glossary: !lazy
@@ -172,6 +173,7 @@ Name: !lazy
  Protocol blocker module: "Módulo bloqueador de protocolos."
  Quic cloud compatibility module: "Quic cloud módulo de compatibilidade."
  Referrer spam module: "Módulo de spam de referência."
+ ShodanDB module: "Módulo ShodanDB."
  Stop Forum Spam module: "Módulo Stop Forum Spam."
  Tor blocker module: "Módulo bloqueador do Tor."
 bobuam_hint_default_value: "Quando definido como 0, o módulo adiará para o valor atualmente recomendado."
@@ -450,6 +452,11 @@ config: !lazy
  rate_limiting_precision_ipv6: "A precisão a ser usada ao monitorar o uso do IPv6. Valor espelha o tamanho do bloco CIDR. Defina para 128 para melhor precisão. Padrão = 128."
  rate_limiting_segregate: "As cotas para diferentes domínios e hosts devem ser segregadas ou compartilhadas? True = As cotas serão segregadas. False = As cotas serão compartilhadas [Padrão]."
  sfs: "Configuração para o módulo Stop Forum Spam."
+ shodandb: "Configuração para o módulo ShodanDB (Shodan InternetDB)."
+ shodandb_api_base: "A URL base para consultas ao Shodan InternetDB (ou um endpoint compatível). Padrão = <code class="s">https://internetdb.shodan.io</code>."
+ shodandb_api_header:
+  pt-BR: "Um cabeçalho HTTP opcional para enviar com solicitações de consulta (por exemplo, para autenticação em um endpoint auto-hospedado ou via proxy). Deixe em branco se não for necessário."
+  pt-PT: "Um cabeçalho HTTP opcional para enviar com solicitações de consulta (por exemplo, para autenticação num endpoint auto-hospedado ou via proxy). Deixe em branco se não for necessário."
  signatures: "Configuração para assinaturas, arquivos de assinatura, módulos, etc."
  signatures_conflict_response:
   pt-BR: "Quando há muitas tentativas simultâneas de acessar os mesmos recursos (por exemplo, solicitações simultâneas para vários processos PHP na mesma máquina para os mesmos recursos), algumas dessas tentativas podem falhar. No caso raro e improvável de isso afetar arquivos de assinatura ou módulos, o CIDRAM pode ser impedido de tomar uma decisão efetiva sobre a solicitação. Se isso acontecer, a solicitação deve ser bloqueada, e qual mensagem de status HTTP o CIDRAM deve enviar?"
@@ -865,9 +872,11 @@ label:
  Bandwidth: "Largura de banda usada: %s – Largura de banda disponível: %s"
  Branch latest stable: "Mais novo de estável de branch:"
  CAPTCHA attempts: "CAPTCHA tentativas"
+ CAPTCHA challenge: "CAPTCHA challenge."
  CIDRAM version used: "Versão do CIDRAM usada:"
  Cache data and temporary files: "Dados de cache e arquivos temporários"
  Cancel: "Cancelar"
+ Detect only (log &amp; profile, don't block): "Detect only (log &amp; profile, don't block)."
  Characters left: "Caracteres restantes"
  Checkbox: "Caixa de seleção"
  Checksum after: "Checksum após"

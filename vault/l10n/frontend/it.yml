@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2026.09.05).
+# This file: Italian language data for the front-end (last modified: 2026.09.12).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -61,7 +61,7 @@ Extended Description: !lazy
  Cookie scanner module: "Fornisce alcune protezioni limitate contro i cookie pericolosi."
  HTTP version checker module: "Permette di bloccare protocolli specifici e versioni HTTP tramite la configurazione CIDRAM."
  IP-API module: "Sfrutta l'API {{Links.IP-API}} per fornire funzionalità di ricerca di ASN e codici paese per CIDRAM, abilitando a ASN e paesi di essere bloccati o autorizzati nella configurazione CIDRAM, e fornire un mezzo per la verifica dei social network per verificare le richieste di Facebook. (Se utilizzi questo modulo, non avrai bisogno di utilizzare il modulo BGPView, poiché hanno lo stesso scopo)."
- IPv4: &ExtDesCloud "Blocca servizi cloud indesiderate e punti finali non umani."
+ IPv4: &ExtDesCloud "Blocca servizi cloud indesiderate e gli endpoint non umani."
  IPv4-Bogons: &ExtDesBogons "Blocca CIDR bogon/marziani."
  IPv4-ISPs: &ExtDesISPs "Blocca ISP pericolosi e spam incline (include reti multiplay, che possono contenere endpoint sia umani che non umani)."
  IPv4-Nonblocking: &ExtDesNonblocking "Utile per la profilazione, ma non blocca nulla di per sé."
@@ -77,6 +77,7 @@ Extended Description: !lazy
  Protocol blocker module: "Fornisce la possibilità di bloccare specifici protocolli di richiesta tramite la configurazione (per esempio, HTTP/0.9, HTTP/1.1, SPDY/3.0, ecc)."
  Quic cloud compatibility module: "Contribuisce a garantire il corretto funzionamento di CIDRAM sui siti che utilizzano Quic cloud. Per i siti che non utilizzano Quic cloud, questo modulo non sarà necessario."
  Referrer spam module: "Il blocco basato sullo spam dei referrer in genere non offre alcun vantaggio significativo in termini di sicurezza, ma in alcuni casi potrebbe essere utile per alcuni utenti, per raccogliere maggiori informazioni sulle richieste e per poterle rapporta."
+ ShodanDB module: "Cerca l'indirizzo IP della richiesta tramite l'API Shodan InternetDB."
  Stop Forum Spam module: "Protegge le pagine di registrazione e di accesso agli IP elencati da SFS."
  Tor blocker module: "Proibisce l'accesso dai nodi di uscita Tor."
 Glossary: !lazy
@@ -136,6 +137,7 @@ Name: !lazy
  Protocol blocker module: "Modulo bloccante dei protocolli."
  Quic cloud compatibility module: "Quic cloud modulo di compatibilità."
  Referrer spam module: "Modulo spam referrer."
+ ShodanDB module: "Modulo ShodanDB."
  Stop Forum Spam module: "Modulo Stop Forum Spam."
  Tor blocker module: "Modulo bloccante di Tor."
 bobuam_hint_default_value: "Se impostato su 0, il modulo rimanderà al valore attualmente consigliato."
@@ -316,6 +318,8 @@ config: !lazy
  rate_limiting_precision_ipv6: "La precisione da utilizzare durante il monitoraggio dell'utilizzo di IPv6. Il valore riflette la dimensione del blocco CIDR. Impostare su 128 per la massima precisione. Predefinito = 128."
  rate_limiting_segregate: "Le quote per domini e host diversi devono essere segregate o condivise? True = Le quote saranno segregate. False = Le quote saranno condivise [Predefinito]."
  sfs: "Configurazione per il modulo Stop Forum Spam."
+ shodandb: "Configurazione per il modulo ShodanDB (Shodan InternetDB)."
+ shodandb_api_base: "L'URL di base per le ricerche su Shodan InternetDB (o un endpoint compatibile). Predefinita = <code class="s">https://internetdb.shodan.io</code>."
  signatures: "Configurazione per firme, file di firma, moduli, ecc."
  signatures_conflict_response: "Quando ce ne sono troppi tentativi simultanei di accedere alle stesse risorse (ad esempio, richieste simultanee a più processi PHP sulla stessa macchina per le stesse risorse), alcuni di questi tentativi potrebbero fallire. Nel raro e improbabile caso in cui ciò influisca sui file delle firme o sui moduli, CIDRAM potrebbe non essere in grado di prendere una decisione effettiva in merito alla richiesta. In tal caso, dovrebbe la richiesta essere bloccata, e quale messaggio di stato HTTP dovrebbe CIDRAM inviare?"
  signatures_default_tracktime: "La durata per la quale devono essere tracciati gli indirizzi IP. Predefinito = 7d0°0′0″ (1 settimana)."
@@ -469,7 +473,7 @@ hints_shorthand:
  4.: "Si riferisce a casi in cui le parole abbreviate non vengono utilizzate affatto, o non vengono riconosciute da CIDRAM."
  Uno per firma.: "Una firma può invocare più profili, ma può utilizzare solo una parola abbreviata. È possibile che più parole abbreviate possano essere adatte, ma poiché solo una può essere utilizzata, miriamo a utilizzare sempre solo le più adatte."
  Priorità.: "Un'opzione selezionata ha sempre la priorità su un'opzione non selezionata. Ad esempio, se sono in gioco più parole abbreviate ma solo una di esse è impostata come bloccata, la richiesta sarà comunque bloccata."
- Punti finali umani e servizi cloud.: "Il servizio cloud può fare riferimento a provider di web hosting, server farm, data center, o una serie di altre cose. Punto finale umano si riferisce ai mezzi con cui un umano accede a internet, ad esempio tramite un provider di servizi internet. Una rete di solito fornisce solo l'uno o l'altro, ma a volte può fornire entrambi. Miriamo a non identificare mai potenziali punti finali umani come servizi cloud. Pertanto, un servizio cloud può essere identificato come qualcos'altro se il suo gamme è condiviso da punti finali umani noti. Allo stesso modo, miriamo a identificare sempre i servizi cloud, i cui gamme non sono condivisi da alcun punto finale umano noto, come servizi cloud. Pertanto, una richiesta identificata esplicitamente come servizio cloud probabilmente non condivide il suo gamme con nessun punto finale umano noto. Allo stesso modo, una richiesta identificata esplicitamente da attacchi o rischio per lo spam probabilmente li condivide. Tuttavia, internet è sempre in evoluzione, gli scopi delle reti cambiano nel tempo, e le gamme vengono sempre acquistate o vendute, quindi rimani consapevole e vigile riguardo ai falsi positivi."
+ Endpoint umani e servizi cloud.: "Il servizio cloud può fare riferimento a provider di web hosting, server farm, data center, o una serie di altre cose. Endpoint umano si riferisce ai mezzi con cui un umano accede a internet, ad esempio tramite un provider di servizi internet. Una rete di solito fornisce solo l'uno o l'altro, ma a volte può fornire entrambi. Miriamo a non identificare mai potenziali Endpoint umani come servizi cloud. Pertanto, un servizio cloud può essere identificato come qualcos'altro se il suo gamme è condiviso da Endpoint umani noti. Allo stesso modo, miriamo a identificare sempre i servizi cloud, i cui gamme non sono condivisi da alcun endpoint umano noto, come servizi cloud. Pertanto, una richiesta identificata esplicitamente come servizio cloud probabilmente non condivide il suo gamme con nessun endpoint umano noto. Allo stesso modo, una richiesta identificata esplicitamente da attacchi o rischio per lo spam probabilmente li condivide. Tuttavia, internet è sempre in evoluzione, gli scopi delle reti cambiano nel tempo, e le gamme vengono sempre acquistate o vendute, quindi rimani consapevole e vigile riguardo ai falsi positivi."
 hints_time_format: |
  <strong><em>Segnaposto – Spiegazione – Esempio basato sul 2024-04-30T18:27:49+08:00.</em></strong><br />
  <code class="s">{yyyy}</code> – L'anno – Per esempio, 2024.<br />
@@ -615,9 +619,11 @@ label:
  Bandwidth: "Larghezza di banda utilizzata: %s – Larghezza di banda disponibile: %s"
  Branch latest stable: "Branch più recente stabile:"
  CAPTCHA attempts: "Tentativi di CAPTCHA"
+ CAPTCHA challenge: "CAPTCHA challenge."
  CIDRAM version used: "Versione CIDRAM utilizzata:"
  Cache data and temporary files: "Dati di cache e file temporanei"
  Cancel: "Cancellare"
+ Detect only (log &amp; profile, don't block): "Detect only (log &amp; profile, don't block)."
  Characters left: "Caratteri rimanenti"
  Checkbox: "Casella di controllo"
  Checksum after: "Checksum dopo"
@@ -1040,7 +1046,7 @@ response:
  Username field empty: "L'input nome utente era vuoto!"
  Verification failed: "Non è riuscito a verificare! Componente potrebbe essere danneggiato."
  Verification success: "Verificato con successo! Nessun problema trovato."
- Wrong endpoint: "Punto finale errato!"
+ Wrong endpoint: "Endpoint errato!"
  _No: "No"
  _Yes: "Sì"
  please_check_config: "Si prega di controllare la configurazione per assicurarsi che il modulo appena installato si comporti come previsto."

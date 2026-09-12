@@ -1576,6 +1576,22 @@ BOBUAM:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/modules/bobuam.php"
    Checksum: "a73cd5f4c4d2205760eee9dad75777c39cf4bb1e3ae2e1833cdcc911418acb3b:50727"
    Used with: "modules"
+ShodanDB module:
+ False Positive Risk: "Medium"
+ Version: "2026.254.0"
+ Dependencies:
+  PHP: "^7.2|^8"
+  CIDRAM Core: "^4.2.1"
+ When Install Succeeds: ["queue message response.please_check_config"]
+ Files:
+  imports/shodandb.yml:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/imports/shodandb.yml"
+   Checksum: "68c85fbdb084611fca7b7b1eb25e7fff8c6b0cab482debd6024d59aa9c9edba9:2546"
+   Used with: "imports"
+  modules/shodandb.php:
+   From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v4/vault/modules/shodandb.php"
+   Checksum: "c49d0a0592dc6a07b887e197fa3c1fcff728dce8c112ea4b30ec943df2900279:13636"
+   Used with: "modules"
 theme/bluemetal:
  Name: "Theme: Blue Metal"
  Extended Description: "<img src="https://raw.githubusercontent.com/CIDRAM/CIDRAM-Extras/master/themes/preview-bluemetal.png" alt="Preview" />"

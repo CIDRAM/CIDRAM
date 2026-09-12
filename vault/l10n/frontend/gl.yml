@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Galician language data for the front-end (last modified: 2026.09.05).
+# This file: Galician language data for the front-end (last modified: 2026.09.12).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -77,6 +77,7 @@ Extended Description: !lazy
  Protocol blocker module: "Ofrece a posibilidade de bloquear protocolos de solicitude específicos mediante a configuración (por exemplo, HTTP/0.9, HTTP/1.1, SPDY/3.0, etc)."
  Quic cloud compatibility module: "Axuda a garantir que CIDRAM funcione correctamente en sitios que operan detrás de Quic cloud. Para sitios que non operen detrás de Quic cloud, este módulo non será necesario."
  Referrer spam module: "O bloqueo baseado no spam de referencia xeralmente non proporciona ningún beneficio de seguridade significativo, pero nalgúns casos, pode ser útil para algúns usuarios, para recoller máis información sobre as solicitudes e para poder informar dela."
+ ShodanDB module: "Consulta o enderezo IP da solicitude na API Shodan InternetDB."
  Stop Forum Spam module: "Protexe as páxinas de rexistro e inicio de sesión contra as IP listadas por SFS."
  Tor blocker module: "Prohibe o acceso desde os nodos de saída de Tor."
 Glossary: !lazy
@@ -133,6 +134,7 @@ Name: !lazy
  Protocol blocker module: "Módulo bloqueador de protocolos."
  Quic cloud compatibility module: "Módulo de compatibilidade Quic cloud."
  Referrer spam module: "Módulo de spam de referencia."
+ ShodanDB module: "Módulo ShodanDB."
  Stop Forum Spam module: "Módulo Stop Forum Spam."
  Tor blocker module: "Módulo bloqueador de Tor."
 bobuam_hint_default_value: "Cando se establece en 0, o módulo diferirá ao valor recomendado actualmente."
@@ -221,7 +223,7 @@ config: !lazy
  extras_signatures_ruri: "Sinaturas baseadas en URI reconstruídos."
  frontend: "Configuración para o front-end."
  frontend_custom_footer: "Inseriuse como HTML na parte inferior de todas as páxinas do front-end. Isto pode ser útil no caso de que queiras incluír un aviso legal, ligazón de contacto, información comercial, ou similares en todas esas páxinas."
- frontend_custom_header: "Inseriuse como HTML ao comezo de todas as páxinas do front-end. Isto pode ser útil no caso de que queiras incluír un logotipo do sitio web, un encabezado personalizado, guións, ou similares en todas esas páxinas."
+ frontend_custom_header: "Inseriuse como HTML ao comezo de todas as páxinas do front-end. Isto pode ser útil no caso de que queiras incluír un logotipo do sitio web, unha cabeceira personalizada, guións, ou similares en todas esas páxinas."
  frontend_enable_two_factor: "Esta directiva determina se se debe usar 2FA para as contas front-end."
  frontend_frontend_log: "Ficheiro para rexistrar todos os intentos de iniciar sesión na front-end. Especifique un nome de ficheiro, ou déixeo en branco para desactivalo."
  frontend_magnification: &MagnifDesc "Ampliación da fonte. Predeterminado = 1."
@@ -313,6 +315,9 @@ config: !lazy
  rate_limiting_precision_ipv6: "A precisión a usar para rastrexar o uso de IPv6. O valor reflicte o tamaño do bloque CIDR. Establécese en 128 para obter a mellor precisión. Predeterminado = 128."
  rate_limiting_segregate: "Débense segregar ou compartir as cotas para diferentes dominios e servidores? True/Verdadeiro = As cotas serán segregadas. False/Falso = As cotas serán compartidas [Predeterminado]."
  sfs: "Configuración para o módulo Stop Forum Spam."
+ shodandb: "Configuración para o módulo ShodanDB (Shodan InternetDB)."
+ shodandb_api_base: "O URL base para as consultas a Shodan InternetDB (ou un punto final compatible). Predeterminado = <code class="s">https://internetdb.shodan.io</code>."
+ shodandb_api_header: "Un cabeceiro HTTP opcional para enviar coas solicitudes de busca (por exemplo, para a autenticación nun punto final aloxado localmente ou que utilice un proxy). Deixa en branco se non é necesario."
  signatures: "Configuración para as sinaturas, ficheiros de sinatura, módulos, etc."
  signatures_conflict_response: "Cando hai demasiados intentos simultáneos de acceder aos mesmos recursos (por exemplo, solicitudes simultáneas a varios procesos PHP na mesma máquina para os mesmos recursos), algúns deses intentos poden fallar. No caso raro e improbable de que isto afecte aos ficheiros de sinatura ou módulos, é posible que se impida a CIDRAM tomar unha determinación efectiva sobre a solicitude. Se isto ocorre, debería bloquearse a solicitude, e que mensaxe de estado HTTP debe enviar CIDRAM?"
  signatures_default_tracktime: "A duración na que se deben seguir os enderezos IP. Predeterminado = 7d0°0′0″ (1 semana)."
@@ -339,7 +344,7 @@ config: !lazy
  template_data_captcha_title: "O título da páxina que se mostrará para as solicitudes de CAPTCHA."
  template_data_css_url: "URL do ficheiro CSS para temas personalizados."
  template_data_custom_footer: "Inseriuse como HTML na parte inferior de todas as páxinas de "acceso denegado". Isto pode ser útil no caso de que queiras incluír un aviso legal, ligazón de contacto, información comercial, ou similares en todas esas páxinas."
- template_data_custom_header: "Inseriuse como HTML ao comezo de todas as páxinas de "acceso denegado". Isto pode ser útil no caso de que queiras incluír un logotipo do sitio web, un encabezado personalizado, guións, ou similares en todas esas páxinas."
+ template_data_custom_header: "Inseriuse como HTML ao comezo de todas as páxinas de "acceso denegado". Isto pode ser útil no caso de que queiras incluír un logotipo do sitio web, unha cabeceira personalizada, guións, ou similares en todas esas páxinas."
  template_data_magnification: *MagnifDesc
  template_data_theme: "O tema a usar para eventos de bloque e solicitudes de CAPTCHA."
  template_data_theme_mode: "O modo para o tema a usar para eventos de bloque e solicitudes de CAPTCHA."
@@ -609,9 +614,11 @@ label:
  Bandwidth: "Ancho de banda utilizado: %s – Ancho de banda dispoñible: %s"
  Branch latest stable: "Rama última versión:"
  CAPTCHA attempts: "Intentos de CAPTCHA"
+ CAPTCHA challenge: "CAPTCHA challenge."
  CIDRAM version used: "Versión de CIDRAM utilizada:"
  Cache data and temporary files: "Cache de datos e ficheiros temporais"
  Cancel: "Cancelar"
+ Detect only (log &amp; profile, don't block): "Detect only (log &amp; profile, don't block)."
  Characters left: "Quedan caracteres"
  Checkbox: "Caixa de verificación"
  Checksum after: "Suma de verificación despois"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bulgarian language data for the front-end (last modified: 2026.09.05).
+# This file: Bulgarian language data for the front-end (last modified: 2026.09.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -77,6 +77,7 @@ Extended Description: !lazy
  Protocol blocker module: "Предоставя възможност за блокиране на конкретни протоколи за заявки чрез конфигурацията (напр., HTTP/0.9, HTTP/1.1, SPDY/3.0, и т.н)."
  Quic cloud compatibility module: "Помага да се гарантира че CIDRAM ще работи правилно на сайтове работещи зад Quic cloud. За сайтове които не работят зад Quic cloud, този модул няма да е необходим."
  Referrer spam module: "Блокирането въз основа на спам от референт обикновено няма да предостави никаква значима полза за сигурността, но в някои случаи може да бъде полезно за някои потребители, за събиране на повече информация относно заявките и за възможността да ги докладват."
+ ShodanDB module: "Проверява IP адреса на заявката чрез API-то на Shodan InternetDB."
  Stop Forum Spam module: "Защитава страниците за регистрация и влизане срещу IP адреси, изброени от SFS."
  Tor blocker module: "Забранява достъпа от изходните възли на Tor."
 Glossary: !lazy
@@ -133,11 +134,13 @@ Name: !lazy
  Protocol blocker module: "Модул за блокиране на протоколи."
  Quic cloud compatibility module: "Quic cloud модул за съвместимост."
  Referrer spam module: "Модул за референт спам."
+ ShodanDB module: "ShodanDB модул."
  Stop Forum Spam module: "Stop Forum Spam модул."
  Tor blocker module: "Модул за блокиране на Tor."
 bobuam_hint_default_value: "Когато е зададен на 0, модулът ще отложи текущата препоръчителна стойност."
 checkbox:
  Allow single-hit bypasses: "Разрешаване на заобикаляне с един удар?"
+ Apply CAPTCHA options: "Приложете опциите за CAPTCHA."
  Attempt to verify: "Опит за проверка?"
  Block it: "Блокирайте го."
  Block negatives: "Блокиране на негативи?"
@@ -149,6 +152,7 @@ checkbox:
  Log any errors generated during this stage: "Записване на грешки, генерирани по време на този етап?"
  Omit this field when it_s empty: "Да се пропусне ли това поле, когато е празно?"
  Profile it: "Профилирайте го."
+ Report it: "Докладвайте го."
  Should infractions generated during this stage count towards IP tracking: "Трябва ли нарушенията, генерирани по време на този етап, да се зачитат за IP проследяване?"
  Should this field appear in log entries: "Това поле трябва ли да се показва в записите в дневника?"
  Should this field appear on the access denied page: "Това поле трябва ли да се появи на страницата „отказан достъп“?"
@@ -313,6 +317,9 @@ config: !lazy
  rate_limiting_precision_ipv6: "Прецизността, която да използвате за проследяване на използването на IPv6. Стойността отразява размера на CIDR блока. Задайте 128 за най-добра точност. Стандарт = 128."
  rate_limiting_segregate: "Трябва ли квотите за различни домейни и хостове да бъдат разделени или споделени? True (Вярно) = Квотите ще бъдат разделени. False (Невярно) = Квотите ще бъдат споделени [Стандарт]."
  sfs: "Конфигурация за модула Stop Forum Spam."
+ shodandb: "Конфигурация за модула ShodanDB (Shodan InternetDB)."
+ shodandb_api_base: "Базовият URL адрес за заявки към Shodan InternetDB (или съвместима крайна точка). Стандарт = <code class="s">https://internetdb.shodan.io</code>."
+ shodandb_api_header: "Опционален HTTP заглавен ред, който да се изпраща със заявките за търсене (например, за удостоверяване пред самостоятелно хоствана или проксирана крайна точка). Оставете празно, ако не е необходимо."
  signatures: "Конфигурация за сигнатури, файлове за сигнатури, модули, и т.н."
  signatures_conflict_response: "Когато има твърде много едновременни опити за достъп до едни и същи ресурси (напр., едновременни заявки към множество PHP процеси на една и съща машина за едни и същи ресурси), някои от тези опити може да са неуспешни. В редкия и малко вероятен случай, когато това засегне файлове за сигнатури или модули, CIDRAM може да бъде възпрепятствано да вземе ефективно решение относно заявката. Ако това се случи, трябва ли заявката да бъде блокирана, и кое HTTP съобщение за статус трябва да изпрати CIDRAM?"
  signatures_default_tracktime: "Продължителността, за която трябва да се проследяват IP адресите. Стандарт = 7d0°0′0″ (1 седмица)."
@@ -617,6 +624,7 @@ label:
  All of them: "Всички те."
  Allow, but only when also blocked: "Разрешете го, но само когато също е блокиран."
  Allow: "Разрешете го."
+ Any ports: "Всякакви портове."
  Bandwidth: "Използвана честотна лента: %s – Налична честотна лента: %s"
  Branch latest stable: "Най-новата стабилна в клона:"
  CAPTCHA attempts: "CAPTCHA опити"
@@ -705,6 +713,7 @@ label:
  No log files available: "Няма налични регистрационни файлове."
  None: "Нито един.\nАко искате да използвате модула само за целите на докладване, без да търсите нищо, използвайте това."
  Normal: "Нормално"
+ Noteworthy ports: "Забележителни портове."
  Only those with updates available: "Само тези с налични актуализации."
  Only those installed: "Само тези, които са инсталирани."
  Only those not installed: "Само тези, които не са инсталирани."
@@ -727,6 +736,7 @@ label:
  Please log in to continue: "Моля, влезте, за да продължите."
  Preferred source: "Предпочитан източник:"
  Previous: "Предишен:"
+ Proxy ports: "Прокси портове."
  Quote entity: "„%s“"
  Range tools: "Инструменти за гама"
  Remember: "Запомнете"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Ukrainian language data for the front-end (last modified: 2026.09.05).
+# This file: Ukrainian language data for the front-end (last modified: 2026.09.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -77,6 +77,7 @@ Extended Description: !lazy
  Protocol blocker module: "Надає можливість блокувати певні протоколи запитів за допомогою конфігурації (наприклад, HTTP/0.9, HTTP/1.1, SPDY/3.0, тощо)."
  Quic cloud compatibility module: "Допомагає забезпечити коректну роботу CIDRAM на сайтах що працюють за Quic cloud. Для сайтів які не працюють на Quic cloud, цей модуль не потрібен."
  Referrer spam module: "Блокування на основі спаму-реферера, як правило, не забезпечить жодних суттєвих переваг безпеки, але в деяких випадках може бути корисним для деяких користувачів, для збору додаткової інформації про запити та для того, щоб мати можливість повідомити про це."
+ ShodanDB module: "Перевіряє IP-адресу запиту через API Shodan InternetDB."
  Stop Forum Spam module: "Захищає сторінки реєстрації та входу від IP-адрес, указаних SFS."
  Tor blocker module: "Забороняє доступ із вузлів виходу Tor."
 Glossary: !lazy
@@ -136,11 +137,13 @@ Name: !lazy
  Protocol blocker module: "Модуль блокування протоколів."
  Quic cloud compatibility module: "Модуль сумісності Quic cloud."
  Referrer spam module: "Модуль реферального спаму."
+ ShodanDB module: "Модуль ShodanDB."
  Stop Forum Spam module: "Модуль Stop Forum Spam."
  Tor blocker module: "Модуль блокувальника Tor."
 bobuam_hint_default_value: "Якщо встановлено значення 0, модуль використовує поточне рекомендоване значення."
 checkbox:
  Allow single-hit bypasses: "Дозволити байпас одним ударом?"
+ Apply CAPTCHA options: "Застосувати параметри CAPTCHA."
  Attempt to verify: "Спробувати перевірити?"
  Block it: "Заблокуйте його."
  Block negatives: "Блокувати негативи?"
@@ -152,6 +155,7 @@ checkbox:
  Log any errors generated during this stage: "Реєструвати будь-які помилки, згенеровані на цьому етапі?"
  Omit this field when it_s empty: "Опускати це поле, якщо воно порожнє?"
  Profile it: "Профіліть його."
+ Report it: "Повідомте про це."
  Should infractions generated during this stage count towards IP tracking: "Чи мають порушення, здійснені на цьому етапі, зараховуватися до відстеження IP?"
  Should this field appear in log entries: "Чи повинен це поле відображатися в записах журналу?"
  Should this field appear on the access denied page: "Чи повинен це поле з'являтися на сторінці «доступ заборонено»?"
@@ -189,7 +193,7 @@ config: !lazy
  bobuam_safari: "Найнижча дозволена версія токена «Version» для Safari. Рекомендовано: {{BOBUAM Token.Safari}}."
  bobuam_token_difference_limit: "CAPTCHA, що пропонуються у відповідь на блокування користувача через застарілий браузер, поряд з усіма іншими вимогами, також вимагатимуть, щоб основна версія браузера була не далі від найнижчої дозволеної версії, ніж зазначено тут. Наприклад, якщо найнижча дозволена версія встановлена ​​на 10, а вказане тут число дорівнює 2, то основна версія браузера користувача повинна бути щонайменше 8, щоб отримати пропозицію CAPTCHA. Якщо встановлено значення 0, ця додаткова вимога не застосовуватиметься."
  bobuam_what_to_block: "Що блокувати?"
- bunnycdn: "Конфігурація модуля сумісності BunnyCDN."
+ bunnycdn: "Конфігурація для модуля сумісності BunnyCDN."
  bunnycdn_positive_action: "Яку дію має виконати CIDRAM, коли він зустрічає запит від BunnyCDN? Стандартна дія = байпас."
  bypasses: "Стандартний сигнатур байпаса конфігурацію."
  bypasses_used: "Які байпаси слід використовувати?"
@@ -304,7 +308,7 @@ config: !lazy
  protocol: "Конфігурація для модуля блокування протоколів."
  protocol_blocked: "Вибрані протоколи будуть заблоковані."
  protocol_reason_message: "Повідомлення про причину, яке відображається, коли такі запити заблоковано."
- quic: "Конфігурація модуля сумісності Quic cloud."
+ quic: "Конфігурація для модуля сумісності Quic cloud."
  quic_positive_action: "Яку дію має виконати CIDRAM, коли він зустрічає запит від Quic cloud? Стандартна дія = байпас."
  rate_limiting: "Конфігурація для обмеження швидкості (не рекомендується для загального використання)."
  rate_limiting_allowance_period: "Тривалість відстеження використання. Стандарт = 0°0′0″."
@@ -316,6 +320,9 @@ config: !lazy
  rate_limiting_precision_ipv6: "Точність для відстеження використання IPv6. Значення відображає розмір блоку CIDR. Встановіть 128 для найкращої точності. Стандарт = 128."
  rate_limiting_segregate: "Квоти для різних доменів і хостів слід зберігати окремо чи спільно? True = Квоти зберігатимуться окремо. False = Квоти зберігатимуться спільно [Стандарт]."
  sfs: "Конфігурація для модуля Stop Forum Spam."
+ shodandb: "Конфігурація для модуля ShodanDB (Shodan InternetDB)."
+ shodandb_api_base: "Базова URL-адреса для запитів до Shodan InternetDB (або сумісної кінцевої точки). Стандарт = <code class="s">https://internetdb.shodan.io</code>."
+ shodandb_api_header: "Необов'язковий HTTP-заголовок для надсилання разом із запитами на пошук (наприклад, для автентифікації на самостійно розміщувана або проксі кінцева точки). Залиште порожнім якщо не потрібно."
  signatures: "Конфігурація для сигнатур, файлів сигнатур, модулів, тощо."
  signatures_conflict_response: "Якщо є занадто багато одночасних спроб отримати доступ до тих самих ресурсів (наприклад, одночасні запити до кількох процесів PHP на одній машині для тих самих ресурсів), деякі з цих спроб можуть бути невдалими. У рідкісних і малоймовірних випадках, коли це впливає на файли сигнатурів або модулі, CIDRAM може бути перешкоджено прийняття ефективного рішення щодо запиту. Якщо це станеться, чи потрібно блокувати запит, і яке повідомлення про статус HTTP має надіслати CIDRAM?"
  signatures_default_tracktime: "Час протягом якого потрібно відстежувати IP-адреси. Стандарт = 7d0°0′0″ (1 тиждень)."
@@ -622,6 +629,7 @@ label:
  All of them: "Усі вони."
  Allow, but only when also blocked: "Дозволити, але лише заблоковано."
  Allow: "Дозволити."
+ Any ports: "Будь-які порти."
  Bandwidth: "Використана пропускна здатність: %s – Доступна пропускна здатність: %s"
  Branch latest stable: "Остання стабільна версія філії:"
  CAPTCHA attempts: "Спроби CAPTCHA"
@@ -712,6 +720,7 @@ label:
  No log files available: "Немає доступних файлів журналу."
  None: "Жодного.\nЯкщо ви хочете використовувати модуль лише для звітування, нічого не шукаючи, використовуйте це."
  Normal: "Природний"
+ Noteworthy ports: "Визначні порти."
  Only those with updates available: "Тільки ті, у кого доступні оновлення."
  Only those installed: "Тільки ті, що встановлені."
  Only those not installed: "Тільки ті, що не встановлені."
@@ -734,6 +743,7 @@ label:
  Please log in to continue: "Увійдіть щоб продовжити."
  Preferred source: "Бажане джерело:"
  Previous: "Попередній:"
+ Proxy ports: "Порти проксі."
  Quote entity: "«%s»"
  Range tools: "Діапазон інструментів"
  Remember: "Пам'ятайте"

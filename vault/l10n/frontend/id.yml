@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2026.09.12).
+# This file: Indonesian language data for the front-end (last modified: 2026.09.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -143,8 +143,9 @@ Name: !lazy
 bobuam_hint_default_value: "Saat diatur ke 0, modul akan tunduk pada nilai yang direkomendasikan saat ini."
 checkbox:
  Allow single-hit bypasses: "Izinkan bypass satu pelanggaran?"
+ Apply CAPTCHA options: "Terapkan opsi CAPTCHA."
  Attempt to verify: "Mencoba memverifikasi?"
- Block it: "Memblokirnya."
+ Block it: "Blokirkan."
  Block negatives: "Blokir negatif?"
  Block non-verified requests: "Blokir permintaan yang tidak diverifikasi?"
  Blocked negatives: "Negatif yang diblokir"
@@ -153,7 +154,8 @@ checkbox:
  Enable this stage: "Aktifkan tahap ini?"
  Log any errors generated during this stage: "Mencatat kesalahan yang dihasilkan selama tahap ini?"
  Omit this field when it_s empty: "Abaikan bidang ini saat kosong?"
- Profile it: "Memprofilkannya."
+ Profile it: "Profilkan."
+ Report it: "Laporkan."
  Should infractions generated during this stage count towards IP tracking: "Menghitung pelanggaran yang dihasilkan selama tahap ini terhadap pelacakan IP?"
  Should this field appear in log entries: "Sertakan bidang ini dalam entri log?"
  Should this field appear on the access denied page: "Sertakan bidang ini di halaman "akses ditolak"?"
@@ -612,14 +614,13 @@ label:
  All of them: "Semuanya."
  Allow, but only when also blocked: "Izinkan, tetapi hanya jika juga diblokir."
  Allow: "Izinkan."
+ Any ports: "Port apapun."
  Bandwidth: "Bandwidth yang digunakan: %s – Bandwidth yang tersedia: %s"
  Branch latest stable: "Cabang terbaru stabil:"
  CAPTCHA attempts: "Upaya CAPTCHA"
- CAPTCHA challenge: "CAPTCHA challenge."
  CIDRAM version used: "Versi CIDRAM digunakan:"
  Cache data and temporary files: "Data cache dan file sementara"
  Cancel: "Batalkan"
- Detect only (log &amp; profile, don't block): "Detect only (log &amp; profile, don't block)."
  Characters left: "Karakter tersedia"
  Checkbox: "Kotak centang"
  Checksum after: "Checksum setelahnya"
@@ -698,6 +699,7 @@ label:
  No log files available: "Tidak ada file log tersedia."
  None: "Tidak satupun.\nJika Anda ingin menggunakan modul hanya untuk tujuan pelaporan, tanpa mencari apapun, gunakan ini."
  Normal: "Normal"
+ Noteworthy ports: "Port yang penting."
  Only those with updates available: "Hanya mereka yang memiliki pembaruan yang tersedia."
  Only those installed: "Hanya yang diinstal."
  Only those not installed: "Hanya yang belum diinstal."
@@ -720,6 +722,7 @@ label:
  Please log in to continue: "Silakan masuk untuk melanjutkan."
  Preferred source: "Sumber yang disukai:"
  Previous: "Sebelumnya:"
+ Proxy ports: "Port proksi."
  Quote entity: "&quot;%s&quot;"
  Range tools: "Alat rentang"
  Remember: "Ingat"
@@ -809,7 +812,7 @@ label:
   When the rule should begin (optional): "Kapan aturan harus dimulai (opsional):"
   When the rule should expire (optional): "Kapan aturan harus kedaluwarsa (opsional):"
   Where to redirect the request: "Dimana mengarahkan permintaan:"
-  block the request: "memblokir permintaan"
+  block the request: "blokir permintaan"
   bypass the request: "melewati permintaan"
   greylist the request: "mendaftar abu-abu permintaannya"
   logic_all: "Untuk memicu aturan, semua kondisi harus dipenuhi."

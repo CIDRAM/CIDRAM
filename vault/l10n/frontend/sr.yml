@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Serbian language data for the front-end (last modified: 2026.09.05).
+# This file: Serbian language data for the front-end (last modified: 2026.09.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -77,6 +77,7 @@ Extended Description: !lazy
  Protocol blocker module: "Пружа могућност блокирања специфичних протокола захтева преко конфигурације (нпр., HTTP/0.9, HTTP/1.1, SPDY/3.0, итд)."
  Quic cloud compatibility module: "Помаже у осигуравању да ће ЦИДРАМ исправно функционисати на сајтовима који раде иза Куиц цлоуд-а. За сајтове који не раде иза Куиц цлоуд-а, овај модул неће бити потребан."
  Referrer spam module: "Блокирање засновано на упућивач спам генерално неће пружити никакву значајну безбедносну корист, али у неким случајевима може бити корисно за неке кориснике, за прикупљање више информација о захтевима и за могућност да их пријавити."
+ ShodanDB module: "Проверава IP адресу захтева путем Шодан ИнтернетДБ АПИ-ја."
  Stop Forum Spam module: "ИП адресама које је навео СФС биће онемогућен приступ страницама за пријаву и регистрацију."
  Tor blocker module: "Забрањује приступ из Тор излазних чворова."
 Glossary: !lazy
@@ -135,11 +136,13 @@ Name: !lazy
  Protocol blocker module: "Модул за блокирање протокола."
  Quic cloud compatibility module: "Модул за Куиц цлоуд компатибилност."
  Referrer spam module: "Модул за нежељене препоруке."
+ ShodanDB module: "ШоданДБ модул."
  Stop Forum Spam module: "Стоп Форум Спам модул."
  Tor blocker module: "Тор блокер модул."
 bobuam_hint_default_value: "Када се постави на 0, модул ће користити тренутно препоручену вредност."
 checkbox:
  Allow single-hit bypasses: "Дозволити заобилажења једним поготком?"
+ Apply CAPTCHA options: "Примените CAPTCHA опције."
  Attempt to verify: "Покушај верификације?"
  Block it: "Блокирај то."
  Block negatives: "Блокирати негативе?"
@@ -151,6 +154,7 @@ checkbox:
  Log any errors generated during this stage: "Забележите све грешке настале током ове фазе?"
  Omit this field when it_s empty: "Изоставити ово поље када је празно?"
  Profile it: "Профилирај то."
+ Report it: "Пријави то."
  Should infractions generated during this stage count towards IP tracking: "Да ли прекршаји генерисани током ове фазе треба да се рачунају у праћење ИП адреса?"
  Should this field appear in log entries: "Да ли ово поље треба да се појављује у записима у дневнику?"
  Should this field appear on the access denied page: "Да ли ово поље треба да се појави на страници „приступ забрањен“?"
@@ -315,6 +319,9 @@ config: !lazy
  rate_limiting_precision_ipv6: "Прецизност за праћење употребе ИПв6. Вредност одражава величину ЦИДР блока. Подесите на 128 за најбољу прецизност. Подразумевано = 128."
  rate_limiting_segregate: "Да ли квоте за различите домене и хостове треба да буду одвојене или подељене? Истинито = Квоте ће бити одвојене. Лажно = Квоте ће бити подељене [Подразумевано]."
  sfs: "Конфигурација за модул Стоп Форум Спам."
+ shodandb: "Конфигурација за модул ШоданДБ (Шодан ИнтернетДБ)."
+ shodandb_api_base: "Основна URL адреса за претраге на Шодан ИнтернетДБ-у (или компатибилна крајња тачка). Подразумевано = <code class="s">https://internetdb.shodan.io</code>."
+ shodandb_api_header: "Опционално HTTP заглавље које се шаље уз захтеве за претрагу (нпр., за аутентикацију на ендпоинту који је самостално хостован или доступан путем проксија). Оставите празно ако није потребно."
  signatures: "Конфигурација за потписе, датотеке потписа, модуле, итд."
  signatures_conflict_response: "Када постоји превише истовремених покушаја приступа истим ресурсима (нпр., симултани захтеви за више ПХП процеса на истој машини за исте ресурсе), неки од тих покушаја могу бити неуспешни. У ретком и мало вероватном случају да ово утиче на датотеке потписа или модуле, ЦИДРАМ може бити спречен да донесе ефикасну одлуку о захтеву. Ако се то догоди, да ли би захтев требало да буде блокиран, и коју ХТТП статусну поруку ЦИДРАМ треба да пошаље?"
  signatures_default_tracktime: "Трајање које ИП адресе треба пратити. Подразумевано = 7d0°0′0″ (1 недеља)."
@@ -620,6 +627,7 @@ label:
  All of them: "Сви они."
  Allow, but only when also blocked: "Дозволи, али само када је и блокирано."
  Allow: "Дозволи."
+ Any ports: "Било који портови."
  Bandwidth: "Коришћени пропусни опсег: %s – Доступни пропусни опсег: %s"
  Branch latest stable: "Најновија стабилна грана:"
  CAPTCHA attempts: "Покушаји ЦАПТЦХА-е"
@@ -709,6 +717,7 @@ label:
  No log files available: "Нема доступних датотека дневника."
  None: "Ниједан.\nАко желите да користите модул само за потребе извештавања, без икаквог претраживања, користите ово."
  Normal: "Нормално"
+ Noteworthy ports: "Значајни портови."
  Only those with updates available: "Само они са доступним ажурирањима."
  Only those installed: "Само они који су инсталирани."
  Only those not installed: "Само они који нису инсталирани."
@@ -727,14 +736,15 @@ label:
  Paginate: "Пагинирај"
  Partial access: "Делимичан приступ"
  Password strength: "Јачина лозинке: "
- Please abide by the AbuseIPDB reporting policy: "Молимо вас да се придржавате <a target="reporting-policy" hreflang="en-US" href="https://www.abuseipdb.com/reporting-policy">политика извештавања</a> AbuseIPDB-а."
+ Please abide by the AbuseIPDB reporting policy: "Молимо вас да се придржавате <a target="reporting-policy" hreflang="en-US" href="https://www.abuseipdb.com/reporting-policy">политика извештавања</a> АбусеИПДБ-а."
  Please log in to continue: "Пријавите се да бисте наставили."
  Preferred source: "Преферирани извор:"
  Previous: "Претходно:"
+ Proxy ports: "Прокси портови."
  Quote entity: "„%s“"
  Range tools: "Алати за распон"
  Remember: "Запамти"
- Report to AbuseIPDB: "Пошаљи извештај на AbuseIPDB"
+ Report to AbuseIPDB: "Пријавите то АбусеИПДБ-у"
  Requests banned: "Захтеви забрањени"
  Requests blocked: "Захтеви блокирани"
  Requests for sensitive pages only: "Захтеви само за осетљиве странице (нпр., странице за пријаву, обрасци за регистрацију, итд).\nМање строг и темељан, али конзервативнији у погледу квота и ограничења, и мање је вероватно да ће негативно утицати на учинак. Препоручена стратегија у већини случајева."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2026.09.05).
+# This file: Arabic language data for the front-end (last modified: 2026.09.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -77,6 +77,7 @@ Extended Description: !lazy
  Protocol blocker module: "يوفر القدرة على حظر بروتوكولات طلب محددة عبر التكوين (على سبيل المثال، HTTP/0.9، HTTP/1.1، SPDY/3.0، إلخ)."
  Quic cloud compatibility module: "يساعد على ضمان عمل CIDRAM بشكل صحيح على المواقع الإلكترونية التي تعمل خلف Quic cloud. بالنسبة للمواقع الإلكترونية التي لا تعمل خلف Quic cloud، لن تكون هذه الوحدة ضرورية."
  Referrer spam module: "لا يوفر الحظر بناءً على الإحالة غير المرغوب فيها عمومًا أي فائدة أمنية ذات مغزى، ولكن في بعض الحالات، قد يكون مفيدًا لبعض المستخدمين، ولجمع مزيد من المعلومات حول الطلبات، وللتمكن من الإبلاغ عنها."
+ ShodanDB module: "يتحقق من عنوان IP الخاص بالطلب عبر واجهة برمجة تطبيقات Shodan InternetDB."
  Stop Forum Spam module: "يحمي تسجيل صفحات ضد عناوين IP المدرجة من قبل SFS."
  Tor blocker module: "يحظر الوصول من عقد الخروج في شبكة Tor."
 Glossary: !lazy
@@ -136,11 +137,13 @@ Name: !lazy
  Protocol blocker module: "المكون مانع البروتوكول."
  Quic cloud compatibility module: "المكون التوافق Quic cloud."
  Referrer spam module: "المكون للإحالة البريد المزعج."
+ ShodanDB module: "ShodanDB المكون."
  Stop Forum Spam module: "Stop Forum Spam المكون."
  Tor blocker module: "المكون مانع Tor."
 bobuam_hint_default_value: "عند التعيين على 0، تستخدم الوحدة الرقم الموصى به حاليًا."
 checkbox:
  Allow single-hit bypasses: "السماح بتجاوز ضربة واحدة؟"
+ Apply CAPTCHA options: "تطبيق خيارات اختبار التحقق."
  Attempt to verify: "محاولة التحقق؟"
  Block it: "منعه."
  Block negatives: "حظر السلبيات؟"
@@ -152,6 +155,7 @@ checkbox:
  Log any errors generated during this stage: "سجل أي أخطاء ولدت خلال هذه المرحلة؟"
  Omit this field when it_s empty: "حذف هذا الحقل عندما يكون فارغا؟"
  Profile it: "صنفه."
+ Report it: "أبلغ عنه."
  Should infractions generated during this stage count towards IP tracking: "هل يجب احتساب المخالفات التي تم إنشاؤها خلال هذه المرحلة لتتبع IP؟"
  Should this field appear in log entries: "هل يجب أن يظهر هذا الحقل في إدخالات السجل؟"
  Should this field appear on the access denied page: "هل يجب أن يظهر هذا الحقل في صفحة "الوصول مرفوض"؟"
@@ -316,6 +320,9 @@ config: !lazy
  rate_limiting_precision_ipv6: "الدقة المستخدمة عند مراقبة استخدام IPv6. قيمة تعكس حجم كتلة CIDR. تعيين إلى 128 للحصول على أفضل دقة. افتراضي = 128."
  rate_limiting_segregate: "هل يجب فصل أو مشاركة الحصص الخاصة بالمجالات والمضيفين المختلفين؟ True = سيتم فصل الحصص. False = سيتم تقاسم الحصص [افتراضي]."
  sfs: "التكوين للوحدة Stop Forum Spam."
+ shodandb: "التكوين للوحدة ShodanDB (Shodan InternetDB)."
+ shodandb_api_base: "عنوان URL الأساسي لعمليات البحث في Shodan InternetDB (أو نقطة نهاية متوافقة). افتراضي = <code dir="ltr" class="s">https://internetdb.shodan.io</code>."
+ shodandb_api_header: "ترويسة HTTP اختيارية تُرسل مع طلبات البحث (على سبيل المثال، لأغراض المصادقة عند التعامل مع نقطة نهاية مستضافة ذاتياً أو تعمل عبر خادم وكيل). اتركه فارغاً إذا لم تكن هناك حاجة إليه."
  signatures: "التكوين للتوقيعات، ملفات التوقيع، الوحدات النمطية، إلخ."
  signatures_conflict_response: "عندما يكون هناك العديد من المحاولات المتزامنة للوصول إلى نفس الموارد (على سبيل المثال، الطلبات المتزامنة لعمليات PHP متعددة على نفس الجهاز لنفس الموارد)، فقد تفشل بعض هذه المحاولات. في حالة نادرة وغير محتملة أن يؤثر هذا على ملفات التوقيع أو الوحدات النمطية، قد يتم منع CIDRAM من اتخاذ قرار فعال بشأن الطلب. إذا حدث هذا، فهل يجب حظر الطلب، وما هي رسالة حالة HTTP التي يجب أن يرسلها CIDRAM؟"
  signatures_default_tracktime: "المدة التي يجب أن يتم تتبع عناوين IP لها. افتراضي = 7d0°0′0″ (1 أسبوع)."
@@ -609,6 +616,7 @@ label:
  All of them: "كلهم."
  Allow, but only when also blocked: "اسمح، ولكن فقط عندما يتم حظره أيضًا."
  Allow: "يسمح."
+ Any ports: "أي منافذ."
  Bandwidth: "النطاق الترددي المستخدم: %s – النطاق الترددي المتاح: %s"
  Branch latest stable: "فرع أحدث مستقرة:"
  CAPTCHA attempts: "محاولات CAPTCHA"
@@ -693,6 +701,7 @@ label:
  No log files available: "لا سجلات متاح."
  None: "لا شيء.\nإذا كنت تريد استخدام الوحدة لأغراض إعداد التقارير فقط، دون البحث عن أي شيء، فاستخدم هذا."
  Normal: "طبيعي"
+ Noteworthy ports: "منافذ خادم جديرة بالملاحظة."
  Only those with updates available: "فقط تلك التي تتوفر لها التحديثات."
  Only those installed: "فقط تلك المثبتة."
  Only those not installed: "فقط تلك التي لم يتم تثبيتها."
@@ -715,6 +724,7 @@ label:
  Please log in to continue: "الرجاء تسجيل الدخول للمتابعة."
  Preferred source: "المصدر المفضل:"
  Previous: "سابق:"
+ Proxy ports: "منافذ الوكيل."
  Quote entity: "&quot;%s&quot;"
  Range tools: "أدوات النطاق"
  Remember: "احفظها"

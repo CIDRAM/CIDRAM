@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2026.09.05).
+# This file: Swedish language data for the front-end (last modified: 2026.09.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -77,6 +77,7 @@ Extended Description: !lazy
  Protocol blocker module: "Ger möjlighet att blockera specifika begärandeprotokoll via konfigurationen (t.ex., HTTP/0.9, HTTP/1.1, SPDY/3.0, osv)."
  Quic cloud compatibility module: "Hjälper till att säkerställa att CIDRAM fungerar korrekt på webbplatser som drivs av Quic cloud. Den här modulen kommer inte att vara nödvändig för webbplatser som inte drivs av Quic cloud."
  Referrer spam module: "Blockering baserat på referensspam ger i allmänhet ingen meningsfull säkerhetsfördel, men i vissa fall kan det vara användbart för vissa användare, för att samla in mer information om förfrågningar och för att kunna rapportera det."
+ ShodanDB module: "Slår upp begärans IP-adress mot Shodan InternetDB-API-et."
  Stop Forum Spam module: "Skyddar registrerings och inloggningssidor mot IP-adresser som listas av SFS."
  Tor blocker module: "Förbjuder åtkomst från Tor-utgångsnoder."
 Glossary: !lazy
@@ -135,11 +136,13 @@ Name: !lazy
  Protocol blocker module: "Protokollblockeringsmodul."
  Quic cloud compatibility module: "Quic cloud-kompatibilitetsmodul."
  Referrer spam module: "Referensspam-modul."
+ ShodanDB module: "ShodanDB-modul."
  Stop Forum Spam module: "Stop Forum Spam modul."
  Tor blocker module: "Tor blockeringsmodul."
 bobuam_hint_default_value: "När den är inställd på 0, modulen använder det aktuella rekommenderade värdet."
 checkbox:
  Allow single-hit bypasses: "Tillåta singel-hit bypasser?"
+ Apply CAPTCHA options: "Tillämpa CAPTCHA-alternativ."
  Attempt to verify: "Försök att verifiera?"
  Block it: "Blockera den."
  Block negatives: "Blockera negativa?"
@@ -151,6 +154,7 @@ checkbox:
  Log any errors generated during this stage: "Logga några fel som genererats under detta skede?"
  Omit this field when it_s empty: "Utelämna det här fältet när det är tomt?"
  Profile it: "Profilera det."
+ Report it: "Rapportera det."
  Should infractions generated during this stage count towards IP tracking: "Räkna infraktions som genererats under detta skede mot IP-spårning?"
  Should this field appear in log entries: "Ska detta fält visas i loggposter?"
  Should this field appear on the access denied page: "Ska det här fältet visas på sidan "åtkomst nekad"?"
@@ -315,6 +319,9 @@ config: !lazy
  rate_limiting_precision_ipv6: "Den precision som ska användas för att spåra IPv6-användning. Värdet speglar CIDR-blockstorleken. Ställ in till 128 för bästa precision. Standard = 128."
  rate_limiting_segregate: "Bör kvoter för olika domäner och värdar segregeras eller delas? True = Kvoter kommer att vara segregerade. False = Kvoter kommer att vara delas [Standard]."
  sfs: "Konfiguration för modulen Stop Forum Spam."
+ shodandb: "Konfiguration för modulen ShodanDB (Shodan InternetDB)."
+ shodandb_api_base: "Bas-URL-en för sökningar i Shodan InternetDB (eller en kompatibel slutpunkt). Standard = <code class="s">https://internetdb.shodan.io</code>."
+ shodandb_api_header: "Ett valfritt HTTP-huvud som ska skickas med uppslagsförfrågningar (t.ex., för autentisering mot en självhostad eller proxyad slutpunkt). Lämna tomt om det inte behövs."
  signatures: "Konfiguration för signaturer, signaturfiler, moduler, osv."
  signatures_conflict_response: "När det finns för många samtidiga försök att komma åt samma resurser (t.ex., samtidiga förfrågningar till flera PHP-processer på samma maskin för samma resurser), kan vissa av dessa försök misslyckas. I den sällsynta och osannolika händelsen att detta påverkar signaturfiler eller moduler, kan CIDRAM förhindras från att göra ett effektivt beslut om begäran. Om detta händer, ska begäran blockeras, och vilket HTTP-statusmeddelande ska CIDRAM skicka?"
  signatures_default_tracktime: "Varaktigheten som IP-adresser ska spåras för. Standard = 7d0°0′0″ (1 vecka)."
@@ -613,6 +620,7 @@ label:
  All of them: "Alla av dem."
  Allow, but only when also blocked: "Tillåt, men bara när den också är blockerad."
  Allow: "Tillåt."
+ Any ports: "Alla portar."
  Bandwidth: "Använd bandbredd: %s – Tillgänglig bandbredd: %s"
  Branch latest stable: "Branch senaste stabila:"
  CAPTCHA attempts: "CAPTCHA försöken"
@@ -701,6 +709,7 @@ label:
  No log files available: "Inga loggfiler finns tillgängliga."
  None: "Ingen.\nOm du vill använda modulen endast för rapporteringsändamål, utan att slå upp något, använd denna."
  Normal: "Normal"
+ Noteworthy ports: "Anmärkningsvärda portar."
  Only those with updates available: "Endast de med tillgängliga uppdateringar."
  Only those installed: "Endast de som är installerade."
  Only those not installed: "Endast de som inte är installerade."
@@ -723,6 +732,7 @@ label:
  Please log in to continue: "Snälla logga in för att fortsätta."
  Preferred source: "Föredragen källa:"
  Previous: "Tidigare:"
+ Proxy ports: "Proxy portar."
  Quote entity: "&quot;%s&quot;"
  Range tools: "Range verktyg"
  Remember: "Ihåg"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Thai language data for the front-end (last modified: 2026.09.05).
+# This file: Thai language data for the front-end (last modified: 2026.09.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -77,6 +77,7 @@ Extended Description: !lazy
  Protocol blocker module: "ให้ความสามารถในการบล็อคโปรโตคอลคำขอเฉพาะผ่านการกำหนดค่า (เช่น., HTTP/0.9, HTTP/1.1, SPDY/3.0, เป็นต้น)."
  Quic cloud compatibility module: "ช่วยให้มั่นใจได้ว่า CIDRAM จะทำงานได้อย่างถูกต้องบนเว็บไซต์ที่ใช้งานอยู่เบื้องหลัง Quic cloud. โมดูลนี้ไม่จำเป็นสำหรับเว็บไซต์ที่ไม่ได้ใช้งานอยู่เบื้องหลัง Quic cloud."
  Referrer spam module: "การปิดกั้นโดยอ้างอิงจากสแปมอ้างอิงจะไม่ให้ประโยชน์ด้านความปลอดภัยที่มีความหมาย แต่ในบางกรณีอาจมีประโยชน์สำหรับผู้ใช้บางคน เพื่อรวบรวมข้อมูลเพิ่มเติมเกี่ยวกับคำขอและเพื่อให้สามารถรายงานได้."
+ ShodanDB module: "ตรวจสอบที่อยู่ IP ของคำร้องขอโดยเทียบกับ Shodan InternetDB API."
  Stop Forum Spam module: "ปกป้องหน้าการลงทะเบียนและเข้าสู่ระบบต่อต้าน IP ที่ระบุโดย SFS."
  Tor blocker module: "ห้ามการเข้าถึงจากโหนดทางออกของ Tor."
 Glossary: !lazy
@@ -134,11 +135,13 @@ Name: !lazy
  Protocol blocker module: "โมดูลตัวบล็อคโปรโตคอล."
  Quic cloud compatibility module: "โมดูลความเข้ากัน Quic cloud."
  Referrer spam module: "โมดูลสแปมผู้อ้างอิง."
+ ShodanDB module: "โมดูล ShodanDB."
  Stop Forum Spam module: "โมดูล Stop Forum Spam."
  Tor blocker module: "โมดูลตัวบล็อค Tor."
 bobuam_hint_default_value: "เมื่อตั้งค่าเป็น 0 โมดูลจะใช้ค่าที่แนะนำในปัจจุบัน."
 checkbox:
  Allow single-hit bypasses: "อนุญาตการบายพาสแบบตีเดียว?"
+ Apply CAPTCHA options: "ใช้ตัวเลือก CAPTCHA."
  Attempt to verify: "ลองตรวจสอบ?"
  Block it: "บล็อคมัน."
  Block negatives: "บล็อคเชิงลบ?"
@@ -150,6 +153,7 @@ checkbox:
  Log any errors generated during this stage: "บันทึกข้อผิดพลาดใด ๆ ที่เกิดขึ้นระหว่างขั้นตอนนี้?"
  Omit this field when it_s empty: "เว้นฟิลด์นี้เมื่อว่างเปล่า?"
  Profile it: "โปรไฟล์มัน."
+ Report it: "รายงานเรื่องนี้."
  Should infractions generated during this stage count towards IP tracking: "นับการละเมิดที่เกิดขึ้นระหว่างขั้นตอนนี้ต่อการติดตาม IP หรือไม่?"
  Should this field appear in log entries: "ช่องนี้ควรปรากฏในรายการบันทึกหรือไม่?"
  Should this field appear on the access denied page: "ฟิลด์นี้ควรปรากฏใน "ปฏิเสธการเข้าใช้" หน้าหรือไม่?"
@@ -314,6 +318,9 @@ config: !lazy
  rate_limiting_precision_ipv6: "ความแม่นยำในการใช้สำหรับการติดตามการใช้งาน IPv6. ค่าจะสะท้อนขนาดบล็อค CIDR. ตั้งค่าเป็น 128 สำหรับความแม่นยำสูงสุด ค่าเริ่มต้น = 128."
  rate_limiting_segregate: "โควต้าสำหรับโดเมนและโฮสต์ควรแยกหรือแชร์หรือไม่? True = โควต้าจะถูกแยกออก. False = โควต้าจะถูกแชร์ [ค่าเริ่มต้น]."
  sfs: "การกำหนดค่าสำหรับโมดูล Stop Forum Spam."
+ shodandb: "การกำหนดค่าสำหรับโมดูล ShodanDB (Shodan InternetDB)."
+ shodandb_api_base: "URL พื้นฐานสำหรับการสืบค้นข้อมูลใน Shodan InternetDB (หรือ endpoint ที่รองรับการทำงานร่วมกันได้). ค่าเริ่มต้น = <code class="s">https://internetdb.shodan.io</code>."
+ shodandb_api_header: "HTTP header ทางเลือกสำหรับส่งไปพร้อมกับคำขอค้นหา (เช่น เพื่อใช้ในการยืนยันตัวตนกับ endpoint ที่โฮสต์เองหรือผ่านพร็อกซี). เว้นว่างไว้หากไม่จำเป็น."
  signatures: "การกำหนดค่าสำหรับลายเซ็น, ไฟล์ลายเซ็น, โมดูล, ฯลฯ."
  signatures_conflict_response: "เมื่อมีการพยายามเข้าถึงทรัพยากรเดียวกันพร้อมกันมากเกินไป (เช่น การคำขอพร้อมกันไปยังกระบวนการ PHP หลายกระบวนการบนเครื่องเดียวกันสำหรับทรัพยากรเดียวกัน) ความพยายามบางอย่างอาจล้มเหลว. ในกรณีที่เกิดขึ้นได้ยากและไม่น่าจะเกิดขึ้นที่สิ่งนี้ส่งผลกระทบต่อไฟล์ลายเซ็นหรือโมดูล CIDRAM อาจถูกป้องกันไม่ให้ตัดสินใจอย่างมีประสิทธิผลเกี่ยวกับคำขอนั้น. หากเหตุการณ์นี้เกิดขึ้น ควรจะบล็อคคำขอหรือไม่ และ CIDRAM ควรส่งข้อความสถานะ HTTP ใด?"
  signatures_default_tracktime: "ระยะเวลาที่ควรติดตามที่อยู่ IP. ค่าเริ่มต้น = 7d0°0′0″ (1 สัปดาห์)."
@@ -599,6 +606,7 @@ label:
  All of them: "ทั้งหมดเลย."
  Allow, but only when also blocked: "อนุญาต แต่เฉพาะเมื่อถูกบล็อคด้วย."
  Allow: "อนุญาต."
+ Any ports: "พอร์ตใดก็ได้."
  Bandwidth: "แบนด์วิดท์ที่ใช้: %s – แบนด์วิดท์ที่ใช้ได้: %s"
  Branch latest stable: "สาขาเสถียรล่าสุด:"
  CAPTCHA attempts: "ความพยายามในการ CAPTCHA"
@@ -683,6 +691,7 @@ label:
  No log files available: "ไม่มีไฟล์บันทึกใช้ได้."
  None: "ไม่มี.\nหากคุณต้องการใช้โมดูลเพื่อจุดประสงค์ในการรายงานเท่านั้น โดยไม่ต้องค้นหา ให้ใช้สิ่งนี้."
  Normal: "ปกติ"
+ Noteworthy ports: "พอร์ตที่น่าสนใจ."
  Only those with updates available: "เฉพาะที่มีอัพเดตเท่านั้น."
  Only those installed: "เฉพาะที่มีการติดตั้งไว้เท่านั้น."
  Only those not installed: "เฉพาะส่วนที่ไม่ได้ติดตั้ง."
@@ -705,6 +714,7 @@ label:
  Please log in to continue: "เข้าสู่ระบบเพื่อดำเนินการต่อ."
  Preferred source: "แหล่งที่ต้องการ:"
  Previous: "ก่อนหน้า:"
+ Proxy ports: "พอร์ตพร็อกซี."
  Quote entity: "&quot;%s&quot;"
  Range tools: "เครื่องมือวัดระยะ"
  Remember: "จำไว้"

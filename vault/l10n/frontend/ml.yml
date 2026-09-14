@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malayalam language data for the front-end (last modified: 2026.09.05).
+# This file: Malayalam language data for the front-end (last modified: 2026.09.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -77,6 +77,7 @@ Extended Description: !lazy
  Protocol blocker module: "കോൺഫിഗറേഷൻ വഴി നിർദ്ദിഷ്ട അഭ്യർത്ഥന പ്രോട്ടോക്കോളുകൾ തടയാനുള്ള കഴിവ് നൽകുന്നു (ഉദാഹരണത്തിന്, HTTP/0.9, HTTP/1.1, SPDY/3.0, തുടങ്ങിയവ)."
  Quic cloud compatibility module: "Quic cloud വഴി പ്രവർത്തിക്കുന്ന സൈറ്റുകളിൽ CIDRAM ശരിയായി പ്രവർത്തിക്കാൻ സഹായിക്കുന്നു. Quic cloud-ന് പിന്നിൽ പ്രവർത്തിക്കാത്ത സൈറ്റുകൾക്ക്, ഈ മൊഡ്യൂൾ ആവശ്യമില്ല."
  Referrer spam module: "റഫറർ സ്പാം അടിസ്ഥാനമാക്കി തടയുന്നത് സാധാരണയായി അർത്ഥവത്തായ സുരക്ഷാ ആനുകൂല്യങ്ങളൊന്നും നൽകില്ല, എന്നാൽ ചില സന്ദർഭങ്ങളിൽ, അഭ്യർത്ഥനകളെക്കുറിച്ചുള്ള കൂടുതൽ വിവരങ്ങൾ ശേഖരിക്കുന്നതിനും അത് റിപ്പോർട്ട് ചെയ്യാൻ കഴിയുന്നതിനും ചില ഉപയോക്താക്കൾക്ക് ഉപയോഗപ്രദമാകും."
+ ShodanDB module: "Shodan InternetDB API ഉപയോഗിച്ച് അഭ്യർത്ഥനയുടെ IP വിലാസം പരിശോധിക്കുന്നു."
  Stop Forum Spam module: "SFS പട്ടികപ്പെടുത്തിയിരിക്കുന്ന IP-കളിൽ നിന്ന് രജിസ്ട്രേഷൻ, ലോഗിൻ പേജുകളെ സംരക്ഷിക്കുന്നു."
  Tor blocker module: "ടോർ എക്സിറ്റ് നോഡുകളിൽ നിന്നുള്ള ആക്‌സസ് നിരോധിക്കുന്നു."
 Glossary: !lazy
@@ -133,11 +134,13 @@ Name: !lazy
  Protocol blocker module: "പ്രോട്ടോക്കോൾ ബ്ലോക്കർ മൊഡ്യൂൾ."
  Quic cloud compatibility module: "ക്വിക്ക് ക്ലൗഡ് കോംപാറ്റിബിലിറ്റി മൊഡ്യൂൾ."
  Referrer spam module: "റഫറർ സ്പാം മൊഡ്യൂൾ."
+ ShodanDB module: "ShodanDB മൊഡ്യൂൾ."
  Stop Forum Spam module: "Stop Forum Spam മൊഡ്യൂൾ."
  Tor blocker module: "ടോർ ബ്ലോക്കർ മൊഡ്യൂൾ."
 bobuam_hint_default_value: "0 ആയി സജ്ജമാക്കുമ്പോൾ, മൊഡ്യൂൾ നിലവിൽ ശുപാർശ ചെയ്യുന്ന മൂല്യത്തിലേക്ക് മാറ്റപ്പെടും."
 checkbox:
  Allow single-hit bypasses: "സിംഗിൾ-ഹിറ്റ് ബൈപാസുകൾ അനുവദിക്കണോ?"
+ Apply CAPTCHA options: "CAPTCHA ഓപ്ഷനുകൾ പ്രയോഗിക്കുക."
  Attempt to verify: "പരിശോധിക്കാൻ ശ്രമിക്കണോ?"
  Block it: "തടയൂ."
  Block negatives: "നെഗറ്റീവുകൾ തടയണോ?"
@@ -149,6 +152,7 @@ checkbox:
  Log any errors generated during this stage: "ഈ ഘട്ടത്തിൽ ഉണ്ടായ ഏതെങ്കിലും പിശകുകൾ രേഖപ്പെടുത്തണോ?"
  Omit this field when it_s empty: "ഈ ഫീൽഡ് ശൂന്യമാകുമ്പോൾ ഒഴിവാക്കണോ?"
  Profile it: "പ്രൊഫൈൽ ചെയ്യുക."
+ Report it: "അത് റിപ്പോർട്ട് ചെയ്യുക."
  Should infractions generated during this stage count towards IP tracking: "ഈ ഘട്ടത്തിൽ ഉണ്ടാകുന്ന ലംഘനങ്ങൾ IP ട്രാക്കിംഗിൽ കണക്കാക്കണോ?"
  Should this field appear in log entries: "ഈ ഫീൽഡ് ലോഗ് എൻട്രികളിൽ ദൃശ്യമാകണോ?"
  Should this field appear on the access denied page: "ഈ ഫീൽഡ് "പ്രവേശനം നിരസിച്ചു" പേജിൽ ദൃശ്യമാകണോ?"
@@ -313,6 +317,9 @@ config: !lazy
  rate_limiting_precision_ipv6: "IPv6 ഉപയോഗം ട്രാക്ക് ചെയ്യുന്നതിന് ഉപയോഗിക്കേണ്ട കൃത്യത. മൂല്യം CIDR ബ്ലോക്കിന്റെ വലുപ്പത്തെ പ്രതിഫലിപ്പിക്കുന്നു. മികച്ച കൃത്യതയ്ക്കായി 128 ആയി സജ്ജമാക്കുക. സ്ഥിരസ്ഥിതി = 128."
  rate_limiting_segregate: "വ്യത്യസ്ത ഡൊമെയ്‌നുകൾക്കും ഹോസ്റ്റുകൾക്കുമുള്ള ക്വാട്ടകൾ വേർതിരിക്കണോ അതോ പങ്കിടണോ? True = ക്വാട്ടകൾ വേർതിരിക്കും. False = ക്വാട്ടകൾ പങ്കിടും [സ്ഥിരസ്ഥിതി]."
  sfs: "Stop Forum Spam മൊഡ്യൂളിനായുള്ള കോൺഫിഗറേഷൻ."
+ shodandb: "ShodanDB (Shodan InternetDB) മൊഡ്യൂളിനായുള്ള കോൺഫിഗറേഷൻ."
+ shodandb_api_base: "Shodan InternetDB ലുക്കപ്പുകൾക്കായുള്ള അടിസ്ഥാന URL (അല്ലെങ്കിൽ അനുയോജ്യമായ ഒരു എൻഡ്‌പോയിന്റ്). സ്ഥിരസ്ഥിതി = <code class="s">https://internetdb.shodan.io</code>."
+ shodandb_api_header: "ലുകപ്പ് അഭ്യർത്ഥനകൾക്കൊപ്പം അയയ്‌ക്കാവുന്ന ഒരു ഓപ്‌ഷണൽ HTTP ഹെഡർ (ഉദാഹരണത്തിന്, സെൽഫ്-ഹോസ്റ്റഡ് അല്ലെങ്കിൽ പ്രോക്സി ചെയ്ത എൻഡ്‌പോയിന്റിൽ ഓതന്റിക്കേഷൻ നടത്തുന്നതിന്). ആവശ്യമില്ലെങ്കിൽ ശൂന്യമായി വിടുക."
  signatures: "ഒപ്പുകൾ, ഒപ്പ് ഫയലുകൾ, മൊഡ്യൂളുകൾ, മുതലായവയ്ക്കുള്ള കോൺഫിഗറേഷൻ."
  signatures_conflict_response: "ഒരേ ഉറവിടങ്ങൾ ആക്‌സസ് ചെയ്യാൻ ഒരേസമയം നിരവധി ശ്രമങ്ങൾ നടക്കുമ്പോൾ (ഉദാഹരണത്തിന്, ഒരേ മെഷീനിൽ ഒരേ ഉറവിടങ്ങൾക്കായി ഒന്നിലധികം PHP പ്രക്രിയകളിലേക്കുള്ള ഒരേസമയം അഭ്യർത്ഥനകൾ), ആ ശ്രമങ്ങളിൽ ചിലത് പരാജയപ്പെട്ടേക്കാം. ഒപ്പ് ഫയലുകളെയോ മൊഡ്യൂളുകളെയോ ഇത് ബാധിക്കുന്ന അപൂർവവും സാധ്യതയില്ലാത്തതുമായ സാഹചര്യത്തിൽ, അഭ്യർത്ഥനയെക്കുറിച്ച് ഫലപ്രദമായ തീരുമാനമെടുക്കുന്നതിൽ നിന്ന് CIDRAM-നെ തടഞ്ഞേക്കാം. ഇങ്ങനെ സംഭവിച്ചാൽ, അഭ്യർത്ഥന തടയണോ, ഏത് HTTP സ്റ്റാറ്റസ് സന്ദേശമാണ് CIDRAM അയയ്ക്കേണ്ടത്?"
  signatures_default_tracktime: "IP വിലാസങ്ങൾ ട്രാക്ക് ചെയ്യേണ്ട ദൈർഘ്യം. സ്ഥിരസ്ഥിതി = 7d0°0′0″ (1 ആഴ്ച)."
@@ -614,6 +621,7 @@ label:
  All of them: "അവരെല്ലാവരും."
  Allow, but only when also blocked: "അനുവദിക്കുക, പക്ഷേ തടയപ്പെട്ടിരിക്കുമ്പോൾ മാത്രം."
  Allow: "അനുവദിക്കുക."
+ Any ports: "ഏതെങ്കിലും പോർട്ടുകൾ."
  Bandwidth: "ഉപയോഗിച്ച ബാൻഡ്‌വിഡ്ത്ത്: %s – ലഭ്യമായ ബാൻഡ്‌വിഡ്ത്ത്: %s"
  Branch latest stable: "ബ്രാഞ്ചിന്റെ ഏറ്റവും പുതിയ സ്റ്റേബിൾ:"
  CAPTCHA attempts: "CAPTCHA ശ്രമങ്ങൾ"
@@ -702,6 +710,7 @@ label:
  No log files available: "ലോഗ് ഫയലുകളൊന്നും ലഭ്യമല്ല."
  None: "അഭ്യർത്ഥനകളൊന്നുമില്ല.\nഒന്നും നോക്കാതെ, റിപ്പോർട്ടുകൾ അയയ്ക്കാൻ മാത്രം മൊഡ്യൂൾ ഉപയോഗിക്കണമെങ്കിൽ, ഇത് ഉപയോഗിക്കുക."
  Normal: "സാധാരണ"
+ Noteworthy ports: "ശ്രദ്ധേയമായ പോർട്ടുകൾ."
  Only those with updates available: "അപ്ഡേറ്റുകൾ ലഭ്യമായവർ മാത്രം."
  Only those installed: "ഇൻസ്റ്റാൾ ചെയ്തവ മാത്രം."
  Only those not installed: "ഇൻസ്റ്റാൾ ചെയ്യാത്തവ മാത്രം."
@@ -724,6 +733,7 @@ label:
  Please log in to continue: "തുടരാൻ ദയവായി ലോഗിൻ ചെയ്യുക."
  Preferred source: "ഇഷ്ടപ്പെട്ട ഉറവിടം:"
  Previous: "മുമ്പത്തേത്:"
+ Proxy ports: "പ്രോക്സി പോർട്ടുകൾ."
  Quote entity: "&quot;%s&quot;"
  Range tools: "റേഞ്ച് ഉപകരണങ്ങൾ"
  Remember: "ഓർക്കുക"

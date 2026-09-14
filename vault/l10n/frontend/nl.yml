@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2026.09.05).
+# This file: Dutch language data for the front-end (last modified: 2026.09.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -77,6 +77,7 @@ Extended Description: !lazy
  Protocol blocker module: "Biedt de mogelijkheid om specifieke verzoekprotocollen te blokkeren via de configuratie (b.v., HTTP/0.9, HTTP/1.1, SPDY/3.0, enz)."
  Quic cloud compatibility module: "Helpt ervoor te zorgen dat CIDRAM correct functioneert op websites die via Quic cloud draaien. Deze module is niet nodig voor websites die niet via Quic cloud werken."
  Referrer spam module: "Blokkering op basis van verwijzende spam levert over het algemeen geen betekenisvol beveiligingsvoordeel op, maar in sommige gevallen kan het nuttig zijn voor sommige gebruikers, voor het verzamelen van meer informatie over verzoeken en erover te rapporteren."
+ ShodanDB module: "Zoekt het IP-adres van het verzoek op via de Shodan InternetDB-API."
  Stop Forum Spam module: "Beschermt registratie en login tegen IP's die door SFS worden vermeld."
  Tor blocker module: "Verbiedt toegang vanaf Tor exit-knooppunten."
 Glossary: !lazy
@@ -136,11 +137,13 @@ Name: !lazy
  Protocol blocker module: "Blokkeermodule voor protocollen."
  Quic cloud compatibility module: "Quic cloud compatibiliteitsmodule."
  Referrer spam module: "Verwijzersspam module."
+ ShodanDB module: "ShodanDB module."
  Stop Forum Spam module: "Stop Forum Spam module."
  Tor blocker module: "Tor blokkermodule."
 bobuam_hint_default_value: "Indien ingesteld op 0, de module gebruikt de huidige aanbevolen waarde."
 checkbox:
  Allow single-hit bypasses: "Enkele-treffer bypasses toestaan?"
+ Apply CAPTCHA options: "Pas CAPTCHA-opties toe."
  Attempt to verify: "Proberen te verifiëren?"
  Block it: "Blokkeer het."
  Block negatives: "Negatieven blokkeren?"
@@ -152,6 +155,7 @@ checkbox:
  Log any errors generated during this stage: "Moeten fouten die gegenereerd door deze fase worden geregistreerd?"
  Omit this field when it_s empty: "Weglaten dit veld als het leeg is?"
  Profile it: "Profileer het."
+ Report it: "Rapporteer het."
  Should infractions generated during this stage count towards IP tracking: "Moeten overtredingen die gegenereerd door deze fase meetellen voor IP-tracking?"
  Should this field appear in log entries: "Moet dit veld in logs verschijnen?"
  Should this field appear on the access denied page: "Moet dit veld verschijnen op de "toegang geweigerd" pagina?"
@@ -316,6 +320,9 @@ config: !lazy
  rate_limiting_precision_ipv6: "De precisie om te gebruiken bij het monitoren op het gebruik van IPv6. Waarde weerspiegelt de CIDR-blokgrootte. Stel in op 128 voor de beste precisie. Standaard = 128."
  rate_limiting_segregate: "Moeten quota voor verschillende domeinen en hosts worden gescheiden of gedeeld? True = Quota zullen worden gescheiden. False = Quota zullen worden gedeeld [Standaard]."
  sfs: "Configuratie voor de Stop Forum Spam module."
+ shodandb: "Configuratie voor de ShodanDB (Shodan InternetDB) module."
+ shodandb_api_base: "De basis-URL voor Shodan InternetDB-opzoekingen (of een compatibel eindpunt). Standaard = <code class="s">https://internetdb.shodan.io</code>."
+ shodandb_api_header: "Een optionele HTTP-header om mee te sturen bij opzoekverzoeken (b.v., voor authenticatie bij een zelf-gehost of via een proxy benaderd eindpunt). Laat leeg indien niet nodig."
  signatures: "Configuratie voor signatures, signatuurbestanden, modules, enz."
  signatures_conflict_response: "Wanneer er te veel gelijktijdige pogingen worden gedaan om toegang te krijgen tot dezelfde bronnen (b.v., gelijktijdige verzoeken aan meerdere PHP-processen op dezelfde machine voor dezelfde bronnen), kunnen sommige van die pogingen mislukken. In het zeldzame en onwaarschijnlijke geval dat dit gevolgen heeft voor signatuurbestanden of modules, kan CIDRAM mogelijk geen effectieve beslissing nemen over het verzoek. Als dit gebeurt, moet het verzoek dan worden geblokkeerd, en welk HTTP-statusbericht moet CIDRAM verzenden?"
  signatures_default_tracktime: "De duur dat IP-adressen moeten worden gevolgd. Standaard = 7d0°0′0″ (1 week)."
@@ -611,6 +618,7 @@ label:
  All of them: "Allemaal."
  Allow, but only when also blocked: "Toestaan, maar alleen wanneer ook geblokkeerd."
  Allow: "Toestaan."
+ Any ports: "Alle poorten."
  Bandwidth: "Gebruikte bandbreedte: %s – Bandbreedte beschikbaar: %s"
  Branch latest stable: "Branch laatste stabiele:"
  CAPTCHA attempts: "CAPTCHA pogingen"
@@ -699,6 +707,7 @@ label:
  No log files available: "Geen logbestanden beschikbaar."
  None: "Geen.\nAls u de module alleen voor rapportagedoeleinden wilt gebruiken, zonder iets op te zoeken, gebruik deze."
  Normal: "Normaal"
+ Noteworthy ports: "Vermeldenswaardige poorten."
  Only those with updates available: "Alleen degenen met beschikbare updates."
  Only those installed: "Alleen degenen die zijn geïnstalleerd."
  Only those not installed: "Alleen degenen die niet zijn geïnstalleerd."
@@ -721,6 +730,7 @@ label:
  Please log in to continue: "Inloggen om verder te gaan."
  Preferred source: "Voorkeursbron:"
  Previous: "Vorig:"
+ Proxy ports: "Proxy poorten."
  Quote entity: "&quot;%s&quot;"
  Range tools: "Bereik tools"
  Remember: "Onthouden"

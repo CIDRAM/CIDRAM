@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2026.09.05).
+# This file: Korean language data for the front-end (last modified: 2026.09.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -77,6 +77,7 @@ Extended Description: !lazy
  Protocol blocker module: "구성을 통해 특정 요청 프로토콜을 차단하는 기능을 제공합니다 (예: HTTP/0.9, HTTP/1.1, SPDY/3.0, 등등)."
  Quic cloud compatibility module: "CIDRAM이 Quic cloud 뒤에서 운영되는 사이트에서 올바르게 작동하도록 보장하는 데 도움이 됩니다. Quic cloud을 사용하지 않는 사이트의 경우 이 모듈은 필요하지 않습니다."
  Referrer spam module: "리퍼러 스팸에 기반한 차단은 일반적으로 의미 있는 보안 이점을 제공하지 않습니다, 그러나 어떤 경우에는, 요청에 대한 추가 정보를 수집하고 보고서를 생성하는 데 유용 할 수 있습니다."
+ ShodanDB module: "Shodan InternetDB API를 사용하여 요청의 IP 주소를 조회합니다."
  Stop Forum Spam module: "SFS가 나열한 IP에 대한 등록 및 로그인 페이지를 보호합니다."
  Tor blocker module: "Tor 출구 노드의 액세스 금지."
 Glossary: !lazy
@@ -136,11 +137,13 @@ Name: !lazy
  Protocol blocker module: "프로토콜 차단기 모듈."
  Quic cloud compatibility module: "Quic cloud 호환성 모듈."
  Referrer spam module: "리퍼러 스팸 모듈."
+ ShodanDB module: "ShodanDB 모듈."
  Stop Forum Spam module: "Stop Forum Spam 모듈."
  Tor blocker module: "Tor 차단제 모듈."
 bobuam_hint_default_value: "0으로 설정하면, 모듈은 현재 권장값을 사용합니다."
 checkbox:
  Allow single-hit bypasses: "단일 히트 바이 패스를 허용하시겠습니까?"
+ Apply CAPTCHA options: "CAPTCHA 옵션을 적용합니다."
  Attempt to verify: "검증을 시도?"
  Block it: "차단하세요."
  Block negatives: "네거티브를 차단하시겠습니까?"
@@ -152,6 +155,7 @@ checkbox:
  Log any errors generated during this stage: "이 단계에서 생성된 오류를 기록하시겠습니까?"
  Omit this field when it_s empty: "이 필드가 비어 있으면 생략하시겠습니까?"
  Profile it: "프로필을."
+ Report it: "신고하세요."
  Should infractions generated during this stage count towards IP tracking: "이 단계에서 생성된 위반은 IP 추적에 포함되어야 합니까?"
  Should this field appear in log entries: "이 필드가 로그 항목에 나타나야 합니까?"
  Should this field appear on the access denied page: "이 필드가 "액세스 거부" 페이지에 나타나야 합니까?"
@@ -315,7 +319,10 @@ config: !lazy
  rate_limiting_precision_ipv4: "IPv4 사용을 모니터링 할 때 사용할 정밀도입니다. 값은 CIDR 블록 크기와 동일합니다. 최상의 정밀도를 위해 32로 설정하십시오. Default (기본 설정) = 32."
  rate_limiting_precision_ipv6: "IPv6 사용을 모니터링 할 때 사용할 정밀도입니다. 값은 CIDR 블록 크기와 동일합니다. 최상의 정밀도를 위해 128로 설정하십시오. Default (기본 설정) = 128."
  rate_limiting_segregate: "서로 다른 도메인과 호스트에 대한 할당량을 분리하거나 공유해야 합니까? True = 할당량이 분리됩니다. False = 할당량이 공유됩니다 (Default / 기본 설정)."
- sfs: "Stop Forum Spam 모듈에 대한 구성입니다."
+ sfs: "Stop Forum Spam 모듈을 위한 설정입니다."
+ shodandb: "ShodanDB (Shodan InternetDB) 모듈을 위한 설정입니다."
+ shodandb_api_base: "Shodan InternetDB 조회(또는 호환되는 엔드포인트)를 위한 기본 URL입니다. Default (기본 설정) = <code class="s">https://internetdb.shodan.io</code>."
+ shodandb_api_header: "조회 요청과 함께 전송할 선택적 HTTP 헤더(예: 자체 호스팅 또는 프록시 엔드포인트에 대한 인증용). 필요하지 않으면 비워 두십시오."
  signatures: "서명, 서명 파일, 모듈, 등의 설정."
  signatures_conflict_response: "같은 리소스에 동시에 액세스하려는 시도가 너무 많은 경우 (예, 동일한 리소스에 대해 동일한 머신에서 여러 PHP 프로세스에 동시 요청), 일부 시도는 실패할 수 있습니다. 이것이 서명 파일이나 모듈에 영향을 미치는 경우, CIDRAM이 요청에 대해 효과적인 결정을 내리지 못할 수 있습니다. 이런 일이 발생하면, 요청을 차단해야 할까요? 그리고 CIDRAM은 어떤 HTTP 상태 메시지를 보내야 할까요?"
  signatures_default_tracktime: "IP 주소를 추적해야 하는 기간입니다. Default (기본값) = 7d0°0′0″ (1 주)."
@@ -605,6 +612,7 @@ label:
  All of them: "모두 다요."
  Allow, but only when also blocked: "허용하지만, 차단된 경우에만 해당됩니다."
  Allow: "허용하다."
+ Any ports: "모든 포트."
  Bandwidth: "사용된 대역폭: %s – 사용 가능한 대역폭: %s"
  Branch latest stable: "분기 최신 안정:"
  CAPTCHA attempts: "CAPTCHA 완료 시도"
@@ -689,6 +697,7 @@ label:
  No log files available: "아니 로그를 사용할 수 있습니다."
  None: "하지 마라.\n아무것도 조회하지 않고 보고 목적으로만 모듈을 사용하려면 이것을 사용하십시오."
  Normal: "정상"
+ Noteworthy ports: "주목할 만한 포트."
  Only those with updates available: "업데이트가 있는 경우에만 사용 가능."
  Only those installed: "설치된 것만."
  Only those not installed: "설치되지 않은 것만."
@@ -711,6 +720,7 @@ label:
  Please log in to continue: "계속하려면 로그인하십시오."
  Preferred source: "선호하는 출처:"
  Previous: "이전:"
+ Proxy ports: "프록시 포트."
  Quote entity: "&quot;%s&quot;"
  Range tools: "범위 도구"
  Remember: "기억하다"

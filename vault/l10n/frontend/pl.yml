@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2026.09.05).
+# This file: Polish language data for the front-end (last modified: 2026.09.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -77,6 +77,7 @@ Extended Description: !lazy
  Protocol blocker module: "Zapewnia możliwość blokowania określonych protokołów żądań za pośrednictwem konfiguracji (np., HTTP/0.9, HTTP/1.1, SPDY/3.0, itp)."
  Quic cloud compatibility module: "Pomaga zapewnić prawidłowe działanie CIDRAM na stronach działających za pośrednictwem Quic cloud. Ten moduł nie będzie potrzebny w przypadku stron nieobsługiwanych przez Quic cloud."
  Referrer spam module: "Blokowanie na podstawie spamu odsyłającego zwykle nie zapewnia żadnych znaczących korzyści bezpieczeństwa, ale w niektórych przypadkach może być przydatne dla niektórych użytkowników, do gromadzenia dodatkowych informacji na temat żądań i możliwości ich zgłaszania."
+ ShodanDB module: "Sprawdza adres IP żądania w API Shodan InternetDB."
  Stop Forum Spam module: "Chroni strony rejestracji i logowania przed adresami IP wymienionymi przez SFS."
  Tor blocker module: "Zabrania dostępu z węzłów wyjściowych Tora."
 Glossary: !lazy
@@ -135,11 +136,13 @@ Name: !lazy
  Protocol blocker module: "Moduł blokowania protokołów."
  Quic cloud compatibility module: "Moduł kompatybilności Quic cloud."
  Referrer spam module: "Moduł spamu polecającego."
+ ShodanDB module: "Moduł ShodanDB."
  Stop Forum Spam module: "Moduł Stop Forum Spam."
  Tor blocker module: "Moduł blokujący Tor."
 bobuam_hint_default_value: "Gdy ustawiony na 0, moduł używa aktualnie zalecanej wartości."
 checkbox:
  Allow single-hit bypasses: "Zezwalać na obejście pojedynczych trafień?"
+ Apply CAPTCHA options: "Zastosuj opcje CAPTCHA."
  Attempt to verify: "Próbować zweryfikować?"
  Block it: "Zablokuj to."
  Block negatives: "Blokować negatywy?"
@@ -151,6 +154,7 @@ checkbox:
  Log any errors generated during this stage: "Zalogować jakiekolwiek błędy wygenerowane na tym etapie?"
  Omit this field when it_s empty: "Pominąć to pole, gdy jest puste?"
  Profile it: "Profiluj to."
+ Report it: "Zgłoś to."
  Should infractions generated during this stage count towards IP tracking: "Wliczać wykroczenia wygenerowane na tym etapie do śledzenie IP?"
  Should this field appear in log entries: "Czy to pole powinno pojawiać się w logach?"
  Should this field appear on the access denied page: "Czy to pole powinno pojawiać się na stronie „dostęp zabroniony”?"
@@ -300,7 +304,7 @@ config: !lazy
  projecthoneypot_max_ts_for_captcha: "Maksymalny wynik zagrożenia, na który można było podać CAPTCHA (musi być liczbą od 1 do 100). Domyślna = 10."
  projecthoneypot_minimum_threat_score: "Minimalny wynik zagrożenia wymagany do zablokowania adresu IP przez CIDRAM (musi być liczbą od 1 do 100). Domyślna = 10."
  projecthoneypot_type_of_visitor: "Kontrole blokowania lub profilowania w oparciu o typ odwiedzającego określony przez Project Honeypot."
- protocol: "Konfiguracja modułu blokowania protokołów."
+ protocol: "Konfiguracja dla modułu blokowania protokołów."
  protocol_blocked: "Wybrane protokoły zostaną zablokowane."
  protocol_reason_message: "Komunikat powodu wyświetlany, gdy takie żądania są blokowane."
  quic: "Konfiguracja dla modułu kompatybilności z Quic cloud."
@@ -314,7 +318,10 @@ config: !lazy
  rate_limiting_precision_ipv4: "Precyzja wykorzystywana do śledzenia użycia IPv4. Wartość odzwierciedla rozmiar bloku CIDR. Ustaw na 32 dla najlepszej precyzji. Domyślna = 32."
  rate_limiting_precision_ipv6: "Precyzja wykorzystywana do śledzenia użycia IPv6. Wartość odzwierciedla rozmiar bloku CIDR. Ustaw na 128 dla najlepszej precyzji. Domyślna = 128."
  rate_limiting_segregate: "Czy kontyngenty dla różnych domen i hostów powinny być segregowane czy dzielone? True = Kontyngenty będą segregowane. False = Kontyngenty będą dzielone [Domyślna]."
- sfs: "Konfiguracja modułu Stop Forum Spam."
+ sfs: "Konfiguracja dla modułu Stop Forum Spam."
+ shodandb: "Konfiguracja dla modułu ShodanDB (Shodan InternetDB)."
+ shodandb_api_base: "Bazowy adres URL dla zapytań do Shodan InternetDB (lub kompatybilnego punktu końcowego). Domyślna = <code class="s">https://internetdb.shodan.io</code>."
+ shodandb_api_header: "Opcjonalny nagłówek HTTP przesyłany wraz z żądaniami wyszukiwania (np., w celu uwierzytelnienia w przypadku punktu końcowego hostowanego samodzielnie lub obsługiwanego przez serwer pośredniczący). Pozostaw puste, jeśli nie jest wymagane."
  signatures: "Konfiguracja podpisów, plików podpisów, modułów, itp."
  signatures_conflict_response: "Gdy podejmowanych jest zbyt wiele równoczesnych prób dostępu do tych samych zasobów (np., jednoczesne żądania do wielu procesów PHP na tym samym komputerze dotyczące tych samych zasobów), niektóre z tych prób mogą się nie powieść. W rzadkim i mało prawdopodobnym przypadku, gdy dotyczy to plików podpis lub modułów, CIDRAM może nie mieć możliwości podjęcia skutecznej decyzji w sprawie żądania. Jeśli tak się stanie, czy żądanie powinno zostać zablokowane i jaki komunikat o stanie HTTP powinien zostać wysłany przez CIDRAM?"
  signatures_default_tracktime: "Czas, przez jaki adresy IP powinny być śledzone. Domyślna = 7d0°0′0″ (1 tydzień)."
@@ -345,7 +352,7 @@ config: !lazy
  template_data_magnification: *MagnifDesc
  template_data_theme: "Motyw do wykorzystania w przypadku zdarzeń blokowych i żądań CAPTCHA."
  template_data_theme_mode: "Tryb dla motywu do wykorzystania w przypadku zdarzeń blokowych i żądań CAPTCHA."
- tor: "Konfiguracja modułu blokowania Tor."
+ tor: "Konfiguracja dla modułu blokowania Tor."
  verification: "Konfiguracja do weryfikacji skąd pochodzą żądania."
  verification_adjust: "Kontrolki umożliwiające dostosowanie innych funkcjonalność w kontekście weryfikacji."
  verification_other: "Kontrolki do weryfikacji innych rodzajów żądań tam, gdzie to możliwe."
@@ -616,6 +623,7 @@ label:
  All of them: "Wszystkie."
  Allow, but only when also blocked: "Zezwalaj, ale tylko po zablokowaniu."
  Allow: "Zezwalaj."
+ Any ports: "Dowolne porty."
  Bandwidth: "Wykorzystywana przepustowość: %s – Dostępna przepustowość: %s"
  Branch latest stable: "Oddział najnowsza stabilna:"
  CAPTCHA attempts: "Próby CAPTCHA"
@@ -706,6 +714,7 @@ label:
  No log files available: "Brak dostępnych plików dziennika."
  None: "Nic.\nJeśli chcesz używać modułu tylko do celów raportowania, bez wyszukiwania czegokolwiek, użyj tego."
  Normal: "Normalna"
+ Noteworthy ports: "Godne uwagi porty."
  Only those with updates available: "Tylko te z dostępnymi aktualizacjami."
  Only those installed: "Tylko te, które są zainstalowane."
  Only those not installed: "Tylko te, które nie są zainstalowane."
@@ -728,6 +737,7 @@ label:
  Please log in to continue: "Proszę się zalogować, aby kontynuować."
  Preferred source: "Preferowane źródło:"
  Previous: "Poprzedni:"
+ Proxy ports: "Porty proxy."
  Quote entity: "„%s”"
  Range tools: "Narzędzia do zakresów"
  Remember: "Zapamiętaj"

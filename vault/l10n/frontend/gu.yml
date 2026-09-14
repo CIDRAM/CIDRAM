@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Gujarati language data for the front-end (last modified: 2026.09.05).
+# This file: Gujarati language data for the front-end (last modified: 2026.09.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -44,7 +44,7 @@ Abuse category: !lazy
  Open proxy, open relay, or tor endpoint: "ઓપન પ્રોક્સી, ઓપન રિલે, અથવા ટોર એન્ડપોઇન્ટ."
  Phishing: "ફિશિંગ વેબસાઇટ્સ અને/અથવા ઇમેઇલ."
  Ping of death: "મૃત્યુનું પિંગ (મોટા કદના IP પેકેટ)."
- Port scans: "પોર્ટ સ્કેન (ખુલ્લા બંદરો અને સંવેદનશીલ સેવાઓ માટે સ્કેનિંગ)."
+ Port scans: "પોર્ટ સ્કેન (ખુલ્લા પોર્ટ અને સંવેદનશીલ સેવાઓ માટે સ્કેનિંગ)."
  SQL injection: "SQL ઈન્જેક્શન."
  SSH abuse: "SSH દુરુપયોગ."
  VPN IP: "VPN IP."
@@ -77,6 +77,7 @@ Extended Description: !lazy
  Protocol blocker module: "રૂપરેખાંકન દ્વારા ચોક્કસ વિનંતી પ્રોટોકોલને અવરોધિત કરવાની ક્ષમતા પ્રદાન કરે છે (દા.ત., HTTP/0.9, HTTP/1.1, SPDY/3.0, વગેરે)."
  Quic cloud compatibility module: "Quic cloud પાછળ કાર્યરત વેબસાઇટ્સ પર CIDRAM યોગ્ય રીતે કાર્ય કરશે તેની ખાતરી કરવામાં મદદ કરે છે. Quic cloud પાછળ કાર્યરત ન હોય તેવી વેબસાઇટ્સ માટે, આ મોડ્યુલ જરૂરી રહેશે નહીં."
  Referrer spam module: "રેફરર સ્પામના આધારે અવરોધિત કરવાથી સામાન્ય રીતે કોઈ અર્થપૂર્ણ સુરક્ષા લાભ મળશે નહીં, પરંતુ કેટલાક કિસ્સાઓમાં, કેટલાક વપરાશકર્તાઓ માટે, વિનંતીઓ વિશે વધુ માહિતી ભેગી કરવા અને તેની જાણ કરવામાં સક્ષમ થવા માટે ઉપયોગી થઈ શકે છે."
+ ShodanDB module: "Shodan InternetDB API નો ઉપયોગ કરીને વિનંતીના IP સરનામાંની તપાસ કરે છે."
  Stop Forum Spam module: "SFS દ્વારા સૂચિબદ્ધ IP સરનામાઓ સામે નોંધણી અને લૉગિન પૃષ્ઠોનું રક્ષણ કરે છે."
  Tor blocker module: "આ ટોર એક્ઝિટ નોડ્સમાંથી ઍક્સેસને પ્રતિબંધિત કરે છે."
 Glossary: !lazy
@@ -133,11 +134,13 @@ Name: !lazy
  Protocol blocker module: "પ્રોટોકોલ બ્લોકર મોડ્યુલ."
  Quic cloud compatibility module: "Quic cloud સુસંગતતા મોડ્યુલ."
  Referrer spam module: "રેફરર સ્પામ મોડ્યુલ."
+ ShodanDB module: "ShodanDB મોડ્યુલ."
  Stop Forum Spam module: "Stop Forum Spam મોડ્યુલ."
  Tor blocker module: "ટોર બ્લોકર મોડ્યુલ."
 bobuam_hint_default_value: "જ્યારે 0 પર સેટ હોય, ત્યારે મોડ્યુલ હાલમાં ભલામણ કરેલ મૂલ્યનો ઉપયોગ કરશે."
 checkbox:
  Allow single-hit bypasses: "સિંગલ-હિટ બાયપાસને મંજૂરી આપીએ?"
+ Apply CAPTCHA options: "CAPTCHA વિકલ્પો લાગુ કરો."
  Attempt to verify: "ચકાસવાનો પ્રયાસ?"
  Block it: "તેને અવરોધિત કરો."
  Block negatives: "નકારાત્મકને અવરોધિત કરીએ?"
@@ -149,6 +152,7 @@ checkbox:
  Log any errors generated during this stage: "આ તબક્કો દરમિયાન જનરેટ થયેલી કોઈપણ ભૂલોને લોગ કરો?"
  Omit this field when it_s empty: "જ્યારે આ ક્ષેત્ર ખાલી હોય ત્યારે તેને છોડી દઈએ?"
  Profile it: "તે પ્રોફાઇલ કરો."
+ Report it: "તેની જાણ કરો."
  Should infractions generated during this stage count towards IP tracking: "શું આ તબક્કો દરમિયાન જનરેટ થયેલા ઉલ્લંઘનોને IP ટ્રેકિંગમાં ગણવા જોઈએ?"
  Should this field appear in log entries: "શું આ ક્ષેત્ર લોગ એન્ટ્રીઓમાં દેખાવું જોઈએ?"
  Should this field appear on the access denied page: "શું આ ક્ષેત્ર "ઍક્સેસ નકારી છે" પૃષ્ઠ પર દેખાવું જોઈએ?"
@@ -163,7 +167,7 @@ config: !lazy
  abuseipdb_api_key: &EnterAPIKey "કૃપા કરીને તમારી API કી અહીં દાખલ કરો."
  abuseipdb_build_profiles_from_usage_type: "API દ્વારા પરત કરવામાં આવેલ ઉપયોગના પ્રકારનો ઉપયોગ કરીને પ્રોફાઇલો બનાવવી છે? False/ખોટા = ના. True/સાચું = હા. ડિફૉલ્ટ = True."
  abuseipdb_max_age_in_days: "દિવસમાં મહત્તમ વય કે જેના માટે લુકઅપ કરતી વખતે અહેવાલો ધ્યાનમાં લેવામાં આવશે (1 અને 365 ની વચ્ચેની સંખ્યા હોવી આવશ્યક છે). ડિફૉલ્ટ = 365."
- abuseipdb_max_cs_for_captcha: "કૅપ્ચા સર્વ કરવા માટે મંજૂર મહત્તમ આત્મવિશ્વાસ સ્કોર (0 અને 100 ની વચ્ચેની સંખ્યા હોવી આવશ્યક છે). ડિફૉલ્ટ = 10."
+ abuseipdb_max_cs_for_captcha: "CAPTCHA સર્વ કરવા માટે મંજૂર મહત્તમ આત્મવિશ્વાસ સ્કોર (0 અને 100 ની વચ્ચેની સંખ્યા હોવી આવશ્યક છે). ડિફૉલ્ટ = 10."
  abuseipdb_minimum_confidence_score: "CIDRAM ને IP સરનામાંને અવરોધિત કરવા માટે જરૂરી ન્યૂનતમ આત્મવિશ્વાસ સ્કોર (0 અને 100 ની વચ્ચેની સંખ્યા હોવી આવશ્યક છે). ડિફૉલ્ટ = 50."
  abuseipdb_minimum_total_reports: "CIDRAM ને IP સરનામાંને અવરોધિત કરવા માટે જરૂરી કુલ અહેવાલોની ન્યૂનતમ સંખ્યા. ડિફૉલ્ટ = 1."
  abuseipdb_report_back: "CIDRAM ને તમારી API કીનો ઉપયોગ કરીને શોધાયેલ ખરાબ વર્તણૂકની પાછી AbuseIPDB ને જાણ કરવાની મંજૂરી આપીએ?"
@@ -313,6 +317,9 @@ config: !lazy
  rate_limiting_precision_ipv6: "IPv6 ઉપયોગને ટ્રૅક કરવા માટે ઉપયોગમાં લેવાતી ચોકસાઇ. મૂલ્ય CIDR બ્લોકના કદને પ્રતિબિંબિત કરે છે. શ્રેષ્ઠ ચોકસાઇ માટે 128 પર સેટ કરો. ડિફૉલ્ટ = 128."
  rate_limiting_segregate: "શું વિવિધ ડોમેન્સ અને હોસ્ટ્સ માટેના ક્વોટાને અલગ અથવા શેર જોઈએ? True/સાચું = ક્વોટા અલગ કરવામાં આવશે. False/ખોટા = ક્વોટા શેર કરવામાં આવશે [ડિફૉલ્ટ]."
  sfs: "Stop Forum Spam મોડ્યુલ માટે રૂપરેખાંકન."
+ shodandb: "ShodanDB (Shodan InternetDB) મોડ્યુલ માટે રૂપરેખાંકન."
+ shodandb_api_base: "Shodan InternetDB લુકઅપ્સ (અથવા સુસંગત એન્ડપોઇન્ટ) માટેનું બેઝ URL. ડિફૉલ્ટ = <code class="s">https://internetdb.shodan.io</code>."
+ shodandb_api_header: "લુકઅપ વિનંતીઓ સાથે મોકલવા માટેનું વૈકલ્પિક HTTP હેડર (દા.ત., સેલ્ફ-હોસ્ટેડ અથવા પ્રોક્સી દ્વારા એન્ડપોઇન્ટ સામે પ્રમાણીકરણ માટે). જરૂર ન હોય તો ખાલી રાખો."
  signatures: "સિગ્નેચર, સિગ્નેચર ફાઇલો, મોડ્યુલો, વગેરે માટે રૂપરેખાંકન."
  signatures_conflict_response: "જ્યારે સમાન સંસાધનોને ઍક્સેસ કરવા માટે ઘણા બધા એકસાથે પ્રયાસો કરવામાં આવે છે (દા.ત., સમાન સંસાધનો માટે એક જ મશીન પર બહુવિધ PHP પ્રક્રિયાઓ માટે એક સાથે વિનંતીઓ), તેમાંથી કેટલાક પ્રયાસો નિષ્ફળ થઈ શકે છે. દુર્લભ અને અસંભવિત ઘટનામાં કે આ સિગ્નેચર ફાઇલો અથવા મોડ્યુલોને અસર કરે છે, CIDRAM ને વિનંતી વિશે અસરકારક નિર્ણય લેવાથી અટકાવી શકાય છે. જો આવું થાય, તો શું વિનંતીને અવરોધિત કરવી જોઈએ, અને CIDRAM એ કયો HTTP સ્થિતિ સંદેશ મોકલવો જોઈએ?"
  signatures_default_tracktime: "જે સમયગાળો IP સરનામાંને ટ્રેક કરવો જોઈએ. ડિફૉલ્ટ = 7d0°0′0″ (1 અઠવાડિયું)."
@@ -606,6 +613,7 @@ label:
  All of them: "બધા જ."
  Allow, but only when also blocked: "મંજૂરી આપો, પરંતુ જ્યારે અવરોધિત પણ હોય ત્યારે જ."
  Allow: "મંજૂરી આપો."
+ Any ports: "કોઈપણ પોર્ટ."
  Bandwidth: "વપરાયેલ બેન્ડવિડ્થ: %s – બેન્ડવિડ્થ ઉપલબ્ધ: %s"
  Branch latest stable: "શાખા નવીનતમ સંસ્કરણ:"
  CAPTCHA attempts: "કેપ્ચા પ્રયાસો"
@@ -694,6 +702,7 @@ label:
  No log files available: "કોઈ લૉગ ફાઇલો ઉપલબ્ધ નથી."
  None: "કોઈ નહિ.\nજો તમે મોડ્યુલનો ઉપયોગ માત્ર રિપોર્ટિંગ હેતુઓ માટે કરવા માંગતા હો, તો કંઈપણ તપાસ્યા વિના, આનો ઉપયોગ કરો."
  Normal: "કુદરતી"
+ Noteworthy ports: "નોંધપાત્ર પોર્ટ્સ."
  Only those with updates available: "ફક્ત તે જ લોકો માટે જેમની પાસે અપડેટ્સ ઉપલબ્ધ છે."
  Only those installed: "ફક્ત તે જ જે ઇન્સ્ટોલ કરેલા છે."
  Only those not installed: "ફક્ત તે જ જે ઇન્સ્ટોલ કરેલા નથી."
@@ -716,6 +725,7 @@ label:
  Please log in to continue: "ચાલુ રાખવા માટે કૃપા કરીને લૉગ ઇન કરો."
  Preferred source: "મનપસંદ સ્ત્રોત:"
  Previous: "અગાઉના:"
+ Proxy ports: "પ્રોક્સી પોર્ટ્સ."
  Quote entity: "&quot;%s&quot;"
  Range tools: "શ્રેણી સાધનો"
  Remember: "યાદ રાખો"

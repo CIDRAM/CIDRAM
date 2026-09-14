@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese language data for the front-end (last modified: 2026.09.05).
+# This file: Chinese language data for the front-end (last modified: 2026.09.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -91,6 +91,9 @@ Extended Description: !lazy
  Referrer spam module:
   zh-Hans: "基于引荐来源垃圾邮件阻止通常不会提供任何有意义的安全利益，但在某些情况下，对某些用户可能有用，用于收集有关请求的更多信息，以及能够报告它。"
   zh-Hant: "基於引薦來源垃圾郵件阻止通常不會提供任何有意義的安全利益，但在某些情況下，對某些用戶可能有用，用於收集有關請求的更多信息，以及能夠報告它。"
+ ShodanDB module:
+  zh-Hans: "通过Shodan InternetDB API查询请求的IP地址。"
+  zh-Hant: "使用Shodan InternetDB API尋找請求的IP位址。"
  Stop Forum Spam module: {"zh-Hans": "防止通过SFS列出的IP地址访问注册和登录页面。", "zh-Hant": "防止通過SFS列出的IP位址訪問註冊和登錄頁面。"}
  Tor blocker module: {"zh-Hans": "禁止从Tor出口节点访问。", "zh-Hant": "禁止從Tor出口節點訪問。"}
 Glossary: !lazy
@@ -171,11 +174,13 @@ Name: !lazy
  Protocol blocker module: {"zh-Hans": "协议阻塞模块。", "zh-Hant": "協定阻塞模組。"}
  Quic cloud compatibility module: {"zh-Hans": "Quic cloud 兼容模块。", "zh-Hant": "Quic cloud 兼容模块。"}
  Referrer spam module: {"zh-Hans": "引荐来源垃圾邮件模块。", "zh-Hant": "引薦來源垃圾郵件模組。"}
+ ShodanDB module: {"zh-Hans": "ShodanDB模块。", "zh-Hant": "ShodanDB模組。"}
  Stop Forum Spam module: {"zh-Hans": "Stop Forum Spam 模块。", "zh-Hant": "Stop Forum Spam 模組。"}
  Tor blocker module: {"zh-Hans": "Tor阻塞模块。", "zh-Hant": "Tor阻塞模組。"}
 bobuam_hint_default_value: {"zh-Hans": "设置为“0”时，模块使用当前推荐值。", "zh-Hant": "設置為『0』時，模組使用當前推薦值。"}
 checkbox:
  Allow single-hit bypasses: {"zh-Hans": "允许一击绕过？", "zh-Hant": "允許一擊繞過？"}
+ Apply CAPTCHA options: {"zh-Hans": "应用验证码选项。", "zh-Hant": "應用驗證碼選項。"}
  Attempt to verify: {"zh-Hans": "尝试验证？", "zh-Hant": "嘗試驗證？"}
  Block it: "阻止它。"
  Block negatives: {"zh-Hans": "阻止阴性？", "zh-Hant": "阻止陰性？"}
@@ -187,6 +192,7 @@ checkbox:
  Log any errors generated during this stage: {"zh-Hans": "记录在此阶段产生的任何错误？", "zh-Hant": "記錄在此階段產生的任何錯誤？"}
  Omit this field when it_s empty: {"zh-Hans": "为空时忽略此字段？", "zh-Hant": "為空時忽略此字段？"}
  Profile it: {"zh-Hans": "分类它。", "zh-Hant": "分類它。"}
+ Report it: {"zh-Hans": "举报它。", "zh-Hant": "舉報它。"}
  Should infractions generated during this stage count towards IP tracking: {"zh-Hans": "将在此阶段产生的违规计入IP跟踪？", "zh-Hant": "將在此階段產生的違規計入IP跟踪？"}
  Should this field appear in log entries: {"zh-Hans": "该字段是否应该出现在日志条目中？", "zh-Hant": "該字段是否應該出現在日誌條目中？"}
  Should this field appear on the access denied page: {"zh-Hans": "该字段是否应该出现在“拒绝访问”页面上？", "zh-Hant": "該字段是否應該出現在『拒絕訪問』頁面上？"}
@@ -349,7 +355,7 @@ config: !lazy
  phpmailer_event_log: {"zh-Hans": "用于记录与PHPMailer相关的所有事件的文件。 指定一个文件名，或留空以禁用。", "zh-Hant": "用於記錄與PHPMailer相關的所有事件的檔案。 指定一個檔案名稱，或留空以禁用。"}
  phpmailer_host: {"zh-Hans": "用于出站电子邮件的SMTP主机。", "zh-Hant": "用於出站電子郵件的SMTP主機。"}
  phpmailer_password: {"zh-Hans": "通过SMTP发送电子邮件时使用的密码。", "zh-Hant": "通過SMTP發送電子郵件時使用的密碼。"}
- phpmailer_port: {"zh-Hans": "用于出站电子邮件的端口号。 标准=587。", "zh-Hant": "用於出站電子郵件的端口號。 標準=587。"}
+ phpmailer_port: {"zh-Hans": "用于出站电子邮件的端口号。 标准=587。", "zh-Hant": "用於出站電子郵件的連接埠號。 標準=587。"}
  phpmailer_set_from_address: {"zh-Hans": "通过SMTP发送电子邮件时引用的发件人地址。", "zh-Hant": "通過SMTP發送電子郵件時引用的發件人地址。"}
  phpmailer_set_from_name: {"zh-Hans": "通过SMTP发送电子邮件时引用的发件人姓名。", "zh-Hant": "通過SMTP發送電子郵件時引用的發件人姓名。"}
  phpmailer_skip_auth_process:
@@ -381,6 +387,13 @@ config: !lazy
  rate_limiting_precision_ipv6: {"zh-Hans": "监视IPv6使用时的精度。 值镜像CIDR块大小。 设置为128以获得最佳精度。 标准=128。", "zh-Hant": "監視IPv6使用時的精度。 值鏡像CIDR塊大小。 設置為128以獲得最佳精度。 標準=128。"}
  rate_limiting_segregate: {"zh-Hans": "域名和主机的配额应该分开还是共享？ True = 配额将被分开。 False = 配额将被共享【标准】。", "zh-Hant": "域名和主機的配額應該分開還是共享？ True = 配額將被分開。 False = 配額將被共享【標準】。"}
  sfs: {"zh-Hans": "Stop Forum Spam模块的配置。", "zh-Hant": "Stop Forum Spam模組的配置。"}
+ shodandb: {"zh-Hans": "ShodanDB (Shodan InternetDB)模块的配置。", "zh-Hant": "ShodanDB (Shodan InternetDB)模組的配置。"}
+ shodandb_api_base:
+  zh-Hans: "用于Shodan InternetDB查询（或兼容端点）的基础URL。 标准 = <code class="s">https://internetdb.shodan.io</code>。"
+  zh-Hant: "Shodan InternetDB查詢（或相容的端點）的基本URL。 標準 = <code class="s">https://internetdb.shodan.io</code>。"
+ shodandb_api_header:
+  zh-Hans: "随查询请求发送的可选HTTP标头（例如，用于针对自托管或代理端点进行身份验证）。 如无需填写，请留空。"
+  zh-Hant: "可選的HTTP標頭，用於隨查找請求一起傳送（例如，用於對自託管或代理端點進行身份驗證）。 如果不需要，請留空。"
  signatures: {"zh-Hans": "签名，签名文件，模块，等的配置。", "zh-Hant": "簽名，簽名檔案，模組，等的配置。"}
  signatures_conflict_response:
   zh-Hans: "当同时尝试访问相同资源的次数过多时（例如，同时向同一台机器上的多个PHP进程发出对相同资源的请求），其中一些尝试可能会失败。 万一发生这种情况，并且影响到签名文件或模块，CIDRAM可能无法对该请求做出有效的决定。 如果发生这种情况，应该阻止该请求吗？ 并且，CIDRAM应该发送哪条HTTP状态消息？"
@@ -395,7 +408,7 @@ config: !lazy
  supplementary_cache_options_enable_pdo: {"zh-Hans": "指定是否尝试使用PDO进行缓存。 标准 = False。", "zh-Hant": "指定是否嘗試使用PDO進行緩存。 標準 = False。"}
  supplementary_cache_options_enable_redis: {"zh-Hans": "指定是否尝试使用Redis进行缓存。 标准 = False。", "zh-Hant": "指定是否嘗試使用Redis進行緩存。 標準 = False。"}
  supplementary_cache_options_memcached_host: {"zh-Hans": "Memcached 主机值。 标准 = localhost。", "zh-Hant": "Memcached 主機值。 標準 = localhost。"}
- supplementary_cache_options_memcached_port: {"zh-Hans": "Memcached 端口值。 标准 = “11211”。", "zh-Hant": "Memcached 端口值。 標準 = 『11211』。"}
+ supplementary_cache_options_memcached_port: {"zh-Hans": "Memcached 端口值。 标准 = “11211”。", "zh-Hant": "Memcached 連接埠值。 標準 = 『11211』。"}
  supplementary_cache_options_pdo_dsn: {"zh-Hans": "PDO DSN值。 标准 = “mysql:dbname=cidram;host=localhost;port=3306”。", "zh-Hant": "PDO DSN值。 標準 = 『mysql:dbname=cidram;host=localhost;port=3306』。"}
  supplementary_cache_options_pdo_password: {"zh-Hans": "PDO 密码。", "zh-Hant": "PDO 密碼。"}
  supplementary_cache_options_pdo_username: {"zh-Hans": "PDO 用户名。", "zh-Hant": "PDO 使用者名稱。"}
@@ -404,7 +417,7 @@ config: !lazy
   zh-Hant: "該值將附加到所有緩存條目的鍵的開頭。 標準 = 『CIDRAM_』。 當同一服務器上存在多個安裝時，這對於將它們的緩存彼此分開非常有用。"
  supplementary_cache_options_redis_database_number: {"zh-Hans": "Redis 数据库编号。 标准 = “0”。 注意：不能在 Redis Cluster 中使用 0 以外的值。", "zh-Hant": "Redis 數據庫編號。 標準 = 『0』。 注意：不能在 Redis Cluster 中使用 0 以外的值。"}
  supplementary_cache_options_redis_host: {"zh-Hans": "Redis 主机值。 标准 = localhost。", "zh-Hant": "Redis 主機值。 標準 = localhost。"}
- supplementary_cache_options_redis_port: {"zh-Hans": "Redis 端口值。 标准 = “6379”。", "zh-Hant": "Redis 端口值。 標準 = 『6379』。"}
+ supplementary_cache_options_redis_port: {"zh-Hans": "Redis 端口值。 标准 = “6379”。", "zh-Hant": "Redis 連接埠值。 標準 = 『6379』。"}
  supplementary_cache_options_redis_timeout: {"zh-Hans": "Redis 超时值。 标准 = “2.5”。", "zh-Hant": "Redis 超時值。 標準 = 『2.5』。"}
  template_data: {"zh-Hans": "模板和主题的配置。", "zh-Hant": "模板和主題的配置。"}
  template_data_block_event_title: {"zh-Hans": "为阻止事件显示的页面标题。", "zh-Hant": "為阻止事件顯示的頁面標題。"}
@@ -808,6 +821,7 @@ label:
  All of them: "全部都是。"
  Allow, but only when also blocked: {"zh-Hans": "允许，但仅限于也被阻止时。", "zh-Hant": "允許，但僅限於也被阻止時。"}
  Allow: {"zh-Hans": "允许。", "zh-Hant": "允許。"}
+ Any ports: {"zh-Hans": "任意端口。", "zh-Hant": "任何連接埠。"}
  Bandwidth: {"zh-Hans": "使用的带宽： %s – 可用带宽： %s", "zh-Hant": "使用的帶寬： %s – 可用帶寬： %s"}
  Branch latest stable: {"zh-Hans": "分支最新稳定：", "zh-Hant": "分支最新穩定："}
  CAPTCHA attempts: {"zh-Hans": "验证码尝试", "zh-Hant": "驗證碼嘗試"}
@@ -902,6 +916,7 @@ label:
  No log files available: {"zh-Hans": "没有日志可用。", "zh-Hant": "沒有日誌可用。"}
  None: {"zh-Hans": "不要执行。\n使用如果您只想将该模块用于报告目的，而不是检查结果。", "zh-Hant": "不要執行。\n使用如果您只想將該模組用於報告目的，而不是檢查結果。"}
  Normal: "普通的"
+ Noteworthy ports: {"zh-Hans": "值得注意的端口。", "zh-Hant": "值得注意的連接埠。"}
  Only those with updates available: {"zh-Hans": "仅限有可用更新的。", "zh-Hant": "僅限有可用更新的。"}
  Only those installed: {"zh-Hans": "仅限已安装的那些。", "zh-Hant": "僅限已安裝的那些。"}
  Only those not installed: {"zh-Hans": "仅限未安装的那些。", "zh-Hant": "僅限未安裝的那些。"}
@@ -926,10 +941,11 @@ label:
  Please log in to continue: {"zh-Hans": "请登录以继续。", "zh-Hant": "請登錄以繼續。"}
  Preferred source: {"zh-Hans": "首选来源：", "zh-Hant": "首選來源："}
  Previous: "以前的："
+ Proxy ports: {"zh-Hans": "代理端口。", "zh-Hant": "代理連接埠。"}
  Quote entity: {"zh-Hans": "“%s”", "zh-Hant": "『%s』"}
  Range tools: {"zh-Hans": "范围工具", "zh-Hant": "範圍工具"}
  Remember: {"zh-Hans": "记得", "zh-Hant": "記得"}
- Report to AbuseIPDB: {"zh-Hans": "向 AbuseIPDB 举报", "zh-Hant": "向 AbuseIPDB 檢舉"}
+ Report to AbuseIPDB: {"zh-Hans": "向AbuseIPDB举报", "zh-Hant": "向AbuseIPDB舉報"}
  Requests banned: {"zh-Hans": "请求已禁止", "zh-Hant": "請求已禁止"}
  Requests blocked: {"zh-Hans": "请求已阻止", "zh-Hant": "請求已阻止"}
  Requests for sensitive pages only:

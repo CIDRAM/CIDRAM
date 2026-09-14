@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Farsi language data for the front (last modified: 2026.09.05).
+# This file: Farsi language data for the front (last modified: 2026.09.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -77,6 +77,7 @@ Extended Description: !lazy
  Protocol blocker module: "امکان مسدود کردن پروتکل های درخواستی خاص را از طریق پیکربندی فراهم می‌کند (به عنوان مثال، HTTP/0.9 ،HTTP/1.1 ،SPDY/3.0، غیره)."
  Quic cloud compatibility module: "به اطمینان از عملکرد صحیح CIDRAM در سایت‌های فعال پشت Quic cloud کمک می‌کند. برای سایت‌هایی که پشت Quic cloud کار نمی‌کنند، این ماژول ضروری نخواهد بود."
  Referrer spam module: "مسدود کردن بر اساس اسپم های ارجاع دهنده معمولاً هیچ مزیت امنیتی معنی داری ارائه نمی دهد، اما در برخی موارد می تواند برای برخی از کاربران مفید باشد، برای جمع آوری اطلاعات بیشتر در مورد درخواست ها و امکان گزارش آن."
+ ShodanDB module: "آدرس IP درخواست را در «Shodan InternetDB API» جستجو می‌کند."
  Stop Forum Spam module: "از صفحات ثبت نام و ورود به سیستم در برابر IP های لیست شده توسط SFS محافظت می‌کند."
  Tor blocker module: "دسترسی از گره‌های خروجی Tor را ممنوع می‌کند."
 Glossary: !lazy
@@ -134,11 +135,13 @@ Name: !lazy
  Protocol blocker module: "ماژول مسدود کننده پروتکل."
  Quic cloud compatibility module: "ماژول سازگاری Quic cloud."
  Referrer spam module: "ماژول اسپم ارجاع دهنده."
+ ShodanDB module: "ماژول ShodanDB."
  Stop Forum Spam module: "ماژول Stop Forum Spam."
  Tor blocker module: "ماژول مسدود کننده Tor."
 bobuam_hint_default_value: "وقتی روی 0 تنظیم شود، ماژول از عدد پیشنهادی فعلی استفاده می‌کند."
 checkbox:
  Allow single-hit bypasses: "دور زدن تک ضربه مجاز است؟"
+ Apply CAPTCHA options: "گزینه‌های کپچا را اعمال کنید."
  Attempt to verify: "تلاش برای تأیید؟"
  Block it: "آن را مسدود کنید."
  Block negatives: "نگاتیوها را مسدود کنیم؟"
@@ -150,6 +153,7 @@ checkbox:
  Log any errors generated during this stage: "آیا خطاهای ایجاد شده در این مرحله باید ثبت شوند؟"
  Omit this field when it_s empty: "وقتی این فیلد خالی است حذف شود؟"
  Profile it: "پروفایلش کن."
+ Report it: "آن را گزارش کنید."
  Should infractions generated during this stage count towards IP tracking: "آیا تخلفات ایجاد شده در این مرحله باید در ردیابی IP لحاظ شود؟"
  Should this field appear in log entries: "آیا این فیلد باید در ورودی های گزارش ظاهر شود؟"
  Should this field appear on the access denied page: "آیا این فیلد باید در صفحه «دسترسی ممنوع» ظاهر شود؟"
@@ -314,6 +318,9 @@ config: !lazy
  rate_limiting_precision_ipv6: "دقت مورد استفاده برای ردیابی استفاده از IPv6. ارزش منعکس کننده اندازه بلوک CIDR است. برای بهترین دقت روی 128 تنظیم کنید. پیش فرض = 128."
  rate_limiting_segregate: "آیا سهمیه ها برای دامنه ها و هاست های مختلف باید جدا شوند یا به اشتراک گذاشته شوند؟ True = سهمیه ها تفکیک خواهد شد. False = سهمیه ها به اشتراک گذاشته می شود [پیش فرض]."
  sfs: "پیکربندی ماژول Stop Forum Spam."
+ shodandb: "پیکربندی ماژول ShodanDB (Shodan InternetDB)."
+ shodandb_api_base: "آدرس پایه برای جستجوها در Shodan InternetDB (یا یک نقطه پایانی سازگار). پیش فرض = <code dir="ltr" class="s">https://internetdb.shodan.io</code>."
+ shodandb_api_header: "یک هدر HTTP اختیاری برای ارسال همراه با درخواست‌های جستجو (مثلاً برای احراز هویت در یک اندپوینت میزبانی‌شده به‌صورت شخصی یا دارای پروکسی). در صورت عدم نیاز، خالی بگذارید."
  signatures: "پیکربندی برای امضاها، فایل های امضا، ماژول ها و غیره."
  signatures_conflict_response: "زمانی که تلاش‌های همزمان بیش از حد برای دسترسی به منابع یکسان وجود داشته باشد (مثلاً، درخواست‌های همزمان چندین فرآیند PHP در یک دستگاه برای منابع یکسان)، برخی از این تلاش‌ها ممکن است با شکست مواجه شوند. در موارد نادر و غیر محتمل که این امر بر فایل‌های امضا یا ماژول‌ها تأثیر می‌گذارد، ممکن است CIDRAM از تصمیم‌گیری مؤثر در مورد درخواست جلوگیری شود. اگر این اتفاق بیفتد، آیا باید درخواست مسدود شود و CIDRAM کدام پیام وضعیت HTTP را باید ارسال کند؟"
  signatures_default_tracktime: "مدت زمانی که آدرس های IP باید برای آن ردیابی شوند. پیش فرض = 7d0°0′0″ (1 هفته)."
@@ -609,6 +616,7 @@ label:
  All of them: "همه آنها."
  Allow, but only when also blocked: "مجاز است، اما فقط زمانی که مسدود شده باشد."
  Allow: "مجاز است."
+ Any ports: "هر پورتی."
  Bandwidth: "پهنای باند استفاده شده: %s – پهنای باند موجود: %s"
  Branch latest stable: "آخرین اصطبل شعبه:"
  CAPTCHA attempts: "CAPTCHA تلاش می‌کند"
@@ -693,6 +701,7 @@ label:
  No log files available: "هیچ فایل گزارشی در دسترس نیست."
  None: "هیچ یک.\nاگر می خواهید از ماژول فقط برای مقاصد گزارش استفاده کنید، بدون اینکه چیزی را جستجو کنید، از این استفاده کنید."
  Normal: "عادی"
+ Noteworthy ports: "پورت های قابل توجه."
  Only those with updates available: "فقط آنهایی که به‌روزرسانی دارند در دسترس هستند."
  Only those installed: "فقط آنهایی که نصب شده‌اند."
  Only those not installed: "فقط آنهایی که نصب نشده‌اند."
@@ -715,6 +724,7 @@ label:
  Please log in to continue: "لطفا برای ادامه وارد شوید."
  Preferred source: "منبع برگزیده:"
  Previous: "قبلی:"
+ Proxy ports: "پورت‌های پروکسی."
  Quote entity: "«%s»"
  Range tools: "ابزار برای محدوده"
  Remember: "یاد آوردن"

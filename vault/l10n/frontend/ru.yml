@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2026.09.05).
+# This file: Russian language data for the front-end (last modified: 2026.09.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -77,6 +77,7 @@ Extended Description: !lazy
  Protocol blocker module: "Предоставляет возможность блокировать определенные протоколы запросов через конфигурацию (например, HTTP/0.9, HTTP/1.1, SPDY/3.0, и т.д.)."
  Quic cloud compatibility module: "Помогает обеспечить корректную работу CIDRAM на сайтах использующих сеть Quic cloud. Для сайтов не работающих за Quic cloud, этот модуль не потребуется."
  Referrer spam module: "Блокировка, основанная на реферальный спам, как правило, не дает сколько-нибудь значимого преимущества безопасности, но в некоторых случаях может быть полезным для некоторых пользователей, для сбора дополнительной информации о запросах и для возможности сообщить об этом."
+ ShodanDB module: "Выполняет поиск IP-адреса запроса через API Shodan InternetDB."
  Stop Forum Spam module: "Защищает страницы регистрации и входа в систему от IP-адресов, перечисленных в SFS."
  Tor blocker module: "Запрещает доступ с выходных узлов Tor."
 Glossary: !lazy
@@ -135,11 +136,13 @@ Name: !lazy
  Protocol blocker module: "Модуль блокировщика протоколов."
  Quic cloud compatibility module: "Модуль совместимости Quic cloud."
  Referrer spam module: "Модуль реферера спама."
+ ShodanDB module: "Модуль ShodanDB."
  Stop Forum Spam module: "Модуль Stop Forum Spam."
  Tor blocker module: "Модуль блокатор Tor."
 bobuam_hint_default_value: "Если установлено значение 0, модуль использует текущее рекомендуемое значение."
 checkbox:
  Allow single-hit bypasses: "Разрешить байпасы отдельных нарушений?"
+ Apply CAPTCHA options: "Применить настройки CAPTCHA."
  Attempt to verify: "Попробуй проверить?"
  Block it: "Заблокируйте это."
  Block negatives: "Блокировать отрицательные?"
@@ -151,6 +154,7 @@ checkbox:
  Log any errors generated during this stage: "Записывать какие-либо ошибки, возникшие на этом этапе?"
  Omit this field when it_s empty: "Пропустить это поле, если оно пустое?"
  Profile it: "Профилируйте это."
+ Report it: "Сообщите об это."
  Should infractions generated during this stage count towards IP tracking: "Засчитывать нарушения, возникшие на этом этапе, в отслеживания IP?"
  Should this field appear in log entries: "Должно ли это поле отображаться в записях журнала?"
  Should this field appear on the access denied page: "Должно ли это поле отображаться на странице «доступ запрещен»?"
@@ -214,7 +218,7 @@ config: !lazy
  components_ipv6: "Файлы сигнатуры IPv6."
  components_modules: "Модули."
  experimental: "Нестабильный/Экспериментальный!"
- extras: "Конфигурация модуля дополнительных функций безопасности."
+ extras: "Конфигурация для модуля дополнительных функций безопасности."
  extras_remove_headers: "Удалите заголовки, которые не нужны и могут быть потенциально полезны злоумышленникам."
  extras_signatures: "Какие типы сигнатур должны соблюдаться?"
  extras_signatures_empty_ua: "Пустые пользовательские агенты."
@@ -314,7 +318,10 @@ config: !lazy
  rate_limiting_precision_ipv4: "Точность использования при мониторинге использования IPv4. Значение отражает размер блока CIDR. Установить как 32 для наилучшей точности. Стандарт = 32."
  rate_limiting_precision_ipv6: "Точность использования при мониторинге использования IPv6. Значение отражает размер блока CIDR. Установить как 128 для наилучшей точности. Стандарт = 128."
  rate_limiting_segregate: "Должны ли квоты для разных доменов и хостов храниться раздельно или совместно? True = Квоты будут храниться раздельно. False = Квоты будут храниться совместно [Стандарт]."
- sfs: "Конфигурация модуля Stop Forum Spam."
+ sfs: "Конфигурация для модуля Stop Forum Spam."
+ shodandb: "Конфигурация для модуля ShodanDB (Shodan InternetDB)."
+ shodandb_api_base: "Базовый URL для запросов к Shodan InternetDB (или совместимой конечной точке). Стандарт = <code class="s">https://internetdb.shodan.io</code>."
+ shodandb_api_header: "Необязательный HTTP-заголовок, отправляемый вместе с запросами поиска (например, для аутентификации при обращении к самостоятельно развернутой конечной точке или прокси-серверу). Оставьте пустым если не требуется."
  signatures: "Конфигурация для сигнатурей, файлов сигнатурей, модулей и т.д."
  signatures_conflict_response: "Если одновременно происходит слишком много попыток доступа к одним и тем же ресурсам (например, одновременные запросы к нескольким процессам PHP на одном компьютере для одних и тех же ресурсов), некоторые из этих попыток могут завершиться неудачей. В редком и маловероятном случае, если это затронет файлы сигнатурей или модули, CIDRAM может быть лишен возможности принять эффективное решение по запросу. Если это произойдет, следует ли блокировать запрос, и какое сообщение о состоянии HTTP должен отправить CIDRAM?"
  signatures_default_tracktime: "Время в течение которого следует отслеживать IP-адреса. Стандарт = 7d0°0′0″ (1 неделя)."
@@ -622,6 +629,7 @@ label:
  All of them: "Все они."
  Allow, but only when also blocked: "Разрешить, но только если заблокировано."
  Allow: "Разрешить."
+ Any ports: "Любые порты."
  Bandwidth: "Используемая пропускная способность: %s – Доступная пропускная способность: %s"
  Branch latest stable: "Ветвь последние стабильный:"
  CAPTCHA attempts: "Попытки CAPTCHA"
@@ -712,6 +720,7 @@ label:
  No log files available: "Не лог-файлы доступны."
  None: "Ничего.\nЕсли хотите использовать модуль только для отчетов, ничего не ища, используйте это."
  Normal: "Нормальный"
+ Noteworthy ports: "Примечательные порты."
  Only those with updates available: "Только те, у которых доступны обновления."
  Only those installed: "Только те, которые установлены."
  Only those not installed: "Только те, которые не установлены."
@@ -734,6 +743,7 @@ label:
  Please log in to continue: "Пожалуйста войдите чтобы продолжить."
  Preferred source: "Предпочитаемый источник:"
  Previous: "Предыдущий:"
+ Proxy ports: "Порты прокси."
  Quote entity: "«%s»"
  Range tools: "Инструменты диапазона"
  Remember: "Помнить"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2026.09.12).
+# This file: Italian language data for the front-end (last modified: 2026.09.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -143,6 +143,7 @@ Name: !lazy
 bobuam_hint_default_value: "Se impostato su 0, il modulo rimanderà al valore attualmente consigliato."
 checkbox:
  Allow single-hit bypasses: "Consenti bypass a colpo singolo?"
+ Apply CAPTCHA options: "Applica le opzioni CAPTCHA."
  Attempt to verify: "Prova a verificare?"
  Block it: "Bloccalo."
  Block negatives: "Blocca i negativi?"
@@ -154,6 +155,7 @@ checkbox:
  Log any errors generated during this stage: "Gli errori generati durante questa fase devono essere registrati?"
  Omit this field when it_s empty: "Ometti questo campo quando è vuoto?"
  Profile it: "Profilalo."
+ Report it: "Rapportalo."
  Should infractions generated during this stage count towards IP tracking: "Le infrazioni generati durante questa fase devono essere conteggiate ai fini del tracciamento IP?"
  Should this field appear in log entries: "Questo campo dovrebbe apparire nelle voci dei registri?"
  Should this field appear on the access denied page: "Questo campo dovrebbe apparire nella pagina "accesso negato"?"
@@ -320,6 +322,7 @@ config: !lazy
  sfs: "Configurazione per il modulo Stop Forum Spam."
  shodandb: "Configurazione per il modulo ShodanDB (Shodan InternetDB)."
  shodandb_api_base: "L'URL di base per le ricerche su Shodan InternetDB (o un endpoint compatibile). Predefinita = <code class="s">https://internetdb.shodan.io</code>."
+ shodandb_api_header: "Un'intestazione HTTP facoltativa da inviare con le richieste di ricerca (ad esempio, per l'autenticazione presso un endpoint ospitato in proprio o proxato). Lasciare in bianco se non necessario."
  signatures: "Configurazione per firme, file di firma, moduli, ecc."
  signatures_conflict_response: "Quando ce ne sono troppi tentativi simultanei di accedere alle stesse risorse (ad esempio, richieste simultanee a più processi PHP sulla stessa macchina per le stesse risorse), alcuni di questi tentativi potrebbero fallire. Nel raro e improbabile caso in cui ciò influisca sui file delle firme o sui moduli, CIDRAM potrebbe non essere in grado di prendere una decisione effettiva in merito alla richiesta. In tal caso, dovrebbe la richiesta essere bloccata, e quale messaggio di stato HTTP dovrebbe CIDRAM inviare?"
  signatures_default_tracktime: "La durata per la quale devono essere tracciati gli indirizzi IP. Predefinito = 7d0°0′0″ (1 settimana)."
@@ -616,14 +619,13 @@ label:
  All of them: "Tutti quanti."
  Allow, but only when also blocked: "Consenti, ma solo se anche bloccato."
  Allow: "Consenti."
+ Any ports: "Qualsiasi porta."
  Bandwidth: "Larghezza di banda utilizzata: %s – Larghezza di banda disponibile: %s"
  Branch latest stable: "Branch più recente stabile:"
  CAPTCHA attempts: "Tentativi di CAPTCHA"
- CAPTCHA challenge: "CAPTCHA challenge."
  CIDRAM version used: "Versione CIDRAM utilizzata:"
  Cache data and temporary files: "Dati di cache e file temporanei"
  Cancel: "Cancellare"
- Detect only (log &amp; profile, don't block): "Detect only (log &amp; profile, don't block)."
  Characters left: "Caratteri rimanenti"
  Checkbox: "Casella di controllo"
  Checksum after: "Checksum dopo"
@@ -706,6 +708,7 @@ label:
  No log files available: "Nessun file di log disponibili."
  None: "Nessuno.\nSe si desidera utilizzare il modulo solo a scopo di reportistica, senza cercare nulla, utilizzare questo."
  Normal: "Normale"
+ Noteworthy ports: "Porti degni di nota."
  Only those with updates available: "Solo quelli con aggiornamenti disponibili."
  Only those installed: "Solo quelli installati."
  Only those not installed: "Solo quelli non installati."
@@ -728,6 +731,7 @@ label:
  Please log in to continue: "Per favore accedi per continuare."
  Preferred source: "Fonte preferita:"
  Previous: "Precedente:"
+ Proxy ports: "Porte proxy."
  Quote entity: "&quot;%s&quot;"
  Range tools: "Strumenti per le gamme"
  Remember: "Ricorda"

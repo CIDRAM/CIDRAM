@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2026.09.05).
+# This file: German language data for the front-end (last modified: 2026.09.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -77,6 +77,7 @@ Extended Description: !lazy
  Protocol blocker module: "Bietet die Möglichkeit bestimmte Anfrageprotokolle über die Konfiguration zu blockieren (z.B., HTTP/0.9, HTTP/1.1, SPDY/3.0, u.s.w.)."
  Quic cloud compatibility module: "Hilft dabei sicherzustellen dass CIDRAM auf Websites die hinter Quic cloud betrieben werden korrekt funktioniert. Für Websites die nicht hinter Quic cloud laufen, dieses Modul wird nicht erforderlich."
  Referrer spam module: "Das Blockieren auf der Basis von Referrer-Spam bietet im Allgemeinen keinen bedeutenden Sicherheitsvorteil, jedoch in einigen Fällen kann dies für einige Benutzer hilfreich sein, um weitere Informationen zur Anfragen zu sammeln und um sie zu melden."
+ ShodanDB module: "Überprüft die IP-Adresse der Anfrage über die Shodan InternetDB-API."
  Stop Forum Spam module: "Schützt die Registrierung und die Einloggen-Seiten vor den von SFS aufgelisteten IPs."
  Tor blocker module: "Verbietet den Zugriff von Tor-Ausgangsknoten."
 Glossary: !lazy
@@ -136,11 +137,13 @@ Name: !lazy
  Protocol blocker module: "Protokoll-Blocker-Modul."
  Quic cloud compatibility module: "Quic cloud Kompatibilitätsmodul."
  Referrer spam module: "Referrer-Spam-Modul."
+ ShodanDB module: "ShodanDB-Modul."
  Stop Forum Spam module: "Stop Forum Spam Modul."
  Tor blocker module: "Tor-Blocker-Modul."
 bobuam_hint_default_value: "Wenn auf 0 gesetzt, wird das Modul auf den aktuell empfohlenen Wert zurückstellen."
 checkbox:
  Allow single-hit bypasses: "Single-Hit-Bypass zulassen?"
+ Apply CAPTCHA options: "CAPTCHA-Optionen anwenden."
  Attempt to verify: "Versuchen zu verifizieren?"
  Block it: "Blockieren es."
  Block negatives: "Negative blockieren?"
@@ -152,6 +155,7 @@ checkbox:
  Log any errors generated during this stage: "Alle Fehler generierte in dieser Phase protokollieren?"
  Omit this field when it_s empty: "Soll dieses Feld wenn es ist leer weggelassen werden?"
  Profile it: "Profilieren es."
+ Report it: "Berichten es."
  Should infractions generated during this stage count towards IP tracking: "Zählen Verstöße generierte in dieser Phase zum IP-Tracking?"
  Should this field appear in log entries: "Soll dieses Feld in Protokolleinträgen erscheinen?"
  Should this field appear on the access denied page: "Soll dieses Feld auf der „Zugriff verweigert“-Seite erscheinen?"
@@ -316,6 +320,9 @@ config: !lazy
  rate_limiting_precision_ipv6: "Die Präzision für das Monitoring der IPv6-Nutzung. Der Wert spiegelt die CIDR-Blockgröße. Für beste Präzision auf 128 einstellen. Standardeinstellung = 128."
  rate_limiting_segregate: "Sollten Kontingente für verschiedene Domains und Hosts getrennt oder geteilt werden? True = Quoten werden getrennt. False = Quoten werden geteilt [Standardeinstellung]."
  sfs: "Konfiguration für das Stop Forum Spam Modul."
+ shodandb: "Konfiguration für das ShodanDB-Modul (Shodan InternetDB)."
+ shodandb_api_base: "Die Basis-URL für Shodan-InternetDB-Abfragen (oder ein kompatibler Endpunkt). Standardeinstellung = <code class="s">https://internetdb.shodan.io</code>."
+ shodandb_api_header: "Ein optionaler HTTP-Header der mit Suchanfragen gesendet wird (z.B., zur Authentifizierung gegenüber einem selbst gehosteten oder über einen Proxy angebundenen Endpunkt). Leer lassen falls nicht benötigt."
  signatures: "Konfiguration für Signaturen, Signaturdateien, Module, u.s.w."
  signatures_conflict_response: "Wenn es zu viele gleichzeitige Versuche gibt auf dieselben Ressourcen zuzugreifen (z.B., gleichzeitige Anforderungen an mehrere PHP-Prozesse auf demselben Computer für dieselben Ressourcen), können einige dieser Versuche fehlschlagen. In dem seltenen und unwahrscheinlichen Fall dass Signaturdateien oder Module hiervon betroffen sind, kann CIDRAM möglicherweise keine wirksame Entscheidung über die Anfrage treffen. Wenn dies geschieht, sollte die Anforderung blockiert werden, und welche HTTP-Statusmeldung sollte CIDRAM senden?"
  signatures_default_tracktime: "Die Dauer für die IP-Adressen getrackt werden sollen. Standardeinstellung = 7d0°0′0″ (1 Woche)."
@@ -614,6 +621,7 @@ label:
  All of them: "Alle von ihnen."
  Allow, but only when also blocked: "Erlauben, aber nur wenn auch blockiert."
  Allow: "Erlauben."
+ Any ports: "Jeder Ports."
  Bandwidth: "Verwendete Bandbreite: %s – Verfügbare Bandbreite: %s"
  Branch latest stable: "Branch neueste stabil:"
  CAPTCHA attempts: "CAPTCHA versucht"
@@ -702,6 +710,7 @@ label:
  No log files available: "Keine Protokolldateien vorhanden."
  None: "Keiner.\nWenn Sie das Modul nur für Berichtszwecke verwenden möchten, ohne etwas nachzuschlagen, verwenden Sie dies."
  Normal: "Normal"
+ Noteworthy ports: "Bemerkenswerte Ports."
  Only those with updates available: "Nur diejenigen mit verfügbaren Aktualisierungen."
  Only those installed: "Nur die installierten."
  Only those not installed: "Nur die nicht installierten."
@@ -724,6 +733,7 @@ label:
  Please log in to continue: "Bitte einloggen zum Fortfahren."
  Preferred source: "Bevorzugte Quelle:"
  Previous: "Vorherige:"
+ Proxy ports: "Proxy Ports."
  Quote entity: "„%s“"
  Range tools: "Bereichswerkzeuge"
  Remember: "Speichern"

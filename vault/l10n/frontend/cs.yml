@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Czech language data for the front-end (last modified: 2026.09.05).
+# This file: Czech language data for the front-end (last modified: 2026.09.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -77,6 +77,7 @@ Extended Description: !lazy
  Protocol blocker module: "Poskytuje možnost blokovat konkrétní protokoly požadavků prostřednictvím konfigurace (např., HTTP/0.9, HTTP/1.1, SPDY/3.0, atd)."
  Quic cloud compatibility module: "Pomáhá zajistit správné fungování CIDRAM na webech provozovaných za Quic cloud. Pro weby které nefungují za Quic cloud, tento modul nebude nutný."
  Referrer spam module: "Blokování na základě odkazujícího spamu obecně neposkytuje žádnou smysluplnou bezpečnostní výhodu, ale v některých případech může být užitečné pro některé uživatele, aby získali více informací o požadavcích a to reportovat."
+ ShodanDB module: "Vyhledá IP adresu požadavku v rozhraní API Shodan InternetDB."
  Stop Forum Spam module: "Chrání registrační a přihlašovací stránky před IP adresami uvedenými v SFS."
  Tor blocker module: "Zakazuje přístup z výstupních uzlů Tor."
 Glossary: !lazy
@@ -135,11 +136,13 @@ Name: !lazy
  Protocol blocker module: "Modul blokování protokolů."
  Quic cloud compatibility module: "Modul kompatibility Quic cloud."
  Referrer spam module: "Modul odkazujícího spamu."
+ ShodanDB module: "Modul ShodanDB."
  Stop Forum Spam module: "Modul Stop Forum Spam."
  Tor blocker module: "Modul blokování Tor."
 bobuam_hint_default_value: "Při nastavení na 0 se modul odloží na aktuálně doporučenou hodnotu."
 checkbox:
  Allow single-hit bypasses: "Povolit bypassace s jedním zásahem?"
+ Apply CAPTCHA options: "Použít možnosti CAPTCHA."
  Attempt to verify: "Pokus o ověření?"
  Block it: "Zablokujte to."
  Block negatives: "Blokovat negativy?"
@@ -151,6 +154,7 @@ checkbox:
  Log any errors generated during this stage: "Zaznamenat chyby vzniklé během této fáze?"
  Omit this field when it_s empty: "Vynechat toto pole když je prázdné?"
  Profile it: "Profilujte to."
+ Report it: "Nahlaste to."
  Should infractions generated during this stage count towards IP tracking: "Měly by se přestupky vzniklé v této fázi započítávat do sledování IP?"
  Should this field appear in log entries: "Mělo by se toto pole objevit v záznamech protokolu?"
  Should this field appear on the access denied page: "Má se toto pole objevit na stránce „přístup odepřen“?"
@@ -315,6 +319,9 @@ config: !lazy
  rate_limiting_precision_ipv6: "Přesnost pro sledování využití IPv6. Hodnota zrcadlí velikost bloku CIDR. Pro nejlepší přesnost nastavte na 128. Standardní = 128."
  rate_limiting_segregate: "Měly by být kvóty pro různé domény a hostitele odděleny nebo sdíleny? True (Pravdivé) = Kvóty budou odděleny. False (Nepravdivé) = Kvóty budou sdíleny [Standardní]."
  sfs: "Konfigurace pro modul Stop Forum Spam."
+ shodandb: "Konfigurace pro modul ShodanDB (Shodan InternetDB)."
+ shodandb_api_base: "Základní URL pro vyhledávání ve službě Shodan InternetDB (nebo kompatibilní koncový bod). Standardní = <code class="s">https://internetdb.shodan.io</code>."
+ shodandb_api_header: "Volitelná hlavička HTTP, která se má odesílat s požadavky na vyhledávání (např., pro ověření u vlastního nebo proxy koncového bodu). Pokud není potřeba, ponechte prázdné."
  signatures: "Konfigurace pro podpisy, soubory podpisů, moduly, atd."
  signatures_conflict_response: "Pokud existuje příliš mnoho současných pokusů o přístup ke stejným zdrojům (např., současné požadavky na více procesů PHP na stejném počítači pro stejné zdroje), některé z těchto pokusů mohou selhat. Ve vzácných a nepravděpodobných případech, kdy to ovlivní soubory podpisů nebo moduly, může být CIDRAM zabráněno v účinném rozhodnutí o požadavku. Pokud k tomu dojde, měl by být požadavek zablokován, a jakou zprávu o stavu HTTP má CIDRAM odeslat?"
  signatures_default_tracktime: "Doba, po kterou by měly být IP adresy sledovány. Standardní = 7d0°0′0″ (1 týden)."
@@ -614,6 +621,7 @@ label:
  All of them: "Všechny."
  Allow, but only when also blocked: "Povolit, ale pouze pokud je také blokováno."
  Allow: "Povolit."
+ Any ports: "Jakékoli porty."
  Bandwidth: "Použitá šířka pásma: %s – Dostupná šířka pásma: %s"
  Branch latest stable: "Nejnovější stáj pobočky:"
  CAPTCHA attempts: "Pokusy o CAPTCHA"
@@ -704,6 +712,7 @@ label:
  No log files available: "Nejsou k dispozici žádné soubory protokolu."
  None: "Žádný.\nPokud chcete modul používat pouze pro účely reportovat, aniž byste cokoliv hledali, použijte toto."
  Normal: "Normální"
+ Noteworthy ports: "Významné porty."
  Only those with updates available: "Pouze ty s dostupnými aktualizacemi."
  Only those installed: "Pouze ty, které jsou nainstalovány."
  Only those not installed: "Pouze ty, které nejsou nainstalovány."
@@ -726,6 +735,7 @@ label:
  Please log in to continue: "Pro pokračování se prosím přihlašte."
  Preferred source: "Preferovaný zdroj:"
  Previous: "Předchozí:"
+ Proxy ports: "Proxy porty."
  Quote entity: "„%s“"
  Range tools: "Rozsah nástrojů"
  Remember: "Pamatovat"

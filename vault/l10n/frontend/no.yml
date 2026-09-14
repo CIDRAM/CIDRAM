@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2026.09.05).
+# This file: Norwegian language data for the front-end (last modified: 2026.09.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -77,6 +77,7 @@ Extended Description: !lazy
  Protocol blocker module: "Gir muligheten til å blokkere spesifikke forespørselsprotokoller via konfigurasjonen (f.eks., HTTP/0.9, HTTP/1.1, SPDY/3.0, osv)."
  Quic cloud compatibility module: "Bidrar til å sikre at CIDRAM fungerer som det skal på nettsteder som opererer bak Quic cloud. Denne modulen vil ikke være nødvendig for nettsteder som ikke opererer bak Quic cloud."
  Referrer spam module: "Blokkering basert på referansesøppel vil vanligvis ikke gi noen meningsfull sikkerhetsgevinst, men i noen tilfeller kan det være nyttig for noen brukere, for å samle mer informasjon om forespørsler og for å kunne rapportere det."
+ ShodanDB module: "Slår opp forespørselens IP-adresse mot Shodan InternetDB-API-et."
  Stop Forum Spam module: "Beskytter registrerings og innloggingssider mot IP-adresser oppført av SFS."
  Tor blocker module: "Forbyr tilgang fra Tor-utgangsnoder."
 Glossary: !lazy
@@ -135,11 +136,13 @@ Name: !lazy
  Protocol blocker module: "Protokollblokkeringsmodul."
  Quic cloud compatibility module: "Quic cloud kompatibilitetsmodul."
  Referrer spam module: "Henvisende spam modul."
+ ShodanDB module: "ShodanDB modul."
  Stop Forum Spam module: "Stop Forum Spam modul."
  Tor blocker module: "Tor blokkeringsmodul."
 bobuam_hint_default_value: "Når satt til 0, modulen bruker den anbefalte verdien."
 checkbox:
  Allow single-hit bypasses: "Tillate enkelt-hit bypasser?"
+ Apply CAPTCHA options: "Bruk CAPTCHA-alternativer."
  Attempt to verify: "Prøv å bekrefte?"
  Block it: "Blokker det."
  Block negatives: "Blokkere negativer?"
@@ -151,6 +154,7 @@ checkbox:
  Log any errors generated during this stage: "Logge noen feil generert i løpet av dette stadiet?"
  Omit this field when it_s empty: "Utelate dette feltet når det er tomt?"
  Profile it: "Profiler det."
+ Report it: "Rapporter det."
  Should infractions generated during this stage count towards IP tracking: "Telle infraksjoner generert i løpet av dette stadiet mot IP-sporing?"
  Should this field appear in log entries: "Skal dette feltet vises i loggoppføringer?"
  Should this field appear on the access denied page: "Skal dette feltet vises på «tilgang nektet» siden?"
@@ -315,6 +319,9 @@ config: !lazy
  rate_limiting_precision_ipv6: "Presisjonen som skal brukes til å spore IPv6-bruk. Verdi speiler CIDR-blokkstørrelse. Sett til 128 for best presisjon. Standardverdi = 128."
  rate_limiting_segregate: "Bør kvoter for forskjellige domener og verter adskilles eller deles? True = Kvoter vil bli adskilt. False = Kvoter vil bli delt [Standardverdi]."
  sfs: "Konfigurasjon for Stop Forum Spam modulen."
+ shodandb: "Konfigurasjon for ShodanDB (Shodan InternetDB) modulen."
+ shodandb_api_base: "Basis-URL-en for oppslag i Shodan InternetDB (eller et kompatibelt endepunkt). Standardverdi = <code class="s">https://internetdb.shodan.io</code>."
+ shodandb_api_header: "En valgfri HTTP-header som skal sendes med oppslagsforespørsler (f.eks., for autentisering mot et selvhostet endepunkt eller et endepunkt bak en proxy). La stå tomt hvis det ikke er nødvendig."
  signatures: "Konfigurasjon for signaturer, signaturfiler, moduler, osv."
  signatures_conflict_response: "Når det er for mange samtidige forsøk på å få tilgang til de samme ressursene (f.eks., samtidige forespørsler til flere PHP-prosesser på samme maskin for de samme ressursene), kan noen av disse forsøkene mislykkes. I det sjeldne og usannsynlige tilfellet at dette påvirker signaturfiler eller moduler, kan CIDRAM bli forhindret fra å ta en effektiv avgjørelse om forespørselen. Hvis dette skjer, bør forespørselen blokkeres, og hvilken HTTP-statusmelding skal CIDRAM sende?"
  signatures_default_tracktime: "Varigheten som IP-adresser skal spores for. Standardverdi = 7d0°0′0″ (1 uke)."
@@ -611,6 +618,7 @@ label:
  All of them: "Alle sammen."
  Allow, but only when also blocked: "Tillat, men bare når også blokkert."
  Allow: "Tillat."
+ Any ports: "Alle porter."
  Bandwidth: "Brukt båndbredde: %s – Tilgjengelig båndbredde: %s"
  Branch latest stable: "Branch siste stabile:"
  CAPTCHA attempts: "CAPTCHA forsøk"
@@ -699,6 +707,7 @@ label:
  No log files available: "Ingen loggfiler tilgjengelig."
  None: "Ingen.\nHvis du vil bruke modulen kun til rapporteringsformål, uten å slå opp noe, bruk denne."
  Normal: "Normal"
+ Noteworthy ports: "Nevneverdige porter."
  Only those with updates available: "Bare de med tilgjengelige oppdateringer."
  Only those installed: "Bare de som er installert."
  Only those not installed: "Bare de som ikke er installert."
@@ -721,6 +730,7 @@ label:
  Please log in to continue: "Vennligst logg inn for å fortsette."
  Preferred source: "Foretrukket kilde:"
  Previous: "Tidligere:"
+ Proxy ports: "Proxy porter."
  Quote entity: "«%s»"
  Range tools: "Rekkevidde verktøy"
  Remember: "Huske"

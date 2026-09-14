@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2026.09.05).
+# This file: Vietnamese language data for the front-end (last modified: 2026.09.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -77,6 +77,7 @@ Extended Description: !lazy
  Protocol blocker module: "Cung cấp khả năng chặn các giao thức yêu cầu cụ thể thông qua cấu hình (ví dụ, HTTP/0.9, HTTP/1.1, SPDY/3.0, vv)."
  Quic cloud compatibility module: "Giúp đảm bảo CIDRAM hoạt động chính xác tại các trang web sử dụng Quic cloud. Mô-đun này sẽ không cần thiết cho các trang web không sử dụng Quic cloud."
  Referrer spam module: "Chặn dựa trên spam giới thiệu thường không cung cấp bất kỳ lợi ích bảo mật có ý nghĩa nào, nhưng trong một số trường hợp, có thể hữu ích cho một số người dùng, để thu thập thêm thông tin về các yêu cầu và để có thể báo cáo nó."
+ ShodanDB module: "Tra cứu địa chỉ IP của yêu cầu thông qua API Shodan InternetDB."
  Stop Forum Spam module: "Bảo vệ các trang đăng ký và đăng nhập đối với các địa chỉ IP do SFS liệt kê."
  Tor blocker module: "Cấm truy cập từ các nút thoát Tor."
 Glossary: !lazy
@@ -135,11 +136,13 @@ Name: !lazy
  Protocol blocker module: "Mô-đun chặn giao thức."
  Quic cloud compatibility module: "Mô-đun tương thích Quic cloud."
  Referrer spam module: "Mô-đun spam giới thiệu."
+ ShodanDB module: "Mô-đun ShodanDB."
  Stop Forum Spam module: "Mô-đun Stop Forum Spam."
  Tor blocker module: "Mô-đun cho chặn Tor."
 bobuam_hint_default_value: "Khi được đặt thành 0, mô-đun sẽ sử dụng giá trị được khuyến nghị hiện tại."
 checkbox:
  Allow single-hit bypasses: "Cho phép đường tránh một cú đánh?"
+ Apply CAPTCHA options: "Áp dụng các tùy chọn CAPTCHA."
  Attempt to verify: "Cố gắng xác minh?"
  Block it: "Chặn nó."
  Block negatives: "Chặn tiêu cực?"
@@ -151,6 +154,7 @@ checkbox:
  Log any errors generated during this stage: "Ghi lại bất kỳ lỗi nào được tạo ra trong giai đoạn này?"
  Omit this field when it_s empty: "Bỏ qua trường này khi nó trống?"
  Profile it: "Hồ sơ nó."
+ Report it: "Báo cáo nó."
  Should infractions generated during this stage count towards IP tracking: "Đếm các vi phạm được tạo ra trong giai đoạn này đối với giám sát IP?"
  Should this field appear in log entries: "Trường này có nên xuất hiện trong các mục nhập nhật ký không?"
  Should this field appear on the access denied page: "Trường này có nên xuất hiện trên trang "truy cập đã bị từ chối" không?"
@@ -315,6 +319,9 @@ config: !lazy
  rate_limiting_precision_ipv6: "Độ chính xác để sử dụng khi giám sát việc sử dụng IPv6. Giá trị phản ánh kích thước khối CIDR. Đặt thành 128 để có độ chính xác cao nhất. Mặc định = 128."
  rate_limiting_segregate: "Hạn ngạch cho miền và máy chủ lưu trữ nên được tách biệt hoặc chia sẻ? True = Hạn ngạch sẽ được tách biệt. False = Hạn ngạch sẽ được chia sẻ [Mặc định]."
  sfs: "Cấu hình cho mô-đun Stop Forum Spam."
+ shodandb: "Cấu hình cho mô-đun ShodanDB (Shodan InternetDB)."
+ shodandb_api_base: "URL cơ sở cho các truy vấn Shodan InternetDB (hoặc một điểm cuối tương thích). Mặc định = <code class="s">https://internetdb.shodan.io</code>."
+ shodandb_api_header: "Một tiêu đề HTTP tùy chọn được gửi kèm với các yêu cầu tra cứu (ví dụ: để xác thực với một điểm cuối tự lưu trữ hoặc thông qua proxy). Để trống nếu không cần thiết."
  signatures: "Cấu hình cho chữ ký, tập tin chữ ký, mô-đun, vv."
  signatures_conflict_response: "Khi có quá nhiều lần thử truy cập cùng một tài nguyên cùng lúc (v.d., yêu cầu đồng thời tới nhiều quy trình PHP trên cùng một máy cho cùng một tài nguyên), một số lần thử đó có thể không thành công. Trong trường hợp hiếm hoi và không chắc xảy ra khi điều này ảnh hưởng đến các tập tin chữ ký hay mô-đun, CIDRAM có thể không đưa ra được quyết định hiệu quả về yêu cầu. Nếu điều này xảy ra, yêu cầu có nên bị chặn không, và CIDRAM nên gửi tin nhắn trạng thái HTTP nào?"
  signatures_default_tracktime: "Khoảng thời gian mà địa chỉ IP sẽ được giám sát. Mặc định = 7d0°0′0″ (1 tuần)."
@@ -608,6 +615,7 @@ label:
  All of them: "Tất cả bọn họ."
  Allow, but only when also blocked: "Cho phép, nhưng chỉ khi cũng bị chặn."
  Allow: "Cho phép."
+ Any ports: "Bất kỳ cổng nào."
  Bandwidth: "Băng thông được sử dụng: %s – Băng thông có sẵn: %s"
  Branch latest stable: "Chi nhánh ổn định mới nhất:"
  CAPTCHA attempts: "CAPTCHA nỗ lực"
@@ -692,6 +700,7 @@ label:
  No log files available: "Không có bản ghi có sẵn."
  None: "Không phải bất kỳ.\nNếu bạn chỉ muốn sử dụng mô-đun cho mục đích báo cáo mà không cần tra cứu gì, hãy sử dụng mô-đun này."
  Normal: "Bình thường"
+ Noteworthy ports: "Cổng đáng chú ý."
  Only those with updates available: "Chỉ những với bản cập nhật có sẵn."
  Only those installed: "Chỉ những cái đã được cài đặt."
  Only those not installed: "Chỉ những cái chưa được cài đặt."
@@ -714,6 +723,7 @@ label:
  Please log in to continue: "Vui lòng đăng nhập để tiếp tục."
  Preferred source: "Nguồn ưu tiên:"
  Previous: "Trước:"
+ Proxy ports: "Cổng proxy."
  Quote entity: "&quot;%s&quot;"
  Range tools: "Phạm vi công cụ"
  Remember: "Nhớ lại"

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2026.09.12).
+# This file: English language data for the front-end (last modified: 2026.09.14).
 ##/
 
 Abuse category: !lazy
@@ -134,6 +134,7 @@ Name: !lazy
 bobuam_hint_default_value: "When set to 0, the module will defer to the currently recommended value."
 checkbox:
  Allow single-hit bypasses: "Allow single-hit bypasses?"
+ Apply CAPTCHA options: "Apply CAPTCHA options."
  Attempt to verify: "Attempt to verify?"
  Block it: "Block it."
  Block negatives: "Block negatives?"
@@ -145,6 +146,7 @@ checkbox:
  Log any errors generated during this stage: "Log any errors generated during this stage?"
  Omit this field when it_s empty: "Omit this field when it's empty?"
  Profile it: "Profile it."
+ Report it: "Report it."
  Should infractions generated during this stage count towards IP tracking: "Should infractions generated during this stage count towards IP tracking?"
  Should this field appear in log entries: "Should this field appear in log entries?"
  Should this field appear on the access denied page: "Should this field appear on the "access denied" page?"
@@ -343,8 +345,7 @@ config: !lazy
  shodandb_proxy_report_abuseipdb: "Report matched proxy ports to AbuseIPDB (in addition to whatever action is chosen below). A proxy port is a stronger abuse signal than a generic open port, so this defaults to enabled — unlike the \"ports_to_detect\" category above, which never reports to AbuseIPDB."
  shodandb_timeout_limit: "Timeout (in seconds) for ShodanDB lookup requests. Default = 12."
  shodandb_timeout_rl: "How long to suspend lookups for after the lookup limit has been exceeded (HTTP 429). Default = 1 hour."
- shodandb_tr069_ports: "A comma-separated list of ports (and/or port ranges) considered to be TR-069 / CPE WAN Management Protocol ports, to be whitelisted when \"tr069_whitelist\" is enabled. Default = 7547 (the standard/IANA-registered CWMP port) and 30005 (a common non-standard alternate used by some ISPs/devices)."
- shodandb_tr069_whitelist: "Skip TR-069 (CPE WAN Management Protocol) ports before matching against either list below. Most residential ISPs remotely manage customer routers via this protocol (typically port 7547), so a router having it open is normal and expected — not a sign of anything suspicious. Recommended to leave this enabled, especially if \"flag_any_open_port\" is also enabled."
+ shodandb_tr069_ports: "A comma-separated list of TR-069/CWMP (CPE WAN Management Protocol) ports, and any other ports and/or port ranges to be excluded from any matches or actions to be performed by the module. Default = 7547 (the standard/IANA-registered CWMP port) and 30005 (a common non-standard alternate used by some ISPs/devices). Most residential ISPs remotely manage customer routers via CWMP (typically via port 7547), so a router having it open is normal and expected."
  signatures: "Configuration for signatures, signature files, modules, etc."
  signatures_conflict_response: "When there are too many simultaneous attempts to access the same resources (e.g., simultaneous requests to multiple PHP processes at the same machine for the same resources), some of those attempts may fail. In the rare and unlikely event that this affects signature files or modules, CIDRAM may be prevented from making an effective determination about the request. If this happens, should the request be blocked, and which HTTP status message should CIDRAM send?"
  signatures_default_tracktime: "The duration that IP addresses should be tracked for. Default = 7d0°0′0″ (1 week)."
@@ -656,14 +657,13 @@ label:
  All of them: "All of them."
  Allow, but only when also blocked: "Allow, but only when also blocked."
  Allow: "Allow."
+ Any ports: "Any ports."
  Bandwidth: "Bandwidth used: %s – Bandwidth available: %s"
  Branch latest stable: "Branch latest stable:"
  CAPTCHA attempts: "CAPTCHA attempts"
- CAPTCHA challenge: "CAPTCHA challenge."
  CIDRAM version used: "CIDRAM version used:"
  Cache data and temporary files: "Cache data and temporary files"
  Cancel: "Cancel"
- Detect only (log &amp; profile, don't block): "Detect only (log &amp; profile, don't block)."
  Characters left: "Characters left"
  Checkbox: "Checkbox"
  Checksum after: "Checksum after"
@@ -746,9 +746,10 @@ label:
  No log files available: "No log files available."
  None: "None.\nIf you want to use the module for reporting purposes only, without looking anything up, use this."
  Normal: "Normal"
- Only those with updates available: "Only those with updates available."
+ Noteworthy ports: "Noteworthy ports."
  Only those installed: "Only those installed."
  Only those not installed: "Only those not installed."
+ Only those with updates available: "Only those with updates available."
  Only when blocked, specially marked for use, within the signature limit, and not banned: "Only when blocked, specially marked for use, within the signature limit, and not banned."
  Only when blocked, within the signature limit, and not banned: "Only when blocked, within the signature limit, and not banned."
  Only when not blocked, at sensitive page requests: "Only when not blocked, at sensitive page requests."
@@ -768,6 +769,7 @@ label:
  Please log in to continue: "Please log in to continue."
  Preferred source: "Preferred source:"
  Previous: "Previous:"
+ Proxy ports: "Proxy ports."
  Quote entity: "&quot;%s&quot;"
  Range tools: "Range tools"
  Remember: "Remember"

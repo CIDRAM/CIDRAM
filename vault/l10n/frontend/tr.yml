@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2026.09.05).
+# This file: Turkish language data for the front-end (last modified: 2026.09.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -77,6 +77,7 @@ Extended Description: !lazy
  Protocol blocker module: "Yapılandırma yoluyla belirli istek protokollerini engelleme yeteneği sağlar (örneğin, HTTP/0.9, HTTP/1.1, SPDY/3.0, vb)."
  Quic cloud compatibility module: "Quic cloud'in arkasında çalışan sitelerde CIDRAM'ın doğru şekilde çalışmasını sağlamaya yardımcı olur. Quic cloud altyapısı altında çalışmayan siteler için bu modüle gerek duyulmayacaktır."
  Referrer spam module: "Yönlendiren spam'e dayalı engelleme genellikle anlamlı bir güvenlik avantajı sağlamaz, ancak bazı durumlarda, bazı kullanıcılar için istekler hakkında daha fazla bilgi toplamak ve bunu rapor edebilmek için yararlı olabilir."
+ ShodanDB module: "İsteğin IP adresini Shodan InternetDB API'si üzerinden sorgular."
  Stop Forum Spam module: "SFS tarafından listelenen IP'lere karşı kayıt ve oturum açma sayfalarını korur."
  Tor blocker module: "Tor çıkış düğümlerinden erişimi yasaklar."
 Glossary: !lazy
@@ -136,11 +137,13 @@ Name: !lazy
  Protocol blocker module: "Protokol engelleyici modülü."
  Quic cloud compatibility module: "Quic cloud uyumluluk modülü."
  Referrer spam module: "Yönlendiren spam modülü."
+ ShodanDB module: "ShodanDB modülü."
  Stop Forum Spam module: "Stop Forum Spam modülü."
  Tor blocker module: "Tor engelleyici modülü."
 bobuam_hint_default_value: "0'a ayarlandığında, modül şu anda önerilen değeri kullanır."
 checkbox:
  Allow single-hit bypasses: "Tek vuruşlu bypasslara izin verilsin mi?"
+ Apply CAPTCHA options: "CAPTCHA seçeneklerini uygula."
  Attempt to verify: "Doğrulamayı dene?"
  Block it: "Isteği engelle."
  Block negatives: "Negatifleri engelle?"
@@ -152,6 +155,7 @@ checkbox:
  Log any errors generated during this stage: "Bu aşamada oluşan herhangi bir hata günlüğe kaydedilsin mi?"
  Omit this field when it_s empty: "Bu alan boşken atlansın mı?"
  Profile it: "Profil ekleyin."
+ Report it: "Bildirin."
  Should infractions generated during this stage count towards IP tracking: "IP izleme yönelik bu aşamada oluşturulan ihlaller sayılır mı?"
  Should this field appear in log entries: "Bu alan günlük girişlerinde görünmeli mi?"
  Should this field appear on the access denied page: "Bu alan "erişim reddedildi" sayfasında görünmeli mi?"
@@ -316,6 +320,9 @@ config: !lazy
  rate_limiting_precision_ipv6: "IPv6 kullanımını izlemek için hassaslık. Değer, CIDR blok boyutunu yansıtır. En iyi hassasiyet için 128'e ayarlayın. Varsayılan = 128."
  rate_limiting_segregate: "Farklı alanlar ve ana bilgisayarlar için kotalar ayrılmalı mı yoksa paylaşılmalı mı? True = Kotalar ayrılacak. False = Kotalar paylaşılacak [Varsayılan]."
  sfs: "Stop Forum Spam modülü için yapılandırma."
+ shodandb: "ShodanDB (Shodan InternetDB) modülü için yapılandırma."
+ shodandb_api_base: "Shodan InternetDB sorguları (veya uyumlu bir uç nokta) için temel URL. Varsayılan = <code class="s">https://internetdb.shodan.io</code>."
+ shodandb_api_header: "Arama istekleriyle birlikte gönderilecek isteğe bağlı bir HTTP başlığı (örneğin, kendi barındırdığınız veya bir vekil sunucu üzerinden erişilen bir uç noktada kimlik doğrulaması yapmak için). Gerekmiyorsa boş bırakın."
  signatures: "İmzalar, imza dosyaları, modüller, vb. için yapılandırma."
  signatures_conflict_response: "Aynı kaynaklara erişmek için çok fazla eş zamanlı girişim olduğunda (örneğin, aynı kaynaklar için aynı makinedeki birden fazla PHP işlemine eş zamanlı istekler), bu girişimlerden bazıları başarısız olabilir. Nadiren de olsa, bu durumun imza dosyalarını veya modüllerini etkilemesi durumunda, CIDRAM'ın talep hakkında etkili bir karar vermesi engellenebilir. Eğer böyle bir durum gerçekleşirse, istek engellenmeli midir, ve CIDRAM hangi HTTP durum mesajını göndermelidir?"
  signatures_default_tracktime: "IP adreslerinin izlenmesi gereken süre. Varsayılan = 7d0°0′0″ (1 hafta)."
@@ -608,6 +615,7 @@ label:
  All of them: "Hepsi."
  Allow, but only when also blocked: "İzin ver, ancak yalnızca engellendiğinde de."
  Allow: "İzin ver."
+ Any ports: "Herhangi bir portu."
  Bandwidth: "Kullanılan bant genişliği: %s – Mevcut bant genişliği: %s"
  Branch latest stable: "Branşı en yeni kararlı:"
  CAPTCHA attempts: "CAPTCHA denemeler"
@@ -696,6 +704,7 @@ label:
  No log files available: "Günlük dosyası yok."
  None: "Hiçbiri.\nModülü hiçbir şeye bakmadan yalnızca raporlama amacıyla kullanmak istiyorsanız, bunu kullanın."
  Normal: "Normal"
+ Noteworthy ports: "Kayda değer portları."
  Only those with updates available: "Yalnızca güncellemeleri olanlar."
  Only those installed: "Sadece kurulu olanlar."
  Only those not installed: "Sadece kurulu olmayanlar."
@@ -718,6 +727,7 @@ label:
  Please log in to continue: "Devam etmek için lütfen giriş yapınız."
  Preferred source: "Tercih edilen kaynak:"
  Previous: "Önceki:"
+ Proxy ports: "Proxy portları."
  Quote entity: "&quot;%s&quot;"
  Range tools: "Aralıklar için araçlar"
  Remember: "Hatırlamak"

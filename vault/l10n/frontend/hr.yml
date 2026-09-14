@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Croatian language data for the front-end (last modified: 2026.09.05).
+# This file: Croatian language data for the front-end (last modified: 2026.09.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -77,6 +77,7 @@ Extended Description: !lazy
  Protocol blocker module: "Pruža mogućnost blokiranja određenih protokola zahtjeva putem konfiguracije (npr., HTTP/0.9, HTTP/1.1, SPDY/3.0, itd)."
  Quic cloud compatibility module: "Pomaže u osiguravanju ispravnog rada CIDRAM-a na stranicama koje rade iza Quic cloud-a. Za stranice koje ne rade iza Quic cloud-a, ovaj modul neće biti potreban."
  Referrer spam module: "Blokiranje na temelju spam preporuke općenito neće pružiti značajnu sigurnosnu korist, ali u nekim slučajevima može biti korisno za neke korisnike, za prikupljanje više informacija o zahtjevima i za mogućnost prijaviti."
+ ShodanDB module: "Provjerava IP adresu zahtjeva putem Shodan InternetDB API-ja."
  Stop Forum Spam module: "IP adresama koje navodi SFS bit će onemogućen pristup stranicama za prijavu i registraciju."
  Tor blocker module: "Zabranjuje pristup s Tor izlaznih čvorova."
 Glossary: !lazy
@@ -135,11 +136,13 @@ Name: !lazy
  Protocol blocker module: "Modul za blokiranje protokola."
  Quic cloud compatibility module: "Modul za Quic cloud kompatibilnost."
  Referrer spam module: "Modul za spam preporuke."
+ ShodanDB module: "ShodanDB modul."
  Stop Forum Spam module: "Stop Forum Spam modul."
  Tor blocker module: "Tor blokatorski modul."
 bobuam_hint_default_value: "Kada je postavljen na 0, modul će koristiti trenutno preporučenu vrijednost."
 checkbox:
  Allow single-hit bypasses: "Dopustiti zaobilaženje jednim pogotkom?"
+ Apply CAPTCHA options: "Primijeni CAPTCHA opcije."
  Attempt to verify: "Pokušati provjeriti?"
  Block it: "Blokiraj to."
  Block negatives: "Blokirati negative?"
@@ -151,6 +154,7 @@ checkbox:
  Log any errors generated during this stage: "Zabilježiti sve pogreške nastale tijekom ove faze?"
  Omit this field when it_s empty: "Izostaviti ovo polje kada je prazno?"
  Profile it: "Profiliraj to."
+ Report it: "Prijavite to."
  Should infractions generated during this stage count towards IP tracking: "Trebaju li se prekršaji generirani tijekom ove faze računati u IP praćenje?"
  Should this field appear in log entries: "Treba li se ovo polje pojaviti u unosima dnevnika?"
  Should this field appear on the access denied page: "Treba li se ovo polje pojaviti na stranici "pristup odbijen"?"
@@ -315,6 +319,9 @@ config: !lazy
  rate_limiting_precision_ipv6: "Preciznost koja se koristi za praćenje upotrebe IPv6. Vrijednost odražava veličinu CIDR bloka. Postavite na 128 za najbolju preciznost. Zadano = 128."
  rate_limiting_segregate: "Trebaju li kvote za različite domene i hostove biti odvojene ili podijeljene? True/Istinito = Kvote će biti odvojene. False/Lažno = Kvote će se dijeliti [Zadano]."
  sfs: "Konfiguracija za modul Stop Forum Spam."
+ shodandb: "Konfiguracija za modul ShodanDB (Shodan InternetDB)."
+ shodandb_api_base: "Osnovni URL za pretraživanja putem Shodan InternetDB-a (ili kompatibilna krajnja točka). Zadano = <code class="s">https://internetdb.shodan.io</code>."
+ shodandb_api_header: "Neobavezno HTTP zaglavlje koje se šalje uz zahtjeve za pretraživanje (npr., za autentifikaciju na vlastitoj ili posredničkoj krajnjoj točki). Ostavite prazno ako nije potrebno."
  signatures: "Konfiguracija za potpise, datoteke potpisa, module, itd."
  signatures_conflict_response: "Kada postoji previše istovremenih pokušaja pristupa istim resursima (npr., istovremeni zahtjevi za više PHP procesa na istom računalu za iste resurse), neki od tih pokušaja mogu propasti. U rijetkom i malo vjerojatnom slučaju da to utječe na datoteke potpisa ili module, CIDRAM može biti spriječen u učinkovitom odlučivanju o zahtjevu. Ako se to dogodi, treba li zahtjev blokirati, i koju HTTP poruku o statusu CIDRAM treba poslati?"
  signatures_default_tracktime: "Trajanje tijekom kojeg se IP adrese trebaju pratiti. Zadano = 7d0°0′0″ (1 tjedan)."
@@ -616,6 +623,7 @@ label:
  All of them: "Svi oni."
  Allow, but only when also blocked: "Dopusti, ali samo kada je i blokirano."
  Allow: "Dopusti."
+ Any ports: "Bilo koji portovi."
  Bandwidth: "Korištena propusnost: %s – Dostupna propusnost: %s"
  Branch latest stable: "Najnovija stabilna grana:"
  CAPTCHA attempts: "Pokušaji CAPTCHA-e"
@@ -705,6 +713,7 @@ label:
  No log files available: "Nema dostupnih datoteka dnevnika."
  None: "Niti jedan.\nAko želite koristiti modul samo za potrebe izvještavanja, bez ikakvog pretraživanja, koristite ovo."
  Normal: "Normalan"
+ Noteworthy ports: "Značajni portovi."
  Only those with updates available: "Samo oni s dostupnim ažuriranjima."
  Only those installed: "Samo oni koji su instalirani."
  Only those not installed: "Samo oni koji nisu instalirani."
@@ -727,10 +736,11 @@ label:
  Please log in to continue: "Molimo prijavite se za nastavak."
  Preferred source: "Preferirani izvor:"
  Previous: "Prethodno:"
+ Proxy ports: "Proxy portovi."
  Quote entity: "&quot;%s&quot;"
  Range tools: "Alati za raspon"
  Remember: "Zapamti"
- Report to AbuseIPDB: "Pošalji prijavu na AbuseIPDB"
+ Report to AbuseIPDB: "Prijavite to AbuseIPDB-u"
  Requests banned: "Zahtjevi zabranjeni"
  Requests blocked: "Zahtjevi blokirani"
  Requests for sensitive pages only: "Zahtjevi samo za osjetljive stranice (npr., stranice za prijavu, obrasci za registraciju, itd).\nManje strogi i temeljiti, ali konzervativniji u smislu kvota i ograničenja, te manje vjerojatno da će negativno utjecati na performanse. Preporučena strategija u većini slučajeva."

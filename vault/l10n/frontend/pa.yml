@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Punjabi language data for the front-end (last modified: 2026.09.05).
+# This file: Punjabi language data for the front-end (last modified: 2026.09.14).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -77,6 +77,7 @@ Extended Description: !lazy
  Protocol blocker module: "ਕੌਂਫਿਗਰੇਸ਼ਨ ਦੁਆਰਾ ਖਾਸ ਬੇਨਤੀ ਪ੍ਰੋਟੋਕੋਲ ਨੂੰ ਬਲੌਕ ਕਰਨ ਦੀ ਯੋਗਤਾ ਪ੍ਰਦਾਨ ਕਰਦਾ ਹੈ (ਉਦਾਹਰਨ ਲਈ, HTTP/0.9, HTTP/1.1, SPDY/3.0, ਆਦਿ)।"
  Quic cloud compatibility module: "ਇਹ ਯਕੀਨੀ ਬਣਾਉਣ ਵਿੱਚ ਮਦਦ ਕਰਦਾ ਹੈ ਕਿ CIDRAM Quic cloud ਦੇ ਪਿੱਛੇ ਕੰਮ ਕਰਨ ਵਾਲੀਆਂ ਸਾਈਟਾਂ 'ਤੇ ਸਹੀ ਢੰਗ ਨਾਲ ਕੰਮ ਕਰੇਗਾ। Quic cloud ਦੇ ਪਿੱਛੇ ਕੰਮ ਨਾ ਕਰਨ ਵਾਲੀਆਂ ਸਾਈਟਾਂ ਲਈ, ਇਹ ਮੋਡੀਊਲ ਜ਼ਰੂਰੀ ਨਹੀਂ ਹੋਵੇਗਾ।"
  Referrer spam module: "ਰੈਫਰਰ ਸਪੈਮ ਦੇ ਆਧਾਰ 'ਤੇ ਬਲੌਕ ਕਰਨਾ ਆਮ ਤੌਰ 'ਤੇ ਕੋਈ ਸਾਰਥਕ ਸੁਰੱਖਿਆ ਲਾਭ ਪ੍ਰਦਾਨ ਨਹੀਂ ਕਰੇਗਾ, ਪਰ ਕੁਝ ਮਾਮਲਿਆਂ ਵਿੱਚ, ਕੁਝ ਉਪਭੋਗਤਾਵਾਂ ਲਈ, ਬੇਨਤੀਆਂ ਬਾਰੇ ਹੋਰ ਜਾਣਕਾਰੀ ਇਕੱਠੀ ਕਰਨ ਲਈ, ਅਤੇ ਇਸਦੀ ਰਿਪੋਰਟ ਕਰਨ ਦੇ ਯੋਗ ਹੋਣ ਲਈ ਲਾਭਦਾਇਕ ਹੋ ਸਕਦਾ ਹੈ।"
+ ShodanDB module: "ਇਹ ਮੋਡੀਊਲ Shodan InternetDB API ਦੇ ਮੁਕਾਬਲੇ ਬੇਨਤੀ ਦੇ IP ਪਤੇ ਦੀ ਜਾਂਚ ਕਰਦਾ ਹੈ।"
  Stop Forum Spam module: "SFS ਦੁਆਰਾ ਸੂਚੀਬੱਧ IP ਦੇ ਵਿਰੁੱਧ ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਅਤੇ ਲੌਗਇਨ ਪੰਨਿਆਂ ਦੀ ਰੱਖਿਆ ਕਰਦਾ ਹੈ।"
  Tor blocker module: "Tor ਐਗਜ਼ਿਟ ਨੋਡਾਂ ਤੋਂ ਪਹੁੰਚ 'ਤੇ ਪਾਬੰਦੀ ਲਗਾਉਂਦਾ ਹੈ।"
 Glossary: !lazy
@@ -133,11 +134,13 @@ Name: !lazy
  Protocol blocker module: "ਪ੍ਰੋਟੋਕੋਲ ਬਲੌਕਰ ਮੋਡੀਊਲ।"
  Quic cloud compatibility module: "Quic cloud ਅਨੁਕੂਲਤਾ ਮੋਡੀਊਲ।"
  Referrer spam module: "ਰੈਫਰਰ ਸਪੈਮ ਮੋਡੀਊਲ।"
+ ShodanDB module: "ShodanDB ਮੋਡੀਊਲ।"
  Stop Forum Spam module: "Stop Forum Spam ਮੋਡੀਊਲ।"
  Tor blocker module: "Tor ਬਲੌਕਰ ਮੋਡੀਊਲ।"
 bobuam_hint_default_value: "ਜਦੋਂ 0 'ਤੇ ਸੈੱਟ ਕੀਤਾ ਜਾਂਦਾ ਹੈ, ਤਾਂ ਮੋਡੀਊਲ ਮੌਜੂਦਾ ਸਿਫ਼ਾਰਸ਼ ਕੀਤੇ ਮੁੱਲ ਨੂੰ ਮੁਲਤਵੀ ਕਰ ਦੇਵੇਗਾ।"
 checkbox:
  Allow single-hit bypasses: "ਕੀ ਸਿੰਗਲ-ਹਿੱਟ ਬਾਈਪਾਸ ਦੀ ਇਜਾਜ਼ਤ ਦੇਣੀ ਹੈ?"
+ Apply CAPTCHA options: "ਕੈਪਟਚਾ ਵਿਕਲਪ ਲਾਗੂ ਕਰੋ।"
  Attempt to verify: "ਤਸਦੀਕ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼?"
  Block it: "ਇਸ ਨੂੰ ਬਲਾਕ ਕਰੋ।"
  Block negatives: "ਨੈਗੇਟਿਵ ਨੂੰ ਬਲਾਕ ਕਰਨਾ ਹੈ?"
@@ -149,6 +152,7 @@ checkbox:
  Log any errors generated during this stage: "ਇਸ ਪੜਾਅ ਦੌਰਾਨ ਪੈਦਾ ਹੋਈ ਕਿਸੇ ਤਰੁੱਟੀ ਨੂੰ ਲੌਗ ਕਰੋ?"
  Omit this field when it_s empty: "ਜਦੋਂ ਇਹ ਖਾਲੀ ਹੋਵੇ ਤਾਂ ਇਸ ਖੇਤਰ ਨੂੰ ਛੱਡਣਾ ਹੈ?"
  Profile it: "ਇਸ ਨੂੰ ਪਰੋਫਾਇਲ ਕਰੋ।"
+ Report it: "ਇਸ ਦੀ ਰਿਪੋਰਟ ਕਰੋ।"
  Should infractions generated during this stage count towards IP tracking: "ਕੀ ਇਸ ਪੜਾਅ ਦੌਰਾਨ ਪੈਦਾ ਹੋਏ ਉਲੰਘਣਾਵਾਂ ਨੂੰ IP ਟਰੈਕਿੰਗ ਵਿੱਚ ਗਿਣਿਆ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ?"
  Should this field appear in log entries: "ਕੀ ਇਹ ਖੇਤਰ ਲੌਗ ਐਂਟਰੀਆਂ ਵਿੱਚ ਦਿਖਾਈ ਦੇਣਾ ਚਾਹੀਦਾ ਹੈ?"
  Should this field appear on the access denied page: "ਕੀ ਇਹ ਖੇਤਰ "ਪਹੁੰਚ ਇਨਕਾਰ" ਪੰਨੇ 'ਤੇ ਦਿਖਾਈ ਦੇਣਾ ਚਾਹੀਦਾ ਹੈ?"
@@ -190,7 +194,7 @@ config: !lazy
  bunnycdn_positive_action: "ਜਦੋਂ CIDRAM ਨੂੰ BunnyCDN ਤੋਂ ਕੋਈ ਬੇਨਤੀ ਆਉਂਦੀ ਹੈ ਤਾਂ ਕਿਹੜੀ ਕਾਰਵਾਈ ਕਰਨੀ ਚਾਹੀਦੀ ਹੈ? ਡਿਫਾਲਟ ਕਿਰਿਆ = ਬਾਈਪਾਸ।"
  bypasses: "ਡਿਫਾਲਟ ਦਸਤਖਤ ਬਾਈਪਾਸ ਲਈ ਕੌਂਫਿਗਰੇਸ਼ਨ।"
  bypasses_used: "ਕਿਹੜੇ ਬਾਈਪਾਸ ਵਰਤੇ ਜਾਣੇ ਚਾਹੀਦੇ ਹਨ?"
- captcha: "CAPTCHA ਲਈ ਕੌਂਫਿਗਰੇਸ਼ਨ (ਬਲੌਕ ਕੀਤੇ ਜਾਣ 'ਤੇ ਮਨੁੱਖਾਂ ਨੂੰ ਮੁੜ ਪਹੁੰਚ ਪ੍ਰਾਪਤ ਕਰਨ ਦਾ ਤਰੀਕਾ ਪ੍ਰਦਾਨ ਕਰਦਾ ਹੈ)।"
+ captcha: "ਕੈਪਟਚਾ ਲਈ ਕੌਂਫਿਗਰੇਸ਼ਨ (ਬਲੌਕ ਕੀਤੇ ਜਾਣ 'ਤੇ ਮਨੁੱਖਾਂ ਨੂੰ ਮੁੜ ਪਹੁੰਚ ਪ੍ਰਾਪਤ ਕਰਨ ਦਾ ਤਰੀਕਾ ਪ੍ਰਦਾਨ ਕਰਦਾ ਹੈ)।"
  captcha_api: "ਕਿਹੜਾ API ਵਰਤਣਾ ਹੈ?"
  captcha_expiry: "ਕੈਪਟਚਾ ਉਦਾਹਰਨਾਂ ਨੂੰ ਯਾਦ ਰੱਖਣ ਲਈ ਘੰਟਿਆਂ ਦੀ ਗਿਣਤੀ। ਡਿਫਾਲਟ = 720 (1 ਮਹੀਨਾ)।"
  captcha_friendly_apikey: &FriendlyCred "ਜੇਕਰ ਤੁਸੀਂ CIDRAM ਨਾਲ Friendly Captcha ਦੀ ਵਰਤੋਂ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ, ਤਾਂ ਤੁਹਾਨੂੰ ਇੱਥੇ ਇੱਕ ਮੁੱਲ ਦਰਜ ਕਰਨ ਦੀ ਲੋੜ ਹੋਵੇਗੀ। ਜੇਕਰ ਨਹੀਂ, ਤਾਂ ਤੁਸੀਂ ਇਸਨੂੰ ਅਣਡਿੱਠਾ ਕਰ ਸਕਦੇ ਹੋ।"
@@ -313,6 +317,9 @@ config: !lazy
  rate_limiting_precision_ipv6: "IPv6 ਵਰਤੋਂ ਨੂੰ ਟਰੈਕ ਕਰਨ ਲਈ ਵਰਤਣ ਲਈ ਸ਼ੁੱਧਤਾ। ਮੁੱਲ CIDR ਬਲਾਕ ਆਕਾਰ ਨੂੰ ਮਿਰਰ ਕਰਦਾ ਹੈ। ਵਧੀਆ ਸ਼ੁੱਧਤਾ ਲਈ 128 'ਤੇ ਸੈੱਟ ਕਰੋ। ਡਿਫਾਲਟ = 128."
  rate_limiting_segregate: "ਕੀ ਵੱਖ-ਵੱਖ ਡੋਮੇਨਾਂ ਅਤੇ ਮੇਜ਼ਬਾਨਾਂ ਲਈ ਕੋਟੇ ਨੂੰ ਵੱਖਰਾ ਜਾਂ ਸਾਂਝਾ ਕੀਤਾ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ? True = ਕੋਟੇ ਵੱਖ ਕੀਤੇ ਜਾਣਗੇ। False = ਕੋਟੇ ਸਾਂਝੇ ਕੀਤੇ ਜਾਣਗੇ [ਡਿਫਾਲਟ]।"
  sfs: "Stop Forum Spam (ਸਟਾਪ ਫੋਰਮ ਸਪੈਮ) ਮੋਡੀਊਲ ਲਈ ਕੌਂਫਿਗਰੇਸ਼ਨ।"
+ shodandb: "ShodanDB (Shodan InternetDB) ਮੋਡੀਊਲ ਲਈ ਕੌਂਫਿਗਰੇਸ਼ਨ।"
+ shodandb_api_base: "Shodan InternetDB ਖੋਜਾਂ (ਜਾਂ ਅਨੁਕੂਲ ਐਂਡਪੁਆਇੰਟ) ਲਈ ਬੇਸ URL। ਡਿਫਾਲਟ = <code class="s">https://internetdb.shodan.io</code>।"
+ shodandb_api_header: "ਖੋਜ ਬੇਨਤੀਆਂ ਦੇ ਨਾਲ ਭੇਜਣ ਲਈ ਇੱਕ ਵਿਕਲਪਿਕ HTTP ਹੈਡਰ (ਜਿਵੇਂ ਕਿ, ਸਵੈ-ਹੋਸਟ ਕੀਤੀ ਜਾਂ ਪ੍ਰੌਕਸੀ-ਅਧਾਰਿਤ ਐਂਡਪੁਆਇੰਟ 'ਤੇ ਪ੍ਰਮਾਣੀਕਰਨ ਲਈ)। ਜੇ ਲੋੜ ਨਾ ਹੋਵੇ ਤਾਂ ਖਾਲੀ ਛੱਡੋ।"
  signatures: "ਦਸਤਖਤਾਂ, ਦਸਤਖਤ ਫਾਈਲਾਂ, ਮੋਡੀਊਲ, ਆਦਿ ਲਈ ਕੌਂਫਿਗਰੇਸ਼ਨ।"
  signatures_conflict_response: "ਜਦੋਂ ਇੱਕੋ ਸਰੋਤਾਂ ਤੱਕ ਪਹੁੰਚ ਕਰਨ ਦੀਆਂ ਬਹੁਤ ਸਾਰੀਆਂ ਇੱਕੋ ਸਮੇਂ ਕੋਸ਼ਿਸ਼ਾਂ ਹੁੰਦੀਆਂ ਹਨ (ਉਦਾਹਰਣ ਵਜੋਂ, ਇੱਕੋ ਸਾਧਨਾਂ ਲਈ ਇੱਕੋ ਮਸ਼ੀਨ 'ਤੇ ਕਈ PHP ਪ੍ਰਕਿਰਿਆਵਾਂ ਲਈ ਇੱਕੋ ਸਮੇਂ ਬੇਨਤੀਆਂ), ਇਹਨਾਂ ਵਿੱਚੋਂ ਕੁਝ ਕੋਸ਼ਿਸ਼ਾਂ ਅਸਫਲ ਹੋ ਸਕਦੀਆਂ ਹਨ। ਦੁਰਲੱਭ ਅਤੇ ਅਸੰਭਵ ਘਟਨਾ ਵਿੱਚ ਕਿ ਇਹ ਦਸਤਖਤ ਫਾਈਲਾਂ ਜਾਂ ਮੈਡਿਊਲਾਂ ਨੂੰ ਪ੍ਰਭਾਵਿਤ ਕਰਦਾ ਹੈ, CIDRAM ਨੂੰ ਬੇਨਤੀ ਬਾਰੇ ਇੱਕ ਪ੍ਰਭਾਵੀ ਨਿਰਣਾ ਕਰਨ ਤੋਂ ਰੋਕਿਆ ਜਾ ਸਕਦਾ ਹੈ। ਜੇਕਰ ਅਜਿਹਾ ਹੁੰਦਾ ਹੈ, ਤਾਂ ਕੀ ਬੇਨਤੀ ਨੂੰ ਬਲੌਕ ਕੀਤਾ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ, ਅਤੇ CIDRAM ਨੂੰ ਕਿਹੜਾ HTTP ਸਥਿਤੀ ਸੁਨੇਹਾ ਭੇਜਣਾ ਚਾਹੀਦਾ ਹੈ?"
  signatures_default_tracktime: "ਉਹ ਮਿਆਦ ਜਿਸ ਲਈ IP ਪਤਿਆਂ ਨੂੰ ਟਰੈਕ ਕੀਤਾ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ। ਡਿਫਾਲਟ = 7d0°0′0″ (1 ਹਫ਼ਤਾ)।"
@@ -610,6 +617,7 @@ label:
  All of them: "ਸਾਰੇ।"
  Allow, but only when also blocked: "ਇਜਾਜ਼ਤ ਦਿਓ, ਪਰ ਉਦੋਂ ਹੀ ਜਦੋਂ ਬਲੌਕ ਕੀਤਾ ਗਿਆ ਹੋਵੇ।"
  Allow: "ਇਜਾਜ਼ਤ ਦਿਓ।"
+ Any ports: "ਕੋਈ ਵੀ ਪੋਰਟ।"
  Bandwidth: "ਵਰਤੀ ਗਈ ਬੈਂਡਵਿਡਥ: %s – ਬੈਂਡਵਿਡਥ ਉਪਲਬਧ: %s"
  Branch latest stable: "ਸ਼ਾਖਾ ਨਵੀਨਤਮ ਸਥਿਰ:"
  CAPTCHA attempts: "ਕੈਪਟਚਾ ਕੋਸ਼ਿਸ਼ਾਂ"
@@ -698,6 +706,7 @@ label:
  No log files available: "ਕੋਈ ਲੌਗ ਫਾਈਲਾਂ ਉਪਲਬਧ ਨਹੀਂ ਹਨ।"
  None: "ਕੋਈ ਨਹੀਂ।\nਜੇਕਰ ਤੁਸੀਂ ਮਾਡਿਊਲ ਨੂੰ ਸਿਰਫ ਰਿਪੋਰਟਿੰਗ ਦੇ ਉਦੇਸ਼ਾਂ ਲਈ ਵਰਤਣਾ ਚਾਹੁੰਦੇ ਹੋ, ਬਿਨਾਂ ਕੁਝ ਦੇਖੇ, ਇਸ ਦੀ ਵਰਤੋਂ ਕਰੋ।"
  Normal: "ਕੁਦਰਤੀ"
+ Noteworthy ports: "ਜ਼ਿਕਰਯੋਗ ਪੋਰਟਾਂ।"
  Only those with updates available: "ਸਿਰਫ ਉਹ ਜਿਨ੍ਹਾਂ ਕੋਲ ਅੱਪਡੇਟ ਉਪਲਬਧ ਹਨ।"
  Only those installed: "ਸਿਰਫ ਉਹੀ ਜੋ ਇੰਸਟਾਲ ਹਨ।"
  Only those not installed: "ਸਿਰਫ ਉਹ ਜੋ ਇੰਸਟਾਲ ਨਹੀਂ ਹਨ।"
@@ -720,6 +729,7 @@ label:
  Please log in to continue: "ਜਾਰੀ ਰੱਖਣ ਲਈ ਕਿਰਪਾ ਕਰਕੇ ਲੌਗ ਇਨ ਕਰੋ।"
  Preferred source: "ਤਰਜੀਹੀ ਸਰੋਤ:"
  Previous: "ਪਿਛਲਾ:"
+ Proxy ports: "ਪ੍ਰੌਕਸੀ ਪੋਰਟਾਂ।"
  Quote entity: "&quot;%s&quot;"
  Range tools: "ਰੇਂਜ ਟੂਲ"
  Remember: "ਯਾਦ ਰੱਖੋ"

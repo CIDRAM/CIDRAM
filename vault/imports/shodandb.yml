@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: ShodanDB (Shodan InternetDB) module configuration defaults (last modified: 2026.09.12).
+# This file: ShodanDB (Shodan InternetDB) module configuration defaults (last modified: 2026.09.14).
 ##/
 
 Config Defaults:
@@ -38,16 +38,13 @@ Config Defaults:
   timeout_rl:
    type: "duration"
    default: "1°0′0″"
-  tr069_whitelist:
-   type: "bool"
-   default: true
-   See also:
-    TR-069 (Wikipedia): "https://en.wikipedia.org/wiki/TR-069"
   tr069_ports:
    type: "string"
    default: "7547,30005"
    value_preg_filter:
     ~[^\d,\-]~: ""
+   See also:
+    TR-069 (Wikipedia): "https://en.wikipedia.org/wiki/TR-069"
   ports_to_detect:
    type: "string"
    default: "21,22,23,25,80,81,110,137,138,139,143,443,445,554,2323,3389,5900,5901,8000,8080,8443,9000,20005,37777,52869"

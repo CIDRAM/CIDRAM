@@ -47,6 +47,8 @@
  * especially when "flag_any_open_port" is enabled. See:
  * https://en.wikipedia.org/wiki/TR-069
  *
+ * This file: ShodanDB (Shodan InternetDB) module (last modified: 2026.09.14).
+ *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
 
@@ -202,11 +204,9 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
      * by default to avoid false-positives against ordinary broadband
      * customers, particularly under "flag_any_open_port".
      */
-    if ($this->Configuration['shodandb']['tr069_whitelist']) {
-        $Ports = \array_diff($Ports, \array_keys($this->CIDRAM['ShodanDBPorts']['tr069']));
-        if (!\count($Ports)) {
-            return;
-        }
+    $Ports = \array_diff($Ports, \array_keys($this->CIDRAM['ShodanDBPorts']['tr069']));
+    if (!\count($Ports)) {
+        return;
     }
 
     /**

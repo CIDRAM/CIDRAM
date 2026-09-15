@@ -33,7 +33,7 @@ if (!isset($this->CIDRAM['ModuleResCache'])) {
     $this->CIDRAM['ModuleResCache'] = [];
 }
 
-/** Initialise honoured signatures information. */
+/** Initialise open ports actions matrix. */
 $this->CIDRAM['ShodanActionsMatrix'] = \array_flip(\explode("\n", $this->Configuration['shodandb']['ports_action']));
 
 /**
@@ -213,7 +213,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
      */
     if (\count($DetectMatches)) {
         if (isset($this->CIDRAM['ShodanActionsMatrix']['Noteworthy:Block'])) {
-            $this->trigger(true, 'Open Ports Detected', 'Access was denied because an open port was detected on your connection.');
+            $this->trigger(true, $this->L10N->getString('Short.Open ports detected'), $this->L10N->getString('ReasonMessage.Open Port'));
         }
         if (isset($this->CIDRAM['ShodanActionsMatrix']['Noteworthy:Profile'])) {
             $this->addProfileEntry('ShodanDB: port(s) ' . \implode(', ', $DetectMatches), 'ShodanDB module');
@@ -233,7 +233,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
      */
     if (\count($ProxyMatches)) {
         if (isset($this->CIDRAM['ShodanActionsMatrix']['Proxy:Block'])) {
-            $this->trigger(true, 'Open Proxy Ports Detected', 'Access was denied because an open port was detected on your connection.');
+            $this->trigger(true, $this->L10N->getString('Short.Open proxy ports detected'), $this->L10N->getString('ReasonMessage.Open Port'));
         }
         if (isset($this->CIDRAM['ShodanActionsMatrix']['Proxy:Profile'])) {
             $this->addProfileEntry('ShodanDB: proxy port(s) ' . \implode(', ', $ProxyMatches), 'ShodanDB module');
@@ -260,7 +260,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
      */
     if (\count($Ports)) {
         if (isset($this->CIDRAM['ShodanActionsMatrix']['Any:Block'])) {
-            $this->trigger(true, 'Open Ports Detected', 'Access was denied because an open port was detected on your connection.');
+            $this->trigger(true, $this->L10N->getString('Short.Open ports detected'), $this->L10N->getString('ReasonMessage.Open Port'));
         }
         if (isset($this->CIDRAM['ShodanActionsMatrix']['Any:Profile'])) {
             $this->addProfileEntry('ShodanDB: port(s) ' . \implode(', ', $DetectMatches), 'ShodanDB module');

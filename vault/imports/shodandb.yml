@@ -10,7 +10,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: ShodanDB (Shodan InternetDB) module configuration defaults (last modified: 2026.09.14).
+# This file: ShodanDB (Shodan InternetDB) module configuration defaults (last modified: 2026.09.15).
 ##/
 
 Config Defaults:
@@ -45,38 +45,37 @@ Config Defaults:
     ~[^\d,\-]~: ""
    See also:
     TR-069 (Wikipedia): "https://en.wikipedia.org/wiki/TR-069"
-  ports_to_detect:
+  noteworthy_ports:
    type: "string"
    default: "21,22,23,25,80,81,110,137,138,139,143,443,445,554,2323,3389,5900,5901,8000,8080,8443,9000,20005,37777,52869"
    value_preg_filter:
     ~[^\d,\-]~: ""
-  flag_any_open_port:
-   type: "bool"
-   default: false
-  ports_action:
-   type: "int"
-   default: 0
-   choices:
-    0: "label.Detect only (log &amp; profile, don't block)"
-    1: "checkbox.Block it"
-    2: "label.CAPTCHA challenge"
-   style: "radio"
   proxy_ports:
    type: "string"
    default: "1080,3128,4145,4153,5678,6588,8080,8081,8118,8123,8888,9050,9051,9150"
    value_preg_filter:
     ~[^\d,\-]~: ""
-  proxy_report_abuseipdb:
-   type: "bool"
-   default: true
-  proxy_ports_action:
-   type: "int"
-   default: 1
+  ports_action:
+   type: "checkbox"
+   default: |
+    Noteworthy:Profile
+    Proxy:Block
+    Proxy:Profile
+    Proxy:Report
+    Proxy:Options
+   labels:
+    Block: "checkbox.Block it"
+    Profile: "checkbox.Profile it"
+    Report: "checkbox.Report it"
+    Options: "checkbox.Apply CAPTCHA options"
    choices:
-    0: "label.Detect only (log &amp; profile, don't block)"
-    1: "checkbox.Block it"
-    2: "label.CAPTCHA challenge"
-   style: "radio"
+    Noteworthy: "⁰ {label.Noteworthy ports}"
+    Proxy: "¹ {label.Proxy ports}"
+    Any: "² {label.Any ports}"
+   nonsense: |
+    Noteworthy:Report
+    Any:Report
+   hints: "hints_ports_action"
   options:
    type: "checkbox"
    default: ""

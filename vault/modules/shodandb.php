@@ -18,36 +18,12 @@
  * the ports reported for that IP against two independently configurable
  * lists:
  *
- *  - "ports_to_detect": ports considered noteworthy/high-risk when found
- *    open on a requesting IP (remote admin, IoT, database ports, etc).
- *    If "flag_any_open_port" is enabled, this list is bypassed entirely
- *    and ANY reported open port counts as a match instead — and in that
- *    case, the "proxy_ports" check below is skipped entirely too, since
- *    any proxy port would already be covered by the "any open port" match.
- *    This category never reports to AbuseIPDB (only blocks/CAPTCHAs/logs
- *    locally) — an open port alone (webserver, game server, TeamSpeak,
- *    etc) isn't a reliable abuse signal on its own.
+ *  - "noteworthy_ports": ports considered noteworthy/high-risk when found
+ *    open at a requesting IP address (remote admin, IoT, database ports, etc).
  *  - "proxy_ports": ports commonly associated with open proxies, SOCKS
- *    servers, or other anonymising relays. Unlike the category above,
- *    this one may also report to AbuseIPDB, controlled independently via
- *    "proxy_report_abuseipdb" (on by default) — a proxy port is a much
- *    stronger abuse signal. The reported message is deliberately generic
- *    and never names the data source (Shodan/InternetDB).
+ *    servers, or other anonymising relays.
  *
- * Each list has its own independent action, chosen separately:
- *  0 = Detect only (logged/profiled, request is NOT blocked)
- *  1 = Block
- *  2 = CAPTCHA challenge (marks the request eligible for whichever CAPTCHA
- *      backend(s) are selected via the "options" checkbox)
- *
- * TR-069 (CPE WAN Management Protocol) ports (see "tr069_ports", default
- * 7547 and 30005) are whitelisted by default via "tr069_whitelist" — these
- * are routinely open on ordinary residential routers due to normal ISP
- * management and would otherwise cause frequent false positives,
- * especially when "flag_any_open_port" is enabled. See:
- * https://en.wikipedia.org/wiki/TR-069
- *
- * This file: ShodanDB (Shodan InternetDB) module (last modified: 2026.09.14).
+ * This file: ShodanDB (Shodan InternetDB) module (last modified: 2026.09.15).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -56,6 +32,9 @@
 if (!isset($this->CIDRAM['ModuleResCache'])) {
     $this->CIDRAM['ModuleResCache'] = [];
 }
+
+/** Initialise honoured signatures information. */
+$this->CIDRAM['ShodanActionsMatrix'] = \array_flip(\explode("\n", $this->Configuration['shodandb']['ports_action']));
 
 /**
  * Parses a port list, accepting both single ports and ranges, comma
@@ -88,7 +67,7 @@ if (!isset($this->CIDRAM['ShodanDBParsePorts'])) {
 
 /** Parse the configured port lists (cheap; done once per request). */
 $this->CIDRAM['ShodanDBPorts'] = [
-    'detect' => $this->CIDRAM['ShodanDBParsePorts']($this->Configuration['shodandb']['ports_to_detect']),
+    'noteworthy_ports' => $this->CIDRAM['ShodanDBParsePorts']($this->Configuration['shodandb']['noteworthy_ports']),
     'proxy' => $this->CIDRAM['ShodanDBParsePorts']($this->Configuration['shodandb']['proxy_ports']),
     'tr069' => $this->CIDRAM['ShodanDBParsePorts']($this->Configuration['shodandb']['tr069_ports'])
 ];
@@ -102,8 +81,10 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
     /** Nothing configured to check against; nothing to do. */
     if (
-        !$this->Configuration['shodandb']['flag_any_open_port'] &&
-        !\count($this->CIDRAM['ShodanDBPorts']['detect']) &&
+        !isset($this->CIDRAM['ShodanActionsMatrix']['Any:Block']) &&
+        !isset($this->CIDRAM['ShodanActionsMatrix']['Any:Profile']) &&
+        !isset($this->CIDRAM['ShodanActionsMatrix']['Any:Options']) &&
+        !\count($this->CIDRAM['ShodanDBPorts']['noteworthy_ports']) &&
         !\count($this->CIDRAM['ShodanDBPorts']['proxy'])
     ) {
         return;
@@ -202,89 +183,90 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
      * ISPs use) — so a router legitimately having this open is completely
      * normal and expected, not a sign of anything suspicious. Left enabled
      * by default to avoid false-positives against ordinary broadband
-     * customers, particularly under "flag_any_open_port".
+     * customers.
+     *
+     * @link https://en.wikipedia.org/wiki/TR-069
      */
     $Ports = \array_diff($Ports, \array_keys($this->CIDRAM['ShodanDBPorts']['tr069']));
     if (!\count($Ports)) {
         return;
     }
 
-    /**
-     * Ports of interest (remote admin / IoT / database / etc). If
-     * "flag_any_open_port" is enabled, any reported open port counts as a
-     * match, regardless of what's configured in "ports_to_detect" (this
-     * exists so people don't have to express "any port" as a 1-65535
-     * range, which works, but needlessly expands into a 65k-entry array on
-     * every single request for no benefit over a plain boolean check).
-     */
-    $DetectMatches = $this->Configuration['shodandb']['flag_any_open_port']
-        ? $Ports
-        : \array_intersect($Ports, \array_keys($this->CIDRAM['ShodanDBPorts']['detect']));
+    /** Ports of interest (remote admin / IoT / database / etc). */
+    $DetectMatches = \array_intersect($Ports, \array_keys($this->CIDRAM['ShodanDBPorts']['noteworthy_ports']));
+
+    /** Known proxy / relay ports. */
+    $ProxyMatches = \array_intersect($Ports, \array_keys($this->CIDRAM['ShodanDBPorts']['proxy']));
 
     /**
-     * Known proxy / relay ports. Skipped when "flag_any_open_port" is
-     * enabled — in that mode, any proxy port is already covered by the
-     * "any open port" match above, so checking it again here would just
-     * double up (both categories firing, and potentially both marking
-     * CAPTCHA options, for the very same open port).
-     */
-    $ProxyMatches = $this->Configuration['shodandb']['flag_any_open_port']
-        ? []
-        : \array_intersect($Ports, \array_keys($this->CIDRAM['ShodanDBPorts']['proxy']));
-
-    /**
-     * Act on ports of interest.
+     * Act on ports of interest (i.e., "noteworthy ports").
      *
-     * Note: no AbuseIPDB reporting happens for this category, by design —
+     * Note: AbuseIPDB reporting doesn't happen for "noteworthy ports", as
      * an open port here (remote admin, game server, database, etc) is not
      * on its own a reliable indicator of abuse. Plenty of entirely benign
      * IPs run a webserver, game server, TeamSpeak, etc, and would get
-     * needlessly reported. This category only ever blocks/CAPTCHAs/logs
-     * locally; it never calls Reporter->report(). Proxy ports (below) are
-     * a stronger signal and are reported, subject to their own toggle.
+     * needlessly reported.
      *
      * The message passed to trigger() (visible to the blocked visitor and
      * used for "WhyReason", by default) is deliberately generic — it
      * doesn't name the data source or list the specific matched ports.
      */
     if (\count($DetectMatches)) {
-        $Action = $this->Configuration['shodandb']['ports_action'];
-        if ($Action === 0) {
-            /** Detect only: profile and log, but don't block. */
+        if (isset($this->CIDRAM['ShodanActionsMatrix']['Noteworthy:Block'])) {
+            $this->trigger(true, 'Open Ports Detected', 'Access was denied because an open port was detected on your connection.');
+        }
+        if (isset($this->CIDRAM['ShodanActionsMatrix']['Noteworthy:Profile'])) {
             $this->addProfileEntry('ShodanDB: port(s) ' . \implode(', ', $DetectMatches), 'ShodanDB module');
-        } elseif ($this->trigger(true, 'Open Ports Detected', 'Access was denied because an open port was detected on your connection.')) {
-            if ($Action === 2) {
-                $this->enactOptions('', \array_flip(\explode("\n", $this->Configuration['shodandb']['options'])));
-            }
+        }
+        if (isset($this->CIDRAM['ShodanActionsMatrix']['Noteworthy:Options'])) {
+            $this->enactOptions('', \array_flip(\explode("\n", $this->Configuration['shodandb']['options'])));
         }
     }
 
     /**
-     * Act on known proxy ports. Unlike the category above, a proxy port
-     * genuinely is a meaningful abuse signal, so AbuseIPDB reporting is
-     * offered here — gated by its own toggle ("proxy_report_abuseipdb",
-     * on by default) in case it's not wanted.
+     * Act on proxy ports. Unlike the above, a proxy port genuinely is a
+     * meaningful abuse signal, so AbuseIPDB reporting is offered here.
      *
      * The reported message is deliberately generic (no data source named)
      * to match the visitor-facing message convention used throughout this
      * module.
      */
     if (\count($ProxyMatches)) {
-        $Action = $this->Configuration['shodandb']['proxy_ports_action'];
-        $DetailedMessage = 'Proxy port(s) detected on this IP: ' . \implode(', ', $ProxyMatches) . '.';
-        if ($Action === 0) {
-            /** Detect only: profile and log, but don't block. */
+        if (isset($this->CIDRAM['ShodanActionsMatrix']['Proxy:Block'])) {
+            $this->trigger(true, 'Open Proxy Ports Detected', 'Access was denied because an open port was detected on your connection.');
+        }
+        if (isset($this->CIDRAM['ShodanActionsMatrix']['Proxy:Profile'])) {
             $this->addProfileEntry('ShodanDB: proxy port(s) ' . \implode(', ', $ProxyMatches), 'ShodanDB module');
-            if ($this->Configuration['shodandb']['proxy_report_abuseipdb']) {
-                $this->Reporter->report([9], [$DetailedMessage], $this->BlockInfo['IPAddr']);
-            }
-        } elseif ($this->trigger(true, 'Open Proxy Ports Detected', 'Access was denied because an open port was detected on your connection.')) {
-            if ($this->Configuration['shodandb']['proxy_report_abuseipdb']) {
-                $this->Reporter->report([9], [$DetailedMessage], $this->BlockInfo['IPAddr']);
-            }
-            if ($Action === 2) {
-                $this->enactOptions('', \array_flip(\explode("\n", $this->Configuration['shodandb']['options'])));
-            }
+        }
+        if (isset($this->CIDRAM['ShodanActionsMatrix']['Proxy:Report'])) {
+            $this->Reporter->report([9], ['Proxy port(s) detected on this IP: ' . \implode(', ', $ProxyMatches) . '.'], $this->BlockInfo['IPAddr']);
+        }
+        if (isset($this->CIDRAM['ShodanActionsMatrix']['Proxy:Options'])) {
+            $this->enactOptions('', \array_flip(\explode("\n", $this->Configuration['shodandb']['options'])));
+        }
+    }
+
+    /**
+     * Act on ANY open ports. This strategy exists so that people don't
+     * have to express "any port" as a 1-65535 range at the options
+     * provided for "noteworthy ports" or "proxy ports", which would work,
+     * but would needlessly expand into a 65k-entry array on every single
+     * request for no meaningful comparative benefit).
+     *
+     * Should probably uncheck the options for the other two ("noteworthy
+     * ports" and "proxy ports") if using the options for "any ports", as
+     * checking them in combination with "any ports" could cause
+     * superfluous matching and a higher than expected signatures count.
+     */
+    if (\count($Ports)) {
+        if (isset($this->CIDRAM['ShodanActionsMatrix']['Any:Block'])) {
+            $this->trigger(true, 'Open Ports Detected', 'Access was denied because an open port was detected on your connection.');
+        }
+        if (isset($this->CIDRAM['ShodanActionsMatrix']['Any:Profile'])) {
+            $this->addProfileEntry('ShodanDB: port(s) ' . \implode(', ', $DetectMatches), 'ShodanDB module');
+        }
+        if (isset($this->CIDRAM['ShodanActionsMatrix']['Any:Options'])) {
+            $this->enactOptions('', \array_flip(\explode("\n", $this->Configuration['shodandb']['options'])));
         }
     }
 };

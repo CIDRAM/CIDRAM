@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bosnian language data for the front-end (last modified: 2026.09.14).
+# This file: Bosnian language data for the front-end (last modified: 2026.09.16).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -321,6 +321,13 @@ config: !lazy
  shodandb: "Konfiguracija za modul ShodanDB (Shodan InternetDB)."
  shodandb_api_base: "Osnovni URL za Shodan InternetDB pretrage (ili kompatibilna krajnja tačka). Zadano = <code class="s">https://internetdb.shodan.io</code>."
  shodandb_api_header: "Opcionalno HTTP zaglavlje koje se šalje uz zahtjeve za pretragu (npr., za autentifikaciju na samostalno hostiranoj ili posredničkoj krajnjoj tački). Ostavite prazno ako nije potrebno."
+ shodandb_expire_bad: "Koliko dugo čuvati u kešu rezultat ShodanDB pretrage kada nisu pronađeni portovi. Zadano = 1 sat."
+ shodandb_expire_good: "Koliko dugo čuvati u kešu rezultat ShodanDB pretrage kada su portovi pronađeni. Zadano = 1 dan."
+ shodandb_lookup_strategy: "Kada treba vršiti pretrage na ShodanDB-u?"
+ shodandb_noteworthy_ports: "Lista portova (i/ili raspona portova, npr., 3389–3395) razdvojenih zarezima, koji se smatraju značajnim ili visokorizičnim ako su otvoreni na IP adresi koja šalje zahtjev (npr., portovi za udaljenu administraciju, IoT, ili baze podataka)."
+ shodandb_options: "CAPTCHA opcije koje se primjenjuju kada se otkrije otvoreni port, u skladu s onim što je označeno kod <code class="s">ports_action</code>."
+ shodandb_ports_action: "Šta učiniti kada IP adresa koja šalje zahtjev ima otvoren jedan ili više konfigurisanih "značajnih portova" ili "proxy portova" (ili, ako je odabrana bilo koja od opcija "bilo koji portovi", bilo koji otvoreni port, uz izuzetak onih navedenih kao "tr069_ports")."
+ shodandb_proxy_ports: "Lista portova (i/ili raspona portova, npr., 3389–3395) razdvojenih zarezima, koji se obično povezuju s otvorenim proxyjima, SOCKS serverima, ili drugim relejima za anonimizaciju."
  signatures: "Konfiguracija za potpise, datoteke potpisa, module, itd."
  signatures_conflict_response: "Kada postoji previše istovremenih pokušaja pristupa istim resursima (npr., simultani zahtjevi za više PHP procesa na istom stroju za iste resurse), neki od tih pokušaja mogu biti neuspješni. U rijetkom i malo vjerovatnom slučaju da ovo utiče na datoteke potpisa ili module, CIDRAM može biti spriječen da donese efikasnu odluku o zahtjevu. Ako se to dogodi, treba li zahtjev biti blokiran, i koju HTTP statusnu poruku CIDRAM treba poslati?"
  signatures_default_tracktime: "Trajanje koje IP adrese treba pratiti. Zadano = 7d0°0′0″ (1 sedmica)."

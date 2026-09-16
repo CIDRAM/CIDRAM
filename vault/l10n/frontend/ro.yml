@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Romanian language data for the front-end (last modified: 2026.09.14).
+# This file: Romanian language data for the front-end (last modified: 2026.09.16).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -320,6 +320,13 @@ config: !lazy
  shodandb: "Configurație pentru modulul ShodanDB (Shodan InternetDB)."
  shodandb_api_base: "URL-ul de bază pentru interogările Shodan InternetDB (sau un punct final compatibil). Implicit = <code class="s">https://internetdb.shodan.io</code>."
  shodandb_api_header: "Un antet HTTP opțional de transmis împreună cu solicitările de căutare (de exemplu, pentru autentificarea la un punct final găzduit local sau accesat printr-un proxy). Lăsați necompletat dacă nu este necesar."
+ shodandb_expire_bad: "Pentru cât timp să se stocheze în cache rezultatul unei interogări ShodanDB în cazul în care nu au fost găsite porturi. Implicit = 1 oră."
+ shodandb_expire_good: "Pentru cât timp să se stocheze în cache rezultatul unei interogări ShodanDB privind porturile identificate. Implicit = 1 zi."
+ shodandb_lookup_strategy: "Când ar trebui efectuate interogările în ShodanDB?"
+ shodandb_noteworthy_ports: "O listă de porturi (și/sau intervale de porturi, de exemplu, 3389-3395) separate prin virgulă, considerate porturi demne de menționat sau cu risc ridicat dacă sunt găsite deschise la o adresă IP solicitantă (de exemplu, porturi pentru administrare la distanță, IoT, sau baze de date)."
+ shodandb_options: "Opțiuni CAPTCHA de aplicat atunci când este detectat un port deschis, conform celor marcate la <code class="s">ports_action</code>."
+ shodandb_ports_action: "Ce trebuie făcut atunci când o adresă IP solicitantă are deschis unul sau mai multe dintre „porturile demne de menționat” sau „porturile proxy” configurate (sau, dacă oricare dintre opțiunile „orice porturi” este selectată, orice port deschis, cu excepția doar a celor specificate „tr069_ports”)."
+ shodandb_proxy_ports: "O listă de porturi (și/sau intervale de porturi, de exemplu, 3389-3395) separate prin virgulă, asociate în mod obișnuit cu proxy-uri deschise, servere SOCKS, sau alte relee de anonimizare."
  signatures: "Configurare pentru semnături, fișiere de semnătură, module, etc."
  signatures_conflict_response: "Când există prea multe încercări simultane de a accesa aceleași resurse (de exemplu, solicitări simultane către mai multe procese PHP de la aceeași mașină pentru aceleași resurse), unele dintre aceste încercări pot eșua. În cazul rar și puțin probabil în care acest lucru afectează fișierele de semnătură sau modulele, CIDRAM poate fi împiedicat să ia o decizie eficientă cu privire la solicităre. Dacă se întâmplă acest lucru, solicitărea ar trebui să fie blocată, și ce mesaj de stare HTTP ar trebui să trimită CIDRAM?"
  signatures_default_tracktime: "Durata pentru care trebuie urmărite adresele IP. Implicit = 7d0°0′0″ (1 săptămână)."

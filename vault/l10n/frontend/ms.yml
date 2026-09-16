@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malay language data for the front-end (last modified: 2026.09.14).
+# This file: Malay language data for the front-end (last modified: 2026.09.16).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -320,6 +320,13 @@ config: !lazy
  shodandb: "Konfigurasi untuk modul ShodanDB (Shodan InternetDB)."
  shodandb_api_base: "URL asas untuk carian Shodan InternetDB (atau titik akhir yang serasi). Lalai = <code class="s">https://internetdb.shodan.io</code>."
  shodandb_api_header: "Pengepala HTTP pilihan untuk dihantar bersama permintaan carian (contohnya, untuk pengesahan terhadap titik akhir yang dihoskan sendiri atau melalui proksi). Biarkan kosong jika tidak diperlukan."
+ shodandb_expire_bad: "Tempoh masa untuk menyimpan dalam cache hasil carian ShodanDB apabila tiada port ditemui. Lalai = 1 jam."
+ shodandb_expire_good: "Tempoh masa untuk menyimpan dalam cache hasil carian ShodanDB bagi port yang ditemui. Lalai = 1 hari."
+ shodandb_lookup_strategy: "Bilakah carian ShodanDB patut dilakukan?"
+ shodandb_noteworthy_ports: "Senarai port (dan/atau julat port, contohnya, 3389-3395) yang dipisahkan dengan koma, yang dianggap penting atau berisiko tinggi apabila didapati terbuka pada alamat IP pemohon (contohnya, port pentadbiran jarak jauh, IoT, pangkalan data)."
+ shodandb_options: "Pilihan CAPTCHA untuk digunakan apabila port terbuka dikesan, seperti yang ditandakan pada <code class="s">ports_action</code>."
+ shodandb_ports_action: "Apakah tindakan yang perlu diambil apabila IP pemohon mempunyai satu atau lebih "port yang penting" atau "port proksi" yang telah dikonfigurasikan dalam keadaan terbuka (atau, jika mana-mana pilihan "sebarang port" dipilih, sebarang port yang terbuka, kecuali port yang ditetapkan sebagai "tr069_ports")."
+ shodandb_proxy_ports: "Senarai port (dan/atau julat port, contohnya, 3389-3395) yang dipisahkan dengan koma, yang biasanya dikaitkan dengan proksi terbuka, pelayan SOCKS, atau geganti penyahnama lain."
  signatures: "Konfigurasi untuk tandatangan, fail tandatangan, modul, dll."
  signatures_conflict_response: "Apabila terdapat terlalu banyak percubaan serentak untuk mengakses sumber yang sama (cth., permintaan serentak kepada berbilang proses PHP pada mesin yang sama untuk sumber yang sama), beberapa percubaan tersebut mungkin gagal. Apabila ini menjejaskan fail tandatangan atau modul, CIDRAM mungkin dihalang daripada membuat penentuan yang berkesan tentang permintaan tersebut. Jika ini berlaku, adakah permintaan tersebut harus disekat, dan manakah mesej status HTTP harus dihantar oleh CIDRAM?"
  signatures_default_tracktime: "Tempoh yang alamat IP harus dijejaki. Lalai = 7d0°0′0″ (1 minggu)."

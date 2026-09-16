@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2026.09.14).
+# This file: Italian language data for the front-end (last modified: 2026.09.16).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -323,6 +323,13 @@ config: !lazy
  shodandb: "Configurazione per il modulo ShodanDB (Shodan InternetDB)."
  shodandb_api_base: "L'URL di base per le ricerche su Shodan InternetDB (o un endpoint compatibile). Predefinita = <code class="s">https://internetdb.shodan.io</code>."
  shodandb_api_header: "Un'intestazione HTTP facoltativa da inviare con le richieste di ricerca (ad esempio, per l'autenticazione presso un endpoint ospitato in proprio o proxato). Lasciare in bianco se non necessario."
+ shodandb_expire_bad: "Per quanto tempo memorizzare nella cache il risultato di una ricerca su ShodanDB nel caso in cui non siano state rilevate porte. Predefinito = 1 ora."
+ shodandb_expire_good: "Per quanto tempo memorizzare nella cache il risultato di una ricerca su ShodanDB nel caso in cui vengano rilevate porte. Predefinito = 1 giorno."
+ shodandb_lookup_strategy: "Quando dovrebbero essere effettuate le ricerche su ShodanDB?"
+ shodandb_noteworthy_ports: "Un elenco, separato da virgole, di porte (e/o intervalli di porte, ad es., 3389-3395) considerati degni di nota o ad alto rischio qualora risultino aperte su un indirizzo IP richiedente (ad es., porte per amministrazione remota, IoT, database)."
+ shodandb_options: "Opzioni CAPTCHA da applicare quando viene rilevata una porta aperta come indicato in corrispondenza di <code class="s">ports_action</code>."
+ shodandb_ports_action: "Cosa fare quando un IP richiedente ha aperta una o più delle "porti degni di nota" o "porte proxy" configurate (oppure, se è selezionata una delle opzioni "qualsiasi porta", qualsiasi porta aperta, fatta eccezione solo per quelle specificate in "tr069_ports")."
+ shodandb_proxy_ports: "Un elenco, separato da virgole, di porte (e/o intervalli di porte, ad es., 3389-3395) comunemente associati a proxy aperti, server SOCKS, o altri relay di anonimizzazione."
  signatures: "Configurazione per firme, file di firma, moduli, ecc."
  signatures_conflict_response: "Quando ce ne sono troppi tentativi simultanei di accedere alle stesse risorse (ad esempio, richieste simultanee a più processi PHP sulla stessa macchina per le stesse risorse), alcuni di questi tentativi potrebbero fallire. Nel raro e improbabile caso in cui ciò influisca sui file delle firme o sui moduli, CIDRAM potrebbe non essere in grado di prendere una decisione effettiva in merito alla richiesta. In tal caso, dovrebbe la richiesta essere bloccata, e quale messaggio di stato HTTP dovrebbe CIDRAM inviare?"
  signatures_default_tracktime: "La durata per la quale devono essere tracciati gli indirizzi IP. Predefinito = 7d0°0′0″ (1 settimana)."

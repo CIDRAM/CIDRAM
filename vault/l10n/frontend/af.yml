@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Afrikaans language data for the front-end (last modified: 2026.09.14).
+# This file: Afrikaans language data for the front-end (last modified: 2026.09.16).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -321,6 +321,13 @@ config: !lazy
  shodandb: "Konfigurasie vir die ShodanDB (Shodan InternetDB) module."
  shodandb_api_base: "Die basis-URL vir Shodan InternetDB-opsoeke (of 'n versoenbare eindpunt). Verstek = <code class="s">https://internetdb.shodan.io</code>."
  shodandb_api_header: "Opsionele HTTP-kopskrif om saam met opsoekversoeke te stuur (bv., vir stawing teen 'n selfgehuisveste of volmag-eindpunt). Laat leeg indien nie nodig nie."
+ shodandb_expire_bad: "Hoe lank om 'n ShodanDB-opsoekresultaat te kas wanneer geen poorte gevind is nie. Verstek = 1 uur."
+ shodandb_expire_good: "Hoe lank om 'n ShodanDB-opsoekresultaat vir gevindde poorte in die kas te hou. Verstek = 1 dag."
+ shodandb_lookup_strategy: "Wanneer moet ShodanDB-opsoeke uitgevoer word?"
+ shodandb_noteworthy_ports: "Poorte en/of poortreekse (bv., 3389-3395), geskei deur kommas, wat as noemenswaardig of hoërisiko beskou word indien dit oop gevind word by 'n versoekende IP-adres (bv., poorte vir afstandadministrasie, IoT, of databasisse)."
+ shodandb_options: "CAPTCHA-opsies om toe te pas wanneer 'n oop poort bespeur word, soos aangedui by <code class="s">ports_action</code>."
+ shodandb_ports_action: "Wat om te doen wanneer 'n IP wat 'n versoek rig, een of meer van die gekonfigureerde "noemenswaardige poorte" of "instaanbedienerpoorte" oop het (of, indien enige van die "enige poorte"-opsies gekies is, enige oop poort hoegenaamd, met die uitsondering van die gespesifiseerde "tr069_ports")."
+ shodandb_proxy_ports: "Poorte en/of poortreekse (bv., 3389-3395), geskei deur kommas, wat algemeen geassosieer word met oop instaanbedieners, SOCKS-bedieners, of ander anonimiserende relais."
  signatures: "Konfigurasie vir handtekeninge, handtekeninglêers, modules, ens."
  signatures_conflict_response: "Wanneer daar te veel gelyktydige pogings is om toegang tot dieselfde hulpbronne te verkry (bv., gelyktydige versoeke na verskeie PHP-prosesse by dieselfde masjien vir dieselfde hulpbronne), kan sommige van daardie pogings misluk. In die seldsame en onwaarskynlike geval dat dit handtekeninglêers of modules raak, kan CIDRAM verhinder word om 'n effektiewe bepaling oor die versoek te maak. Indien dit gebeur, moet die versoek geblokkeer word, en watter HTTP-statusboodskap moet CIDRAM stuur?"
  signatures_default_tracktime: "Die tydsduur waarvoor IP-adresse nagespoor moet word. Verstek = 7d0°0′0″ (1 week)."

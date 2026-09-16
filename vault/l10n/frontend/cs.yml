@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Czech language data for the front-end (last modified: 2026.09.14).
+# This file: Czech language data for the front-end (last modified: 2026.09.16).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -322,6 +322,13 @@ config: !lazy
  shodandb: "Konfigurace pro modul ShodanDB (Shodan InternetDB)."
  shodandb_api_base: "Základní URL pro vyhledávání ve službě Shodan InternetDB (nebo kompatibilní koncový bod). Standardní = <code class="s">https://internetdb.shodan.io</code>."
  shodandb_api_header: "Volitelná hlavička HTTP, která se má odesílat s požadavky na vyhledávání (např., pro ověření u vlastního nebo proxy koncového bodu). Pokud není potřeba, ponechte prázdné."
+ shodandb_expire_bad: "Jak dlouho ukládat do mezipaměti výsledek vyhledávání v ShodanDB v případě že nebyly nalezeny žádné porty. Standardní = 1 hodina."
+ shodandb_expire_good: "Jak dlouho ukládat do mezipaměti výsledek vyhledávání v ShodanDB se nalezených portů. Standardní = 1 den."
+ shodandb_lookup_strategy: "Kdy by se měly provádět vyhledávání v ShodanDB?"
+ shodandb_noteworthy_ports: "Seznam portů (a/nebo rozsahů portů, např., 3389–3395) oddělených čárkami, které jsou považovány za významné nebo vysoce rizikové, pokud jsou na požadující IP adrese nalezeny jako otevřené (např., porty pro vzdálenou správu, IoT, či databáze)."
+ shodandb_options: "Možnosti CAPTCHA které se mají uplatnit při zjištění otevřeného portu v souladu s označením u <code class="s">ports_action</code>."
+ shodandb_ports_action: "Co dělat když má žádající IP adresa otevřený jeden či více nakonfigurovaných „významných portů“ nebo „proxy portů“ (nebo, pokud je zvolena některá z možností „jakékoli porty“, jakýkoli otevřený port, s výjimkou portů uvedených v „tr069_ports“)."
+ shodandb_proxy_ports: "Seznam portů (a/nebo rozsahů portů, např., 3389–3395) oddělených čárkami, které jsou běžně spojovány s otevřenými proxy servery, servery SOCKS, nebo jinými anonymizačními přenosovými uzly."
  signatures: "Konfigurace pro podpisy, soubory podpisů, moduly, atd."
  signatures_conflict_response: "Pokud existuje příliš mnoho současných pokusů o přístup ke stejným zdrojům (např., současné požadavky na více procesů PHP na stejném počítači pro stejné zdroje), některé z těchto pokusů mohou selhat. Ve vzácných a nepravděpodobných případech, kdy to ovlivní soubory podpisů nebo moduly, může být CIDRAM zabráněno v účinném rozhodnutí o požadavku. Pokud k tomu dojde, měl by být požadavek zablokován, a jakou zprávu o stavu HTTP má CIDRAM odeslat?"
  signatures_default_tracktime: "Doba, po kterou by měly být IP adresy sledovány. Standardní = 7d0°0′0″ (1 týden)."

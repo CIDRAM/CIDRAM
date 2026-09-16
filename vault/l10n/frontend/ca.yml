@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Catalan language data for the front-end (last modified: 2026.09.14).
+# This file: Catalan language data for the front-end (last modified: 2026.09.16).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -255,8 +255,8 @@ config: !lazy
  general_lang: "Especifiqueu l'idioma predeterminat per a CIDRAM."
  general_lang_override: "Localitzar segons HTTP_ACCEPT_LANGUAGE sempre que sigui possible? True/Cert = Sí [Predeterminat]; False/Fals = No."
  general_numbers: "Com prefereixes que es mostrin els números? Seleccioneu l'exemple que us sembli més correcte."
- general_request_proxy: "Si voleu que les sol·licituds s'enviïn a través d'un proxy, especifiqueu aquest proxy aquí. Si no, deixeu-ho en blanc."
- general_request_proxyauth: "Si envieu sol·licituds a través d'un proxy i aquest proxy requereix un nom d'usuari i una contrasenya, especifiqueu aquest nom d'usuari i contrasenya aquí (per exemple, <code>user:pass</code>). Si no, deixeu-ho en blanc."
+ general_request_proxy: "Si voleu que les sol·licituds s'enviïn a través d'un servidor intermediari, especifiqueu aquest servidor intermediari aquí. Si no, deixeu-ho en blanc."
+ general_request_proxyauth: "Si envieu sol·licituds a través d'un servidor intermediari i aquest servidor intermediari requereix un nom d'usuari i una contrasenya, especifiqueu aquest nom d'usuari i contrasenya aquí (per exemple, <code>user:pass</code>). Si no, deixeu-ho en blanc."
  general_sensitive: "Una llista de camins a considerar com a pàgines sensibles. Cada camí llistat es comprovarà amb l'URI reconstruït quan sigui necessari. Un camí que comença amb una barra inclinada es tractarà com un literal, i es farà coincidir a partir del component del camí de la sol·licitud. En cas contrari, un camí que comença amb un caràcter no alfanumèric i acaba amb el mateix caràcter (o el mateix caràcter més un indicador "i" opcional) es tractarà com una expressió regular. Qualsevol altre tipus de camí es tractarà com a literal, i pot coincidir amb qualsevol part de l'URI. El fet que un camí es consideri una pàgina sensible pot afectar el comportament d'alguns mòduls, però no té cap efecte en cas contrari."
  general_silent_mode: "CIDRAM hauria de redirigir en silenci els intents d'accés bloquejats en lloc de mostrar la pàgina "accés denegat"? En cas afirmatiu, especifiqueu la ubicació a la qual redirigir els intents d'accés bloquejats. Si no, deixeu aquesta variable en blanc."
  general_silent_mode_response_header_code: "Quin missatge d'estat HTTP hauria d'enviar CIDRAM quan redirigeixi silenciosament els intents d'accés bloquejat?"
@@ -313,7 +313,7 @@ config: !lazy
  rate_limiting: "Configuració per a la limitació de la tarifa (no recomanada per a ús general)."
  rate_limiting_allowance_period: "La durada per fer el seguiment de l'ús. Predeterminat = 0°0′0″."
  rate_limiting_exceptions: "Excepcions (és a dir, sol·licituds que no s'han de limitar). Rellevant només quan la limitació de la tarifa està activada."
- rate_limiting_hint: "Tingueu en compte que, igual que amb totes les altres funcions de CIDRAM, la funció de limitació de la tarifa de CIDRAM només es pot aplicar a les pàgines i recursos als quals CIDRAM està connectat. Això normalment significaria que els recursos que no són PHP no estarien coberts, excepte quan fossin explícitament servits per recursos PHP connectats. Si podeu utilitzar un mòdul de servidor, cPanel, o alguna altra eina de xarxa per aplicar la limitació de la tarifa, seria millor utilitzar-la en lloc de la funció de limitació de la tarifa de CIDRAM. També cal tenir en compte que un usuari molt motivat podria fàcilment evitar la limitació de la tarifa rotant la seva adreça IP o canviant a un proveïdor de proxy o VPN que CIDRAM encara no coneix, i tingueu en compte que la limitació de la tarifa pot ser molt molesta per als usuaris finals reals. De vegades pot ser necessari, però poques vegades és desitjable."
+ rate_limiting_hint: "Tingueu en compte que, igual que amb totes les altres funcions de CIDRAM, la funció de limitació de la tarifa de CIDRAM només es pot aplicar a les pàgines i recursos als quals CIDRAM està connectat. Això normalment significaria que els recursos que no són PHP no estarien coberts, excepte quan fossin explícitament servits per recursos PHP connectats. Si podeu utilitzar un mòdul de servidor, cPanel, o alguna altra eina de xarxa per aplicar la limitació de la tarifa, seria millor utilitzar-la en lloc de la funció de limitació de la tarifa de CIDRAM. També cal tenir en compte que un usuari molt motivat podria fàcilment evitar la limitació de la tarifa rotant la seva adreça IP o canviant a un proveïdor de servidor intermediari o VPN que CIDRAM encara no coneix, i tingueu en compte que la limitació de la tarifa pot ser molt molesta per als usuaris finals reals. De vegades pot ser necessari, però poques vegades és desitjable."
  rate_limiting_max_bandwidth: "La quantitat màxima d'ample de banda permesa dins del període d'autorització abans de la limitació de les sol·licituds futures. Un valor de 0 desactiva aquest tipus de limitació de la tarifa. Predeterminat = 0KB."
  rate_limiting_max_requests: "El nombre màxim de sol·licituds permeses dins del període d'autorització abans de la limitació de les sol·licituds futures. Un valor de 0 desactiva aquest tipus de limitació de la tarifa. Predeterminat = 0."
  rate_limiting_precision_ipv4: "La precisió a utilitzar per fer el seguiment de l'ús d'IPv4. El valor reflecteix la mida del bloc CIDR. Establiu a 32 per obtenir la millor precisió. Predeterminat = 32."
@@ -323,6 +323,13 @@ config: !lazy
  shodandb: "Configuració del mòdul ShodanDB (Shodan InternetDB)."
  shodandb_api_base: "L'URL base per a les consultes a Shodan InternetDB (o un punt final compatible). Predeterminat = <code class="s">https://internetdb.shodan.io</code>."
  shodandb_api_header: "Una capçalera HTTP opcional per enviar amb les sol·licituds de cerca (p.ex., per a l'autenticació en un punt final allotjat per un mateix o que utilitzi un servidor intermediari). Deixeu-ho en blanc si no cal."
+ shodandb_expire_bad: "Quant de temps s'ha de desar a la memòria cau el resultat d'una consulta a ShodanDB quan no s'han trobat ports. Predeterminat = 1 hora."
+ shodandb_expire_good: "Quant de temps s'ha de desar a la memòria cau el resultat d'una consulta a ShodanDB sobre la detecció de ports. Predeterminat = 1 dia."
+ shodandb_lookup_strategy: "Quan s'han de realitzar les consultes a ShodanDB?"
+ shodandb_noteworthy_ports: "Una llista separada per comes de ports (i/o intervals de ports, p.ex., 3389-3395) considerats destacables o d'alt risc si es troben oberts en una adreça IP sol·licitant (p.ex., ports d'administració remota, IoT, o bases de dades)."
+ shodandb_options: "Opcions de CAPTCHA a aplicar quan es detecta un port obert, d'acord amb el que s'indica a <code class="s">ports_action</code>."
+ shodandb_ports_action: "Què fer quan una IP sol·licitant té obert un o més dels «ports destacables» o «ports de servidor intermediari» configurats (o, si se selecciona alguna de les opcions de "qualsevol port", qualsevol port obert, a excepció únicament dels especificats a "tr069_ports")."
+ shodandb_proxy_ports: "Una llista separada per comes de ports (i/o intervals de ports, p.ex., 3389-3395) associats habitualment a servidors intermediaris oberts, servidors SOCKS, o altres relés d'anonimització."
  signatures: "Configuració per a les signatures, fitxers de signatura, mòduls, etc."
  signatures_conflict_response: "Quan hi ha massa intents simultanis d'accedir als mateixos recursos (per exemple, sol·licituds simultànies a diversos processos PHP a la mateixa màquina per als mateixos recursos), alguns d'aquests intents poden fallar. En el cas rar i poc probable que això afecti fitxers de signatura o mòduls, es pot impedir que CIDRAM prengui una determinació efectiva sobre la sol·licitud. Si això passa, s'ha de bloquejar la sol·licitud, i quin missatge d'estat HTTP hauria d'enviar CIDRAM?"
  signatures_default_tracktime: "La durada per fer el seguiment de les adreces IP. Predeterminat = 7d0°0′0″ (1 setmana)."

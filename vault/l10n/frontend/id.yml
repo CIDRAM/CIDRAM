@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2026.09.14).
+# This file: Indonesian language data for the front-end (last modified: 2026.09.16).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -323,6 +323,13 @@ config: !lazy
  shodandb: "Konfigurasi untuk modul ShodanDB (Shodan InternetDB)."
  shodandb_api_base: "URL dasar untuk pencarian Shodan InternetDB (atau endpoint yang kompatibel). Default = <code class="s">https://internetdb.shodan.io</code>."
  shodandb_api_header: "Header HTTP opsional untuk dikirim bersama permintaan pencarian (misalnya, untuk autentikasi terhadap endpoint yang di-host sendiri atau melalui proxy). Biarkan kosong jika tidak diperlukan."
+ shodandb_expire_bad: "Berapa lama hasil pencarian ShodanDB disimpan dalam cache jika tidak ada port yang ditemukan. Default = 1 jam."
+ shodandb_expire_good: "Berapa lama hasil pencarian ShodanDB mengenai penemuan port disimpan dalam cache. Default = 1 hari."
+ shodandb_lookup_strategy: "Kapan pencarian ShodanDB sebaiknya dilakukan?"
+ shodandb_noteworthy_ports: "Daftar port (dan/atau rentang port, misalnya 3389-3395) yang dipisahkan dengan koma, yang dianggap penting atau berisiko tinggi jika ditemukan dalam keadaan terbuka pada alamat IP peminta (misalnya, port untuk administrasi jarak jauh, IoT, atau basis data)."
+ shodandb_options: "Opsi CAPTCHA yang akan diterapkan saat port terbuka terdeteksi, sesuai dengan penandaan pada <code class="s">ports_action</code>."
+ shodandb_ports_action: "Apa yang harus dilakukan ketika IP peminta memiliki satu atau lebih "port yang penting" atau "port proksi" yang dikonfigurasi dalam keadaan terbuka (atau, jika salah satu opsi "port apapun" dipilih, port apapun yang terbuka, kecuali port yang ditentukan dalam "tr069_ports")."
+ shodandb_proxy_ports: "Daftar port (dan/atau rentang port, misalnya 3389-3395) yang dipisahkan dengan koma, yang umumnya dikaitkan dengan proksi terbuka, server SOCKS, atau relai anonimisasi lainnya."
  signatures: "Konfigurasi untuk tanda tangan, file tanda tangan, modul, dll."
  signatures_conflict_response: "Bila terdapat terlalu banyak upaya simultan untuk mengakses sumber daya yang sama (misalnya, permintaan simultan ke beberapa proses PHP pada mesin yang sama untuk sumber daya yang sama), beberapa upaya tersebut mungkin gagal. Jika hal ini memengaruhi file tanda tangan atau modul, CIDRAM mungkin tidak dapat membuat penentuan efektif mengenai permintaan tersebut. Jika ini terjadi, haruskah permintaan diblokir, dan mana pesan status HTTP harus CIDRAM kirim?"
  signatures_default_tracktime: "Durasi yang alamat IP harus dilacak. Default = 7d0°0′0″ (1 seminggu)."

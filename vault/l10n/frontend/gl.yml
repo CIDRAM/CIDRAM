@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Galician language data for the front-end (last modified: 2026.09.14).
+# This file: Galician language data for the front-end (last modified: 2026.09.16).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -320,6 +320,13 @@ config: !lazy
  shodandb: "Configuración para o módulo ShodanDB (Shodan InternetDB)."
  shodandb_api_base: "O URL base para as consultas a Shodan InternetDB (ou un punto final compatible). Predeterminado = <code class="s">https://internetdb.shodan.io</code>."
  shodandb_api_header: "Un cabeceiro HTTP opcional para enviar coas solicitudes de busca (por exemplo, para a autenticación nun punto final aloxado localmente ou que utilice un proxy). Deixa en branco se non é necesario."
+ shodandb_expire_bad: "Durante canto tempo almacenar na caché o resultado dunha consulta a ShodanDB cando non se atoparon portos. Predeterminado = 1 hora."
+ shodandb_expire_good: "Durante canto tempo almacenar na caché o resultado dunha consulta a ShodanDB sobre portos atopados. Predeterminado = 1 día."
+ shodandb_lookup_strategy: "Cando se deben realizar as consultas en ShodanDB?"
+ shodandb_noteworthy_ports: "Unha lista, separada por comas, de portos (e/ou rangos de portos, p.ex., 3389-3395) considerados salientables ou de alto risco cando se atopan abertos nun enderezo IP solicitante (p.ex., portos de administración remota, IoT, ou bases de datos)."
+ shodandb_options: "Opcións de CAPTCHA que se aplicarán cando se detecte un porto aberto, segundo o indicado en <code class="s">ports_action</code>."
+ shodandb_ports_action: "Que facer cando unha IP solicitante ten aberto un ou varios dos "portos salientables" ou "portos de proxy" configurados (ou, se se selecciona algunha das opcións de "calquera porto", calquera porto aberto, agás os especificados en "tr069_ports")."
+ shodandb_proxy_ports: "Unha lista, separada por comas, de portos (e/ou rangos de portos, p.ex., 3389-3395) asociados habitualmente a proxies abertos, servidores SOCKS, ou outros retransmisores de anonimización."
  signatures: "Configuración para as sinaturas, ficheiros de sinatura, módulos, etc."
  signatures_conflict_response: "Cando hai demasiados intentos simultáneos de acceder aos mesmos recursos (por exemplo, solicitudes simultáneas a varios procesos PHP na mesma máquina para os mesmos recursos), algúns deses intentos poden fallar. No caso raro e improbable de que isto afecte aos ficheiros de sinatura ou módulos, é posible que se impida a CIDRAM tomar unha determinación efectiva sobre a solicitude. Se isto ocorre, debería bloquearse a solicitude, e que mensaxe de estado HTTP debe enviar CIDRAM?"
  signatures_default_tracktime: "A duración na que se deben seguir os enderezos IP. Predeterminado = 7d0°0′0″ (1 semana)."

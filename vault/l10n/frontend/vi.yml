@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2026.09.14).
+# This file: Vietnamese language data for the front-end (last modified: 2026.09.16).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -322,6 +322,13 @@ config: !lazy
  shodandb: "Cấu hình cho mô-đun ShodanDB (Shodan InternetDB)."
  shodandb_api_base: "URL cơ sở cho các truy vấn Shodan InternetDB (hoặc một điểm cuối tương thích). Mặc định = <code class="s">https://internetdb.shodan.io</code>."
  shodandb_api_header: "Một tiêu đề HTTP tùy chọn được gửi kèm với các yêu cầu tra cứu (ví dụ: để xác thực với một điểm cuối tự lưu trữ hoặc thông qua proxy). Để trống nếu không cần thiết."
+ shodandb_expire_bad: "Thời gian lưu vào cache cho kết quả tra cứu ShodanDB khi không tìm thấy cổng nào. Mặc định = 1 giờ."
+ shodandb_expire_good: "Thời gian lưu vào cache cho kết quả tra cứu ShodanDB khi cổng được tìm thấy. Mặc định = 1 ngày."
+ shodandb_lookup_strategy: "Khi nào nên thực hiện tra cứu trên ShodanDB?"
+ shodandb_noteworthy_ports: "Danh sách, được phân tách bằng dấu phẩy, các cổng (hay dải cổng, ví dụ: 3389-3395) được coi là đáng chú ý hoặc có rủi ro cao khi phát hiện đang mở tại địa chỉ IP gửi yêu cầu (ví dụ: các cổng quản trị từ xa, IoT, cơ sở dữ liệu)."
+ shodandb_options: "Các tùy chọn CAPTCHA được áp dụng khi phát hiện cổng mở, theo như được đánh dấu tại <code class="s">ports_action</code>."
+ shodandb_ports_action: "Cần làm gì khi một IP của yêu cầu có một hoặc nhiều "cổng đáng chú ý" hoặc "cổng proxy" đã được cấu hình đang ở trạng thái mở (hoặc, nếu chọn bất kỳ tùy chọn nào trong "bất kỳ cổng nào", thì áp dụng cho mọi cổng đang mở, ngoại trừ các cổng được chỉ định trong mục "tr069_ports")."
+ shodandb_proxy_ports: "Danh sách, được phân tách bằng dấu phẩy, các cổng (hay dải cổng, ví dụ: 3389-3395) thường liên quan đến các proxy mở, máy chủ SOCKS, hay các trạm trung chuyển ẩn danh khác."
  signatures: "Cấu hình cho chữ ký, tập tin chữ ký, mô-đun, vv."
  signatures_conflict_response: "Khi có quá nhiều lần thử truy cập cùng một tài nguyên cùng lúc (v.d., yêu cầu đồng thời tới nhiều quy trình PHP trên cùng một máy cho cùng một tài nguyên), một số lần thử đó có thể không thành công. Trong trường hợp hiếm hoi và không chắc xảy ra khi điều này ảnh hưởng đến các tập tin chữ ký hay mô-đun, CIDRAM có thể không đưa ra được quyết định hiệu quả về yêu cầu. Nếu điều này xảy ra, yêu cầu có nên bị chặn không, và CIDRAM nên gửi tin nhắn trạng thái HTTP nào?"
  signatures_default_tracktime: "Khoảng thời gian mà địa chỉ IP sẽ được giám sát. Mặc định = 7d0°0′0″ (1 tuần)."

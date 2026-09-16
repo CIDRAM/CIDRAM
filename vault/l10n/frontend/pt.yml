@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2026.09.14).
+# This file: Portuguese language data for the front-end (last modified: 2026.09.16).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -459,6 +459,17 @@ config: !lazy
  shodandb_api_header:
   pt-BR: "Um cabeçalho HTTP opcional para enviar com solicitações de consulta (por exemplo, para autenticação em um endpoint auto-hospedado ou via proxy). Deixe em branco se não for necessário."
   pt-PT: "Um cabeçalho HTTP opcional para enviar com solicitações de consulta (por exemplo, para autenticação num endpoint auto-hospedado ou via proxy). Deixe em branco se não for necessário."
+ shodandb_expire_bad: "Por quanto tempo armazenar em cache o resultado de uma consulta ao ShodanDB quando nenhuma porta foi encontrada. Padrão = 1 hora."
+ shodandb_expire_good: "Por quanto tempo armazenar em cache o resultado de uma consulta ao ShodanDB quando portos foram encontrados. Padrão = 1 dia."
+ shodandb_lookup_strategy: "Quando as consultas ao ShodanDB devem ser realizadas?"
+ shodandb_noteworthy_ports:
+  pt-BR: "Uma lista, separada por vírgulas, de portas (e/ou intervalos de portas, por exemplo, 3389-3395) consideradas notáveis ou de alto risco quando encontradas abertas em um endereço IP solicitante (por exemplo, portas de administração remota, IoT, ou bancos de dados)."
+  pt-PT: "Uma lista, separada por vírgulas, de portas (e/ou intervalos de portas, por exemplo, 3389-3395) consideradas notáveis ou de alto risco quando se encontram abertas num endereço IP requerente (por exemplo, portas de administração remota, IoT, base de dados)."
+ shodandb_options: "Opções de CAPTCHA a serem aplicadas quando uma porta aberta for detectada, em conformidade com o indicado em <code class="s">ports_action</code>."
+ shodandb_ports_action:
+  pt-BR: "O que fazer quando um endereço IP solicitante tem uma ou mais das "portos notáveis" ou "portas de proxy" configuradas abertas (ou, caso alguma das opções "quaisquer portos" esteja selecionada, qualquer porta aberta, com exceção apenas daquelas especificadas em "tr069_ports")."
+  pt-PT: "O que fazer quando um endereço IP requerente tem uma ou mais das "portos notáveis" ou "portas de proxy" configuradas abertas (ou, se for selecionada alguma das opções "quaisquer portos", qualquer porta aberta, com exceção apenas das especificadas em "tr069_ports")."
+ shodandb_proxy_ports: "Uma lista, separada por vírgulas, de portas (e/ou intervalos de portas, por exemplo, 3389-3395) comumente associadas a proxies abertos, servidores SOCKS, ou outros relays de anonimização."
  signatures: "Configuração para assinaturas, arquivos de assinatura, módulos, etc."
  signatures_conflict_response:
   pt-BR: "Quando há muitas tentativas simultâneas de acessar os mesmos recursos (por exemplo, solicitações simultâneas para vários processos PHP na mesma máquina para os mesmos recursos), algumas dessas tentativas podem falhar. No caso raro e improvável de isso afetar arquivos de assinatura ou módulos, o CIDRAM pode ser impedido de tomar uma decisão efetiva sobre a solicitação. Se isso acontecer, a solicitação deve ser bloqueada, e qual mensagem de status HTTP o CIDRAM deve enviar?"

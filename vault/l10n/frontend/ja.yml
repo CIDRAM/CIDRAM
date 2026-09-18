@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2026.09.16).
+# This file: Japanese language data for the front-end (last modified: 2026.09.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -326,7 +326,11 @@ config: !lazy
  shodandb_expire_good: "ポートが検出された際のShodanDB検索結果をキャッシュする期間。 Default/デフォルルト = 1日。"
  shodandb_lookup_strategy: "ShodanDBの検索はいつ実行すべきですか？"
  shodandb_noteworthy_ports: "リクエスト元のＩＰアドレスで開放されていると注目すべき、あるいは高リスクとみなされるポート（および／またはポート範囲。例：3389-3395）のカンマ区切りリスト（例：リモート管理、ＩｏＴ、データベース用ポート）。"
- shodandb_options: "<code class="s">ports_action</code>で指定された通りにオープンポートが検出された際に適用するキャプチャオプション。"
+ shodandb_options: "<code class="s">ports_action</code>で指定された通りにオープン・ポートが検出された際に適用するキャプチャオプション。"
+ shodandb_ports_action: "リクエスト元のＩＰアドレスにおいて、設定された「注目すべきポート」または「プロキシ・ポート」のいずれか1つ以上が開いている場合の対処法（あるいは、「いずれかのポート」のいずれかのオプションが選択されている場合は、指定された「tr069_ports」を除き、あらゆるオープン・ポートが対象となります）。"
+ shodandb_proxy_ports: "オープン・プロキシ、ＳＯＣＫＳサーバー、またはその他の匿名化リレーで一般的に使用されるポート（および／またはポート範囲、例：3389-3395）をカンマで区切ったリスト。"
+ shodandb_timeout_rl: "検索制限を超過した後、検索をどのくらいの期間（HTTP 429）。 Default/デフォルルト = 1時間。"
+ shodandb_tr069_ports: "このモジュールによって実行されるいかなる照合やアクションの対象からも除外すべき、TR-069/CWMP （CPE WAN Management Protocol）ポート、その他のポート、および／またはポート範囲をカンマで区切ったリスト。 Default/デフォルルト = 7547（標準／ＩＡＮＡ登録ＣＷＭＰポート） および 30005（一部のＩＳＰ/デバイスで使用される一般的な非標準の代替ポート）。 一般的な家庭向けＩＳＰは、ＣＷＭＰ（通常はポート7547を使用）を介して顧客のルーターを遠隔管理しているため、ルーターでこのポートが開いているのは正常であり、想定通りの動作です。"
  signatures: "シグネチャ、シグネチャ・ファイル、モジュール、などのコンフィギュレーション。"
  signatures_conflict_response: "同じリソースへの同時アクセス試行が多すぎる場合（同じリソースに対して同じマシン上の複数のＰＨＰプロセスへの同時リクエストなど）、それらの試行の一部が失敗する可能性があります。 万が一、これがシグネチャ・ファイルまたはモジュールに影響した場合、CIDRAMはリクエストに関して有効な決定を下すことができなくなる可能性があります。 このような場合、リクエストはブロックされる必要がありますか？​また、CIDRAMは、どのＨＴＴＰステータス・メッセージを送信する必要がありますか？"
  signatures_default_tracktime: "ＩＰアドレスを追跡する期間。 Default/デフォルルト = 「7d0°0′0″」 （１週間）。"
@@ -469,6 +473,8 @@ hints_http_response_header_code:
 hints_inspection: "* 補助ルールのデバッグのみを目的としています。 ブロックされたユーザーには表示されません。"
 hints_ipv6_on_32bit: "注：一部の３２ビットシステムでは、ＩＰｖ６ルックアップが正しく機能しない場合があります。"
 hints_logging_datetime: "役に立つヒント:時刻形式のプレースホルダーを使用して、ログ・ファイルの名前に日付/時刻情報を添付できます。 使用可能な時刻形式のプレースホルダーが{{Links.ConfigRef.time_format}}に表示されます。"
+hints_ports_action:
+ 0.: "<code class="s">noteworthy_ports</code>で指定されたポートおよび／またはポート範囲を指します。"
 hints_pdo_dsn:
  ＦＡＱ。: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.ja.md\#user-content-HOW_TO_USE_PDO" hreflang="ja-JP">「PDO DSN」とは何ですか？​CIDRAMでPDOを使用するにはどうすればよいですか？</a></em>"
 hints_sensitive_pages: "注：「機密ページ」を構成するものは{{Links.ConfigRef.sensitive}}によって決まります。"

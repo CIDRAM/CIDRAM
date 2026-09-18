@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malay language data for the front-end (last modified: 2026.09.16).
+# This file: Malay language data for the front-end (last modified: 2026.09.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -327,6 +327,8 @@ config: !lazy
  shodandb_options: "Pilihan CAPTCHA untuk digunakan apabila port terbuka dikesan, seperti yang ditandakan pada <code class="s">ports_action</code>."
  shodandb_ports_action: "Apakah tindakan yang perlu diambil apabila IP pemohon mempunyai satu atau lebih "port yang penting" atau "port proksi" yang telah dikonfigurasikan dalam keadaan terbuka (atau, jika mana-mana pilihan "sebarang port" dipilih, sebarang port yang terbuka, kecuali port yang ditetapkan sebagai "tr069_ports")."
  shodandb_proxy_ports: "Senarai port (dan/atau julat port, contohnya, 3389-3395) yang dipisahkan dengan koma, yang biasanya dikaitkan dengan proksi terbuka, pelayan SOCKS, atau geganti penyahnama lain."
+ shodandb_timeout_rl: "Berapa lama carian perlu digantung selepas had carian dilampaui (HTTP 429). Lalai = 1 jam."
+ shodandb_tr069_ports: "Senarai port TR-069/CWMP (CPE WAN Management Protocol) dan/atau julat port lain yang dipisahkan dengan koma, yang perlu dikecualikan daripada sebarang bentuk padanan atau tindakan yang akan dilaksanakan oleh modul ini. Lalai = 7547 (port CWMP standard/didaftarkan dengan IANA) dan 30005 (port alternatif bukan standard yang lazim digunakan oleh sesetengah ISP/peranti). Kebanyakan ISP kediaman menguruskan penghala pelanggan dari jauh melalui CWMP (biasanya menggunakan port 7547), dan oleh itu, adalah perkara biasa dan dijangkakan jika penghala membiarkan port tersebut terbuka."
  signatures: "Konfigurasi untuk tandatangan, fail tandatangan, modul, dll."
  signatures_conflict_response: "Apabila terdapat terlalu banyak percubaan serentak untuk mengakses sumber yang sama (cth., permintaan serentak kepada berbilang proses PHP pada mesin yang sama untuk sumber yang sama), beberapa percubaan tersebut mungkin gagal. Apabila ini menjejaskan fail tandatangan atau modul, CIDRAM mungkin dihalang daripada membuat penentuan yang berkesan tentang permintaan tersebut. Jika ini berlaku, adakah permintaan tersebut harus disekat, dan manakah mesej status HTTP harus dihantar oleh CIDRAM?"
  signatures_default_tracktime: "Tempoh yang alamat IP harus dijejaki. Lalai = 7d0°0′0″ (1 minggu)."
@@ -469,6 +471,10 @@ hints_http_response_header_code:
 hints_inspection: "* Bertujuan hanya untuk menyahpepijat peraturan tambahan. Tidak dipaparkan kepada pengguna yang disekat."
 hints_ipv6_on_32bit: "Nota: Carian IPv6 mungkin tidak berfungsi dengan betul pada sesetengah sistem 32-bit."
 hints_logging_datetime: "Petua berguna: Anda boleh melampirkan maklumat tarikh/masa pada nama fail log dengan menggunakan pemegang tempat format masa. Pemegang tempat format masa yang tersedia dipaparkan pada {{Links.ConfigRef.time_format}}."
+hints_ports_action:
+ 0.: "Merujuk kepada port dan/atau julat port yang ditentukan oleh <code class="s">noteworthy_ports</code>."
+ 1.: "Merujuk kepada port dan/atau julat port yang ditentukan oleh <code class="s">proxy_ports</code>. Pilihan untuk melaporkan disediakan bagi port proksi terbuka, tetapi tidak bagi port lain. Port terbuka semata-mata bukanlah petunjuk penyalahgunaan yang boleh dipercayai (banyak alamat IP yang tidak berbahaya menjalankan pelayan web, pelayan permainan, TeamSpeak, dsb), dan oleh itu, menyediakan pilihan untuk melaporkan sebarang jenis port terbuka akan mengakibatkan laporan yang tidak perlu dan tidak berasas, tetapi port proksi terbuka merupakan petunjuk penyalahgunaan yang lebih kuat berbanding port terbuka biasa, dan oleh itu, terdapat justifikasi untuk melaporkan bagi port proksi terbuka."
+ 2.: "Merujuk kepada mana-mana port terbuka, kecuali port dan/atau julat port yang dinyatakan oleh <code class="s">tr069_ports</code>, yang akan dikecualikan daripada sebarang bentuk padanan atau tindakan yang dilaksanakan oleh modul ini. Jika pilihan untuk "sebarang port" ditandakan, pilihan untuk "port yang penting" dan "port proksi" sebaiknya tidak ditandakan, kerana menandakannya serentak dengan "sebarang port" boleh menyebabkan padanan yang berlebihan serta pengiraan tandatangan yang lebih tinggi daripada jangkaan."
 hints_pdo_dsn:
  FAQ.: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.id.md\#user-content-HOW_TO_USE_PDO" hreflang="id-ID">Apakah itu "PDO DSN"? Bagaimanakah saya boleh menggunakan PDO dengan CIDRAM?</a></em>"
 hints_sensitive_pages: "Nota: Apa yang dimaksudkan dengan "halaman sensitif" ditentukan oleh {{Links.ConfigRef.sensitive}}."

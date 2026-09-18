@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Dutch language data for the front-end (last modified: 2026.09.14).
+# This file: Dutch language data for the front-end (last modified: 2026.09.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -323,6 +323,15 @@ config: !lazy
  shodandb: "Configuratie voor de ShodanDB (Shodan InternetDB) module."
  shodandb_api_base: "De basis-URL voor Shodan InternetDB-opzoekingen (of een compatibel eindpunt). Standaard = <code class="s">https://internetdb.shodan.io</code>."
  shodandb_api_header: "Een optionele HTTP-header om mee te sturen bij opzoekverzoeken (b.v., voor authenticatie bij een zelf-gehost of via een proxy benaderd eindpunt). Laat leeg indien niet nodig."
+ shodandb_expire_bad: "Hoe lang een ShodanDB-zoekresultaat moet worden gecachet wanneer er geen poorten zijn gevonden. Standaard = 1 uur."
+ shodandb_expire_good: "Hoe lang een ShodanDB-zoekresultaat moet worden gecachet wanneer poorten zijn gevonden. Standaard = 1 dag."
+ shodandb_lookup_strategy: "Wanneer moeten ShodanDB-opzoekingen worden uitgevoerd?"
+ shodandb_noteworthy_ports: "Een door komma's gescheiden lijst van poorten (en/of poortbereiken, b.v., 3389-3395) die als vermeldenswaardige of risicovol worden beschouwd wanneer ze open worden aangetroffen op een aanvragend IP-adres (b.v., poorten voor beheer op afstand, IoT, databases)."
+ shodandb_options: "Toe te passen CAPTCHA-opties wanneer een open poort wordt gedetecteerd, zoals aangegeven bij <code class="s">ports_action</code>."
+ shodandb_ports_action: "Wat te doen wanneer een aanvragend IP-adres een of meer van de geconfigureerde "vermeldenswaardige poorten" of "proxy poorten" open heeft staan (of, indien een van de opties voor "alle poorten" is geselecteerd, elke open poort, met uitzondering van de poorten die zijn gespecificeerd onder "tr069_ports")."
+ shodandb_proxy_ports: "Een door komma's gescheiden lijst van poorten (en/of poortbereiken, b.v., 3389-3395) die doorgaans in verband worden gebracht met open proxies, SOCKS-servers, of andere anonimiserende relays."
+ shodandb_timeout_rl: "Hoe lang zoekopdrachten moeten worden opgeschort nadat de limiet is overschreden (HTTP 429). Standaard = 1 uur."
+ shodandb_tr069_ports: "Een door komma's gescheiden lijst van TR-069/CWMP-poorten (CPE WAN Management Protocol), evenals eventuele andere poorten en/of poortbereiken die moeten worden uitgesloten van overeenkomsten of acties die door de module worden uitgevoerd. Standaard = 7547 (de standaard / bij IANA geregistreerde CWMP-poort) en 30005 (een veelgebruikt niet-standaard alternatief dat door sommige internetproviders/apparaten wordt gebruikt). De meeste internetproviders voor consumenten beheren klantrouters op afstand via CWMP (doorgaans via poort 7547), dus het is normaal en te verwachten dat deze poort op een router openstaat."
  signatures: "Configuratie voor signatures, signatuurbestanden, modules, enz."
  signatures_conflict_response: "Wanneer er te veel gelijktijdige pogingen worden gedaan om toegang te krijgen tot dezelfde bronnen (b.v., gelijktijdige verzoeken aan meerdere PHP-processen op dezelfde machine voor dezelfde bronnen), kunnen sommige van die pogingen mislukken. In het zeldzame en onwaarschijnlijke geval dat dit gevolgen heeft voor signatuurbestanden of modules, kan CIDRAM mogelijk geen effectieve beslissing nemen over het verzoek. Als dit gebeurt, moet het verzoek dan worden geblokkeerd, en welk HTTP-statusbericht moet CIDRAM verzenden?"
  signatures_default_tracktime: "De duur dat IP-adressen moeten worden gevolgd. Standaard = 7d0°0′0″ (1 week)."
@@ -464,6 +473,10 @@ hints_http_response_header_code:
 hints_inspection: "* Alleen bedoeld voor het debuggen van aanvullende regels. Niet weergegeven voor geblokkeerde gebruikers."
 hints_ipv6_on_32bit: "Opmerking: IPv6-opzoeken mogelijk werken niet correct op sommige 32-bits systemen."
 hints_logging_datetime: "Handige tip: U kunt datum-/tijdinformatie aan de namen van logbestanden toevoegen door tijdelijke aanduidingen voor de tijdnotatie te gebruiken. Beschikbare tijdelijke aanduidingen voor tijdnotatie worden weergegeven bij {{Links.ConfigRef.time_format}}."
+hints_ports_action:
+ 0.: "Verwijst naar de poorten en/of poortbereiken die door <code class="s">noteworthy_ports</code> zijn gespecificeerd."
+ 1.: "Verwijst naar de poorten en/of poortbereiken die door <code class="s">proxy_ports</code> zijn gespecificeerd. Er is een optie om open proxy poorten te rapporteren, maar niet voor andere poorten. Een open poort op zich is geen betrouwbare aanwijzing voor misbruik (talloze onschadelijke IP-adressen draaien een webserver, gameserver, TeamSpeak, enz), dus de mogelijkheid bieden om elke willekeurige open poort te melden zou leiden tot onnodige en ongerechtvaardigde meldingen, maar een open proxy poort is een sterker signaal van misbruik dan een algemene open poort, dus er is een rechtvaardiging om melding te maken van open proxy poorten."
+ 2.: "Verwijst naar alle open poorten, met uitzondering van de poorten en/of poortbereiken die door <code class="s">tr069_ports</code> zijn gespecificeerd en die moeten worden uitgesloten van alle soorten overeenkomsten of acties die door de module worden uitgevoerd. Als de optie voor "alle poorten" wordt geselecteerd, moeten de opties voor "vermeldenswaardige poorten" en "proxy poorten" waarschijnlijk worden niet geselecteerd, omdat het gelijktijdig selecteren hiervan kan leiden tot overbodige overeenkomsten en een hoger aantal signatures dan verwacht."
 hints_pdo_dsn:
  FAQ.: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.nl.md\#user-content-HOW_TO_USE_PDO" hreflang="nl-NL">Wat is een "PDO DSN"? Hoe kan ik PDO gebruiken met CIDRAM?</a></em>"
 hints_sensitive_pages: "Opmerking: Wat een "gevoelige pagina" is wordt door {{Links.ConfigRef.sensitive}} bepaald."

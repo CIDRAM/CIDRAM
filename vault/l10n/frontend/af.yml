@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Afrikaans language data for the front-end (last modified: 2026.09.16).
+# This file: Afrikaans language data for the front-end (last modified: 2026.09.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -324,10 +324,12 @@ config: !lazy
  shodandb_expire_bad: "Hoe lank om 'n ShodanDB-opsoekresultaat te kas wanneer geen poorte gevind is nie. Verstek = 1 uur."
  shodandb_expire_good: "Hoe lank om 'n ShodanDB-opsoekresultaat vir gevindde poorte in die kas te hou. Verstek = 1 dag."
  shodandb_lookup_strategy: "Wanneer moet ShodanDB-opsoeke uitgevoer word?"
- shodandb_noteworthy_ports: "Poorte en/of poortreekse (bv., 3389-3395), geskei deur kommas, wat as noemenswaardig of hoërisiko beskou word indien dit oop gevind word by 'n versoekende IP-adres (bv., poorte vir afstandadministrasie, IoT, of databasisse)."
+ shodandb_noteworthy_ports: "Poorte en/of poortreekse (bv., 3389-3395), geskei deur kommas, wat as noemenswaardig of hoërisiko beskou word indien dit oop gevind word by 'n versoekende IP-adres (bv., poorte vir afstandadministrasie, IoT, databasisse)."
  shodandb_options: "CAPTCHA-opsies om toe te pas wanneer 'n oop poort bespeur word, soos aangedui by <code class="s">ports_action</code>."
  shodandb_ports_action: "Wat om te doen wanneer 'n IP wat 'n versoek rig, een of meer van die gekonfigureerde "noemenswaardige poorte" of "instaanbedienerpoorte" oop het (of, indien enige van die "enige poorte"-opsies gekies is, enige oop poort hoegenaamd, met die uitsondering van die gespesifiseerde "tr069_ports")."
  shodandb_proxy_ports: "Poorte en/of poortreekse (bv., 3389-3395), geskei deur kommas, wat algemeen geassosieer word met oop instaanbedieners, SOCKS-bedieners, of ander anonimiserende relais."
+ shodandb_timeout_rl: "Hoe lank soektogte opgeskort moet word nadat die soeklimiet oorskry is (HTTP 429). Verstek = 1 uur."
+ shodandb_tr069_ports: "TR-069/CWMP-poorte (CPE WAN Management Protocol), geskei deur kommas, asook enige ander poorte en/of poortreekse wat uitgesluit moet word van enige soort passing of aksie wat deur die module uitgevoer word. Verstek = 7547 (die standaard/IANA-geregistreerde CWMP-poort) en 30005 ('n algemene nie-standaard alternatief wat deur sommige internetdiensverskaffers of toestelle gebruik word). Die meeste residensiële internetdiensverskaffers bestuur kliënte-routers op afstand via CWMP (gewoonlik via poort 7547); dit is dus normaal en te verwagte dat 'n router hierdie poort oop het."
  signatures: "Konfigurasie vir handtekeninge, handtekeninglêers, modules, ens."
  signatures_conflict_response: "Wanneer daar te veel gelyktydige pogings is om toegang tot dieselfde hulpbronne te verkry (bv., gelyktydige versoeke na verskeie PHP-prosesse by dieselfde masjien vir dieselfde hulpbronne), kan sommige van daardie pogings misluk. In die seldsame en onwaarskynlike geval dat dit handtekeninglêers of modules raak, kan CIDRAM verhinder word om 'n effektiewe bepaling oor die versoek te maak. Indien dit gebeur, moet die versoek geblokkeer word, en watter HTTP-statusboodskap moet CIDRAM stuur?"
  signatures_default_tracktime: "Die tydsduur waarvoor IP-adresse nagespoor moet word. Verstek = 7d0°0′0″ (1 week)."
@@ -470,6 +472,10 @@ hints_http_response_header_code:
 hints_inspection: "* Slegs bedoel vir ontfouting van bykomende reëls. Word nie aan geblokkeerde gebruikers gewys nie."
 hints_ipv6_on_32bit: "Kennis neem: IPv6-soektogte werk dalk nie korrek op sommige 32-bis stelsels nie."
 hints_logging_datetime: "Nuttige wenk: Jy kan datum/tyd inligting aan die name van loglêers heg deur tydformaat plekhouers te gebruik. Beskikbare tydformaat plekhouers word by {{Links.ConfigRef.time_format}} vertoon."
+hints_ports_action:
+ 0.: "Verwys na die poorte en/of poortreekse wat deur <code class="s">noteworthy_ports</code> gespesifiseer word."
+ 1.: "Verwys na die poorte en/of poortreekse wat deur <code class="s">proxy_ports</code> gespesifiseer word. Dit is moontlik om rapporteer te doen oor oop instaanbedienerpoorte, maar nie oor ander poorte nie. Oop poorten op sigself is nie 'n betroubare aanduiding van misbruik nie (talle onskadelike IP-adresse huisves 'n webbediener, 'n speletjiebediener, TeamSpeak, ens), om dus 'n opsie te bied om enige soort oop poort aan te meld, sou tot onnodige en ongeregverdigde aanmeldings lei. Oop instaanbedienerpoorten is egter 'n sterker aanduiding van misbruik as 'n algemene oop poort, en daarom is daar regverdiging daarvoor om oop instaanbedienerpoorte aan te meld."
+ 2.: "Verwys na enige oop poorte, met die uitsondering van daardie poorte en/of poortreekse wat deur <code class="s">tr069_ports</code> gespesifiseer word en wat uitgesluit moet word van enige soort passing of aksie wat deur die module uitgevoer word. Indien die opsie vir "enige poorte" gekies word, behoort die opsies vir "noemenswaardige poorte" en "instaanbedienerpoorte" waarskynlik nie gekies te word nie; om dit saam met "enige poorte" te kies, kan immers lei tot oortollige passing en 'n hoër as verwagte handtekeninge tel."
 hints_pdo_dsn:
  Gereelde vrae.: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">Wat is 'n "PDO DSN"? Hoe kan ek PDO met CIDRAM gebruik?</a></em>"
 hints_sensitive_pages: "Kennis neem: Wat 'n "sensitiewe bladsy" uitmaak, word deur {{Links.ConfigRef.sensitive}} bepaal."

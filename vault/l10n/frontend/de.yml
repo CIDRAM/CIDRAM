@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2026.09.14).
+# This file: German language data for the front-end (last modified: 2026.09.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -323,6 +323,9 @@ config: !lazy
  shodandb: "Konfiguration für das ShodanDB-Modul (Shodan InternetDB)."
  shodandb_api_base: "Die Basis-URL für Shodan-InternetDB-Abfragen (oder ein kompatibler Endpunkt). Standardeinstellung = <code class="s">https://internetdb.shodan.io</code>."
  shodandb_api_header: "Ein optionaler HTTP-Header der mit Suchanfragen gesendet wird (z.B., zur Authentifizierung gegenüber einem selbst gehosteten oder über einen Proxy angebundenen Endpunkt). Leer lassen falls nicht benötigt."
+ shodandb_expire_bad: "Wie lange das Ergebnis einer ShodanDB-Abfrage zwischengespeichert werden soll wenn keine Ports gefunden wurden. Standardeinstellung = 1 Stunde."
+ shodandb_expire_good: "Wie lange das Ergebnis einer ShodanDB-Abfrage zwischengespeichert werden soll wenn Ports gefunden wurden. Standardeinstellung = 1 Tag."
+ shodandb_lookup_strategy: "Wann sollten ShodanDB-Abfragen durchgeführt werden?"
  signatures: "Konfiguration für Signaturen, Signaturdateien, Module, u.s.w."
  signatures_conflict_response: "Wenn es zu viele gleichzeitige Versuche gibt auf dieselben Ressourcen zuzugreifen (z.B., gleichzeitige Anforderungen an mehrere PHP-Prozesse auf demselben Computer für dieselben Ressourcen), können einige dieser Versuche fehlschlagen. In dem seltenen und unwahrscheinlichen Fall dass Signaturdateien oder Module hiervon betroffen sind, kann CIDRAM möglicherweise keine wirksame Entscheidung über die Anfrage treffen. Wenn dies geschieht, sollte die Anforderung blockiert werden, und welche HTTP-Statusmeldung sollte CIDRAM senden?"
  signatures_default_tracktime: "Die Dauer für die IP-Adressen getrackt werden sollen. Standardeinstellung = 7d0°0′0″ (1 Woche)."

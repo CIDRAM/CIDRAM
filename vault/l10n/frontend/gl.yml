@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Galician language data for the front-end (last modified: 2026.09.16).
+# This file: Galician language data for the front-end (last modified: 2026.09.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -323,10 +323,12 @@ config: !lazy
  shodandb_expire_bad: "Durante canto tempo almacenar na caché o resultado dunha consulta a ShodanDB cando non se atoparon portos. Predeterminado = 1 hora."
  shodandb_expire_good: "Durante canto tempo almacenar na caché o resultado dunha consulta a ShodanDB sobre portos atopados. Predeterminado = 1 día."
  shodandb_lookup_strategy: "Cando se deben realizar as consultas en ShodanDB?"
- shodandb_noteworthy_ports: "Unha lista, separada por comas, de portos (e/ou rangos de portos, p.ex., 3389-3395) considerados salientables ou de alto risco cando se atopan abertos nun enderezo IP solicitante (p.ex., portos de administración remota, IoT, ou bases de datos)."
+ shodandb_noteworthy_ports: "Unha lista, separada por comas, de portos (e/ou rangos de portos, p.ex., 3389-3395) considerados salientables ou de alto risco cando se atopan abertos nun enderezo IP solicitante (p.ex., portos de administración remota, IoT, bases de datos)."
  shodandb_options: "Opcións de CAPTCHA que se aplicarán cando se detecte un porto aberto, segundo o indicado en <code class="s">ports_action</code>."
  shodandb_ports_action: "Que facer cando unha IP solicitante ten aberto un ou varios dos "portos salientables" ou "portos de proxy" configurados (ou, se se selecciona algunha das opcións de "calquera porto", calquera porto aberto, agás os especificados en "tr069_ports")."
  shodandb_proxy_ports: "Unha lista, separada por comas, de portos (e/ou rangos de portos, p.ex., 3389-3395) asociados habitualmente a proxies abertos, servidores SOCKS, ou outros retransmisores de anonimización."
+ shodandb_timeout_rl: "Durante canto tempo suspender as consultas unha vez superado o límite de consultas (HTTP 429). Predeterminado = 1 hora."
+ shodandb_tr069_ports: "Unha lista, separada por comas, de portos TR-069/CWMP (CPE WAN Management Protocol) e de calquera outro porto ou rango de portos que se deba excluír de calquera tipo de coincidencia ou acción que vaia realizar o módulo. Predeterminado = 7547 (o porto CWMP estándar/rexistrado na IANA) e 30005 (unha alternativa común non estándar utilizada por algúns ISP ou dispositivos). A maioría dos provedores de servizos de internet residenciais xestionan remotamente os routers dos clientes mediante CWMP (habitualmente a través do porto 7547), polo que é normal e esperable que un router o teña aberto."
  signatures: "Configuración para as sinaturas, ficheiros de sinatura, módulos, etc."
  signatures_conflict_response: "Cando hai demasiados intentos simultáneos de acceder aos mesmos recursos (por exemplo, solicitudes simultáneas a varios procesos PHP na mesma máquina para os mesmos recursos), algúns deses intentos poden fallar. No caso raro e improbable de que isto afecte aos ficheiros de sinatura ou módulos, é posible que se impida a CIDRAM tomar unha determinación efectiva sobre a solicitude. Se isto ocorre, debería bloquearse a solicitude, e que mensaxe de estado HTTP debe enviar CIDRAM?"
  signatures_default_tracktime: "A duración na que se deben seguir os enderezos IP. Predeterminado = 7d0°0′0″ (1 semana)."
@@ -468,6 +470,10 @@ hints_http_response_header_code:
 hints_inspection: "* Destinado só para depurar regras auxiliares. Non se mostra aos usuarios bloqueados."
 hints_ipv6_on_32bit: "Nota: É posible que as buscas IPv6 non funcionen correctamente nalgúns sistemas de 32 bits."
 hints_logging_datetime: "Consello útil: Podes anexar información de data/hora aos nomes dos ficheiros de rexistro mediante os marcadores de posición do formato de hora. Os marcadores de posición do formato de hora dispoñibles móstranse en {{Links.ConfigRef.time_format}}."
+hints_ports_action:
+ 0.: "Refírese aos portos e/ou rangos de portos especificados por <code class="s">noteworthy_ports</code>."
+ 1.: "Refírese aos portos e/ou rangos de portos especificados por <code class="s">proxy_ports</code>. Ofrécese unha opción para informar sobre portos de proxy aberto, pero non sobre outros portos. Un porto aberto por si só non constitúe un indicador fiable de uso indebido (moitos enderezos IP lexítimos executan servidores web, servidores de xogos, TeamSpeak, etc); polo tanto, ofrecer a opción de informar sobre calquera tipo de porto aberto daría lugar a informes innecesarios e inxustificados. Non obstante, un porto proxy aberto é un indicador de uso indebido máis sólido ca un porto aberto xenérico, o que xustifica a posibilidade de informar os portas de proxy abertas."
+ 2.: "Refírese a calquera porto aberto, agás aqueles portos e/ou rangos de portos especificados por <code class="s">tr069_ports</code>, que se excluirán de calquera tipo de coincidencia ou acción que o módulo vaia realizar. Se se seleccionan as opcións para "calquera porto", probablemente convén desmarcar as opcións para "portos salientables" e "portos de proxy", xa que seleccionalas xunto con "calquera porto" podería dar lugar a coincidencias superfluas e a un sinaturas contan superior ao esperado."
 hints_pdo_dsn:
  FAQ.: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">Que é un "PDO DSN"? Como podo usar PDO con CIDRAM?</a></em>"
 hints_sensitive_pages: "Nota: O que constitúe unha "páxina sensible" está determinado por {{Links.ConfigRef.sensitive}}."

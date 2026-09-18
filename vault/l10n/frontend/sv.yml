@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2026.09.14).
+# This file: Swedish language data for the front-end (last modified: 2026.09.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -322,6 +322,15 @@ config: !lazy
  shodandb: "Konfiguration för modulen ShodanDB (Shodan InternetDB)."
  shodandb_api_base: "Bas-URL-en för sökningar i Shodan InternetDB (eller en kompatibel slutpunkt). Standard = <code class="s">https://internetdb.shodan.io</code>."
  shodandb_api_header: "Ett valfritt HTTP-huvud som ska skickas med uppslagsförfrågningar (t.ex., för autentisering mot en självhostad eller proxyad slutpunkt). Lämna tomt om det inte behövs."
+ shodandb_expire_bad: "Hur länge ett ShodanDB-sökresultat ska cachelagras när inga portar hittades. Standard = 1 timme."
+ shodandb_expire_good: "Hur länge ett ShodanDB-sökresultat ska cachelagras när portar hittades. Standard = 1 dag."
+ shodandb_lookup_strategy: "När bör sökningar i ShodanDB utföras?"
+ shodandb_noteworthy_ports: "En kommaseparerad lista över portar (och/eller portintervall, t.ex., 3389–3395) som anses notervärda eller utgöra en hög risk om de påträffas öppna på en begärande IP-adress (t.ex., portar för fjärradministration, IoT, databaser)."
+ shodandb_options: "CAPTCHA-alternativ som ska tillämpas när en öppen port upptäcks, i enlighet med vad som markerats vid <code class="s">ports_action</code>."
+ shodandb_ports_action: "Vad man bör göra när en begärande IP-adress har en eller flera av de konfigurerade "notervärda portarna" eller "proxy portarna" öppna (eller, om något av alternativen för "alla portar" har valts, vilken öppen port som helst, med undantag för de portar som angetts under "tr069_ports")."
+ shodandb_proxy_ports: "En kommaseparerad lista över portar (och/eller portintervall, t.ex., 3389–3395) som ofta förknippas med öppna proxyservrar, SOCKS-servrar, eller andra anonymiserande reläer."
+ shodandb_timeout_rl: "Hur länge sökningar ska pausas efter att sökgränsen har överskridits (HTTP 429). Standard = 1 timme."
+ shodandb_tr069_ports: "En kommaseparerad lista över TR-069/CWMP-portar (CPE WAN Management Protocol) samt eventuella andra portar och/eller portintervall som ska undantas från alla typer av matchningar eller åtgärder som utförs av modulen. Standard = 7547 (standardporten / den IANA-registrerade porten för CWMP) och 30005 (ett vanligt alternativt portnummer som inte följer standarden och som används av vissa internetleverantörer/enheter). De flesta internetleverantörer för privatmarknaden fjärrhanterar kundroutrar via CWMP (vanligtvis via port 7547), så att en router har denna port öppen är normalt och förväntat."
  signatures: "Konfiguration för signaturer, signaturfiler, moduler, osv."
  signatures_conflict_response: "När det finns för många samtidiga försök att komma åt samma resurser (t.ex., samtidiga förfrågningar till flera PHP-processer på samma maskin för samma resurser), kan vissa av dessa försök misslyckas. I den sällsynta och osannolika händelsen att detta påverkar signaturfiler eller moduler, kan CIDRAM förhindras från att göra ett effektivt beslut om begäran. Om detta händer, ska begäran blockeras, och vilket HTTP-statusmeddelande ska CIDRAM skicka?"
  signatures_default_tracktime: "Varaktigheten som IP-adresser ska spåras för. Standard = 7d0°0′0″ (1 vecka)."
@@ -464,6 +473,10 @@ hints_http_response_header_code:
 hints_inspection: "* Avsedd endast för felsökning av hjälpregler. Visas inte för blockerade användare."
 hints_ipv6_on_32bit: "Obs: IPv6-sökningar kanske inte fungerar korrekt på vissa 32-bitarssystem."
 hints_logging_datetime: "Användbart tips: Du kan bifoga information om datum och tid till namnen på loggfiler genom att använda platshållare i tidsformat. Tillgängliga platshållare för tidsformat visas vid {{Links.ConfigRef.time_format}}."
+hints_ports_action:
+ 0.: "Avser de portar och/eller portintervall som anges av <code class="s">noteworthy_ports</code>."
+ 1.: "Avser de portar och/eller portintervall som anges av <code class="s">proxy_ports</code>. De tillgängliga alternativen möjliggör rapportering för öppna proxyportar, men inte för andra portar. En öppen port i sig är inte en tillförlitlig indikator på missbruk (många ofarliga IP-adresser kör webbservrar, spelservrar, TeamSpeak, osv), så att erbjuda en möjlighet att rapportera vilken öppen port som helst skulle leda till onödiga och obefogade rapporter, men en öppen proxyport är en starkare indikation på missbruk än en generisk öppen port, så det finns fog för att rapportera öppna proxyportar."
+ 2.: "Avser alla öppna portar, med undantag för de portar och/eller portintervall som anges av <code class="s">tr069_ports</code>, vilka ska undantas från alla former av matchningar eller åtgärder som utförs av modulen. Om alternativet för "alla portar" väljs, bör alternativen för "notervärda portar" och "proxy portar" sannolikt avmarkeras; därför att välja dessa samtidigt som "alla portar" kan leda till överflödiga matchningar och ett högre antal signaturer än väntat."
 hints_pdo_dsn:
  FAQ.: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">Vad är en "PDO DSN"? Hur kan jag använda PDO med CIDRAM?</a></em>"
 hints_sensitive_pages: "Obs: Vad som utgör en "känslig sida" bestäms av {{Links.ConfigRef.sensitive}}."
@@ -709,7 +722,7 @@ label:
  No log files available: "Inga loggfiler finns tillgängliga."
  None: "Ingen.\nOm du vill använda modulen endast för rapporteringsändamål, utan att slå upp något, använd denna."
  Normal: "Normal"
- Noteworthy ports: "Anmärkningsvärda portar."
+ Noteworthy ports: "Notervärda portar."
  Only those with updates available: "Endast de med tillgängliga uppdateringar."
  Only those installed: "Endast de som är installerade."
  Only those not installed: "Endast de som inte är installerade."

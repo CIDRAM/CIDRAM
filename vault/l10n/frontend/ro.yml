@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Romanian language data for the front-end (last modified: 2026.09.16).
+# This file: Romanian language data for the front-end (last modified: 2026.09.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -323,10 +323,12 @@ config: !lazy
  shodandb_expire_bad: "Pentru cât timp să se stocheze în cache rezultatul unei interogări ShodanDB în cazul în care nu au fost găsite porturi. Implicit = 1 oră."
  shodandb_expire_good: "Pentru cât timp să se stocheze în cache rezultatul unei interogări ShodanDB privind porturile identificate. Implicit = 1 zi."
  shodandb_lookup_strategy: "Când ar trebui efectuate interogările în ShodanDB?"
- shodandb_noteworthy_ports: "O listă de porturi (și/sau intervale de porturi, de exemplu, 3389-3395) separate prin virgulă, considerate porturi demne de menționat sau cu risc ridicat dacă sunt găsite deschise la o adresă IP solicitantă (de exemplu, porturi pentru administrare la distanță, IoT, sau baze de date)."
+ shodandb_noteworthy_ports: "O listă de porturi (și/sau intervale de porturi, de exemplu, 3389-3395) separate prin virgulă, considerate porturi demne de menționat sau cu risc ridicat dacă sunt găsite deschise la o adresă IP solicitantă (de exemplu, porturi pentru administrare la distanță, IoT, baze de date)."
  shodandb_options: "Opțiuni CAPTCHA de aplicat atunci când este detectat un port deschis, conform celor marcate la <code class="s">ports_action</code>."
  shodandb_ports_action: "Ce trebuie făcut atunci când o adresă IP solicitantă are deschis unul sau mai multe dintre „porturile demne de menționat” sau „porturile proxy” configurate (sau, dacă oricare dintre opțiunile „orice porturi” este selectată, orice port deschis, cu excepția doar a celor specificate „tr069_ports”)."
  shodandb_proxy_ports: "O listă de porturi (și/sau intervale de porturi, de exemplu, 3389-3395) separate prin virgulă, asociate în mod obișnuit cu proxy-uri deschise, servere SOCKS, sau alte relee de anonimizare."
+ shodandb_timeout_rl: "Pentru cât timp să se suspende interogările după depășirea limitei de interogare (HTTP 429). Implicit = 1 oră."
+ shodandb_tr069_ports: "O listă, separată prin virgule, a porturilor TR-069/CWMP (CPE WAN Management Protocol) și a oricăror altor porturi și/sau intervale de porturi care trebuie excluse de la orice tip de potrivire sau acțiune efectuată de modul. Implicit = 7547 (portul standard/înregistrat la IANA pentru CWMP) și 30005 (o alternativă comună, nestandard, utilizată de unii furnizori de servicii de internet şi dispozitive). Majoritatea furnizorilor de servicii de internet rezidențiale gestionează de la distanță routerele clienților prin CWMP (de obicei prin portul 7547), așa că un router care îl are deschis este normal și așteptat."
  signatures: "Configurare pentru semnături, fișiere de semnătură, module, etc."
  signatures_conflict_response: "Când există prea multe încercări simultane de a accesa aceleași resurse (de exemplu, solicitări simultane către mai multe procese PHP de la aceeași mașină pentru aceleași resurse), unele dintre aceste încercări pot eșua. În cazul rar și puțin probabil în care acest lucru afectează fișierele de semnătură sau modulele, CIDRAM poate fi împiedicat să ia o decizie eficientă cu privire la solicităre. Dacă se întâmplă acest lucru, solicitărea ar trebui să fie blocată, și ce mesaj de stare HTTP ar trebui să trimită CIDRAM?"
  signatures_default_tracktime: "Durata pentru care trebuie urmărite adresele IP. Implicit = 7d0°0′0″ (1 săptămână)."
@@ -477,6 +479,10 @@ hints_http_response_header_code:
 hints_inspection: "* Destinat numai pentru depanarea regulilor auxiliare. Nu este afișat pentru utilizatorii blocați."
 hints_ipv6_on_32bit: "Notă: Căutările IPv6 ar putea să nu funcționeze corect pe unele sisteme pe 32 de biți."
 hints_logging_datetime: "Sfat util: Puteți atașa informații despre dată/ora la numele fișierelor jurnal utilizând substituenți pentru formatul de timp. Substituenții disponibili pentru formatul de timp sunt afișați la {{Links.ConfigRef.time_format}}."
+hints_ports_action:
+ 0.: "Se referă la porturile și/sau intervalele de porturi specificate de <code class="s">noteworthy_ports</code>."
+ 1.: "Se referă la porturile și/sau intervalele de porturi specificate de <code class="s">proxy_ports</code>. Este disponibilă o opțiune de raportare pentru porturile de tip proxy deschis, dar nu și pentru alte porturi. Un port deschis, în sine, nu constituie un indicator fiabil de abuz (multe adrese IP legitime găzduiesc servere web, servere de jocuri, TeamSpeak, etc), astfel că oferirea posibilității de a raporta orice tip de port deschis ar duce la raportări inutile și nejustificate, dar un port proxy deschis reprezintă un indiciu de abuz mai puternic decât un port deschis oarecare, ceea ce justifică raportarea porturilor proxy deschise."
+ 2.: "Se referă la orice porturi deschise, cu excepția acelor porturi și/sau intervale de porturi specificate prin <code class="s">tr069_ports</code>, care urmează să fie excluse din orice tip de potriviri sau acțiuni efectuate de modul. Dacă se selectează opțiunea pentru „orice porturi”, opțiunile pentru „porturi demne de menționat” și „porturi proxy” ar trebui probabil debifate, întrucât selectarea lor concomitent cu „orice porturi” ar putea duce la potriviri inutile și la un număr de semnături mai mare decât cel preconizat."
 hints_pdo_dsn:
  FAQ.: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">Ce este un „DSN PDO”? Cum pot folosi PDO cu CIDRAM?</a></em>"
 hints_sensitive_pages: "Notă: Ceea ce constituie o „pagină sensibilă” este determinat de {{Links.ConfigRef.sensitive}}."

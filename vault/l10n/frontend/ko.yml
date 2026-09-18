@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2026.09.14).
+# This file: Korean language data for the front-end (last modified: 2026.09.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -41,7 +41,7 @@ Abuse category: !lazy
  Fraudulent orders: "사기 주문."
  Hacking: "해킹."
  IoT targeted: "IoT 표적 남용. 댓글에 어떤 유형의 장치가 대상이 되었는지에 대한 정보를 포함하세요."
- Open proxy, open relay, or tor endpoint: "개방형 프록시, 개방형 릴레이, 또는 Tor 엔드포인트."
+ Open proxy, open relay, or tor endpoint: "오픈 프록시, 개방형 릴레이, 또는 Tor 엔드포인트."
  Phishing: "피싱 웹사이트 및/또는 이메일."
  Ping of death: "죽음의 핑 (너무 큰 IP 패킷)."
  Port scans: "포트 스캔 (열린 포트 및 취약한 서비스 검색)."
@@ -323,6 +323,15 @@ config: !lazy
  shodandb: "ShodanDB (Shodan InternetDB) 모듈을 위한 설정입니다."
  shodandb_api_base: "Shodan InternetDB 조회(또는 호환되는 엔드포인트)를 위한 기본 URL입니다. Default (기본 설정) = <code class="s">https://internetdb.shodan.io</code>."
  shodandb_api_header: "조회 요청과 함께 전송할 선택적 HTTP 헤더(예: 자체 호스팅 또는 프록시 엔드포인트에 대한 인증용). 필요하지 않으면 비워 두십시오."
+ shodandb_expire_bad: "포트가 발견되지 않은 ShodanDB 조회 결과를 캐시할 기간. Default (기본 설정) = 1시간."
+ shodandb_expire_good: "포트가 발견된 ShodanDB 조회 결과를 캐시할 기간. Default (기본 설정) = 1일."
+ shodandb_lookup_strategy: "ShodanDB 조회는 언제 수행해야 합니까?"
+ shodandb_noteworthy_ports: "요청 IP 주소에서 열려 있을 경우 주목할 만하거나 위험도가 높은 것으로 간주되는 포트(또는 포트 범위, 예: 3389-3395)의 쉼표로 구분된 목록(예: 원격 관리, IoT, 데이터베이스 포트)."
+ shodandb_options: "<code class="s">ports_action</code>에 표시된 바와 같이 개방 포트가 감지될 때 적용할 CAPTCHA 옵션."
+ shodandb_ports_action: "요청 IP가 설정된 "주목할 만한 포트" 또는 "프록시 포트" 중 하나 이상을 열어두고 있을 때의 조치 사항 (또는 "모든 포트" 옵션 중 하나가 선택된 경우, "tr069_ports"로 지정된 포트를 제외한 모든 열린 포트가 해당됩니다)."
+ shodandb_proxy_ports: "오픈 프록시, SOCKS 서버, 또는 기타 익명화 릴레이와 흔히 연관되는 포트(및/또는 포트 범위, 예: 3389-3395)의 쉼표로 구분된 목록입니다."
+ shodandb_timeout_rl: "조회 한도를 초과한 후 조회를 중단할 기간 (HTTP 429). Default (기본 설정) = 1시간."
+ shodandb_tr069_ports: "해당 모듈이 수행하는 모든 유형의 매칭 또는 작업에서 제외할 기타 쉼표로 구분된 TR-069/CWMP(CPE WAN 관리 프로토콜) 포트 목록 및 기타 포트 또는 포트 범위. Default = 7547(표준/IANA 등록 CWMP 포트) 및 30005(일부 ISP나 장치에서 사용하는 일반적인 비표준 대체 포트). 대부분의 가정용 인터넷 서비스 제공업체는 CWMP(주로 7547번 포트 사용)를 통해 고객의 공유기를 원격으로 관리하므로, 해당 포트가 열려 있는 것은 정상적이며 예상된 상황입니다."
  signatures: "서명, 서명 파일, 모듈, 등의 설정."
  signatures_conflict_response: "같은 리소스에 동시에 액세스하려는 시도가 너무 많은 경우 (예, 동일한 리소스에 대해 동일한 머신에서 여러 PHP 프로세스에 동시 요청), 일부 시도는 실패할 수 있습니다. 이것이 서명 파일이나 모듈에 영향을 미치는 경우, CIDRAM이 요청에 대해 효과적인 결정을 내리지 못할 수 있습니다. 이런 일이 발생하면, 요청을 차단해야 할까요? 그리고 CIDRAM은 어떤 HTTP 상태 메시지를 보내야 할까요?"
  signatures_default_tracktime: "IP 주소를 추적해야 하는 기간입니다. Default (기본값) = 7d0°0′0″ (1 주)."
@@ -465,6 +474,8 @@ hints_http_response_header_code:
 hints_inspection: "* 보조 규칙 디버깅 전용입니다. 차단된 사용자에게는 표시되지 않습니다."
 hints_ipv6_on_32bit: "참고: IPv6 조회는 일부 32비트 시스템에서 제대로 작동하지 않을 수 있습니다."
 hints_logging_datetime: "유용한 팁: 시간 형식 placeholder를 사용하여 로그 파일 이름에 날짜/시간 정보를 붙일 수 있습니다. 사용할 수 있는 시간 형식 placeholder는 {{Links.ConfigRef.time_format}}에 표시되어 있습니다."
+hints_ports_action:
+ 0.: "<code class="s">noteworthy_ports</code>로 지정된 포트 및/또는 포트 범위를 의미합니다."
 hints_pdo_dsn:
  자주하는 질문.: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.ko.md\#user-content-HOW_TO_USE_PDO" hreflang="ko-KR">"PDO DSN"은 무엇입니까? CIDRAM과 함께 PDO를 사용하려면 어떻게해야합니까?</a></em>"
 hints_sensitive_pages: "참고: "민감한 페이지"를 구성하는 요소는 {{Links.ConfigRef.sensitive}}에 의해 결정됩니다."

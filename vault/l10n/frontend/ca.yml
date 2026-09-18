@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Catalan language data for the front-end (last modified: 2026.09.16).
+# This file: Catalan language data for the front-end (last modified: 2026.09.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -326,10 +326,12 @@ config: !lazy
  shodandb_expire_bad: "Quant de temps s'ha de desar a la memòria cau el resultat d'una consulta a ShodanDB quan no s'han trobat ports. Predeterminat = 1 hora."
  shodandb_expire_good: "Quant de temps s'ha de desar a la memòria cau el resultat d'una consulta a ShodanDB sobre la detecció de ports. Predeterminat = 1 dia."
  shodandb_lookup_strategy: "Quan s'han de realitzar les consultes a ShodanDB?"
- shodandb_noteworthy_ports: "Una llista separada per comes de ports (i/o intervals de ports, p.ex., 3389-3395) considerats destacables o d'alt risc si es troben oberts en una adreça IP sol·licitant (p.ex., ports d'administració remota, IoT, o bases de dades)."
+ shodandb_noteworthy_ports: "Una llista separada per comes de ports (i/o intervals de ports, p.ex., 3389-3395) considerats destacables o d'alt risc si es troben oberts en una adreça IP sol·licitant (p.ex., ports d'administració remota, IoT, bases de dades)."
  shodandb_options: "Opcions de CAPTCHA a aplicar quan es detecta un port obert, d'acord amb el que s'indica a <code class="s">ports_action</code>."
- shodandb_ports_action: "Què fer quan una IP sol·licitant té obert un o més dels «ports destacables» o «ports de servidor intermediari» configurats (o, si se selecciona alguna de les opcions de "qualsevol port", qualsevol port obert, a excepció únicament dels especificats a "tr069_ports")."
+ shodandb_ports_action: "Què fer quan una IP sol·licitant té obert un o més dels "ports destacables" o "ports de servidor intermediari" configurats (o, si se selecciona alguna de les opcions de "qualsevol port", qualsevol port obert, a excepció únicament dels especificats a "tr069_ports")."
  shodandb_proxy_ports: "Una llista separada per comes de ports (i/o intervals de ports, p.ex., 3389-3395) associats habitualment a servidors intermediaris oberts, servidors SOCKS, o altres relés d'anonimització."
+ shodandb_timeout_rl: "Durada de la suspensió de les consultes un cop superat el límit de consultes (HTTP 429). Predeterminat = 1 hora."
+ shodandb_tr069_ports: "Una llista separada per comes de ports TR-069/CWMP (CPE WAN Management Protocol) i de qualsevol altre port o interval de ports que s'hagi d'excloure de qualsevol tipus de coincidència o acció que hagi de dur a terme el mòdul. Predeterminat = 7547 (el port CWMP estàndard/registrat a l'IANA) i 30005 (una alternativa no estàndard habitual utilitzada per alguns proveïdors de serveis d'internet o dispositius). La majoria dels proveïdors d'internet residencials gestionen remotament els encaminadors dels clients mitjançant CWMP (normalment a través del port 7547), de manera que un encaminador que el tingui obert és normal i esperat."
  signatures: "Configuració per a les signatures, fitxers de signatura, mòduls, etc."
  signatures_conflict_response: "Quan hi ha massa intents simultanis d'accedir als mateixos recursos (per exemple, sol·licituds simultànies a diversos processos PHP a la mateixa màquina per als mateixos recursos), alguns d'aquests intents poden fallar. En el cas rar i poc probable que això afecti fitxers de signatura o mòduls, es pot impedir que CIDRAM prengui una determinació efectiva sobre la sol·licitud. Si això passa, s'ha de bloquejar la sol·licitud, i quin missatge d'estat HTTP hauria d'enviar CIDRAM?"
  signatures_default_tracktime: "La durada per fer el seguiment de les adreces IP. Predeterminat = 7d0°0′0″ (1 setmana)."
@@ -471,6 +473,10 @@ hints_http_response_header_code:
 hints_inspection: "* Dissenyat només per depurar regles auxiliars. No es mostra als usuaris bloquejats."
 hints_ipv6_on_32bit: "Nota: És possible que les cerques IPv6 no funcionin correctament en alguns sistemes de 32 bits."
 hints_logging_datetime: "Consell útil: Podeu adjuntar informació de data/hora als noms dels fitxers de registre utilitzant marcadors de posició de format d'hora. Els marcadors de posició de format d'hora disponibles es mostren a {{Links.ConfigRef.time_format}}."
+hints_ports_action:
+ 0.: "Fa referència als ports i/o als intervals de ports especificats per <code class="s">noteworthy_ports</code>."
+ 1.: "Fa referència als ports i/o als intervals de ports especificats per <code class="s">proxy_ports</code>. S'ofereix una opció per informar sobre ports de servidor intermediari oberts, però no sobre altres ports. Un port obert per si sol no és un indicador fiable d'ús indegut (moltes adreces IP innòcues executen servidors web, servidors de jocs, TeamSpeak, etc); per tant, oferir l'opció de informar qualsevol tipus de port obert provocaria d'informes innecessàries i injustificades. En canvi, un port de servidor intermediari obert és un indici d'ús indegut més sòlid que un port obert genèric, fet que justifica la informar dels ports de servidor intermediari oberts."
+ 2.: "Fa referència a qualsevol port obert, a excepció dels ports i/o intervals de ports especificats per <code class="s">tr069_ports</code>, que s'han d'excluir de qualsevol tipus de coincidència o acció que hagi de dur a terme el mòdul. Si se seleccionen les opcions per a "qualsevol port", probablement caldria desmarcar les opcions per a "ports destacables" i "ports de servidor intermediari", ja que seleccionar-los conjuntament amb "qualsevol port" podria donar lloc a coincidències supèrflues i a un recompte de signatures superior a l'esperat."
 hints_pdo_dsn:
  FAQ.: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">Què és un "PDO DSN"? Com puc utilitzar PDO amb CIDRAM?</a></em>"
 hints_sensitive_pages: "Nota: El que constitueix una "pàgina sensible" està determinat per {{Links.ConfigRef.sensitive}}."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Latvian language data for the front-end (last modified: 2026.09.14).
+# This file: Latvian language data for the front-end (last modified: 2026.09.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -322,6 +322,9 @@ config: !lazy
  shodandb: "ShodanDB (Shodan InternetDB) moduļa konfigurācija."
  shodandb_api_base: "Shodan InternetDB vaicājumu bāzes URL (vai saderīgs galapunkts). Noklusējuma = <code class="s">https://internetdb.shodan.io</code>."
  shodandb_api_header: "Izvēles HTTP galvene, ko nosūtīt kopā ar uzmeklēšanas pieprasījumiem (piemēram, autentifikācijai pret pašmitinātu vai starpniekservera starpniecību pieejamu galapunktu). Atstājiet tukšu, ja nav nepieciešams."
+ shodandb_expire_bad: "Cik ilgi saglabāt kešatmiņā ShodanDB meklēšana rezultātu kad netika atrasti porti. Noklusējuma = 1 stunda."
+ shodandb_expire_good: "Cik ilgi saglabāt kešatmiņā ShodanDB meklēšana rezultātu kad tika atrasti porti. Noklusējuma = 1 diena."
+ shodandb_lookup_strategy: "Kad jāveic meklēšana ShodanDB?"
  signatures: "Parakstu, parakstu failu, moduļu, utt konfigurācija."
  signatures_conflict_response: "Ja ir pārāk daudz vienlaicīgu mēģinājumu piekļūt vieniem un tiem pašiem resursiem (piemēram, vienlaicīgi tiek pieprasīti vairāki PHP procesi vienā un tajā pašā mašīnā par tiem pašiem resursiem), daži no šiem mēģinājumiem var neizdoties. Retos un maz ticamos gadījumos, kad tas ietekmēs paraksta failus vai moduļus, CIDRAM var liegt pieņemt efektīvu lēmumu par pieprasījumu. Ja tas notiek, vai pieprasījums ir jābloķē un kurš HTTP statusa ziņojums ir jānosūta CIDRAM?"
  signatures_default_tracktime: "IP adrešu izsekošanas ilgums. Noklusējuma = 7d0°0′0″ (1 nedēļa)."

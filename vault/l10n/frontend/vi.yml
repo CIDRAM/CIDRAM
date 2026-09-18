@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Vietnamese language data for the front-end (last modified: 2026.09.16).
+# This file: Vietnamese language data for the front-end (last modified: 2026.09.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -329,6 +329,8 @@ config: !lazy
  shodandb_options: "Các tùy chọn CAPTCHA được áp dụng khi phát hiện cổng mở, theo như được đánh dấu tại <code class="s">ports_action</code>."
  shodandb_ports_action: "Cần làm gì khi một IP của yêu cầu có một hoặc nhiều "cổng đáng chú ý" hoặc "cổng proxy" đã được cấu hình đang ở trạng thái mở (hoặc, nếu chọn bất kỳ tùy chọn nào trong "bất kỳ cổng nào", thì áp dụng cho mọi cổng đang mở, ngoại trừ các cổng được chỉ định trong mục "tr069_ports")."
  shodandb_proxy_ports: "Danh sách, được phân tách bằng dấu phẩy, các cổng (hay dải cổng, ví dụ: 3389-3395) thường liên quan đến các proxy mở, máy chủ SOCKS, hay các trạm trung chuyển ẩn danh khác."
+ shodandb_timeout_rl: "Thời gian tạm ngưng thực hiện tra cứu sau khi vượt quá giới hạn tra cứu (HTTP 429). Mặc định = 1 giờ."
+ shodandb_tr069_ports: "Danh sách, được phân tách bằng dấu phẩy, các cổng TR-069/CWMP (giao thức quản lý WAN CPE), cùng với bất kỳ cổng hay dải cổng nào khác cần được loại trừ khỏi các hoạt động so khớp hoặc thực thi tác vụ của mô-đun. Mặc định = 7547 (cổng CWMP tiêu chuẩn / được IANA đăng ký) và 30005 (một cổng thay thế phi tiêu chuẩn phổ biến được một số nhà cung cấp dịch vụ internet và thiết bị sử dụng). Hầu hết các nhà cung cấp dịch vụ internet dành cho hộ gia đình đều quản lý bộ định tuyến của khách hàng từ xa thông qua giao thức CWMP (thường là qua cổng 7547), do đó việc bộ định tuyến mở cổng này là điều bình thường và nằm trong dự tính."
  signatures: "Cấu hình cho chữ ký, tập tin chữ ký, mô-đun, vv."
  signatures_conflict_response: "Khi có quá nhiều lần thử truy cập cùng một tài nguyên cùng lúc (v.d., yêu cầu đồng thời tới nhiều quy trình PHP trên cùng một máy cho cùng một tài nguyên), một số lần thử đó có thể không thành công. Trong trường hợp hiếm hoi và không chắc xảy ra khi điều này ảnh hưởng đến các tập tin chữ ký hay mô-đun, CIDRAM có thể không đưa ra được quyết định hiệu quả về yêu cầu. Nếu điều này xảy ra, yêu cầu có nên bị chặn không, và CIDRAM nên gửi tin nhắn trạng thái HTTP nào?"
  signatures_default_tracktime: "Khoảng thời gian mà địa chỉ IP sẽ được giám sát. Mặc định = 7d0°0′0″ (1 tuần)."
@@ -471,6 +473,10 @@ hints_http_response_header_code:
 hints_inspection: "* Chỉ dành cho việc gỡ lỗi các quy tắc phụ trợ. Không hiển thị cho người dùng bị chặn."
 hints_ipv6_on_32bit: "Lưu ý: Tra cứu IPv6 có thể không hoạt động chính xác trên một số hệ thống 32 bit."
 hints_logging_datetime: "Lời khuyên hữu ích: Bạn có thể đính kèm thông tin ngày/giờ vào tên của tập tin nhật ký bằng cách sử dụng phần giữ chỗ định dạng thời gian. Phần giữ chỗ định dạng thời gian có sẵn được hiển thị tại {{Links.ConfigRef.time_format}}."
+hints_ports_action:
+ 0.: "Đề cập đến các cổng hay dải cổng được chỉ định bởi <code class="s">noteworthy_ports</code>."
+ 1.: "Đề cập đến các cổng hay dải cổng được chỉ định bởi <code class="s">proxy_ports</code>. Có tùy chọn báo cáo đối với các cổng proxy mở, nhưng không áp dụng cho các cổng khác. Bản thân việc một cổng đang mở không phải là dấu hiệu đáng tin cậy cho thấy hành vi lạm dụng (vì có rất nhiều địa chỉ IP hợp lệ đang chạy máy chủ web, máy chủ trò chơi, TeamSpeak, vv), vì vậy việc cho phép báo cáo bất kỳ loại cổng mở nào sẽ dẫn đến các báo cáo không cần thiết và thiếu cơ sở. Tuy nhiên, cổng proxy đang mở là dấu hiệu lạm dụng rõ ràng hơn so với các loại cổng mở thông thường, vì vậy việc báo cáo các cổng proxy đang mở là điều có cơ sở hợp lý."
+ 2.: "Áp dụng cho mọi cổng đang mở, ngoại trừ các cổng hay dải cổng được chỉ định bởi <code class="s">tr069_ports</code> (các cổng này sẽ bị loại khỏi mọi hình thức so khớp hoặc hành động do mô-đun thực hiện). Nếu chọn tùy chọn "bất kỳ cổng nào", thì có lẽ nên bỏ chọn các tùy chọn "cổng đáng chú ý" và "cổng proxy", bởi vì việc chọn đồng thời các tùy chọn này cùng với "bất kỳ cổng nào" có thể dẫn đến tình trạng khớp lệnh dư thừa và số lượng chữ ký cao hơn mức dự kiến."
 hints_pdo_dsn:
  Câu hỏi thường gặp.: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.vi.md\#user-content-HOW_TO_USE_PDO" hreflang="vi-VN">"PDO DSN" là gì? Làm cách nào tôi có thể sử dụng PDO với CIDRAM?</a></em>"
 hints_sensitive_pages: "Lưu ý: Những gì cấu thành một "trang nhạy cảm" được xác định bởi {{Links.ConfigRef.sensitive}}."

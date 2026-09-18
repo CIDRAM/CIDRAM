@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data for the front-end (last modified: 2026.09.14).
+# This file: Bangla language data for the front-end (last modified: 2026.09.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -321,6 +321,9 @@ config: !lazy
  shodandb: "ShodanDB (Shodan InternetDB) মডিউলের জন্য কনফিগারেশন।"
  shodandb_api_base: "Shodan InternetDB-তে অনুসন্ধানের জন্য বেস URL (অথবা একটি সামঞ্জস্যপূর্ণ এন্ডপয়েন্ট)। ডিফল্ট = <code class="s">https://internetdb.shodan.io</code>।"
  shodandb_api_header: "লুকআপ অনুরোধের সাথে পাঠানোর জন্য একটি ঐচ্ছিক HTTP হেডার (যেমন, সেলফ-হোস্টেড বা প্রক্সি-যুক্ত এন্ডপয়েন্টের ক্ষেত্রে প্রমাণীকরণের জন্য)। প্রয়োজন না হলে ফাঁকা রাখুন।"
+ shodandb_expire_bad: "কোনো পোর্ট খুঁজে না পাওয়া গেলে ShodanDB-র অনুসন্ধান ফলাফল কতক্ষণ ক্যাশ করে রাখা হবে। ডিফল্ট = ১ ঘণ্টা।"
+ shodandb_expire_good: "পোর্ট খুঁজে পাওয়া গেলে ShodanDB-এর অনুসন্ধান ফলাফল কতক্ষণ ক্যাশ করে রাখা হবে। ডিফল্ট = ১ দিন।"
+ shodandb_lookup_strategy: "ShodanDB-তে কখন অনুসন্ধান করা উচিত?"
  signatures: "স্বাক্ষর, স্বাক্ষর ফাইল, মডিউল, ইত্যাদির জন্য কনফিগারেশন।"
  signatures_conflict_response: "যখন একই সংস্থানগুলি অ্যাক্সেস করার জন্য অনেকগুলি একযোগে প্রচেষ্টা করা হয় (যেমন, একই সংস্থানের জন্য একই মেশিনে একাধিক PHP প্রক্রিয়াগুলির একযোগে অনুরোধ), সেই প্রচেষ্টাগুলির মধ্যে কিছু ব্যর্থ হতে পারে। বিরল এবং অসম্ভাব্য ইভেন্টে যে এটি স্বাক্ষর ফাইল বা মডিউলগুলিকে প্রভাবিত করে, CIDRAMকে অনুরোধ সম্পর্কে কার্যকর সিদ্ধান্ত নেওয়া থেকে বাধা দেওয়া যেতে পারে। যদি এটি ঘটে থাকে, তাহলে অনুরোধটি অবরুদ্ধ করা উচিত, এবং কোন HTTP স্থিতি বার্তা CIDRAM পাঠাতে হবে?"
  signatures_default_tracktime: "আইপি ঠিকানাগুলি যে সময়কালের জন্য ট্র্যাক করা উচিত। ডিফল্ট = 7d0°0′0″ (1 সপ্তাহ)।"

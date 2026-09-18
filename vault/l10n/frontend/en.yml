@@ -340,7 +340,6 @@ config: !lazy
  shodandb_options: "CAPTCHA options to apply when an open port is detected in accordance with as marked at <code class="s">ports_action</code>."
  shodandb_ports_action: "What to do when a requesting IP has one or more of the configured \"noteworthy ports\" or \"proxy ports\" open (or, if any of the \"any ports\" options are selected, any open port at all, with exception only to those specified \"tr069_ports\")."
  shodandb_proxy_ports: "A comma-separated list of ports (and/or port ranges, e.g., 3389-3395) commonly associated with open proxies, SOCKS servers, or other anonymising relays."
- shodandb_timeout_limit: "Timeout (in seconds) for ShodanDB lookup requests. Default = 12."
  shodandb_timeout_rl: "How long to suspend lookups for after the lookup limit has been exceeded (HTTP 429). Default = 1 hour."
  shodandb_tr069_ports: "A comma-separated list of TR-069/CWMP (CPE WAN Management Protocol) ports, and any other ports and/or port ranges to be excluded from any kinds of matches or actions to be performed by the module. Default = 7547 (the standard/IANA-registered CWMP port) and 30005 (a common non-standard alternate used by some ISPs/devices). Most residential ISPs remotely manage customer routers via CWMP (typically via port 7547), so a router having it open is normal and expected."
  signatures: "Configuration for signatures, signature files, modules, etc."

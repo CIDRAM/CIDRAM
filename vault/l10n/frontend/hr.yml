@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Croatian language data for the front-end (last modified: 2026.09.16).
+# This file: Croatian language data for the front-end (last modified: 2026.09.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -325,10 +325,12 @@ config: !lazy
  shodandb_expire_bad: "Koliko dugo pohranjivati ​​u predmemoriju rezultat pretrage u ShodanDB-u kada nisu pronađeni nikakvi portovi. Zadano = 1 sat."
  shodandb_expire_good: "Koliko dugo treba pohranjivati ​​u predmemoriju rezultat pretrage baze ShodanDB kada su portovi pronađeni. Zadano = 1 dan."
  shodandb_lookup_strategy: "Kada treba provoditi pretrage u bazi ShodanDB?"
- shodandb_noteworthy_ports: "Popis portova (i/ili raspona portova, npr., 3389–3395) odvojenih zarezima, koji se smatraju značajnima ili visokorizičnima ako su otvoreni na IP adresi koja šalje zahtjev (npr., portovi za udaljenu administraciju, IoT, ili baze podataka)."
+ shodandb_noteworthy_ports: "Popis portova (i/ili raspona portova, npr., 3389–3395) odvojenih zarezima, koji se smatraju značajnima ili visokorizičnima ako su otvoreni na IP adresi koja šalje zahtjev (npr., portovi za udaljenu administraciju, IoT, baze podataka)."
  shodandb_options: "Opcije za CAPTCHA-u koje se primjenjuju kada se otkrije otvoreni port, u skladu s oznakom na <code class="s">ports_action</code>."
  shodandb_ports_action: "Što učiniti kada IP adresa koja šalje zahtjev ima otvoren jedan ili više konfiguriranih "značajnih portova" ili "proxy portova" (ili, ako je odabrana bilo koja od opcija "bilo koji portovi", bilo koji otvoreni port, uz iznimku onih navedenih pod "tr069_ports")."
  shodandb_proxy_ports: "Popis portova (i/ili raspona portova, npr., 3389–3395) odvojenih zarezima, koji se obično povezuju s otvorenim proxyjima, SOCKS poslužiteljima, ili drugim relejima za anonimizaciju."
+ shodandb_timeout_rl: "Koliko dugo obustaviti pretraživanja nakon prekoračenja ograničenja broja pretraživanja (HTTP 429). Zadano = 1 sat."
+ shodandb_tr069_ports: "Popis TR-069/CWMP (CPE WAN Management Protocol) portova odvojenih zarezima, kao i svih drugih portova i/ili raspona portova koje treba izuzeti iz bilo kakvih podudaranja ili radnji koje modul treba izvršiti. Zadano = 7547 (7547 (standardni/od strane IANA-e registrirani CWMP port) i 30005 (uobičajeni nestandardni alternativni port koji koriste neki pružatelji internetskih usluga ili uređaji). Većina privatnih ISP-ova daljinski upravlja korisničkim usmjerivačima putem CWMP-a (obično putem porta 7547), pa je normalno i očekivano da usmjerivač ima otvoren port."
  signatures: "Konfiguracija za potpise, datoteke potpisa, module, itd."
  signatures_conflict_response: "Kada postoji previše istovremenih pokušaja pristupa istim resursima (npr., istovremeni zahtjevi za više PHP procesa na istom računalu za iste resurse), neki od tih pokušaja mogu propasti. U rijetkom i malo vjerojatnom slučaju da to utječe na datoteke potpisa ili module, CIDRAM može biti spriječen u učinkovitom odlučivanju o zahtjevu. Ako se to dogodi, treba li zahtjev blokirati, i koju HTTP poruku o statusu CIDRAM treba poslati?"
  signatures_default_tracktime: "Trajanje tijekom kojeg se IP adrese trebaju pratiti. Zadano = 7d0°0′0″ (1 tjedan)."
@@ -474,6 +476,10 @@ hints_http_response_header_code:
 hints_inspection: "* Namijenjen samo za otklanjanje pogrešaka pomoćnih pravila. Ne prikazuje se blokiranim korisnicima."
 hints_ipv6_on_32bit: "Bilješka: IPv6 pretraživanja možda neće ispravno raditi na nekim 32-bitnim sustavima."
 hints_logging_datetime: "Koristan savjet: Nazivima datoteka dnevnika možete priložiti informacije o datumu/vremenu pomoću rezerviranih mjesta formata vremena. Dostupni rezervirani prostori formata vremena prikazani su na {{Links.ConfigRef.time_format}}."
+hints_ports_action:
+ 0.: "Odnosi se na portove i/ili raspone portova navedene u <code class="s">noteworthy_ports</code>."
+ 1.: "Odnosi se na portove i/ili raspone portova navedene u <code class="s">proxy_ports</code>. Opcija prijavljivanja dostupna je za otvorene proxy portove, ali ne i za ostale portove.Sam po sebi, otvoreni port nije pouzdan pokazatelj zlouporabe (mnoge legitimne IP adrese pokreću web-poslužitelje, poslužitelje za igre, TeamSpeak itd.), stoga bi mogućnost prijavljivanja bilo kakvog otvorenog porta dovela do nepotrebnih i neopravdanih prijava. Sam po sebi, otvoreni port nije pouzdan pokazatelj zlouporabe (mnoge legitimne IP adrese pokreću web-poslužitelje, poslužitelje za igre, TeamSpeak, itd), stoga bi mogućnost prijavljivanja bilo kakvog otvorenog porta dovela do nepotrebnih i neopravdanih prijava, no otvoreni proxy port snažniji je pokazatelj zlouporabe od običnog otvorenog porta, stoga je prijavljivanje otvorenih proxy portova opravdano."
+ 2.: "Odnosi se na sve otvorene portove, osim onih portova i/ili raspona portova navedenih u <code class="s">tr069_ports</code>, koji se izuzimaju iz bilo kakvog podudaranja ili radnji koje modul treba izvršiti. Ako su odabrane opcije za "bilo koje portove", opcije za "značajne portove" i "proxy portove" vjerojatno bi trebalo isključiti, jer bi njihovo odabiranje uz "bilo koje portove" moglo dovesti do suvišnog podudaranja i većeg broja potpisa od očekivanog."
 hints_pdo_dsn:
  Čpp.: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">Što je "PDO DSN"? Kako mogu koristiti PDO s CIDRAM-om?</a></em>"
 hints_sensitive_pages: "Bilješka: Što čini "osjetljivu stranicu" određuje {{Links.ConfigRef.sensitive}}."

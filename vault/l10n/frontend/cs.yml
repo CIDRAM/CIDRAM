@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Czech language data for the front-end (last modified: 2026.09.16).
+# This file: Czech language data for the front-end (last modified: 2026.09.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -325,10 +325,12 @@ config: !lazy
  shodandb_expire_bad: "Jak dlouho ukládat do mezipaměti výsledek vyhledávání v ShodanDB v případě že nebyly nalezeny žádné porty. Standardní = 1 hodina."
  shodandb_expire_good: "Jak dlouho ukládat do mezipaměti výsledek vyhledávání v ShodanDB se nalezených portů. Standardní = 1 den."
  shodandb_lookup_strategy: "Kdy by se měly provádět vyhledávání v ShodanDB?"
- shodandb_noteworthy_ports: "Seznam portů (a/nebo rozsahů portů, např., 3389–3395) oddělených čárkami, které jsou považovány za významné nebo vysoce rizikové, pokud jsou na požadující IP adrese nalezeny jako otevřené (např., porty pro vzdálenou správu, IoT, či databáze)."
+ shodandb_noteworthy_ports: "Seznam portů (a/nebo rozsahů portů, např., 3389–3395) oddělených čárkami, které jsou považovány za významné nebo vysoce rizikové, pokud jsou na požadující IP adrese nalezeny jako otevřené (např., porty pro vzdálenou správu, IoT, databáze)."
  shodandb_options: "Možnosti CAPTCHA které se mají uplatnit při zjištění otevřeného portu v souladu s označením u <code class="s">ports_action</code>."
  shodandb_ports_action: "Co dělat když má žádající IP adresa otevřený jeden či více nakonfigurovaných „významných portů“ nebo „proxy portů“ (nebo, pokud je zvolena některá z možností „jakékoli porty“, jakýkoli otevřený port, s výjimkou portů uvedených v „tr069_ports“)."
  shodandb_proxy_ports: "Seznam portů (a/nebo rozsahů portů, např., 3389–3395) oddělených čárkami, které jsou běžně spojovány s otevřenými proxy servery, servery SOCKS, nebo jinými anonymizačními přenosovými uzly."
+ shodandb_timeout_rl: "Jak dlouho pozastavit vyhledávání po překročení limitu vyhledávání (HTTP 429). Standardní = 1 hodina."
+ shodandb_tr069_ports: "Seznam portů TR-069/CWMP (CPE WAN Management Protocol) oddělených čárkami a případných dalších portů či rozsahů portů, které mají být vyjmuty z jakýchkoli shod nebo akcí prováděných modulem. Standardní = 7547 (standardní port CWMP registrovaný u IANA) a 30005 (běžná nestandardní alternativa používaná některými poskytovateli internetu či zařízeními). Většina poskytovatelů internetového připojení pro domácnosti spravuje zákaznické směrovače na dálku pomocí protokolu CWMP (obvykle přes port 7547), takže je běžné a očekávané že tento port mají směrovače otevřený."
  signatures: "Konfigurace pro podpisy, soubory podpisů, moduly, atd."
  signatures_conflict_response: "Pokud existuje příliš mnoho současných pokusů o přístup ke stejným zdrojům (např., současné požadavky na více procesů PHP na stejném počítači pro stejné zdroje), některé z těchto pokusů mohou selhat. Ve vzácných a nepravděpodobných případech, kdy to ovlivní soubory podpisů nebo moduly, může být CIDRAM zabráněno v účinném rozhodnutí o požadavku. Pokud k tomu dojde, měl by být požadavek zablokován, a jakou zprávu o stavu HTTP má CIDRAM odeslat?"
  signatures_default_tracktime: "Doba, po kterou by měly být IP adresy sledovány. Standardní = 7d0°0′0″ (1 týden)."
@@ -474,6 +476,10 @@ hints_http_response_header_code:
 hints_inspection: "* Určeno pouze pro ladění pomocných pravidel. Nezobrazuje se blokovaným uživatelům."
 hints_ipv6_on_32bit: "Poznámka: Vyhledávání IPv6 nemusí na některých 32-bitových systémech fungovat správně."
 hints_logging_datetime: "Užitečný tip: K názvům souborů protokolu můžete připojit informace o datu a čase pomocí zástupných symbolů formátu času. Dostupné zástupné symboly formátu času jsou zobrazeny v {{Links.ConfigRef.time_format}}."
+hints_ports_action:
+ 0.: "Odkazuje na porty a/nebo rozsahy portů specifikované pomocí <code class="s">noteworthy_ports</code>."
+ 1.: "Odkazuje na porty a/nebo rozsahy portů specifikované pomocí <code class="s">proxy_ports</code>. Možnost nahlášení je k dispozici pro porty otevřených proxy serverů, nikoli však pro ostatní porty. Samotný otevřený port není spolehlivým indikátorem zneužití (mnoho legitimních IP adres provozuje webový server, herní server, TeamSpeak, atd), takže možnost nahlásit jakýkoli otevřený port by vedla ke zbytečným a neopodstatněným hlášením, otevřený port proxy serveru však představuje silnější signál možného zneužití než běžný otevřený port, takže hlášení otevřených portů proxy serverů je opodstatněné."
+ 2.: "Vztahuje se na veškeré otevřené porty, s výjimkou těch portů a/nebo rozsahů portů specifikovaných parametrem <code class="s">tr069_ports</code>, které mají být vyňaty z jakéhokoli porovnávání či akcí prováděných modulem. Pokud zaškrtnete volbu pro „jakékoli porty“, měli byste pravděpodobně zrušit zaškrtnutí voleb pro „významné porty“ a „proxy porty“; jejich současné zaškrtnutí s volbou „jakékoli porty“ by totiž mohlo vést k nadbytečným shodám a vyššímu počet podpisů než se očekávalo."
 hints_pdo_dsn:
  FAQ.: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">Co je to „PDO DSN“? Jak mohu používat PDO s CIDRAM?</a></em>"
 hints_sensitive_pages: "Poznámka: Co tvoří „citlivou stránku“ je určeno {{Links.ConfigRef.sensitive}}."

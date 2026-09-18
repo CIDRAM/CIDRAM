@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Farsi language data for the front (last modified: 2026.09.14).
+# This file: Farsi language data for the front (last modified: 2026.09.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -321,6 +321,9 @@ config: !lazy
  shodandb: "پیکربندی ماژول ShodanDB (Shodan InternetDB)."
  shodandb_api_base: "آدرس پایه برای جستجوها در Shodan InternetDB (یا یک نقطه پایانی سازگار). پیش فرض = <code dir="ltr" class="s">https://internetdb.shodan.io</code>."
  shodandb_api_header: "یک هدر HTTP اختیاری برای ارسال همراه با درخواست‌های جستجو (مثلاً برای احراز هویت در یک اندپوینت میزبانی‌شده به‌صورت شخصی یا دارای پروکسی). در صورت عدم نیاز، خالی بگذارید."
+ shodandb_expire_bad: "مدت زمان کش کردن نتیجه جستجوی ShodanDB در صورتی که هیچ پورتی یافت نشود. پیش فرض = ۱ ساعت."
+ shodandb_expire_good: "مدت زمان کش کردن نتیجه جستجوی ShodanDB برای مواردی که پورت‌ها در آن‌ها یافت شده‌اند. پیش فرض = ۱ روز."
+ shodandb_lookup_strategy: "جستجوها در ShodanDB چه زمانی باید انجام شوند؟"
  signatures: "پیکربندی برای امضاها، فایل های امضا، ماژول ها و غیره."
  signatures_conflict_response: "زمانی که تلاش‌های همزمان بیش از حد برای دسترسی به منابع یکسان وجود داشته باشد (مثلاً، درخواست‌های همزمان چندین فرآیند PHP در یک دستگاه برای منابع یکسان)، برخی از این تلاش‌ها ممکن است با شکست مواجه شوند. در موارد نادر و غیر محتمل که این امر بر فایل‌های امضا یا ماژول‌ها تأثیر می‌گذارد، ممکن است CIDRAM از تصمیم‌گیری مؤثر در مورد درخواست جلوگیری شود. اگر این اتفاق بیفتد، آیا باید درخواست مسدود شود و CIDRAM کدام پیام وضعیت HTTP را باید ارسال کند؟"
  signatures_default_tracktime: "مدت زمانی که آدرس های IP باید برای آن ردیابی شوند. پیش فرض = 7d0°0′0″ (1 هفته)."

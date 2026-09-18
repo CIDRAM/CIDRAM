@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Arabic language data for the front-end (last modified: 2026.09.14).
+# This file: Arabic language data for the front-end (last modified: 2026.09.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -323,6 +323,9 @@ config: !lazy
  shodandb: "التكوين للوحدة ShodanDB (Shodan InternetDB)."
  shodandb_api_base: "عنوان URL الأساسي لعمليات البحث في Shodan InternetDB (أو نقطة نهاية متوافقة). افتراضي = <code dir="ltr" class="s">https://internetdb.shodan.io</code>."
  shodandb_api_header: "ترويسة HTTP اختيارية تُرسل مع طلبات البحث (على سبيل المثال، لأغراض المصادقة عند التعامل مع نقطة نهاية مستضافة ذاتياً أو تعمل عبر خادم وكيل). اتركه فارغاً إذا لم تكن هناك حاجة إليه."
+ shodandb_expire_bad: "مدة تخزين نتيجة بحث ShodanDB مؤقتاً في حال عدم العثور على أي منافذ. افتراضي = ساعة واحدة."
+ shodandb_expire_good: "مدة تخزين نتائج بحث ShodanDB مؤقتاً فيما يتعلق بالمنافذ التي تم العثور عليها. افتراضي = يوم واحد."
+ shodandb_lookup_strategy: "متى ينبغي إجراء عمليات البحث في ShodanDB؟"
  signatures: "التكوين للتوقيعات، ملفات التوقيع، الوحدات النمطية، إلخ."
  signatures_conflict_response: "عندما يكون هناك العديد من المحاولات المتزامنة للوصول إلى نفس الموارد (على سبيل المثال، الطلبات المتزامنة لعمليات PHP متعددة على نفس الجهاز لنفس الموارد)، فقد تفشل بعض هذه المحاولات. في حالة نادرة وغير محتملة أن يؤثر هذا على ملفات التوقيع أو الوحدات النمطية، قد يتم منع CIDRAM من اتخاذ قرار فعال بشأن الطلب. إذا حدث هذا، فهل يجب حظر الطلب، وما هي رسالة حالة HTTP التي يجب أن يرسلها CIDRAM؟"
  signatures_default_tracktime: "المدة التي يجب أن يتم تتبع عناوين IP لها. افتراضي = 7d0°0′0″ (1 أسبوع)."

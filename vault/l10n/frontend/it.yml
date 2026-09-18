@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2026.09.16).
+# This file: Italian language data for the front-end (last modified: 2026.09.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -237,7 +237,7 @@ config: !lazy
  frontend_signatures_update_event_log: "Un file per la registrazione quando le firme vengono aggiornate tramite il front-end. Specificare un nome di file, o lasciare vuoto per disabilitare."
  frontend_theme: "Il tema da utilizzare per il front-end."
  frontend_theme_mode: "La modalità per il tema da utilizzare per il front-end."
- general: "Configurazione generale (qualsiasi configurazione di base non appartenente ad altre categorie)."
+ general: "Configurazione generale (eventuali direttive di configurazione di base non appartenenti ad altre categorie)."
  general_allow_gethostbyaddr_lookup: "Consenti ricerche gethostbyaddr quando UDP non è disponibile? True = Sì [Predefinito]; False = No."
  general_default_algo: "Definisce quale algoritmo da utilizzare per tutte le password e le sessioni in futuro."
  general_default_dns: "Un elenco di server DNS da utilizzare per le ricerche dei nomi di host. AVVISO: Non modificare questa se non sai quello che stai facendo!"
@@ -330,6 +330,8 @@ config: !lazy
  shodandb_options: "Opzioni CAPTCHA da applicare quando viene rilevata una porta aperta come indicato in corrispondenza di <code class="s">ports_action</code>."
  shodandb_ports_action: "Cosa fare quando un IP richiedente ha aperta una o più delle "porti degni di nota" o "porte proxy" configurate (oppure, se è selezionata una delle opzioni "qualsiasi porta", qualsiasi porta aperta, fatta eccezione solo per quelle specificate in "tr069_ports")."
  shodandb_proxy_ports: "Un elenco, separato da virgole, di porte (e/o intervalli di porte, ad es., 3389-3395) comunemente associati a proxy aperti, server SOCKS, o altri relay di anonimizzazione."
+ shodandb_timeout_rl: "Per quanto tempo sospendere le ricerche dopo il superamento del limite di ricerca (HTTP 429). Predefinito = 1 ora."
+ shodandb_tr069_ports: "Un elenco, separato da virgole, di porte TR-069/CWMP (CPE WAN Management Protocol) e di eventuali altre porte e/o intervalli di porte da escludere da qualsiasi tipo di corrispondenza o azione eseguita dal modulo. Predefinito = 7547 (la porta CWMP standard/registrata presso IANA) e 30005 (una comune alternativa non standard utilizzata da alcuni ISP o dispositivi). La maggior parte degli ISP residenziali gestisce da remoto i router dei clienti tramite CWMP (tipicamente sulla porta 7547); pertanto, è normale e previsto che un router abbia tale porta aperta."
  signatures: "Configurazione per firme, file di firma, moduli, ecc."
  signatures_conflict_response: "Quando ce ne sono troppi tentativi simultanei di accedere alle stesse risorse (ad esempio, richieste simultanee a più processi PHP sulla stessa macchina per le stesse risorse), alcuni di questi tentativi potrebbero fallire. Nel raro e improbabile caso in cui ciò influisca sui file delle firme o sui moduli, CIDRAM potrebbe non essere in grado di prendere una decisione effettiva in merito alla richiesta. In tal caso, dovrebbe la richiesta essere bloccata, e quale messaggio di stato HTTP dovrebbe CIDRAM inviare?"
  signatures_default_tracktime: "La durata per la quale devono essere tracciati gli indirizzi IP. Predefinito = 7d0°0′0″ (1 settimana)."
@@ -472,6 +474,10 @@ hints_http_response_header_code:
 hints_inspection: "* Destinato solo al debug delle regole ausiliarie. Non mostrato agli utenti bloccati."
 hints_ipv6_on_32bit: "Nota: Le ricerche IPv6 potrebbero non funzionare correttamente su alcuni sistemi a 32 bit."
 hints_logging_datetime: "Consiglio utile: È possibile allegare informazioni su data/ora ai nomi dei file di registro utilizzando i segnaposto del formato ora. I segnaposto del formato ora disponibili vengono visualizzati in {{Links.ConfigRef.time_format}}."
+hints_ports_action:
+ 0.: "Si riferisce alle porte e/o agli intervalli di porte specificati da <code class="s">noteworthy_ports</code>."
+ 1.: "Si riferisce alle porte e/o agli intervalli di porte specificati da <code class="s">proxy_ports</code>. È prevista un'opzione di rapporto per le porte di proxy aperte, ma non per le altre porte. Di per sé, una porta aperta non costituisce un indicatore affidabile di abuso (molti indirizzi IP legittimi ospitano server web, server di gioco, TeamSpeak, ecc); pertanto, offrire la possibilità di rapportare per qualsiasi tipo di porta aperta porterebbe a rapporti inutili e ingiustificate. Tuttavia, una porta proxy aperta rappresenta un segnale di abuso più significativo rispetto a una generica porta aperta, il che giustifica la rapportazione specifica per le porte proxy aperte."
+ 2.: "Si riferisce a tutte le porte aperte, ad eccezione di quelle porte e/o intervalli di porte specificati da <code class="s">tr069_ports</code>, che devono essere esclusi da qualsiasi tipo di corrispondenza o azione eseguita dal modulo. Se si selezionano le opzioni per "qualsiasi porta", è opportuno deselezionare quelle relative a "porti degni di nota" e "porte proxy"; la loro selezione combinata con "qualsiasi porta" potrebbe generare corrispondenze superflue e un conteggio delle firme superiore alle attese."
 hints_pdo_dsn:
  FAQ.: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.it.md\#user-content-HOW_TO_USE_PDO" hreflang="it-IT">Che cos'è un "DSN PDO"? Come posso usare PDO con CIDRAM?</a></em>"
 hints_sensitive_pages: "Nota: Ciò che costituisce una "pagina sensibile" è determinato da {{Links.ConfigRef.sensitive}}."

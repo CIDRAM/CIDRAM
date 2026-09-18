@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Spanish language data for the front-end (last modified: 2026.09.16).
+# This file: Spanish language data for the front-end (last modified: 2026.09.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -93,7 +93,7 @@ Glossary: !lazy
    | | La solicitud NO debería ser bloqueada | La solicitud DEBERÍA ser bloqueada |
    | La solicitud NO está bloqueada | Verdadero negativo (inferencia correcta) | Detección fallida (o falso negativo) |
    | La solicitud ESTÁ bloqueada | Falso positivo | Verdadero positivo (inferencia correcta) |
-   Si encuentra falsos positivos, primero revise la página de actualizaciones y, si algo está marcado como anticuado, actualícelo. Si después de eso el problema persiste, puede informar del mismo en el sistema de seguimiento de incidencias de CIDRAM.
+   Si encuentra falsos positivos, primero revise la página de actualizaciones y, si algo está marcado como anticuado, actualícelo. Si después de eso el problema persiste, puede reportar del mismo en el sistema de seguimiento de incidencias de CIDRAM.
   Firma: |
    En el contexto de CIDRAM, una firma ("signature" en inglés) se refiere a los datos, que se encuentran dentro de los archivos de firma y dentro de los módulos, que CIDRAM utiliza para determinar si las solicitudes deben bloquearse.
    En el caso de los archivos de firma, una firma normalmente consta de un CIDR, un comando que representa la acción deseada que se debe tomar cuando se encuentra una solicitud de una dirección IP perteneciente a ese CIDR y, en caso de que se bloquee una dirección IP, el motivo para hacerlo. A menudo se agruparán en secciones, acompañadas de comentarios, marcado, y otros metadatos para proporcionar contexto adicional.
@@ -155,7 +155,7 @@ checkbox:
  Log any errors generated during this stage: "¿Registrar los errores generados durante esta etapa?"
  Omit this field when it_s empty: "¿Omitir este campo cuando está vacío?"
  Profile it: "Perfilarlo."
- Report it: "Denúncialo."
+ Report it: "Reportalo."
  Should infractions generated during this stage count towards IP tracking: "¿Las infracciones generadas durante esta etapa deben contar para el seguimiento de IP?"
  Should this field appear in log entries: "¿Debería aparecer este campo en las entradas de registro?"
  Should this field appear on the access denied page: "¿Debería aparecer este campo en la página "acceso denegado"?"
@@ -326,10 +326,12 @@ config: !lazy
  shodandb_expire_bad: "Cuánto tiempo almacenar en caché el resultado de una consulta a ShodanDB cuando no se encontraron puertos. Predefinido = 1 hora."
  shodandb_expire_good: "Cuánto tiempo almacenar en caché el resultado de una consulta a ShodanDB sobre cuándo se encontraron puertos. Predefinido = 1 día."
  shodandb_lookup_strategy: "¿Cuándo se deben realizar las búsquedas en ShodanDB?"
- shodandb_noteworthy_ports: "Una lista separada por comas de puertos (y/o rangos de puertos, p.ej., 3389-3395) considerados destacados o de alto riesgo si se encuentran abiertos en una dirección IP solicitante (p.ej., puertos de administración remota, IoT, o bases de datos)."
+ shodandb_noteworthy_ports: "Una lista separada por comas de puertos (y/o rangos de puertos, p.ej., 3389-3395) considerados destacados o de alto riesgo si se encuentran abiertos en una dirección IP solicitante (p.ej., puertos de administración remota, IoT, bases de datos)."
  shodandb_options: "Opciones de CAPTCHA que se aplicarán cuando se detecte un puerto abierto, de acuerdo con lo indicado en <code class="s">ports_action</code>."
  shodandb_ports_action: "Qué hacer cuando una dirección IP solicitante tiene abierto uno o varios de los «puertos destacados» o «puertos de proxy» configurados (o, si se selecciona alguna de las opciones de "cualquier puerto", cualquier puerto abierto, a excepción de los especificados en "tr069_ports")."
  shodandb_proxy_ports: "Una lista separada por comas de puertos (y/o rangos de puertos, p.ej., 3389-3395) comúnmente asociados con proxies abiertos, servidores SOCKS, u otros nodos de retransmisión anónimos."
+ shodandb_timeout_rl: "Cuánto tiempo suspender las búsquedas tras superar el límite de búsquedas (HTTP 429). Predefinido = 1 hora."
+ shodandb_tr069_ports: "Una lista separada por comas de puertos TR-069/CWMP (CPE WAN Management Protocol) y de cualquier otro puerto o rango de puertos que deba excluirse de las coincidencias o acciones que realice el módulo. Predefinido = 7547 (el puerto CWMP estándar/registrado en la IANA) y 30005 (una alternativa común no estándar utilizada por algunos proveedores de servicios de internet y dispositivos). La mayoría de los proveedores de servicios de internet residenciales gestionan de forma remota los routers de los clientes mediante CWMP (habitualmente a través del puerto 7547), por lo que es normal y esperable que un router tenga dicho puerto abierto."
  signatures: "Configuración para firmas, archivos de firma, módulos, etc."
  signatures_conflict_response: "Cuando hay demasiados intentos simultáneos de acceder a los mismos recursos (por ejemplo, solicitudes simultáneas a múltiples procesos PHP en la misma máquina para los mismos recursos), algunos de esos intentos pueden fallar. En el caso poco común y poco probable de que esto afecte a los archivos de firma o los módulos, es posible que CIDRAM no pueda tomar una determinación efectiva sobre la solicitud. ¿Si esto sucede, se debe bloquear la solicitud, y qué mensaje de estado HTTP debe enviar CIDRAM?"
  signatures_default_tracktime: "La duración que se deben seguir las direcciones IP. Predefinido = 7d0°0′0″ (1 semana)."
@@ -471,6 +473,10 @@ hints_http_response_header_code:
 hints_inspection: "* Destinado solo para reglas auxiliares. No se muestra a los usuarios bloqueados."
 hints_ipv6_on_32bit: "Nota: Es posible que las búsquedas de IPv6 no funcionen correctamente en algunos sistemas de 32 bits."
 hints_logging_datetime: "Consejo útil: Puede adjuntar información de fecha/hora a los nombres de los archivos de registro utilizando marcadores de posición de formato de hora. Los marcadores de posición de formato de hora disponibles se muestran en {{Links.ConfigRef.time_format}}."
+hints_ports_action:
+ 0.: "Se refiere a los puertos y/o rangos de puertos especificados por <code class="s">noteworthy_ports</code>."
+ 1.: "Se refiere a los puertos y/o rangos de puertos especificados por <code class="s">proxy_ports</code>. Se ofrece una opción para reportar puertos de proxy abierto, pero no para otros puertos. Un puerto abierto por sí solo no constituye un indicador fiable de abuso (muchas direcciones IP legítimas ejecutan servidores web, servidores de juegos, TeamSpeak, etc), por tanto, ofrecer la opción de reportar cualquier tipo de puerto abierto daría lugar a reporte innecesarias e injustificadas, pero un puerto de proxy abierto es un indicador de abuso más contundente que un puerto abierto genérico, por lo que está justificado reportar los puertos de proxy abiertos."
+ 2.: "Se refiere a cualquier puerto abierto, a excepción de aquellos puertos y/o rangos de puertos especificados por <code class="s">tr069_ports</code>, los cuales deben excluirse de cualquier tipo de coincidencia o acción que el módulo deba realizar. Si se seleccionan las opciones para "cualquier puerto", probablemente convenga deseleccionar las opciones para "puertos destacados" y "puertos de proxy", ya que seleccionarlas junto con "cualquier puerto" podría generar coincidencias innecesarias y un recuento de firmas superior al esperado."
 hints_pdo_dsn:
  FAQ.: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.es.md\#user-content-HOW_TO_USE_PDO" hreflang="es-ES">¿Qué es un "PDO DSN"? Cómo puedo usar PDO con CIDRAM?</a></em>"
 hints_sensitive_pages: "Nota: Lo que constituye una "página confidencial" está determinado por {{Links.ConfigRef.sensitive}}."
@@ -741,7 +747,7 @@ label:
  Quote entity: "&quot;%s&quot;"
  Range tools: "Herramientas de rangos"
  Remember: "Recuerda"
- Report to AbuseIPDB: "Denúncialo a AbuseIPDB"
+ Report to AbuseIPDB: "Reportalo a AbuseIPDB"
  Requests banned: "Solicitudes prohibidas"
  Requests blocked: "Solicitudes bloqueadas"
  Requests for sensitive pages only: "Solicitudes solo de páginas confidenciales (por ejemplo, páginas del login, formularios de registro, etc).\nMenos estricto y exhaustivo, pero más conservador en términos de cuotas y límites, y es menos probable que afecte negativamente el rendimiento. La estrategia recomendada en la mayoría de los casos."
@@ -815,7 +821,7 @@ label:
   Send trigger notification to the configured email notification address: "Envíe una notificación de desencadenamiento a la dirección de notificación por correo electrónico configurada"
   Suppress logging: "Suprimir registro"
   Suppress output template: "Suprime la plantilla de salida"
-  Suppress reports: "Suprimir informes"
+  Suppress reports: "Suprimir reportes"
   The name of the file to run: "El nombre del archivo a ejecutar:"
   The reason given to the user when blocked: "El motivo dado al usuario cuando está bloqueado:"
   Track this rule: "Rastrear esta regla"

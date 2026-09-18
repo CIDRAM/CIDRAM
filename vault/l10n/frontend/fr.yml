@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: French language data for the front-end (last modified: 2026.09.16).
+# This file: French language data for the front-end (last modified: 2026.09.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -368,6 +368,8 @@ config: !lazy
  shodandb_options: "Options de CAPTCHA à appliquer lorsqu'un port ouvert est détecté, conformément aux indications figurant en <code class="s">ports_action</code>."
  shodandb_ports_action: "Que faire lorsqu'une adresse IP à l'origine de la requête a un ou plusieurs des «\_ports remarquables\_» ou «\_ports de proxy\_» configurés ouverts (ou, si l'une des options «\_tous les ports\_» est sélectionnée, n'importe quel port ouvert, à l'exception de ceux spécifiés dans «\_tr069_ports\_»)."
  shodandb_proxy_ports: "Une liste, séparée par des virgules, de ports (et/ou de plages de ports, par exemple, 3389-3395) couramment associés à des proxys ouverts, des serveurs SOCKS, ou d'autres relais d'anonymisation."
+ shodandb_timeout_rl: "Durée de suspension des recherches après le dépassement de la limite de recherches (HTTP 429). Défaut = 1 heure."
+ shodandb_tr069_ports: "Une liste, séparée par des virgules, des ports TR-069/CWMP (CPE WAN Management Protocol) ainsi que de tout autre port ou plage de ports devant être exclu de toute correspondance ou action effectuée par le module. Défaut = 7547 (le port CWMP standard/enregistré auprès de l'IANA) et 30005 (un port alternatif courant, non standard, utilisé par certains FAI ou équipements). La plupart des fournisseurs d'accès à internet résidentiels gèrent à distance les routeurs des clients via le protocole CWMP (généralement sur le port 7547)\_; il est donc normal et attendu qu'un routeur présente ce port ouvert."
  signatures: "Configuration pour les signatures, fichiers de signatures, modules, etc."
  signatures_conflict_response: "Lorsqu'il y a trop de tentatives simultanées pour accéder aux mêmes ressources (par exemple, des requêtes simultanées à plusieurs processus PHP sur la même machine pour les mêmes ressources), certaines de ces tentatives peuvent échouer. Dans le cas rare et peu probable où cela affecte les fichiers de signature ou les modules, CIDRAM peut être empêché de prendre une décision efficace concernant la requête. Dans un tel cas, la requête doit-elle être bloquée, et quel message d'état HTTP CIDRAM doit-il envoyer\_?"
  signatures_default_tracktime: "La durée pendant laquelle les adresses IP doivent être suivies. Défaut = 7d0°0′0″ (1 semaine)."
@@ -519,6 +521,10 @@ hints_http_response_header_code:
 hints_inspection: "* Destiné uniquement au débogage des règles auxiliaires. Non affiché pour les utilisateurs bloqués."
 hints_ipv6_on_32bit: "Remarque\_: Les recherches IPv6 peuvent ne pas fonctionner correctement sur certains systèmes 32 bits."
 hints_logging_datetime: "Conseil utile\_: Vous pouvez joindre des informations de date/heure aux noms des fichiers journaux à l'aide d'espaces réservés du format horaire. Les espaces réservés du format horaire disponibles sont affichés en {{Links.ConfigRef.time_format}}."
+hints_ports_action:
+ 0.: "Désigne les ports et/ou les plages de ports spécifiés par <code class="s">noteworthy_ports</code>."
+ 1.: "Désigne les ports et/ou les plages de ports spécifiés par <code class="s">proxy_ports</code>. Une option de rapportement est prévue pour les ports de proxy ouverts, mais pas pour les autres ports. Un port ouvert ne constitue pas, à lui seul, un indicateur fiable d'abus (de nombreuses adresses IP légitimes hébergent un serveur web, un serveur de jeu, TeamSpeak, etc)\_; par conséquent, offrir la possibilité de rapporter n'importe quel type de port ouvert entraînerait des rapportements inutiles et injustifiés. En revanche, un port de proxy ouvert constitue un indicateur d'abus plus probant qu'un port ouvert générique, ce qui justifie le rapportement des ports de proxy ouverts."
+ 2.: "Désigne tous les ports ouverts, à l'exception des ports et/ou plages de ports spécifiés par <code class="s">tr069_ports</code>, qui doivent être exclus de toute correspondance ou action effectuée par le module. Si vous cochez les options correspondant à «\_tous les ports\_», il est préférable de décocher celles relatives aux «\_ports remarquables\_» et aux «\_ports de proxy\_»\_; en effet, les sélectionner simultanément pourrait entraîner des correspondances superflues ainsi qu'un compte des signatures supérieur aux prévisions."
 hints_pdo_dsn:
  FAQ.: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.fr.md\#user-content-HOW_TO_USE_PDO" hreflang="fr-FR">Qu'est-ce qu'un «\_PDO DSN\_»\_? Comment utiliser PDO avec CIDRAM\_?</a></em>"
 hints_sensitive_pages: "Remarque\_: Ce qui constitue une «\_page sensible\_» est déterminé par {{Links.ConfigRef.sensitive}}."

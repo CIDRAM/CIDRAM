@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bulgarian language data for the front-end (last modified: 2026.09.14).
+# This file: Bulgarian language data for the front-end (last modified: 2026.09.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -320,6 +320,9 @@ config: !lazy
  shodandb: "Конфигурация за модула ShodanDB (Shodan InternetDB)."
  shodandb_api_base: "Базовият URL адрес за заявки към Shodan InternetDB (или съвместима крайна точка). Стандарт = <code class="s">https://internetdb.shodan.io</code>."
  shodandb_api_header: "Опционален HTTP заглавен ред, който да се изпраща със заявките за търсене (например, за удостоверяване пред самостоятелно хоствана или проксирана крайна точка). Оставете празно, ако не е необходимо."
+ shodandb_expire_bad: "Колко дълго да се кешира резултатът от заявка към ShodanDB, когато не са открити портове. Стандарт = 1 час."
+ shodandb_expire_good: "Колко дълго да се съхранява в кеша резултатът от заявка към ShodanDB относно това кога са открити портове. Стандарт = 1 ден."
+ shodandb_lookup_strategy: "Кога трябва да се извършват справки в ShodanDB?"
  signatures: "Конфигурация за сигнатури, файлове за сигнатури, модули, и т.н."
  signatures_conflict_response: "Когато има твърде много едновременни опити за достъп до едни и същи ресурси (напр., едновременни заявки към множество PHP процеси на една и съща машина за едни и същи ресурси), някои от тези опити може да са неуспешни. В редкия и малко вероятен случай, когато това засегне файлове за сигнатури или модули, CIDRAM може да бъде възпрепятствано да вземе ефективно решение относно заявката. Ако това се случи, трябва ли заявката да бъде блокирана, и кое HTTP съобщение за статус трябва да изпрати CIDRAM?"
  signatures_default_tracktime: "Продължителността, за която трябва да се проследяват IP адресите. Стандарт = 7d0°0′0″ (1 седмица)."

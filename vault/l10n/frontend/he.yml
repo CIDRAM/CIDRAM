@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hebrew language data for the front-end (last modified: 2026.09.14).
+# This file: Hebrew language data for the front-end (last modified: 2026.09.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -321,6 +321,9 @@ config: !lazy
  shodandb: "תצורה עבור מודול ShodanDB (Shodan InternetDB)."
  shodandb_api_base: "כתובת ה-URL הבסיסית עבור שאילתות ב-Shodan InternetDB (או נקודת קצה תואמת). סטנדרטי = <code dir="ltr" class="s">https://internetdb.shodan.io</code>."
  shodandb_api_header: "כותרת HTTP אופציונלית לשליחה עם בקשות חיפוש (למשל, לצורך אימות מול נקודת קצה המתארחת באופן עצמאי או פועלת דרך שרת מתווך). השאר ריק אם אין צורך בכך."
+ shodandb_expire_bad: "למשך כמה זמן לשמור במטמון תוצאת חיפוש ב-ShodanDB במקרה שבו לא נמצאו פורטים. סטנדרטי = שעה אחת."
+ shodandb_expire_good: "למשך כמה זמן לשמור במטמון את תוצאת החיפוש ב-ShodanDB לגבי מציאת פורטים. סטנדרטי = יום אחד."
+ shodandb_lookup_strategy: "מתי יש לבצע חיפושים ב-ShodanDB?"
  signatures: "תצורה של חתימות, קבצי חתימה, מודולים, וכו'."
  signatures_conflict_response: "כאשר יש יותר מדי ניסיונות בו-זמנית לגשת לאותם משאבים (למשל, בקשות בו-זמנית למספר תהליכי PHP באותו מחשב עבור אותם משאבים), חלק מהניסיונות הללו עלולים להיכשל. במקרה הנדיר והבלתי סביר שהדבר משפיע על קובצי חתימה או מודולים, ייתכן ש-CIDRAM יימנע מלקבל קביעה יעילה לגבי הבקשה. אם זה קורה, האם צריך לחסום את הבקשה, ואיזו הודעת מצב HTTP צריך לשלוח CIDRAM?"
  signatures_default_tracktime: "משך הזמן שעבורו יש לעקוב אחר כתובות IP. סטנדרטי = 7d0°0′0″ (שבוע 1)."
@@ -465,6 +468,10 @@ hints_http_response_header_code:
 hints_inspection: "* מיועד רק לאיתור באגים בכללי עזר. לא מוצג למשתמשים חסומים."
 hints_ipv6_on_32bit: "הערה: ייתכן שחיפושי IPv6 לא יפעלו כהלכה בחלק ממערכות 32 סיביות."
 hints_logging_datetime: "טיפ שימושי: ניתן לצרף מידע על תאריך/שעה לשמות של קובצי יומן על ידי שימוש במצייני מיקום של פורמט זמן. מצייני מיקום זמינים של פורמט זמן מוצגים ב-{{Links.ConfigRef.time_format_rtl}}."
+hints_ports_action:
+ 0.: "מתייחס ליציאות ו/או לטווחי היציאות המצוינים על ידי <code dir="ltr" class="s">noteworthy_ports</code>."
+ 1.: "מתייחס ליציאות ו/או לטווחי היציאות המצוינים על ידי <code dir="ltr" class="s">proxy_ports</code>. קיימת אפשרות לדווח על יציאות של פרוקסי פתוח, אך לא על יציאות אחרות. פורט פתוח כשלעצמו אינו מעיד בהכרח על שימוש לרעה (כתובות IP רבות ותקינות מריצות שרת אינטרנט, שרת משחק, TeamSpeak, וכדומה). לפיכך, מתן אפשרות לדווח על כל סוג של פורט פתוח יוביל לדיווחים מיותרים ובלתי-מוצדקים. עם זאת, יציאת פרוקסי פתוחה מהווה אינדיקציה חזקה יותר לשימוש לרעה מאשר יציאה פתוחה כללית, ולכן יש הצדקה לדווח על יציאות פרוקסי פתוחות."
+ 2.: "מתייחס לכל היציאות הפתוחות, למעט אותן יציאות ו/או טווחי יציאות המצוינים על-ידי <code dir="ltr" class="s">tr069_ports</code>, אשר יוחרגו מכל סוג של התאמה או פעולה שיבוצעו על-ידי המודול. אם מסמנים את האפשרויות עבור "כל היציאות", סביר להניח שיש לבטל את הסימון באפשרויות עבור "יציאות ראויות לציון" ו-יציאות פרוקסי. זאת משום שסימונן במקביל ל-"כל היציאות" עלול להוביל להתאמות מיותרות ולמספר חתימות גבוה מהצפוי."
 hints_pdo_dsn:
  שאלות נפוצות.: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">מהו "PDO DSN"? כיצד להשתמש ב-PDO עם CIDRAM?</a></em>"
 hints_sensitive_pages: "הערה: מהו "דף רגיש" נקבע על ידי {{Links.ConfigRef.sensitive_rtl}}."

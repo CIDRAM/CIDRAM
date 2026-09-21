@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Korean language data for the front-end (last modified: 2026.09.18).
+# This file: Korean language data for the front-end (last modified: 2026.09.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -476,6 +476,8 @@ hints_ipv6_on_32bit: "참고: IPv6 조회는 일부 32비트 시스템에서 제
 hints_logging_datetime: "유용한 팁: 시간 형식 placeholder를 사용하여 로그 파일 이름에 날짜/시간 정보를 붙일 수 있습니다. 사용할 수 있는 시간 형식 placeholder는 {{Links.ConfigRef.time_format}}에 표시되어 있습니다."
 hints_ports_action:
  0.: "<code class="s">noteworthy_ports</code>로 지정된 포트 및/또는 포트 범위를 의미합니다."
+ 1.: "<code class="s">proxy_ports</code>로 지정된 포트 및/또는 포트 범위를 의미합니다. 오픈 프록시 포트에 대해서는 신고 옵션이 제공되지만, 다른 포트에 대해서는 제공되지 않습니다. 열려 있는 포트만으로는 신뢰할 수 있는 악용 징후라고 볼 수 없습니다 (웹 서버, 게임 서버, TeamSpeak, 등을 운영하는 무해한 IP 주소는 아주 많습니다), 따라서 모든 종류의 개방형 포트에 대해 신고할 수 있는 기능을 제공하는 것은 불필요하고 정당하지 않은 신고로 이어질 것입니다. 하지만 개방된 프록시 포트는 일반적인 개방 포트보다 더 강력한 악용 징후이므로, 이를 신고할 타당한 이유가 있습니다."
+ 2.: "모듈이 수행하는 모든 매칭이나 작업 대상에서 제외할 포트 또는 포트 범위를 <code class="s">tr069_ports</code>로 지정한 경우를 제외하고, 모든 개방형 포트를 의미합니다. "모든 포트" 옵션을 선택하는 경우, "주목할 만한 포트" 및 "프록시 포트" 옵션은 선택하지 않는 것이 좋습니다. 이들을 "모든 포트"와 함께 선택하면 불필요한 매칭이 발생하거나 예상보다 많은 수의 서명가 탐지될 수 있기 때문입니다."
 hints_pdo_dsn:
  자주하는 질문.: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.ko.md\#user-content-HOW_TO_USE_PDO" hreflang="ko-KR">"PDO DSN"은 무엇입니까? CIDRAM과 함께 PDO를 사용하려면 어떻게해야합니까?</a></em>"
 hints_sensitive_pages: "참고: "민감한 페이지"를 구성하는 요소는 {{Links.ConfigRef.sensitive}}에 의해 결정됩니다."

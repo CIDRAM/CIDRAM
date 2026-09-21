@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese language data for the front-end (last modified: 2026.09.14).
+# This file: Chinese language data for the front-end (last modified: 2026.09.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -381,11 +381,21 @@ config: !lazy
  rate_limiting_hint:
   zh-Hans: "请记住，与所有其他CIDRAM功能一样，CIDRAM的速率限制功能只能应用于CIDRAM所连接的页面和资源。 这通常意味着非PHP资源不会在范围内，除非明确由连接的PHP资源提供。 如果您能够使用服务器模块、cPanel、或其他网络工具来强制执行速率限制，那么最好使用它而不是CIDRAM的速率限制功能。 还请记住，敏锐而坚定的用户可以通过轮换IP地址或切换到CIDRAM尚未意识到的代理或VPN提供轻松规避速率限制，还要记住，速率限制对于真正的最终用户来说可能会非常烦人。 有时这可能是必要的，但很少是可取的。"
   zh-Hant: "請記住，與所有其他CIDRAM功能一樣，CIDRAM的速率限制功能只能套用於CIDRAM所連接的頁面和資源。 這通常意味著非PHP資源不會在範圍內，除非明確地由連接的PHP資源提供。 如果您能夠使用伺服器模組、cPanel、或其他網路工具來強制執行速率限制，那麼最好使用它而不是CIDRAM的速率限制功能。 還要記住，敏銳而堅定的用戶可以透過輪換IP位址或切換到CIDRAM尚未意識到的代理或VPN提供輕鬆規避速率限制，還要記住，速率限制對於真正的最終用戶來說可能會非常煩人。 有時這可能是必要的，但很少是可取的。"
- rate_limiting_max_bandwidth: {"zh-Hans": "在为将来的请求启用速率限制之前的最大允许带宽量。 值为0将禁用此类速率限制。 标准=0KB。", "zh-Hant": "在為將來的請求啟用速率限制之前的最大允許帶寬量。 值為0將禁用此類速率限制。 標準=0KB。"}
- rate_limiting_max_requests: {"zh-Hans": "在为将来的请求启用速率限制之前允许的最大请求数。 值为0将禁用此类速率限制。 标准=0。", "zh-Hant": "在為將來的請求啟用速率限制之前允許的最大請求數。 值為0將禁用此類速率限制。 標準=0。"}
- rate_limiting_precision_ipv4: {"zh-Hans": "监视IPv4使用时的精度。 值镜像CIDR块大小。 设置为32以获得最佳精度。 标准=32。", "zh-Hant": "監視IPv4使用時的精度。 值鏡像CIDR塊大小。 設置為32以獲得最佳精度。 標準=32。"}
- rate_limiting_precision_ipv6: {"zh-Hans": "监视IPv6使用时的精度。 值镜像CIDR块大小。 设置为128以获得最佳精度。 标准=128。", "zh-Hant": "監視IPv6使用時的精度。 值鏡像CIDR塊大小。 設置為128以獲得最佳精度。 標準=128。"}
- rate_limiting_segregate: {"zh-Hans": "域名和主机的配额应该分开还是共享？ True = 配额将被分开。 False = 配额将被共享【标准】。", "zh-Hant": "域名和主機的配額應該分開還是共享？ True = 配額將被分開。 False = 配額將被共享【標準】。"}
+ rate_limiting_max_bandwidth:
+  zh-Hans: "在为将来的请求启用速率限制之前的最大允许带宽量。 值为0将禁用此类速率限制。 标准 = 0KB。"
+  zh-Hant: "在為將來的請求啟用速率限制之前的最大允許帶寬量。 值為0將禁用此類速率限制。 標準 = 0KB。"
+ rate_limiting_max_requests:
+  zh-Hans: "在为将来的请求启用速率限制之前允许的最大请求数。 值为0将禁用此类速率限制。 标准 = 0。"
+  zh-Hant: "在為將來的請求啟用速率限制之前允許的最大請求數。 值為0將禁用此類速率限制。 標準 = 0。"
+ rate_limiting_precision_ipv4:
+  zh-Hans: "监视IPv4使用时的精度。 值镜像CIDR块大小。 设置为32以获得最佳精度。 标准 = 32。"
+  zh-Hant: "監視IPv4使用時的精度。 值鏡像CIDR塊大小。 設置為32以獲得最佳精度。 標準 = 32。"
+ rate_limiting_precision_ipv6:
+  zh-Hans: "监视IPv6使用时的精度。 值镜像CIDR块大小。 设置为128以获得最佳精度。 标准 = 128。"
+  zh-Hant: "監視IPv6使用時的精度。 值鏡像CIDR塊大小。 設置為128以獲得最佳精度。 標準 = 128。"
+ rate_limiting_segregate:
+  zh-Hans: "域名和主机的配额应该分开还是共享？ True = 配额将被分开。 False = 配额将被共享【标准】。"
+  zh-Hant: "域名和主機的配額應該分開還是共享？ True = 配額將被分開。 False = 配額將被共享【標準】。"
  sfs: {"zh-Hans": "Stop Forum Spam模块的配置。", "zh-Hant": "Stop Forum Spam模組的配置。"}
  shodandb: {"zh-Hans": "ShodanDB (Shodan InternetDB)模块的配置。", "zh-Hant": "ShodanDB (Shodan InternetDB)模組的配置。"}
  shodandb_api_base:
@@ -394,6 +404,15 @@ config: !lazy
  shodandb_api_header:
   zh-Hans: "随查询请求发送的可选HTTP标头（例如，用于针对自托管或代理端点进行身份验证）。 如无需填写，请留空。"
   zh-Hant: "可選的HTTP標頭，用於隨查找請求一起傳送（例如，用於對自託管或代理端點進行身份驗證）。 如果不需要，請留空。"
+ shodandb_expire_bad:
+  zh-Hans: "当未找到端口时，ShodanDB查询结果应缓存多长时间。 标准 = 1小时。"
+  zh-Hant: "當找不到連接埠時，ShodanDB查找結果應該緩存多久。 標準 = 1小時。"
+ shodandb_expire_good:
+  zh-Hans: "当发现端口时，ShodanDB查询结果应缓存多长时间。 标准 = 1天。"
+  zh-Hant: "找到連接埠後，ShodanDB查找結果應該緩存多久。 標準 = 1天。"
+ shodandb_lookup_strategy:
+  zh-Hans: "应该在何时执行ShodanDB查询？"
+  zh-Hant: "何時應該執行ShodanDB查詢？"
  signatures: {"zh-Hans": "签名，签名文件，模块，等的配置。", "zh-Hant": "簽名，簽名檔案，模組，等的配置。"}
  signatures_conflict_response:
   zh-Hans: "当同时尝试访问相同资源的次数过多时（例如，同时向同一台机器上的多个PHP进程发出对相同资源的请求），其中一些尝试可能会失败。 万一发生这种情况，并且影响到签名文件或模块，CIDRAM可能无法对该请求做出有效的决定。 如果发生这种情况，应该阻止该请求吗？ 并且，CIDRAM应该发送哪条HTTP状态消息？"
@@ -566,18 +585,42 @@ hints_ipv6_on_32bit: {"zh-Hans": "注意：IPv6查找在某些32位系统上可�
 hints_logging_datetime:
  zh-Hans: "有用提示：您可以使用时间格式占位符将日期/时间信息附加到日志文件的名称。 可用的时间格式占位符显示在{{Links.ConfigRef.time_format}}处。"
  zh-Hant: "有用的提示：您可以使用時間格式佔位符將日期/時間資訊附加到日誌檔案的名稱。 可用的時間格式佔位符顯示在{{Links.ConfigRef.time_format}}處。"
+hints_ports_action:
+ 0.:
+  zh-Hans: "指由 <code class="s">noteworthy_ports</code> 指定的端口和/或端口范围。"
+  zh-Hant: "指由 <code class="s">noteworthy_ports</code> 指定的連接埠和/或連接埠範圍。"
+ 1.:
+  zh-Hans: "指由 <code class="s">proxy_ports</code> 指定的端口和/或端口范围。 针对开放代理端口提供了报告选项，但其他端口则没有。 仅凭端口开放这一特征，并不能可靠地判定存在滥用行为（许多正常的IP地址也会运行Web服务器、游戏服务器、TeamSpeak、等服务），因此如果允许针对任何开放端口进行举报，将会导致大量不必要且缺乏正当理由的举报。 然而，相比普通的开放端口，开放的代理端口是更强烈的滥用信号，因此针对开放代理端口进行报告是有正当理由的。"
+  zh-Hant: "指由 <code class="s">proxy_ports</code> 指定的連接埠和/或連接埠範圍。 提供了報告開放代理連接埠的選項，但未提供報告其他連接埠的選項。 開放連接埠本身並不是可靠的濫用訊號（許多良性IP位址運行網路伺服器、遊戲伺服器、TeamSpeak 、等等），因此提供舉報任何類型的開放連接埠的選項會導致不必要和不合理的舉報。 但是，開放的代理端口比開放的普通端口更能表明存在濫用行為，因此有理由舉報開放的代理端口。"
+ 2.:
+  zh-Hans: "指所有开放端口，但由 <code class="s">tr069_ports</code> 指定的端口和/或端口范围除外：这些指定的端口将不参与该模块执行的任何匹配或操作。 如果勾选了“任意端口”选项，通常应取消勾选“值得注意的端口”和“代理端口”选项，因为将它们与“任意端口”同时勾选，可能会导致多余的匹配，并使签名计数超出预期。"
+  zh-Hant: "指所有開放連接埠，但由 <code class="s">tr069_ports</code> 指定的連接埠和/或連接埠範圍除外：這些連接埠和/或連接埠範圍將被排除在模組要執行的任何匹配或操作之外。 如果選取「任何連接埠」選項，則「值得注意的連接埠」和「代理連接埠」選項可能應該取消選中，因為將它們與「任何連接埠」一起選取可能會導致多餘的符合和比預期更高的簽名計數。"
 hints_pdo_dsn:
  zh-Hans: "<strong>常问问题。</strong> <em><a href="{{Links.CIDRAM.Docs Base Path}}readme.zh-Hans.md\#user-content-HOW_TO_USE_PDO" hreflang="zh-Hans">“PDO DSN”是什么？如何能PDO与CIDRAM一起使用？</a></em>"
  zh-Hant: "<strong>常問問題。</strong> <em><a href="{{Links.CIDRAM.Docs Base Path}}readme.zh-Hant.md\#user-content-HOW_TO_USE_PDO" hreflang="zh-Hant">『PDO DSN』是什麼？如何能PDO與CIDRAM一起使用？</a></em>"
 hints_sensitive_pages: {"zh-Hans": "注意：“敏感页面”的构成由{{Links.ConfigRef.sensitive}}决定。", "zh-Hant": "注意：『敏感頁面』的構成由{{Links.ConfigRef.sensitive}}決定。"}
 hints_shorthand:
- 0.: {"zh-Hans": "如果您的网站需要通过LAN或localhost访问，不要阻止它。 否则，您可以阻止它。", "zh-Hant": "如果您的網站需要通過LAN或localhost訪問，不要阻止它。 否則，您可以阻止它。"}
- 1.: {"zh-Hans": "标准签名文件不使用它，但它仍然受支持，因为它可能对某些用户有用。", "zh-Hant": "標準簽名檔案不使用它，但它仍然受支持，因為它可能對某些用戶有用。"}
- 2.: {"zh-Hans": "如果您需要用户能够通过代理访问您的网站，不要阻止它。 否则，您可以阻止它。", "zh-Hant": "如果您需要用戶能夠通過代理訪問您的網站，不要阻止它。 否則，您可以阻止它。"}
- 3.: {"zh-Hans": "不支持直接在签名中使用，但在特定情况下可以通过其他方式调用。", "zh-Hant": "不支持直接在簽名中使用，但在特定情況下可以通過其他方式調用。"}
- 4.: {"zh-Hans": "当速记词不使用或CIDRAM不识别时。", "zh-Hant": "當速記詞不使用或CIDRAM不識別時。"}
- 5.: {"zh-Hans": "<strong>对于每个签名只有一个。</strong> 签名可以调用多个分类，但只能使用一个速记词。 多个速记词可能是合适的，但由于只能使用一个，我们试图始终只使用最合适的。", "zh-Hant": "<strong>對於每個簽名只有一個。</strong> 簽名可以調用多個分類，但只能使用一個速記詞。 多個速記詞可能是合適的，但由於只能使用一個，我們試圖始終只使用最合適的。"}
- 6.: {"zh-Hans": "<strong>优先。</strong> 选定的选项始终优先于未选定的选项。 例如，如果多个速记词是生效的，但只有一个被设置为被阻止，则请求仍将被阻止。", "zh-Hant": "<strong>優先。</strong> 選定的選項始終優先於未選定的選項。 例如，如果多個速記詞是生效的，但只有一個被設置為被阻止，則請求仍將被阻止。"}
+ 0.:
+  zh-Hans: "如果您的网站需要通过LAN或localhost访问，不要阻止它。 否则，您可以阻止它。"
+  zh-Hant: "如果您的網站需要通過LAN或localhost訪問，不要阻止它。 否則，您可以阻止它。"
+ 1.:
+  zh-Hans: "标准签名文件不使用它，但它仍然受支持，因为它可能对某些用户有用。"
+  zh-Hant: "標準簽名檔案不使用它，但它仍然受支持，因為它可能對某些用戶有用。"
+ 2.:
+  zh-Hans: "如果您需要用户能够通过代理访问您的网站，不要阻止它。 否则，您可以阻止它。"
+  zh-Hant: "如果您需要用戶能夠通過代理訪問您的網站，不要阻止它。 否則，您可以阻止它。"
+ 3.:
+  zh-Hans: "不支持直接在签名中使用，但在特定情况下可以通过其他方式调用。"
+  zh-Hant: "不支持直接在簽名中使用，但在特定情況下可以通過其他方式調用。"
+ 4.:
+  zh-Hans: "当速记词不使用或CIDRAM不识别时。"
+  zh-Hant: "當速記詞不使用或CIDRAM不識別時。"
+ 5.:
+  zh-Hans: "<strong>对于每个签名只有一个。</strong> 签名可以调用多个分类，但只能使用一个速记词。 多个速记词可能是合适的，但由于只能使用一个，我们试图始终只使用最合适的。"
+  zh-Hant: "<strong>對於每個簽名只有一個。</strong> 簽名可以調用多個分類，但只能使用一個速記詞。 多個速記詞可能是合適的，但由於只能使用一個，我們試圖始終只使用最合適的。"
+ 6.:
+  zh-Hans: "<strong>优先。</strong> 选定的选项始终优先于未选定的选项。 例如，如果多个速记词是生效的，但只有一个被设置为被阻止，则请求仍将被阻止。"
+  zh-Hant: "<strong>優先。</strong> 選定的選項始終優先於未選定的選項。 例如，如果多個速記詞是生效的，但只有一個被設置為被阻止，則請求仍將被阻止。"
  7.:
   zh-Hans: "<strong>人类端点和云服务。</strong> 云服务可能是指虚拟主机提供商、服务器场、数据中心、或许多其他事物。 人类端点是指人类访问互联网的方式，例如，通过互联网服务提供商。 网络通常只提供一个或另一个，但有时可能同时提供两者。 我们试图不将潜在的人类端点识别为云服务。 因此，如果云服务的范围由已知的人类端点共享，则可以将其识别为其他东西。 同样，如果范围不被任何已知的人类端点共享，我们会试图始终将云服务识别为云服务。 因此，明确标识为云服务的请求很可能不会与任何已知的人类端点共享其范围。 同样，由攻击或垃圾邮件的风险明确识别的请求很可能共享范围。 然而，互联网总是在不断变化，网络的目的可以改变，范围总是被买卖，所以关于假阳性的保持有意识和警惕。"
   zh-Hant: "<strong>人類端點和雲服務。</strong> 雲服務可能是指虛擬主機提供商、服務器場、數據中心、或許多其他事物。 人類端點是指人類訪問互聯網的方式，例如，通過互聯網服務提供商。 網絡通常只提供一個或另一個，但有時可能同時提供兩者。 我們試圖不將潛在的人類端點識別為雲服務。 因此，如果雲服務的範圍由已知的人類端點共享，則可以將其識別為其他東西。 同樣，如果範圍不被任何已知的人類端點共享，我們會試圖始終將雲服務識別為雲服務。 因此，明確標識為雲服務的請求很可能不會與任何已知的人類端點共享其範圍。 同樣，由攻擊或垃圾郵件的風險明確識別的請求很可能共享範圍。 然而，互聯網總是在不斷變化，網絡的目的可以改變，範圍總是被買賣，所以關於假陽性的保持有意識和警惕。"

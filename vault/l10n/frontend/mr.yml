@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Marathi language data for the front-end (last modified: 2026.09.14).
+# This file: Marathi language data for the front-end (last modified: 2026.09.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -320,6 +320,9 @@ config: !lazy
  shodandb: "ShodanDB (Shodan InternetDB) मॉड्यूलसाठी कॉन्फिगरेशन."
  shodandb_api_base: "Shodan InternetDB शोधण्यासाठीचा (किंवा सुसंगत एंडपॉइंटचा) मूळ URL. डीफॉल्ट = <code class="s">https://internetdb.shodan.io</code>."
  shodandb_api_header: "लुकअप विनंत्यांसोबत पाठवण्यासाठी एक ऐच्छिक HTTP हेडर (उदा., स्वतः होस्ट केलेल्या किंवा प्रॉक्सी केलेल्या एंडपॉइंटवर प्रमाणीकरणासाठी). गरज नसल्यास रिकामे सोडा."
+ shodandb_expire_bad: "कोणतेही पोर्ट्स न सापडल्यास ShodanDB लुकअप निकालाला किती काळासाठी कॅशे करून ठेवावा. डीफॉल्ट = १ तास."
+ shodandb_expire_good: "पोर्ट्स सापडल्याच्या ShodanDB लुकअप निकालाला किती काळासाठी कॅशे करून ठेवावा. डीफॉल्ट = १ दिवस."
+ shodandb_lookup_strategy: "ShodanDB लूकअप्स कधी केले जावेत?"
  signatures: "स्वाक्षऱ्या, स्वाक्षरी फायली, मॉड्यूल, इत्यादींसाठी कॉन्फिगरेशन."
  signatures_conflict_response: "जेव्हा एकाच संसाधनांमध्ये प्रवेश करण्यासाठी एकाच वेळी खूप जास्त प्रयत्न केले जातात (उदाहरणार्थ, एकाच मशीनवर एकाच संसाधनांसाठी अनेक PHP प्रक्रियांना एकाच वेळी विनंत्या करणे), तेव्हा त्यातील काही प्रयत्न अयशस्वी होऊ शकतात. जर याचा स्वाक्षरी फायली किंवा मॉड्यूलवर परिणाम झाला तर क्वचित आणि अशक्य परिस्थितीत, CIDRAM ला विनंतीबद्दल प्रभावी निर्णय घेण्यापासून रोखले जाऊ शकते. जर असे घडले, तर विनंती अवरोधित करावी का, आणि CIDRAM ने कोणता HTTP स्थिती संदेश पाठवावा?"
  signatures_default_tracktime: "IP पत्ते किती काळ ट्रॅक करायचे. डीफॉल्ट = 7d0°0′0″ (१ आठवडा)."
@@ -462,6 +465,9 @@ hints_http_response_header_code:
 hints_inspection: "* केवळ सहाय्यक नियम डीबग करण्यासाठी आहे. अवरोधित केलेल्या वापरकर्त्यांना दाखवले जात नाही."
 hints_ipv6_on_32bit: "टीप: काही ३२-बिट सिस्टीमवर IPv6 लुकअप योग्यरित्या काम करू शकत नाहीत."
 hints_logging_datetime: "उपयुक्त टीप: वेळ स्वरूप प्लेसहोल्डर वापरून तुम्ही लॉग फायलींच्या नावांना तारीख/वेळ माहिती जोडू शकता. उपलब्ध वेळ स्वरूप प्लेसहोल्डर {{Links.ConfigRef.time_format}} वर प्रदर्शित केले जातात."
+hints_ports_action:
+ 0.: "हे <code class="s">noteworthy_ports</code> द्वारे निर्दिष्ट केलेल्या पोर्ट्स आणि/किंवा पोर्टच्या श्रेणींना संदर्भित करते."
+ 1.: "हे <code class="s">proxy_ports</code> द्वारे निर्दिष्ट केलेल्या पोर्ट्स आणि/किंवा पोर्टच्या श्रेणींना संदर्भित करते. खुल्या प्रॉक्सी पोर्टसाठी अहवाल देण्याचा पर्याय प्रदान केला आहे, परंतु इतर पोर्टसाठी नाही. केवळ ओपन पोर्ट असणे हा गैरवापराचा विश्वसनीय संकेत नाही (कारण अनेक निरुपद्रवी IP पत्त्यावर वेब सर्व्हर, गेम सर्व्हर, TeamSpeak, इत्यादी चालवले जातात), त्यामुळे कोणत्याही प्रकारच्या ओपन पोर्टबद्दल तक्रार करण्याचा पर्याय दिल्यास अनावश्यक आणि अयोग्य तक्रारी ओढवतील. तथापि, सामान्य ओपन पोर्टच्या तुलनेत ओपन प्रॉक्सी पोर्ट हे गैरवापराचे अधिक प्रबळ लक्षण मानले जाते, त्यामुळे ओपन प्रॉक्सी पोर्टची तक्रार करणे समर्थनीय ठरते."
 hints_pdo_dsn:
  वारंवार विचारले जाणारे प्रश्न.: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">"PDO DSN" म्हणजे काय? मी CIDRAM सह PDO कसा वापरू शकतो?</a></em>"
 hints_sensitive_pages: "टीप: "संवेदनशील पृष्ठ" म्हणजे काय हे {{Links.ConfigRef.sensitive}} द्वारे निश्चित केले जाते."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2026.09.18).
+# This file: Japanese language data for the front-end (last modified: 2026.09.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -475,6 +475,8 @@ hints_ipv6_on_32bit: "注：一部の３２ビットシステムでは、ＩＰ�
 hints_logging_datetime: "役に立つヒント:時刻形式のプレースホルダーを使用して、ログ・ファイルの名前に日付/時刻情報を添付できます。 使用可能な時刻形式のプレースホルダーが{{Links.ConfigRef.time_format}}に表示されます。"
 hints_ports_action:
  0.: "<code class="s">noteworthy_ports</code>で指定されたポートおよび／またはポート範囲を指します。"
+ 1.: "<code class="s">proxy_ports</code>で指定されたポートおよび／またはポート範囲を指します。 オープン・プロキシのポートについては報告するオプションが用意されていますが、その他のポートについては用意されていません。 ポートが開いていること自体は、悪用の兆候として信頼できるものではありません（無害なＩＰアドレスの多くが、ウェブサーバー、ゲームサーバー、TeamSpeak、などを運用しています）。 したがって、あらゆる種類のオープン・ポートについて報告する選択肢を設けることは、不必要かつ不当な報告を招くことになります。 しかし、オープン・プロキシのポートは一般的なオープン・ポートよりも悪用の可能性を示す強い兆候であるため、オープン・プロキシのポートについて報告を行うことには正当な理由があります。"
+ 2.: "あらゆるオープン・ポートを指しますが、<code class="s">tr069_ports</code>で指定されたポートやポート範囲は例外となります。 これらは、当該モジュールによって実行されるいかなる照合やアクションの対象からも除外されます。 「いずれかのポート」のオプションにチェックを入れる場合は、「注目すべきポート」や「プロキシ・ポート」のオプションのチェックを外すべきでしょう。 これらを「いずれかのポート」と併用すると、不要なマッチングが発生し、シグネチャの数が予想以上に多くなる可能性があるためです。"
 hints_pdo_dsn:
  ＦＡＱ。: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.ja.md\#user-content-HOW_TO_USE_PDO" hreflang="ja-JP">「PDO DSN」とは何ですか？​CIDRAMでPDOを使用するにはどうすればよいですか？</a></em>"
 hints_sensitive_pages: "注：「機密ページ」を構成するものは{{Links.ConfigRef.sensitive}}によって決まります。"

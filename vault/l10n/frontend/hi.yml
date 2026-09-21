@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hindi language data for the front-end (last modified: 2026.09.14).
+# This file: Hindi language data for the front-end (last modified: 2026.09.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -321,6 +321,9 @@ config: !lazy
  shodandb: "ShodanDB (Shodan InternetDB) मॉड्यूल के लिए कॉन्फ़िगरेशन।"
  shodandb_api_base: "Shodan InternetDB लुकअप (या किसी संगत एंडपॉइंट) के लिए बेस URL। डिफ़ॉल्ट = <code class="s">https://internetdb.shodan.io</code>।"
  shodandb_api_header: "लुकअप अनुरोधों के साथ भेजने के लिए एक वैकल्पिक HTTP हेडर (उदाहरण के लिए, स्वयं-होस्ट किए गए या प्रॉक्सी किए गए एंडपॉइंट के विरुद्ध प्रमाणीकरण के लिए)। ज़रूरत न हो तो खाली छोड़ दें।"
+ shodandb_expire_bad: "जब कोई पोर्ट न मिले, तो ShodanDB लुकअप के नतीजे को कितने समय तक कैश में रखना चाहिए। डिफ़ॉल्ट = 1 घंटा।"
+ shodandb_expire_good: "जब पोर्ट्स मिल जाते हैं, तो ShodanDB लुकअप के नतीजे को कितने समय तक कैश में रखना चाहिए। डिफ़ॉल्ट = 1 दिन।"
+ shodandb_lookup_strategy: "ShodanDB लुकअप कब करने चाहिए?"
  signatures: "हस्ताक्षर, हस्ताक्षर फाइलें, मॉड्यूल, आदि के लिए कॉन्फ़िगरेशन।"
  signatures_conflict_response: "जब समान संसाधनों तक पहुँचने के लिए एक साथ कई प्रयास किए जाते हैं (उदाहरण के लिए, समान संसाधनों के लिए एक ही मशीन पर एकाधिक PHP प्रक्रियाओं के लिए एक साथ अनुरोध), तो उनमें से कुछ प्रयास विफल हो सकते हैं। दुर्लभ एवं असंभावित घटना में यदि इससे हस्ताक्षर फाइलें या मॉड्यूल प्रभावित होते हैं, तो CIDRAM को अनुरोध के बारे में प्रभावी निर्धारण करने से रोका जा सकता है। यदि ऐसा होता है, तो क्या अनुरोध को अवरुद्ध कर दिया जाना चाहिए, और CIDRAM को कौन सा HTTP स्थिति संदेश भेजना चाहिए?"
  signatures_default_tracktime: "वह अवधि जिसके लिए एक IP पता को ट्रैक किया जाना चाहिए। डिफ़ॉल्ट = 7d0°0′0″ (1 सप्ताह)।"

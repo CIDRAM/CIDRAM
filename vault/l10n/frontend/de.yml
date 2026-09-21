@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2026.09.18).
+# This file: German language data for the front-end (last modified: 2026.09.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -326,6 +326,12 @@ config: !lazy
  shodandb_expire_bad: "Wie lange das Ergebnis einer ShodanDB-Abfrage zwischengespeichert werden soll wenn keine Ports gefunden wurden. Standardeinstellung = 1 Stunde."
  shodandb_expire_good: "Wie lange das Ergebnis einer ShodanDB-Abfrage zwischengespeichert werden soll wenn Ports gefunden wurden. Standardeinstellung = 1 Tag."
  shodandb_lookup_strategy: "Wann sollten ShodanDB-Abfragen durchgeführt werden?"
+ shodandb_noteworthy_ports: "Eine durch Kommas getrennte Liste von Ports (und/oder Portbereichen, z.B., 3389–3395) die als beachtenswert oder mit hohem Risiko behaftet gelten wenn sie bei einer anfragenden IP-Adresse offen sind (z.B., Remote-Administration, IoT, Datenbank-Ports)."
+ shodandb_options: "Anzuwendende CAPTCHA-Optionen bei Erkennung eines offenen Ports gemäß der Kennzeichnung bei <code class="s">ports_action</code>."
+ shodandb_ports_action: "Was ist zu tun wenn bei einer anfragenden IP einer oder mehrere der konfigurierten „beachtenswerte Ports“ oder „Proxy-Ports“ geöffnet sind (oder, falls eine der „jeder Ports“-Optionen ausgewählt ist, jeder beliebige offene Port, mit Ausnahme der von „tr069_ports“ angegeben)."
+ shodandb_proxy_ports: "Eine durch Kommas getrennte Liste von Ports (und/oder Portbereichen, z.B., 3389–3395) die üblicherweise mit offenen Proxys, SOCKS-Servern, oder anderen anonymisierenden Relays in Verbindung gebracht werden."
+ shodandb_timeout_rl: "Wie lange Suchanfragen nach Überschreiten des Limits ausgesetzt werden sollen (HTTP 429). Standardeinstellung = 1 Stunde."
+ shodandb_tr069_ports: "Eine durch Kommas getrennte Liste von TR-069/CWMP-Ports (CPE WAN Management Protocol) sowie weiteren Ports und/oder Portbereichen, die von jeglichen durch das Modul durchgeführten Aktionen ausgenommen werden sollen. Standardeinstellung = 7547 (der Standard b.z.w. IANA-registrierte CWMP-Port) und 30005 (eine verbreitete alternative Nicht-Standard-Portnummer die von einigen ISPs/Geräten verwendet wird). Die meisten Internetanbieter für Privatkunden verwalten Kundenrouter aus der Ferne per CWMP (typischerweise über Port 7547), daher ist es normal und zu erwarten dass dieser Port am Router geöffnet ist."
  signatures: "Konfiguration für Signaturen, Signaturdateien, Module, u.s.w."
  signatures_conflict_response: "Wenn es zu viele gleichzeitige Versuche gibt auf dieselben Ressourcen zuzugreifen (z.B., gleichzeitige Anforderungen an mehrere PHP-Prozesse auf demselben Computer für dieselben Ressourcen), können einige dieser Versuche fehlschlagen. In dem seltenen und unwahrscheinlichen Fall dass Signaturdateien oder Module hiervon betroffen sind, kann CIDRAM möglicherweise keine wirksame Entscheidung über die Anfrage treffen. Wenn dies geschieht, sollte die Anforderung blockiert werden, und welche HTTP-Statusmeldung sollte CIDRAM senden?"
  signatures_default_tracktime: "Die Dauer für die IP-Adressen getrackt werden sollen. Standardeinstellung = 7d0°0′0″ (1 Woche)."
@@ -467,6 +473,10 @@ hints_http_response_header_code:
 hints_inspection: "* Nur zum Debuggen von Hilfsregeln vorgesehen. Blockierten Benutzern nicht angezeigt."
 hints_ipv6_on_32bit: "Hinweis: IPv6-Lookups funktionieren auf einigen 32-Bit-Systemen möglicherweise nicht richtig."
 hints_logging_datetime: "Nützlicher Tipp: Sie können den Namen der Protokolldateien Datums-/Uhrzeitinformationen hinzufügen, indem Sie Platzhalter für das Zeitformat verwenden. Verfügbare Platzhalter für Zeitformate werden bei {{Links.ConfigRef.time_format}} angezeigt."
+hints_ports_action:
+ 0.: "Bezieht sich auf die durch <code class="s">noteworthy_ports</code> angegebenen Ports und/oder Portbereiche."
+ 1.: "Bezieht sich auf die durch <code class="s">proxy_ports</code> angegebenen Ports und/oder Portbereiche. Für offene Proxy-Ports ist eine Meldeoption vorgesehen, für andere Ports jedoch nicht. Da zahlreiche unbedenkliche IP-Adressen Webserver, Spieleserver, TeamSpeak, u.s.w. betreiben, ist ein offener Port für sich genommen noch kein verlässlicher Hinweis auf Missbrauch. Daher würde die Möglichkeit, jeden beliebigen offenen Port zu melden, zu unnötigen und ungerechtfertigten Berichten führen. Eine Meldung offener Proxy-Ports ist jedoch gerechtfertigt, da sie ein stärkeres Indiz für Missbrauch darstellt als ein allgemein offener."
+ 2.: "Bezieht sich auf alle offenen Ports, mit Ausnahme derjenigen Ports und/oder Portbereiche die durch <code class="s">tr069_ports</code> angegebenen sind und von jeglichen durch das Modul auszuführenden Abgleichen oder Aktionen ausgeschlossen werden sollen. Wenn die Option für „jeder Ports“ ausgewählt wird, sollten die Optionen für „beachtenswerte Ports“ und „Proxy-Ports“ wahrscheinlich abgewählt werden, denn ihre gleichzeitige Auswahl könnte zu überflüssigen Übereinstimmungen und einer höher als erwarteten Zählung den Signaturen führen."
 hints_pdo_dsn:
  FAQ.: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.de.md\#user-content-HOW_TO_USE_PDO" hreflang="de-DE">Was ist ein „PDO DSN“? Wie kann ich PDO mit CIDRAM verwenden?</a></em>"
 hints_sensitive_pages: "Hinweis: Was eine „sensible Seite“ ist, wird durch {{Links.ConfigRef.sensitive}} bestimmt."
@@ -713,7 +723,7 @@ label:
  No log files available: "Keine Protokolldateien vorhanden."
  None: "Keiner.\nWenn Sie das Modul nur für Berichtszwecke verwenden möchten, ohne etwas nachzuschlagen, verwenden Sie dies."
  Normal: "Normal"
- Noteworthy ports: "Bemerkenswerte Ports."
+ Noteworthy ports: "Beachtenswerte Ports."
  Only those with updates available: "Nur diejenigen mit verfügbaren Aktualisierungen."
  Only those installed: "Nur die installierten."
  Only those not installed: "Nur die nicht installierten."
@@ -736,7 +746,7 @@ label:
  Please log in to continue: "Bitte einloggen zum Fortfahren."
  Preferred source: "Bevorzugte Quelle:"
  Previous: "Vorherige:"
- Proxy ports: "Proxy Ports."
+ Proxy ports: "Proxy-Ports."
  Quote entity: "„%s“"
  Range tools: "Bereichswerkzeuge"
  Remember: "Speichern"

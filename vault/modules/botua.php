@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bot user agents module (last modified: 2026.08.29).
+ * This file: Bot user agents module (last modified: 2026.09.22).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -187,7 +187,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         'm(?:ahiti|ahonie|attters|egaindex|iabot|lbot|oreover|ormor|ot-v980|oz\.com|rchrome|ulticrawler)|' .
         'n(?:eofonie|ewsbot|extgensearchbot|ineconnections)|' .
         'o(?:afcrawl|fflinenavigator|odlebot|ptimizer)|' .
-        'p(?:age(?:fetch|gett|_verifi)er|agesinventory|ath2|ic(?:grabber|s|tsnapshot|turefinder)|i(?:pl|xmatch|xray)|oe-component-client-|owermarks|rofiler|(?:s|ure)bot|urity)|qqdownload|' .
+        'p(?:age(?:fetch|gett|_verifi)er|agesinventory|ath2|ic(?:grabber|s|tsnapshot|turefinder)|i(?:xmatch|xray)|oe-component-client-|owermarks|rofiler|(?:s|ure)bot|urity)|qqdownload|' .
         'r(?:6_|adian6|ankivabot|ebi-shoveler|everseget|ganalytics|ocketcrawler|ogerbot|sscrawl|ulinki)|' .
         's(?:afeassign|bider|bl[.-]bot|creamingfrog|earchmetricsbot|emrush|eo(?:bulls|eng|hunt|kicks|mon|profiler|stat|tool)|erpstat|istrix|ite(?:bot|intel)|n[iy]per|olomono|pbot|search|webot)|' .
         't(?:-h-u-n|agsdir|ineye|opseo|raumacadx|urnitinbot)|' .
@@ -196,7 +196,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         'w(?:arebay|auuu|bsearchbot|eb(?:alta|capture|download|mastercoffee|meup|ripper)|ikio|indows(?:3|seven)|ise-guys|khtmlto|orldbot|otbox)|' .
         'yoofind~',
         $UANoSpace
-    ), 'Backlink/SEO/Scraper UA'); // 2022.09.19 mod 2026.06.22
+    ), 'Backlink/SEO/Scraper UA'); // 2022.09.19 mod 2026.09.22
 
     $this->trigger(\preg_match('~zombiebot~', $UANoSpace), 'Backlink/SEO'); // 2025.07.26
 
@@ -313,7 +313,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         '~^(?:curlmozilla|http_get)|\(gort\)|[-.]ai|2bone|80legs|' .
         'a(?:dbar|gent(?:[-_3]|api|ic|ql)|i.?(?:2|agent|article|assistant|bot|chat|content|detection|dungeon|hitbot|journalist|legion|matrix|rag|research|search' . $OAIBypass . '|seocrawler|training|web|writer)|liyun|lphaai|nalyzerai|ndibot|nonymous-?(?:ai|coward)|riaai|skai|utomatedwriter|uto(?:nomous)?rag|wario|wstrainium|xios)|' .
         'b(?:aby(?:cat)?agi|anana-?bot|asicrag|edrockbot|ot-?test|rands-?bot|rightbot|rings_?you|ytespider)|' .
-        'c(?:arynai|asperbot|cbot|harstar|hinaclaw|lark-?crawler|laude|ognitive|ohere-|ommoncrawl|ontent(?:atscale|bot|edge|harmony|king|samurai|shake)|onversionai|opilot|opy(?:ai|matic|scape)|oreweave|orrectiverag|otoyogi|rawl[4q]ai|rawler4j|rewai|rushonai)|' .
+        'c(?:arynai|asperbot|cbot|harstar|hatglm|hinaclaw|lark-?crawler|laude|ognitive|ohere-|ommoncrawl|ontent(?:atscale|bot|edge|harmony|king|samurai|shake)|onversionai|opilot|opy(?:ai|matic|scape)|oreweave|orrectiverag|otoyogi|rawl[4q]ai|rawler4j|rewai|rushonai)|' .
         'd(?:all[-_]e|atenbank|eep-?(?:ai|crawl|index|l|mind|(?:re)?search|seek)|iffbot|oubaoai)|' .
         'echobo[tx]|' .
         'f(?:idget-?spinner-?bot|irecrawl|lyriver|raseai|riendly-?(?:crawler|spider))|' .
@@ -324,9 +324,9 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         'k(?:afkai|angaroobot|eys-?so-?bot|eyworddensity)|' .
         'l(?:9explore|anguageai|ightrag|ink(?:check|fluence)|lama|lm|ocalrag)|' .
         'm(?:amac(?:asper|yber)|bzuai|etaai|idjourney|iniagi|i[sx]tral|odel[_-]?training|ozilla/0|ycentralai)|' .
-        'n(?:etestate|injaai|ovaact)|' .
+        'n(?:etestate|eural(?:seo|text)|injaai|odezero|otebooklm|ovaact|ytheon)|' .
         'o(?:mgili|pen(?:agi|bot|interpreter|pi|router|textai)|rbbot)|' .
-        'p(?:angubot|anscient|araphraser|er[fp]lexity|hindbot|hxbot|lease_?block|oseidon|roximic|ublicwebcrawler|ythonai)|' .
+        'p(?:angubot|anscient|araphraser|er[fp]lexity|hind|hxbot|ipl|ixmo|lease_?block|oseidon|roximic|ublicwebcrawler|ythonai)|' .
         'q(?:opywriter|ualifiedbot|uillbot)|' .
         'r(?:ag(?:[-_]|agent|azure|chat|data|is|pipe|search|with)|esearch.?crawler)|' .
         's(?:aplingai|bintuition|crap[ey]|idetrade|implifiedai|p(?:hi|y)der|pinbot|tability|tablediffusion|tealth|torm-?crawler|ummalybot|urferai)|' .
@@ -336,12 +336,12 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         'w(?:ardbot|ebsite[-_]?scraper|ebzio|hatstuffwherebot|inhttp|ordai)|' .
         'x(?:ai|tractorpro)|' .
         'yak/|' .
-        'z(?:ephuli-?bot|grab|huqueai)~',
+        'z(?:ephuli-?bot|grab|hipuai|huqueai)~',
         $UANoSpace
     ), 'Scraper UA')) {
         $this->CIDRAM['Tracking options override'] = 'extended';
         unset($this->CIDRAM['MarkForUseWithHCaptcha'], $this->CIDRAM['MarkForUseWithFriendlyCaptcha'], $this->CIDRAM['MarkForUseWithCloudflareTurnstile']);
-    } // 2023.11.17 mod 2026.08.20
+    } // 2023.11.17 mod 2026.09.22
 
     /**
      * @link https://github.com/CIDRAM/CIDRAM/issues/651

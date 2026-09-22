@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: IP-API module (last modified: 2026.08.18).
+ * This file: IP-API module (last modified: 2026.09.13).
  *
  * False positive risk (an approximate, rough estimate only): « [x]Low [ ]Medium [ ]High »
  */
@@ -71,11 +71,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
     /** Prepare to perform a new lookup if none for this origin have been cached yet. */
     if (!$InCache && !$BlockLookup) {
-        $Lookup = $this->Request->request(
-            'http://ip-api.com/json/' . $this->BlockInfo['IPAddr'] . '?fields=status,countryCode,as,mobile,proxy,hosting',
-            [],
-            $this->Configuration['ipapi']['timeout_limit'] ?? 12
-        );
+        $Lookup = $this->Request->request('http://ip-api.com/json/' . $this->BlockInfo['IPAddr'] . '?fields=status,countryCode,as,mobile,proxy,hosting', [], $this->Configuration['ipapi']['timeout_limit']);
 
         if ($this->Request->MostRecentStatusCode !== 200) {
             /** Lookup limit has been exceeded. */

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2026.09.05).
+# This file: Indonesian language data for the front-end (last modified: 2026.09.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -31,7 +31,7 @@ Extended Description IPv4: &ExtDesCloud "Memblokir layanan cloud tidak diinginka
 Extended Description IPv4-Bogons: &ExtDesBogons "Memblokir CIDR bogon/martian."
 Extended Description IPv4-ISPs: &ExtDesISPs "Memblokir ISP berbahaya dan spam rawan (termasuk jaringan multi-permainan, yang mungkin berisi titik akhir manusia dan non-manusia)."
 Extended Description IPv4-Nonblocking: &ExtDesNonblocking "Berguna untuk membuat profil, tetapi tidak memblokir apapun dengan sendirinya."
-Extended Description IPv4-Other: &ExtDesOther "Memblokir CIDR untuk proxy, VPN, dan layanan lain-lain tidak diinginkan."
+Extended Description IPv4-Other: &ExtDesOther "Memblokir CIDR untuk proksi, VPN, dan layanan lain-lain tidak diinginkan."
 Extended Description IPv6: *ExtDesCloud
 Extended Description IPv6-Bogons: *ExtDesBogons
 Extended Description IPv6-ISPs: *ExtDesISPs
@@ -57,12 +57,12 @@ Name IPv4: "IPv4 (layanan cloud dan hosting)."
 Name IPv4-Bogons: "IPv4 (bogon)."
 Name IPv4-ISPs: "IPv4 (ISP yang mengirim spam)."
 Name IPv4-Nonblocking: "Tanda tangan jangan pemblokiran IPv4."
-Name IPv4-Other: "IPv4 (proxy, VPN, dll)."
+Name IPv4-Other: "IPv4 (proksi, VPN, dll)."
 Name IPv6: "IPv6 (layanan cloud dan hosting)."
 Name IPv6-Bogons: "IPv6 (bogon)."
 Name IPv6-ISPs: "IPv6 (ISP yang mengirim spam)."
 Name IPv6-Nonblocking: "Tanda tangan jangan pemblokiran IPv6."
-Name IPv6-Other: "IPv6 (proxy, VPN, dll)."
+Name IPv6-Other: "IPv6 (proksi, VPN, dll)."
 Name KR_cidram.inc: "IPv4 pemblokir Korea Selatan."
 Name Search engines blocker module: "Modul pemblokir mesin pencari."
 Name compat_bunnycdn.php: "Modul kompatibilitas BunnyCDN."
@@ -103,8 +103,8 @@ config_general_config_imports: "Sebuah daftar dipisahkan dengan koma untuk file 
 config_general_default_algo: "Mendefinisikan algoritma mana yang akan digunakan untuk semua kata sandi dan sesi di masa depan. Opsi: PASSWORD_DEFAULT (default), PASSWORD_BCRYPT, PASSWORD_ARGON2I (membutuhkan PHP &gt;= 7.2.0), PASSWORD_ARGON2ID (membutuhkan PHP &gt;= 7.3.0)."
 config_general_default_dns: "Sebuah daftar dipisahkan dengan koma dari server DNS yang digunakan untuk pencarian nama host. Default = "8.8.8.8,8.8.4.4" (Google DNS). PERINGATAN: Jangan ganti ini kecuali Anda tahu apa yang Anda lakukan!"
 config_general_default_timeout: "Batas waktu default yang digunakan untuk permintaan eksternal? Default = 12 detik."
-config_general_disable_cli: "Menonaktifkan modus CLI? Modus CLI diaktifkan secara default, tapi kadang-kadang dapat mengganggu alat pengujian tertentu (seperti PHPUnit, sebagai contoh) dan aplikasi CLI berbasis lainnya. Jika Anda tidak perlu menonaktifkan modus CLI, Anda harus mengabaikan direktif ini. False = Mengaktifkan modus CLI [Default]; True = Menonaktifkan modus CLI."
-config_general_disable_frontend: "Menonaktifkan akses bagian depan? Akses bagian depan dapat membuat CIDRAM lebih mudah dikelola, tapi juga dapat menjadi potensial resiko keamanan. Itu direkomendasi untuk mengelola CIDRAM melalui bagian belakang bila mungkin, tapi akses bagian depan yang disediakan untuk saat itu tidak mungkin. Memilikinya dinonaktifkan kecuali jika Anda membutuhkannya. False = Mengaktifkan akses bagian depan; True = Menonaktifkan akses bagian depan [Default]."
+config_general_disable_cli: "Menonaktifkan modus CLI? Modus CLI diaktifkan secara default, tetapi kadang-kadang dapat mengganggu alat pengujian tertentu (seperti PHPUnit, sebagai contoh) dan aplikasi CLI berbasis lainnya. Jika Anda tidak perlu menonaktifkan modus CLI, Anda harus mengabaikan direktif ini. False = Mengaktifkan modus CLI [Default]; True = Menonaktifkan modus CLI."
+config_general_disable_frontend: "Menonaktifkan akses bagian depan? Akses bagian depan dapat membuat CIDRAM lebih mudah dikelola, tetapi juga dapat menjadi potensial resiko keamanan. Itu direkomendasi untuk mengelola CIDRAM melalui bagian belakang bila mungkin, tetapi akses bagian depan yang disediakan untuk saat itu tidak mungkin. Memilikinya dinonaktifkan kecuali jika Anda membutuhkannya. False = Mengaktifkan akses bagian depan; True = Menonaktifkan akses bagian depan [Default]."
 config_general_disable_webfonts: "Menonaktifkan webfonts? True = Ya [Default]; False = Tidak."
 config_general_disabled_channels: "Ini dapat digunakan untuk mencegah CIDRAM dari menggunakan saluran tertentu saat mengirim permintaan (misalnya, saat memperbarui, saat mengambil metadata komponen, dll)."
 config_general_emailaddr: "Jika Anda ingin, Anda dapat menyediakan alamat email sini untuk diberikan kepada pengguna ketika diblokir, bagi mereka untuk menggunakan sebagai metode kontak untuk dukungan dan/atau bantuan untuk dalam hal mereka menjadi diblokir keliru atau diblokir oleh kesalahan. PERINGATAN: Apapun alamat email Anda menyediakan sini akan pasti diperoleh oleh spambots dan pencakar/scrapers ketika digunakan disini, dan karena itu, jika Anda ingin memberikan alamat email disini, itu sangat direkomendasikan Anda memastikan bahwa alamat email yang Anda berikan disini adalah alamat yang dapat dibuang dan/atau adalah alamat Anda tidak keberatan menjadi di-spam (dengan kata lain, Anda mungkin tidak ingin untuk menggunakan Anda alamat email yang personal primer atau bisnis primer)."
@@ -114,7 +114,7 @@ config_general_error_log: "File untuk mencatat kesalahan tidak fatal yang terdet
 config_general_error_log_stages: "Daftar tahapan dalam rantai eksekusi yang seharusnya memiliki kesalahan yang dihasilkan dicatat."
 config_general_events: "File yang terdaftar disini dimuat langsung setelah file pengendali acara. Biasanya diisi oleh halaman pembaruan saat mengaktifkan komponen yang membutuhkannya saat diperlukan. Dalam kebanyakan kasus, bisa mengabaikannya."
 config_general_forbid_on_block: "Pesan status HTTP mana yang harus dikirim oleh CIDRAM ketika memblokir permintaan?"
-config_general_force_hostname_lookup: "Memaksa periksa untuk nama host? True = Ya; False = Tidak [Default]. Periksa untuk nama host biasanya dilakukan pada dasar "sesuai kebutuhan", tapi bisa dipaksakan untuk semua permintaan. Melakukan hal tersebut mungkin berguna sebagai sarana untuk memberikan informasi lebih rinci di log, tapi mungkin juga memiliki sedikit efek negatif pada kinerja."
+config_general_force_hostname_lookup: "Memaksa periksa untuk nama host? True = Ya; False = Tidak [Default]. Periksa untuk nama host biasanya dilakukan pada dasar "sesuai kebutuhan", tetapi bisa dipaksakan untuk semua permintaan. Melakukan hal tersebut mungkin berguna sebagai sarana untuk memberikan informasi lebih rinci di log, tetapi mungkin juga memiliki sedikit efek negatif pada kinerja."
 config_general_hide_version: "Sembunyikan informasi versi dari log dan output halaman? True = Ya; False = Tidak [Default]."
 config_general_ipaddr: "Dimana menemukan alamat IP dari menghubungkan permintaan? (Berguna untuk pelayanan-pelayanan seperti Cloudflare dan sejenisnya). Default = REMOTE_ADDR. PERINGATAN: Jangan ganti ini kecuali Anda tahu apa yang Anda lakukan!"
 config_general_lang: "Tentukan bahasa default untuk CIDRAM."
@@ -132,7 +132,7 @@ config_general_numbers: "Cara apa yang kamu suka nomor menjadi ditampilkan? Pili
 config_general_other_verification: "Jika/Bila memungkinkan, coba verifikasi jenis permintaan lain (mis., AdSense, pemeriksa SEO, dll)? Saat terdeteksi, permintaan palsu akan diblokir. True = Mengaktifkan [Default]; False = Menonaktifkan."
 config_general_outbound_request_log: "File untuk mencatat hasil permintaan keluar apapun. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
 config_general_protect_frontend: "Menentukan apakah perlindungan biasanya disediakan oleh CIDRAM harus diterapkan pada bagian depan. True = Ya [Default]; False = Tidak."
-config_general_search_engine_verification: "Mencoba memverifikasi permintaan dari mesin pencari? Verifikasi mesin pencari memastikan bahwa mereka tidak akan dilarang sebagai akibat dari melebihi batas pelanggaran (melarang mesin pencari dari situs web Anda biasanya akan memiliki efek negatif pada peringkat mesin pencari Anda, SEO, dll). Ketika diverifikasi, mesin pencari dapat diblokir seperti biasa, tapi tidak akan dilarang. Ketika tidak diverifikasi, itu mungkin bagi mereka untuk dilarang sebagai akibat dari melebihi batas pelanggaran. Juga, verifikasi mesin pencari memberikan proteksi terhadap permintaan mesin pencari palsu dan terhadap entitas yang berpotensi berbahaya yang menyamar sebagai mesin pencari (permintaan tersebut akan diblokir ketika verifikasi mesin pencari diaktifkan). True = Mengaktifkan verifikasi mesin pencari [Default]; False = Menonaktifkan verifikasi mesin pencari."
+config_general_search_engine_verification: "Mencoba memverifikasi permintaan dari mesin pencari? Verifikasi mesin pencari memastikan bahwa mereka tidak akan dilarang sebagai akibat dari melebihi batas pelanggaran (melarang mesin pencari dari situs web Anda biasanya akan memiliki efek negatif pada peringkat mesin pencari Anda, SEO, dll). Ketika diverifikasi, mesin pencari dapat diblokir seperti biasa, tetapi tidak akan dilarang. Ketika tidak diverifikasi, itu mungkin bagi mereka untuk dilarang sebagai akibat dari melebihi batas pelanggaran. Juga, verifikasi mesin pencari memberikan proteksi terhadap permintaan mesin pencari palsu dan terhadap entitas yang berpotensi berbahaya yang menyamar sebagai mesin pencari (permintaan tersebut akan diblokir ketika verifikasi mesin pencari diaktifkan). True = Mengaktifkan verifikasi mesin pencari [Default]; False = Menonaktifkan verifikasi mesin pencari."
 config_general_signatures_update_event_log: "File untuk mencatat ketika tanda tangan diperbarui melalui bagian depan. Spesifikasikan nama file, atau biarkan kosong untuk menonaktifkan."
 config_general_silent_mode: "Seharusnya CIDRAM diam-diam mengarahkan diblokir upaya akses bukannya menampilkan halaman "akses ditolak"? Jika ya, menentukan lokasi untuk mengarahkan diblokir upaya akses. Jika tidak, kosongkan variabel ini."
 config_general_silent_mode_response_header_code: "Pesan status HTTP mana yang harus dikirim oleh CIDRAM saat secara diam-diam mengarahkan upaya akses yang diblokir?"
@@ -189,7 +189,7 @@ config_signatures_block_cloud: "Memblokir CIDR yang diidentifikasi sebagai milik
 config_signatures_block_generic: "Memblokir CIDR umumnya direkomendasikan untuk mendaftar hitam? Ini mencakup tanda tangan apapun yang tidak ditandai sebagai bagian dari apapun lainnya kategori tanda tangan lebih spesifik."
 config_signatures_block_legal: "Memblokir CIDR sebagai respons terhadap kewajiban hukum? Direktif ini seharusnya tidak memiliki efek apapun, karena CIDRAM tidak menghubungkan CIDR apapun dengan "kewajiban hukum" secara default, tetapi tetap ada sebagai ukuran kontrol tambahan untuk kepentingan file tanda tangan atau modul dipersonalisasi yang mungkin ada karena alasan hukum."
 config_signatures_block_malware: "Memblokir CIDR yang terkait dengan malware? Ini termasuk server C&C, mesin yang terinfeksi, mesin yang terlibat dalam distribusi malware, dll."
-config_signatures_block_proxies: "Memblokir CIDR yang diidentifikasi sebagai milik layanan proxy atau VPN? Jika Anda membutuhkan bahwa pengguna dapat mengakses situs web Anda dari layanan proxy atau VPN, direktif ini harus didefinisikan untuk false/palsu. Jika Anda tidak membutuhkannya, direktif ini harus didefinisikan untuk true/benar sebagai sarana untuk meningkatkan keamanan."
+config_signatures_block_proxies: "Memblokir CIDR yang diidentifikasi sebagai milik layanan proksi atau VPN? Jika Anda membutuhkan bahwa pengguna dapat mengakses situs web Anda dari layanan proksi atau VPN, direktif ini harus didefinisikan untuk false/palsu. Jika Anda tidak membutuhkannya, direktif ini harus didefinisikan untuk true/benar sebagai sarana untuk meningkatkan keamanan."
 config_signatures_block_spam: "Memblokir CIDR yang diidentifikasi sebagai beresiko tinggi karena spam? Kecuali jika Anda mengalami masalah ketika melakukan itu, umumnya, ini harus selalu didefinisikan untuk true/benar."
 config_signatures_default_tracktime: "Berapa banyak detik untuk melacak IP dilarang oleh modul. Default = 604800 (1 seminggu)."
 config_signatures_infraction_limit: "Jumlah maksimum pelanggaran IP diperbolehkan untuk dikenakan sebelum dilarang oleh pelacakan IP. Default = 10."
@@ -350,11 +350,11 @@ info_some_useful_links: |+
 label_Entered %s Assuming %s: "Dimasukkan: %s – Diasumsikan: %s"
 label_active_config_file: "File konfigurasi aktif:"
 label_actual: "Sebenarnya"
-label_aux_actBlk: "memblokir"
+label_aux_actBlk: "blokir"
 label_aux_actByp: "melewati"
 label_aux_actGrl: "mendaftar abu-abu"
 label_aux_actLog: "jangan mencatat"
-label_aux_actPro: "memprofilkan"
+label_aux_actPro: "profil"
 label_aux_actRdr: "mengarahkan (tanpa memblokir)"
 label_aux_actRun: "mengeksekusi file untuk menangani"
 label_aux_actWhl: "mendaftar putih"
@@ -701,11 +701,11 @@ tip_range: "Salam, {username}.<br />Halaman ini menunjukkan beberapa informasi s
 tip_range_intersector: "Salam, {username}.<br />Intersektor rentang dapat digunakan untuk menentukan faktor persekutuan dari dua kumpulan rentang."
 tip_range_subtractor: "Salam, {username}.<br />Pengurangan rentang dapat digunakan untuk mengurangi satu rentang IP/CIDR dari yang lain."
 tip_rate_limiting: "Salam, {username}.<br />Halaman ini menunjukkan penggunaan dan ketersediaan kuota saat ini terkait dengan pembatasan laju."
-tip_rate_limiting_disabled: "Catat: Pembatasan laju saat ini dinonaktifkan, namun dapat diaktifkan melalui halaman konfigurasi."
+tip_rate_limiting_disabled: "Catat: Pembatasan laju saat ini dinonaktifkan, tetapi dapat diaktifkan melalui halaman konfigurasi."
 tip_sections_list: "Salam, {username}.<br />Halaman ini mencantumkan bagian yang ada di file tanda tangan yang aktif saat ini."
 tip_see_the_documentation: "Lihat <a href="{{Links.CIDRAM.Docs Base Path}}v2-and-earlier/readme.id.md\#user-content-SECTION6" hreflang="id-ID" rel="noopener external">dokumentasi</a> untuk informasi tentang berbagai direktif konfigurasi dan tujuan mereka."
 tip_statistics: "Salam, {username}.<br />Halaman ini menunjukkan beberapa statistik penggunaan dasar mengenai instalasi CIDRAM Anda."
-tip_statistics_disabled: "Catat: Pelacakan statistik saat ini dinonaktifkan, namun dapat diaktifkan melalui halaman konfigurasi."
+tip_statistics_disabled: "Catat: Pelacakan statistik saat ini dinonaktifkan, tetapi dapat diaktifkan melalui halaman konfigurasi."
 tip_updates: "Salam, {username}.<br />Halaman pembaruan memungkinkan Anda untuk menginstal, menguninstal, dan memperbarui berbagai komponen CIDRAM (paket inti, tanda tangan, file L10N, dll)."
 title_login: "Masuk"
 warning_file_php: "Peringatan: Beberapa solusi keamanan webhosting diketahui secara otomatis melarang alamat IP setelah mendeteksi tag PHP dalam permintaan (misalnya, ketika memodifikasi file PHP melalui browser). CIDRAM tidak memiliki cara untuk mengetahui apakah layanan webhosting Anda menggunakan solusi keamanan seperti ini. Untuk menghindari masalah seperti tersebut, disarankan jangan mengedit file PHP sedemikian rupa jika memungkinkan."

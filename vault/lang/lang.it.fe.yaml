@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2026.09.04).
+# This file: Italian language data for the front-end (last modified: 2026.09.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -27,7 +27,7 @@
 Extended Description Bypasses: "Un file per bypassare alcune delle firme predefinite normalmente inclusi nel pacchetto principale."
 Extended Description CIDRAM: "Il pacchetto principale (senza le firme, la documentazione, e la configurazione)."
 Extended Description Chart.js: "Consente al front-end di generare grafici a torta.<br />{{Links.Chart.js}} è disponibile tramite la licenza {{Links.MIT}}."
-Extended Description IPv4: &ExtDesCloud "Blocca servizi cloud indesiderate e punti finali non umani."
+Extended Description IPv4: &ExtDesCloud "Blocca servizi cloud indesiderate e gli endpoint non umani."
 Extended Description IPv4-Bogons: &ExtDesBogons "Blocca CIDR bogon/marziani."
 Extended Description IPv4-ISPs: &ExtDesISPs "Blocca ISP pericolosi e spam incline (include reti multiplay, che possono contenere endpoint sia umani che non umani)."
 Extended Description IPv4-Nonblocking: &ExtDesNonblocking "Utile per la profilazione, ma non blocca nulla di per sé."
@@ -95,7 +95,7 @@ config_PHPMailer_setFromName: "Il nome del mittente per citare quando si invia u
 config_bypasses: "Configurazione per i bypass di firma predefiniti."
 config_bypasses_used: "Quali bypass dovrebbero essere usati?"
 config_experimental: "Instabile/Sperimentale!"
-config_general: "Configurazione generale (qualsiasi configurazione di base non appartenente ad altre categorie)."
+config_general: "Configurazione generale (eventuali direttive di configurazione di base non appartenenti ad altre categorie)."
 config_general_FrontEndLog: "File per la registrazione di tentativi di accesso al front-end. Specificare un nome di file, o lasciare vuoto per disabilitare."
 config_general_allow_gethostbyaddr_lookup: "Consenti ricerche gethostbyaddr quando UDP non è disponibile? True = Sì [Predefinito]; False = No."
 config_general_ban_override: "Sostituire "forbid_on_block" quando "infraction_limit" è superato? Quando si sostituisce: Richieste bloccate restituire una pagina vuota (file di modello non vengono utilizzati). 200 = Non sostituire [Predefinito]. Altri valori sono uguali ai valori disponibili per "forbid_on_block"."
@@ -594,7 +594,7 @@ response_login_invalid_password: "Accedi non riuscito! Password non valida!"
 response_login_invalid_username: "Accedi non riuscito! Nome utente non esiste!"
 response_login_password_field_empty: "L'input password era vuoto!"
 response_login_username_field_empty: "L'input nome utente era vuoto!"
-response_login_wrong_endpoint: "Punto finale errato!"
+response_login_wrong_endpoint: "Endpoint errato!"
 response_no: "No"
 response_not_satisfied: "Non soddisfatto."
 response_passed: "Superato"

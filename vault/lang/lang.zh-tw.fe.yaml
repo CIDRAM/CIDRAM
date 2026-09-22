@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese (traditional) language data for the front-end (last modified: 2026.09.04).
+# This file: Chinese (traditional) language data for the front-end (last modified: 2026.09.15).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -86,7 +86,7 @@ config_PHPMailer_enable_two_factor: "該指令確定是否將2FA用於前端帳�
 config_PHPMailer_event_log: "用於記錄與PHPMailer相關的所有事件的檔案。 指定一個檔案名稱，或留空以禁用。"
 config_PHPMailer_host: "用於出站電子郵件的SMTP主機。"
 config_PHPMailer_password: "通過SMTP發送電子郵件時使用的密碼。"
-config_PHPMailer_port: "用於出站電子郵件的端口號。 標準=587。"
+config_PHPMailer_port: "用於出站電子郵件的連接埠號。 標準=587。"
 config_PHPMailer_set_from_address: "通過SMTP發送電子郵件時引用的發件人地址。"
 config_PHPMailer_set_from_name: "通過SMTP發送電子郵件時引用的發件人姓名。"
 config_PHPMailer_skip_auth_process: "將此指令設置為<code>true</code>會指示PHPMailer跳過通過SMTP發送電子郵件時通常會發生的正常身份驗證過程。 應該避免這種情況，因為跳過此過程可能會將出站電子郵件暴露給MITM攻擊，但在此過程阻止PHPMailer連接到SMTP服務器的情況下可能是必要的。"
@@ -185,7 +185,7 @@ config_recaptcha_signature_limit: *CaptchaSignatureLimit
 config_recaptcha_sitekey: *CaptchaDashboard
 config_recaptcha_usemode: *CaptchaUseMode
 config_signatures: "簽名，簽名檔案，模組，等的配置。"
-config_signatures_block_attacks: "阻止攻擊和其他異常流量相關的CIDR嗎？ 例如，端口掃描、黑客攻擊、漏洞探測、等等。 除非您遇到問題當這樣做，通常，這應該被設置為『true』（真）。"
+config_signatures_block_attacks: "阻止攻擊和其他異常流量相關的CIDR嗎？ 例如，連接埠掃描、黑客攻擊、漏洞探測、等等。 除非您遇到問題當這樣做，通常，這應該被設置為『true』（真）。"
 config_signatures_block_bogons: "阻止bogon(『ㄅㄡㄍㄛㄋ』)/martian（『火星』）CIDR嗎？ 如果您希望連接到您的網站從您的本地網絡/本地主機/localhost/LAN/等等，這應該被設置為『false』（假）。 如果不，這應該被設置為『true』（真）。"
 config_signatures_block_cloud: "阻止CIDR認定為屬於虛擬主機或云服務嗎？ 如果您操作一個API服務從您的網站或如果您預計其他網站連接到您的網站，這應該被設置為『false』（假）。 如果不，這應該被設置為『true』（真）。"
 config_signatures_block_generic: "阻止CIDR一般建議對於黑名單嗎？ 這包括簽名不標記為的一章节任何其他更具體簽名類別。"
@@ -208,14 +208,14 @@ config_supplementary_cache_options_enable_memcached: "指定是否嘗試使用Me
 config_supplementary_cache_options_enable_pdo: "指定是否嘗試使用PDO進行緩存。 標準 = False。"
 config_supplementary_cache_options_enable_redis: "指定是否嘗試使用Redis進行緩存。 標準 = False。"
 config_supplementary_cache_options_memcached_host: "Memcached 主機值。 標準 = localhost。"
-config_supplementary_cache_options_memcached_port: "Memcached 端口值。 標準 = 『11211』。"
+config_supplementary_cache_options_memcached_port: "Memcached 連接埠值。 標準 = 『11211』。"
 config_supplementary_cache_options_pdo_dsn: "PDO DSN值。 標準 = 『mysql:dbname=cidram;host=localhost;port=3306』。"
 config_supplementary_cache_options_pdo_password: "PDO 密碼。"
 config_supplementary_cache_options_pdo_username: "PDO 使用者名稱。"
 config_supplementary_cache_options_prefix: "該值將附加到所有緩存條目的鍵的開頭。 默認值為空。 當同一服務器上存在多個安裝時，這對於將它們的緩存彼此分開非常有用。"
 config_supplementary_cache_options_redis_database_number: "Redis 資料庫編號。 標準 = 『0』。 注意：不能在 Redis Cluster 中使用 0 以外的值。"
 config_supplementary_cache_options_redis_host: "Redis 主機值。 標準 = localhost。"
-config_supplementary_cache_options_redis_port: "Redis 端口值。 標準 = 『6379』。"
+config_supplementary_cache_options_redis_port: "Redis 連接埠值。 標準 = 『6379』。"
 config_supplementary_cache_options_redis_timeout: "Redis 超時值。 標準 = 『2.5』。"
 config_template_data: "模板和主題的配置。"
 config_template_data_block_event_title: "為阻止事件顯示的頁面標題。"
@@ -627,7 +627,7 @@ state_component_is_partially_active: "組件是部分處於活性。"
 state_component_is_provisional: "組件是有時活性。"
 state_default_password: "警告：它使用標準密碼！"
 state_email_sent: "電子郵件已成功發送至『%s』。"
-state_failed_missing: "任務失敗，因為必要的組件不可用。"
+state_failed_missing: "缺少必要組件，任務失敗。"
 state_fixer: "%2$s%1$s。"
 state_fixer_changed: "進行了%s次更改"
 state_fixer_seconds: "在%s秒內"

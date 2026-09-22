@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Malayalam language data for the front-end (last modified: 2026.09.21).
+# This file: Malayalam language data for the front-end (last modified: 2026.09.22).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -319,9 +319,9 @@ config: !lazy
  sfs: "Stop Forum Spam മൊഡ്യൂളിനായുള്ള കോൺഫിഗറേഷൻ."
  shodandb: "ShodanDB (Shodan InternetDB) മൊഡ്യൂളിനായുള്ള കോൺഫിഗറേഷൻ."
  shodandb_api_base: "Shodan InternetDB ലുക്കപ്പുകൾക്കായുള്ള അടിസ്ഥാന URL (അല്ലെങ്കിൽ അനുയോജ്യമായ ഒരു എൻഡ്‌പോയിന്റ്). സ്ഥിരസ്ഥിതി = <code class="s">https://internetdb.shodan.io</code>."
- shodandb_api_header: "ലുകപ്പ് അഭ്യർത്ഥനകൾക്കൊപ്പം അയയ്‌ക്കാവുന്ന ഒരു ഓപ്‌ഷണൽ HTTP ഹെഡർ (ഉദാഹരണത്തിന്, സെൽഫ്-ഹോസ്റ്റഡ് അല്ലെങ്കിൽ പ്രോക്സി ചെയ്ത എൻഡ്‌പോയിന്റിൽ ഓതന്റിക്കേഷൻ നടത്തുന്നതിന്). ആവശ്യമില്ലെങ്കിൽ ശൂന്യമായി വിടുക."
- shodandb_expire_bad: "പോർട്ടുകളൊന്നും കണ്ടെത്താത്ത സാഹചര്യത്തിൽ, ShodanDB ലുക്കപ്പ് ഫലം എത്രനേരം കാഷെ ചെയ്യണം. സ്ഥിരസ്ഥിതി = 1 മണിക്കൂർ."
- shodandb_expire_good: "പോർട്ടുകൾ കണ്ടെത്തുകയാണെങ്കിൽ, ShodanDB ലുക്കപ്പ് ഫലം എത്രനേരം കാഷെ ചെയ്യണം. സ്ഥിരസ്ഥിതി = 1 ദിവസം."
+ shodandb_api_header: "ലുകപ്പ് അഭ്യർത്ഥനകൾക്കൊപ്പം അയയ്‌ക്കാവുന്ന ഒരു ഓപ്‌ഷണൽ HTTP ഹെഡർ (ഉദാഹരണത്തിന്, സെൽഫ്-ഹോസ്റ്റഡ് അല്ലെങ്കിൽ പ്രോക്സി ചെയ്ത എൻഡ്‌പോയിന്റിൽ പ്രാമാണീകരണ നടത്തുന്നതിന്). ആവശ്യമില്ലെങ്കിൽ ശൂന്യമായി വിടുക."
+ shodandb_expire_bad: "പോർട്ടുകളൊന്നും കണ്ടെത്താത്ത സാഹചര്യത്തിൽ, ShodanDB തിരയൽ ഫലം എത്രനേരം കാഷെ ചെയ്യണം. സ്ഥിരസ്ഥിതി = 1 മണിക്കൂർ."
+ shodandb_expire_good: "പോർട്ടുകൾ കണ്ടെത്തുകയാണെങ്കിൽ, ShodanDB തിരയൽ ഫലം എത്രനേരം കാഷെ ചെയ്യണം. സ്ഥിരസ്ഥിതി = 1 ദിവസം."
  shodandb_lookup_strategy: "ShodanDB ലുക്കപ്പുകൾ എപ്പോഴാണ് നടത്തേണ്ടത്?"
  shodandb_noteworthy_ports: "ഒരു IP വിലാസത്തിൽ തുറന്ന നിലയിൽ കാണപ്പെടുമ്പോൾ ശ്രദ്ധേയമായതോ ഉയർന്ന അപകടസാധ്യതയുള്ളതോ ആയി കണക്കാക്കപ്പെടുന്ന പോർട്ടുകളുടെ (അല്ലെങ്കിൽ പോർട്ട് റേഞ്ചുകളുടെ, ഉദാഹരണത്തിന് 3389-3395) കോമയാൽ വേർതിരിച്ച പട്ടിക (ഉദാഹരണത്തിന്: റിമോട്ട് അഡ്മിൻ, IoT, ഡാറ്റാബേസ് പോർട്ടുകൾ)."
  shodandb_options: "<code class="s">ports_action</code> എന്ന് അടയാളപ്പെടുത്തിയിരിക്കുന്നതനുസരിച്ച്, ഒരു ഓപ്പൺ പോർട്ട് കണ്ടെത്തുമ്പോൾ പ്രയോഗിക്കേണ്ട CAPTCHA ഓപ്ഷനുകൾ."

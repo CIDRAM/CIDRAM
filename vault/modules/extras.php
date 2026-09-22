@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2026.09.07).
+ * This file: Optional security extras module (last modified: 2026.09.22).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -188,15 +188,11 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $this->trigger(\preg_match('~(?:^|[/?])verify\.php\?id=1&confirm_hash=(?:$|/)~', $LCNrURI), $Exploit = 'CVE-2017-7615', '', $UnmarkCaptcha) || // 2026.08.15
             $this->trigger(\preg_match('~(?:^|[/?])virtualjdbc(?:$|[/?])~', $LCNrURI), $Exploit = 'CVE-2019-0344', '', $UnmarkCaptcha) || // 2026.08.15
             $this->trigger(\preg_match('~(?:^|[/?])xmlpserver/reporttemplateservice(?:$|[/?])~', $LCNrURI), $Exploit = 'CVE-2019-2616', '', $UnmarkCaptcha) || // 2026.08.15
-            (\strpos($this->BlockInfo['WhyReason'], 'CVE-2026-4020') === false && $this->trigger(\preg_match('~(?:^|[/?])wp-json/gravitysmtp/v1/tests/mock-data\?page=gravitysmtp-settings~i', $LCNrURI), $Exploit = 'CVE-2026-4020', '', $UnmarkCaptcha)) // 2026.08.05 mod 2026.08.06
-        ) {
-            $this->Reporter->report([15, 21], ['Caught probing for ' . $Exploit . ' vulnerability.'], $this->BlockInfo['IPAddr']);
-        }
-
-        /** Probing for common vulnerabilities and exploits. */
-        if (
-            $this->trigger(\preg_match('~hello\.world\?(?:%ad|\xAD)d\+allow_url_include(?:%3d|=)1\+(?:%ad|\xAD)d~', $LCNrURI), $Exploit = 'CVE-2024-4577') || // 2025.07.17
-            $this->trigger(\preg_match('~\?s=../%5c|invokefunction&function=call_user_func_array&|vars%5b0%5d=md5|vars%5b1%5d%5b%5d=hellothinkphp~', $LCNrURI), $Exploit = 'CVE-2018-20062') // 2025.07.01
+            (\strpos($this->BlockInfo['WhyReason'], 'CVE-2026-4020') === false && $this->trigger(\preg_match('~(?:^|[/?])wp-json/gravitysmtp/v1/tests/mock-data\?page=gravitysmtp-settings~i', $LCNrURI), $Exploit = 'CVE-2026-4020', '', $UnmarkCaptcha)) || // 2026.08.05 mod 2026.08.06
+            $this->trigger(\preg_match('~\?s=../%5c|invokefunction&function=call_user_func_array&|vars%5b0%5d=md5|vars%5b1%5d%5b%5d=hellothinkphp|&vars\[1\]\[\]=\.env|/thinkapp/invokefunction|index\.php\?s=/index/\think~', $LCNrURI), $Exploit = 'CVE-2018-20062', '', $UnmarkCaptcha) || // 2025.07.01 mod 2026.09.22
+            $this->trigger(\preg_match('~function=call_user_func_array|vars(?:\[0\]=system|\[1\]\[\]=whoami)~', $LCNrURI), $Exploit = 'CVE-2019-9082', '', $UnmarkCaptcha) || // 2026.09.22
+            $this->trigger(\preg_match('~hello\.world\?(?:%ad|\xAD)d\+allow_url_include(?:%3d|=)1\+(?:%ad|\xAD)d~', $LCNrURI), $Exploit = 'CVE-2024-4577', '', $UnmarkCaptcha) || // 2025.07.17
+            $this->trigger(\preg_match('~index\.php\?s=index/install/setup2~', $LCNrURI), $Exploit = 'CVE-2018-19180', '', $UnmarkCaptcha) // 2026.09.22
         ) {
             $this->Reporter->report([15, 21], ['Caught probing for ' . $Exploit . ' vulnerability.'], $this->BlockInfo['IPAddr']);
         }

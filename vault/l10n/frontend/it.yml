@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2026.09.05).
+# This file: Italian language data for the front-end (last modified: 2026.09.17).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -62,7 +62,7 @@ Extended Description: !lazy
  Cookie scanner module: "Fornisce alcune protezioni limitate contro i cookie pericolosi."
  HTTP version checker module: "Permette di bloccare protocolli specifici e versioni HTTP tramite la configurazione CIDRAM."
  IP-API module: "Sfrutta l'API {{Links.IP-API}} per fornire funzionalità di ricerca di ASN e codici paese per CIDRAM, abilitando a ASN e paesi di essere bloccati o autorizzati nella configurazione CIDRAM, e fornire un mezzo per la verifica dei social network per verificare le richieste di Facebook. (Se utilizzi questo modulo, non avrai bisogno di utilizzare il modulo BGPView, poiché hanno lo stesso scopo)."
- IPv4: &ExtDesCloud "Blocca servizi cloud indesiderate e punti finali non umani."
+ IPv4: &ExtDesCloud "Blocca servizi cloud indesiderate e gli endpoint non umani."
  IPv4-Bogons: &ExtDesBogons "Blocca CIDR bogon/marziani."
  IPv4-ISPs: &ExtDesISPs "Blocca ISP pericolosi e spam incline (include reti multiplay, che possono contenere endpoint sia umani che non umani)."
  IPv4-Nonblocking: &ExtDesNonblocking "Utile per la profilazione, ma non blocca nulla di per sé."
@@ -188,7 +188,7 @@ config: !lazy
  frontend_signatures_update_event_log: "Un file per la registrazione quando le firme vengono aggiornate tramite il front-end. Specificare un nome di file, o lasciare vuoto per disabilitare."
  frontend_theme: "Il tema da utilizzare per il front-end."
  frontend_theme_mode: "La modalità per il tema da utilizzare per il front-end."
- general: "Configurazione generale (qualsiasi configurazione di base non appartenente ad altre categorie)."
+ general: "Configurazione generale (eventuali direttive di configurazione di base non appartenenti ad altre categorie)."
  general_allow_gethostbyaddr_lookup: "Consenti ricerche gethostbyaddr quando UDP non è disponibile? True = Sì [Predefinito]; False = No."
  general_ban_override: "Sostituire "http_response_header_code" quando "infraction_limit" è superato? 200 = Non sostituire [Predefinito]. Altri valori sono uguali ai valori disponibili per "http_response_header_code"."
  general_default_algo: "Definisce quale algoritmo da utilizzare per tutte le password e le sessioni in futuro."
@@ -438,7 +438,7 @@ hints_shorthand:
  4.: "Si riferisce a casi in cui le parole abbreviate non vengono utilizzate affatto, o non vengono riconosciute da CIDRAM."
  Uno per firma.: "Una firma può invocare più profili, ma può utilizzare solo una parola abbreviata. È possibile che più parole abbreviate possano essere adatte, ma poiché solo una può essere utilizzata, miriamo a utilizzare sempre solo le più adatte."
  Priorità.: "Un'opzione selezionata ha sempre la priorità su un'opzione non selezionata. Ad esempio, se sono in gioco più parole abbreviate ma solo una di esse è impostata come bloccata, la richiesta sarà comunque bloccata."
- Punti finali umani e servizi cloud.: "Il servizio cloud può fare riferimento a provider di web hosting, server farm, data center, o una serie di altre cose. Punto finale umano si riferisce ai mezzi con cui un umano accede a internet, ad esempio tramite un provider di servizi internet. Una rete di solito fornisce solo l'uno o l'altro, ma a volte può fornire entrambi. Miriamo a non identificare mai potenziali punti finali umani come servizi cloud. Pertanto, un servizio cloud può essere identificato come qualcos'altro se il suo gamme è condiviso da punti finali umani noti. Allo stesso modo, miriamo a identificare sempre i servizi cloud, i cui gamme non sono condivisi da alcun punto finale umano noto, come servizi cloud. Pertanto, una richiesta identificata esplicitamente come servizio cloud probabilmente non condivide il suo gamme con nessun punto finale umano noto. Allo stesso modo, una richiesta identificata esplicitamente da attacchi o rischio per lo spam probabilmente li condivide. Tuttavia, internet è sempre in evoluzione, gli scopi delle reti cambiano nel tempo, e le gamme vengono sempre acquistate o vendute, quindi rimani consapevole e vigile riguardo ai falsi positivi."
+ Endpoint umani e servizi cloud.: "Il servizio cloud può fare riferimento a provider di web hosting, server farm, data center, o una serie di altre cose. Endpoint umano si riferisce ai mezzi con cui un umano accede a internet, ad esempio tramite un provider di servizi internet. Una rete di solito fornisce solo l'uno o l'altro, ma a volte può fornire entrambi. Miriamo a non identificare mai potenziali Endpoint umani come servizi cloud. Pertanto, un servizio cloud può essere identificato come qualcos'altro se il suo gamme è condiviso da Endpoint umani noti. Allo stesso modo, miriamo a identificare sempre i servizi cloud, i cui gamme non sono condivisi da alcun endpoint umano noto, come servizi cloud. Pertanto, una richiesta identificata esplicitamente come servizio cloud probabilmente non condivide il suo gamme con nessun endpoint umano noto. Allo stesso modo, una richiesta identificata esplicitamente da attacchi o rischio per lo spam probabilmente li condivide. Tuttavia, internet è sempre in evoluzione, gli scopi delle reti cambiano nel tempo, e le gamme vengono sempre acquistate o vendute, quindi rimani consapevole e vigile riguardo ai falsi positivi."
 hints_time_format: |
  <strong><em>Segnaposto – Spiegazione – Esempio basato sul 2024-04-30T18:27:49+08:00.</em></strong><br />
  <code class="s">{yyyy}</code> – L'anno – Per esempio, 2024.<br />
@@ -970,7 +970,7 @@ response:
  Username field empty: "L'input nome utente era vuoto!"
  Verification failed: "Non è riuscito a verificare! Componente potrebbe essere danneggiato."
  Verification success: "Verificato con successo! Nessun problema trovato."
- Wrong endpoint: "Punto finale errato!"
+ Wrong endpoint: "Endpoint errato!"
  _No: "No"
  _Yes: "Sì"
  please_check_config: "Si prega di controllare la configurazione per assicurarsi che il modulo appena installato si comporti come previsto."

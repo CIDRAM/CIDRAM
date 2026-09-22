@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2026.09.05).
+# This file: Indonesian language data for the front-end (last modified: 2026.09.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -66,7 +66,7 @@ Extended Description: !lazy
  IPv4-Bogons: &ExtDesBogons "Memblokir CIDR bogon/martian."
  IPv4-ISPs: &ExtDesISPs "Memblokir ISP berbahaya dan spam rawan (termasuk jaringan multi-permainan, yang mungkin berisi titik akhir manusia dan non-manusia)."
  IPv4-Nonblocking: &ExtDesNonblocking "Berguna untuk membuat profil, tetapi tidak memblokir apapun dengan sendirinya."
- IPv4-Other: &ExtDesOther "Memblokir CIDR untuk proxy, VPN, dan layanan lain-lain tidak diinginkan."
+ IPv4-Other: &ExtDesOther "Memblokir CIDR untuk proksi, VPN, dan layanan lain-lain tidak diinginkan."
  IPv6: *ExtDesCloud
  IPv6-Bogons: *ExtDesBogons
  IPv6-ISPs: *ExtDesISPs
@@ -96,12 +96,12 @@ Name: !lazy
  IPv4-Bogons: "IPv4 (bogon)."
  IPv4-ISPs: "IPv4 (ISP yang mengirim spam)."
  IPv4-Nonblocking: "Tanda tangan jangan pemblokiran IPv4."
- IPv4-Other: "IPv4 (proxy, VPN, dll)."
+ IPv4-Other: "IPv4 (proksi, VPN, dll)."
  IPv6: "IPv6 (layanan cloud dan hosting)."
  IPv6-Bogons: "IPv6 (bogon)."
  IPv6-ISPs: "IPv6 (ISP yang mengirim spam)."
  IPv6-Nonblocking: "Tanda tangan jangan pemblokiran IPv6."
- IPv6-Other: "IPv6 (proxy, VPN, dll)."
+ IPv6-Other: "IPv6 (proksi, VPN, dll)."
  Optional security extras module: "Modul tambahan keamanan opsional."
  Project Honeypot module: "Modul Project Honeypot."
  Protocol blocker module: "Modul pemblokir protokol."
@@ -113,7 +113,7 @@ bobuam_hint_default_value: "Saat diatur ke 0, modul akan tunduk pada nilai yang 
 checkbox:
  Allow single-hit bypasses: "Izinkan bypass satu pelanggaran?"
  Attempt to verify: "Mencoba memverifikasi?"
- Block it: "Memblokirnya."
+ Block it: "Blokirkan."
  Block negatives: "Blokir negatif?"
  Block non-verified requests: "Blokir permintaan yang tidak diverifikasi?"
  Blocked negatives: "Negatif yang diblokir"
@@ -122,7 +122,7 @@ checkbox:
  Enable this stage: "Aktifkan tahap ini?"
  Log any errors generated during this stage: "Mencatat kesalahan yang dihasilkan selama tahap ini?"
  Omit this field when it_s empty: "Abaikan bidang ini saat kosong?"
- Profile it: "Memprofilkannya."
+ Profile it: "Profilkan."
  Should infractions generated during this stage count towards IP tracking: "Menghitung pelanggaran yang dihasilkan selama tahap ini terhadap pelacakan IP?"
  Should this field appear in log entries: "Sertakan bidang ini dalam entri log?"
  Should this field appear on the access denied page: "Sertakan bidang ini di halaman "akses ditolak"?"
@@ -201,14 +201,14 @@ config: !lazy
  general_emailaddr: "Jika Anda ingin, Anda dapat menyediakan alamat email sini untuk diberikan kepada pengguna ketika diblokir, bagi mereka untuk menggunakan sebagai metode kontak untuk dukungan dan/atau bantuan untuk dalam hal mereka menjadi diblokir keliru atau diblokir oleh kesalahan. PERINGATAN: Apapun alamat email Anda menyediakan sini akan pasti diperoleh oleh spambots dan pencakar/scrapers ketika digunakan disini, dan karena itu, jika Anda ingin memberikan alamat email disini, itu sangat direkomendasikan Anda memastikan bahwa alamat email yang Anda berikan disini adalah alamat yang dapat dibuang dan/atau adalah alamat Anda tidak keberatan menjadi di-spam (dengan kata lain, Anda mungkin tidak ingin untuk menggunakan Anda alamat email yang personal primer atau bisnis primer)."
  general_emailaddr_display_style: "Bagaimana Anda lebih suka alamat email yang akan disajikan kepada pengguna?"
  general_fields: "Kontrol untuk bidang selama acara blokir (ketika permintaan diblokir)."
- general_force_hostname_lookup: "Memaksa periksa untuk nama host? True = Ya; False = Tidak [Default]. Periksa untuk nama host biasanya dilakukan pada dasar "sesuai kebutuhan", tapi bisa dipaksakan untuk semua permintaan. Melakukan hal tersebut mungkin berguna sebagai sarana untuk memberikan informasi lebih rinci di log, tapi mungkin juga memiliki sedikit efek negatif pada kinerja."
+ general_force_hostname_lookup: "Memaksa periksa untuk nama host? True = Ya; False = Tidak [Default]. Periksa untuk nama host biasanya dilakukan pada dasar "sesuai kebutuhan", tetapi bisa dipaksakan untuk semua permintaan. Melakukan hal tersebut mungkin berguna sebagai sarana untuk memberikan informasi lebih rinci di log, tetapi mungkin juga memiliki sedikit efek negatif pada kinerja."
  general_http_response_header_code: "Pesan status HTTP mana yang harus dikirim oleh CIDRAM ketika memblokir permintaan?"
  general_ipaddr: "Dimana menemukan alamat IP dari menghubungkan permintaan? (Berguna untuk layanan seperti Cloudflare). Default = REMOTE_ADDR. PERINGATAN: Jangan ganti ini kecuali Anda tahu apa yang Anda lakukan!"
  general_lang: "Tentukan bahasa default untuk CIDRAM."
  general_lang_override: "Melokalisasikan sesuai dengan HTTP_ACCEPT_LANGUAGE jika/bila memungkinkan? True = Ya [Default]; False = Tidak."
  general_numbers: "Cara apa yang kamu suka nomor menjadi ditampilkan? Pilih contoh yang paling sesuai untuk Anda."
- general_request_proxy: "Jika Anda ingin permintaan keluar dikirim melalui proxy, tentukan proxy tersebut disini. Jika tidak, biarkan ini kosong."
- general_request_proxyauth: "Jika mengirim permintaan keluar melalui proxy dan jika proxy tersebut memerlukan nama pengguna dan kata sandi, tentukan nama pengguna dan kata sandi tersebut disini (misalnya, <code>user:pass</code>). Jika tidak, biarkan ini kosong."
+ general_request_proxy: "Jika Anda ingin permintaan keluar dikirim melalui proksi, tentukan proksi tersebut disini. Jika tidak, biarkan ini kosong."
+ general_request_proxyauth: "Jika mengirim permintaan keluar melalui proksi dan jika proksi tersebut memerlukan nama pengguna dan kata sandi, tentukan nama pengguna dan kata sandi tersebut disini (misalnya, <code>user:pass</code>). Jika tidak, biarkan ini kosong."
  general_sensitive: "Daftar jalur yang dianggap sebagai halaman sensitif. Setiap jalur yang terdaftar akan diperiksa terhadap URI yang direkonstruksi bila diperlukan. Jalur yang dimulai dengan garis miring ke depan akan diperlakukan sebagai literal, dan dicocokkan dari komponen jalur permintaan selanjutnya. Jika tidak, jalur yang dimulai dengan karakter non-alfanumerik, dan diakhiri dengan karakter yang sama (atau karakter yang sama ditambah tanda "i" opsional) akan diperlakukan sebagai ekspresi reguler. Jenis jalur lain apapun akan diperlakukan sebagai literal, dan dapat dicocokkan dari bagian manapun dari URI. Apakah jalur dianggap sebagai halaman sensitif dapat memengaruhi perilaku beberapa modul, tetapi sebaliknya tidak berpengaruh apapun."
  general_silent_mode: "Seharusnya CIDRAM diam-diam mengarahkan diblokir upaya akses bukannya menampilkan halaman "akses ditolak"? Jika ya, menentukan lokasi untuk mengarahkan diblokir upaya akses. Jika tidak, kosongkan variabel ini."
  general_silent_mode_response_header_code: "Pesan status HTTP mana yang harus dikirim oleh CIDRAM saat secara diam-diam mengarahkan upaya akses yang diblokir?"
@@ -277,7 +277,7 @@ config: !lazy
  rate_limiting: "Konfigurasi untuk pembatasan laju (tidak direkomendasikan untuk penggunaan umum)."
  rate_limiting_allowance_period: "Durasi untuk melacak penggunaan. Default = 0°0′0″."
  rate_limiting_exceptions: "Pengecualian (yaitu, permintaan yang seharusnya tidak dibatasi). Hanya relevan ketika pembatasan laju diaktifkan."
- rate_limiting_hint: "Perlu diingat bahwa seperti halnya semua fitur CIDRAM lainnya, fitur pembatasan laju CIDRAM hanya dapat diterapkan untuk halaman dan sumber daya yang terhubung dengan CIDRAM. Ini biasanya berarti bahwa sumber daya yang bukan PHP tidak akan dicakup kecuali jika secara eksplisit dilayani oleh sumber daya PHP yang terhubung. Jika Anda dapat menggunakan modul server, cPanel, atau alat jaringan lain untuk menerapkan pembatasan laju, akan lebih baik menggunakannya daripada fitur pembatasan laju CIDRAM. Perlu diingat juga bahwa pengguna yang sangat bertekad dapat dengan mudah menghindari pembatasan laju dengan memutar alamat IP mereka, atau dengan beralih ke penyedia proxy atau VPN yang belum diketahui oleh CIDRAM, dan perlu diingat bahwa pembatasan laju bisa sangat mengganggu bagi pengguna akhir. Kadang-kadang hal itu mungkin diperlukan, tetapi jarang diinginkan."
+ rate_limiting_hint: "Perlu diingat bahwa seperti halnya semua fitur CIDRAM lainnya, fitur pembatasan laju CIDRAM hanya dapat diterapkan untuk halaman dan sumber daya yang terhubung dengan CIDRAM. Ini biasanya berarti bahwa sumber daya yang bukan PHP tidak akan dicakup kecuali jika secara eksplisit dilayani oleh sumber daya PHP yang terhubung. Jika Anda dapat menggunakan modul server, cPanel, atau alat jaringan lain untuk menerapkan pembatasan laju, akan lebih baik menggunakannya daripada fitur pembatasan laju CIDRAM. Perlu diingat juga bahwa pengguna yang sangat bertekad dapat dengan mudah menghindari pembatasan laju dengan memutar alamat IP mereka, atau dengan beralih ke penyedia proksi atau VPN yang belum diketahui oleh CIDRAM, dan perlu diingat bahwa pembatasan laju bisa sangat mengganggu bagi pengguna akhir. Kadang-kadang hal itu mungkin diperlukan, tetapi jarang diinginkan."
  rate_limiting_max_bandwidth: "Jumlah maksimum bandwidth yang diizinkan dalam periode tunjangan sebelum mengaktifkan pembatasan laju untuk permintaan di masa mendatang. Nilai 0 menonaktifkan jenis pembatasan laju ini. Default = 0KB."
  rate_limiting_max_requests: "Jumlah maksimum permintaan yang diizinkan dalam periode tunjangan sebelum mengaktifkan pembatasan laju untuk permintaan di masa mendatang. Nilai 0 menonaktifkan jenis pembatasan laju ini. Default = 0."
  rate_limiting_precision_ipv4: "Presisi yang akan digunakan saat melacak penggunaan IPv4. Nilai mencerminkan ukuran blok CIDR. Atur ke 32 untuk presisi terbaik. Default = 32."
@@ -433,7 +433,7 @@ hints_sensitive_pages: "Catat: Apa yang dimaksud dengan "halaman sensitif" diten
 hints_shorthand:
  0.: "Jika situs web Anda memerlukan akses melalui LAN atau localhost, jangan blokir ini. Jika tidak memerlukannya, Anda dapat memblokir ini."
  1.: "Tidak ada file tanda tangan default yang menggunakan ini, tapi tetap didukung dalam kasus mungkin berguna untuk beberapa pengguna."
- 2.: "Jika Anda memerlukan pengguna untuk dapat mengakses situs web Anda melalui proxy, jangan blokir ini. Jika tidak memerlukannya, Anda dapat memblokir ini."
+ 2.: "Jika Anda memerlukan pengguna untuk dapat mengakses situs web Anda melalui proksi, jangan blokir ini. Jika tidak memerlukannya, Anda dapat memblokir ini."
  3.: "Penggunaan langsung dalam tanda tangan tidak didukung, tetapi mungkin dipanggil dengan cara lain dalam keadaan tertentu."
  4.: "Mengacu pada kasus dimana kata-kata singkat tidak digunakan sama sekali, atau tidak dikenali oleh CIDRAM."
  Satu per tanda tangan.: "Tanda tangan dapat memanggil beberapa profil, tetapi hanya dapat menggunakan satu kata singkat. Ada kemungkinan bahwa beberapa kata singkat mungkin cocok, tetapi karena hanya satu dapat digunakan, kami bertujuan untuk selalu menggunakan hanya yang paling cocok."
@@ -812,7 +812,7 @@ macro: !lazy
  Description:
   activate_modules: &MayImpactPerformance "Tidak direkomendasikan secara umum, karena kemungkinan ada beberapa yang tidak Anda butuhkan. Menginstal dan mengaktifkan komponen saat tidak dibutuhkan dapat berdampak negatif pada performa."
   install_l10n_core: &RecommendKeepingCore "Ketika direktif konfigurasi <code>lang_override</code> diaktifkan, jika browser pengguna menentukan preferensi bahasa tertentu, selama data L10N core untuk bahasa tersebut diinstal, CIDRAM dapat menampilkan halaman "akses ditolak" dalam bahasa tersebut yang ditentukan. Dengan demikian, direkomendasikan semua data L10N core tetap terinstal."
-  install_l10n_fe: &RecommendFEOnlyNeeded "Bahasa pilihan Anda dapat ditentukan melalui direktif konfigurasi <code>lang</code>. Setelah ini dilakukan, Anda tidak akan memerlukan data L10N front-end selain bahasa pilihan Anda, dan mungkin ingin menghapusnya demi sedikit membebaskan ruang disk yang tersedia. Tetapi, apakah Anda memilih menghapusnya atau menyimpannya, bagaimanapun juga, seharusnya tidak menimbulkan masalah."
+  install_l10n_fe: &RecommendFEOnlyNeeded "Bahasa pilihan Anda dapat ditentukan melalui direktif konfigurasi <code>lang</code>. Setelah ini dilakukan, Anda tidak akan memerlukan data L10N front-end selain bahasa pilihan Anda, dan mungkin ingin menghapusnya demi sedikit membebaskan ruang disk yang tersedia. Namun, apakah Anda memilih menghapusnya atau menyimpannya, bagaimanapun juga, seharusnya tidak menimbulkan masalah."
   install_modules: *MayImpactPerformance
   uninstall_l10n_core: *RecommendKeepingCore
   uninstall_l10n_fe: *RecommendFEOnlyNeeded
@@ -1051,7 +1051,7 @@ tip:
  Numeric comparison: "Untuk menggunakan perbandingan numerik, pilih perbandingan string langsung atau deteksi metode otomatis, pastikan nilai kondisi berupa numerik, dan awali dengan operator yang diinginkan.<br />Misalnya, untuk kondisi "sama", &gt;=2 menyediakan ≥2, &lt;=2 menyediakan ≤2, untuk kondisi "tidak sama", &gt;=2 menyediakan ≱2, &lt;=2 menyediakan ≰2, dll."
  Range Tables: "Halaman ini menunjukkan beberapa informasi statistik dasar tentang rentang IP yang dicakup oleh file tanda tangan yang saat ini aktif."
  Rate Limiting: "Halaman ini menunjukkan penggunaan dan ketersediaan kuota saat ini terkait dengan pembatasan laju."
- Rate limiting is currently disabled: "Catat: Pembatasan laju saat ini dinonaktifkan, namun dapat diaktifkan melalui halaman konfigurasi."
+ Rate limiting is currently disabled: "Catat: Pembatasan laju saat ini dinonaktifkan, tetapi dapat diaktifkan melalui halaman konfigurasi."
  Report to AbuseIPDB: "Halaman ini dapat digunakan untuk melaporkan alamat IP ke AbuseIPDB, atau untuk menghapus laporan sebelumnya jika/bila alamat IP dilaporkan oleh kesalahan."
  Sections List: "Halaman ini mencantumkan bagian yang ada di file tanda tangan yang aktif saat ini."
  See the documentation: "Lihat <a href="{{Links.CIDRAM.Docs Base Path}}readme.id.md\#user-content-SECTION5" hreflang="id-ID" rel="noopener external"><span class="navicon documentation"></span>dokumentasi</a> untuk informasi tentang berbagai direktif konfigurasi dan tujuan mereka."
@@ -1059,7 +1059,7 @@ tip:
  Signature File Fixer: "Alat perbaikan file tanda tangan menyediakan cara untuk mendeteksi dan memperbaiki potensi masalah dalam file tanda tangan."
  Specify a URL, or leave blank to disregard: "Tentukan URL, atau biarkan kosong untuk mengabaikannya."
  Specify a value, or leave blank to disregard: "Tentukan nilai, atau biarkan kosong untuk mengabaikannya."
- Statistics tracking is currently disabled: "Catat: Pelacakan statistik saat ini dinonaktifkan, namun dapat diaktifkan melalui halaman konfigurasi."
+ Statistics tracking is currently disabled: "Catat: Pelacakan statistik saat ini dinonaktifkan, tetapi dapat diaktifkan melalui halaman konfigurasi."
  Statistics: "Halaman ini menunjukkan beberapa statistik penggunaan dasar mengenai instalasi CIDRAM Anda."
  Subtractor: "Pengurangan dapat digunakan untuk mengurangi satu rentang IP/CIDR/topeng jaring dari yang lain."
  Updates: "Halaman pembaruan memungkinkan Anda untuk menginstal, menguninstal, dan memperbarui berbagai komponen CIDRAM (paket inti, tanda tangan, file L10N, dll)."

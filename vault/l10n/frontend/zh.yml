@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese language data for the front-end (last modified: 2026.09.05).
+# This file: Chinese language data for the front-end (last modified: 2026.09.21).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -294,7 +294,7 @@ config: !lazy
  phpmailer_event_log: {"zh-Hans": "用于记录与PHPMailer相关的所有事件的文件。 指定一个文件名，或留空以禁用。", "zh-Hant": "用於記錄與PHPMailer相關的所有事件的檔案。 指定一個檔案名稱，或留空以禁用。"}
  phpmailer_host: {"zh-Hans": "用于出站电子邮件的SMTP主机。", "zh-Hant": "用於出站電子郵件的SMTP主機。"}
  phpmailer_password: {"zh-Hans": "通过SMTP发送电子邮件时使用的密码。", "zh-Hant": "通過SMTP發送電子郵件時使用的密碼。"}
- phpmailer_port: {"zh-Hans": "用于出站电子邮件的端口号。 标准=587。", "zh-Hant": "用於出站電子郵件的端口號。 標準=587。"}
+ phpmailer_port: {"zh-Hans": "用于出站电子邮件的端口号。 标准=587。", "zh-Hant": "用於出站電子郵件的連接埠號。 標準=587。"}
  phpmailer_set_from_address: {"zh-Hans": "通过SMTP发送电子邮件时引用的发件人地址。", "zh-Hant": "通過SMTP發送電子郵件時引用的發件人地址。"}
  phpmailer_set_from_name: {"zh-Hans": "通过SMTP发送电子邮件时引用的发件人姓名。", "zh-Hant": "通過SMTP發送電子郵件時引用的發件人姓名。"}
  phpmailer_skip_auth_process:
@@ -320,11 +320,21 @@ config: !lazy
  rate_limiting_hint:
   zh-Hans: "请记住，与所有其他CIDRAM功能一样，CIDRAM的速率限制功能只能应用于CIDRAM所连接的页面和资源。 这通常意味着非PHP资源不会在范围内，除非明确由连接的PHP资源提供。 如果您能够使用服务器模块、cPanel、或其他网络工具来强制执行速率限制，那么最好使用它而不是CIDRAM的速率限制功能。 还请记住，敏锐而坚定的用户可以通过轮换IP地址或切换到CIDRAM尚未意识到的代理或VPN提供轻松规避速率限制，还要记住，速率限制对于真正的最终用户来说可能会非常烦人。 有时这可能是必要的，但很少是可取的。"
   zh-Hant: "請記住，與所有其他CIDRAM功能一樣，CIDRAM的速率限制功能只能套用於CIDRAM所連接的頁面和資源。 這通常意味著非PHP資源不會在範圍內，除非明確地由連接的PHP資源提供。 如果您能夠使用伺服器模組、cPanel、或其他網路工具來強制執行速率限制，那麼最好使用它而不是CIDRAM的速率限制功能。 還要記住，敏銳而堅定的用戶可以透過輪換IP位址或切換到CIDRAM尚未意識到的代理或VPN提供輕鬆規避速率限制，還要記住，速率限制對於真正的最終用戶來說可能會非常煩人。 有時這可能是必要的，但很少是可取的。"
- rate_limiting_max_bandwidth: {"zh-Hans": "在为将来的请求启用速率限制之前的最大允许带宽量。 值为0将禁用此类速率限制。 标准=0KB。", "zh-Hant": "在為將來的請求啟用速率限制之前的最大允許帶寬量。 值為0將禁用此類速率限制。 標準=0KB。"}
- rate_limiting_max_requests: {"zh-Hans": "在为将来的请求启用速率限制之前允许的最大请求数。 值为0将禁用此类速率限制。 标准=0。", "zh-Hant": "在為將來的請求啟用速率限制之前允許的最大請求數。 值為0將禁用此類速率限制。 標準=0。"}
- rate_limiting_precision_ipv4: {"zh-Hans": "监视IPv4使用时的精度。 值镜像CIDR块大小。 设置为32以获得最佳精度。 标准=32。", "zh-Hant": "監視IPv4使用時的精度。 值鏡像CIDR塊大小。 設置為32以獲得最佳精度。 標準=32。"}
- rate_limiting_precision_ipv6: {"zh-Hans": "监视IPv6使用时的精度。 值镜像CIDR块大小。 设置为128以获得最佳精度。 标准=128。", "zh-Hant": "監視IPv6使用時的精度。 值鏡像CIDR塊大小。 設置為128以獲得最佳精度。 標準=128。"}
- rate_limiting_segregate: {"zh-Hans": "域名和主机的配额应该分开还是共享？ True = 配额将被分开。 False = 配额将被共享【标准】。", "zh-Hant": "域名和主機的配額應該分開還是共享？ True = 配額將被分開。 False = 配額將被共享【標準】。"}
+ rate_limiting_max_bandwidth:
+  zh-Hans: "在为将来的请求启用速率限制之前的最大允许带宽量。 值为0将禁用此类速率限制。 标准 = 0KB。"
+  zh-Hant: "在為將來的請求啟用速率限制之前的最大允許帶寬量。 值為0將禁用此類速率限制。 標準 = 0KB。"
+ rate_limiting_max_requests:
+  zh-Hans: "在为将来的请求启用速率限制之前允许的最大请求数。 值为0将禁用此类速率限制。 标准 = 0。"
+  zh-Hant: "在為將來的請求啟用速率限制之前允許的最大請求數。 值為0將禁用此類速率限制。 標準 = 0。"
+ rate_limiting_precision_ipv4:
+  zh-Hans: "监视IPv4使用时的精度。 值镜像CIDR块大小。 设置为32以获得最佳精度。 标准 = 32。"
+  zh-Hant: "監視IPv4使用時的精度。 值鏡像CIDR塊大小。 設置為32以獲得最佳精度。 標準 = 32。"
+ rate_limiting_precision_ipv6:
+  zh-Hans: "监视IPv6使用时的精度。 值镜像CIDR块大小。 设置为128以获得最佳精度。 标准 = 128。"
+  zh-Hant: "監視IPv6使用時的精度。 值鏡像CIDR塊大小。 設置為128以獲得最佳精度。 標準 = 128。"
+ rate_limiting_segregate:
+  zh-Hans: "域名和主机的配额应该分开还是共享？ True = 配额将被分开。 False = 配额将被共享【标准】。"
+  zh-Hant: "域名和主機的配額應該分開還是共享？ True = 配額將被分開。 False = 配額將被共享【標準】。"
  recaptcha: {"zh-Hans": "ReCAPTCHA的配置（为人们提供了一种在受阻时重新获得访问权限的方法）。", "zh-Hant": "ReCAPTCHA的配置（為人們提供了一種在受阻時重新獲得訪問權限的方法）。"}
  recaptcha_api: *CaptchaAPI
  recaptcha_expiry: *CaptchaExpiry
@@ -353,7 +363,7 @@ config: !lazy
  supplementary_cache_options_enable_pdo: {"zh-Hans": "指定是否尝试使用PDO进行缓存。 标准 = False。", "zh-Hant": "指定是否嘗試使用PDO進行緩存。 標準 = False。"}
  supplementary_cache_options_enable_redis: {"zh-Hans": "指定是否尝试使用Redis进行缓存。 标准 = False。", "zh-Hant": "指定是否嘗試使用Redis進行緩存。 標準 = False。"}
  supplementary_cache_options_memcached_host: {"zh-Hans": "Memcached 主机值。 标准 = localhost。", "zh-Hant": "Memcached 主機值。 標準 = localhost。"}
- supplementary_cache_options_memcached_port: {"zh-Hans": "Memcached 端口值。 标准 = “11211”。", "zh-Hant": "Memcached 端口值。 標準 = 『11211』。"}
+ supplementary_cache_options_memcached_port: {"zh-Hans": "Memcached 端口值。 标准 = “11211”。", "zh-Hant": "Memcached 連接埠值。 標準 = 『11211』。"}
  supplementary_cache_options_pdo_dsn: {"zh-Hans": "PDO DSN值。 标准 = “mysql:dbname=cidram;host=localhost;port=3306”。", "zh-Hant": "PDO DSN值。 標準 = 『mysql:dbname=cidram;host=localhost;port=3306』。"}
  supplementary_cache_options_pdo_password: {"zh-Hans": "PDO 密码。", "zh-Hant": "PDO 密碼。"}
  supplementary_cache_options_pdo_username: {"zh-Hans": "PDO 用户名。", "zh-Hant": "PDO 使用者名稱。"}
@@ -362,7 +372,7 @@ config: !lazy
   zh-Hant: "該值將附加到所有緩存條目的鍵的開頭。 標準 = 『CIDRAM_』。 當同一服務器上存在多個安裝時，這對於將它們的緩存彼此分開非常有用。"
  supplementary_cache_options_redis_database_number: {"zh-Hans": "Redis 数据库编号。 标准 = “0”。 注意：不能在 Redis Cluster 中使用 0 以外的值。", "zh-Hant": "Redis 數據庫編號。 標準 = 『0』。 注意：不能在 Redis Cluster 中使用 0 以外的值。"}
  supplementary_cache_options_redis_host: {"zh-Hans": "Redis 主机值。 标准 = localhost。", "zh-Hant": "Redis 主機值。 標準 = localhost。"}
- supplementary_cache_options_redis_port: {"zh-Hans": "Redis 端口值。 标准 = “6379”。", "zh-Hant": "Redis 端口值。 標準 = 『6379』。"}
+ supplementary_cache_options_redis_port: {"zh-Hans": "Redis 端口值。 标准 = “6379”。", "zh-Hant": "Redis 連接埠值。 標準 = 『6379』。"}
  supplementary_cache_options_redis_timeout: {"zh-Hans": "Redis 超时值。 标准 = “2.5”。", "zh-Hant": "Redis 超時值。 標準 = 『2.5』。"}
  template_data: {"zh-Hans": "模板和主题的配置。", "zh-Hant": "模板和主題的配置。"}
  template_data_block_event_title: {"zh-Hans": "为阻止事件显示的页面标题。", "zh-Hant": "為阻止事件顯示的頁面標題。"}
@@ -492,13 +502,27 @@ hints_pdo_dsn:
  zh-Hant: "<strong>常問問題。</strong> <em><a href="{{Links.CIDRAM.Docs Base Path}}readme.zh-Hant.md\#user-content-HOW_TO_USE_PDO" hreflang="zh-Hant">『PDO DSN』是什麼？如何能PDO與CIDRAM一起使用？</a></em>"
 hints_sensitive_pages: {"zh-Hans": "注意：“敏感页面”的构成由{{Links.ConfigRef.sensitive}}决定。", "zh-Hant": "注意：『敏感頁面』的構成由{{Links.ConfigRef.sensitive}}決定。"}
 hints_shorthand:
- 0.: {"zh-Hans": "如果您的网站需要通过LAN或localhost访问，不要阻止它。 否则，您可以阻止它。", "zh-Hant": "如果您的網站需要通過LAN或localhost訪問，不要阻止它。 否則，您可以阻止它。"}
- 1.: {"zh-Hans": "标准签名文件不使用它，但它仍然受支持，因为它可能对某些用户有用。", "zh-Hant": "標準簽名檔案不使用它，但它仍然受支持，因為它可能對某些用戶有用。"}
- 2.: {"zh-Hans": "如果您需要用户能够通过代理访问您的网站，不要阻止它。 否则，您可以阻止它。", "zh-Hant": "如果您需要用戶能夠通過代理訪問您的網站，不要阻止它。 否則，您可以阻止它。"}
- 3.: {"zh-Hans": "不支持直接在签名中使用，但在特定情况下可以通过其他方式调用。", "zh-Hant": "不支持直接在簽名中使用，但在特定情況下可以通過其他方式調用。"}
- 4.: {"zh-Hans": "当速记词不使用或CIDRAM不识别时。", "zh-Hant": "當速記詞不使用或CIDRAM不識別時。"}
- 5.: {"zh-Hans": "<strong>对于每个签名只有一个。</strong> 签名可以调用多个分类，但只能使用一个速记词。 多个速记词可能是合适的，但由于只能使用一个，我们试图始终只使用最合适的。", "zh-Hant": "<strong>對於每個簽名只有一個。</strong> 簽名可以調用多個分類，但只能使用一個速記詞。 多個速記詞可能是合適的，但由於只能使用一個，我們試圖始終只使用最合適的。"}
- 6.: {"zh-Hans": "<strong>优先。</strong> 选定的选项始终优先于未选定的选项。 例如，如果多个速记词是生效的，但只有一个被设置为被阻止，则请求仍将被阻止。", "zh-Hant": "<strong>優先。</strong> 選定的選項始終優先於未選定的選項。 例如，如果多個速記詞是生效的，但只有一個被設置為被阻止，則請求仍將被阻止。"}
+ 0.:
+  zh-Hans: "如果您的网站需要通过LAN或localhost访问，不要阻止它。 否则，您可以阻止它。"
+  zh-Hant: "如果您的網站需要通過LAN或localhost訪問，不要阻止它。 否則，您可以阻止它。"
+ 1.:
+  zh-Hans: "标准签名文件不使用它，但它仍然受支持，因为它可能对某些用户有用。"
+  zh-Hant: "標準簽名檔案不使用它，但它仍然受支持，因為它可能對某些用戶有用。"
+ 2.:
+  zh-Hans: "如果您需要用户能够通过代理访问您的网站，不要阻止它。 否则，您可以阻止它。"
+  zh-Hant: "如果您需要用戶能夠通過代理訪問您的網站，不要阻止它。 否則，您可以阻止它。"
+ 3.:
+  zh-Hans: "不支持直接在签名中使用，但在特定情况下可以通过其他方式调用。"
+  zh-Hant: "不支持直接在簽名中使用，但在特定情況下可以通過其他方式調用。"
+ 4.:
+  zh-Hans: "当速记词不使用或CIDRAM不识别时。"
+  zh-Hant: "當速記詞不使用或CIDRAM不識別時。"
+ 5.:
+  zh-Hans: "<strong>对于每个签名只有一个。</strong> 签名可以调用多个分类，但只能使用一个速记词。 多个速记词可能是合适的，但由于只能使用一个，我们试图始终只使用最合适的。"
+  zh-Hant: "<strong>對於每個簽名只有一個。</strong> 簽名可以調用多個分類，但只能使用一個速記詞。 多個速記詞可能是合適的，但由於只能使用一個，我們試圖始終只使用最合適的。"
+ 6.:
+  zh-Hans: "<strong>优先。</strong> 选定的选项始终优先于未选定的选项。 例如，如果多个速记词是生效的，但只有一个被设置为被阻止，则请求仍将被阻止。"
+  zh-Hant: "<strong>優先。</strong> 選定的選項始終優先於未選定的選項。 例如，如果多個速記詞是生效的，但只有一個被設置為被阻止，則請求仍將被阻止。"
  7.:
   zh-Hans: "<strong>人类端点和云服务。</strong> 云服务可能是指虚拟主机提供商、服务器场、数据中心、或许多其他事物。 人类端点是指人类访问互联网的方式，例如，通过互联网服务提供商。 网络通常只提供一个或另一个，但有时可能同时提供两者。 我们试图不将潜在的人类端点识别为云服务。 因此，如果云服务的范围由已知的人类端点共享，则可以将其识别为其他东西。 同样，如果范围不被任何已知的人类端点共享，我们会试图始终将云服务识别为云服务。 因此，明确标识为云服务的请求很可能不会与任何已知的人类端点共享其范围。 同样，由攻击或垃圾邮件的风险明确识别的请求很可能共享范围。 然而，互联网总是在不断变化，网络的目的可以改变，范围总是被买卖，所以关于假阳性的保持有意识和警惕。"
   zh-Hant: "<strong>人類端點和雲服務。</strong> 雲服務可能是指虛擬主機提供商、服務器場、數據中心、或許多其他事物。 人類端點是指人類訪問互聯網的方式，例如，通過互聯網服務提供商。 網絡通常只提供一個或另一個，但有時可能同時提供兩者。 我們試圖不將潛在的人類端點識別為雲服務。 因此，如果雲服務的範圍由已知的人類端點共享，則可以將其識別為其他東西。 同樣，如果範圍不被任何已知的人類端點共享，我們會試圖始終將雲服務識別為雲服務。 因此，明確標識為雲服務的請求很可能不會與任何已知的人類端點共享其範圍。 同樣，由攻擊或垃圾郵件的風險明確識別的請求很可能共享範圍。 然而，互聯網總是在不斷變化，網絡的目的可以改變，範圍總是被買賣，所以關於假陽性的保持有意識和警惕。"
@@ -843,7 +867,7 @@ label:
  Previous: "以前的："
  Range tools: {"zh-Hans": "范围工具", "zh-Hant": "範圍工具"}
  Remember: {"zh-Hans": "记得", "zh-Hant": "記得"}
- Report to AbuseIPDB: {"zh-Hans": "向 AbuseIPDB 举报", "zh-Hant": "向 AbuseIPDB 檢舉"}
+ Report to AbuseIPDB: {"zh-Hans": "向AbuseIPDB举报", "zh-Hant": "向AbuseIPDB舉報"}
  Requests banned: {"zh-Hans": "请求已禁止", "zh-Hant": "請求已禁止"}
  Requests blocked: {"zh-Hans": "请求已阻止", "zh-Hant": "請求已阻止"}
  Requests for sensitive pages only:

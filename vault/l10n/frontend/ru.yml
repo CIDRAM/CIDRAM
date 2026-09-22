@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Russian language data for the front-end (last modified: 2026.09.05).
+# This file: Russian language data for the front-end (last modified: 2026.09.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -170,7 +170,7 @@ config: !lazy
  components_ipv6: "Файлы сигнатуры IPv6."
  components_modules: "Модули."
  experimental: "Нестабильный/Экспериментальный!"
- extras: "Конфигурация модуля дополнительных функций безопасности."
+ extras: "Конфигурация для модуля дополнительных функций безопасности."
  extras_remove_headers: "Удалите заголовки, которые не нужны и могут быть потенциально полезны злоумышленникам."
  extras_signatures: "Какие типы сигнатур должны соблюдаться?"
  extras_signatures_empty_ua: "Пустые пользовательские агенты."
@@ -296,7 +296,7 @@ config: !lazy
  recaptcha_signature_limit: *CaptchaSignatureLimit
  recaptcha_sitekey: *CaptchaDashboard
  recaptcha_usemode: *CaptchaUseMode
- sfs: "Конфигурация модуля Stop Forum Spam."
+ sfs: "Конфигурация для модуля Stop Forum Spam."
  signatures: "Конфигурация для сигнатурей, файлов сигнатурей, модулей и т.д."
  signatures_conflict_response: "Если одновременно происходит слишком много попыток доступа к одним и тем же ресурсам (например, одновременные запросы к нескольким процессам PHP на одном компьютере для одних и тех же ресурсов), некоторые из этих попыток могут завершиться неудачей. В редком и маловероятном случае, если это затронет файлы сигнатурей или модули, CIDRAM может быть лишен возможности принять эффективное решение по запросу. Если это произойдет, следует ли блокировать запрос, и какое сообщение о состоянии HTTP должен отправить CIDRAM?"
  signatures_default_tracktime: "Время в течение которого следует отслеживать IP-адреса. Стандарт = 7d0°0′0″ (1 неделя)."

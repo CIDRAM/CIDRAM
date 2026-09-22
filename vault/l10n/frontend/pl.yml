@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2026.09.05).
+# This file: Polish language data for the front-end (last modified: 2026.09.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -269,7 +269,7 @@ config: !lazy
  projecthoneypot_max_ts_for_captcha: "Maksymalny wynik zagrożenia, na który można było podać CAPTCHA (musi być liczbą od 1 do 100). Domyślna = 10."
  projecthoneypot_minimum_threat_score: "Minimalny wynik zagrożenia wymagany do zablokowania adresu IP przez CIDRAM (musi być liczbą od 1 do 100). Domyślna = 10."
  projecthoneypot_type_of_visitor: "Kontrole blokowania lub profilowania w oparciu o typ odwiedzającego określony przez Project Honeypot."
- protocol: "Konfiguracja modułu blokowania protokołów."
+ protocol: "Konfiguracja dla modułu blokowania protokołów."
  protocol_blocked: "Wybrane protokoły zostaną zablokowane."
  protocol_reason_message: "Komunikat powodu wyświetlany, gdy takie żądania są blokowane."
  quic: "Konfiguracja dla modułu kompatybilności z Quic cloud."
@@ -296,7 +296,7 @@ config: !lazy
  recaptcha_signature_limit: *CaptchaSignatureLimit
  recaptcha_sitekey: *CaptchaDashboard
  recaptcha_usemode: *CaptchaUseMode
- sfs: "Konfiguracja modułu Stop Forum Spam."
+ sfs: "Konfiguracja dla modułu Stop Forum Spam."
  signatures: "Konfiguracja podpisów, plików podpisów, modułów, itp."
  signatures_conflict_response: "Gdy podejmowanych jest zbyt wiele równoczesnych prób dostępu do tych samych zasobów (np., jednoczesne żądania do wielu procesów PHP na tym samym komputerze dotyczące tych samych zasobów), niektóre z tych prób mogą się nie powieść. W rzadkim i mało prawdopodobnym przypadku, gdy dotyczy to plików podpis lub modułów, CIDRAM może nie mieć możliwości podjęcia skutecznej decyzji w sprawie żądania. Jeśli tak się stanie, czy żądanie powinno zostać zablokowane i jaki komunikat o stanie HTTP powinien zostać wysłany przez CIDRAM?"
  signatures_default_tracktime: "Czas, przez jaki adresy IP powinny być śledzone. Domyślna = 7d0°0′0″ (1 tydzień)."
@@ -327,7 +327,7 @@ config: !lazy
  template_data_magnification: *MagnifDesc
  template_data_theme: "Motyw do wykorzystania w przypadku zdarzeń blokowych i żądań CAPTCHA."
  template_data_theme_mode: "Tryb dla motywu do wykorzystania w przypadku zdarzeń blokowych i żądań CAPTCHA."
- tor: "Konfiguracja modułu blokowania Tor."
+ tor: "Konfiguracja dla modułu blokowania Tor."
  verification: "Konfiguracja do weryfikacji skąd pochodzą żądania."
  verification_adjust: "Kontrolki umożliwiające dostosowanie innych funkcjonalność w kontekście weryfikacji."
  verification_other: "Kontrolki do weryfikacji innych rodzajów żądań tam, gdzie to możliwe."

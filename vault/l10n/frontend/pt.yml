@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2026.09.05).
+# This file: Portuguese language data for the front-end (last modified: 2026.09.18).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -157,10 +157,10 @@ config: !lazy
  abuseipdb_build_profiles_from_usage_type:
   pt-BR: "Construir perfis usando o tipo de uso retornado pela API? False = Não. True = Sim. Padrão = True."
   pt-PT: "Construir perfis utilizando o tipo de uso retornado pela API? False = Não. True = Sim. Padrão = True."
- abuseipdb_max_age_in_days: "A idade máxima em dias para a qual os relatórios serão considerados ao realizar pesquisas (deve ser um número entre 1 e 365). Padrão = 365."
+ abuseipdb_max_age_in_days: "A idade máxima em dias das denúncias que serão considerados ao realizar pesquisas (deve ser um número entre 1 e 365). Padrão = 365."
  abuseipdb_max_cs_for_captcha: "A pontuação máxima de confiança permitida para que os CAPTCHAs sejam veiculados (deve ser um número entre 0 e 100). Padrão = 10."
  abuseipdb_minimum_confidence_score: "A pontuação mínima de confiança necessária para que o CIDRAM bloqueie um endereço IP (deve ser um número entre 0 e 100). Padrão = 50."
- abuseipdb_minimum_total_reports: "O número mínimo de relatórios totais necessários para que o CIDRAM bloqueie um endereço IP. Padrão = 1."
+ abuseipdb_minimum_total_reports: "O número mínimo de denúncias totais necessários para que o CIDRAM bloqueie um endereço IP. Padrão = 1."
  abuseipdb_report_back:
   pt-BR: "Permitir que o CIDRAM relate o mau comportamento detectado de volta ao AbuseIPDB usando sua chave de API?"
   pt-PT: "Permitir que o CIDRAM relate o mau comportamento detectado de volta ao AbuseIPDB utilizando a sua chave de API?"
@@ -275,7 +275,9 @@ config: !lazy
  general_lang: "Especificar o padrão da linguagem por CIDRAM."
  general_lang_override: "Localizar de acordo com HTTP_ACCEPT_LANGUAGE sempre que possível? True = Sim [Padrão]; False = Não."
  general_numbers: "Como você prefere que os números sejam exibidos? Selecione o exemplo que parece mais correto para você."
- general_request_proxy: "Se você quiser que solicitações de saída sejam enviadas por meio de um proxy, especifique esse proxy aqui. Caso contrário, deixe em branco."
+ general_request_proxy:
+  pt-BR: "Se você quiser que solicitações de saída sejam enviadas por meio de um proxy, especifique esse proxy aqui. Caso contrário, deixe em branco."
+  pt-PT: "Se quiser que os solicitações de saída sejam enviados através de um proxy, especifique esse proxy aqui. Caso contrário, deixe em branco."
  general_request_proxyauth:
   pt-BR: "Se estiver enviando solicitações de saída por meio de um proxy e se esse proxy exigir um nome de usuário e uma senha, especifique esse nome de usuário e senha aqui (por exemplo, <code>user:pass</code>). Caso contrário, deixe em branco."
   pt-PT: "Se estiver a enviar solicitações de saída por meio de um proxy e se esse proxy exigir um nome de utilizador e uma senha, especifique esse nome de utilizador e senha aqui (por exemplo, <code>user:pass</code>). Caso contrário, deixe em branco."
@@ -333,8 +335,8 @@ config: !lazy
   pt-BR: "Um arquivo para registrar os resultados de quaisquer solicitações de saída. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
   pt-PT: "Um arquivo para registar os resultados de quaisquer solicitações de saída. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
  logging_report_log:
-  pt-BR: "Um arquivo para registrar quaisquer relatórios enviados para APIs externas. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
-  pt-PT: "Um arquivo para registar quaisquer relatórios enviados para APIs externas. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
+  pt-BR: "Um arquivo para registrar quaisquer denúncias enviadas para APIs externas. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
+  pt-PT: "Um arquivo para registar quaisquer denúncias enviadas para APIs externas. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
  logging_serialised_log:
   pt-BR: "Um arquivo serializado para registrar todas as tentativas de acesso bloqueadas. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
   pt-PT: "Um arquivo serializado para registar todas as tentativas de acesso bloqueadas. Especifique o nome de um arquivo, ou deixe em branco para desabilitar."
@@ -373,7 +375,7 @@ config: !lazy
   pt-PT: "O nome de utilizador a ser usada ao enviar e-mail via SMTP."
  projecthoneypot: "Configuração para o módulo Project Honeypot."
  projecthoneypot_api_key: *EnterAPIKey
- projecthoneypot_max_age_in_days: "A idade máxima em dias para a qual os relatórios serão considerados ao realizar pesquisas. Padrão = 365."
+ projecthoneypot_max_age_in_days: "A idade máxima em dias das denúncias que serão considerados ao realizar pesquisas. Padrão = 365."
  projecthoneypot_max_ts_for_captcha: "A pontuação máxima de ameaça permitida para receber um CAPTCHA (deve ser um número entre 1 e 100). Padrão = 10."
  projecthoneypot_minimum_threat_score: "A pontuação mínima de ameaça necessária para que o CIDRAM bloqueie um endereço IP (deve ser um número entre 1 e 100). Padrão = 10."
  projecthoneypot_type_of_visitor: "Controles para bloqueio ou perfil com base no tipo de visitante, conforme determinado pelo Projeto Honeypot."
@@ -701,7 +703,7 @@ Some useful links:
             <li>{{Links.BGPView}} – Obter CIDRs de ASNs, determinar relações de ASNs, descobrir ASNs com base em nomes de rede, etc.</li>
             <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external" target="_blank">Radar por Qrator</a> – Ferramenta útil para verificar a conectividade de ASNs bem como para várias outras informações sobre ASNs.</li>
             <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external" target="_blank">O Projeto Spamhaus</a> – Exibe relatórios sobre taxas de infecção por botnets para ASNs.</li>
-            <li>{{Links.AbuseIPDB}} – Mantém um banco de dados de IPs abusivos conhecidos; Fornece uma API para verificar e relatar IPs.</li>
+            <li>{{Links.AbuseIPDB}} – Mantém um banco de dados de IPs abusivos conhecidos; Fornece uma API para verificar e denunciar endereços IP.</li>
             <li>{{Links.IP-API}} – Obtenha informações sobre endereços IP ou nomes de host, como código do país, nome da região, longitude, latitude, nome da organização, etc.</li>
           </ul>
         </li>
@@ -739,7 +741,7 @@ Some useful links:
             <li>{{Links.BGPView}} – Obter CIDRs de ASNs, determinar relações de ASNs, descobrir ASNs com base em nomes de rede, etc.</li>
             <li><a href="https://radar.qrator.net/" hreflang="en" rel="noopener noreferrer external" target="_blank">Radar por Qrator</a> – Ferramenta útil para verificar a conectividade de ASNs bem como para várias outras informações sobre ASNs.</li>
             <li><a href="https://www.spamhaus.org/statistics/botnet-asn/" rel="noopener noreferrer external" target="_blank">O Projeto Spamhaus</a> – Apresenta relatórios sobre as taxas de infeção por botnets para ASNs.</li>
-            <li>{{Links.AbuseIPDB}} – Mantém uma base de dados de IPs abusivos conhecidos; Fornece uma API para verificar e reportar IPs.</li>
+            <li>{{Links.AbuseIPDB}} – Mantém uma base de dados de IPs abusivos conhecidos; Fornece uma API para verificar e denunciar endereços IP.</li>
             <li>{{Links.IP-API}} – Obtenha informações sobre endereços IP ou nomes de host, como o código do país, o nome da região, a longitude, a latitude, o nome da organização, etc.</li>
           </ul>
         </li>
@@ -814,7 +816,7 @@ label:
  Data source: "Fonte de dados"
  Data value: "Valor dos dados"
  Default: "Padrão"
- Delete previous reports: "Deletar relatórios anteriores"
+ Delete previous reports: "Deletar denúncias anteriores"
  Deny: "Negue."
  Dependencies: "Dependências:"
  Difference: "Diferença"
@@ -825,7 +827,9 @@ label:
  Displaying %s entry:
   - "Exibindo %s entrada."
   - "Exibindo %s entradas."
- Don_t block the request: "Não bloqueie a solicitação.\nSe você preferir que as solicitações sejam bloqueadas somente quando tiver certeza de que são malignas, ou preferir ser cauteloso em relação a falsos positivos (ao custo de tráfego indesejado ocasionalmente passar), escolha esta opção. Se você preferir que as solicitações sejam bloqueadas caso não tenha certeza de que são benignas, ou preferir permanecer vigilante (ao custo de falsos positivos ocasionais), escolha uma das outras opções disponíveis."
+ Don_t block the request:
+  pt-BR: "Não bloqueie a solicitação.\nSe você preferir que as solicitações sejam bloqueadas somente quando tiver certeza de que são malignas, ou preferir ser cauteloso em relação a falsos positivos (ao custo de tráfego indesejado ocasionalmente passar), escolha esta opção. Se você preferir que as solicitações sejam bloqueadas caso não tenha certeza de que são benignas, ou preferir permanecer vigilante (ao custo de falsos positivos ocasionais), escolha uma das outras opções disponíveis."
+  pt-PT: "Não bloqueie a solicitação.\nSe preferir que as solicitações sejam bloqueadas somente quando tiver a certeza de que são malignas, ou preferir ser cauteloso em relação a falsos positivos (ao custo de tráfego indesejado ocasionalmente passar), escolha esta opção. Se preferir que as solicitações sejam bloqueadas caso não tenha certeza de que são benignas, ou preferir permanecer vigilante (ao custo de falsos positivos ocasionais), escolha uma das outras opções disponíveis."
  Duplicate to %s: "Duplicar para %s"
  Duplicate: "Duplicar"
  Empty, unfamiliar, and others: "Vazio, desconhecido, e outros."
@@ -870,7 +874,9 @@ label:
  No data available: "Nenhum dado disponível."
  No log file selected: "Não qualquer arquivo de log selecionado."
  No log files available: "Não quaisquer arquivos de log disponíveis."
- None: "Nenhum.\nSe você quiser usar o módulo apenas para fins de relatório, sem pesquisar nada, use isso."
+ None:
+  pt-BR: "Nenhum.\nSe você quiser usar o módulo apenas para fins de denúncia, sem pesquisar nada, use isso."
+  pt-PT: "Nenhum.\nSe quiser usar o módulo apenas para fins de denúncia, sem pesquisar nada, use isto."
  Normal: "Normal"
  Only when blocked, specially marked for use, within the signature limit, and not banned: "Somente quando bloqueado, especialmente marcado para uso, dentro do limite de assinaturas, e não banido."
  Only when blocked, within the signature limit, and not banned: "Somente quando bloqueado, dentro do limite de assinaturas, e não banido."
@@ -887,7 +893,7 @@ label:
  Paginate: "Paginar"
  Partial access: "Acesso parcial"
  Password strength: "Força da senha: "
- Please abide by the AbuseIPDB reporting policy: "Por favor, cumpra a <a target="reporting-policy" hreflang="en-US" href="https://www.abuseipdb.com/reporting-policy">política de relatórios</a> do AbuseIPDB."
+ Please abide by the AbuseIPDB reporting policy: "Por favor, cumpra a <a target="reporting-policy" hreflang="en-US" href="https://www.abuseipdb.com/reporting-policy">política de denunciando</a> do AbuseIPDB."
  Please log in to continue: "Por favor faça o login para continuar."
  Preferred source: "Fonte preferida:"
  Previous: "Anterior:"
@@ -898,7 +904,7 @@ label:
  Requests blocked: "Solicitações bloqueadas"
  Requests for sensitive pages only: "Solicitações apenas para páginas confidenciais (por exemplo, páginas de login, formulários de registro, etc).\nMenos rigoroso e completo, mas mais conservador em termos de cotas e limites, e menos propenso a afetar negativamente o desempenho do site. A estratégia recomendada na maioria dos casos."
  Requests passed: "Solicitações aprovadas"
- Requests reported to external APIs: "Solicitações relatados para APIs externos"
+ Requests reported to external APIs: "Solicitações denunciados para APIs externos"
  Required: "Requisitos:"
  SAPI used: "SAPI usada:"
  Safety mechanisms: "Mecanismos de segurança"
@@ -963,7 +969,7 @@ label:
   Send trigger notification to the configured email notification address: "Envie notificação de desencadeamento para o endereço de e-mail configurado para notificações"
   Suppress logging: "Suprimir o registro"
   Suppress output template: "Suprime o modelo de saída"
-  Suppress reports: "Suprimir relatórios"
+  Suppress reports: "Suprimir denúncias"
   The name of the file to run: "O nome do arquivo a ser executado:"
   The reason given to the user when blocked:
    pt-BR: "O motivo dado ao usuário quando bloqueado:"
@@ -1028,7 +1034,9 @@ link:
  Documentation: "Documentação"
  Edit mode: "Modo de edição"
  File Manager: "Gerenciador de arquivos"
- Get API key: "Se você ainda não tiver uma chave de API, clique aqui para obter uma."
+ Get API key:
+  pt-BR: "Se você ainda não tiver uma chave de API, clique aqui para obter uma."
+  pt-PT: "Se ainda não tiver uma chave API, clique aqui para obter uma."
  Home: "Página principal"
  IP Testing: "Teste IP"
  IP Tracking: {"pt-BR": "Monitoração IP", "pt-PT": "Monitorização IP"}
@@ -1135,13 +1143,13 @@ response:
  Failed to activate: "Falha ao ativar!"
  Failed to create: "Criação falhada!"
  Failed to deactivate: "Falha ao desativar!"
- Failed to delete any reports for %s: "Falha ao deletar relatórios de %s!"
+ Failed to delete any reports for %s: "Falha ao deletar denúncias de %s!"
  Failed to delete: "Falha ao deletar!"
  Failed to execute: "Execução falhada!"
  Failed to import: "Falha ao importar!"
  Failed to install: "Instalação falhada!"
  Failed to rename: "Falha ao renomear!"
- Failed to report the IP address, %s: "Falha ao relatar o endereço IP, %s!"
+ Failed to report the IP address, %s: "Falha ao denunciar o endereço IP, %s!"
  Failed to update auxiliary rules: "Falha ao atualizar regras auxiliares!"
  Failed to update configuration: "Falha ao atualizar a configuração!"
  Failed to update statistics: "Falha ao atualizar as estatísticas!"
@@ -1189,14 +1197,14 @@ response:
  Successfully authenticated: "Autenticado com sucesso."
  Successfully deactivated: "Desativado com sucesso."
  Successfully deleted %s reports for %s:
-  - "Deletado com sucesso %s relatório para %s!"
-  - "Deletados com sucesso %s relatórios para %s!"
+  - "Deletado com sucesso %s denúncia para %s!"
+  - "Deletados com sucesso %s denúncias para %s!"
  That account doesn_t exist: "Essa conta não existe."
  The %s command can_t be chained in that way, sorry: "O comando %s não pode ser encadeado dessa maneira, desculpe."
  The IP address is invalid: "O endereço IP é inválido!"
- The IP address, %s, successfully reported: "O endereço IP, %s, relatado com sucesso!"
- The report has not been enqueued: "O relatório não foi enfileirado."
- The same IP address can be reported only once every 15 minutes: "O mesmo endereço IP pode ser relatado apenas uma vez a cada 15 minutos. O relatório foi enfileirado e o CIDRAM tentará enviá-lo posteriormente."
+ The IP address, %s, successfully reported: "O endereço IP, %s, denunciado com sucesso!"
+ The report has not been enqueued: "A denúncia não foi enfileirada."
+ The same IP address can be reported only once every 15 minutes: "O mesmo endereço IP pode ser denunciado apenas uma vez a cada 15 minutos. A denúncia foi enfileirada e o CIDRAM tentará enviá-lo posteriormente."
  The targeted file_s size exceeds PHP_s memory limit: "O tamanho do arquivo de destino excede o limite de memória do PHP!"
  There aren_t currently any auxiliary rules: "Atualmente não há quaisquer regras auxiliares."
  There_s nothing to analyse, sorry: "Não há nada para analisar, desculpe."
@@ -1227,7 +1235,7 @@ stages: !lazy
  Execute modules: "Executar módulos"
  Execute other verification: "Executar outra verificação"
  Execute rate limiting: "Executar a limitação de taxa"
- Execute reporting: "Executar relatórios"
+ Execute reporting: "Enviar denúncias"
  Execute search engine verification: "Executar verificação dos motores de busca"
  Execute signature files tests: "Executar testes para os arquivos de assinatura"
  Execute social media verification: {"pt-BR": "Executar verificação de mídia social", "pt-PT": "Executar verificação de media social"}
@@ -1364,8 +1372,8 @@ tip:
  Rate Limiting: "Esta página mostra o uso e a disponibilidade da cota atual em relação à limitação de taxa."
  Rate limiting is currently disabled: "Nota: A limitação de taxa está desativado atualmente, mas pode ser ativado através da página de configuração."
  Report to AbuseIPDB:
-  pt-BR: "Esta página pode ser usado para relatar endereços IP ao AbuseIPDB, ou para deletar relatórios anteriores caso um endereço IP tenha sido relatado por engano."
-  pt-PT: "Esta página pode ser utilizada para relatar endereços IP ao AbuseIPDB, ou para deletar relatórios anteriores caso um endereço IP tenha sido relatado por engano."
+  pt-BR: "Esta página pode ser usado para denunciar endereços IP ao AbuseIPDB, ou para deletar denúncias anteriores caso um endereço IP tenha sido denunciado por engano."
+  pt-PT: "Esta página pode ser utilizada para denunciar endereços IP ao AbuseIPDB, ou para deletar denúncias anteriores caso um endereço IP tenha sido denunciado por engano."
  Sections List:
   pt-BR: "Esta página lista quais seções existem nos arquivos de assinatura atualmente ativos."
   pt-PT: "Esta página lista quais secções existem nos arquivos de assinatura atualmente ativos."

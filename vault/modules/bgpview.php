@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: BGPView module (last modified: 2026.08.18).
+ * This file: BGPView module (last modified: 2026.09.13).
  *
  * False positive risk (an approximate, rough estimate only): « [x]Low [ ]Medium [ ]High »
  */
@@ -78,11 +78,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
 
     /** Prepare to perform a new lookup if none for this origin have been cached yet. */
     if (!$InCache && !$BlockLookup) {
-        $Lookup = $this->Request->request(
-            'https://api.bgpview.io/ip/' . $this->BlockInfo['IPAddr'],
-            [],
-            $this->Configuration['bgpview']['timeout_limit'] ?? 12
-        );
+        $Lookup = $this->Request->request('https://api.bgpview.io/ip/' . $this->BlockInfo['IPAddr'], [], $this->Configuration['bgpview']['timeout_limit']);
 
         if ($this->Request->MostRecentStatusCode !== 200) {
             /** Lookup limit has been exceeded. */

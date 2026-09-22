@@ -23,7 +23,7 @@
  *  - "proxy_ports": ports commonly associated with open proxies, SOCKS
  *    servers, or other anonymising relays.
  *
- * This file: ShodanDB (Shodan InternetDB) module (last modified: 2026.09.15).
+ * This file: ShodanDB (Shodan InternetDB) module (last modified: 2026.09.22).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -132,7 +132,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $Lookup = $this->Request->request(
                 \rtrim($this->Configuration['shodandb']['api_base'], '/') . '/' . $this->BlockInfo['IPAddr'],
                 [],
-                $this->Configuration['shodandb']['timeout_limit'] ?? 12,
+                $this->Configuration['shodandb']['timeout_limit'],
                 $Headers
             );
 

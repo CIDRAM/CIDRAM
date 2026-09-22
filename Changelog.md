@@ -605,4 +605,5 @@
 - [2026.09.04]: Verification updated.
 - [2026.09.04]: Some configuration directives require specific modules to be installed in order to work correctly, and in some cases, it wasn't made as absolutely obvious at the configuration page as it could've been. Adjustments have been made accordingly.
 - [2026.09.10]: Very slightly adjusted the spacing between some fields at the configuration page.
+- [2026.09.12~15]: Added a module for ShodanDB lookups (#86).
 - *Plus all the regular signature updates.*

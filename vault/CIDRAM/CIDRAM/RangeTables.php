@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Methods used by the range tables page (last modified: 2026.03.17).
+ * This file: Methods used by the range tables page (last modified: 2026.09.16).
  */
 
 namespace CIDRAM\CIDRAM;
@@ -528,7 +528,7 @@ trait RangeTables
                 $X += $Offsets[0];
                 $Y += $Offsets[1];
             }
-            imagesetpixel($this->CIDRAM['Matrix-Image'], $X, $Y, $Colour);
+            \imagesetpixel($this->CIDRAM['Matrix-Image'], $X, $Y, $Colour);
         };
     }
 
@@ -707,34 +707,34 @@ trait RangeTables
         $Wheel->iterateCallback('10-18,12-23', $this->matrixIncrement(), 'G', 32);
         $Wheel->iterateCallback('10-18,8-23', $this->matrixIncrement(), 'G', 32);
 
-        $this->CIDRAM['Matrix-Image'] = imagecreatetruecolor(544, 308);
+        $this->CIDRAM['Matrix-Image'] = \imagecreatetruecolor(544, 308);
 
         /** Roofs. */
-        imageline($this->CIDRAM['Matrix-Image'], 10, 48, 269, 48, 16777215);
-        imageline($this->CIDRAM['Matrix-Image'], 284, 48, 543, 48, 16777215);
+        \imageline($this->CIDRAM['Matrix-Image'], 10, 48, 269, 48, 16777215);
+        \imageline($this->CIDRAM['Matrix-Image'], 284, 48, 543, 48, 16777215);
 
         /** Walls. */
-        imageline($this->CIDRAM['Matrix-Image'], 10, 48, 10, 307, 16777215);
-        imageline($this->CIDRAM['Matrix-Image'], 269, 48, 269, 307, 16777215);
-        imageline($this->CIDRAM['Matrix-Image'], 284, 48, 284, 307, 16777215);
-        imageline($this->CIDRAM['Matrix-Image'], 543, 48, 543, 307, 16777215);
+        \imageline($this->CIDRAM['Matrix-Image'], 10, 48, 10, 307, 16777215);
+        \imageline($this->CIDRAM['Matrix-Image'], 269, 48, 269, 307, 16777215);
+        \imageline($this->CIDRAM['Matrix-Image'], 284, 48, 284, 307, 16777215);
+        \imageline($this->CIDRAM['Matrix-Image'], 543, 48, 543, 307, 16777215);
 
         /** Floors. */
-        imageline($this->CIDRAM['Matrix-Image'], 10, 307, 269, 307, 16777215);
-        imageline($this->CIDRAM['Matrix-Image'], 284, 307, 543, 307, 16777215);
+        \imageline($this->CIDRAM['Matrix-Image'], 10, 307, 269, 307, 16777215);
+        \imageline($this->CIDRAM['Matrix-Image'], 284, 307, 543, 307, 16777215);
 
-        imagestring($this->CIDRAM['Matrix-Image'], 2, 12, 2, 'CIDRAM signature file analysis (image generated ' . \date('Y.m.d', \time()) . ').', 16777215);
-        imagefilledrectangle($this->CIDRAM['Matrix-Image'], 12, 14, 22, 24, 16711680);
-        imagestring($this->CIDRAM['Matrix-Image'], 2, 24, 12, '"Deny" signatures', 16711680);
-        imagefilledrectangle($this->CIDRAM['Matrix-Image'], 130, 14, 140, 24, 65280);
-        imagestring($this->CIDRAM['Matrix-Image'], 2, 142, 12, '"Whitelist" + "Greylist" signatures', 65280);
-        imagefilledrectangle($this->CIDRAM['Matrix-Image'], 356, 14, 366, 24, 255);
-        imagestring($this->CIDRAM['Matrix-Image'], 2, 368, 12, '"Run" signatures', 255);
+        \imagestring($this->CIDRAM['Matrix-Image'], 2, 12, 2, 'CIDRAM signature file analysis (image generated ' . \date('Y.m.d', \time()) . ').', 16777215);
+        \imagefilledrectangle($this->CIDRAM['Matrix-Image'], 12, 14, 22, 24, 16711680);
+        \imagestring($this->CIDRAM['Matrix-Image'], 2, 24, 12, '"Deny" signatures', 16711680);
+        \imagefilledrectangle($this->CIDRAM['Matrix-Image'], 130, 14, 140, 24, 65280);
+        \imagestring($this->CIDRAM['Matrix-Image'], 2, 142, 12, '"Whitelist" + "Greylist" signatures', 65280);
+        \imagefilledrectangle($this->CIDRAM['Matrix-Image'], 356, 14, 366, 24, 255);
+        \imagestring($this->CIDRAM['Matrix-Image'], 2, 368, 12, '"Run" signatures', 255);
 
-        imagestring($this->CIDRAM['Matrix-Image'], 2, 14, 36, '< 0.0.0.0/8        IPv4      255.0.0.0/8 >', 16777215);
-        imagestring($this->CIDRAM['Matrix-Image'], 2, 288, 36, '< 00xx::/8         IPv6         ffxx::/8 >', 16777215);
-        imagestringup($this->CIDRAM['Matrix-Image'], 2, -2, 304, '< x.255.0.0/16                x.0.0.0/16 >', 16777215);
-        imagestringup($this->CIDRAM['Matrix-Image'], 2, 272, 304, '< xxff::/16                    xx00::/16 >', 16777215);
+        \imagestring($this->CIDRAM['Matrix-Image'], 2, 14, 36, '< 0.0.0.0/8        IPv4      255.0.0.0/8 >', 16777215);
+        \imagestring($this->CIDRAM['Matrix-Image'], 2, 288, 36, '< 00xx::/8         IPv6         ffxx::/8 >', 16777215);
+        \imagestringup($this->CIDRAM['Matrix-Image'], 2, -2, 304, '< x.255.0.0/16                x.0.0.0/16 >', 16777215);
+        \imagestringup($this->CIDRAM['Matrix-Image'], 2, 272, 304, '< xxff::/16                    xx00::/16 >', 16777215);
 
         $IPv4->iterateCallback('0-255,0-255', $this->matrixDraw(), 12, 50);
         $IPv6->iterateCallback('0-255,0-255', $this->matrixDraw(), 286, 50);

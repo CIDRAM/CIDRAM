@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v4/vault/signatures/ipv4_isps.dat
 
-# Version: 2026.253.0
-# Last modified: 2026.09.11
+# Version: 2026.265.0
+# Last modified: 2026.09.23
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -11855,42 +11855,13 @@ Tag: RWTH Aachen University
 # Israeli domestic ISP. Brute-force, SSH, SQLi, honeypot, and webapp attacks,
 # port scans, hacking, and spam detected from here.
 # Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 391.
-# Updated: 2025.07.01 / Modified: 2025.10.01
+# Stop Forum Spam (SFS) listings: 51.
+# Updated: 2026.09.23
 
-185.126.81.110/32 Deny Attacks
-Origin: ES
-46.116.210.87/32 Deny Attacks
-46.116.210.106/32 Deny Attacks
-46.116.216.106/32 Deny Attacks
-46.116.216.213/32 Deny Attacks
-46.116.223.95/32 Deny Attacks
-46.116.223.172/32 Deny Attacks
-46.117.64.217/32 Deny Attacks
-46.117.64.253/32 Deny Attacks
-46.117.97.96/32 Deny Attacks
-46.117.97.113/32 Deny Attacks
-46.117.97.234/32 Deny Attacks
-46.117.99.95/32 Deny Attacks
-46.117.99.134/32 Deny Attacks
-46.117.100.36/32 Deny Attacks
-46.117.101.129/32 Deny Attacks
-46.117.101.216/32 Deny Attacks
-46.117.111.176/32 Deny Attacks
-46.117.111.185/32 Deny Attacks
-46.117.111.215/32 Deny Attacks
-46.117.116.99/32 Deny Attacks
-46.117.116.187/32 Deny Attacks
-46.117.172.196/32 Deny Attacks
-46.210.172.95/32 Deny Spam
-46.210.236.59/32 Deny Attacks
-46.210.236.77/32 Deny Attacks
-46.210.236.145/32 Deny Attacks
-62.0.137.17/32 Deny Attacks
-62.0.137.215/32 Deny Attacks
-62.90.92.149/32 Deny Spam
-85.250.215.1/32 Deny Spam
-199.203.151.10/32 Deny Attacks
+46.117.64.161/32 Deny Attacks
+46.117.116.0/24 Deny Attacks
+46.210.236.0/24 Deny Attacks
+62.0.137.0/24 Deny Attacks
 Origin: IL
 Profile: Domestic ISP
 Tag: Cellcom Fixed
@@ -12355,13 +12326,12 @@ Tag: Telecom Armenia CJSC
 # ASN 701 ("Verizon Business/UUnet").
 # US domestic ISP. Honeypot attacks, port scans, malware, and spam detected
 # from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 454.
-# Updated: 2026.07.21
+# Stop Forum Spam (SFS) listings: 261.
+# Updated: 2026.09.22
 
 63.117.14.0/24 Deny Attacks
-96.240.4.3/32 Deny Attacks
-96.240.4.32/32 Deny Attacks
-96.240.4.161/32 Deny Attacks
+96.240.4.0/24 Deny Attacks
+204.252.117.0/24 Deny Attacks
 Origin: US
 Profile: Domestic ISP;Tor endpoints here
 Tag: Verizon Business/UUnet
@@ -12949,36 +12919,14 @@ Tag: MTN SA
 # ASN 12302 ("Vodafone Romania S.A").
 # Romanian mobile provider. Forum spam and other strange traffic sometimes seen
 # from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 30,736.
-# Updated: 2025.07.05
+# Stop Forum Spam (SFS) listings: 9.
+# Updated: 2026.09.23
 
-46.97.168.0/23 Deny Attacks
-46.97.170.20/32 Deny Attacks
-46.97.170.130/32 Deny Attacks
-46.97.170.167/32 Deny Attacks
-46.97.170.180/32 Deny Attacks
-62.121.89.225/32 Deny Spam
-78.96.20.140/32 Deny Spam
-78.96.76.29/32 Deny Spam
-78.96.77.52/32 Deny Attacks
-78.96.77.79/32 Deny Spam
-78.97.9.163/32 Deny Spam
-78.97.21.204/32 Deny Spam
-78.97.22.204/32 Deny Spam
-78.97.100.165/32 Deny Spam
+46.97.168.0/22 Deny Attacks
 81.12.157.98/32 Deny Attacks
 81.12.169.254/32 Deny Attacks
-89.38.73.179/32 Deny Spam
-89.136.91.56/32 Deny Spam
-89.136.158.150/32 Deny Spam
-89.137.66.136/32 Deny Spam
-89.137.66.244/32 Deny Spam
 95.76.2.0/24 Deny Attacks
-95.76.191.15/32 Deny Spam
-95.77.142.66/32 Deny Spam
-95.77.142.97/32 Deny Spam
-95.77.190.121/32 Deny Spam
-136.255.230.40/32 Deny Attacks
+136.255.230.108/32 Deny Attacks
 213.233.88.0/24 Deny Attacks
 Origin: RO
 Profile: Mobile ISP
@@ -14196,29 +14144,19 @@ Tag: OVH Systems
 # Indonesian domestic ISP. Brute-force, SSH, and webapp attacks, port scans,
 # hack attempts, and spam detected from here. Listing just the affected
 # ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 733.
-# Updated: 2025.07.05
+# Stop Forum Spam (SFS) listings: 19.
+# Updated: 2026.09.23
 
-111.95.37.98/32 Deny Attacks
-111.95.37.221/32 Deny Attacks
-111.95.37.241/32 Deny Attacks
-111.95.115.78/32 Deny Spam
-111.95.152.69/32 Deny Attacks
-118.136.47.44/32 Deny Attacks
-118.137.72.28/32 Deny Spam
-139.0.211.28/32 Deny Spam
-139.0.241.123/32 Deny Spam
-139.0.249.155/32 Deny Spam
-139.192.51.12/32 Deny Spam
-139.192.59.38/32 Deny Spam
-139.194.69.176/32 Deny Spam
-139.194.73.4/32 Deny Spam
-139.194.79.218/32 Deny Spam
-139.194.205.144/32 Deny Spam
-139.228.49.37/32 Deny Spam
-149.108.95.180/32 Deny Spam
-149.113.220.114/32 Deny Attacks
-149.113.220.249/32 Deny Spam
+111.95.37.107/32 Deny Attacks
+111.95.37.121/32 Deny Attacks
+111.95.37.170/32 Deny Attacks
+111.95.37.203/32 Deny Attacks
+111.95.37.208/32 Deny Attacks
+111.95.152.0/24 Deny Attacks
+118.136.47.15/32 Deny Attacks
+118.136.47.17/32 Deny Attacks
+118.136.47.48/32 Deny Attacks
+118.136.47.189/32 Deny Attacks
 Origin: ID
 Profile: Domestic ISP
 Tag: Linknet-Fastnet ASN
@@ -25027,20 +24965,25 @@ Tag: TOP BUSINESS INC
 # ASN 23724 ("IDC, China Telecommunications Corporation").
 # Chinese domestic ISP. SSH attacks, port scans, hacking, and spam detected
 # from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 56.
-# Updated: 2025.11.05 / Modified: 2025.12.30
+# Stop Forum Spam (SFS) listings: 49.
+# Updated: 2026.09.23
 
-49.7.11.156/32 Deny Attacks
-49.7.227.30/32 Deny Attacks
-49.7.227.136/32 Deny Attacks
+49.7.89.0/24 Deny Attacks
+49.7.149.0/24 Deny Attacks
 49.7.227.204/32 Deny Attacks
+49.7.245.0/24 Deny Attacks
 101.198.0.0/24 Deny Attacks
-106.38.207.62/32 Deny Attacks
-106.38.207.191/32 Deny Attacks
-106.75.47.0/24 Deny Attacks
-106.75.50.0/24 Deny Attacks
+106.38.180.0/24 Deny Attacks
+106.38.188.0/24 Deny Attacks
+106.75.47.91/32 Deny Attacks
+106.75.47.99/32 Deny Attacks
+106.75.47.137/32 Deny Attacks
+106.75.47.235/32 Deny Attacks
+106.75.50.6/32 Deny Attacks
+106.75.50.173/32 Deny Attacks
 106.75.63.0/24 Deny Attacks
 220.181.51.0/24 Deny Attacks
+220.181.108.0/24 Deny Attacks
 Origin: CN
 Profile: Domestic ISP
 Tag: CHINANET Beijing

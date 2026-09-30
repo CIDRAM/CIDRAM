@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2026.09.22).
+ * This file: Optional security extras module (last modified: 2026.09.30).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -676,14 +676,14 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             if ($this->trigger(\preg_match(
                 '~(?:^|[/?])(?:' .
                 'admin/controller/extension|' .
-                'wp-admin/(?:css/colors/(?:blue|midnight)|maint|network|(?:options-)?privacy\.php|user)|' .
+                'wp-admin/(?:css/colors/(?:blue|ectoplasm|midnight)|maint|network|(?:options-)?privacy\.php|user)|' .
                 'wp-includes/(?:assets|block-bindings|id3|js/tinymce/themes|l10n|php-compat|pomo|sodium_compat)|' .
                 'wp-signup\.php' .
                 ')(?:$|[/?])~',
                 $LCNrURI
             ), 'Suspected hack attempt')) {
                 $this->Reporter->report([15, 19], ['Suspected hack attempt detected.'], $this->BlockInfo['IPAddr']);
-            } // 2026.08.05 mod 2026.09.01
+            } // 2026.08.05 mod 2026.09.30
         }
 
         /** Probing for exposed GitHub workflows file. */

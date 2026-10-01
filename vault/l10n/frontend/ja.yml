@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Japanese language data for the front-end (last modified: 2026.09.21).
+# This file: Japanese language data for the front-end (last modified: 2026.10.02).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -108,7 +108,7 @@ Glossary: !lazy
   CIDR:
    Classless Inter-Domain Routing - Wikipedia: "https://ja.wikipedia.org/wiki/Classless_Inter-Domain_Routing"
   偽陽性:
-   Issues · CIDRAM/CIDRAM: "https://github.com/CIDRAM/CIDRAM/issues"
+   Issues · CIDRAM/CIDRAM: *IssuesURL
 Name: !lazy
  AbuseIPDB module: "AbuseIPDB モジュール。"
  BGPView module: "BGPView モジュール。"
@@ -909,7 +909,7 @@ msg_template_2fa: |
  CIDRAMフロントエンドにログインするための２ＦＡコード：</p>
  <h1>%s</h1>
  <p>このコードの有効期限は１０分です。</p></center>
-notice_new_major_version: "通知：%sが利用可能になりました（あなたは%sを使用しています）。 あなたはこのバージョンの最小ＰＨＰ要件を満たされています。 <em>見る：<a href="{{Links.CIDRAM.Docs Base Path}}readme.ja.md\#１０以前のメジャーバージョンからのアップグレード" hreflang="ja-JP"><span class="navicon link"></span>以前のメジャー・バージョンからのアップグレード</a>。</em>"
+notice_new_major_version: "通知：%sが利用可能になりました（あなたは%sを使用しています）。 あなたはこのバージョンの最小ＰＨＰ要件を満たされています。 <em>見る：<a href="{{Links.CIDRAM.Docs Base Path}}readme.ja.md\#１０以前のメジャーバージョンからのアップグレード" hreflang="ja-JP"><span class=\"navicon link\"></span>以前のメジャー・バージョンからのアップグレード</a>。</em>"
 operator_<: "未満である必要があります（数値比較）。"
 operator_=: "完全に一致する必要があります（文字列の直接比較）。"
 operator_>: "より大きい必要があります（数値比較）。"
@@ -1056,7 +1056,7 @@ response:
  _No: "いいえ"
  _Yes: "はい"
  please_check_config: "新しくインストールされたモジュールが意図したとおりに動作することを確認するために、コンフィギュレーションを確認してください。"
- release_notes: "<a href="%s"><span class="navicon link"></span>%s のリリース・ノート。</a>"
+ release_notes: "<a href=\"%s\"><span class=\"navicon link\"></span>%s のリリース・ノート。</a>"
 stages: !lazy
  Check whether banned: "禁止されているかどうかを確認する"
  Deploy CAPTCHAs (blocked requests): "キャプチャを展開する（ブロックされたリクエスト）"

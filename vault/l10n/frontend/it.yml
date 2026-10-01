@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Italian language data for the front-end (last modified: 2026.09.17).
+# This file: Italian language data for the front-end (last modified: 2026.10.02).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -109,7 +109,7 @@ Glossary: !lazy
    Classless Inter-Domain Routing - Wikipedia: "https://it.wikipedia.org/wiki/Classless_Inter-Domain_Routing"
   Falso positivo:
    Falso positivo e falso negativo - Wikipedia: "https://it.wikipedia.org/wiki/Falso_positivo_e_falso_negativo"
-   Issues · CIDRAM/CIDRAM: "https://github.com/CIDRAM/CIDRAM/issues"
+   Issues · CIDRAM/CIDRAM: *IssuesURL
 Name: !lazy
  AbuseIPDB module: "Modulo AbuseIPDB."
  BGPView module: "Modulo BGPView."
@@ -918,7 +918,7 @@ msg_template_2fa: |
  Il vostro codice di autenticazione a due fattori per l'accesso al front-end di CIDRAM:</p>
  <h1>%s</h1>
  <p>Questo codice scade tra 10 minuti.</p></center>
-notice_new_major_version: "Avviso: %s è ora disponibile (stai usando %s). Soddisfa i requisiti minimi PHP di questa versione. <em>Vedere: <a href="{{Links.CIDRAM.Docs Base Path}}readme.it.md\#10-aggiornamento-da-versioni-principali-precedenti" hreflang="it-IT"><span class="navicon link"></span>AGGIORNAMENTO DA VERSIONI PRINCIPALI PRECEDENTI</a>.</em>"
+notice_new_major_version: "Avviso: %s è ora disponibile (stai usando %s). Soddisfa i requisiti minimi PHP di questa versione. <em>Vedere: <a href="{{Links.CIDRAM.Docs Base Path}}readme.it.md\#10-aggiornamento-da-versioni-principali-precedenti" hreflang="it-IT"><span class=\"navicon link\"></span>AGGIORNAMENTO DA VERSIONI PRINCIPALI PRECEDENTI</a>.</em>"
 operator_<: "Deve essere minore di (confronto numerico)."
 operator_=: "Deve essere una corrispondenza esatta (confronto diretto delle stringhe)."
 operator_>: "Deve essere maggiore di (confronto numerico)."
@@ -1067,7 +1067,7 @@ response:
  _No: "No"
  _Yes: "Sì"
  please_check_config: "Si prega di controllare la configurazione per assicurarsi che il modulo appena installato si comporti come previsto."
- release_notes: "<a href="%s"><span class="navicon link"></span>Note di rilascio per %s.</a>"
+ release_notes: "<a href=\"%s\"><span class=\"navicon link\"></span>Note di rilascio per %s.</a>"
 stages: !lazy
  Check whether banned: "Controlla se è vietato"
  Deploy CAPTCHAs (blocked requests): "Presenta i CAPTCHA (richieste bloccate)"

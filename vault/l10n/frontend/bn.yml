@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bangla language data for the front-end (last modified: 2026.09.22).
+# This file: Bangla language data for the front-end (last modified: 2026.10.02).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -107,7 +107,7 @@ Glossary: !lazy
  Refs:
   মিথ্যা ইতিবাচক:
    মিথ্যা ইতিবাচক ফলাফল ও মিথ্যা নেতিবাচক ফলাফল - উইকিপিডিয়া: "https://bn.wikipedia.org/wiki/%E0%A6%AE%E0%A6%BF%E0%A6%A5%E0%A7%8D%E0%A6%AF%E0%A6%BE_%E0%A6%87%E0%A6%A4%E0%A6%BF%E0%A6%AC%E0%A6%BE%E0%A6%9A%E0%A6%95_%E0%A6%AB%E0%A6%B2%E0%A6%BE%E0%A6%AB%E0%A6%B2_%E0%A6%93_%E0%A6%AE%E0%A6%BF%E0%A6%A5%E0%A7%8D%E0%A6%AF%E0%A6%BE_%E0%A6%A8%E0%A7%87%E0%A6%A4%E0%A6%BF%E0%A6%AC%E0%A6%BE%E0%A6%9A%E0%A6%95_%E0%A6%AB%E0%A6%B2%E0%A6%BE%E0%A6%AB%E0%A6%B2"
-   Issues · CIDRAM/CIDRAM: "https://github.com/CIDRAM/CIDRAM/issues"
+   Issues · CIDRAM/CIDRAM: *IssuesURL
 Name: !lazy
  AbuseIPDB module: "AbuseIPDB মডিউল।"
  BGPView module: "BGPView মডিউল।"
@@ -324,6 +324,8 @@ config: !lazy
  shodandb_expire_bad: "কোনো পোর্ট খুঁজে না পাওয়া গেলে ShodanDB-র অনুসন্ধান ফলাফল কতক্ষণ ক্যাশ করে রাখা হবে। ডিফল্ট = ১ ঘণ্টা।"
  shodandb_expire_good: "পোর্ট খুঁজে পাওয়া গেলে ShodanDB-এর অনুসন্ধান ফলাফল কতক্ষণ ক্যাশ করে রাখা হবে। ডিফল্ট = ১ দিন।"
  shodandb_lookup_strategy: "ShodanDB-তে কখন অনুসন্ধান করা উচিত?"
+ shodandb_noteworthy_ports: "কমা দ্বারা পৃথক করা পোর্টগুলো এবং/বা পোর্ট পরিসর (যেমন: 3389-3395) একটি তালিকা। কোনো অনুরোধকারী আইপি ঠিকানায় এগুলি খোলা পাওয়া গেলে তা উল্লেখযোগ্য বা উচ্চ-ঝুঁকিপূর্ণ হিসেবে গণ্য করা হয় (যেমন: রিমোট অ্যাডমিন, IoT, ডেটাবেস পোর্ট)।"
+ shodandb_options: "<code class="s">ports_action</code>-এ চিহ্নিত নির্দেশানুসারে কোনো উন্মুক্ত পোর্ট শনাক্ত হলে প্রয়োগযোগ্য ক্যাপচা বিকল্পসমূহ।"
  signatures: "স্বাক্ষর, স্বাক্ষর ফাইল, মডিউল, ইত্যাদির জন্য কনফিগারেশন।"
  signatures_conflict_response: "যখন একই সংস্থানগুলি অ্যাক্সেস করার জন্য অনেকগুলি একযোগে প্রচেষ্টা করা হয় (যেমন, একই সংস্থানের জন্য একই মেশিনে একাধিক PHP প্রক্রিয়াগুলির একযোগে অনুরোধ), সেই প্রচেষ্টাগুলির মধ্যে কিছু ব্যর্থ হতে পারে। বিরল এবং অসম্ভাব্য ইভেন্টে যে এটি স্বাক্ষর ফাইল বা মডিউলগুলিকে প্রভাবিত করে, CIDRAMকে অনুরোধ সম্পর্কে কার্যকর সিদ্ধান্ত নেওয়া থেকে বাধা দেওয়া যেতে পারে। যদি এটি ঘটে থাকে, তাহলে অনুরোধটি অবরুদ্ধ করা উচিত, এবং কোন HTTP স্থিতি বার্তা CIDRAM পাঠাতে হবে?"
  signatures_default_tracktime: "আইপি ঠিকানাগুলি যে সময়কালের জন্য ট্র্যাক করা উচিত। ডিফল্ট = 7d0°0′0″ (1 সপ্তাহ)।"
@@ -900,7 +902,7 @@ msg_template_2fa: |
  CIDRAM ফ্রন্ট-এন্ড প্রবেশের জন্য আপনার দুই-ফ্যাক্টর প্রমাণীকরণ কোড:</p>
  <h1>%s</h1>
  <p>এই কোডটি 10 মিনিটের মধ্যে মেয়াদ শেষ হয়ে যায়।</p></center>
-notice_new_major_version: "বিজ্ঞপ্তি: %s এখন উপলভ্য (আপনি %s ব্যবহার করছেন)। আপনি এই সংস্করণটির সর্বনিম্ন PHP প্রয়োজনীয়তা পূরণ করেন। <em>দেখুন: <a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#10-upgrading-from-previous-major-versions" hreflang="en"><span class="navicon link"></span>UPGRADING FROM PREVIOUS MAJOR VERSIONS</a>.</em>"
+notice_new_major_version: "বিজ্ঞপ্তি: %s এখন উপলভ্য (আপনি %s ব্যবহার করছেন)। আপনি এই সংস্করণটির সর্বনিম্ন PHP প্রয়োজনীয়তা পূরণ করেন। <em>দেখুন: <a href=\"{{Links.CIDRAM.Docs Base Path}}readme.en.md\#10-upgrading-from-previous-major-versions\" hreflang=\"en\"><span class=\"navicon link\"></span>UPGRADING FROM PREVIOUS MAJOR VERSIONS</a>.</em>"
 operator_<: "এর থেকে কম হতে হবে (সংখ্যাগত তুলনা)।"
 operator_=: "একটি সঠিক মিল হতে হবে (সরাসরি স্ট্রিং তুলনা)।"
 operator_>: "এর থেকে বড় হতে হবে (সংখ্যাগত তুলনা)।"
@@ -1047,7 +1049,7 @@ response:
  _No: "না"
  _Yes: "হাঁ"
  please_check_config: "সদ্য ইনস্টল করা মডিউলটি আপনার ইচ্ছা অনুসারে আচরণ করবে তা নিশ্চিত করার জন্য দয়া করে আপনার কনফিগারেশনটি পরীক্ষা করুন।"
- release_notes: "<a href="%s"><span class="navicon link"></span>%s এর জন্য নোট রিলিজ।</a>"
+ release_notes: "<a href=\"%s\"><span class=\"navicon link\"></span>%s এর জন্য নোট রিলিজ।</a>"
 stages: !lazy
  Check whether banned: "নিষিদ্ধ কিনা তা পরীক্ষা করুন"
  Deploy CAPTCHAs (blocked requests): "ক্যাপচা স্থাপন করুন (অবরুদ্ধ অনুরোধের জন্য)"

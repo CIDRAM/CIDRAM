@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Gujarati language data for the front-end (last modified: 2026.09.22).
+# This file: Gujarati language data for the front-end (last modified: 2026.10.02).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -106,7 +106,7 @@ Glossary: !lazy
   સિગ્નેચર: "signature"
  Refs:
   ખોટા હકારાત્મક:
-   Issues · CIDRAM/CIDRAM: "https://github.com/CIDRAM/CIDRAM/issues"
+   Issues · CIDRAM/CIDRAM: *IssuesURL
 Name: !lazy
  AbuseIPDB module: "AbuseIPDB મોડ્યુલ."
  BGPView module: "BGPView મોડ્યુલ."
@@ -323,6 +323,12 @@ config: !lazy
  shodandb_expire_bad: "જ્યારે કોઈ પોર્ટ્સ ન મળ્યા હોય, ત્યારે ShodanDB લુકઅપના પરિણામને કેટલા સમય માટે કેશ કરવું. ડિફૉલ્ટ = ૧ કલાક."
  shodandb_expire_good: "જ્યારે પોર્ટ્સ મળી આવે ત્યારે ShodanDB લુકઅપના પરિણામને કેટલા સમય માટે કેશ કરવું. ડિફૉલ્ટ = ૧ દિવસ."
  shodandb_lookup_strategy: "ShodanDB લુકઅપ્સ ક્યારે કરવા જોઈએ?"
+ shodandb_noteworthy_ports: "વિનંતી કરનાર IP સરનામા પર ખુલ્લા હોવાનું જણાય ત્યારે નોંધપાત્ર અથવા ઉચ્ચ-જોખમ ધરાવતા ગણાતા પોર્ટ્સ (અને/અથવા પોર્ટ રેન્જ, જેમ કે 3389-3395)ની અલ્પવિરામ-વિભાજિત સૂચિ (દા.ત., રિમોટ એડમિન, IoT, ડેટાબેઝ પોર્ટ્સ)."
+ shodandb_options: "<code class="s">ports_action</code> પર ચિહ્નિત કર્યા મુજબ જ્યારે કોઈ ઓપન પોર્ટ જણાય ત્યારે લાગુ કરવાના કેપ્ચા વિકલ્પો."
+ shodandb_ports_action: "જ્યારે વિનંતી કરનાર IP પાસે ગોઠવેલા "નોંધપાત્ર પોર્ટ્સ" અથવા "પ્રોક્સી પોર્ટ્સ" માંથી એક કે તેથી વધુ પોર્ટ્સ ખુલ્લા હોય, ત્યારે શું કરવું (અથવા, જો "કોઈપણ પોર્ટ" વિકલ્પોમાંથી કોઈ પણ પસંદ કરવામાં આવ્યું હોય, તો "tr069_ports" તરીકે નિર્દિષ્ટ કરેલા પોર્ટ્સ સિવાયના કોઈપણ ખુલ્લા પોર્ટનો સમાવેશ થાય છે)."
+ shodandb_proxy_ports: "ઓપન પ્રોક્સી, SOCKS સર્વર્સ, અથવા અન્ય અનામીકરણ કરતા રિલે સાથે સામાન્ય રીતે સંકળાયેલા પોર્ટ્સ (અને/અથવા પોર્ટ રેન્જ, જેમ કે 3389-3395) ની અલ્પવિરામ દ્વારા અલગ કરેલી સૂચિ."
+ shodandb_timeout_rl: "લુકઅપ મર્યાદા વટાવી ગયા પછી કેટલા સમય સુધી લુકઅપ્સ સ્થગિત રાખવા (HTTP 429). ડિફૉલ્ટ = ૧ કલાક."
+ shodandb_tr069_ports: "TR-069/CWMP (CPE WAN Management Protocol) પોર્ટ્સ અને અન્ય કોઈપણ પોર્ટ્સ અને/અથવા પોર્ટ રેન્જની યાદી, જેને મોડ્યુલ દ્વારા કરવામાં આવતી કોઈપણ પ્રકારની મેચ અથવા ક્રિયાઓમાંથી બાકાત રાખવી જોઈએ, આ યાદી અલ્પવિરામ દ્વારા અલગ કરેલી હોવી જોઈએ. ડિફૉલ્ટ = 7547 (સ્ટાન્ડર્ડ/IANA-રજિસ્ટર્ડ CWMP પોર્ટ) અને 30005 (કેટલાક ISPs/ઉપકરણો દ્વારા ઉપયોગમાં લેવાતો સામાન્ય બિન-સ્ટાન્ડર્ડ વૈકલ્પિક પોર્ટ). મોટાભાગના રહેણાંક ISPs CWMP (સામાન્ય રીતે પોર્ટ 7547 દ્વારા) મારફતે ગ્રાહકોના રાઉટર્સનું દૂરથી સંચાલન કરે છે, તેથી રાઉટરમાં આ પોર્ટ ખુલ્લું હોવું એ સામાન્ય અને અપેક્ષિત બાબત છે."
  signatures: "સિગ્નેચર, સિગ્નેચર ફાઇલો, મોડ્યુલો, વગેરે માટે રૂપરેખાંકન."
  signatures_conflict_response: "જ્યારે સમાન સંસાધનોને ઍક્સેસ કરવા માટે ઘણા બધા એકસાથે પ્રયાસો કરવામાં આવે છે (દા.ત., સમાન સંસાધનો માટે એક જ મશીન પર બહુવિધ PHP પ્રક્રિયાઓ માટે એક સાથે વિનંતીઓ), તેમાંથી કેટલાક પ્રયાસો નિષ્ફળ થઈ શકે છે. દુર્લભ અને અસંભવિત ઘટનામાં કે આ સિગ્નેચર ફાઇલો અથવા મોડ્યુલોને અસર કરે છે, CIDRAM ને વિનંતી વિશે અસરકારક નિર્ણય લેવાથી અટકાવી શકાય છે. જો આવું થાય, તો શું વિનંતીને અવરોધિત કરવી જોઈએ, અને CIDRAM એ કયો HTTP સ્થિતિ સંદેશ મોકલવો જોઈએ?"
  signatures_default_tracktime: "જે સમયગાળો IP સરનામાંને ટ્રેક કરવો જોઈએ. ડિફૉલ્ટ = 7d0°0′0″ (1 અઠવાડિયું)."
@@ -906,7 +912,7 @@ msg_template_2fa: |
  CIDRAM ફ્રન્ટ-એન્ડમાં લૉગ ઇન કરવા માટે તમારો બે-પરિબળ પ્રમાણીકરણ કોડ:</p>
  <h1>%s</h1>
  <p>આ કોડ 10 મિનિટમાં સમાપ્ત થાય છે.</p></center>
-notice_new_major_version: "સૂચના: %s હવે ઉપલબ્ધ છે (તમે %s નો ઉપયોગ કરી રહ્યા છો). આ સંસ્કરણની ન્યૂનતમ PHP આવશ્યકતાઓ પૂર્ણ થઈ છે. <em>જુઓ: <a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#10-upgrading-from-previous-major-versions" hreflang="en"><span class="navicon link"></span>UPGRADING FROM PREVIOUS MAJOR VERSIONS</a>.</em>"
+notice_new_major_version: "સૂચના: %s હવે ઉપલબ્ધ છે (તમે %s નો ઉપયોગ કરી રહ્યા છો). આ સંસ્કરણની ન્યૂનતમ PHP આવશ્યકતાઓ પૂર્ણ થઈ છે. <em>જુઓ: <a href=\"{{Links.CIDRAM.Docs Base Path}}readme.en.md\#10-upgrading-from-previous-major-versions\" hreflang=\"en\"><span class=\"navicon link\"></span>UPGRADING FROM PREVIOUS MAJOR VERSIONS</a>.</em>"
 operator_<: "કરતાં ઓછી હોવી જોઈએ (સંખ્યાત્મક સરખામણી)."
 operator_=: "ચોક્કસ મેળ હોવો જોઈએ (સીધી સ્ટ્રિંગ સરખામણી)."
 operator_>: "કરતાં વધુ હોવી જોઈએ (સંખ્યાત્મક સરખામણી)."
@@ -1055,7 +1061,7 @@ response:
  _No: "ના"
  _Yes: "હા"
  please_check_config: "મહેરબાની કરીને તમારું રૂપરેખાંકન તપાસો તેની ખાતરી કરવા માટે કે નવું ઇન્સ્ટોલ કરેલ મોડ્યુલ તમે ઇચ્છો તે પ્રમાણે વર્તે."
- release_notes: "<a href="%s"><span class="navicon link"></span>%s માટે પ્રકાશન નોંધો.</a>"
+ release_notes: "<a href=\"%s\"><span class=\"navicon link\"></span>%s માટે પ્રકાશન નોંધો.</a>"
 stages: !lazy
  Check whether banned: "પ્રતિબંધિત છે કે નહીં તે તપાસો"
  Deploy CAPTCHAs (blocked requests): "કેપ્ચા દર્શાવો (અવરોધિત વિનંતીઓ)"

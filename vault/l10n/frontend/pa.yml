@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Punjabi language data for the front-end (last modified: 2026.09.21).
+# This file: Punjabi language data for the front-end (last modified: 2026.10.02).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -106,7 +106,7 @@ Glossary: !lazy
   ਦਸਤਖਤ: "signature"
  Refs:
   ਗਲਤ ਸਕਾਰਾਤਮਕ:
-   Issues · CIDRAM/CIDRAM: "https://github.com/CIDRAM/CIDRAM/issues"
+   Issues · CIDRAM/CIDRAM: *IssuesURL
 Name: !lazy
  AbuseIPDB module: "AbuseIPDB ਮੋਡੀਊਲ।"
  BGPView module: "BGPView ਮੋਡੀਊਲ।"
@@ -323,6 +323,12 @@ config: !lazy
  shodandb_expire_bad: "ਜਦੋਂ ਕੋਈ ਪੋਰਟ ਨਹੀਂ ਮਿਲੇ, ਤਾਂ ShodanDB ਲੁੱਕਅੱਪ ਨਤੀਜੇ ਨੂੰ ਕਿੰਨੀ ਦੇਰ ਲਈ ਕੈਸ਼ ਕਰਨਾ ਹੈ। ਡਿਫਾਲਟ = 1 ਘੰਟਾ।"
  shodandb_expire_good: "ਜਦੋਂ ਰਿਪੋਰਟਾਂ ਮਿਲਦੀਆਂ ਹਨ, ਤਾਂ ShodanDB ਲੁੱਕਅੱਪ ਨਤੀਜੇ ਨੂੰ ਕਿੰਨੀ ਦੇਰ ਲਈ ਕੈਸ਼ ਕਰਨਾ ਹੈ। ਡਿਫਾਲਟ = 1 ਦਿਨ।"
  shodandb_lookup_strategy: "ShodanDB 'ਤੇ ਖੋਜਾਂ ਕਦੋਂ ਕੀਤੀਆਂ ਜਾਣੀਆਂ ਚਾਹੀਦੀਆਂ ਹਨ?"
+ shodandb_noteworthy_ports: "ਪੋਰਟਾਂ (ਅਤੇ/ਜਾਂ ਪੋਰਟ ਰੇਂਜਾਂ, ਜਿਵੇਂ ਕਿ 3389-3395) ਦੀ ਕੌਮਾ-ਵੱਖਰੀ ਸੂਚੀ, ਜਿਨ੍ਹਾਂ ਨੂੰ ਕਿਸੇ ਬੇਨਤੀ ਕਰਨ ਵਾਲੇ IP ਪਤੇ 'ਤੇ ਖੁੱਲ੍ਹਾ ਪਾਏ ਜਾਣ 'ਤੇ ਜ਼ਿਕਰਯੋਗ ਜਾਂ ਉੱਚ-ਜੋਖਮ ਵਾਲਾ ਮੰਨਿਆ ਜਾਂਦਾ ਹੈ (ਉਦਾਹਰਨ ਲਈ, ਰਿਮੋਟ ਐਡਮਿਨ, IoT, ਡਾਟਾਬੇਸ ਪੋਰਟਾਂ)।"
+ shodandb_options: "<code class="s">ports_action</code> 'ਤੇ ਨਿਸ਼ਾਨਬੱਧ ਕੀਤੇ ਅਨੁਸਾਰ, ਓਪਨ ਪਤਾ ਲੱਗਣ 'ਤੇ ਲਾਗੂ ਕੀਤੇ ਜਾਣ ਵਾਲੇ CAPTCHA ਵਿਕਲਪ।"
+ shodandb_ports_action: "ਜਦੋਂ ਬੇਨਤੀ ਕਰਨ ਵਾਲੇ IP 'ਤੇ ਕੌਂਫਿਗਰ ਕੀਤੇ ਗਏ "ਜ਼ਿਕਰਯੋਗ ਪੋਰਟਾਂ" ਜਾਂ "ਪ੍ਰੌਕਸੀ ਪੋਰਟਾਂ" ਵਿੱਚੋਂ ਇੱਕ ਜਾਂ ਵੱਧ ਪੋਰਟਾਂ ਖੁੱਲ੍ਹੀਆਂ ਹੋਣ, ਤਾਂ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ (ਜਾਂ, ਜੇਕਰ "ਕੋਈ ਵੀ ਪੋਰਟ" ਵਿਕਲਪਾਂ ਵਿੱਚੋਂ ਕੋਈ ਚੁਣਿਆ ਜਾਂਦਾ ਹੈ, ਤਾਂ ਕੋਈ ਵੀ ਖੁੱਲ੍ਹੀ ਪੋਰਟ, ਸਿਰਫ਼ ਨਿਰਧਾਰਤ "tr069_ports" ਨੂੰ ਛੱਡ ਕੇ)।"
+ shodandb_proxy_ports: "ਪੋਰਟਾਂ (ਅਤੇ/ਜਾਂ ਪੋਰਟ ਰੇਂਜਾਂ, ਜਿਵੇਂ ਕਿ 3389-3395) ਦੀ ਕੌਮਾ-ਵੱਖਰੀ ਸੂਚੀ, ਜੋ ਆਮ ਤੌਰ 'ਤੇ ਓਪਨ ਪ੍ਰੌਕਸੀਆਂ, SOCKS ਸਰਵਰਾਂ, ਜਾਂ ਹੋਰ ਅਗਿਆਤ-ਰੱਖਣ ਵਾਲੇ ਰਿਲੇਅ ਨਾਲ ਜੁੜੀਆਂ ਹੁੰਦੀਆਂ ਹਨ।"
+ shodandb_timeout_rl: "ਖੋਜ ਸੀਮਾ ਪਾਰ ਹੋਣ ਤੋਂ ਬਾਅਦ ਖੋਜਾਂ ਨੂੰ ਕਿੰਨੇ ਸਮੇਂ ਲਈ ਮੁਅੱਤਲ ਕਰਨਾ ਹੈ (HTTP 429)। ਡਿਫਾਲਟ = 1 ਘੰਟਾ।"
+ shodandb_tr069_ports: "TR-069/CWMP (CPE WAN Management Protocol) ਪੋਰਟਾਂ ਅਤੇ ਹੋਰ ਪੋਰਟਾਂ ਅਤੇ/ਜਾਂ ਪੋਰਟ ਰੇਂਜਾਂ ਦੀ ਕੌਮਾ-ਵੱਖਰੀ ਸੂਚੀ, ਜਿਨ੍ਹਾਂ ਨੂੰ ਮੋਡੀਊਲ ਦੁਆਰਾ ਕੀਤੇ ਜਾਣ ਵਾਲੇ ਕਿਸੇ ਵੀ ਤਰ੍ਹਾਂ ਦੇ ਮੇਲ ਜਾਂ ਕਾਰਵਾਈਆਂ ਤੋਂ ਬਾਹਰ ਰੱਖਿਆ ਜਾਣਾ ਹੈ। ਡਿਫਾਲਟ = 7547 (ਮਿਆਰੀ/IANA-ਰਜਿਸਟਰਡ CWMP ਪੋਰਟ) ਅਤੇ 30005 (ਕੁਝ ISPs/ਡਿਵਾਈਸਾਂ ਦੁਆਰਾ ਵਰਤਿਆ ਜਾਣ ਵਾਲਾ ਇੱਕ ਆਮ ਗੈਰ-ਮਿਆਰੀ ਬਦਲਵਾਂ ਪੋਰਟ)। ਜ਼ਿਆਦਾਤਰ ਰਿਹਾਇਸ਼ੀ ISP CWMP (ਆਮ ਤੌਰ 'ਤੇ ਪੋਰਟ 7547 ਰਾਹੀਂ) ਰਾਹੀਂ ਗਾਹਕਾਂ ਦੇ ਰਾਊਟਰਾਂ ਦਾ ਰਿਮੋਟਲੀ ਪ੍ਰਬੰਧਨ ਕਰਦੇ ਹਨ, ਇਸ ਲਈ ਰਾਊਟਰ 'ਤੇ ਇਸ ਦਾ ਖੁੱਲ੍ਹਾ ਹੋਣਾ ਇੱਕ ਆਮ ਅਤੇ ਸੁਭਾਵਿਕ ਗੱਲ ਹੈ।"
  signatures: "ਦਸਤਖਤਾਂ, ਦਸਤਖਤ ਫਾਈਲਾਂ, ਮੋਡੀਊਲ, ਆਦਿ ਲਈ ਕੌਂਫਿਗਰੇਸ਼ਨ।"
  signatures_conflict_response: "ਜਦੋਂ ਇੱਕੋ ਸਰੋਤਾਂ ਤੱਕ ਪਹੁੰਚ ਕਰਨ ਦੀਆਂ ਬਹੁਤ ਸਾਰੀਆਂ ਇੱਕੋ ਸਮੇਂ ਕੋਸ਼ਿਸ਼ਾਂ ਹੁੰਦੀਆਂ ਹਨ (ਉਦਾਹਰਣ ਵਜੋਂ, ਇੱਕੋ ਸਾਧਨਾਂ ਲਈ ਇੱਕੋ ਮਸ਼ੀਨ 'ਤੇ ਕਈ PHP ਪ੍ਰਕਿਰਿਆਵਾਂ ਲਈ ਇੱਕੋ ਸਮੇਂ ਬੇਨਤੀਆਂ), ਇਹਨਾਂ ਵਿੱਚੋਂ ਕੁਝ ਕੋਸ਼ਿਸ਼ਾਂ ਅਸਫਲ ਹੋ ਸਕਦੀਆਂ ਹਨ। ਦੁਰਲੱਭ ਅਤੇ ਅਸੰਭਵ ਘਟਨਾ ਵਿੱਚ ਕਿ ਇਹ ਦਸਤਖਤ ਫਾਈਲਾਂ ਜਾਂ ਮੈਡਿਊਲਾਂ ਨੂੰ ਪ੍ਰਭਾਵਿਤ ਕਰਦਾ ਹੈ, CIDRAM ਨੂੰ ਬੇਨਤੀ ਬਾਰੇ ਇੱਕ ਪ੍ਰਭਾਵੀ ਨਿਰਣਾ ਕਰਨ ਤੋਂ ਰੋਕਿਆ ਜਾ ਸਕਦਾ ਹੈ। ਜੇਕਰ ਅਜਿਹਾ ਹੁੰਦਾ ਹੈ, ਤਾਂ ਕੀ ਬੇਨਤੀ ਨੂੰ ਬਲੌਕ ਕੀਤਾ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ, ਅਤੇ CIDRAM ਨੂੰ ਕਿਹੜਾ HTTP ਸਥਿਤੀ ਸੁਨੇਹਾ ਭੇਜਣਾ ਚਾਹੀਦਾ ਹੈ?"
  signatures_default_tracktime: "ਉਹ ਮਿਆਦ ਜਿਸ ਲਈ IP ਪਤਿਆਂ ਨੂੰ ਟਰੈਕ ਕੀਤਾ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ। ਡਿਫਾਲਟ = 7d0°0′0″ (1 ਹਫ਼ਤਾ)।"
@@ -910,7 +916,7 @@ msg_template_2fa: |
  CIDRAM ਫਰੰਟ-ਐਂਡ ਵਿੱਚ ਲੌਗਇਨ ਕਰਨ ਲਈ ਤੁਹਾਡਾ ਦੋ-ਕਾਰਕ ਪ੍ਰਮਾਣੀਕਰਨ ਕੋਡ:</p>
  <h1>%s</h1>
  <p>ਇਸ ਕੋਡ ਦੀ ਮਿਆਦ 10 ਮਿੰਟਾਂ ਵਿੱਚ ਸਮਾਪਤ ਹੋ ਜਾਂਦੀ ਹੈ।</p></center>
-notice_new_major_version: "ਨੋਟਿਸ: %s ਹੁਣ ਉਪਲਬਧ ਹੈ (ਤੁਸੀਂ %s ਵਰਤ ਰਹੇ ਹੋ)। ਤੁਸੀਂ ਇਸ ਸੰਸਕਰਣ ਦੀ ਘੱਟੋ-ਘੱਟ PHP ਲੋੜ ਨੂੰ ਪੂਰਾ ਕਰਦੇ ਹੋ। <em>ਵੇਖੋ: <a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#10-upgrading-from-previous-major-versions" hreflang="en"><span class="navicon link"></span>UPGRADING FROM PREVIOUS MAJOR VERSIONS</a>.</em>"
+notice_new_major_version: "ਨੋਟਿਸ: %s ਹੁਣ ਉਪਲਬਧ ਹੈ (ਤੁਸੀਂ %s ਵਰਤ ਰਹੇ ਹੋ)। ਤੁਸੀਂ ਇਸ ਸੰਸਕਰਣ ਦੀ ਘੱਟੋ-ਘੱਟ PHP ਲੋੜ ਨੂੰ ਪੂਰਾ ਕਰਦੇ ਹੋ। <em>ਵੇਖੋ: <a href=\"{{Links.CIDRAM.Docs Base Path}}readme.en.md\#10-upgrading-from-previous-major-versions\" hreflang=\"en\"><span class=\"navicon link\"></span>UPGRADING FROM PREVIOUS MAJOR VERSIONS</a>.</em>"
 operator_<: "ਤੋਂ ਘੱਟ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ (ਸੰਖਿਆਤਮਕ ਤੁਲਨਾ)।"
 operator_=: "ਇੱਕ ਸਟੀਕ ਮੇਲ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ (ਸਿੱਧੀ ਸਟ੍ਰਿੰਗ ਤੁਲਨਾ)।"
 operator_>: "ਤੋਂ ਵੱਧ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ (ਸੰਖਿਆਤਮਕ ਤੁਲਨਾ)।"
@@ -1059,7 +1065,7 @@ response:
  _No: "ਨਹੀਂ"
  _Yes: "ਹਾਂ"
  please_check_config: "ਕਿਰਪਾ ਕਰਕੇ ਇਹ ਯਕੀਨੀ ਬਣਾਉਣ ਲਈ ਆਪਣੀ ਕੌਂਫਿਗਰੇਸ਼ਨ ਦੀ ਜਾਂਚ ਕਰੋ ਕਿ ਨਵਾਂ ਇੰਸਟਾਲ ਕੀਤਾ ਮੋਡੀਊਲ ਤੁਹਾਡੇ ਇਰਾਦੇ ਅਨੁਸਾਰ ਵਿਹਾਰ ਕਰੇਗਾ।"
- release_notes: "<a href="%s"><span class="navicon link"></span>%s ਲਈ ਰੀਲੀਜ਼ ਨੋਟਸ।</a>"
+ release_notes: "<a href=\"%s\"><span class=\"navicon link\"></span>%s ਲਈ ਰੀਲੀਜ਼ ਨੋਟਸ।</a>"
 stages: !lazy
  Check whether banned: "ਜਾਂਚ ਕਰੋ ਕਿ ਕੀ ਪਾਬੰਦੀ ਲਗਾਈ ਗਈ ਹੈ"
  Deploy CAPTCHAs (blocked requests): "ਕੈਪਟਚਾ ਤੈਨਾਤ ਕਰੋ (ਬਲੌਕ ਕੀਤੀਆਂ ਬੇਨਤੀਆਂ)"

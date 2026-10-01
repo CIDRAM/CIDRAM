@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Polish language data for the front-end (last modified: 2026.09.18).
+# This file: Polish language data for the front-end (last modified: 2026.10.02).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -108,7 +108,7 @@ Glossary: !lazy
   CIDR:
    Classless Inter-Domain Routing – Wikipedia, wolna encyklopedia: "https://pl.wikipedia.org/wiki/Classless_Inter-Domain_Routing"
   Fałszywie pozytywny:
-   Issues · CIDRAM/CIDRAM: "https://github.com/CIDRAM/CIDRAM/issues"
+   Issues · CIDRAM/CIDRAM: *IssuesURL
 Name: !lazy
  AbuseIPDB module: "Moduł AbuseIPDB."
  BGPView module: "Moduł BGPView."
@@ -924,7 +924,7 @@ msg_template_2fa: |
  Twój dwuskładnikowy kod uwierzytelniający do logowania do interfejsu CIDRAM:</p>
  <h1>%s</h1>
  <p>Ten kod wygasa za 10 minut.</p></center>
-notice_new_major_version: "Ogłoszenie: %s jest już dostępny (używasz %s). Spełniasz minimalne wymagania PHP dla tej wersji. <em>Widzieć: <a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#10-upgrading-from-previous-major-versions" hreflang="en"><span class="navicon link"></span>UPGRADING FROM PREVIOUS MAJOR VERSIONS</a>.</em>"
+notice_new_major_version: "Ogłoszenie: %s jest już dostępny (używasz %s). Spełniasz minimalne wymagania PHP dla tej wersji. <em>Widzieć: <a href=\"{{Links.CIDRAM.Docs Base Path}}readme.en.md\#10-upgrading-from-previous-major-versions\" hreflang=\"en\"><span class=\"navicon link\"></span>UPGRADING FROM PREVIOUS MAJOR VERSIONS</a>.</em>"
 operator_<: "Musi być mniejszy niż (porównanie numeryczne)."
 operator_=: "Musi być dopasowanie dokładne (bezpośrednie porównanie ciągów)."
 operator_>: "Musi być większy niż (porównanie numeryczne)."
@@ -1074,7 +1074,7 @@ response:
  _No: "Nie"
  _Yes: "Tak"
  please_check_config: "Sprawdź swoją konfigurację, aby upewnić się, że nowo zainstalowany moduł będzie zachowywał się zgodnie z przeznaczeniem."
- release_notes: "<a href="%s"><span class="navicon link"></span>Informacje o wersji dla %s.</a>"
+ release_notes: "<a href=\"%s\"><span class=\"navicon link\"></span>Informacje o wersji dla %s.</a>"
 stages: !lazy
  Check whether banned: "Sprawdź czy jest zbanowany"
  Deploy CAPTCHAs (blocked requests): "Wdróż CAPTCHAs (zablokowane żądania)"

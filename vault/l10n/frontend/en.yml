@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: English language data for the front-end (last modified: 2026.09.15).
+# This file: English language data for the front-end (last modified: 2026.10.02).
 ##/
 
 Abuse category: !lazy
@@ -100,7 +100,7 @@ Glossary: !lazy
    "CIDR Notation\x3A A Beginner's Guide to IP Addressing": "https://whatismyipaddress.com/cidr"
   False positive:
    False positives and false negatives - Wikipedia: "https://en.wikipedia.org/wiki/False_positives_and_false_negatives"
-   Issues · CIDRAM/CIDRAM: "https://github.com/CIDRAM/CIDRAM/issues"
+   Issues · CIDRAM/CIDRAM: *IssuesURL
 Name: !lazy
  AbuseIPDB module: "AbuseIPDB module."
  BGPView module: "BGPView module."
@@ -943,7 +943,7 @@ msg_template_2fa: |
  Your two-factor authentication code for logging into the CIDRAM front-end:</p>
  <h1>%s</h1>
  <p>This code expires in 10 minutes.</p></center>
-notice_new_major_version: "Notice: %s is now available (you are using %s). You meet this version's minimum PHP requirement. <em>See: <a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#10-upgrading-from-previous-major-versions" hreflang="en"><span class="navicon link"></span>UPGRADING FROM PREVIOUS MAJOR VERSIONS</a>.</em>"
+notice_new_major_version: "Notice: %s is now available (you are using %s). You meet this version's minimum PHP requirement. <em>See: <a href=\"{{Links.CIDRAM.Docs Base Path}}readme.en.md\#10-upgrading-from-previous-major-versions\" hreflang=\"en\"><span class=\"navicon link\"></span>UPGRADING FROM PREVIOUS MAJOR VERSIONS</a>.</em>"
 operator_<: "Must be less than (numeric comparison)."
 operator_=: "Must be an exact match (direct string comparison)."
 operator_>: "Must be greater than (numeric comparison)."
@@ -1094,7 +1094,7 @@ response:
  _No: "No"
  _Yes: "Yes"
  please_check_config: "Please check your configuration in order to ensure that the newly installed module will behave as you intend."
- release_notes: "<a href="%s"><span class="navicon link"></span>Release notes for %s.</a>"
+ release_notes: "<a href=\"%s\"><span class=\"navicon link\"></span>Release notes for %s.</a>"
 stages: !lazy
  Check whether banned: "Check whether banned"
  Deploy CAPTCHAs (blocked requests): "Deploy CAPTCHAs (blocked requests)"

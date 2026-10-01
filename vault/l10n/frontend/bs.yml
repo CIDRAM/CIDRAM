@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Bosnian language data for the front-end (last modified: 2026.09.18).
+# This file: Bosnian language data for the front-end (last modified: 2026.10.02).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -107,7 +107,7 @@ Glossary: !lazy
  Refs:
   Lažno pozitivan:
    Lažna pozitivnost i lažna negativnost - Wikipedia: "https://bs.wikipedia.org/wiki/La%C5%BEna_pozitivnost_i_la%C5%BEna_negativnost"
-   Issues · CIDRAM/CIDRAM: "https://github.com/CIDRAM/CIDRAM/issues"
+   Issues · CIDRAM/CIDRAM: *IssuesURL
 Name: !lazy
  AbuseIPDB module: "AbuseIPDB modul."
  BGPView module: "BGPView modul."
@@ -924,7 +924,7 @@ msg_template_2fa: |
  Vaš dvofaktorski kod za autentifikaciju za prijavu na CIDRAM front-end:</p>
  <h1>%s</h1>
  <p>Ovaj kod ističe za 10 minuta.</p></center>
-notice_new_major_version: "Obavještenje: %s je sada dostupan (trenutno koristite %s). Ispunjavaš minimalne PHP zahtjeve za ovu verziju. <em>Vidi: <a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#10-upgrading-from-previous-major-versions" hreflang="en"><span class="navicon link"></span>UPGRADING FROM PREVIOUS MAJOR VERSIONS</a>.</em>"
+notice_new_major_version: "Obavještenje: %s je sada dostupan (trenutno koristite %s). Ispunjavaš minimalne PHP zahtjeve za ovu verziju. <em>Vidi: <a href=\"{{Links.CIDRAM.Docs Base Path}}readme.en.md\#10-upgrading-from-previous-major-versions\" hreflang=\"en\"><span class=\"navicon link\"></span>UPGRADING FROM PREVIOUS MAJOR VERSIONS</a>.</em>"
 operator_<: "Mora biti manje od (numeričko poređenje)."
 operator_=: "Mora biti potpuno podudaranje (direktno poređenje stringova)."
 operator_>: "Mora biti veće od (numeričko poređenje)."
@@ -1074,7 +1074,7 @@ response:
  _No: "Ne"
  _Yes: "Da"
  please_check_config: "Provjerite svoju konfiguraciju kako biste bili sigurni da će se novoinstalirani modul ponašati kako želite."
- release_notes: "<a href="%s"><span class="navicon link"></span>Napomene o izdanju za %s.</a>"
+ release_notes: "<a href=\"%s\"><span class=\"navicon link\"></span>Napomene o izdanju za %s.</a>"
 stages: !lazy
  Check whether banned: "Provjerite da li je zabranjeno"
  Deploy CAPTCHAs (blocked requests): "Postavite CAPTCHA (blokirani zahtjevi)"

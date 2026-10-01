@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese language data for the front-end (last modified: 2026.09.21).
+# This file: Chinese language data for the front-end (last modified: 2026.10.02).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -146,7 +146,7 @@ Glossary: !lazy
    无类别域间路由 - 维基百科，自由的百科全书: "https://zh.wikipedia.org/wiki/%E6%97%A0%E7%B1%BB%E5%88%AB%E5%9F%9F%E9%97%B4%E8%B7%AF%E7%94%B1"
   False positive:
    偽陽性和偽陰性 - 维基百科，自由的百科全书: "https://zh.wikipedia.org/wiki/%E5%81%BD%E9%99%BD%E6%80%A7%E5%92%8C%E5%81%BD%E9%99%B0%E6%80%A7"
-   Issues · CIDRAM/CIDRAM: "https://github.com/CIDRAM/CIDRAM/issues"
+   Issues · CIDRAM/CIDRAM: *IssuesURL
 Name: !lazy
  AbuseIPDB module: {"zh-Hans": "AbuseIPDB模块。", "zh-Hant": "AbuseIPDB模組。"}
  BGPView module: {"zh-Hans": "BGPView模块。", "zh-Hant": "BGPView模組。"}
@@ -216,18 +216,42 @@ config: !lazy
  bgpview_blocked_ccs: &ConfigBlockedCCs {"zh-Hans": "由模块匹配时要阻止的国家列表（由其{{Links.ISO.3166}}两个字母的国家代码标识）。", "zh-Hant": "由模組匹配時要阻止的國家列表（由其{{Links.ISO.3166}}兩個字母的國家代碼標識）。"}
  bgpview_whitelisted_asns: &ConfigWhitelistedASNs {"zh-Hans": "由模块匹配时要列入白名单的ASN列表。", "zh-Hant": "由模組匹配時要列入白名單的ASN列表。"}
  bgpview_whitelisted_ccs: &ConfigWhitelistedCCs {"zh-Hans": "由模块匹配时要列入白名单的国家列表（由其{{Links.ISO.3166}}两个字母的国家代码标识）。", "zh-Hant": "由模組匹配時要列入白名單的國家列表（由其{{Links.ISO.3166}}兩個字母的國家代碼標識）。"}
- bobuam: {"zh-Hans": "“机器人或浏览器用户代理模块”的配置。 该模块检测不需要的机器人、旧浏览器，并执行一些健全性检查。", "zh-Hant": "『機器人或瀏覽器用戶代理模組』的配置。 該模組檢測不需要的機器人、舊瀏覽器，並執行一些健全性檢查。"}
- bobuam_chrome: {"zh-Hans": "“Chrome/Chromium”令牌的最低允许版本。 推荐的：“{{BOBUAM Token.Chrome}}”。", "zh-Hant": "『Chrome/Chromium』令牌的最低允許版本。 推薦的：『{{BOBUAM Token.Chrome}}』。"}
- bobuam_edge: {"zh-Hans": "“Edg/Edge”令牌的最低允许版本。 推荐的：“{{BOBUAM Token.Edge}}”。", "zh-Hant": "『Edg/Edge』令牌的最低允許版本。 推薦的：『{{BOBUAM Token.Edge}}』。"}
- bobuam_firefox: {"zh-Hans": "“Firefox”令牌的最低允许版本。 推荐的：“{{BOBUAM Token.Firefox}}”。", "zh-Hant": "『Firefox』令牌的最低允許版本。 推薦的：『{{BOBUAM Token.Firefox}}』。"}
- bobuam_firefox_esr: {"zh-Hans": "ESR版本的“Firefox”令牌的最低允许版本。 推荐的：“{{BOBUAM Token.Firefox ESR}}”。", "zh-Hant": "ESR版本的『Firefox』令牌的最低允許版本。 推薦的：『{{BOBUAM Token.Firefox ESR}}』。"}
- bobuam_opera: {"zh-Hans": "“OPR”令牌的最低允许版本。 推荐的：“{{BOBUAM Token.Opera}}”。", "zh-Hant": "『OPR』令牌的最低允許版本。 推薦的：『{{BOBUAM Token.Opera}}』。"}
- bobuam_reason_ambiguous: {"zh-Hans": "检测到模糊的用户代理字符串时显示的阻止原因。", "zh-Hant": "檢測到模糊的用戶代理字符串時顯示的阻止原因。"}
- bobuam_reason_bot: {"zh-Hans": "为被阻止的机器人显示的阻止原因。", "zh-Hant": "為被阻止的機器人顯示的阻止原因。"}
- bobuam_reason_browser: {"zh-Hans": "太旧的浏览器被阻止时显示的阻止原因。", "zh-Hant": "太舊的瀏覽器被阻止時顯示的阻止原因。"}
- bobuam_reason_malformed: {"zh-Hans": "检测到畸形的用户代理字符串时显示的阻止原因。", "zh-Hant": "檢測到畸形的用戶代理字符串時顯示的阻止原因。"}
- bobuam_reason_masquerade: {"zh-Hans": "当用户代理试图伪装成其他东西时显示的阻止原因。", "zh-Hant": "當用戶代理試圖偽裝成其他東西時顯示的阻止原因。"}
- bobuam_safari: {"zh-Hans": "Safari的“Version”令牌的最低允许版本。 推荐的：“{{BOBUAM Token.Safari}}”。", "zh-Hant": "Safari的『Version』令牌的最低允許版本。 推薦的：『{{BOBUAM Token.Safari}}』。"}
+ bobuam:
+  zh-Hans: "“机器人或浏览器用户代理模块”的配置。 该模块检测不需要的机器人、旧浏览器，并执行一些健全性检查。"
+  zh-Hant: "『機器人或瀏覽器用戶代理模組』的配置。 該模組檢測不需要的機器人、舊瀏覽器，並執行一些健全性檢查。"
+ bobuam_chrome:
+  zh-Hans: "“Chrome/Chromium”令牌的最低允许版本。 推荐的：“{{BOBUAM Token.Chrome}}”。"
+  zh-Hant: "『Chrome/Chromium』令牌的最低允許版本。 推薦的：『{{BOBUAM Token.Chrome}}』。"
+ bobuam_edge:
+  zh-Hans: "“Edg/Edge”令牌的最低允许版本。 推荐的：“{{BOBUAM Token.Edge}}”。"
+  zh-Hant: "『Edg/Edge』令牌的最低允許版本。 推薦的：『{{BOBUAM Token.Edge}}』。"
+ bobuam_firefox:
+  zh-Hans: "“Firefox”令牌的最低允许版本。 推荐的：“{{BOBUAM Token.Firefox}}”。"
+  zh-Hant: "『Firefox』令牌的最低允許版本。 推薦的：『{{BOBUAM Token.Firefox}}』。"
+ bobuam_firefox_esr:
+  zh-Hans: "ESR版本的“Firefox”令牌的最低允许版本。 推荐的：“{{BOBUAM Token.Firefox ESR}}”。"
+  zh-Hant: "ESR版本的『Firefox』令牌的最低允許版本。 推薦的：『{{BOBUAM Token.Firefox ESR}}』。"
+ bobuam_opera:
+  zh-Hans: "“OPR”令牌的最低允许版本。 推荐的：“{{BOBUAM Token.Opera}}”。"
+  zh-Hant: "『OPR』令牌的最低允許版本。 推薦的：『{{BOBUAM Token.Opera}}』。"
+ bobuam_reason_ambiguous:
+  zh-Hans: "检测到模糊的用户代理字符串时显示的阻止原因。"
+  zh-Hant: "檢測到模糊的用戶代理字符串時顯示的阻止原因。"
+ bobuam_reason_bot:
+  zh-Hans: "为被阻止的机器人显示的阻止原因。"
+  zh-Hant: "為被阻止的機器人顯示的阻止原因。"
+ bobuam_reason_browser:
+  zh-Hans: "太旧的浏览器被阻止时显示的阻止原因。"
+  zh-Hant: "太舊的瀏覽器被阻止時顯示的阻止原因。"
+ bobuam_reason_malformed:
+  zh-Hans: "检测到畸形的用户代理字符串时显示的阻止原因。"
+  zh-Hant: "檢測到畸形的用戶代理字符串時顯示的阻止原因。"
+ bobuam_reason_masquerade:
+  zh-Hans: "当用户代理试图伪装成其他东西时显示的阻止原因。"
+  zh-Hant: "當用戶代理試圖偽裝成其他東西時顯示的阻止原因。"
+ bobuam_safari:
+  zh-Hans: "Safari的“Version”令牌的最低允许版本。 推荐的：“{{BOBUAM Token.Safari}}”。"
+  zh-Hant: "Safari的『Version』令牌的最低允許版本。 推薦的：『{{BOBUAM Token.Safari}}』。"
  bobuam_token_difference_limit:
   zh-Hans: "当用户因浏览器版本过旧而被阻止时，为了向用户提供验证码，除了所有其他要求外，其浏览器的主版本号必须不低于此处指定的最低允许版本号。 例如，如果允许的最低版本设置为10，而此处指定的数字为2，则用户浏览器的主版本至少需要为8才能提供验证码。 如果设置为0，则此要求不适用。"
   zh-Hant: "當使用者因瀏覽器版本過舊而被阻止時，為了向使用者提供驗證碼，除了所有其他要求外，其瀏覽器的主版本號必須不低於此處指定的最低允許版本號。 例如，如果允許的最低版本設定為10，而此處指定的數字為2，則使用者瀏覽器的主版本至少需要為8才能提供驗證碼。 如果設定為0，則此要求不適用。"
@@ -256,8 +280,12 @@ config: !lazy
  components:
   zh-Hans: "CIDRAM使用的组件的启用和停用的配置。 通常由更新页面填充，但也可以从此处进行管理，以实现更好的控制以及更新页面无法识别的自定义组件。"
   zh-Hant: "CIDRAM使用的組件的啟用和停用的配置。 通常由更新頁面填充，但也可以從此處進行管理，以實現更好的控制以及更新頁面無法識別的自定義組件。"
- components_events: {"zh-Hans": "事件处理程序。 通常用于修改CIDRAM在内部的行为方式或提供附加功能。", "zh-Hant": "事件處理程序。 通常用於修改CIDRAM在內部的行為方式或提供附加功能。"}
- components_imports: {"zh-Hans": "进口。 通常用于向CIDRAM提供组件的配置信息。", "zh-Hant": "進口。 通常用於向CIDRAM提供組件的配置信息。"}
+ components_events:
+  zh-Hans: "事件处理程序。 通常用于修改CIDRAM在内部的行为方式或提供附加功能。"
+  zh-Hant: "事件處理程序。 通常用於修改CIDRAM在內部的行為方式或提供附加功能。"
+ components_imports:
+  zh-Hans: "进口。 通常用于向CIDRAM提供组件的配置信息。"
+  zh-Hant: "進口。 通常用於向CIDRAM提供組件的配置信息。"
  components_ipv4: {"zh-Hans": "IPv4签名文件。", "zh-Hant": "IPv4簽名檔案。"}
  components_ipv6: {"zh-Hans": "IPv6签名文件。", "zh-Hant": "IPv6簽名檔案。"}
  components_modules: {"zh-Hans": "模块。", "zh-Hant": "模組。"}
@@ -1173,8 +1201,8 @@ msg_template_2fa:
  <h1>%s</h1>
  <p>此代碼將在10分鐘後到期。</p></center>
 notice_new_major_version:
- zh-Hans: "通知：%s现在可用（您正在使用%s）。 您满足此版本的最低PHP要求。 <em>看：<a href="{{Links.CIDRAM.Docs Base Path}}readme.zh-Hans.md\#10-从以前的主要版本升级" hreflang="zh-Hans"><span class="navicon link"></span>从以前的主要版本升级</a>。</em>"
- zh-Hant: "通知：%s現在可用（您正在使用%s）。 您滿足此版本的最低PHP要求。 <em>看：<a href="{{Links.CIDRAM.Docs Base Path}}readme.zh-Hant.md\#10-從以前的主要版本升級" hreflang="zh-Hant"><span class="navicon link"></span>從以前的主要版本升級</a>。</em>"
+ zh-Hans: "通知：%s现在可用（您正在使用%s）。 您满足此版本的最低PHP要求。 <em>看：<a href="{{Links.CIDRAM.Docs Base Path}}readme.zh-Hans.md\#10-从以前的主要版本升级" hreflang="zh-Hans"><span class=\"navicon link\"></span>从以前的主要版本升级</a>。</em>"
+ zh-Hant: "通知：%s現在可用（您正在使用%s）。 您滿足此版本的最低PHP要求。 <em>看：<a href="{{Links.CIDRAM.Docs Base Path}}readme.zh-Hant.md\#10-從以前的主要版本升級" hreflang="zh-Hant"><span class=\"navicon link\"></span>從以前的主要版本升級</a>。</em>"
 operator_<: {"zh-Hans": "必须是小于（数值比较）。", "zh-Hant": "必須是小於（數值比較）。"}
 operator_=: {"zh-Hans": "必须是完全匹配（直接字符串比较）。", "zh-Hant": "必須是完全匹配（直接字符串比較）。"}
 operator_>: {"zh-Hans": "必须是大于（数值比较）。", "zh-Hant": "必須是大於（數值比較）。"}
@@ -1325,7 +1353,7 @@ response:
  _No: "不是"
  _Yes: "是"
  please_check_config: {"zh-Hans": "请检查您的配置，以确保新安装的模块按您的意愿运行。", "zh-Hant": "請檢查您的配置，以確保新安裝的模組按您的意願運行。"}
- release_notes: {"zh-Hans": "<a href="%s"><span class="navicon link"></span>%s的发行说明。</a>", "zh-Hant": "<a href="%s"><span class="navicon link"></span>%s的發行說明。</a>"}
+ release_notes: {"zh-Hans": "<a href=\"%s\"><span class=\"navicon link\"></span>%s的发行说明。</a>", "zh-Hant": "<a href=\"%s\"><span class=\"navicon link\"></span>%s的發行說明。</a>"}
 stages: !lazy
  Check whether banned: {"zh-Hans": "检查是否被禁止", "zh-Hant": "檢查是否被禁止"}
  Deploy CAPTCHAs (blocked requests): {"zh-Hans": "部署验证码（被阻止的请求）", "zh-Hant": "部署驗證碼（被阻止的請求）"}

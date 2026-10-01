@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Catalan language data for the front-end (last modified: 2026.09.18).
+# This file: Catalan language data for the front-end (last modified: 2026.10.02).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -109,7 +109,7 @@ Glossary: !lazy
    "Classless Inter-Domain Routing - Viquipèdia, l'enciclopèdia lliure": "https://ca.wikipedia.org/wiki/Classless_Inter-Domain_Routing"
   Fals positiu:
    "Falsos positius i falsos negatius - Viquipèdia, l'enciclopèdia lliure": "https://ca.wikipedia.org/wiki/Falsos_positius_i_falsos_negatius"
-   Issues · CIDRAM/CIDRAM: "https://github.com/CIDRAM/CIDRAM/issues"
+   Issues · CIDRAM/CIDRAM: *IssuesURL
 Name: !lazy
  AbuseIPDB module: "Mòdul AbuseIPDB."
  BGPView module: "Mòdul BGPView."
@@ -913,7 +913,7 @@ msg_template_2fa: |
  El vostre codi d'autenticació de dos factors per iniciar sessió al front-end de CIDRAM:</p>
  <h1>%s</h1>
  <p>Aquest codi caduca en 10 minuts.</p></center>
-notice_new_major_version: "Avís: %s ara està disponible (esteu utilitzant %s). Es compleix el requisit mínim de PHP d'aquesta versió. <em>Vegeu: <a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#10-upgrading-from-previous-major-versions" hreflang="en"><span class="navicon link"></span>UPGRADING FROM PREVIOUS MAJOR VERSIONS</a>.</em>"
+notice_new_major_version: "Avís: %s ara està disponible (esteu utilitzant %s). Es compleix el requisit mínim de PHP d'aquesta versió. <em>Vegeu: <a href=\"{{Links.CIDRAM.Docs Base Path}}readme.en.md\#10-upgrading-from-previous-major-versions\" hreflang=\"en\"><span class=\"navicon link\"></span>UPGRADING FROM PREVIOUS MAJOR VERSIONS</a>.</em>"
 operator_<: "Ha de ser inferior a (comparació numèrica)."
 operator_=: "Ha de ser una coincidència exacta (comparació directa de cadenes)."
 operator_>: "Ha de ser superior a (comparació numèrica)."
@@ -1062,7 +1062,7 @@ response:
  _No: "No"
  _Yes: "Sí"
  please_check_config: "Si us plau, comproveu la vostra configuració per assegurar-vos que el mòdul recentment instal·lat es comportarà com voleu."
- release_notes: "<a href="%s"><span class="navicon link"></span>Notes de la versió per a %s.</a>"
+ release_notes: "<a href=\"%s\"><span class=\"navicon link\"></span>Notes de la versió per a %s.</a>"
 stages: !lazy
  Check whether banned: "Comprova si està prohibit"
  Deploy CAPTCHAs (blocked requests): "Desplegueu CAPTCHA (sol·licituds bloquejades)"

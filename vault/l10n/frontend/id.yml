@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Indonesian language data for the front-end (last modified: 2026.09.18).
+# This file: Indonesian language data for the front-end (last modified: 2026.10.02).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -109,7 +109,7 @@ Glossary: !lazy
    Classless Inter-Domain Routing - Wikipedia bahasa Indonesia, ensiklopedia bebas: "https://id.wikipedia.org/wiki/Classless_Inter-Domain_Routing"
   Positif palsu:
    Positif palsu dan negatif palsu - Wikipedia bahasa Indonesia, ensiklopedia bebas: "https://id.wikipedia.org/wiki/Positif_palsu_dan_negatif_palsu"
-   Issues · CIDRAM/CIDRAM: "https://github.com/CIDRAM/CIDRAM/issues"
+   Issues · CIDRAM/CIDRAM: *IssuesURL
 Name: !lazy
  AbuseIPDB module: "Modul AbuseIPDB."
  BGPView module: "Modul BGPView."
@@ -909,7 +909,7 @@ msg_template_2fa: |
  Kode autentikasi dua-faktor Anda untuk masuk ke depan CIDRAM:</p>
  <h1>%s</h1>
  <p>Kode ini berakhir dalam 10 menit.</p></center>
-notice_new_major_version: "Perhatian: %s sekarang tersedia (Anda menggunakan %s). Anda memenuhi persyaratan PHP minimum versi ini. <em>Melihat: <a href="{{Links.CIDRAM.Docs Base Path}}readme.id.md\#10-memutakhirkan-dari-versi-utama-sebelumnya" hreflang="id-ID"><span class="navicon link"></span>MEMUTAKHIRKAN DARI VERSI UTAMA SEBELUMNYA</a>.</em>"
+notice_new_major_version: "Perhatian: %s sekarang tersedia (Anda menggunakan %s). Anda memenuhi persyaratan PHP minimum versi ini. <em>Melihat: <a href="{{Links.CIDRAM.Docs Base Path}}readme.id.md\#10-memutakhirkan-dari-versi-utama-sebelumnya" hreflang="id-ID"><span class=\"navicon link\"></span>MEMUTAKHIRKAN DARI VERSI UTAMA SEBELUMNYA</a>.</em>"
 operator_<: "Harus kurang dari (perbandingan numerik)."
 operator_=: "Harus sama persis (perbandingan string langsung)."
 operator_>: "Harus lebih besar dari (perbandingan numerik)."
@@ -1056,7 +1056,7 @@ response:
  _No: "Tidak"
  _Yes: "Ya"
  please_check_config: "Memeriksa konfigurasi Anda untuk memastikan bahwa modul yang baru diinstal akan berfungsi seperti yang Anda inginkan."
- release_notes: "<a href="%s"><span class="navicon link"></span>Catatan rilis untuk %s.</a>"
+ release_notes: "<a href=\"%s\"><span class=\"navicon link\"></span>Catatan rilis untuk %s.</a>"
 stages: !lazy
  Check whether banned: "Periksa apakah dilarang"
  Deploy CAPTCHAs (blocked requests): "Terapkan CAPTCHA (permintaan yang diblokir)"

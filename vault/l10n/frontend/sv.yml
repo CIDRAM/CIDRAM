@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Swedish language data for the front-end (last modified: 2026.09.18).
+# This file: Swedish language data for the front-end (last modified: 2026.10.02).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -108,7 +108,7 @@ Glossary: !lazy
   CIDR:
    Classless Inter-Domain Routing – Wikipedia: "https://sv.wikipedia.org/wiki/Classless_Inter-Domain_Routing"
   Falskt positiv:
-   Issues · CIDRAM/CIDRAM: "https://github.com/CIDRAM/CIDRAM/issues"
+   Issues · CIDRAM/CIDRAM: *IssuesURL
 Name: !lazy
  AbuseIPDB module: "AbuseIPDB modul."
  BGPView module: "BGPView modul."
@@ -919,7 +919,7 @@ msg_template_2fa: |
  Din 2FA-kod för att logga in i CIDRAM front-end:</p>
  <h1>%s</h1>
  <p>Denna kod löper ut om 10 minuter.</p></center>
-notice_new_major_version: "Notera: %s är nu tillgängligt (du använder %s). Du uppfyller denna versions minsta PHP-krav. <em>Se: <a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#10-upgrading-from-previous-major-versions" hreflang="en"><span class="navicon link"></span>UPGRADING FROM PREVIOUS MAJOR VERSIONS</a>.</em>"
+notice_new_major_version: "Notera: %s är nu tillgängligt (du använder %s). Du uppfyller denna versions minsta PHP-krav. <em>Se: <a href=\"{{Links.CIDRAM.Docs Base Path}}readme.en.md\#10-upgrading-from-previous-major-versions\" hreflang=\"en\"><span class=\"navicon link\"></span>UPGRADING FROM PREVIOUS MAJOR VERSIONS</a>.</em>"
 operator_<: "Måste vara mindre än (numerisk jämförelse)."
 operator_=: "Måste vara en exakt matchning (direkt strängjämförelse)."
 operator_>: "Måste vara större än (numerisk jämförelse)."
@@ -1068,7 +1068,7 @@ response:
  _No: "Nej"
  _Yes: "Ja"
  please_check_config: "Kontrollera din konfiguration för att säkerställa att den nyligen installerade modulen fungerar som du tänker."
- release_notes: "<a href="%s"><span class="navicon link"></span>Utgivningsinformation för %s.</a>"
+ release_notes: "<a href=\"%s\"><span class=\"navicon link\"></span>Utgivningsinformation för %s.</a>"
 stages: !lazy
  Check whether banned: "Kontrollera om det är förbjudet"
  Deploy CAPTCHAs (blocked requests): "Visa CAPTCHAs (blockerade förfrågningar)"

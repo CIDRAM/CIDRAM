@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Ukrainian language data for the front-end (last modified: 2026.09.18).
+# This file: Ukrainian language data for the front-end (last modified: 2026.10.02).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -109,7 +109,7 @@ Glossary: !lazy
    CIDR — Вікіпедія: "https://uk.wikipedia.org/wiki/CIDR"
   Хибнопозитивний:
    Хибно позитивні та хибно негативні — Вікіпедія: "https://uk.wikipedia.org/wiki/%D0%A5%D0%B8%D0%B1%D0%BD%D0%BE_%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%B8%D0%B2%D0%BD%D1%96_%D1%82%D0%B0_%D1%85%D0%B8%D0%B1%D0%BD%D0%BE_%D0%BD%D0%B5%D0%B3%D0%B0%D1%82%D0%B8%D0%B2%D0%BD%D1%96"
-   Issues · CIDRAM/CIDRAM: "https://github.com/CIDRAM/CIDRAM/issues"
+   Issues · CIDRAM/CIDRAM: *IssuesURL
 Name: !lazy
  AbuseIPDB module: "Модуль AbuseIPDB."
  BGPView module: "Модуль BGPView."
@@ -930,7 +930,7 @@ msg_template_2fa: |
  Ваш код двофакторної автентифікації для входу в фронтенд CIDRAM:</p>
  <h1>%s</h1>
  <p>Цей код діє через 10 хвилин.</p></center>
-notice_new_major_version: "Примітка: %s тепер доступний (ви використовуєте %s). Ви відповідаєте мінімальним вимогам PHP для цієї версії. <em>Побачити: <a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#10-upgrading-from-previous-major-versions" hreflang="en"><span class="navicon link"></span>UPGRADING FROM PREVIOUS MAJOR VERSIONS</a>.</em>"
+notice_new_major_version: "Примітка: %s тепер доступний (ви використовуєте %s). Ви відповідаєте мінімальним вимогам PHP для цієї версії. <em>Побачити: <a href=\"{{Links.CIDRAM.Docs Base Path}}readme.en.md\#10-upgrading-from-previous-major-versions\" hreflang=\"en\"><span class=\"navicon link\"></span>UPGRADING FROM PREVIOUS MAJOR VERSIONS</a>.</em>"
 operator_<: "Має бути менше ніж (числове порівняння)."
 operator_=: "Має бути точний збіг (пряме порівняння рядків)."
 operator_>: "Має бути більше ніж (числове порівняння)."
@@ -1080,7 +1080,7 @@ response:
  _No: "Ні"
  _Yes: "Так"
  please_check_config: "Будь ласка, перевірте свою конфігурацію, щоб переконатися, що нещодавно встановлений модуль працюватиме так, як ви бажаєте."
- release_notes: "<a href="%s"><span class="navicon link"></span>Примітки до випуску для %s.</a>"
+ release_notes: "<a href=\"%s\"><span class=\"navicon link\"></span>Примітки до випуску для %s.</a>"
 stages: !lazy
  Check whether banned: "Перевірте, чи забанено"
  Deploy CAPTCHAs (blocked requests): "Показати CAPTCHA (запити які заблоковані)"

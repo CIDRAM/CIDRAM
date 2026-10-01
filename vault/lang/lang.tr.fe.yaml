@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2026.09.04).
+# This file: Turkish language data for the front-end (last modified: 2026.09.24).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -31,7 +31,7 @@ Extended Description IPv4: &ExtDesCloud "İstenmeyen bulut servislerini ve insan
 Extended Description IPv4-Bogons: &ExtDesBogons "Bogon/martian CIDR'leri engeller."
 Extended Description IPv4-ISPs: &ExtDesISPs "Tehlikeli ve spam yapan ISS'leri engeller (çoklu hizmet ağları içerir; bunlar insan ve ayrıca insan dışı uç noktaları içerebilir)."
 Extended Description IPv4-Nonblocking: &ExtDesNonblocking "Profil oluşturma için kullanışlıdır, ancak kendi başına hiçbir şeyi engellemez."
-Extended Description IPv4-Other: &ExtDesOther "Proxy, VPN ve diğer çeşitli istenmeyen hizmetler için CIDR'leri engeller."
+Extended Description IPv4-Other: &ExtDesOther "Vekiller, VPN'ler, ve diğer çeşitli istenmeyen hizmetler için CIDR'leri engeller."
 Extended Description IPv6: *ExtDesCloud
 Extended Description IPv6-Bogons: *ExtDesBogons
 Extended Description IPv6-ISPs: *ExtDesISPs
@@ -57,12 +57,12 @@ Name IPv4: "IPv4 (bulut ve barındırma servisleri)."
 Name IPv4-Bogons: "IPv4 (bogon'leri)."
 Name IPv4-ISPs: "IPv4 (spam gönderen ISS'ler)."
 Name IPv4-Nonblocking: "IPv4 engellemeyen imzalar."
-Name IPv4-Other: "IPv4 (proxy, VPN'ler, vb)."
+Name IPv4-Other: "IPv4 (vekiller, VPN'ler, vb)."
 Name IPv6: "IPv6 (bulut ve barındırma servisleri)."
 Name IPv6-Bogons: "IPv6 (bogon'leri)."
 Name IPv6-ISPs: "IPv6 (spam gönderen ISS'ler)."
 Name IPv6-Nonblocking: "IPv6 engellemeyen imzalar."
-Name IPv6-Other: "IPv6 (proxy, VPN'ler, vb)."
+Name IPv6-Other: "IPv6 (vekiller, VPN'ler, vb)."
 Name KR_cidram.inc: "Güney Kore IPv4 engelleme listesi."
 Name Search engines blocker module: "Arama motorları engelleyici modülü."
 Name compat_bunnycdn.php: "BunnyCDN uyumluluk modülü."
@@ -83,7 +83,7 @@ config_PHPMailer_Enable2FA: "Bu yönerge, ön uç hesapları için 2FA kullanıl
 config_PHPMailer_EventLog: "PHPMailer ile ilgili tüm olayları günlüğe kaydetmek için bir dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
 config_PHPMailer_Host: "Giden e-posta için kullanılacak SMTP ana bilgisayarı."
 config_PHPMailer_Password: "SMTP ile e-posta gönderirken kullanılacak şifre."
-config_PHPMailer_Port: "Giden e-posta için kullanılacak bağlantı noktası numarası. Varsayılan = 587."
+config_PHPMailer_Port: "Giden e-posta için kullanılacak port numarası. Varsayılan = 587."
 config_PHPMailer_SMTPAuth: "Bu yönerge SMTP oturumlarının doğrulanıp onaylanmayacağını belirler (genellikle bunu yalnız bırakmalısın)."
 config_PHPMailer_SMTPSecure: "SMTP ile e-posta gönderirken kullanılacak protokol (TLS veya SSL)."
 config_PHPMailer_SkipAuthProcess: "<code>true</code> olduğunda, PHPMailer normalde SMTP yoluyla e-posta gönderirken oluşan kimlik doğrulama işlemini atlar. Bu işlemin atlanması, giden e-postaları MITM saldırılarına maruz bırakabilir. Bazı durumlarda olsa gerekli olabilir (ör., PHPMailer bir SMTP sunucusuna bağlanamadığında)."
@@ -183,7 +183,7 @@ config_recaptcha_signature_limit: *CaptchaSignatureLimit
 config_recaptcha_sitekey: *CaptchaDashboard
 config_recaptcha_usemode: *CaptchaUseMode
 config_signatures: "İmzalar, imza dosyaları, modüller, vb. için yapılandırma."
-config_signatures_block_attacks: "Saldırılar ve diğer anormal trafikle ilişkili CIDR'leri engelle? Örneğin, bağlantı noktası taramaları, bilgisayar korsanlığı, güvenlik açıklarını araştırma, vb. Bunu yaparken sorun yaşamıyorsanız, genelde bu daima doğruya (true) ayarlanmalıdır."
+config_signatures_block_attacks: "Saldırılar ve diğer anormal trafikle ilişkili CIDR'leri engelle? Örneğin, port taramaları, bilgisayar korsanlığı, güvenlik açıklarını araştırma, vb. Bunu yaparken sorun yaşamıyorsanız, genelde bu daima doğruya (true) ayarlanmalıdır."
 config_signatures_block_bogons: "Bogon/martian CIDR'leri engelleyin? Sitenize yerel ağınızdan, yerel hizmet bilgisayarından veya yerel ağınızdan bağlantılar bekliyorsanız, bu yönerge yanlış (false) değerine ayarlanmalıdır. Bu tür bağlantıları beklemiyorsanız, bu yönerge doğru (true) olmalıdır."
 config_signatures_block_cloud: "Webhosting/bulut hizmetlerine ait olarak tanımlanan CIDR'leri engelle? Sitenizden bir API hizmeti işletiyorsanız veya diğer web sitelerinin web sitenize bağlanmasını bekliyorsanız, bu yanlışa (false) ayarlanmalıdır. Aksi takdirde, bu yönergenin doğruya (true) ayarlanması gerekir."
 config_signatures_block_generic: "Çoğu zaman kara liste için tavsiye edilen CIDR'ler engelle? Bu, diğer daha belirgin imza kategorilerinin herhangi birinin parçası olarak işaretlenmeyen tüm imzaları kapsar."
@@ -543,7 +543,7 @@ msg_template_2fa: |
  <h1>%s</h1>
  <p>Bu kod 10 dakika içinde sona eriyor.</p></center>
 notice_click_here: "Daha fazla bilgi için buraya tıklayın."
-notice_new_major_version: "Bildirim: %s artık kullanılabilir (%s kullanıyorsunuz). Bu sürümün minimum PHP gereksinimini karşılıyorsunuz. <em>Görmek: <a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#10-upgrading-from-previous-major-versions" hreflang="en">UPGRADING FROM PREVIOUS MAJOR VERSIONS</a>.</em>"
+notice_new_major_version: "Bildirim: %s artık kullanılabilir (%s kullanıyorsunuz). Bu sürümün minimum PHP gereksinimini karşılıyorsunuz. <em>Görmek: <a href=\"{{Links.CIDRAM.Docs Base Path}}readme.en.md\#10-upgrading-from-previous-major-versions\" hreflang=\"en\">UPGRADING FROM PREVIOUS MAJOR VERSIONS</a>.</em>"
 previewer_days: "Gün"
 previewer_hours: "Saat"
 previewer_minutes: "Dakika"

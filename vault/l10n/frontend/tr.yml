@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Turkish language data for the front-end (last modified: 2026.09.05).
+# This file: Turkish language data for the front-end (last modified: 2026.09.24).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -44,7 +44,7 @@ Abuse category: !lazy
  Open proxy, open relay, or tor endpoint: "Açık vekil, açık geçiş, veya tor uç noktası."
  Phishing: "Kimlik avı web siteleri ve/veya e-posta."
  Ping of death: "Ölüm pingi (büyük boyutlu IP paketi)."
- Port scans: "Bağlantı noktası taramaları (açık bağlantı noktalarını ve savunmasız hizmetleri taramak)."
+ Port scans: "Port taramaları (açık portları ve zafiyet barındıran hizmetleri taramak)."
  SQL injection: "SQL enjeksiyonu."
  SSH abuse: "SSH'nin kötüye kullanılması."
  VPN IP: "VPN IP'si."
@@ -66,7 +66,7 @@ Extended Description: !lazy
  IPv4-Bogons: &ExtDesBogons "Bogon/martian CIDR'leri engeller."
  IPv4-ISPs: &ExtDesISPs "Tehlikeli ve spam yapan ISS'leri engeller (çoklu hizmet ağları içerir; bunlar insan ve ayrıca insan dışı uç noktaları içerebilir)."
  IPv4-Nonblocking: &ExtDesNonblocking "Profil oluşturma için kullanışlıdır, ancak kendi başına hiçbir şeyi engellemez."
- IPv4-Other: &ExtDesOther "Proxy, VPN ve diğer çeşitli istenmeyen hizmetler için CIDR'leri engeller."
+ IPv4-Other: &ExtDesOther "Vekiller, VPN'ler, ve diğer çeşitli istenmeyen hizmetler için CIDR'leri engeller."
  IPv6: *ExtDesCloud
  IPv6-Bogons: *ExtDesBogons
  IPv6-ISPs: *ExtDesISPs
@@ -96,12 +96,12 @@ Name: !lazy
  IPv4-Bogons: "IPv4 (bogon'leri)."
  IPv4-ISPs: "IPv4 (spam gönderen ISS'ler)."
  IPv4-Nonblocking: "IPv4 engellemeyen imzalar."
- IPv4-Other: "IPv4 (proxy, VPN'ler, vb)."
+ IPv4-Other: "IPv4 (vekiller, VPN'ler, vb)."
  IPv6: "IPv6 (bulut ve barındırma servisleri)."
  IPv6-Bogons: "IPv6 (bogon'leri)."
  IPv6-ISPs: "IPv6 (spam gönderen ISS'ler)."
  IPv6-Nonblocking: "IPv6 engellemeyen imzalar."
- IPv6-Other: "IPv6 (proxy, VPN'ler, vb)."
+ IPv6-Other: "IPv6 (vekiller, VPN'ler, vb)."
  Optional security extras module: "İsteğe bağlı güvenlik ekstrası modülü."
  Project Honeypot module: "Project Honeypot modülü."
  Protocol blocker module: "Protokol engelleyici modülü."
@@ -207,8 +207,8 @@ config: !lazy
  general_lang: "CIDRAM için varsayılan dili belirleyin."
  general_lang_override: "Mümkün olduğunda, HTTP_ACCEPT_LANGUAGE uyarınca yerelleştirilsin mi? Doğru/True = Evet [Varsayılan]; Yanlış/False = Hayır."
  general_numbers: "Numaraların görüntülenmesini nasıl tercih edersiniz? Size en uygun görünen örneği seçin."
- general_request_proxy: "Giden isteklerin bir proxy üzerinden gönderilmesini istiyorsanız, burada proxy'yi belirtin. Değilse, burayı boş bırakın."
- general_request_proxyauth: "Giden istekleri bir proxy üzerinden gönderiyorsanız ve bu proxy bir kullanıcı adı ve parola gerektiriyorsa, burada bu kullanıcı adını ve parolayı belirtin (örneğin, <code>user:pass</code>). Değilse, burayı boş bırakın."
+ general_request_proxy: "Giden isteklerin bir vekil sunucu üzerinden gönderilmesini istiyorsanız, Burada vekil sunucu belirtin. Değilse, burayı boş bırakın."
+ general_request_proxyauth: "Giden istekleri bir vekil sunucu üzerinden gönderiyorsanız ve bu vekil sunucu bir kullanıcı adı ve parola gerektiriyorsa, burada bu kullanıcı adını ve parolayı belirtin (örneğin, <code>user:pass</code>). Değilse, burayı boş bırakın."
  general_sensitive: "Hassas sayfalar olarak değerlendirilecek yolların listesi. Listelenen her yol, gerektiğinde yeniden oluşturulmuş URI'ye göre kontrol edilecektir. Eğik çizgi ile başlayan bir yol değişmez bilgi olarak ele alınır ve isteğin yol bileşeninden itibaren eşleştirilir. Alfasayısal olmayan bir karakterle başlayan ve aynı karakterle (veya aynı karakter artı isteğe bağlı bir "i" bayrağıyla) biten bir yol, düzenli ifade olarak ele alınacaktır. Diğer herhangi bir yol hazır bilgi olarak ele alınır ve URI'nin herhangi bir bölümünden eşleşebilir. Bir yolun hassas sayfa olarak görülmesi, bazı modüllerin davranışını etkileyebilir, ancak başka bir etkisi yoktur."
  general_silent_mode: "CIDRAM, "erişim reddedildi" sayfasını göstermek yerine, engellenen erişim girişimlerini sessizce yönlendirmeli mi? Yanıt evet ise, engellenen erişim girişimleri için yeniden yönlendirilecek konumu belirtin. Yanıt hayır ise, bu değişkeni boş bırakın."
  general_silent_mode_response_header_code: "Engellenen erişim denemelerini sessizce yeniden yönlendirirken CIDRAM hangi HTTP durum mesajını göndermelidir?"
@@ -256,7 +256,7 @@ config: !lazy
  phpmailer_event_log: "PHPMailer ile ilgili tüm olayları günlüğe kaydetmek için bir dosya. Dosya adı belirtin veya devre dışı bırakmak için boş bırakın."
  phpmailer_host: "Giden e-posta için kullanılacak SMTP ana bilgisayarı."
  phpmailer_password: "SMTP ile e-posta gönderirken kullanılacak şifre."
- phpmailer_port: "Giden e-posta için kullanılacak bağlantı noktası numarası. Varsayılan = 587."
+ phpmailer_port: "Giden e-posta için kullanılacak port numarası. Varsayılan = 587."
  phpmailer_set_from_address: "SMTP ile e-posta gönderirken kullanılacak gönderen adresi."
  phpmailer_set_from_name: "SMTP ile e-posta gönderirken kullanılacak gönderenin adı."
  phpmailer_skip_auth_process: "<code>true</code> olduğunda, PHPMailer normalde SMTP yoluyla e-posta gönderirken oluşan kimlik doğrulama işlemini atlar. Bu işlemin atlanması, giden e-postaları MITM saldırılarına maruz bırakabilir. Bazı durumlarda olsa gerekli olabilir (ör., PHPMailer bir SMTP sunucusuna bağlanamadığında)."
@@ -277,7 +277,7 @@ config: !lazy
  rate_limiting: "Hız sınırlaması için yapılandırma (genel kullanım için önerilmez)."
  rate_limiting_allowance_period: "Kullanımı izlemek için süre. Varsayılan = 0°0′0″."
  rate_limiting_exceptions: "İstisnalar (yani oran sınırlı olmaması gereken istekler). Yalnızca sınırlaması etkin olduğunda geçerlidir."
- rate_limiting_hint: "Diğer tüm CIDRAM özelliklerinde olduğu gibi, CIDRAM'ın hız sınırlama özelliği yalnızca CIDRAM'ın bağlı olduğu sayfalar ve kaynaklar için uygulanabilir. Bu nedenle, PHP dışı kaynaklar, bağlı PHP kaynakları tarafından açıkça sunulmadığı sürece, kapsam dahilinde olmayacaktır. Hız sınırlamasını uygulamak için bir sunucu modülü, cPanel, veya başka bir ağ aracı kullanabiliyorsanız, CIDRAM'ın hız sınırlama özelliği yerine bunları kullanmanız daha iyi olacaktır. Ayrıca, kararlı bir kullanıcı IP adresini döndürerek veya CIDRAM'ın henüz farkında olmadığı bir proxy veya VPN sağlayıcısına geçerek hız sınırlamasını kolayca aşabilir, ve hız sınırlaması gerçek son kullanıcılar için çok can sıkıcı olabilir. Bazen gerekli olabilir, ancak nadiren istenir."
+ rate_limiting_hint: "Diğer tüm CIDRAM özelliklerinde olduğu gibi, CIDRAM'ın hız sınırlama özelliği yalnızca CIDRAM'ın bağlı olduğu sayfalar ve kaynaklar için uygulanabilir. Bu nedenle, PHP dışı kaynaklar, bağlı PHP kaynakları tarafından açıkça sunulmadığı sürece, kapsam dahilinde olmayacaktır. Hız sınırlamasını uygulamak için bir sunucu modülü, cPanel, veya başka bir ağ aracı kullanabiliyorsanız, CIDRAM'ın hız sınırlama özelliği yerine bunları kullanmanız daha iyi olacaktır. Ayrıca, kararlı bir kullanıcı IP adresini döndürerek veya CIDRAM'ın henüz farkında olmadığı bir vekil veya VPN sağlayıcısına geçerek hız sınırlamasını kolayca aşabilir, ve hız sınırlaması gerçek son kullanıcılar için çok can sıkıcı olabilir. Bazen gerekli olabilir, ancak nadiren istenir."
  rate_limiting_max_bandwidth: "Gelecekteki talepleri sınırlayan orandan önce izin süresi içinde izin verilen maksimum bant genişliği miktarı. 0 değeri bu oran sınırlamasını devre dışı bırakır. Varsayılan = 0KB."
  rate_limiting_max_requests: "Gelecekteki istekleri sınırlayan orandan önce izin süresi içinde izin verilen maksimum istek sayısı. 0 değeri bu oran sınırlamasını devre dışı bırakır. Varsayılan = 0."
  rate_limiting_precision_ipv4: "IPv4 kullanımını izlemek için hassaslık. Değer, CIDR blok boyutunu yansıtır. En iyi hassasiyet için 32'ye ayarlayın. Varsayılan = 32."
@@ -433,7 +433,7 @@ hints_sensitive_pages: "Not: "Hassas sayfa"nın nelerden oluştuğu {{Links.Conf
 hints_shorthand:
  0.: "Web sitenize LAN veya localhost üzerinden erişim gerekiyorsa, bunu engellemeyin. Aksi takdirde, bunu engelleyebilirsiniz."
  1.: "Varsayılan imza dosyalarının hiçbiri bunu kullanmaz, ancak yine de bazı kullanıcılar için yararlı olabileceği ihtimaline karşı desteklenir."
- 2.: "Kullanıcıların proxy'ler aracılığıyla web sitenize erişmesine ihtiyacınız varsa, bunu engellemeyin. Aksi takdirde, bunu engelleyebilirsiniz."
+ 2.: "Kullanıcıların vekiller aracılığıyla web sitenize erişmesine ihtiyacınız varsa, bunu engellemeyin. Aksi takdirde, bunu engelleyebilirsiniz."
  3.: "İmzalarda doğrudan kullanım desteklenmez, ancak belirli durumlarda başka yollarla çağrılabilir."
  4.: "Kısa sözcüklerin hiç kullanılmadığı veya CIDRAM tarafından tanınmadığı durumları ifade eder."
  İmza başına bir tane.: "Bir imza, birden çok profili çağırabilir, ancak yalnızca bir kısa sözcüğü kullanabilir. Birden fazla kısa sözcüğün uygun olması mümkündür, ancak yalnızca biri kullanılabildiğinden, her zaman yalnızca en uygun olanı kullanmayı amaçlıyoruz."
@@ -841,7 +841,7 @@ msg_template_2fa: |
  CIDRAM ön ucuna giriş yapmak için 2FA kodunuz:</p>
  <h1>%s</h1>
  <p>Bu kod 10 dakika içinde sona eriyor.</p></center>
-notice_new_major_version: "Bildirim: %s artık kullanılabilir (%s kullanıyorsunuz). Bu sürümün minimum PHP gereksinimini karşılıyorsunuz. <em>Görmek: <a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#10-upgrading-from-previous-major-versions" hreflang="en"><span class="navicon link"></span>UPGRADING FROM PREVIOUS MAJOR VERSIONS</a>.</em>"
+notice_new_major_version: "Bildirim: %s artık kullanılabilir (%s kullanıyorsunuz). Bu sürümün minimum PHP gereksinimini karşılıyorsunuz. <em>Görmek: <a href=\"{{Links.CIDRAM.Docs Base Path}}readme.en.md\#10-upgrading-from-previous-major-versions\" hreflang=\"en\"><span class=\"navicon link\"></span>UPGRADING FROM PREVIOUS MAJOR VERSIONS</a>.</em>"
 operator_<: "Daha az olmalı (sayısal karşılaştırma)."
 operator_=: "Tam bir eşleşme olmalı (direkt dizi karşılaştırması)."
 operator_>: "Daha büyük olmalı (sayısal karşılaştırma)."
@@ -970,7 +970,7 @@ response:
  _No: "Hayır"
  _Yes: "Evet"
  please_check_config: "Yeni kurulan modülün istediğiniz gibi davrandığından emin olmak için lütfen yapılandırmanızı kontrol edin."
- release_notes: "<a href="%s"><span class="navicon link"></span>%s için sürüm notları.</a>"
+ release_notes: "<a href=\"%s\"><span class=\"navicon link\"></span>%s için sürüm notları.</a>"
 stages: !lazy
  Deploy CAPTCHAs (blocked requests): "CAPTCHA'ları göster (engellenen istekler)"
  Deploy CAPTCHAs (non-blocked requests): "CAPTCHA'ları göster (engellenmeyen istekler)"

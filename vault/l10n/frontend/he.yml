@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hebrew language data for the front-end (last modified: 2026.09.05).
+# This file: Hebrew language data for the front-end (last modified: 2026.09.24).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -259,7 +259,7 @@ config: !lazy
  phpmailer_port: "מספר היציאה לשימוש עבור אימייל יוצא. סטנדרטי = 587."
  phpmailer_set_from_address: "כתובת השולח בעת שליחת אימייל באמצעות SMTP."
  phpmailer_set_from_name: "שם השולח בעת שליחת אימייל באמצעות SMTP."
- phpmailer_skip_auth_process: "הגדרת זה ל-<code dir="ltr">true</code> אומרת ל-PHPMailer לא לבצע אימות בעת שליחת אימייל באמצעות SMTP. יש להימנע מכך, כי אי אימות עלול לחשוף דואר יוצא למתקפות MITM, אך עשוי להיות נחוץ במקרים שבהם פעולה זו תמנע מ-PHPMailer להתחבר לשרת SMTP."
+ phpmailer_skip_auth_process: "הגדרת זה ל-<code dir=\"ltr\">true</code> אומרת ל-PHPMailer לא לבצע אימות בעת שליחת אימייל באמצעות SMTP. יש להימנע מכך, כי אי אימות עלול לחשוף דואר יוצא למתקפות MITM, אך עשוי להיות נחוץ במקרים שבהם פעולה זו תמנע מ-PHPMailer להתחבר לשרת SMTP."
  phpmailer_smtp_auth: "קובע אם לאמת הפעלות SMTP (בדרך כלל צריך להשאיר לבד)."
  phpmailer_smtp_secure: "הפרוטוקול לשימוש בעת שליחת אימייל באמצעות SMTP (TLS או SSL)."
  phpmailer_username: "שם המשתמש לשימוש בעת שליחת אימייל באמצעות SMTP."
@@ -815,8 +815,8 @@ link:
 macro: !lazy
  Description:
   activate_modules: &MayImpactPerformance "לא מומלץ בדרך כלל, מכיוון שסביר להניח שיש כאלה שאתה לא צריך. התקנה והפעלה של רכיבים כאשר אין בהם צורך עלולים להשפיע לרעה על הביצועים."
-  install_l10n_core: &RecommendKeepingCore "כאשר הוראת התצורה <code dir="ltr">lang_override</code> מופעלת, אם הדפדפן של משתמש מציין העדפת שפה מסוימת, כל עוד נתוני ליבה L10N עבור שפה זו מותקנים, CIDRAM מסוגל להציג את דף "הגישה נדחתה" בשפה שצוינה. בהתאם לכך, מומלץ להשאיר את כל נתוני הליבה של L10N מותקנים."
-  install_l10n_fe: &RecommendFEOnlyNeeded "ניתן לציין את השפה המועדפת עליך באמצעות הוראת התצורה <code dir="ltr">lang</code>. לאחר שהדבר נעשה, לא סביר שתזדקק לנתוני L10N קדמיים מלבד אלה עבור השפה המועדפת עליך, ואולי תרצה להסיר אותם למען שחרור שולי של שטח דיסק פנוי. עם זאת, בין אם תבחר להסיר אותו או לשמור אותו, כך או כך, לא אמור לגרום לבעיות."
+  install_l10n_core: &RecommendKeepingCore "כאשר הוראת התצורה <code dir=\"ltr\">lang_override</code> מופעלת, אם הדפדפן של משתמש מציין העדפת שפה מסוימת, כל עוד נתוני ליבה L10N עבור שפה זו מותקנים, CIDRAM מסוגל להציג את דף "הגישה נדחתה" בשפה שצוינה. בהתאם לכך, מומלץ להשאיר את כל נתוני הליבה של L10N מותקנים."
+  install_l10n_fe: &RecommendFEOnlyNeeded "ניתן לציין את השפה המועדפת עליך באמצעות הוראת התצורה <code dir=\"ltr\">lang</code>. לאחר שהדבר נעשה, לא סביר שתזדקק לנתוני L10N קדמיים מלבד אלה עבור השפה המועדפת עליך, ואולי תרצה להסיר אותם למען שחרור שולי של שטח דיסק פנוי. עם זאת, בין אם תבחר להסיר אותו או לשמור אותו, כך או כך, לא אמור לגרום לבעיות."
   install_modules: *MayImpactPerformance
   uninstall_l10n_core: *RecommendKeepingCore
   uninstall_l10n_fe: *RecommendFEOnlyNeeded
@@ -840,7 +840,7 @@ msg_template_2fa: |
  קוד האימות הדו-גורמי שלך לכניסה להקצה הקדמי ה-CIDRAM:</p>
  <h1>%s</h1>
  <p>קוד זה יפוג בעוד 10 דקות.</p></center>
-notice_new_major_version: "הערה: %s זמין כעת (אתה משתמש ב-%s). אתה עומד בדרישת ה-PHP המינימלית של גרסה זו. <em>לראות: <a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#10-upgrading-from-previous-major-versions" hreflang="en"><span class="navicon link"></span>UPGRADING FROM PREVIOUS MAJOR VERSIONS</a>.</em>"
+notice_new_major_version: "הערה: %s זמין כעת (אתה משתמש ב-%s). אתה עומד בדרישת ה-PHP המינימלית של גרסה זו. <em>לראות: <a href=\"{{Links.CIDRAM.Docs Base Path}}readme.en.md\#10-upgrading-from-previous-major-versions\" hreflang=\"en\"><span class=\"navicon link\"></span>UPGRADING FROM PREVIOUS MAJOR VERSIONS</a>.</em>"
 operator_<: "חייב להיות פחות מ (השוואה מספרית)."
 operator_=: "חייבת להיות התאמה מדויקת (השוואת מיתרים ישירה)."
 operator_>: "חייב להיות גדול מ (השוואה מספרית)."
@@ -969,7 +969,7 @@ response:
  _No: "לא"
  _Yes: "כן"
  please_check_config: "אנא בדוק את התצורה שלך כדי להבטיח שהמודול שהותקן לאחרונה יתנהג כפי שאתה מתכוון."
- release_notes: "<a href="%s"><span class="navicon link"></span>הערות שחרור עבור %s.</a>"
+ release_notes: "<a href=\"%s\"><span class=\"navicon link\"></span>הערות שחרור עבור %s.</a>"
 stages: !lazy
  Deploy CAPTCHAs (blocked requests): "פרוס CAPTCHA (בקשות חסומות)"
  Deploy CAPTCHAs (non-blocked requests): "פרוס CAPTCHA (בקשות לא חסומות)"

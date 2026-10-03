@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Bot user agents module (last modified: 2026.09.23).
+ * This file: Bot user agents module (last modified: 2026.10.03).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -328,7 +328,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         'n(?:etestate|eural(?:seo|text)|injaai|odezero|otebooklm|ovaact|ytheon)|' .
         'o(?:mgili|pen(?:agi|bot|interpreter|pi|router|textai)|rbbot)|' .
         'p(?:angubot|anscient|araphraser|er[fp]lexity|hind|hxbot|ipl|ixmo|lease_?block|oseidon|roximic|ublicwebcrawler|ythonai)|' .
-        'q(?:opywriter|ualifiedbot|uillbot)|' .
+        'q(?:opywriter|ualifiedbot|uillbot|wen(?:bot|\.alibaba))|' .
         'r(?:ag(?:[-_]|agent|azure|chat|data|is|pipe|search|with)|esearch.?crawler)|' .
         's(?:aplingai|bintuition|crap[ey]|idetrade|implifiedai|p(?:hi|y)der|pinbot|tability|tablediffusion|tealth|torm-?crawler|ummalybot|urferai)|' .
         't(?:erracotta|est[-_]?(?:bot|phase)|heknowledgeai|hesis-?research-?bot|hink(?:bot|chaos)|impi|iny-?(?:bot|test)|rafilatura|urnitin|winagent)|' .
@@ -341,7 +341,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         $UANoSpace
     ), 'Scraper UA', '', $UnmarkCaptcha)) {
         $this->CIDRAM['Tracking options override'] = 'extended';
-    } // 2023.11.17 mod 2026.09.22
+    } // 2023.11.17 mod 2026.10.03
 
     /**
      * @link https://github.com/CIDRAM/CIDRAM/issues/651

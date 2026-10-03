@@ -8,7 +8,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Optional security extras module (last modified: 2026.09.30).
+ * This file: Optional security extras module (last modified: 2026.10.03).
  *
  * False positive risk (an approximate, rough estimate only): « [ ]Low [x]Medium [ ]High »
  */
@@ -165,6 +165,8 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $this->trigger(\preg_match('~(?:^|[/?])_profiler/latest(?:$|[/?])~i', $LCNrURI), $Exploit = 'CVE-2024-50340/CVE-2026-45072') || // 2026.08.15
             $this->trigger(\preg_match('~(?:^|[/?])actuator/jolokia(?:$|[/?])~', $LCNrURI), $Exploit = 'CVE-2018-1000130') || // 2026.08.15
             $this->trigger(\preg_match('~(?:^|[/?])api/v1/(?:auto_)?login(?:$|[/?])~i', $LCNrURI), $Exploit = 'CVE-2026-33017/CVE-2026-9198') || // 2026.08.06
+            $this->trigger(\preg_match('~(?:^|[/?])api/v1/build_public_tmp/00000000-0000-0000-0000-000000000000/flow(?:$|[/?])~', $LCNrURI), $Exploit = 'CVE-2026-33017') || // 2026.10.03
+            $this->trigger(\preg_match('~(?:^|[/?])api/v1/node-load-method/customMCP(?:$|[/?])~i', $LCNrURI), $Exploit = 'CVE-2025-59528/CVE-2025-71336/CVE-2025-8943') || // 2026.10.03
             $this->trigger(\preg_match('~(?:^|[/?])assets/images/accesson\.php[57]?(?:$|[/?])~', $LCNrURI), $Exploit = 'CVE-2025-54068') || // 2026.03.11
             $this->trigger(\preg_match('~(?:^|[/?])cgi-bin/php5(?:$|[/?])~i', $LCNrURI), $Exploit = 'CVE-2012-1823') || // 2026.03.19
             $this->trigger(\preg_match('~(?:^|[/?])civicrm/packages/openflashchart/php-ofc-library/ofc_upload_image\.php[57]?(?:$|[/?])~', $LCNrURI), $Exploit = 'CIVI-SA-2013-001') || // 2025.07.05 mod 2025.08.07
@@ -179,6 +181,8 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $this->trigger(\preg_match('~(?:^|[/?])library/openflashchart/php-ofc-library/ofc_upload_image\.php[57]?(?:$|[/?])~', $LCNrURI), $Exploit = 'ZSL-2013-5126') || // 2025.07.10 mod 2025.08.07
             $this->trigger(\preg_match('~(?:^|[/?])modules/mod_footer/tmpl$~i', $LCNrURI), $Exploit = 'CVE-2021-26035') || // 2026.03.20
             $this->trigger(\preg_match('~(?:^|[/?])modules/mod_simplefileuploadv1\.3/elements(?:$|[/?])~', $LCNrURI), $Exploit = 'CVE-2011-5148') || // 2025.07.20 mod 2025.08.07
+            $this->trigger(\preg_match('~(?:^|[/?])plugins/alertlist/(?:../)+proc/self/environ(?:$|[/?])~', $LCNrURI), $Exploit = 'CVE-2021-43798') || // 2026.10.03
+            $this->trigger(\preg_match('~(?:^|[/?])refs\?service=git-upload-pack(?:$|[/?])~', $LCNrURI), $Exploit = 'CVE-2026-28744/CVE-2026-58416') || // 2026.10.03
             $this->trigger(\preg_match('~(?:^|[/?])tinymce/plugins/filemanager/dialog\.php[57]?(?:$|[/?])~', $LCNrURI), $Exploit = 'TinyMCE Filemanager') || // 2025.07.07 mod 2025.08.07
             $this->trigger(\preg_match('~(?:^|[/?])trace\.axd(?:$|[/?])~', $LCNrURI), $Exploit = 'CVE-2025-54459') || // 2026.08.15
             $this->trigger(\preg_match('~(?:^|[/?])util/php/eval-stdin\.php[57]?(?:$|[/?])~', $LCNrURI), $Exploit = 'CVE-2017-9841') || // 2025.07.16 mod 2025.08.07
@@ -186,6 +190,7 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             $this->trigger(\preg_match('~(?:^|[/?])virtualjdbc(?:$|[/?])~', $LCNrURI), $Exploit = 'CVE-2019-0344') || // 2026.08.15
             $this->trigger(\preg_match('~(?:^|[/?])xmlpserver/reporttemplateservice(?:$|[/?])~', $LCNrURI), $Exploit = 'CVE-2019-2616') || // 2026.08.15
             (\strpos($this->BlockInfo['WhyReason'], 'CVE-2026-4020') === false && $this->trigger(\preg_match('~(?:^|[/?])wp-json/gravitysmtp/v1/tests/mock-data\?page=gravitysmtp-settings~i', $LCNrURI), $Exploit = 'CVE-2026-4020')) || // 2026.08.05 mod 2026.08.06
+            $this->trigger(\preg_match('~\?\.svg\?\.wasm\?init|@fs/app/\.env|\.(?:env|production)\?import&raw\?\?~', $LCNrURI), $Exploit = 'CVE-2025-30208/CVE-2025-31125/CVE-2025-31486') || // 2026.10.03
             $this->trigger(\preg_match('~\?s=../%5c|invokefunction&function=call_user_func_array&|vars%5b0%5d=md5|vars%5b1%5d%5b%5d=hellothinkphp|&vars\[1\]\[\]=\.env|/thinkapp/invokefunction|index\.php\?s=/index/\think~', $LCNrURI), $Exploit = 'CVE-2018-20062') || // 2025.07.01 mod 2026.09.22
             $this->trigger(\preg_match('~function=call_user_func_array|vars(?:\[0\]=system|\[1\]\[\]=whoami)~', $LCNrURI), $Exploit = 'CVE-2019-9082') || // 2026.09.22
             $this->trigger(\preg_match('~hello\.world\?(?:%ad|\xAD)d\+allow_url_include(?:%3d|=)1\+(?:%ad|\xAD)d~', $LCNrURI), $Exploit = 'CVE-2024-4577') || // 2025.07.17
@@ -676,14 +681,14 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
             if ($this->trigger(\preg_match(
                 '~(?:^|[/?])(?:' .
                 'admin/controller/extension|' .
-                'wp-admin/(?:css/colors/(?:blue|ectoplasm|midnight)|maint|network|(?:options-)?privacy\.php|user)|' .
+                'wp-admin/(?:css/colors/(?:blue|ectoplasm|midnight|modern|sunrise)|maint|network|(?:options-)?privacy\.php|user)|' .
                 'wp-includes/(?:assets|block-bindings|id3|js/tinymce/themes|l10n|php-compat|pomo|sodium_compat)|' .
                 'wp-signup\.php' .
                 ')(?:$|[/?])~',
                 $LCNrURI
             ), 'Suspected hack attempt')) {
                 $this->Reporter->report([15, 19], ['Suspected hack attempt detected.'], $this->BlockInfo['IPAddr']);
-            } // 2026.08.05 mod 2026.09.30
+            } // 2026.08.05 mod 2026.10.03
         }
 
         /** Probing for exposed GitHub workflows file. */
@@ -710,6 +715,11 @@ $this->CIDRAM['ModuleResCache'][$Module] = function () {
         if ($this->trigger(\preg_match('~(?:^|[/?])(?:localhost|server)\.key(?:$|[/?])~', $LCNrURI), 'Probing for exposed SSL cryptographic key file')) {
             $this->Reporter->report([15], ['Caught probing for exposed SSL cryptographic key file.'], $this->BlockInfo['IPAddr']);
         } // 2026.08.15
+
+        /** LFI attack detected. */
+        if ($this->trigger(\preg_match('~read\?allowoutsideworkspace=true&path=~', $LCNrURI), 'LFI attack detected')) {
+            $this->Reporter->report([15, 21], ['LFI attack detected.'], $this->BlockInfo['IPAddr']);
+        } // 2026.10.03
     }
 
     /**

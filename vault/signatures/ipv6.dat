@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v4/vault/signatures/ipv6.dat
 
-# Version: 2026.272.0
-# Last modified: 2026.09.30
+# Version: 2026.281.0
+# Last modified: 2026.10.09
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -53,14 +53,14 @@ Tag: Sharktech
 
 # ASN 35916 ("MULTACOM CORPORATION").
 # Dedicated server farm/leaser and hybrid cloud provider.
-# Stop Forum Spam (SFS) listings: 221.
-# Updated: 2026.05.18
+# Stop Forum Spam (SFS) listings: 9.
+# Updated: 2026.10.09
 
-2602:fff6:1::/48 Deny Cloud
-2607:9a00::/32 Deny Cloud
-2607:f130::/32 Deny Cloud
 2a0d:6900::/29 Deny Cloud
 2a0d:d480::/29 Deny Cloud
+Origin: RU
+2607:9a00::/32 Deny Cloud
+2607:f130::/32 Deny Cloud
 Origin: US
 Profile: Dedicated;Webhosting
 Tag: Multacom Corp
@@ -114,11 +114,12 @@ Tag: LayerHost
 # I don't anticipate ever removing these listings. Have been blocking them due
 # to all kinds of unwanted traffic of all descriptions from their network since
 # many years before CIDRAM existed.
-# Stop Forum Spam (SFS) listings: 807.
-# Updated: 2025.11.10
+# Stop Forum Spam (SFS) listings: 21.
+# Updated: 2026.10.09
 
 2602:f992:f7::/48 Deny Cloud
-2605:7280:7::/48 Deny Cloud
+2605:7280:6::/47 Deny Cloud
+2605:7280:8::/48 Deny Cloud
 Origin: US
 Profile: Dedicated;Infrastructure/Transit;Webhosting
 Tag: PEG TECH INC
@@ -5039,7 +5040,7 @@ Origin: US
 Origin: UY
 2001:43ff:d000::/48 Run bypasses.php
 Origin: ZA
-Profile: Content Delivery Network;Infrastructure/Transit;Third-party sourced;Webhosting
+Profile: AI;Content Delivery Network;Infrastructure/Transit;Third-party sourced;Webhosting
 Tag: Amazon.com, Inc
 
 
@@ -5833,37 +5834,38 @@ Tag: UAB Cherry Servers
 # ASNs 26383, 29873, 46606, 49392, 51659, 394695, 398343 ("The
 # Endurance International Group, Inc").
 # See also: onlinetoolsexpert.com/full-list-of-eig-web-hosting-companies/
-# Updated: 2026.02.02
+# Updated: 2026.10.03
 
+2605:e440::/44 Deny Cloud
+2605:e440:10::/48 Deny Cloud
+2605:e440:12::/47 Deny Cloud
+2605:e440:14::/46 Deny Cloud
+2605:e440:19::/48 Deny Cloud
+2605:e440:20::/47 Deny Cloud
+2605:e440:22::/48 Deny Cloud
+2605:e440:24::/48 Deny Cloud
+2605:e440:26::/48 Deny Cloud
+2605:e440:29::/48 Deny Cloud
+2605:e440:30::/48 Deny Cloud
+2605:e440:35::/48 Deny Cloud
+2605:e440:38::/46 Deny Cloud
+2605:e440:3c::/48 Deny Cloud
+2605:e440:3e::/47 Deny Cloud
+2605:e440:41::/48 Deny Cloud
+2605:e440:42::/48 Deny Cloud
+2605:e440:46::/47 Deny Cloud
+2605:e440:48::/48 Deny Cloud
+2605:e440:50::/47 Deny Cloud
+2605:e440:52::/48 Deny Cloud
+2605:f300:ffff::/48 Deny Cloud
 2a00:b700:1::/48 Deny Cloud
 2a00:b700:2::/47 Deny Cloud
 2a00:b700:4::/47 Deny Cloud
 2a00:b700:f::/48 Deny Cloud
 2a00:b706::/32 Deny Cloud
-Origin: RU
 2a0e:91c0::/29 Deny Cloud
 2a11:a540::/29 Deny Cloud
 2a12:ad80::/29 Deny Cloud
-Origin: SC
-2605:e440::/45 Deny Cloud
-2605:e440:8::/46 Deny Cloud
-2605:e440:c::/48 Deny Cloud
-2605:e440:10::/46 Deny Cloud
-2605:e440:14::/47 Deny Cloud
-2605:e440:16::/48 Deny Cloud
-2605:e440:18::/47 Deny Cloud
-2605:e440:21::/48 Deny Cloud
-2605:e440:24::/48 Deny Cloud
-2605:e440:26::/47 Deny Cloud
-2605:e440:28::/47 Deny Cloud
-2605:e440:30::/48 Deny Cloud
-2605:e440:33::/48 Deny Cloud
-2605:e440:34::/46 Deny Cloud
-2605:e440:38::/46 Deny Cloud
-2605:e440:3c::/48 Deny Cloud
-2605:e440:40::/45 Deny Cloud
-2605:e440:48::/48 Deny Cloud
-2605:f300:ffff::/48 Deny Cloud
 Origin: US
 Profile: Frequent changes;Tor endpoints here;Webhosting
 Tag: EIG
@@ -7049,6 +7051,15 @@ Profile: Infrastructure/Transit
 Tag: CloudSol
 
 
+# ASN 132839 ("POWER LINE DATACENTER").
+# Updated: 2026.10.09
+
+2401:f940::/32 Deny Cloud
+Origin: HK
+Profile: Infrastructure/Transit;Webhosting
+Tag: POWER LINE (HK) CO
+
+
 # ASNs 133073, 133115, 152179 ("TELEGLOBAL COMMUNICATION SERVICES LIMITED",
 # "HK Kwaifong Group Limited", "GLOBAL COMMUNICATION NETWORK LIMITED").
 # Stop Forum Spam (SFS) listings: 3 (AS133073).
@@ -7454,8 +7465,8 @@ Tag: PLUTEX GmbH
 # Brute-force, WordPress/XMLRPC, SMTP, env, and webapp attacks, port scans,
 # hacking, probing for vulnerabilities, scraping for email addresses, and spam
 # detected from here.
-# Stop Forum Spam (SFS) listings: 2,943 (AS54252), 17,602 (AS64267), 5,079 (AS397630).
-# Updated: 2018.09.07 / Checked: 2025.07.17
+# Stop Forum Spam (SFS) listings: 19 (AS54252), 909 (AS64267), 457 (AS397630).
+# Updated: 2018.09.07 / Checked: 2026.10.09
 
 2602:fefa::/32 Deny Cloud
 Origin: US
@@ -14361,8 +14372,8 @@ Tag: uPress Inc
 
 # ASN 202914 ("Adeo Datacenter ApS").
 # Brute-force attacks and spam detected from here.
-# Stop Forum Spam (SFS) listings: 75.
-# Updated: 2023.08.08 / Checked: 2025.07.17
+# Stop Forum Spam (SFS) listings: 1.
+# Updated: 2023.08.08 / Checked: 2026.10.09
 
 2a0d:3e80::/29 Deny Cloud
 Origin: DK
@@ -17746,8 +17757,8 @@ Tag: Hyperhost
 
 # ASN 984 ("OCTOPUS WEB SOLUTION INC").
 # Brute-force, SSH attacks, port scans, hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 666.
-# Updated: 2025.11.05
+# Stop Forum Spam (SFS) listings: 3.
+# Updated: 2026.10.09
 
 2606:fb40:101::/48 Deny Cloud
 2606:fb40:102::/48 Deny Cloud
@@ -17757,11 +17768,12 @@ Tag: Hyperhost
 2606:fb40:501::/48 Deny Cloud
 2606:fb40:601::/48 Deny Cloud
 2606:fb40:701::/48 Deny Cloud
-2606:fb40:702::/48 Deny Cloud
+2606:fb40:702::/47 Deny Cloud
 2606:fb40:801::/48 Deny Cloud
 2606:fb40:802::/47 Deny Cloud
 2606:fb40:805::/48 Deny Cloud
 2606:fb40:901::/48 Deny Cloud
+2606:fb40:a01::/48 Deny Cloud
 2606:fb40:1201::/48 Deny Cloud
 2606:fb40:1301::/48 Deny Cloud
 2606:fb40:1302::/48 Deny Cloud
@@ -17901,7 +17913,7 @@ Tag: Optibounce, LLC
 
 # ASN 328608 ("Africa on Cloud").
 # DDoS, webapp attacks, port scans, scraping, and spam detected from here.
-# Updated: 2025.01.16 / Checked: 2026.05.18
+# Updated: 2025.01.16 / Checked: 2026.10.09
 
 2c0f:ebd0::/32 Deny Cloud
 2c0f:f1b8::/32 Deny Cloud
@@ -19328,7 +19340,7 @@ Tag: Komi LLC
 2406:d440:200::/44 Deny Cloud
 2406:d440:300::/44 Deny Cloud
 Origin: CN
-Profile: Content Delivery Network
+Profile: AI;Content Delivery Network
 Tag: Beijing Volcano
 
 
@@ -20117,6 +20129,32 @@ Tag: NetCrafters OU
 Origin: US
 Profile: Dedicated;Infrastructure/Transit
 Tag: American Information Network
+
+
+# ASN 197196 ("PANSTAR CLOUD LIMITED").
+# Brute-force, SSH, and honeypot attacks, port scans, and scraping detected
+# from here.
+# Updated: 2026.10.09
+
+2402:1920:ffff::/48 Deny Cloud
+2402:6020:ff00::/47 Deny Cloud
+Origin: JP
+2a0f:1cc6:b221::/48 Deny Cloud
+2a0f:1cc6:b222::/47 Deny Cloud
+2a0f:1cc6:b224::/47 Deny Cloud
+Origin: US
+Profile: AI
+Tag: PANSTAR CLOUD LIMITED
+
+
+# ASN 215142 ("Association By-Hoster").
+# Brute-force, SSH, honeypot, webapp attacks, and port scans detected from here.
+# Updated: 2026.10.09
+
+2a13:9500:a8::/48 Deny Cloud
+Origin: GB
+Profile: Dedicated;Webhosting
+Tag: Association By-Hoster
 
 
 # ---
@@ -21515,5 +21553,5 @@ Origin: DE
 2a01:111:f400::/48 Run bypasses.php
 2a01:111:f403::/48 Run bypasses.php
 Origin: US
-Profile: Content Delivery Network;Infrastructure/Transit;Third-party sourced;Tor endpoints here;Webhosting
+Profile: AI;Content Delivery Network;Infrastructure/Transit;Third-party sourced;Tor endpoints here;Webhosting
 Tag: Azure

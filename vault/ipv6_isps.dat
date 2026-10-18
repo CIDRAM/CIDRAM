@@ -1,8 +1,8 @@
 # IPv6 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v4/vault/signatures/ipv6_isps.dat
 
-# Version: 2026.236.0
-# Last modified: 2026.08.25
+# Version: 2026.290.0
+# Last modified: 2026.10.18
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -13,9 +13,11 @@
 # ASNs 34665, 44050 ("Petersburg Internet Network ltd").
 # Russian multiplay network. Significant amounts of hacking, scraping, probing
 # for vulnerabilities, port scans, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 1,295,329 (AS34665), 2 (AS44050).
-# Updated: 2025.08.24
+# Stop Forum Spam (SFS) listings: 38,840 (AS34665).
+# Updated: 2026.10.18
 
+2a0c:8e47::/45 Deny Spam
+Origin: ES
 2a02:c6c1::/48 Deny Spam
 Origin: GB
 2a00:1d78::/32 Deny Spam
@@ -24,11 +26,11 @@ Origin: GB
 2a0c:6900::/29 Deny Spam
 2a0c:8700::/29 Deny Spam
 2a0d:8fc0::/29 Deny Spam
-2a0e:7f07::/32 Deny Spam
 2a0e:e5c0::/29 Deny Spam
-2a0f:9d00::/32 Deny Spam
+2a13:2980::/30 Deny Spam
 Origin: RU
-2a0f:16c0::/29 Deny Spam
+2a06:35c1::/32 Deny Spam
+2a13:8c80::/32 Deny Spam
 Origin: SC
 Profile: Dedicated;Domestic ISP;Infrastructure/Transit;Mobile ISP;Multiplay;Webhosting
 Tag: PIN-AS
@@ -262,20 +264,23 @@ Tag: Reliance Communications
 
 # ASN 25513 ("PJSC Moscow city telephone network").
 # Russian domestic ISP and a significant source of forum and blog spam.
-# Stop Forum Spam (SFS) listings: 2,755.
-# Updated: 2025.08.29
+# Stop Forum Spam (SFS) listings: 69.
+# Updated: 2026.10.18
 
 2a00:1370::/32 Deny Spam
 2a03:6505:2000::/126 Deny Spam
 2a03:6505:2000:c::/126 Deny Spam
 2a03:6505:2000:d::/64 Deny Spam
+2a03:6505:2000:f::/64 Deny Spam
 2a03:6505:4000:1::/64 Deny Spam
 2a03:6505:4000:3::/64 Deny Spam
 2a03:6505:4000:5::/64 Deny Spam
+2a03:6505:4000:7::/64 Deny Spam
 2a03:6505:4003::/61 Deny Spam
 2a03:6505:4008:300::/56 Deny Spam
-2a03:6505:4008:400::/56 Deny Spam
-2a03:6505:6000::/48 Deny Spam
+2a03:6505:4008:400::/55 Deny Spam
+2a03:6505:4008:600::/56 Deny Spam
+2a03:6505:6000::/47 Deny Spam
 2a03:af60::/32 Deny Spam
 Origin: RU
 Profile: Domestic ISP
@@ -317,8 +322,8 @@ Tag: Atria Convergence
 # limited ADSL connectivity also provided. A significant source of spam here,
 # caught trying to hack honeypots, brute-force, SSH, and webapp attacks, and
 # unauthorised WordPress vulnerability scanners detected from here.
-# Stop Forum Spam (SFS) listings: 152,078 (AS16276).
-# Updated: 2021.01.27 / Checked: 2026.06.24
+# Stop Forum Spam (SFS) listings: 18,556 (AS16276).
+# Updated: 2021.01.27 / Checked: 2026.10.18
 
 2607:5300::/32 Run bypasses.php
 Origin: CA
@@ -335,15 +340,20 @@ Tag: OVH Systems
 # ASNs 45820, 134674 ("TATA SKY BROADBAND PRIVATE LIMITED").
 # Indian domestic ISP. WordPress attacks, hacking, port scans, and spam
 # detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 1,075 (AS45820), 1,599 (AS134674).
-# Updated: 2025.07.13
+# Stop Forum Spam (SFS) listings: 28 (AS45820), 325 (AS134674).
+# Updated: 2026.10.16
 
+2402:e280:2229:31f::/64 Deny Spam
 2402:e280:2303:3bb::/64 Deny Spam
-2402:e280:2303:49c::/64 Deny Spam
 2402:e280:2308:406::/64 Deny Spam
-2402:e280:2310:469::/64 Deny Spam
+2402:e280:230e:2df::/64 Deny Spam
+2402:e280:2310:176::/64 Deny Spam
+2402:e280:2310:225::/64 Deny Spam
+2402:e280:2313:28d::/64 Deny Spam
+2402:e280:2315:278::/64 Deny Spam
+2402:e280:2318:82::/64 Deny Spam
 2402:e280:2322:7b::/64 Deny Spam
-2402:e280:4117:260::/64 Deny Spam
+2402:e280:3e81:235::/64 Deny Spam
 2402:e280:411e:36::/64 Deny Spam
 Origin: IN
 Profile: Domestic ISP

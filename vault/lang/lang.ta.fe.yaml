@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Tamil language data for the front-end (last modified: 2026.09.24).
+# This file: Tamil language data for the front-end (last modified: 2026.10.27).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -208,23 +208,23 @@ config_supplementary_cache_options_enable_memcached: "தற்காலிக �
 config_supplementary_cache_options_enable_pdo: "தற்காலிக சேமிப்புக்கான PDO ஐப் பயன்படுத்த முயற்சிக்கலாமா என்பதைக் குறிப்பிடுகிறது. இயல்புநிலை = False (தவறான)."
 config_supplementary_cache_options_enable_redis: "தற்காலிக சேமிப்புக்கான Redis ஐப் பயன்படுத்த முயற்சிக்கலாமா என்பதைக் குறிப்பிடுகிறது. இயல்புநிலை = False (தவறான)."
 config_supplementary_cache_options_memcached_host: "Memcachedக்கான ஹோஸ்ட் மதிப்பு. இயல்புநிலை = localhost."
-config_supplementary_cache_options_memcached_port: "Memcachedக்கான போர்ட் மதிப்பு. இயல்புநிலை = "11211"."
-config_supplementary_cache_options_pdo_dsn: "PDO DSN மதிப்பு. இயல்புநிலை = "mysql:dbname=cidram;host=localhost;port=3306"."
+config_supplementary_cache_options_memcached_port: "Memcachedக்கான போர்ட் மதிப்பு. இயல்புநிலை = \"11211\"."
+config_supplementary_cache_options_pdo_dsn: "PDO DSN மதிப்பு. இயல்புநிலை = \"mysql:dbname=cidram;host=localhost;port=3306\"."
 config_supplementary_cache_options_pdo_password: "PDO கடவுச்சொல்."
 config_supplementary_cache_options_pdo_username: "PDO பயனர்பெயர்."
 config_supplementary_cache_options_prefix: "இங்கு குறிப்பிடப்பட்டுள்ள மதிப்பு அனைத்து கேச் நுழைவு விசைகளுக்கும் முன்கூட்டியதாக இருக்கும். முன்னிருப்பாக காலி. ஒரே சர்வரில் பல நிறுவல்கள் இருக்கும்போது, அவற்றின் தற்காலிக சேமிப்புகளை ஒருவருக்கொருவர் தனித்தனியாக வைத்திருக்க இது பயனுள்ளதாக இருக்கும்."
 config_supplementary_cache_options_redis_database_number: "Redis தரவுத்தள எண். இயல்புநிலை = 0. குறிப்பு: Redis Cluster உடன் 0 ஐத் தவிர வேறு மதிப்புகளைப் பயன்படுத்த முடியாது."
 config_supplementary_cache_options_redis_host: "Redisக்கான ஹோஸ்ட் மதிப்பு. இயல்புநிலை = localhost."
 config_supplementary_cache_options_redis_port: "Redisக்கான போர்ட் மதிப்பு. இயல்புநிலை = 6379."
-config_supplementary_cache_options_redis_timeout: "Redisக்கான காலாவதியான மதிப்பு. இயல்புநிலை = "2.5"."
+config_supplementary_cache_options_redis_timeout: "Redisக்கான காலாவதியான மதிப்பு. இயல்புநிலை = \"2.5\"."
 config_template_data: "வார்ப்புருக்கள் மற்றும் கருப்பொருள்களுக்கான உள்ளமைவு."
 config_template_data_block_event_title: "பிளாக் நிகழ்வுகளுக்குக் காட்ட வேண்டிய பக்கத்தின் தலைப்பு."
 config_template_data_captcha_title: "CAPTCHA கோரிக்கைகளுக்குக் காட்ட வேண்டிய பக்கத்தின் தலைப்பு."
 config_template_data_css_url: "தனிப்பயன் கருப்பொருள்களுக்கான CSS கோப்பு URL."
 config_template_data_magnification: "எழுத்துரு உருப்பெருக்கம். இயல்புநிலை = 1."
 config_template_data_theme: "CIDRAM க்கு பயன்படுத்த இயல்புநிலை கருப்பொருள்."
-confirm_action: "நீங்கள் நிச்சயமாக "%s" விரும்புகிறீர்களா?"
-confirm_delete: ""%s" ஐ நிச்சயமாக நீக்க விரும்புகிறீர்களா?"
+confirm_action: "நீங்கள் நிச்சயமாக \"%s"\ விரும்புகிறீர்களா?"
+confirm_delete: "\"%s"\ ஐ நிச்சயமாக நீக்க விரும்புகிறீர்களா?"
 field_2fa: "2FA குறியீடு"
 field_Request_Method: "கோரிக்கை முறை"
 field_activate: "செயல்படுத்தவும்"
@@ -416,7 +416,7 @@ label_cidram: "பயன்படுத்தப்படும் CIDRAM பத
 label_clientinfo: "வாடிக்கையாளர் தகவல்:"
 label_compress: "சுருக்கவும்"
 label_current_data: "தற்போதைய தரவு."
-label_current_data_for: ""%s"க்கான தற்போதைய தரவு."
+label_current_data_for: "\"%s"\க்கான தற்போதைய தரவு."
 label_default: "இயல்புநிலை"
 label_dependencies: "சார்புநிலைகள்:"
 label_difference: "வேறுபாடு"
@@ -497,7 +497,7 @@ label_silent_mode_response_header_code_302: "302 Found (கண்டறியப
 label_silent_mode_response_header_code_307: "307 Temporary Redirect (தற்காலிக வழிமாற்று)\nதிசைதிருப்பல் தற்காலிகமானது என்று வாடிக்கையாளருக்கு அறிவுறுத்துகிறது, மற்றும் வழிமாற்றுக்கு பயன்படுத்தப்படும் கோரிக்கை முறையானது ஆரம்ப கோரிக்கைக்கு பயன்படுத்தப்படும் கோரிக்கை முறையை விட வேறுபட்டதாக இருக்காது."
 label_silent_mode_response_header_code_308: "308 Permanent Redirect (நிரந்தர வழிமாற்று)\nதிசைதிருப்பல் நிரந்தரமானது என்று வாடிக்கையாளருக்கு அறிவுறுத்துகிறது, மற்றும் வழிமாற்றுக்கு பயன்படுத்தப்படும் கோரிக்கை முறையானது ஆரம்ப கோரிக்கைக்கு பயன்படுத்தப்படும் கோரிக்கை முறையை விட வேறுபட்டதாக இருக்காது."
 label_stable: "சமீபத்திய நிலையானது:"
-label_starting_from: ""%s" இலிருந்து தொடங்குகிறது."
+label_starting_from: "\"%s"\ இலிருந்து தொடங்குகிறது."
 label_sysinfo: "கணினி தகவல்:"
 label_textmode: "உரை வடிவமைத்தல்:"
 label_textmode_fancy: "ஃபேன்ஸி"
@@ -569,8 +569,8 @@ response_accounts_password_updated: "கடவுச்சொல் வெற்
 response_activated: "செயல்படுத்தும் வெற்றி."
 response_activation_failed: "செயல்படுத்தும் தோல்வி!"
 response_aux_none: "தற்போது எந்த துணை விதிகளும் இல்லை."
-response_aux_rule_created_successfully: "புதிய துணை விதி, "%s", வெற்றிகரமாக உருவாக்கப்பட்டது."
-response_aux_rule_deleted_successfully: "துணை விதி, "%s", வெற்றிகரமாக நீக்கப்பட்டது"
+response_aux_rule_created_successfully: "புதிய துணை விதி, \"%s"\, வெற்றிகரமாக உருவாக்கப்பட்டது."
+response_aux_rule_deleted_successfully: "துணை விதி, \"%s"\, வெற்றிகரமாக நீக்கப்பட்டது"
 response_aux_update_failed: "துணை விதிகளைப் புதுப்பிக்க முடியவில்லை!"
 response_aux_updated: "துணை விதிகள் வெற்றிகரமாக புதுப்பிக்கப்பட்டன."
 response_checksum_error: "செக்சம் பிழை! கோப்பு நிராகரிக்கப்பட்டது!"
@@ -635,7 +635,7 @@ state_component_is_inactive: "கூறு செயலற்ற உள்ளத
 state_component_is_partially_active: "கூறு ஓரளவு செயலில் உள்ளது."
 state_component_is_provisional: "கூறு தற்காலிகமானது."
 state_default_password: "எச்சரிக்கை: இயல்புநிலை கடவுச்சொல்லைப் பயன்படுத்துகிறது!"
-state_email_sent: "மின்னஞ்சல் வெற்றிகரமாக "%s" க்கு அனுப்பப்பட்டது."
+state_email_sent: "மின்னஞ்சல் வெற்றிகரமாக \"%s"\ க்கு அனுப்பப்பட்டது."
 state_failed_missing: "தேவையான கூறு கிடைக்காததால் பணி தோல்வியடைந்தது."
 state_fixer: "%s %s."
 state_fixer_changed:
@@ -745,6 +745,6 @@ tip_statistics_disabled: "குறிப்பு: புள்ளிவிவ�
 tip_updates: "வணக்கம், {username}.<br />புதுப்பிப்புகள் பக்கம் CIDRAM இன் பல்வேறு கூறுகளை நிறுவவும், நிறுவல் நீக்கவும் மற்றும் புதுப்பிக்கவும் உங்களை அனுமதிக்கிறது (முக்கிய தொகுப்பு, கையொப்பங்கள், L10N கோப்புகள், போன்றவை)."
 title_login: "உள்நுழைய"
 warning_file_php: "எச்சரிக்கை: கோரிக்கைகளுக்குள் PHP குறிச்சொற்களைக் கண்டறிவதன் மூலம் சில வெப்ஹோஸ்ட்கள் தானாகவே IP முகவரிகளைத் தடை செய்கின்றன (எ.கா., உலாவி மூலம் PHP கோப்புகளை மாற்ற முயற்சிக்கும்போது). உங்கள் வெப்ஹோஸ்ட் இதைச் செய்கிறதா என்பதை அறிய CIDRAM இல் எந்த வழியும் இல்லை. சிக்கல்களைத் தவிர்க்க, உலாவி வழியாக PHP கோப்புகளைத் திருத்துவது பரிந்துரைக்கப்படவில்லை."
-warning_file_overwritten: "எச்சரிக்கை: நீங்கள் தற்போது திருத்திக் கொண்டிருக்கும் கோப்பு, "%s" கூறுக்கு சொந்தமானது. இந்தக் கோப்பில் ஏதேனும் மாற்றங்கள் செய்யப்பட்டால், அடுத்த முறை அந்தக் கூறு புதுப்பிக்கப்படும்போது மேலெழுதப்படும்."
+warning_file_overwritten: "எச்சரிக்கை: நீங்கள் தற்போது திருத்திக் கொண்டிருக்கும் கோப்பு, \"%s"\ கூறுக்கு சொந்தமானது. இந்தக் கோப்பில் ஏதேனும் மாற்றங்கள் செய்யப்பட்டால், அடுத்த முறை அந்தக் கூறு புதுப்பிக்கப்படும்போது மேலெழுதப்படும்."
 warning_javascript_required: "எச்சரிக்கை: சில முன்-முனை செயல்பாடுகளுக்கு JavaScript தேவைப்படுகிறது. முழு இடைமுகமும் எதிர்பார்த்தபடி செயல்படுவதை உறுதிசெய்ய, JavaScript ஐ இயக்குவது பரிந்துரைக்கப்படுகிறது."
 warning_signatures_1: "எச்சரிக்கை: கையொப்பக் கோப்புகள் எதுவும் செயலில் இல்லை!"

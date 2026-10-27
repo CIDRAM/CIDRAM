@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Romanian language data for the front-end (last modified: 2026.10.02).
+# This file: Romanian language data for the front-end (last modified: 2026.10.03).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -318,13 +318,13 @@ config: !lazy
  rate_limiting_segregate: "Ar trebui să fie separate sau partajate cotele pentru diferite domenii și gazde? True = Cotele vor fi separate. False = Cotele vor fi partajate [Implicit]."
  sfs: "Configurare pentru modulul Stop Forum Spam."
  shodandb: "Configurație pentru modulul ShodanDB (Shodan InternetDB)."
- shodandb_api_base: "URL-ul de bază pentru interogările Shodan InternetDB (sau un punct final compatibil). Implicit = <code class="s">https://internetdb.shodan.io</code>."
+ shodandb_api_base: "URL-ul de bază pentru interogările Shodan InternetDB (sau un punct final compatibil). Implicit = <code class=\"s\">https://internetdb.shodan.io</code>."
  shodandb_api_header: "Un antet HTTP opțional de transmis împreună cu solicitările de căutare (de exemplu, pentru autentificarea la un punct final găzduit local sau accesat printr-un proxy). Lăsați necompletat dacă nu este necesar."
  shodandb_expire_bad: "Pentru cât timp să se stocheze în cache rezultatul unei interogări ShodanDB în cazul în care nu au fost găsite porturi. Implicit = 1 oră."
  shodandb_expire_good: "Pentru cât timp să se stocheze în cache rezultatul unei interogări ShodanDB privind porturile identificate. Implicit = 1 zi."
  shodandb_lookup_strategy: "Când ar trebui efectuate interogările în ShodanDB?"
  shodandb_noteworthy_ports: "O listă de porturi (și/sau intervale de porturi, de exemplu, 3389-3395) separate prin virgulă, considerate porturi demne de menționat sau cu risc ridicat dacă sunt găsite deschise la o adresă IP solicitantă (de exemplu, porturi pentru administrare la distanță, IoT, baze de date)."
- shodandb_options: "Opțiuni CAPTCHA de aplicat atunci când este detectat un port deschis, conform celor marcate la <code class="s">ports_action</code>."
+ shodandb_options: "Opțiuni CAPTCHA de aplicat atunci când este detectat un port deschis, conform celor marcate la <code class=\"s\">ports_action</code>."
  shodandb_ports_action: "Ce trebuie făcut atunci când o adresă IP solicitantă are deschis unul sau mai multe dintre „porturile demne de menționat” sau „porturile proxy” configurate (sau, dacă oricare dintre opțiunile „orice porturi” este selectată, orice port deschis, cu excepția doar a celor specificate „tr069_ports”)."
  shodandb_proxy_ports: "O listă de porturi (și/sau intervale de porturi, de exemplu, 3389-3395) separate prin virgulă, asociate în mod obișnuit cu proxy-uri deschise, servere SOCKS, sau alte relee de anonimizare."
  shodandb_timeout_rl: "Pentru cât timp să se suspende interogările după depășirea limitei de interogare (HTTP 429). Implicit = 1 oră."
@@ -468,11 +468,11 @@ hints_duration:
  Arctime.: "Durata poate fi descrisă folosind notația arctime. De exemplu, <strong>1d2°3′4″</strong> pentru o zi, două ore, trei minute, patru secunde, sau <strong>5″</strong> pentru doar cinci secunde."
  Engleză simplă.: "Durata poate fi descrisă prin scrierea unităților în limba engleză simplă. De exemplu, <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> pentru o săptămână, două zile, trei ore, patru minute, cinci secunde."
  Constrângeri.: "Notația poate fi amestecată, dar unitățile trebuie întotdeauna descrise de la cel mai mare la cel mai mic, și nu pot fi repetate. De exemplu, <strong>1 week 2 days 3′4″</strong> este <span class="txtGn">valide</span> și va fi înțeles corect, dar <strong>3′4″ 1 week 2 days</strong> și <strong>3 hours 3h 3°</strong> sunt <span class="txtRd">invalide</span>. CIDRAM nu-i pasă dacă folosești spațierea sau nu. Numerele trebuie să fie simple și neformatate. Pentru caracter practic, cea mai mare unitate suportată este o săptămână. Când configurația este actualizată, CIDRAM normalizează duratele la arctime."
-hints_has_bypass: "* Această opțiune are un bypass corespunzător sub <code class="s">bypasses➡used</code>. Este recomandat să vă asigurați că caseta de selectare pentru bypass-ul corespunzătoare este bifată în același mod ca și caseta de selectare pentru încercarea de a verifica această opțiune."
+hints_has_bypass: "* Această opțiune are un bypass corespunzător sub <code class=\"s\">bypasses➡used</code>. Este recomandat să vă asigurați că caseta de selectare pentru bypass-ul corespunzătoare este bifată în același mod ca și caseta de selectare pentru încercarea de a verifica această opțiune."
 hints_http_response_header_code:
- 1.: "Când este activ „modul silențios”, va fi utilizat mesajul de stare HTTP definit de <code class="s">general➡silent_mode_response_header_code</code> (acesta are cea mai mare prioritate)."
+ 1.: "Când este activ „modul silențios”, va fi utilizat mesajul de stare HTTP definit de <code class=\"s\">general➡silent_mode_response_header_code</code> (acesta are cea mai mare prioritate)."
  2.: "Când entitatea solicitantă a fost interzisă din cauza depășirii limitei de infracțiuni, va fi utilizat mesajul de stare HTTP „interzis”."
- 3.: "Când este blocat din cauza limitării ratei, se va utiliza codul 429, sau când este blocat din cauza conflictelor de resurse, se va utiliza mesajul de stare HTTP definit de <code class="s">signatures➡conflict_response</code> (limitarea ratei și conflicte de resurse au prioritate egală în acest context)."
+ 3.: "Când este blocat din cauza limitării ratei, se va utiliza codul 429, sau când este blocat din cauza conflictelor de resurse, se va utiliza mesajul de stare HTTP definit de <code class=\"s\">signatures➡conflict_response</code> (limitarea ratei și conflicte de resurse au prioritate egală în acest context)."
  4.: "Când este blocat din cauza unei reguli auxiliare care setează o „modificarea codului de stare HTTP”, se va utiliza modificarea codului de stare HTTP respectivă."
  5.: "Când este blocat din motive legale (adică, când este blocat din cauza unei semnături personalizate care folosește cuvânt prescurtarea „legal”), se va utiliza mesajul de stare HTTP pentru „legal”."
  6.: "Pentru toate celelalte solicitări blocate, se va utiliza mesajul de stare HTTP pentru „implicit” (aceasta are cea mai mică prioritate)."
@@ -480,9 +480,9 @@ hints_inspection: "* Destinat numai pentru depanarea regulilor auxiliare. Nu est
 hints_ipv6_on_32bit: "Notă: Căutările IPv6 ar putea să nu funcționeze corect pe unele sisteme pe 32 de biți."
 hints_logging_datetime: "Sfat util: Puteți atașa informații despre dată/ora la numele fișierelor jurnal utilizând substituenți pentru formatul de timp. Substituenții disponibili pentru formatul de timp sunt afișați la {{Links.ConfigRef.time_format}}."
 hints_ports_action:
- 0.: "Se referă la porturile și/sau intervalele de porturi specificate de <code class="s">noteworthy_ports</code>."
- 1.: "Se referă la porturile și/sau intervalele de porturi specificate de <code class="s">proxy_ports</code>. Este disponibilă o opțiune de raportare pentru porturile de tip proxy deschis, dar nu și pentru alte porturi. Un port deschis, în sine, nu constituie un indicator fiabil de abuz (multe adrese IP legitime găzduiesc servere web, servere de jocuri, TeamSpeak, etc), astfel că oferirea posibilității de a raporta orice tip de port deschis ar duce la raportări inutile și nejustificate, dar un port proxy deschis reprezintă un indiciu de abuz mai puternic decât un port deschis oarecare, ceea ce justifică raportarea porturilor proxy deschise."
- 2.: "Se referă la orice porturi deschise, cu excepția acelor porturi și/sau intervale de porturi specificate prin <code class="s">tr069_ports</code>, care urmează să fie excluse din orice tip de potriviri sau acțiuni efectuate de modul. Dacă se selectează opțiunea pentru „orice porturi”, opțiunile pentru „porturi demne de menționat” și „porturi proxy” ar trebui probabil debifate, întrucât selectarea lor concomitent cu „orice porturi” ar putea duce la potriviri inutile și la un număr de semnături mai mare decât cel preconizat."
+ 0.: "Se referă la porturile și/sau intervalele de porturi specificate de <code class=\"s\">noteworthy_ports</code>."
+ 1.: "Se referă la porturile și/sau intervalele de porturi specificate de <code class=\"s\">proxy_ports</code>. Este disponibilă o opțiune de raportare pentru porturile de tip proxy deschis, dar nu și pentru alte porturi. Un port deschis, în sine, nu constituie un indicator fiabil de abuz (multe adrese IP legitime găzduiesc servere web, servere de jocuri, TeamSpeak, etc), astfel că oferirea posibilității de a raporta orice tip de port deschis ar duce la raportări inutile și nejustificate, dar un port proxy deschis reprezintă un indiciu de abuz mai puternic decât un port deschis oarecare, ceea ce justifică raportarea porturilor proxy deschise."
+ 2.: "Se referă la orice porturi deschise, cu excepția acelor porturi și/sau intervale de porturi specificate prin <code class=\"s\">tr069_ports</code>, care urmează să fie excluse din orice tip de potriviri sau acțiuni efectuate de modul. Dacă se selectează opțiunea pentru „orice porturi”, opțiunile pentru „porturi demne de menționat” și „porturi proxy” ar trebui probabil debifate, întrucât selectarea lor concomitent cu „orice porturi” ar putea duce la potriviri inutile și la un număr de semnături mai mare decât cel preconizat."
 hints_pdo_dsn:
  FAQ.: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">Ce este un „DSN PDO”? Cum pot folosi PDO cu CIDRAM?</a></em>"
 hints_sensitive_pages: "Notă: Ceea ce constituie o „pagină sensibilă” este determinat de {{Links.ConfigRef.sensitive}}."

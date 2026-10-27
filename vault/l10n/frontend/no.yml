@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Norwegian language data for the front-end (last modified: 2026.10.02).
+# This file: Norwegian language data for the front-end (last modified: 2026.10.27).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -320,13 +320,13 @@ config: !lazy
  rate_limiting_segregate: "Bør kvoter for forskjellige domener og verter adskilles eller deles? True = Kvoter vil bli adskilt. False = Kvoter vil bli delt [Standardverdi]."
  sfs: "Konfigurasjon for Stop Forum Spam modulen."
  shodandb: "Konfigurasjon for ShodanDB (Shodan InternetDB) modulen."
- shodandb_api_base: "Basis-URL-en for oppslag i Shodan InternetDB (eller et kompatibelt endepunkt). Standardverdi = <code class="s">https://internetdb.shodan.io</code>."
+ shodandb_api_base: "Basis-URL-en for oppslag i Shodan InternetDB (eller et kompatibelt endepunkt). Standardverdi = <code class=\"s\">https://internetdb.shodan.io</code>."
  shodandb_api_header: "En valgfri HTTP-header som skal sendes med oppslagsforespørsler (f.eks., for autentisering mot et selvhostet endepunkt eller et endepunkt bak en proxy). La stå tomt hvis det ikke er nødvendig."
  shodandb_expire_bad: "Hvor lenge et ShodanDB-oppslagsresultat skal mellomlagres når ingen porter ble funnet. Standardverdi = 1 time."
  shodandb_expire_good: "Hvor lenge et ShodanDB-oppslagsresultat skal mellomlagres for funnede porter. Standardverdi = 1 dag."
  shodandb_lookup_strategy: "Når bør ShodanDB-oppslag utføres?"
  shodandb_noteworthy_ports: "En kommaseparert liste over porter (og/eller portområder, f.eks., 3389–3395) som anses som nevneverdige eller høyrisiko dersom de er åpne på en forespørrende IP-adresse (f.eks., porter for fjernadministrasjon, IoT, databaser)."
- shodandb_options: "CAPTCHA-alternativer som skal brukes når en åpen port oppdages, i samsvar med det som er markert ved <code class="s">ports_action</code>."
+ shodandb_options: "CAPTCHA-alternativer som skal brukes når en åpen port oppdages, i samsvar med det som er markert ved <code class=\"s\">ports_action</code>."
  shodandb_ports_action: "Hva man skal gjøre når en forespørsels-IP har én eller flere av de konfigurerte «nevneverdige portene» eller «proxy portene» åpne (eller, dersom et av alternativene for «alle porter» er valgt, hvilken som helst åpen port, med unntak av de spesifiserte «tr069_ports»)."
  shodandb_proxy_ports: "En kommaseparert liste over porter (og/eller portområder, f.eks., 3389–3395) som vanligvis forbindes med åpne proxyer, SOCKS-servere, eller andre anonymiserende reléer."
  shodandb_timeout_rl: "Hvor lenge oppslag skal settes på pause etter at grensen for antall oppslag er nådd (HTTP 429). Standardverdi = 1 time."
@@ -462,11 +462,11 @@ hints_duration:
  Buetid.: "Varighet kan beskrives ved bruk av buetidsnotasjon. F.eks., <strong>1d2°3′4″</strong> for én dag, to timer, tre minutter, fire sekunder, eller <strong>5″</strong> for bare fem sekunder."
  Vanlig engelsk.: "Varighet kan beskrives ved å skrive enhetene på vanlig engelsk. F.eks., <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> for én uke, to dager, tre timer, fire minutter, fem sekunder."
  Begrensninger.: "Notasjon kan blandes, men enheter må alltid beskrives fra størst til minste, og kan ikke gjentas. F.eks., <strong>1 week 2 days 3′4″</strong> er <span class="txtGn">gyldig</span> og vil bli forstått riktig, men <strong>3′4″ 1 week 2 days</strong> og <strong>3 hours 3h 3°</strong> er <span class="txtRd">ugyldige</span>. CIDRAM bryr seg ikke om du bruker mellomrom eller ikke. Tall må være enkle og uformaterte. For praktiske formål er den største støttede enheten en uke. Når konfigurasjonen oppdateres, normaliserer CIDRAM varighetene til buetid."
-hints_has_bypass: "* Dette alternativet har en tilsvarende bypass under <code class="s">bypasses➡used</code>. Uansett om avmerkingsboksen for å forsøke å bekrefte dette alternativet er valgt, anbefales det å sørge for at avkrysningsboksen for den tilsvarende forbikjøringen er den samme."
+hints_has_bypass: "* Dette alternativet har en tilsvarende bypass under <code class=\"s\">bypasses➡used</code>. Uansett om avmerkingsboksen for å forsøke å bekrefte dette alternativet er valgt, anbefales det å sørge for at avkrysningsboksen for den tilsvarende forbikjøringen er den samme."
 hints_http_response_header_code:
- 1.: "Når «stille modus» er aktiv, vil HTTP-statusmeldingen definert av <code class="s">general➡silent_mode_response_header_code</code> bli brukt (dette har høyest prioritet)."
+ 1.: "Når «stille modus» er aktiv, vil HTTP-statusmeldingen definert av <code class=\"s\">general➡silent_mode_response_header_code</code> bli brukt (dette har høyest prioritet)."
  2.: "Når den forespørrende enheten er utestengt på grunn av overskridelse av overtredelsesgrensen, vil HTTP-statusmeldingen for «utestengt» bli brukt."
- 3.: "Når den er blokkert på grunn av hastighetsbegrensning, vil 429 bli brukt, eller når den er blokkert på grunn av ressurskonflikter, vil HTTP-statusmeldingen definert av <code class="s">signatures➡conflict_response</code> bli brukt (hastighetsbegrensning og ressurskonflikter har like stor prioritet i denne sammenhengen)."
+ 3.: "Når den er blokkert på grunn av hastighetsbegrensning, vil 429 bli brukt, eller når den er blokkert på grunn av ressurskonflikter, vil HTTP-statusmeldingen definert av <code class=\"s\">signatures➡conflict_response</code> bli brukt (hastighetsbegrensning og ressurskonflikter har like stor prioritet i denne sammenhengen)."
  4.: "Når den er blokkert på grunn av en tilleggsregel som angir en «HTTP-statuskode overstyring», vil den HTTP-statuskode overstyringen bli brukt."
  5.: "Når den er blokkert av juridiske årsaker (dvs., når den er blokkert på grunn av en tilpasset signatur som bruker stenografiorden «juridiske»), vil HTTP-statusmeldingen for «juridiske» bli brukt."
  6.: "For alle andre blokkerte forespørsler vil HTTP-statusmeldingen for «standardverdi» bli brukt (dette har lavest prioritet)."
@@ -474,9 +474,9 @@ hints_inspection: "* Kun ment for feilsøking av tilleggsregler. Ikke vist for b
 hints_ipv6_on_32bit: "Merk: IPv6-oppslag fungerer kanskje ikke riktig på enkelte 32-biters systemer."
 hints_logging_datetime: "Nyttig tips: Du kan legge ved dato-/klokkeslettinformasjon til navnene på loggfilene ved å bruke plassholdere for tidsformat. Tilgjengelige tidsformatplassholdere vises ved {{Links.ConfigRef.time_format}}."
 hints_ports_action:
- 0.: "Refererer til portene og/eller portområdene spesifisert av <code class="s">noteworthy_ports</code>."
- 1.: "Refererer til portene og/eller portområdene spesifisert av <code class="s">proxy_ports</code>. De angitte alternativene gjør det mulig å rapportere åpne proxy-porter, men ikke andre porter. En åpen port er i seg selv ikke et pålitelig tegn på misbruk (mange legitime IP-adresser kjører webservere, spillservere, TeamSpeak, osv), så det å åpne for rapportering av enhver åpen port ville ført til unødvendige og uberettigede rapporter. En åpen proxy-port er, imidlertid, en sterkere indikasjon på misbruk enn en vanlig åpen port, noe som rettferdiggjør rapportering av åpne proxy-porter."
- 2.: "Refererer til alle åpne porter, med unntak av de portene og/eller portintervallene som er spesifisert med <code class="s">tr069_ports</code>, og som skal holdes utenfor ethvert treff eller enhver handling utført av modulen. Hvis alternativet for «alle porter» velges, bør alternativene for «nevneverdige porter» og «proxy porter» sannsynligvis velges bort, fordi å velge disse samtidig med «alle porter» kan føre til overflødige treff og et høyere antall signaturer enn forventet."
+ 0.: "Refererer til portene og/eller portområdene spesifisert av <code class=\"s\">noteworthy_ports</code>."
+ 1.: "Refererer til portene og/eller portområdene spesifisert av <code class=\"s\">proxy_ports</code>. De angitte alternativene gjør det mulig å rapportere åpne proxy-porter, men ikke andre porter. En åpen port er i seg selv ikke et pålitelig tegn på misbruk (mange legitime IP-adresser kjører webservere, spillservere, TeamSpeak, osv), så det å åpne for rapportering av enhver åpen port ville ført til unødvendige og uberettigede rapporter. En åpen proxy-port er, imidlertid, en sterkere indikasjon på misbruk enn en vanlig åpen port, noe som rettferdiggjør rapportering av åpne proxy-porter."
+ 2.: "Refererer til alle åpne porter, med unntak av de portene og/eller portintervallene som er spesifisert med <code class=\"s\">tr069_ports</code>, og som skal holdes utenfor ethvert treff eller enhver handling utført av modulen. Hvis alternativet for «alle porter» velges, bør alternativene for «nevneverdige porter» og «proxy porter» sannsynligvis velges bort, fordi å velge disse samtidig med «alle porter» kan føre til overflødige treff og et høyere antall signaturer enn forventet."
 hints_pdo_dsn:
  FAQ.: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">Hva er en «PDO DSN»? Hvordan kan jeg bruke PDO med CIDRAM?</a></em>"
 hints_sensitive_pages: "Merk: Hva som utgjør en «sensitiv side» bestemmes av {{Links.ConfigRef.sensitive}}."
@@ -1195,7 +1195,7 @@ warning: !lazy
  Extremely common passwords should be avoided: "Advarsel: Ekstremt vanlige passord bør unngås."
  IP tests are disabled: "Advarsel: IP-tester er deaktivert! Signaturfiler kan ikke brukes før dette er løst."
  JavaScript required: "Advarsel: Noen frontend-funksjonalitet krever JavaScript. For å sikre at hele frontenden oppfører seg som forventet, anbefales det å aktivere JavaScript."
- Likely to be overwritten: "Advarsel: Filen du for øyeblikket redigerer tilhører komponenten "%s". Eventuelle endringer i denne filen vil sannsynligvis bli overskrevet neste gang den komponenten oppdateres."
+ Likely to be overwritten: "Advarsel: Filen du for øyeblikket redigerer tilhører komponenten \"%s"\. Eventuelle endringer i denne filen vil sannsynligvis bli overskrevet neste gang den komponenten oppdateres."
  Likely to become corrupted: "Advarsel: Det ble oppdaget byte som ikke er UTF8 i filen som redigeres. Filen vil sannsynligvis bli ødelagt hvis den redigeres med denne funksjonaliteten."
  Modules are disabled: "Advarsel: Moduler er deaktivert! Moduler kan ikke brukes før dette er løst."
  No modules are active: "Advarsel: Ingen moduler er aktive! Moduler kan aktiveres ved å bruke konfigurasjonssiden eller oppdateringssiden."

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: German language data for the front-end (last modified: 2026.10.02).
+# This file: German language data for the front-end (last modified: 2026.10.03).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -321,13 +321,13 @@ config: !lazy
  rate_limiting_segregate: "Sollten Kontingente für verschiedene Domains und Hosts getrennt oder geteilt werden? True = Quoten werden getrennt. False = Quoten werden geteilt [Standardeinstellung]."
  sfs: "Konfiguration für das Stop Forum Spam Modul."
  shodandb: "Konfiguration für das ShodanDB-Modul (Shodan InternetDB)."
- shodandb_api_base: "Die Basis-URL für Shodan-InternetDB-Abfragen (oder ein kompatibler Endpunkt). Standardeinstellung = <code class="s">https://internetdb.shodan.io</code>."
+ shodandb_api_base: "Die Basis-URL für Shodan-InternetDB-Abfragen (oder ein kompatibler Endpunkt). Standardeinstellung = <code class=\"s\">https://internetdb.shodan.io</code>."
  shodandb_api_header: "Ein optionaler HTTP-Header der mit Suchanfragen gesendet wird (z.B., zur Authentifizierung gegenüber einem selbst gehosteten oder über einen Proxy angebundenen Endpunkt). Leer lassen falls nicht benötigt."
  shodandb_expire_bad: "Wie lange das Ergebnis einer ShodanDB-Abfrage zwischengespeichert werden soll wenn keine Ports gefunden wurden. Standardeinstellung = 1 Stunde."
  shodandb_expire_good: "Wie lange das Ergebnis einer ShodanDB-Abfrage zwischengespeichert werden soll wenn Ports gefunden wurden. Standardeinstellung = 1 Tag."
  shodandb_lookup_strategy: "Wann sollten ShodanDB-Abfragen durchgeführt werden?"
  shodandb_noteworthy_ports: "Eine durch Kommas getrennte Liste von Ports (und/oder Portbereichen, z.B., 3389–3395) die als beachtenswert oder mit hohem Risiko behaftet gelten wenn sie bei einer anfragenden IP-Adresse offen sind (z.B., Remote-Administration, IoT, Datenbank-Ports)."
- shodandb_options: "Anzuwendende CAPTCHA-Optionen bei Erkennung eines offenen Ports gemäß der Kennzeichnung bei <code class="s">ports_action</code>."
+ shodandb_options: "Anzuwendende CAPTCHA-Optionen bei Erkennung eines offenen Ports gemäß der Kennzeichnung bei <code class=\"s\">ports_action</code>."
  shodandb_ports_action: "Was ist zu tun wenn bei einer anfragenden IP einer oder mehrere der konfigurierten „beachtenswerte Ports“ oder „Proxy-Ports“ geöffnet sind (oder, falls eine der „jeder Ports“-Optionen ausgewählt ist, jeder beliebige offene Port, mit Ausnahme der von „tr069_ports“ angegeben)."
  shodandb_proxy_ports: "Eine durch Kommas getrennte Liste von Ports (und/oder Portbereichen, z.B., 3389–3395) die üblicherweise mit offenen Proxys, SOCKS-Servern, oder anderen anonymisierenden Relays in Verbindung gebracht werden."
  shodandb_timeout_rl: "Wie lange Suchanfragen nach Überschreiten des Limits ausgesetzt werden sollen (HTTP 429). Standardeinstellung = 1 Stunde."
@@ -462,11 +462,11 @@ hints_duration:
  Bogenzeit.: "Die Dauer kann unter Verwendung der Bogenzeit-Notation beschrieben werden. z.B., <strong>1d2°3′4″</strong> für einen Tag, zwei Stunden, drei Minuten, vier Sekunden, oder <strong>5″</strong> für nur fünf Sekunden."
  Einfaches Englisch.: "Die Dauer kann beschrieben werden indem die Einheiten in einfachem Englisch geschrieben werden. z.B., <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> für eine Woche, zwei Tage, drei Stunden, vier Minuten, fünf Sekunden."
  Einschränkungen.: "Die Notation kann gemischt werden, aber Einheiten müssen immer vom größten zum kleinsten beschrieben werden, und können nicht wiederholt werden. z.B., <strong>1 week 2 days 3′4″</strong> ist <span class="txtGn">gültig</span> und wird korrekt verstanden, aber <strong>3′4″ 1 week 2 days</strong> und <strong>3 hours 3h 3°</strong> sind <span class="txtRd">ungültig</span>. CIDRAM kümmert sich nicht darum ob Sie Leerzeichen verwenden oder nicht. Zahlen müssen einfach und unformatiert sein. Aus praktischen Gründen ist die größte unterstützte Einheit eine Woche. Wenn die Konfiguration aktualisiert wird, normalisiert CIDRAM die Dauer auf Bogenzeit."
-hints_has_bypass: "* Diese Option hat einen entsprechenden Bypass unter <code class="s">bypasses➡used</code>. Es wird empfohlen sicherzustellen dass das Kontrollkästchen für die entsprechende Bypass genauso markiert ist wie das Kontrollkästchen für den Versuch aus diese Option zu überprüfen."
+hints_has_bypass: "* Diese Option hat einen entsprechenden Bypass unter <code class=\"s\">bypasses➡used</code>. Es wird empfohlen sicherzustellen dass das Kontrollkästchen für die entsprechende Bypass genauso markiert ist wie das Kontrollkästchen für den Versuch aus diese Option zu überprüfen."
 hints_http_response_header_code:
- 1.: "Wenn der „Silent-Modus“ aktiv ist, wird die durch <code class="s">general➡silent_mode_response_header_code</code> definierte HTTP-Statusmeldung verwendet (diese hat die höchste Priorität)."
+ 1.: "Wenn der „Silent-Modus“ aktiv ist, wird die durch <code class=\"s\">general➡silent_mode_response_header_code</code> definierte HTTP-Statusmeldung verwendet (diese hat die höchste Priorität)."
  2.: "Wenn die anfordernde Entität aufgrund der Überschreitung des Verstoßlimits verbannt wurde, wird die HTTP-Statusmeldung für „verbannt“ verwendet."
- 3.: "Bei einer Blockierung aufgrund einer Ratenbegrenzung wird 429 verwendet, bei einer Blockierung aufgrund von Ressourcenkonflikten wird die durch <code class="s">signatures➡conflict_response</code> definierte HTTP-Statusmeldung verwendet (Ratenbegrenzung und Ressourcenkonflikte haben in diesem Zusammenhang die gleiche Priorität)."
+ 3.: "Bei einer Blockierung aufgrund einer Ratenbegrenzung wird 429 verwendet, bei einer Blockierung aufgrund von Ressourcenkonflikten wird die durch <code class=\"s\">signatures➡conflict_response</code> definierte HTTP-Statusmeldung verwendet (Ratenbegrenzung und Ressourcenkonflikte haben in diesem Zusammenhang die gleiche Priorität)."
  4.: "Bei einer Blockierung aufgrund einer Hilfsregel die eine „Überschreibung für den HTTP-Statuscode“ festlegt, wird diese Überschreibung für den HTTP-Statuscode verwendet."
  5.: "Bei einer Blockierung aus rechtlichen Gründen (d.h., bei einer Blockierung aufgrund einer benutzerdefinierten Signatur die das Kurzwort „Gesetzliche“ verwendet), wird die HTTP-Statusmeldung für „Gesetzliche“ verwendet."
  6.: "Für alle anderen blockierten Anfragen wird die HTTP-Statusmeldung für „Standardeinstellung“ verwendet (dies hat die niedrigste Priorität)."
@@ -474,9 +474,9 @@ hints_inspection: "* Nur zum Debuggen von Hilfsregeln vorgesehen. Blockierten Be
 hints_ipv6_on_32bit: "Hinweis: IPv6-Lookups funktionieren auf einigen 32-Bit-Systemen möglicherweise nicht richtig."
 hints_logging_datetime: "Nützlicher Tipp: Sie können den Namen der Protokolldateien Datums-/Uhrzeitinformationen hinzufügen, indem Sie Platzhalter für das Zeitformat verwenden. Verfügbare Platzhalter für Zeitformate werden bei {{Links.ConfigRef.time_format}} angezeigt."
 hints_ports_action:
- 0.: "Bezieht sich auf die durch <code class="s">noteworthy_ports</code> angegebenen Ports und/oder Portbereiche."
- 1.: "Bezieht sich auf die durch <code class="s">proxy_ports</code> angegebenen Ports und/oder Portbereiche. Für offene Proxy-Ports ist eine Meldeoption vorgesehen, für andere Ports jedoch nicht. Da zahlreiche unbedenkliche IP-Adressen Webserver, Spieleserver, TeamSpeak, u.s.w. betreiben, ist ein offener Port für sich genommen noch kein verlässlicher Hinweis auf Missbrauch. Daher würde die Möglichkeit, jeden beliebigen offenen Port zu melden, zu unnötigen und ungerechtfertigten Berichten führen. Eine Meldung offener Proxy-Ports ist jedoch gerechtfertigt, da sie ein stärkeres Indiz für Missbrauch darstellt als ein allgemein offener."
- 2.: "Bezieht sich auf alle offenen Ports, mit Ausnahme derjenigen Ports und/oder Portbereiche die durch <code class="s">tr069_ports</code> angegebenen sind und von jeglichen durch das Modul auszuführenden Abgleichen oder Aktionen ausgeschlossen werden sollen. Wenn die Option für „jeder Ports“ ausgewählt wird, sollten die Optionen für „beachtenswerte Ports“ und „Proxy-Ports“ wahrscheinlich abgewählt werden, denn ihre gleichzeitige Auswahl könnte zu überflüssigen Übereinstimmungen und einer höher als erwarteten Zählung den Signaturen führen."
+ 0.: "Bezieht sich auf die durch <code class=\"s\">noteworthy_ports</code> angegebenen Ports und/oder Portbereiche."
+ 1.: "Bezieht sich auf die durch <code class=\"s\">proxy_ports</code> angegebenen Ports und/oder Portbereiche. Für offene Proxy-Ports ist eine Meldeoption vorgesehen, für andere Ports jedoch nicht. Da zahlreiche unbedenkliche IP-Adressen Webserver, Spieleserver, TeamSpeak, u.s.w. betreiben, ist ein offener Port für sich genommen noch kein verlässlicher Hinweis auf Missbrauch. Daher würde die Möglichkeit, jeden beliebigen offenen Port zu melden, zu unnötigen und ungerechtfertigten Berichten führen. Eine Meldung offener Proxy-Ports ist jedoch gerechtfertigt, da sie ein stärkeres Indiz für Missbrauch darstellt als ein allgemein offener."
+ 2.: "Bezieht sich auf alle offenen Ports, mit Ausnahme derjenigen Ports und/oder Portbereiche die durch <code class=\"s\">tr069_ports</code> angegebenen sind und von jeglichen durch das Modul auszuführenden Abgleichen oder Aktionen ausgeschlossen werden sollen. Wenn die Option für „jeder Ports“ ausgewählt wird, sollten die Optionen für „beachtenswerte Ports“ und „Proxy-Ports“ wahrscheinlich abgewählt werden, denn ihre gleichzeitige Auswahl könnte zu überflüssigen Übereinstimmungen und einer höher als erwarteten Zählung den Signaturen führen."
 hints_pdo_dsn:
  FAQ.: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.de.md\#user-content-HOW_TO_USE_PDO" hreflang="de-DE">Was ist ein „PDO DSN“? Wie kann ich PDO mit CIDRAM verwenden?</a></em>"
 hints_sensitive_pages: "Hinweis: Was eine „sensible Seite“ ist, wird durch {{Links.ConfigRef.sensitive}} bestimmt."

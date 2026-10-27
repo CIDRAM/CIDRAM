@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2026.10.02).
+# This file: Portuguese language data for the front-end (last modified: 2026.10.27).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -457,7 +457,7 @@ config: !lazy
  rate_limiting_segregate: "As cotas para diferentes domínios e hosts devem ser segregadas ou compartilhadas? True = As cotas serão segregadas. False = As cotas serão compartilhadas [Padrão]."
  sfs: "Configuração para o módulo Stop Forum Spam."
  shodandb: "Configuração para o módulo ShodanDB (Shodan InternetDB)."
- shodandb_api_base: "A URL base para pesquisas ao Shodan InternetDB (ou um endpoint compatível). Padrão = <code class="s">https://internetdb.shodan.io</code>."
+ shodandb_api_base: "A URL base para pesquisas ao Shodan InternetDB (ou um endpoint compatível). Padrão = <code class=\"s\">https://internetdb.shodan.io</code>."
  shodandb_api_header:
   pt-BR: "Um cabeçalho HTTP opcional para enviar com solicitações de pesquisa (por exemplo, para autenticação em um endpoint auto-hospedado ou via proxy). Deixe em branco se não for necessário."
   pt-PT: "Um cabeçalho HTTP opcional para enviar com solicitações de pesquisa (por exemplo, para autenticação num endpoint auto-hospedado ou via proxy). Deixe em branco se não for necessário."
@@ -467,7 +467,7 @@ config: !lazy
  shodandb_noteworthy_ports:
   pt-BR: "Uma lista, separada por vírgulas, de portas (e/ou intervalos de portas, por exemplo, 3389-3395) consideradas notáveis ou de alto risco quando encontradas abertas em um endereço IP solicitante (por exemplo, portas de administração remota, IoT, bancos de dados)."
   pt-PT: "Uma lista, separada por vírgulas, de portas (e/ou intervalos de portas, por exemplo, 3389-3395) consideradas notáveis ou de alto risco quando se encontram abertas num endereço IP requerente (por exemplo, portas de administração remota, IoT, base de dados)."
- shodandb_options: "Opções de CAPTCHA a serem aplicadas quando uma porta aberta for detectada, em conformidade com o indicado em <code class="s">ports_action</code>."
+ shodandb_options: "Opções de CAPTCHA a serem aplicadas quando uma porta aberta for detectada, em conformidade com o indicado em <code class=\"s\">ports_action</code>."
  shodandb_ports_action:
   pt-BR: "O que fazer quando um endereço IP solicitante tem uma ou mais das "portos notáveis" ou "portas de proxy" configuradas abertas (ou, caso alguma das opções "quaisquer portos" esteja selecionada, qualquer porta aberta, com exceção apenas daquelas especificadas em "tr069_ports")."
   pt-PT: "O que fazer quando um endereço IP requerente tem uma ou mais das "portos notáveis" ou "portas de proxy" configuradas abertas (ou, se for selecionada alguma das opções "quaisquer portos", qualquer porta aberta, com exceção apenas das especificadas em "tr069_ports")."
@@ -496,21 +496,21 @@ config: !lazy
  supplementary_cache_options_enable_pdo: "Especifica se deve tentar usar o PDO para armazenamento em cache. Padrão = False."
  supplementary_cache_options_enable_redis: "Especifica se deve tentar usar o Redis para armazenamento em cache. Padrão = False."
  supplementary_cache_options_memcached_host: "Valor da host do Memcached. Padrão = localhost."
- supplementary_cache_options_memcached_port: "Valor da porta do Memcached. Padrão = "11211"."
- supplementary_cache_options_pdo_dsn: "Valor DSN do PDO. Padrão = "mysql:dbname=cidram;host=localhost;port=3306"."
+ supplementary_cache_options_memcached_port: "Valor da porta do Memcached. Padrão = \"11211\"."
+ supplementary_cache_options_pdo_dsn: "Valor DSN do PDO. Padrão = \"mysql:dbname=cidram;host=localhost;port=3306\"."
  supplementary_cache_options_pdo_password: "A senha do PDO."
  supplementary_cache_options_pdo_username:
   pt-BR: "O nome de usuário do PDO."
   pt-PT: "O nome de utilizador do PDO."
  supplementary_cache_options_prefix:
-  pt-BR: "O valor especificado aqui será adicionado ao começo das chaves para todas as entradas de cache. Padrão = "CIDRAM_". Quando existem várias instalações no mesmo servidor, isso pode ser útil para manter seus caches separados uns dos outros."
-  pt-PT: "O valor especificado aqui será adicionado ao começo das chaves para todas as entradas de cache. Padrão = "CIDRAM_". Quando existem várias instalações no mesmo servidor, isto pode ser útil para manter os seus caches separados uns dos outros."
+  pt-BR: "O valor especificado aqui será adicionado ao começo das chaves para todas as entradas de cache. Padrão = \"CIDRAM_\". Quando existem várias instalações no mesmo servidor, isso pode ser útil para manter seus caches separados uns dos outros."
+  pt-PT: "O valor especificado aqui será adicionado ao começo das chaves para todas as entradas de cache. Padrão = \"CIDRAM_\". Quando existem várias instalações no mesmo servidor, isto pode ser útil para manter os seus caches separados uns dos outros."
  supplementary_cache_options_redis_database_number:
   pt-BR: "Número do banco de dados Redis. Padrão = 0. Nota: Não é possível usar valores diferentes de 0 com Redis Cluster."
   pt-PT: "Número da base de dados Redis. Padrão = 0. Nota: Não é possível utilizar valores diferentes de 0 com o Redis Cluster."
  supplementary_cache_options_redis_host: "Valor da host do Redis. Padrão = localhost."
- supplementary_cache_options_redis_port: "Valor da porta do Redis. Padrão = "6379"."
- supplementary_cache_options_redis_timeout: "Valor de tempo limite do Redis. Padrão = "2.5"."
+ supplementary_cache_options_redis_port: "Valor da porta do Redis. Padrão = \"6379\"."
+ supplementary_cache_options_redis_timeout: "Valor de tempo limite do Redis. Padrão = \"2.5\"."
  template_data: "Configuração para modelos e temas."
  template_data_block_event_title: "O título da página a ser exibido para eventos de bloqueio."
  template_data_captcha_title: "O título da página a ser exibido para solicitações CAPTCHA."
@@ -537,8 +537,8 @@ config: !lazy
   pt-BR: "Controles para verificar solicitações de plataformas de mídia social."
   pt-PT: "Controles para verificar solicitações de plataformas de media social."
 confirm:
- Action: "Você tem certeza de que deseja "%s"?"
- Delete: "Você tem certeza de que deseja deletar "%s"?"
+ Action: "Você tem certeza de que deseja \"%s"\?"
+ Delete: "Você tem certeza de que deseja deletar \"%s"\?"
 field:
  2FA code: "Código 2FA"
  API key: "Chave de API"
@@ -638,17 +638,17 @@ hints_duration:
  Tempo de arco.: "A duração pode ser descrita usando a notação de tempo de arco. Por exemplo, <strong>1d2°3′4″</strong> por um dia, duas horas, três minutos, quatro segundos ou <strong>5″</strong> por apenas cinco segundos."
  Inglês simples.: "A duração pode ser descrita escrevendo as unidades em inglês simples. Por exemplo, <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> por uma semana, dois dias, três horas, quatro minutos, cinco segundos."
  Restrições.: "A notação pode ser mista, mas as unidades devem sempre ser descritas da maior para a menor, e não podem ser repetidas. Por exemplo, <strong>1 week 2 days 3′4″</strong> é <span class="txtGn">válido</span> e será entendido corretamente, mas <strong>3′4″ 1 week 2 days</strong> e <strong>3 hours 3h 3°</strong> são <span class="txtRd">inválidos</span>. O CIDRAM não se importa se você está usando espaçamento ou não. Os números devem ser simples e não formatados. Por praticidade, a maior unidade suportada é uma semana. Quando a configuração é atualizada, o CIDRAM normaliza as durações para o tempo de arco."
-hints_has_bypass: "* Esta opção tem um bypass correspondente em <code class="s">bypasses➡used</code>. É recomendável que a caixa de seleção para o bypass correspondente esteja marcado da mesma forma que a caixa de seleção para tentar verificar esta opção."
+hints_has_bypass: "* Esta opção tem um bypass correspondente em <code class=\"s\">bypasses➡used</code>. É recomendável que a caixa de seleção para o bypass correspondente esteja marcado da mesma forma que a caixa de seleção para tentar verificar esta opção."
 hints_http_response_header_code:
  1.:
-  pt-BR: "Quando o "modo silencioso" estiver em vigor, a mensagem de status HTTP definida por <code class="s">general➡silent_mode_response_header_code</code> será usada (isso tem a maior precedência)."
-  pt-PT: "Quando o "modo silencioso" estiver em vigor, a mensagem de estado HTTP definida por <code class="s">general➡silent_mode_response_header_code</code> será utilizada (que tem a maior precedência)."
+  pt-BR: "Quando o "modo silencioso" estiver em vigor, a mensagem de status HTTP definida por <code class=\"s\">general➡silent_mode_response_header_code</code> será usada (isso tem a maior precedência)."
+  pt-PT: "Quando o "modo silencioso" estiver em vigor, a mensagem de estado HTTP definida por <code class=\"s\">general➡silent_mode_response_header_code</code> será utilizada (que tem a maior precedência)."
  2.:
   pt-BR: "Quando a entidade solicitante for banida por exceder o limite de infrações, a mensagem de status HTTP para "banido" será usada."
   pt-PT: "Quando a entidade requerente for banida por exceder o limite de infrações, a mensagem de estado HTTP para "banido" será utilizada."
  3.:
-  pt-BR: "Quando bloqueado devido à limitação de taxa, 429 será usado, ou quando bloqueado devido a conflitos de recursos, a mensagem de status HTTP definida por <code class="s">signatures➡conflict_response</code> será usada (a limitação de taxas e os conflitos de recursos têm igual precedência neste contexto)."
-  pt-PT: "Quando bloqueado devido à limitação de taxa, 429 será utilizado, ou quando bloqueado devido a conflitos de recursos, a mensagem de estado HTTP definida por <code class="s">signatures➡conflict_response</code> será utilizada (a limitação de taxas e os conflitos de recursos têm igual precedência neste contexto)."
+  pt-BR: "Quando bloqueado devido à limitação de taxa, 429 será usado, ou quando bloqueado devido a conflitos de recursos, a mensagem de status HTTP definida por <code class=\"s\">signatures➡conflict_response</code> será usada (a limitação de taxas e os conflitos de recursos têm igual precedência neste contexto)."
+  pt-PT: "Quando bloqueado devido à limitação de taxa, 429 será utilizado, ou quando bloqueado devido a conflitos de recursos, a mensagem de estado HTTP definida por <code class=\"s\">signatures➡conflict_response</code> será utilizada (a limitação de taxas e os conflitos de recursos têm igual precedência neste contexto)."
  4.:
   pt-BR: "Quando bloqueado devido a uma regra auxiliar que define uma "substituição do código de status HTTP", essa substituição do código de status HTTP será usada."
   pt-PT: "Quando bloqueado devido a uma regra auxiliar que define uma "substituição do código de estado HTTP", esta substituição do código de estado HTTP será utilizada."
@@ -664,13 +664,13 @@ hints_inspection:
 hints_ipv6_on_32bit: "Nota: As pesquisas de IPv6 podem não funcionar corretamente em alguns sistemas de 32 bits."
 hints_logging_datetime: "Dica útil: Você pode anexar informações de data/hora aos nomes dos arquivos de log usando espaços reservados de formato de hora. Os espaços reservados para formato de hora disponíveis são exibidos em {{Links.ConfigRef.time_format}}."
 hints_ports_action:
- 0.: "Refere-se às portas e/ou intervalos de portas especificados por <code class="s">noteworthy_ports</code>."
+ 0.: "Refere-se às portas e/ou intervalos de portas especificados por <code class=\"s\">noteworthy_ports</code>."
  1.:
-  pt-BR: "Refere-se às portas e/ou intervalos de portas especificados por <code class="s">proxy_ports</code>. Uma opção para denunciar é disponibilizada para portas de proxy aberto, mas não para outras portas. Uma porta aberta, por si só, não é um indicador confiável de abuso (muitos endereços IP legítimos hospedam servidores web, servidores de jogos, TeamSpeak, etc), e assim, oferecer a opção de denunciar qualquer tipo de porta aberta levaria a denúncias desnecessárias e injustificadas, mas uma porta de proxy aberta é um sinal de abuso mais forte do que uma porta aberta genérica, e assim, há justificativa para denunciar portas de proxy abertas."
-  pt-PT: "Refere-se às portas e/ou intervalos de portas especificados por <code class="s">proxy_ports</code>. Uma opção para denunciar é disponibilizada para portas de proxy aberto, mas não para outras portas. Uma porta aberta, por si só, não é um sinal fiável de abuso (muitos endereços IP benignos executam servidores web, servidores de jogos, TeamSpeak, etc), pelo que fornecer uma opção para denunciar qualquer tipo de porta aberta levaria a denúncias desnecessárias e injustificadas, mas uma porta proxy aberta é um sinal de abuso mais forte do que uma porta aberta genérica, pelo que existe justificação para denunciar portas de proxy abertas."
+  pt-BR: "Refere-se às portas e/ou intervalos de portas especificados por <code class=\"s\">proxy_ports</code>. Uma opção para denunciar é disponibilizada para portas de proxy aberto, mas não para outras portas. Uma porta aberta, por si só, não é um indicador confiável de abuso (muitos endereços IP legítimos hospedam servidores web, servidores de jogos, TeamSpeak, etc), e assim, oferecer a opção de denunciar qualquer tipo de porta aberta levaria a denúncias desnecessárias e injustificadas, mas uma porta de proxy aberta é um sinal de abuso mais forte do que uma porta aberta genérica, e assim, há justificativa para denunciar portas de proxy abertas."
+  pt-PT: "Refere-se às portas e/ou intervalos de portas especificados por <code class=\"s\">proxy_ports</code>. Uma opção para denunciar é disponibilizada para portas de proxy aberto, mas não para outras portas. Uma porta aberta, por si só, não é um sinal fiável de abuso (muitos endereços IP benignos executam servidores web, servidores de jogos, TeamSpeak, etc), pelo que fornecer uma opção para denunciar qualquer tipo de porta aberta levaria a denúncias desnecessárias e injustificadas, mas uma porta proxy aberta é um sinal de abuso mais forte do que uma porta aberta genérica, pelo que existe justificação para denunciar portas de proxy abertas."
  2.:
-  pt-BR: "Refere-se a quaisquer portas abertas, com exceção daquelas portas e/ou intervalos de portas especificados por <code class="s">tr069_ports</code>, que devem ser excluídos de quaisquer tipos de correspondências ou ações a serem executadas pelo módulo. Ao selecionar a opção "quaisquer portos", as opções "portos notáveis" e "portas de proxy" provavelmente deveriam ser deselecionadas, pois selecioná-las em conjunto com "quaisquer portos" poderia resultar em correspondências supérfluas e em uma contagem da assinaturas acima do esperado."
-  pt-PT: "Refere-se a quaisquer portas abertas, com exceção das portas e/ou intervalos de portas especificados por <code class="s">tr069_ports</code>, que devem ser excluídos de quaisquer tipos de correspondências ou ações a serem executadas pelo módulo. Ao selecionar a opção "quaisquer portos", as opções "portos notáveis" e "portas de proxy" devem ser provavelmente deselecionadas, porque selecioná-los em conjunto com "quaisquer portos" pode causar correspondências desnecessárias e uma contagem da assinaturas superior à esperada."
+  pt-BR: "Refere-se a quaisquer portas abertas, com exceção daquelas portas e/ou intervalos de portas especificados por <code class=\"s\">tr069_ports</code>, que devem ser excluídos de quaisquer tipos de correspondências ou ações a serem executadas pelo módulo. Ao selecionar a opção "quaisquer portos", as opções "portos notáveis" e "portas de proxy" provavelmente deveriam ser deselecionadas, pois selecioná-las em conjunto com "quaisquer portos" poderia resultar em correspondências supérfluas e em uma contagem da assinaturas acima do esperado."
+  pt-PT: "Refere-se a quaisquer portas abertas, com exceção das portas e/ou intervalos de portas especificados por <code class=\"s\">tr069_ports</code>, que devem ser excluídos de quaisquer tipos de correspondências ou ações a serem executadas pelo módulo. Ao selecionar a opção "quaisquer portos", as opções "portos notáveis" e "portas de proxy" devem ser provavelmente deselecionadas, porque selecioná-los em conjunto com "quaisquer portos" pode causar correspondências desnecessárias e uma contagem da assinaturas superior à esperada."
 hints_pdo_dsn:
  FAQ.: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.pt.md\#user-content-HOW_TO_USE_PDO" hreflang="pt">O que é um "PDO DSN"? Como posso usar o PDO com o CIDRAM?</a></em>"
 hints_sensitive_pages: "Nota: O que constitui uma "página confidencial" é determinado por {{Links.ConfigRef.sensitive}}."
@@ -920,7 +920,7 @@ label:
  Content of subdirectories is hidden: "O conteúdo dos subdiretórios está oculto"
  Content of subdirectories is shown: "O conteúdo dos subdiretórios é exibido"
  Copy to clipboard: "Copiar para área de transferência"
- Current data for %s: "Dados atuais para "%s"."
+ Current data for %s: "Dados atuais para \"%s"\."
  Current data: "Dados atuais."
  Data source: "Fonte de dados"
  Data value: "Valor dos dados"
@@ -931,8 +931,8 @@ label:
  Difference: "Diferença"
  Disable auxiliary rules: "Desativar as regras auxiliares"
  Displaying %s entry that cites %s:
-  - "Exibindo %s entrada que cita "%s"."
-  - "Exibindo %s entradas que citam "%s"."
+  - "Exibindo %s entrada que cita \"%s"\."
+  - "Exibindo %s entradas que citam \"%s"\."
  Displaying %s entry:
   - "Exibindo %s entrada."
   - "Exibindo %s entradas."
@@ -1048,7 +1048,7 @@ label:
  Sort in ascending order: "Ordenar em ordem crescente"
  Sort in descending order: "Ordenar em ordem descendente"
  Start date: "Data de início"
- Starting from %s: "Começa em "%s"."
+ Starting from %s: "Começa em \"%s"\."
  Subtrahend: "Subtraendo"
  Suggestions: "Sugestões"
  Suspicious: "Suspeito"
@@ -1276,7 +1276,7 @@ response:
  Already up-to-date: "Já atualizado."
  An account with that username already exists: "Uma conta com esse nome já existe!"
  An error occurred while attempting to uninstall the component: "Ocorreu um erro ao tentar desinstalar o componente."
- Auxiliary rule, %s, deleted successfully: "Regra auxiliar, "%s", deletada com sucesso."
+ Auxiliary rule, %s, deleted successfully: "Regra auxiliar, \"%s"\, deletada com sucesso."
  Auxiliary rules successfully updated: "Regras auxiliares atualizadas com sucesso."
  Can_t fetch metadata: "Não é possível buscar metadados"
  Can_t fetch the file: "Não é possível buscar o arquivo"
@@ -1288,10 +1288,10 @@ response:
  Component successfully updated: "Componente atualizado com sucesso."
  Configuration successfully updated: "Configuração atualizada com sucesso."
  Copied: "Copiado"
- Directory _%s_ isn_t writable: "O diretório "%s" não é gravável!"
+ Directory _%s_ isn_t writable: "O diretório \"%s"\ não é gravável!"
  Don_t know what to do with the data after reading it: "Não sei o que fazer com os dados depois de lê-los.\nConsidere encadeá-lo a outro comando. Obrigado."
  Error at the upstream: "Erro no upstream!"
- Failed to access %s: {"pt-BR": "Falha ao acessar "%s"!", "pt-PT": "Falha ao aceder ao "%s"!"}
+ Failed to access %s: {"pt-BR": "Falha ao acessar \"%s"\!", "pt-PT": "Falha ao aceder ao \"%s"\!"}
  Failed to activate: "Falha ao ativar!"
  Failed to create: "Criação falhada!"
  Failed to deactivate: "Falha ao desativar!"
@@ -1314,16 +1314,16 @@ response:
  File successfully duplicated: "Arquivo duplicado com sucesso!"
  File successfully modified: "Arquivo modificado com sucesso!"
  File successfully uploaded: "Arquivo carregado com sucesso!"
- Finished reading from %s: "Leitura de "%s" é feita."
- Finished writing to %s: "Gravação concluída em "%s"."
- I can_t write to %s, sorry: "Não consigo escrever para "%s", desculpe."
+ Finished reading from %s: "Leitura de \"%s"\ é feita."
+ Finished writing to %s: "Gravação concluída em \"%s"\."
+ I can_t write to %s, sorry: "Não consigo escrever para \"%s"\, desculpe."
  I don_t understand that command, sorry: "Eu não entendo esse comando, desculpe."
  Incorrect 2FA code entered: "Código 2FA incorreto inserido. Autenticação falhou."
  Invalid API key: "Chave de API inválida!"
  Invalid password: "Falha no login! Senha inválida!"
  Invalid timestamp: "Carimbo de data/hora inválido!"
  Maximum number of login attempts exceeded: "Número máximo de tentativas de login foi excedido; Acesso negado."
- New auxiliary rule, %s, created successfully: "Nova regra auxiliar, "%s", criada com sucesso."
+ New auxiliary rule, %s, created successfully: "Nova regra auxiliar, \"%s"\, criada com sucesso."
  Not available at the upstream for legal reasons: "Não disponível no upstream por motivos legais."
  Not available at the upstream: "Não disponível no upstream."
  Outdated: "Desatualizado!"
@@ -1561,8 +1561,8 @@ warning: !lazy
  IP tests are disabled: "Atenção: Os testes de IP estão desabilitados! Os arquivos de assinatura não podem ser utilizados até que isso seja resolvido."
  JavaScript required: "Atenção: Algumas funcionalidades do front-end requerem JavaScript. Para garantir que todo o front-end se comporte conforme o esperado, é recomendável ativar o JavaScript."
  Likely to be overwritten:
-  pt-BR: "Atenção: O arquivo que você está editando no momento pertence ao componente "%s". Quaisquer alterações feitas neste arquivo provavelmente serão sobrescritas na próxima vez que o componente for atualizado."
-  pt-PT: "Atenção: O arquivo que está a editar no momento pertence ao componente "%s". Quaisquer alterações feitas neste arquivo provavelmente serão sobrescritas na próxima vez que o componente for atualizado."
+  pt-BR: "Atenção: O arquivo que você está editando no momento pertence ao componente \"%s"\. Quaisquer alterações feitas neste arquivo provavelmente serão sobrescritas na próxima vez que o componente for atualizado."
+  pt-PT: "Atenção: O arquivo que está a editar no momento pertence ao componente \"%s"\. Quaisquer alterações feitas neste arquivo provavelmente serão sobrescritas na próxima vez que o componente for atualizado."
  Likely to become corrupted:
   pt-BR: "Atenção: Bytes não UTF8 foram detectados no arquivo que está sendo editado. O arquivo será provavelmente corrompido se editado usando esta funcionalidade específica."
   pt-PT: "Atenção: Bytes não UTF8 foram detectados no arquivo que está a ser editado. O arquivo será provavelmente corrompido se editado utilizando esta funcionalidade específica."

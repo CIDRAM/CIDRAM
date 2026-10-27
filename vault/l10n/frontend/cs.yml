@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Czech language data for the front-end (last modified: 2026.10.02).
+# This file: Czech language data for the front-end (last modified: 2026.10.03).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -320,13 +320,13 @@ config: !lazy
  rate_limiting_segregate: "Měly by být kvóty pro různé domény a hostitele odděleny nebo sdíleny? True (Pravdivé) = Kvóty budou odděleny. False (Nepravdivé) = Kvóty budou sdíleny [Standardní]."
  sfs: "Konfigurace pro modul Stop Forum Spam."
  shodandb: "Konfigurace pro modul ShodanDB (Shodan InternetDB)."
- shodandb_api_base: "Základní URL pro vyhledávání ve službě Shodan InternetDB (nebo kompatibilní koncový bod). Standardní = <code class="s">https://internetdb.shodan.io</code>."
+ shodandb_api_base: "Základní URL pro vyhledávání ve službě Shodan InternetDB (nebo kompatibilní koncový bod). Standardní = <code class=\"s\">https://internetdb.shodan.io</code>."
  shodandb_api_header: "Volitelná hlavička HTTP, která se má odesílat s požadavky na vyhledávání (např., pro ověření u vlastního nebo proxy koncového bodu). Pokud není potřeba, ponechte prázdné."
  shodandb_expire_bad: "Jak dlouho ukládat do mezipaměti výsledek vyhledávání v ShodanDB v případě že nebyly nalezeny žádné porty. Standardní = 1 hodina."
  shodandb_expire_good: "Jak dlouho ukládat do mezipaměti výsledek vyhledávání v ShodanDB se nalezených portů. Standardní = 1 den."
  shodandb_lookup_strategy: "Kdy by se měly provádět vyhledávání v ShodanDB?"
  shodandb_noteworthy_ports: "Seznam portů (a/nebo rozsahů portů, např., 3389–3395) oddělených čárkami, které jsou považovány za významné nebo vysoce rizikové, pokud jsou na požadující IP adrese nalezeny jako otevřené (např., porty pro vzdálenou správu, IoT, databáze)."
- shodandb_options: "Možnosti CAPTCHA které se mají uplatnit při zjištění otevřeného portu v souladu s označením u <code class="s">ports_action</code>."
+ shodandb_options: "Možnosti CAPTCHA které se mají uplatnit při zjištění otevřeného portu v souladu s označením u <code class=\"s\">ports_action</code>."
  shodandb_ports_action: "Co dělat když má žádající IP adresa otevřený jeden či více nakonfigurovaných „významných portů“ nebo „proxy portů“ (nebo, pokud je zvolena některá z možností „jakékoli porty“, jakýkoli otevřený port, s výjimkou portů uvedených v „tr069_ports“)."
  shodandb_proxy_ports: "Seznam portů (a/nebo rozsahů portů, např., 3389–3395) oddělených čárkami, které jsou běžně spojovány s otevřenými proxy servery, servery SOCKS, nebo jinými anonymizačními přenosovými uzly."
  shodandb_timeout_rl: "Jak dlouho pozastavit vyhledávání po překročení limitu vyhledávání (HTTP 429). Standardní = 1 hodina."
@@ -465,11 +465,11 @@ hints_duration:
  Obloukový čas.: "Trvání lze popsat pomocí notace obloukového času. Např., <strong>1d2°3′4″</strong> pro jeden den, dvě hodiny, tři minuty, čtyři sekundy, nebo <strong>5″</strong> pro jen pět sekund."
  Jednoduchá angličtina.: "Trvání lze popsat napsáním jednotek v jednoduché angličtině. Např., <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> pro jeden týden, dva dny, tři hodiny, čtyři minuty, pět sekund."
  Omezení.: "Notace lze kombinovat, ale jednotky musí být vždy popsány od největší po nejmenší a nelze je opakovat. Např., <strong>1 week 2 days 3′4″</strong> je <span class="txtGn">platné</span> a bude správně pochopeno, ale <strong>3′4″ 1 week 2 days</strong> a <strong>3 hours 3h 3°</strong> jsou <span class="txtRd">neplatné</span>. CIDRAM se nestará o to, zda používáte mezery nebo ne. Čísla musí být čistá a neformátovaná. Pro praktičnost je největší podporovanou jednotkou týden. Když je konfigurace aktualizováno, CIDRAM normalizuje trvání na obloukový čas."
-hints_has_bypass: "* Tato možnost má odpovídající bypass pod <code class="s">bypasses➡used</code>. Doporučuji zajistit, aby zaškrtávací políčko pro odpovídající bypass bylo označeno stejně jako zaškrtávací políčko pro pokus o ověření této možnosti."
+hints_has_bypass: "* Tato možnost má odpovídající bypass pod <code class=\"s\">bypasses➡used</code>. Doporučuji zajistit, aby zaškrtávací políčko pro odpovídající bypass bylo označeno stejně jako zaškrtávací políčko pro pokus o ověření této možnosti."
 hints_http_response_header_code:
- 1.: "Pokud je aktivní „tichý režim“, použije se stavová zpráva HTTP definované direktivou <code class="s">general➡silent_mode_response_header_code</code> (tato zpráva má nejvyšší prioritu)."
+ 1.: "Pokud je aktivní „tichý režim“, použije se stavová zpráva HTTP definované direktivou <code class=\"s\">general➡silent_mode_response_header_code</code> (tato zpráva má nejvyšší prioritu)."
  2.: "Pokud je žadatel zakázán z důvodu překročení limitu porušení, bude použita stavová zpráva HTTP „zakázáno“."
- 3.: "Pokud je blokováno z důvodu omezení rychlosti bude použit kód 429, nebo pokud je blokováno z důvodu konfliktu zdrojů bude použita stavová zpráva HTTP definovaná <code class="s">signatures➡conflict_response</code> (omezení rychlosti a konflikty zdrojů mají v tomto kontextu stejnou prioritu)."
+ 3.: "Pokud je blokováno z důvodu omezení rychlosti bude použit kód 429, nebo pokud je blokováno z důvodu konfliktu zdrojů bude použita stavová zpráva HTTP definovaná <code class=\"s\">signatures➡conflict_response</code> (omezení rychlosti a konflikty zdrojů mají v tomto kontextu stejnou prioritu)."
  4.: "Pokud je blokováno pomocným pravidlem, které nastavuje „přepsání stavového kódu HTTP“, bude použito toto přepsání stavového kódu HTTP."
  5.: "Pokud je blokováno z právních důvodů (tj., pokud je blokováno kvůli vlastnímu podpisu, který používá zkratku „právní“), použije se stavová zpráva HTTP pro „právní“."
  6.: "Pro všechny ostatní blokované požadavky bude použita stavová zpráva HTTP pro „standardní“ (tato zpráva má nejnižší prioritu)."
@@ -477,9 +477,9 @@ hints_inspection: "* Určeno pouze pro ladění pomocných pravidel. Nezobrazuje
 hints_ipv6_on_32bit: "Poznámka: Vyhledávání IPv6 nemusí na některých 32-bitových systémech fungovat správně."
 hints_logging_datetime: "Užitečný tip: K názvům souborů protokolu můžete připojit informace o datu a čase pomocí zástupných symbolů formátu času. Dostupné zástupné symboly formátu času jsou zobrazeny v {{Links.ConfigRef.time_format}}."
 hints_ports_action:
- 0.: "Odkazuje na porty a/nebo rozsahy portů specifikované pomocí <code class="s">noteworthy_ports</code>."
- 1.: "Odkazuje na porty a/nebo rozsahy portů specifikované pomocí <code class="s">proxy_ports</code>. Možnost reportovat je k dispozici pro porty otevřených proxy serverů, nikoli však pro ostatní porty. Samotný otevřený port není spolehlivým indikátorem zneužití (mnoho legitimních IP adres provozuje webový server, herní server, TeamSpeak, atd), takže možnost nahlásit jakýkoli otevřený port by vedla ke zbytečným a neopodstatněným hlášením, otevřený port proxy serveru však představuje silnější signál možného zneužití než běžný otevřený port, takže hlášení otevřených portů proxy serverů je opodstatněné."
- 2.: "Vztahuje se na veškeré otevřené porty, s výjimkou těch portů a/nebo rozsahů portů specifikovaných parametrem <code class="s">tr069_ports</code>, které mají být vyňaty z jakéhokoli porovnávání či akcí prováděných modulem. Pokud zaškrtnete volbu pro „jakékoli porty“, měli byste pravděpodobně zrušit zaškrtnutí voleb pro „významné porty“ a „proxy porty“; jejich současné zaškrtnutí s volbou „jakékoli porty“ by totiž mohlo vést k nadbytečným shodám a vyššímu počet podpisů než se očekávalo."
+ 0.: "Odkazuje na porty a/nebo rozsahy portů specifikované pomocí <code class=\"s\">noteworthy_ports</code>."
+ 1.: "Odkazuje na porty a/nebo rozsahy portů specifikované pomocí <code class=\"s\">proxy_ports</code>. Možnost reportovat je k dispozici pro porty otevřených proxy serverů, nikoli však pro ostatní porty. Samotný otevřený port není spolehlivým indikátorem zneužití (mnoho legitimních IP adres provozuje webový server, herní server, TeamSpeak, atd), takže možnost nahlásit jakýkoli otevřený port by vedla ke zbytečným a neopodstatněným hlášením, otevřený port proxy serveru však představuje silnější signál možného zneužití než běžný otevřený port, takže hlášení otevřených portů proxy serverů je opodstatněné."
+ 2.: "Vztahuje se na veškeré otevřené porty, s výjimkou těch portů a/nebo rozsahů portů specifikovaných parametrem <code class=\"s\">tr069_ports</code>, které mají být vyňaty z jakéhokoli porovnávání či akcí prováděných modulem. Pokud zaškrtnete volbu pro „jakékoli porty“, měli byste pravděpodobně zrušit zaškrtnutí voleb pro „významné porty“ a „proxy porty“; jejich současné zaškrtnutí s volbou „jakékoli porty“ by totiž mohlo vést k nadbytečným shodám a vyššímu počet podpisů než se očekávalo."
 hints_pdo_dsn:
  FAQ.: "<em><a href="{{Links.CIDRAM.Docs Base Path}}readme.en.md\#user-content-HOW_TO_USE_PDO" hreflang="en-AU">Co je to „PDO DSN“? Jak mohu používat PDO s CIDRAM?</a></em>"
 hints_sensitive_pages: "Poznámka: Co tvoří „citlivou stránku“ je určeno {{Links.ConfigRef.sensitive}}."

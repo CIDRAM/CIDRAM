@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Chinese language data for the front-end (last modified: 2026.10.02).
+# This file: Chinese language data for the front-end (last modified: 2026.10.03).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -427,8 +427,8 @@ config: !lazy
  sfs: {"zh-Hans": "Stop Forum Spam模块的配置。", "zh-Hant": "Stop Forum Spam模組的配置。"}
  shodandb: {"zh-Hans": "ShodanDB (Shodan InternetDB)模块的配置。", "zh-Hant": "ShodanDB (Shodan InternetDB)模組的配置。"}
  shodandb_api_base:
-  zh-Hans: "用于Shodan InternetDB查询（或兼容端点）的基础URL。 标准 = <code class="s">https://internetdb.shodan.io</code>。"
-  zh-Hant: "Shodan InternetDB查詢（或相容的端點）的基本URL。 標準 = <code class="s">https://internetdb.shodan.io</code>。"
+  zh-Hans: "用于Shodan InternetDB查询（或兼容端点）的基础URL。 标准 = <code class=\"s\">https://internetdb.shodan.io</code>。"
+  zh-Hant: "Shodan InternetDB查詢（或相容的端點）的基本URL。 標準 = <code class=\"s\">https://internetdb.shodan.io</code>。"
  shodandb_api_header:
   zh-Hans: "随查询请求发送的可选HTTP标头（例如，用于针对自托管或代理端点进行身份验证）。 如无需填写，请留空。"
   zh-Hant: "可選的HTTP標頭，用於隨查找請求一起傳送（例如，用於對自託管或代理端點進行身份驗證）。 如果不需要，請留空。"
@@ -441,6 +441,24 @@ config: !lazy
  shodandb_lookup_strategy:
   zh-Hans: "应该在何时执行ShodanDB查询？"
   zh-Hant: "何時應該執行ShodanDB查詢？"
+ shodandb_noteworthy_ports:
+  zh-Hans: "以逗号分隔的端口和/或端口范围列表（例如，3389-3395），当在请求方IP地址处发现处于开放状态时被视为值得注意或具有高风险（例如：远程管理、物联网、数据库端口）。"
+  zh-Hant: "以逗號分隔的連接埠和/或連接埠範圍清單（例如，3389-3395），當在請求的IP位址上發現開放狀態時被認為值得注意或具有高風險（例如：遠端管理、物聯網、資料庫連接埠）。"
+ shodandb_options:
+  zh-Hans: "根据 <code class=\"s\">ports_action</code> 在检测到开放端口时应采用的验证码选项。"
+  zh-Hant: "根據 <code class=\"s\">ports_action</code> 偵測到開放連接埠時應套用的驗證碼選項。"
+ shodandb_ports_action:
+  zh-Hans: "当请求的IP地址开放了所配置的“值得注意的端口”或“代理端口”中的一个或多个时（或者，如果选择了任何“任意端口”选项，则涵盖所有开放端口，但“tr069_ports”所指定的端口除外），该如何处理。"
+  zh-Hant: "當請求的IP位址一個或多個已配置的『值得注意的連接埠』或『代理連接埠』處於開啟狀態時（或者，如果選擇了任何『任何連接埠』選項，則涵蓋所有開放連接埠，但『tr069_ports』所指定的連接埠除外），該怎麼辦。"
+ shodandb_proxy_ports:
+  zh-Hans: "以逗号分隔的端口和/或端口范围列表（例如，3389-3395），通常与开放代理、SOCKS服务器、或其他匿名中继相关联。"
+  zh-Hant: "以逗號分隔的連接埠和/或連接埠範圍清單（例如，3389-3395），通常與開放代理、SOCKS伺服器、或其他匿名中繼有關。"
+ shodandb_timeout_rl:
+  zh-Hans: "在超出查询限制后，应暂停查询多长时间（HTTP 429）。 标准 = 1小时。"
+  zh-Hant: "超過查詢次數限制後，暫停查詢多久（HTTP 429）。 標準 = 1小時。"
+ shodandb_tr069_ports:
+  zh-Hans: "以逗号分隔的在模块执行操作时需排除的TR-069/CWMP（CPE WAN 管理协议）端口以及任何其他端口和/或端口范围列表。 标准 = 7547（标准的/经IANA注册的CWMP端口）和 30005（某些互联网服务提供商及设备所采用的一种常见的非标准备用端口）。 大多数面向家庭用户的互联网服务提供商会通过CWMP（通常使用7547端口）远程管理客户的路由器，因此路由器上开放该端口属于正常且预期之中的情况。"
+  zh-Hant: "以逗號分隔的要從模組執行的操作中排除的TR-069/CWMP（CPE WAN 管理協定）連接埠以及任何其他連接埠和/或連接埠範圍列表。 標準 = 7547（標準/IANA註冊的CWMP連接埠）和 30005（一些ISP和設備使用的常見非標準替代連接埠）。 大多數住宅ISP透過CWMP（通常透過連接埠7547）遠端管理客戶路由器，因此路由器開放此連接埠是正常且預期的。"
  signatures: {"zh-Hans": "签名，签名文件，模块，等的配置。", "zh-Hant": "簽名，簽名檔案，模組，等的配置。"}
  signatures_conflict_response:
   zh-Hans: "当同时尝试访问相同资源的次数过多时（例如，同时向同一台机器上的多个PHP进程发出对相同资源的请求），其中一些尝试可能会失败。 万一发生这种情况，并且影响到签名文件或模块，CIDRAM可能无法对该请求做出有效的决定。 如果发生这种情况，应该阻止该请求吗？ 并且，CIDRAM应该发送哪条HTTP状态消息？"
@@ -587,18 +605,18 @@ hints_duration:
   <strong>簡單的英語。</strong> 持續時間可以通過用簡單的英語書寫單位來描述。 例如， <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> 表示一周、兩天、三小時、四分鐘、五秒。<br /><br />
   <strong>約束。</strong> 表示法可以混合使用，但單位必須始終從大到小描述，並且不能重複。 例如， <strong>1 week 2 days 3′4″</strong> 是<span class="txtGn">有效的</span>並且會被正確理解，但 <strong>3′4″ 1 week 2 days</strong> 和 <strong>3 hours 3h 3°</strong> 是<span class="txtRd">無效的</span>。 CIDRAM不關心是否使用間距。 數字必須是普通的和無格式的。 為實用起見，支持的最大單位是一周。 當配置更新時，CIDRAM 將持續時間標準化為弧時。<br /><br />
 hints_has_bypass:
- zh-Hans: "* 这个选项在<code class="s">bypasses➡used</code>下有相应的绕过。 建议确保相应旁路的复选框标记方式与尝试验证此选项的复选框相同。"
- zh-Hant: "* 這個選項在<code class="s">bypasses➡used</code>下有相應的繞過。 建議確保相應旁路的複選框標記方式與嘗試驗證此選項的複選框相同。"
+ zh-Hans: "* 这个选项在<code class=\"s\">bypasses➡used</code>下有相应的绕过。 建议确保相应旁路的复选框标记方式与尝试验证此选项的复选框相同。"
+ zh-Hant: "* 這個選項在<code class=\"s\">bypasses➡used</code>下有相應的繞過。 建議確保相應旁路的複選框標記方式與嘗試驗證此選項的複選框相同。"
 hints_http_response_header_code:
  1.:
-  zh-Hans: "当“静默模式”生效时，将使用<code class="s">general➡silent_mode_response_header_code</code>定义的HTTP状态消息（这是最高优先级）。"
-  zh-Hant: "當『靜默模式』生效時，將使用<code class="s">general➡silent_mode_response_header_code</code>定義的HTTP狀態訊息（這是最高優先級）。"
+  zh-Hans: "当“静默模式”生效时，将使用<code class=\"s\">general➡silent_mode_response_header_code</code>定义的HTTP状态消息（这是最高优先级）。"
+  zh-Hant: "當『靜默模式』生效時，將使用<code class=\"s\">general➡silent_mode_response_header_code</code>定義的HTTP狀態訊息（這是最高優先級）。"
  2.:
   zh-Hans: "当请求实体因超出违规限制而被禁止时，将使用“禁止”的HTTP状态消息。"
   zh-Hant: "當請求實體因超出違規限製而被禁止時，將使用『禁止』的HTTP狀態訊息。"
  3.:
-  zh-Hans: "当由于速率限制而阻止时，将使用429，或者当由于资源冲突而阻止时，将使用<code class="s">signatures➡conflict_response</code>定义的HTTP状态消息（在此上下文中，速率限制和资源冲突具有同等优先级）。"
-  zh-Hant: "當由於速率限制而阻止時，將使用429，或當由於資源衝突而阻止時，將使用<code class="s">signatures➡conflict_response</code>定義的HTTP狀態訊息（在此上下文中，速率限制和資源衝突具有同等優先權）。"
+  zh-Hans: "当由于速率限制而阻止时，将使用429，或者当由于资源冲突而阻止时，将使用<code class=\"s\">signatures➡conflict_response</code>定义的HTTP状态消息（在此上下文中，速率限制和资源冲突具有同等优先级）。"
+  zh-Hant: "當由於速率限制而阻止時，將使用429，或當由於資源衝突而阻止時，將使用<code class=\"s\">signatures➡conflict_response</code>定義的HTTP狀態訊息（在此上下文中，速率限制和資源衝突具有同等優先權）。"
  4.:
   zh-Hans: "当由于设置了“HTTP状态码覆盖”的辅助规则而被阻止时，将使用该HTTP状态码覆盖。"
   zh-Hant: "當由於設定了『HTTP狀態碼覆蓋』的輔助規則而被阻止時，將使用該HTTP狀態碼覆蓋。"
@@ -615,14 +633,14 @@ hints_logging_datetime:
  zh-Hant: "有用的提示：您可以使用時間格式佔位符將日期/時間資訊附加到日誌檔案的名稱。 可用的時間格式佔位符顯示在{{Links.ConfigRef.time_format}}處。"
 hints_ports_action:
  0.:
-  zh-Hans: "指由 <code class="s">noteworthy_ports</code> 指定的端口和/或端口范围。"
-  zh-Hant: "指由 <code class="s">noteworthy_ports</code> 指定的連接埠和/或連接埠範圍。"
+  zh-Hans: "指由 <code class=\"s\">noteworthy_ports</code> 指定的端口和/或端口范围。"
+  zh-Hant: "指由 <code class=\"s\">noteworthy_ports</code> 指定的連接埠和/或連接埠範圍。"
  1.:
-  zh-Hans: "指由 <code class="s">proxy_ports</code> 指定的端口和/或端口范围。 针对开放代理端口提供了报告选项，但其他端口则没有。 仅凭端口开放这一特征，并不能可靠地判定存在滥用行为（许多正常的IP地址也会运行Web服务器、游戏服务器、TeamSpeak、等服务），因此如果允许针对任何开放端口进行举报，将会导致大量不必要且缺乏正当理由的举报。 然而，相比普通的开放端口，开放的代理端口是更强烈的滥用信号，因此针对开放代理端口进行报告是有正当理由的。"
-  zh-Hant: "指由 <code class="s">proxy_ports</code> 指定的連接埠和/或連接埠範圍。 提供了報告開放代理連接埠的選項，但未提供報告其他連接埠的選項。 開放連接埠本身並不是可靠的濫用訊號（許多良性IP位址運行網路伺服器、遊戲伺服器、TeamSpeak 、等等），因此提供舉報任何類型的開放連接埠的選項會導致不必要和不合理的舉報。 但是，開放的代理端口比開放的普通端口更能表明存在濫用行為，因此有理由舉報開放的代理端口。"
+  zh-Hans: "指由 <code class=\"s\">proxy_ports</code> 指定的端口和/或端口范围。 针对开放代理端口提供了报告选项，但其他端口则没有。 仅凭端口开放这一特征，并不能可靠地判定存在滥用行为（许多正常的IP地址也会运行Web服务器、游戏服务器、TeamSpeak、等服务），因此如果允许针对任何开放端口进行举报，将会导致大量不必要且缺乏正当理由的举报。 然而，相比普通的开放端口，开放的代理端口是更强烈的滥用信号，因此针对开放代理端口进行报告是有正当理由的。"
+  zh-Hant: "指由 <code class=\"s\">proxy_ports</code> 指定的連接埠和/或連接埠範圍。 提供了報告開放代理連接埠的選項，但未提供報告其他連接埠的選項。 開放連接埠本身並不是可靠的濫用訊號（許多良性IP位址運行網路伺服器、遊戲伺服器、TeamSpeak 、等等），因此提供舉報任何類型的開放連接埠的選項會導致不必要和不合理的舉報。 但是，開放的代理連接埠比開放的普通連接埠更能表明存在濫用行為，因此有理由舉報開放的代理連接埠。"
  2.:
-  zh-Hans: "指所有开放端口，但由 <code class="s">tr069_ports</code> 指定的端口和/或端口范围除外：这些指定的端口将不参与该模块执行的任何匹配或操作。 如果勾选了“任意端口”选项，通常应取消勾选“值得注意的端口”和“代理端口”选项，因为将它们与“任意端口”同时勾选，可能会导致多余的匹配，并使签名计数超出预期。"
-  zh-Hant: "指所有開放連接埠，但由 <code class="s">tr069_ports</code> 指定的連接埠和/或連接埠範圍除外：這些連接埠和/或連接埠範圍將被排除在模組要執行的任何匹配或操作之外。 如果選取「任何連接埠」選項，則「值得注意的連接埠」和「代理連接埠」選項可能應該取消選中，因為將它們與「任何連接埠」一起選取可能會導致多餘的符合和比預期更高的簽名計數。"
+  zh-Hans: "指所有开放端口，但由 <code class=\"s\">tr069_ports</code> 指定的端口和/或端口范围除外：这些指定的端口将不参与该模块执行的任何匹配或操作。 如果勾选了“任意端口”选项，通常应取消勾选“值得注意的端口”和“代理端口”选项，因为将它们与“任意端口”同时勾选，可能会导致多余的匹配，并使签名计数超出预期。"
+  zh-Hant: "指所有開放連接埠，但由 <code class=\"s\">tr069_ports</code> 指定的連接埠和/或連接埠範圍除外：這些連接埠和/或連接埠範圍將被排除在模組要執行的任何匹配或操作之外。 如果選取「任何連接埠」選項，則「值得注意的連接埠」和「代理連接埠」選項可能應該取消選中，因為將它們與「任何連接埠」一起選取可能會導致多餘的符合和比預期更高的簽名計數。"
 hints_pdo_dsn:
  zh-Hans: "<strong>常问问题。</strong> <em><a href="{{Links.CIDRAM.Docs Base Path}}readme.zh-Hans.md\#user-content-HOW_TO_USE_PDO" hreflang="zh-Hans">“PDO DSN”是什么？如何能PDO与CIDRAM一起使用？</a></em>"
  zh-Hant: "<strong>常問問題。</strong> <em><a href="{{Links.CIDRAM.Docs Base Path}}readme.zh-Hant.md\#user-content-HOW_TO_USE_PDO" hreflang="zh-Hant">『PDO DSN』是什麼？如何能PDO與CIDRAM一起使用？</a></em>"

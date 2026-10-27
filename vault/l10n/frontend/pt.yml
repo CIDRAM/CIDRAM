@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Portuguese language data for the front-end (last modified: 2026.09.24).
+# This file: Portuguese language data for the front-end (last modified: 2026.10.27).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -429,21 +429,21 @@ config: !lazy
  supplementary_cache_options_enable_pdo: "Especifica se deve tentar usar o PDO para armazenamento em cache. Padrão = False."
  supplementary_cache_options_enable_redis: "Especifica se deve tentar usar o Redis para armazenamento em cache. Padrão = False."
  supplementary_cache_options_memcached_host: "Valor da host do Memcached. Padrão = localhost."
- supplementary_cache_options_memcached_port: "Valor da porta do Memcached. Padrão = "11211"."
- supplementary_cache_options_pdo_dsn: "Valor DSN do PDO. Padrão = "mysql:dbname=cidram;host=localhost;port=3306"."
+ supplementary_cache_options_memcached_port: "Valor da porta do Memcached. Padrão = \"11211\"."
+ supplementary_cache_options_pdo_dsn: "Valor DSN do PDO. Padrão = \"mysql:dbname=cidram;host=localhost;port=3306\"."
  supplementary_cache_options_pdo_password: "A senha do PDO."
  supplementary_cache_options_pdo_username:
   pt-BR: "O nome de usuário do PDO."
   pt-PT: "O nome de utilizador do PDO."
  supplementary_cache_options_prefix:
-  pt-BR: "O valor especificado aqui será adicionado ao começo das chaves para todas as entradas de cache. Padrão = "CIDRAM_". Quando existem várias instalações no mesmo servidor, isso pode ser útil para manter seus caches separados uns dos outros."
-  pt-PT: "O valor especificado aqui será adicionado ao começo das chaves para todas as entradas de cache. Padrão = "CIDRAM_". Quando existem várias instalações no mesmo servidor, isto pode ser útil para manter os seus caches separados uns dos outros."
+  pt-BR: "O valor especificado aqui será adicionado ao começo das chaves para todas as entradas de cache. Padrão = \"CIDRAM_\". Quando existem várias instalações no mesmo servidor, isso pode ser útil para manter seus caches separados uns dos outros."
+  pt-PT: "O valor especificado aqui será adicionado ao começo das chaves para todas as entradas de cache. Padrão = \"CIDRAM_\". Quando existem várias instalações no mesmo servidor, isto pode ser útil para manter os seus caches separados uns dos outros."
  supplementary_cache_options_redis_database_number:
   pt-BR: "Número do banco de dados Redis. Padrão = 0. Nota: Não é possível usar valores diferentes de 0 com Redis Cluster."
   pt-PT: "Número da base de dados Redis. Padrão = 0. Nota: Não é possível utilizar valores diferentes de 0 com o Redis Cluster."
  supplementary_cache_options_redis_host: "Valor da host do Redis. Padrão = localhost."
- supplementary_cache_options_redis_port: "Valor da porta do Redis. Padrão = "6379"."
- supplementary_cache_options_redis_timeout: "Valor de tempo limite do Redis. Padrão = "2.5"."
+ supplementary_cache_options_redis_port: "Valor da porta do Redis. Padrão = \"6379\"."
+ supplementary_cache_options_redis_timeout: "Valor de tempo limite do Redis. Padrão = \"2.5\"."
  template_data: "Configuração para modelos e temas."
  template_data_block_event_title: "O título da página a ser exibido para eventos de bloqueio."
  template_data_captcha_title: "O título da página a ser exibido para solicitações CAPTCHA."
@@ -470,8 +470,8 @@ config: !lazy
   pt-BR: "Controles para verificar solicitações de plataformas de mídia social."
   pt-PT: "Controles para verificar solicitações de plataformas de media social."
 confirm:
- Action: "Você tem certeza de que deseja "%s"?"
- Delete: "Você tem certeza de que deseja deletar "%s"?"
+ Action: "Você tem certeza de que deseja \"%s"\?"
+ Delete: "Você tem certeza de que deseja deletar \"%s"\?"
 field:
  %s File: "%s Arquivo"
  2FA code: "Código 2FA"
@@ -565,7 +565,7 @@ hints_duration:
  Tempo de arco.: "A duração pode ser descrita usando a notação de tempo de arco. Por exemplo, <strong>1d2°3′4″</strong> por um dia, duas horas, três minutos, quatro segundos ou <strong>5″</strong> por apenas cinco segundos."
  Inglês simples.: "A duração pode ser descrita escrevendo as unidades em inglês simples. Por exemplo, <strong>1 week 2 days 3 hours 4 minutes 5 seconds</strong> por uma semana, dois dias, três horas, quatro minutos, cinco segundos."
  Restrições.: "A notação pode ser mista, mas as unidades devem sempre ser descritas da maior para a menor, e não podem ser repetidas. Por exemplo, <strong>1 week 2 days 3′4″</strong> é <span class="txtGn">válido</span> e será entendido corretamente, mas <strong>3′4″ 1 week 2 days</strong> e <strong>3 hours 3h 3°</strong> são <span class="txtRd">inválidos</span>. O CIDRAM não se importa se você está usando espaçamento ou não. Os números devem ser simples e não formatados. Por praticidade, a maior unidade suportada é uma semana. Quando a configuração é atualizada, o CIDRAM normaliza as durações para o tempo de arco."
-hints_has_bypass: "* Esta opção tem um bypass correspondente em <code class="s">bypasses➡used</code>. É recomendável que a caixa de seleção para o bypass correspondente esteja marcado da mesma forma que a caixa de seleção para tentar verificar esta opção."
+hints_has_bypass: "* Esta opção tem um bypass correspondente em <code class=\"s\">bypasses➡used</code>. É recomendável que a caixa de seleção para o bypass correspondente esteja marcado da mesma forma que a caixa de seleção para tentar verificar esta opção."
 hints_inspection:
  pt-BR: "* Destina-se apenas à depuração de regras auxiliares. Não exibido para usuários bloqueados."
  pt-PT: "* Destina-se apenas à depuração de regras auxiliares. Não exibido para utilizadores bloqueados."
@@ -811,7 +811,7 @@ label:
  Component updates metadata: "Metadados para atualização de componentes"
  Compress: "Comprimir"
  Copy to clipboard: "Copiar para área de transferência"
- Current data for %s: "Dados atuais para "%s"."
+ Current data for %s: "Dados atuais para \"%s"\."
  Current data: "Dados atuais."
  Data source: "Fonte de dados"
  Data value: "Valor dos dados"
@@ -822,8 +822,8 @@ label:
  Difference: "Diferença"
  Disable auxiliary rules: "Desativar as regras auxiliares"
  Displaying %s entry that cites %s:
-  - "Exibindo %s entrada que cita "%s"."
-  - "Exibindo %s entradas que citam "%s"."
+  - "Exibindo %s entrada que cita \"%s"\."
+  - "Exibindo %s entradas que citam \"%s"\."
  Displaying %s entry:
   - "Exibindo %s entrada."
   - "Exibindo %s entradas."
@@ -917,7 +917,7 @@ label:
  Signature type: "Tipo de assinatura:"
  Simple: "Simples"
  Start date: "Data de início"
- Starting from %s: "Começa em "%s"."
+ Starting from %s: "Começa em \"%s"\."
  Subtrahend: "Subtraendo"
  Suggestions: "Sugestões"
  Suspicious: "Suspeito"
@@ -1123,7 +1123,7 @@ response:
  Already up-to-date: "Já atualizado."
  An account with that username already exists: "Uma conta com esse nome já existe!"
  An error occurred while attempting to uninstall the component: "Ocorreu um erro ao tentar desinstalar o componente."
- Auxiliary rule, %s, deleted successfully: "Regra auxiliar, "%s", deletada com sucesso."
+ Auxiliary rule, %s, deleted successfully: "Regra auxiliar, \"%s"\, deletada com sucesso."
  Auxiliary rules successfully updated: "Regras auxiliares atualizadas com sucesso."
  Can_t fetch metadata: "Não é possível buscar metadados"
  Can_t fetch the file: "Não é possível buscar o arquivo"
@@ -1139,7 +1139,7 @@ response:
  Directory successfully renamed: "Diretório renomeado com sucesso!"
  Don_t know what to do with the data after reading it: "Não sei o que fazer com os dados depois de lê-los.\nConsidere encadeá-lo a outro comando. Obrigado."
  Error at the upstream: "Erro no upstream!"
- Failed to access %s: {"pt-BR": "Falha ao acessar "%s"!", "pt-PT": "Falha ao aceder ao "%s"!"}
+ Failed to access %s: {"pt-BR": "Falha ao acessar \"%s"\!", "pt-PT": "Falha ao aceder ao \"%s"\!"}
  Failed to activate: "Falha ao ativar!"
  Failed to create: "Criação falhada!"
  Failed to deactivate: "Falha ao desativar!"
@@ -1162,16 +1162,16 @@ response:
  File successfully modified: "Arquivo modificado com sucesso!"
  File successfully renamed: "Arquivo renomeado com sucesso!"
  File successfully uploaded: "Arquivo carregado com sucesso!"
- Finished reading from %s: "Leitura de "%s" é feita."
- Finished writing to %s: "Gravação concluída em "%s"."
- I can_t write to %s, sorry: "Não consigo escrever para "%s", desculpe."
+ Finished reading from %s: "Leitura de \"%s"\ é feita."
+ Finished writing to %s: "Gravação concluída em \"%s"\."
+ I can_t write to %s, sorry: "Não consigo escrever para \"%s"\, desculpe."
  I don_t understand that command, sorry: "Eu não entendo esse comando, desculpe."
  Incorrect 2FA code entered: "Código 2FA incorreto inserido. Autenticação falhou."
  Invalid API key: "Chave de API inválida!"
  Invalid password: "Falha no login! Senha inválida!"
  Invalid timestamp: "Carimbo de data/hora inválido!"
  Maximum number of login attempts exceeded: "Número máximo de tentativas de login foi excedido; Acesso negado."
- New auxiliary rule, %s, created successfully: "Nova regra auxiliar, "%s", criada com sucesso."
+ New auxiliary rule, %s, created successfully: "Nova regra auxiliar, \"%s"\, criada com sucesso."
  Not available at the upstream for legal reasons: "Não disponível no upstream por motivos legais."
  Not available at the upstream: "Não disponível no upstream."
  Outdated: "Desatualizado!"
@@ -1407,8 +1407,8 @@ warning: !lazy
  IP tests are disabled: "Atenção: Os testes de IP estão desabilitados! Os arquivos de assinatura não podem ser utilizados até que isso seja resolvido."
  JavaScript required: "Atenção: Algumas funcionalidades do front-end requerem JavaScript. Para garantir que todo o front-end se comporte conforme o esperado, é recomendável ativar o JavaScript."
  Likely to be overwritten:
-  pt-BR: "Atenção: O arquivo que você está editando no momento pertence ao componente "%s". Quaisquer alterações feitas neste arquivo provavelmente serão sobrescritas na próxima vez que o componente for atualizado."
-  pt-PT: "Atenção: O arquivo que está a editar no momento pertence ao componente "%s". Quaisquer alterações feitas neste arquivo provavelmente serão sobrescritas na próxima vez que o componente for atualizado."
+  pt-BR: "Atenção: O arquivo que você está editando no momento pertence ao componente \"%s"\. Quaisquer alterações feitas neste arquivo provavelmente serão sobrescritas na próxima vez que o componente for atualizado."
+  pt-PT: "Atenção: O arquivo que está a editar no momento pertence ao componente \"%s"\. Quaisquer alterações feitas neste arquivo provavelmente serão sobrescritas na próxima vez que o componente for atualizado."
  Likely to become corrupted:
   pt-BR: "Atenção: Bytes não UTF8 foram detectados no arquivo que está sendo editado. O arquivo será provavelmente corrompido se editado usando esta funcionalidade específica."
   pt-PT: "Atenção: Bytes não UTF8 foram detectados no arquivo que está a ser editado. O arquivo será provavelmente corrompido se editado utilizando esta funcionalidade específica."

@@ -584,3 +584,7 @@
 - [2026.09.10]: Very slightly adjusted the spacing between some fields at the configuration page.
 - [2026.11.08]: Added PHP 8.6 to workflows.
 - *Plus all the regular signature updates.*
+
+### In development (will probably be v3.12.3 or v3.13.0)
+
+- [2026.11.10]: Common classes package update.

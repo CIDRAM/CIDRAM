@@ -1,6 +1,6 @@
 <?php
 /**
- * Request handler (last modified: 2026.04.19).
+ * Request handler (last modified: 2026.11.10).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -64,7 +64,7 @@ class Request
      *      be needed by some implementations to ensure compatibility).
      * @link https://github.com/Maikuolan/Common/tags
      */
-    const VERSION = '1.11.0';
+    const VERSION = '1.11.1';
 
     /**
      * Allow calling the instance as a function (proxies to request).
@@ -155,6 +155,12 @@ class Request
             break;
         }
 
+        /**
+         * Verify TLS certificates (HTTPS, FTPS) unless explicitly overridden for the
+         * matching channel (e.g., for a host without any CA bundle available).
+         */
+        $VerifyPeer = isset($Overrides['CURLOPT_SSL_VERIFYPEER']) ? !empty($Overrides['CURLOPT_SSL_VERIFYPEER']) : true;
+
         /** Initialise the cURL session. */
         $Request = \curl_init($URI);
 
@@ -173,9 +179,11 @@ class Request
         }
         if ($SSL) {
             \curl_setopt($Request, \CURLOPT_PROTOCOLS, \CURLPROTO_HTTPS);
-            \curl_setopt($Request, \CURLOPT_SSL_VERIFYPEER, (
-                isset($Overrides['CURLOPT_SSL_VERIFYPEER']) ? !empty($Overrides['CURLOPT_SSL_VERIFYPEER']) : false
-            ));
+            \curl_setopt($Request, \CURLOPT_SSL_VERIFYPEER, $VerifyPeer);
+            $Cert = $this->getCertPath();
+            if ($Cert !== '') {
+                \curl_setopt($Request, \CURLOPT_CAINFO, $Cert);
+            }
         }
         if ($Method !== '') {
             \curl_setopt($Request, \CURLOPT_CUSTOMREQUEST, $Method);
@@ -264,5 +272,25 @@ class Request
         $Handle = \fopen('php://stdout', 'wb');
         \fwrite($Handle, "\r" . $Message . "\n");
         \fclose($Handle);
+    }
+
+    /**
+     * Gets the certificate path.
+     *
+     * @return string
+     */
+    private function getCertPath()
+    {
+        if (!\function_exists('openssl_get_cert_locations') || isset($this->DF['openssl_get_cert_locations'])) {
+            return '';
+        }
+        $Certs = \openssl_get_cert_locations();
+        if (!empty($Certs['ini_cafile']) && \is_readable($Certs['ini_cafile'])) {
+            return $Certs['ini_cafile'];
+        }
+        if (!empty($Certs['default_cert_file_env']) && \is_readable($Certs['default_cert_file_env'])) {
+            return $Certs['default_cert_file_env'];
+        }
+        return '';
     }
 }

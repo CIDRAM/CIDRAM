@@ -1,6 +1,6 @@
 <?php
 /**
- * Operation handler (last modified: 2026.04.19).
+ * Operation handler (last modified: 2026.11.10).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -27,7 +27,7 @@ class Operation
      *      be needed by some implementations to ensure compatibility).
      * @link https://github.com/Maikuolan/Common/tags
      */
-    const VERSION = '1.11.0';
+    const VERSION = '1.11.1';
 
     /**
      * Operators for version numbers.
@@ -231,7 +231,7 @@ class Operation
         if (\is_array($Data)) {
             return isset($Data[$Segment]) ? $this->dataTraverse($Data[$Segment], $Path, $AllowNonScalar) : '';
         }
-        if (\is_object($Data) && property_exists($Data, $Segment)) {
+        if (\is_object($Data) && \property_exists($Data, $Segment)) {
             return $this->dataTraverse($Data->$Segment, $Path, $AllowNonScalar);
         }
         if (\is_string($Data)) {

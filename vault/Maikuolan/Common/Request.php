@@ -1,6 +1,6 @@
 <?php
 /**
- * Request handler (last modified: 2026.04.30).
+ * Request handler (last modified: 2026.11.09).
  *
  * This file is a part of the "common classes package", utilised by a number of
  * packages and projects, including CIDRAM and phpMussel.
@@ -238,6 +238,12 @@ class Request extends CommonAbstract
             break;
         }
 
+        /**
+         * Verify TLS certificates (HTTPS, FTPS) unless explicitly overridden for the
+         * matching channel (e.g., for a host without any CA bundle available).
+         */
+        $VerifyPeer = isset($Overrides['CURLOPT_SSL_VERIFYPEER']) ? !empty($Overrides['CURLOPT_SSL_VERIFYPEER']) : true;
+
         $Protocol = (($CPos = \strpos($URI, ':')) === false) ? '' : \strtoupper(\substr($URI, 0, $CPos));
         if ($Protocol === '') {
             $this->MostRecentStatusCode = 1;
@@ -282,9 +288,7 @@ class Request extends CommonAbstract
                     \curl_setopt($Request, \CURLOPT_USERPWD, $Params['USERPWD']);
                 }
                 if ($Protocol === 'FTPS') {
-                    \curl_setopt($Request, \CURLOPT_SSL_VERIFYPEER, (
-                        isset($Overrides['CURLOPT_SSL_VERIFYPEER']) ? !empty($Overrides['CURLOPT_SSL_VERIFYPEER']) : false
-                    ));
+                    \curl_setopt($Request, \CURLOPT_SSL_VERIFYPEER, $VerifyPeer);
                     $Cert = $this->getCertPath();
                     if ($Cert !== '') {
                         \curl_setopt($Request, \CURLOPT_CAINFO, $Cert);
@@ -370,9 +374,7 @@ class Request extends CommonAbstract
             }
             if ($Protocol === 'HTTPS') {
                 \curl_setopt($Request, \CURLOPT_PROTOCOLS, \CURLPROTO_HTTPS);
-                \curl_setopt($Request, \CURLOPT_SSL_VERIFYPEER, (
-                    isset($Overrides['CURLOPT_SSL_VERIFYPEER']) ? !empty($Overrides['CURLOPT_SSL_VERIFYPEER']) : false
-                ));
+                \curl_setopt($Request, \CURLOPT_SSL_VERIFYPEER, $VerifyPeer);
                 $Cert = $this->getCertPath();
                 if ($Cert !== '') {
                     \curl_setopt($Request, \CURLOPT_CAINFO, $Cert);
@@ -430,12 +432,10 @@ class Request extends CommonAbstract
                 $this->timer();
                 $Context = ['ftp' => ['timeout' => $Timeout > 0 ? $Timeout : $this->DefaultTimeout, 'ignore_errors' => true]];
                 if ($Protocol === 'FTPS') {
+                    $Context['ssl'] = ['verify_peer' => $VerifyPeer, 'verify_peer_name' => $VerifyPeer, 'allow_self_signed' => false];
                     $Cert = $this->getCertPath();
                     if ($Cert !== '') {
-                        $VPeer = isset($Overrides['CURLOPT_SSL_VERIFYPEER']) ? !empty($Overrides['CURLOPT_SSL_VERIFYPEER']) : false;
-                        $Context['ssl'] = ['verify_peer' => $VPeer, 'verify_peer_name' => $VPeer, 'allow_self_signed' => false, 'cafile' => $Cert];
-                    } else {
-                        $Context['ssl'] = ['verify_peer' => false, 'verify_peer_name' => false, 'allow_self_signed' => false, 'cafile' => false];
+                        $Context['ssl']['cafile'] = $Cert;
                     }
                 }
                 $Context = \stream_context_create($Context);
@@ -513,12 +513,10 @@ class Request extends CommonAbstract
                     $Context['http']['content'] = $PostData;
                 }
                 if ($Protocol === 'HTTPS') {
+                    $Context['ssl'] = ['verify_peer' => $VerifyPeer, 'verify_peer_name' => $VerifyPeer, 'allow_self_signed' => false];
                     $Cert = $this->getCertPath();
                     if ($Cert !== '') {
-                        $VPeer = isset($Overrides['CURLOPT_SSL_VERIFYPEER']) ? !empty($Overrides['CURLOPT_SSL_VERIFYPEER']) : false;
-                        $Context['ssl'] = ['verify_peer' => $VPeer, 'verify_peer_name' => $VPeer, 'allow_self_signed' => false, 'cafile' => $Cert];
-                    } else {
-                        $Context['ssl'] = ['verify_peer' => false, 'verify_peer_name' => false, 'allow_self_signed' => false, 'cafile' => false];
+                        $Context['ssl']['cafile'] = $Cert;
                     }
                 }
                 $Context = \stream_context_create($Context);

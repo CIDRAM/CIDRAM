@@ -608,3 +608,7 @@
 - [2026.09.12~15]: Added a module for ShodanDB lookups (#86).
 - [2026.11.08]: Added PHP 8.6 to workflows.
 - *Plus all the regular signature updates.*
+
+### In development (will probably be v4.2.3 or v4.3.0)
+
+- [2026.11.10]: Common classes package update.

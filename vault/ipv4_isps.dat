@@ -1,8 +1,8 @@
 # IPv4 signatures file (dangerous and spammy ISPs).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v4/vault/signatures/ipv4_isps.dat
 
-# Version: 2026.308.0
-# Last modified: 2026.11.05
+# Version: 2026.316.0
+# Last modified: 2026.11.13
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [ ]Low [x]Medium [ ]High »
@@ -12415,7 +12415,7 @@ Tag: INDOSAT
 # Indonesian domestic ISP. Brute-force, SSH, SQLi, and webapp attacks, hacking,
 # and spam detected from here. Listing just the affected ranges/addresses only.
 # Stop Forum Spam (SFS) listings: 995.
-# Updated: 2026.05.08
+# Updated: 2026.05.08 / Modified: 2026.11.10
 
 36.65.78.46/32 Deny Attacks
 36.65.78.91/32 Deny Attacks
@@ -12428,6 +12428,7 @@ Tag: INDOSAT
 36.68.223.91/32 Deny Attacks
 36.68.223.113/32 Deny Attacks
 36.68.223.167/32 Deny Attacks
+36.70.152.0/24 Deny Attacks
 36.74.40.77/32 Deny Attacks
 36.74.40.78/32 Deny Attacks
 36.74.40.227/32 Deny Attacks
@@ -23570,14 +23571,20 @@ Tag: a1.mk
 # ASN 41798 ("JSC Transtelecom").
 # Kazakh domestic ISP. Brute-force, webapp attacks, port scans, and spam
 # detected from here. Listing just the affected ranges/addresses only.
-# Stop Forum Spam (SFS) listings: 25.
-# Updated: 2026.01.03
+# Updated: 2026.11.13
 
 45.88.90.0/24 Deny Attacks
 Origin: BG
-193.124.204.138/32 Deny Attacks
+193.124.204.139/32 Deny Attacks
+193.124.204.145/32 Deny Attacks
+193.124.204.164/32 Deny Attacks
 Origin: CZ
+91.212.166.196/32 Deny Attacks
+Origin: HK
+37.17.177.22/32 Deny Attacks
 37.17.177.94/32 Deny Attacks
+37.17.177.110/32 Deny Attacks
+37.17.177.118/32 Deny Attacks
 37.17.177.162/32 Deny Attacks
 Origin: KZ
 Profile: Domestic ISP
@@ -25845,6 +25852,39 @@ Tag: Ikt Solutions Ltd
 Origin: IL
 Profile: Mobile ISP
 Tag: sparks.travel
+
+
+# ASN 49444 ("Lutacom LLC").
+# Russian/Ukrainian (?) domestic ISP. Synfloods detected from here.
+# Listing just the affected ranges/addresses only.
+# Updated: 2026.11.10
+
+91.92.245.57/32 Deny Attacks
+Origin: UA
+Profile: Domestic ISP
+Tag: Lutacom LLC
+
+
+# ASN 212023 ('University of Plovdiv "Paisiy Hilendarski"').
+# Bulgarian university network. Git, honeypot, and env attacks detected from
+# here. Listing just the affected ranges/addresses only.
+# Updated: 2026.11.10
+
+94.156.68.162/32 Deny Attacks
+Origin: BG
+Profile: University
+Tag: Paisiy Hilendarski
+
+
+# ASN 34470 ("PortTelekom LLC").
+# Russian domestic ISP. Brute-force, honeypot, WordPress/XMLRPC, and webapp
+# attacks detected from here. Listing just the affected ranges/addresses only.
+# Updated: 2026.11.13
+
+45.135.232.0/24 Deny Attacks
+Origin: RU
+Profile: Domestic ISP
+Tag: PortTelekom LLC
 
 
 # ---

@@ -7,7 +7,7 @@
 # License: GNU/GPLv2
 # @see LICENSE.txt
 #
-# This file: Hebrew language data for the front-end (last modified: 2026.10.27).
+# This file: Hebrew language data for the front-end (last modified: 2026.11.13).
 #
 # Regarding translations: My native language is English. Because this is a free
 # and open-source hobby project which generates zero income, and translatable
@@ -334,8 +334,8 @@ config: !lazy
  verification_search_engines: "בקרות לאימות בקשות ממנועי חיפוש."
  verification_social_media: "בקרות לאימות בקשות מפלטפורמות מדיה חברתית."
 confirm:
- Action: "האם אתה בטוח שברצונך \"%s"\?"
- Delete: "האם אתה בטוח שברצונך למחוק את \"%s"\?"
+ Action: "האם אתה בטוח שברצונך \"%s\"?"
+ Delete: "האם אתה בטוח שברצונך למחוק את \"%s\"?"
 field:
  %s File: "קובץ %s"
  2FA code: "קוד 2FA"
@@ -592,7 +592,7 @@ label:
  Component updates metadata: "רכיב מעדכן מטא נתונים"
  Compress: "לדחוס"
  Copy to clipboard: "העתק ללוח"
- Current data for %s: "נתונים נוכחיים עבור \"%s"\."
+ Current data for %s: "נתונים נוכחיים עבור \"%s\"."
  Current data: "נתונים נוכחיים."
  Data source: "מקור נתונים"
  Data value: "ערך הנתונים"
@@ -603,8 +603,8 @@ label:
  Difference: "הבדל"
  Disable auxiliary rules: "השבתת כללי עזר"
  Displaying %s entry that cites %s:
-  - "מציג %s ערך שמצטט \"%s"\."
-  - "מציג %s ערכים שמצטטים \"%s"\."
+  - "מציג %s ערך שמצטט \"%s\"."
+  - "מציג %s ערכים שמצטטים \"%s\"."
  Displaying %s entry:
   - "מציג %s ערך."
   - "מציג %s ערכים."
@@ -694,7 +694,7 @@ label:
  Signature type: "סוג חתימה:"
  Simple: "פשוט"
  Start date: "תאריך התחלה"
- Starting from %s: "החל מ-\"%s"\."
+ Starting from %s: "החל מ-\"%s\"."
  Subtrahend: "חיסור"
  Suggestions: "הצעות"
  Suspicious: "חשודה"
@@ -870,7 +870,7 @@ response:
  Already up-to-date: "כבר מעודכן."
  An account with that username already exists: "חשבון עם שם משתמש זה כבר קיים!"
  An error occurred while attempting to uninstall the component: "אירעה שגיאה בעת ניסיון להסיר את הרכיב."
- Auxiliary rule, %s, deleted successfully: "כלל עזר, \"%s"\, נמחק בהצלחה."
+ Auxiliary rule, %s, deleted successfully: "כלל עזר, \"%s\", נמחק בהצלחה."
  Auxiliary rules successfully updated: "כללי עזר עודכנו בהצלחה."
  Can_t fetch metadata: "לא מצליח להביא את מטא נתונים"
  Can_t fetch the file: "לא מצליח להביא את הקובץ"
@@ -886,7 +886,7 @@ response:
  Directory successfully renamed: "שם הספרייה שונה בהצלחה!"
  Don_t know what to do with the data after reading it: "לא יודע מה לעשות עם הנתונים לאחר קריאתם.\nשקול לשרשר אותו לפקודה אחרת. תודה."
  Error at the upstream: "שגיאה במעלה הזרם!"
- Failed to access %s: "הגישה ל-\"%s"\ נכשלה!"
+ Failed to access %s: "הגישה ל-\"%s\" נכשלה!"
  Failed to activate: "ההפעלה נכשלה!"
  Failed to create: "היצירה נכשל!"
  Failed to deactivate: "השבתה נכשלה!"
@@ -909,16 +909,16 @@ response:
  File successfully modified: "הקובץ השתנה בהצלחה!"
  File successfully renamed: "שם הקובץ שונה בהצלחה!"
  File successfully uploaded: "הקובץ הועלה בהצלחה!"
- Finished reading from %s: "סיים לקרוא מ-\"%s"\."
- Finished writing to %s: "סיימתי לכתוב ל-\"%s"\."
- I can_t write to %s, sorry: "אני לא יכול לכתוב ל\"%s"\, מצטער."
+ Finished reading from %s: "סיים לקרוא מ-\"%s\"."
+ Finished writing to %s: "סיימתי לכתוב ל-\"%s\"."
+ I can_t write to %s, sorry: "אני לא יכול לכתוב ל\"%s\", מצטער."
  I don_t understand that command, sorry: "אני לא מבין את הפקודה הזאת, סליחה."
  Incorrect 2FA code entered: "הוזן קוד 2FA שגוי. אימות נכשל."
  Invalid API key: "מפתח API לא חוקי!"
  Invalid password: "כישלון התחברות! סיסמה שגויה!"
  Invalid timestamp: "חותמת זמן לא חוקית!"
  Maximum number of login attempts exceeded: "חרג מהמספר המרבי של ניסיונות התחברות; גישה נדחתה."
- New auxiliary rule, %s, created successfully: "כלל עזר חדש, \"%s"\, נוצר בהצלחה."
+ New auxiliary rule, %s, created successfully: "כלל עזר חדש, \"%s\", נוצר בהצלחה."
  Not available at the upstream for legal reasons: "לא זמין במעלה הזרם מסיבות משפטיות."
  Not available at the upstream: "לא זמין במעלה הזרם."
  Outdated: "מיושן!"
@@ -1105,7 +1105,7 @@ warning: !lazy
  Extremely common passwords should be avoided: "אזהרה: יש להימנע מסיסמאות נפוצות במיוחד."
  IP tests are disabled: "אזהרה: בדיקות IP מושבתות! לא ניתן להשתמש בקובצי חתימה עד שהדבר נפתר."
  JavaScript required: "אזהרה: חלק מפונקציונליות הקצה הקדמי דורשת JavaScript. כדי להבטיח שכל הקצה הקדמי יתנהג כמצופה, מומלץ להפעיל JavaScript."
- Likely to be overwritten: "אזהרה: הקובץ שאתה עורך כעת שייך לרכיב, \"%s"\. סביר מאוד ששינויים שיבוצעו בקובץ זה יוחלפו בפעם הבאה שהרכיב יעודכן."
+ Likely to be overwritten: "אזהרה: הקובץ שאתה עורך כעת שייך לרכיב, \"%s\". סביר מאוד ששינויים שיבוצעו בקובץ זה יוחלפו בפעם הבאה שהרכיב יעודכן."
  Likely to become corrupted: "אזהרה: זוהו בתים שאינם UTF8 בקובץ הנמצא כעת בעריכה. סביר להניח שהקובץ ייפגם אם יערוך אותו באמצעות כלי זה."
  Modules are disabled: "אזהרה: מודולים מושבתים! לא ניתן להשתמש במודולים עד לפתרון הבעיה."
  No modules are active: "אזהרה: אין מודולים פעילים! ניתן להפעיל מודולים באמצעות דפי התצורה או העדכונים."

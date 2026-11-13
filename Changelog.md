@@ -587,4 +587,8 @@
 
 ### In development (will probably be v3.12.3 or v3.13.0)
 
+#### Security.
 - [2026.11.10]: Common classes package update.
+
+#### Other changes.
+- *Plus all the regular signature updates.*

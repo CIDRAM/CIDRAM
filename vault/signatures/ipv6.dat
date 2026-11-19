@@ -12142,15 +12142,13 @@ Tag: Alpha Strike Labs GmbH
 # ASNs 48721, 209132, 209272, 209588, 267784 ("Alviva Holding Limited",
 # "Flyservers S.A"). Commercial network. Port scans, hacking, brute-force, and
 # webapp attacks detected from here.
-# Stop Forum Spam (SFS) listings: 24 (AS48721), 68 (AS209588), 63 (AS267784).
-# Updated: 2025.07.15
+# Updated: 2026.11.18
 
 2803:5120:c000::/36 Deny Cloud
 2a10:9100:3::/48 Deny Cloud
 2a10:9100:5::/48 Deny Cloud
 2a10:9100:7::/48 Deny Cloud
 2a10:9100:9::/48 Deny Cloud
-2a10:9107:f000::/36 Deny Cloud
 Origin: PA
 Profile: Commercial;Dedicated;Webhosting
 Tag: Alviva Holding Limited
@@ -12575,8 +12573,7 @@ Tag: SYNLINQ
 # ASN 44679 ("INVITE Systems SRL").
 # Romanian marketing firm. Brute-force, SQLi, XMLRPC, and webapp attacks,
 # hacking, credential stuffing, port scans, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 1,012.
-# Updated: 2024.07.14 / Checked: 2025.07.16
+# Updated: 2024.07.14 / Checked: 2026.11.18
 
 2a02:2160:8000::/36 Deny Cloud
 Origin: RO
@@ -12933,18 +12930,16 @@ Tag: 282, Sector 19
 # ASNs 33480, 132969, 132762, 133296 ("Web Werks", "Web Werks India Pvt. Ltd").
 # Indian server farm. Brute-force, WordPress/XMLRPC, and webapp attacks, port
 # scans, hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 784 (AS133296).
-# Updated: 2025.07.25
+# Updated: 2026.11.18
 
 2001:df1:1400::/48 Deny Cloud
 2001:df2:bec0::/48 Deny Cloud
-2001:df2:e900::/48 Deny Cloud
 2001:df2:f9c0::/48 Deny Cloud
 2001:df5:4380::/48 Deny Cloud
 2001:df5:4480::/48 Deny Cloud
-2001:df5:a7c0::/48 Deny Cloud
 2001:df5:f500::/48 Deny Cloud
 2001:df7:5d00::/48 Deny Cloud
+2001:7500:1076::/47 Deny Cloud
 2400:11c0::/32 Deny Cloud
 2401:7500:100::/40 Deny Cloud
 2401:7500:200::/40 Deny Cloud
@@ -13082,18 +13077,6 @@ Profile: Commercial
 Tag: LLC VK
 
 
-# ASN 35112 ("GBN group Ltd").
-# Russian VPS provider. Brute-force, SQLi, and webapp attacks, port scans,
-# hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 133.
-# Updated: 2023.08.13 / Checked: 2025.07.19
-
-2a0e:7200::/40 Deny Cloud
-Origin: RU
-Profile: Dedicated;Infrastructure/Transit;Webhosting
-Tag: GBN group Ltd
-
-
 # ASNs 54990, 210558 ("1337 Services GmbH").
 # Tor and anonymous cloud services provider. Brute-force, SSH, and mail server
 # attacks, port scans, hacking, and spam detected from here.
@@ -13137,7 +13120,7 @@ Tag: 1GSERVERS, LLC
 # Hong Kong computing and data center. Brute-force, WordPress/XMLRPC, and
 # webapp attacks, scanning for vulnerabilities, port scans, hacking, and spam
 # detected from here.
-# Updated: 2022.04.16 / Checked: 2025.07.31
+# Updated: 2022.04.16 / Checked: 2026.11.18
 
 2001:df3:7580::/48 Deny Cloud
 Origin: HK
@@ -13419,7 +13402,7 @@ Tag: Beon Intermedia
 
 # ASN 13706 ("CompleteWeb.Net LLC").
 # Brute-force and webapp attacks, hacking, port scans, and spam detected here.
-# Updated: 2023.08.05 / Checked: 2025.07.16
+# Updated: 2023.08.05 / Checked: 2026.11.18
 
 2602:fa7f:f::/48 Deny Cloud
 2605:3e00::/32 Deny Cloud
@@ -13432,8 +13415,7 @@ Tag: CompleteWeb.Net LLC
 # ASN 200313 ("IT WEB LTD").
 # Russian webhosting provider based in the British Virgin Islands. Brute-force,
 # SSH, and webapp attacks, port scans, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 2.
-# Updated: 2023.08.08 / Checked: 2025.07.17
+# Updated: 2023.08.08 / Checked: 2026.11.18
 
 2a0d:1640::/32 Deny Cloud
 2a0d:1643::/32 Deny Cloud
@@ -13446,7 +13428,7 @@ Tag: IT WEB LTD
 # ASN 51248 ("Host-Telecom.com s.r.o").
 # Brute-force, SSH, RDP, and FTP attacks, port scans, hacking, and spam
 # detected from here.
-# Updated: 2024.07.26 / Checked: 2025.07.30
+# Updated: 2024.07.26 / Checked: 2026.11.18
 
 2a03:1840::/46 Deny Cloud
 Origin: CZ
@@ -14517,8 +14499,7 @@ Tag: NetBase BV
 
 # ASN 40994 ("Hohl IT e.U").
 # DDoS, WordPress/XMLRPC, and webapp attacks, hacking, and spam detected here.
-# Stop Forum Spam (SFS) listings: 16.
-# Updated: 2024.07.15 / Checked: 2025.07.16
+# Updated: 2024.07.15 / Checked: 2026.11.18
 
 2a0d:f302::/32 Deny Cloud
 Origin: AT
@@ -14528,12 +14509,13 @@ Tag: alwyzon
 
 # ASN 209622 ("uPress Inc").
 # DDoS and WordPress attacks detected from here.
-# Updated: 2023.08.08 / Checked: 2025.07.25
+# Updated: 2026.11.18
 
 2a07:4300:31::/48 Deny Cloud
+2a07:4300:61::/48 Deny Cloud
 2a07:4300:972::/48 Deny Cloud
 2a07:4300:1609::/48 Deny Cloud
-2a07:4300:1610::/48 Deny Cloud
+2a07:4300:1610::/47 Deny Cloud
 Origin: US
 Profile: Webhosting
 Tag: uPress Inc
@@ -14552,8 +14534,7 @@ Tag: Adeo
 
 # ASN 137280 ("Kingsoft cloud corporation limited").
 # Port scans and SSH attacks detected from here.
-# Stop Forum Spam (SFS) listings: 1.
-# Updated: 2023.08.09 / Checked: 2025.07.17
+# Updated: 2023.08.09 / Checked: 2026.11.18
 
 2402:47c0::/32 Deny Cloud
 Origin: HK
@@ -14685,11 +14666,12 @@ Tag: Utopia Bilisim
 # ASN 212815 ("Dyjix SAS").
 # Brute-force, SSH, FTP, and webapp attacks, port scans, hacking, and spam
 # detected from here.
-# Updated: 2024.09.20 / Checked: 2025.07.29
+# Updated: 2026.11.18
 
-2a0a:2f80::/31 Deny Cloud
 2a10:4640::/32 Deny Cloud
 Origin: FR
+2a0f:6280:10a0::/45 Deny Cloud
+Origin: US
 Profile: Infrastructure/Transit;Webhosting
 Tag: Dyjix SAS
 
@@ -14991,11 +14973,12 @@ Tag: RetnNet
 
 # ASN 52053 ("REDHEBERG Association declaree").
 # DDoS attacks, DNS poisoning, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 1,137.
-# Updated: 2024.02.11 / Checked: 2025.07.15
+# Updated: 2026.11.18
 
 2a14:1d00::/44 Deny Cloud
 Origin: FR
+2a13:9500:e7::/48 Deny Cloud
+Origin: GB
 Profile: Restricted/Unidentifiable
 Tag: REDHEBERG
 
@@ -15581,12 +15564,9 @@ Tag: A.H.Maaref/FA.M.Mizban
 # ASN 215419 ("Karizanta LTD").
 # Brute-force, SSH attacks, DNS poisoning, hacking, and port scans detected
 # from here.
-# Stop Forum Spam (SFS) listings: 4.
-# Updated: 2024.07.18 / Checked: 2025.07.19
+# Updated: 2026.11.18
 
-2a0f:5840:1::/48 Deny Cloud
-2a13:7b40:40::/48 Deny Cloud
-2a13:7b40:51::/48 Deny Cloud
+2a0e:e780:10::/48 Deny Cloud
 Origin: IR
 Profile: Restricted/Unidentifiable
 Tag: Karizanta LTD
@@ -15696,17 +15676,6 @@ Tag: 10 Science Park Road
 Origin: RU
 Profile: Webhosting
 Tag: Iron Hosting Centre LTD
-
-
-# ASN 216383 ("ONLINE SERVER TELEKOMUNIKASYON LIMITED SIRKETI").
-# Brute-force, SSH, and webapp attacks, hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 68.
-# Updated: 2024.08.14 / Checked: 2025.07.14
-
-2a13:c4c7::/32 Deny Cloud
-Origin: TR
-Profile: Webhosting
-Tag: onlineservers.ir
 
 
 # ASN 214466 ("AE Olfe Teknoloji ve Ticaret Limited Sirketi").

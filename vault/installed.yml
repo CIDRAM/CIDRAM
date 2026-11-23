@@ -9,7 +9,7 @@ CIDRAM Core:
  Changelog: "https://github.com/CIDRAM/CIDRAM/blob/v3/Changelog.md"
  Release Notes For: ["3.9.0", "3.9.1", "3.10.0", "3.10.1", "3.10.2", "3.11.0", "3.12.0", "3.12.1", "3.12.2"]
  When Update Succeeds:
-  - "wpVer 4.8 7.1.4 3.12.2 7.2"
+  - "wpVer 4.8 7.1.5 3.12.2 7.2"
   - "foreach {Components.RemoteMeta.CIDRAM Core.Release Notes For} as Key => Value if {Components.Meta.CIDRAM Core.Version}<{Value}&&{Components.RemoteMeta.CIDRAM Core.Version}>={Value} then queue message response.release_notes https://github.com/CIDRAM/CIDRAM/releases/tag/v{Value} CIDRAM v{Value}"
   - "if {Components.Meta.CIDRAM Core.Version}<3.10.3-DEV+260440&&{Components.RemoteMeta.CIDRAM Core.Version}>=3.10.3-DEV+260440 then queue message <span dir="ltr" lang="en-AU">[CIDRAM Core 3.10.3-DEV+260440] UptimeRobot's default signature bypass has been replaced with full verification support. Pressing <span class="txtRd">↺ Reset</span> on <code class="s">verification➡other</code> at the configuration page and then update is recommended.</span>"
  Uninstallable: false
@@ -584,13 +584,13 @@ Common Classes Package:
    Checksum: "d3a61a0078178d30acd1415e6e5a71afa03d9952b0a41b5c75b4c342320e571b:61106"
 IPv4:
  False Positive Risk: "Medium"
- Version: "2026.316.0"
+ Version: "2026.326.0"
  Dependencies:
   Bypasses: ">=2025.348"
  Files:
   signatures/ipv4.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/signatures/ipv4.dat"
-   Checksum: "0aaf1b1bc811417859c4f76420a769444db10cd719d6556ccdf5bd46866b9d13:2053176"
+   Checksum: "f5e637cd8f97ede2a9aca8a5650d8977216e94a29aec6b61e17795925254a376:2118873"
    Used with: "ipv4"
 IPv4-Bogons:
  False Positive Risk: "Low"
@@ -602,13 +602,13 @@ IPv4-Bogons:
    Used with: "ipv4"
 IPv4-ISPs:
  False Positive Risk: "Medium"
- Version: "2026.316.0"
+ Version: "2026.326.0"
  Dependencies:
   Bypasses: ">=2023.95"
  Files:
   signatures/ipv4_isps.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/signatures/ipv4_isps.dat"
-   Checksum: "170c43d7dc66dc23509fe5722126f6876acd9efa9edb1341145b9a0cdb79e317:760619"
+   Checksum: "cb9f6b8b616040937db657cb4991b616acfed403b30703ff3c0c912e69870acb:758984"
    Used with: "ipv4"
 IPv4-Nonblocking:
  False Positive Risk: "Low"
@@ -628,13 +628,13 @@ IPv4-Other:
    Used with: "ipv4"
 IPv6:
  False Positive Risk: "Low"
- Version: "2026.316.0"
+ Version: "2026.326.0"
  Dependencies:
   Bypasses: ">=2025.348"
  Files:
   signatures/ipv6.dat:
    From: "https://raw.githubusercontent.com/CIDRAM/CIDRAM/v3/vault/signatures/ipv6.dat"
-   Checksum: "8ccf24a379a93ccf552f81dcc974dffe31cbb369a1e568cd06af17bffe8d5a0b:624764"
+   Checksum: "47b9c508e416bf12e318283ab29842ac0dc1a05df9a3309d6f570e517f75ca99:674049"
    Used with: "ipv6"
 IPv6-Bogons:
  False Positive Risk: "Low"

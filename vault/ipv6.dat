@@ -1,8 +1,8 @@
 # IPv6 signatures file (unwanted cloud services and non-human endpoints).
 # Canonical link to the online version of this file: https://github.com/CIDRAM/CIDRAM/blob/v4/vault/signatures/ipv6.dat
 
-# Version: 2026.316.0
-# Last modified: 2026.11.13
+# Version: 2026.326.0
+# Last modified: 2026.11.23
 
 # False positive risk (an approximate, rough estimate only):
 # Standard usage (i.e., used with standard CIDRAM features, default bypasses, etc): « [x]Low [ ]Medium [ ]High »
@@ -3397,9 +3397,11 @@ Tag: POWER HOST E.I.R.L
 # ASN 29141 ("Bradler & Krantz GmbH & Co. KG").
 # Managed webhosting and cloud provider. Occasional brute-force attacks
 # detected from here.
-# Updated: 2021.10.01 / Checked: 2025.07.30
+# Stop Forum Spam (SFS) listings: 3.
+# Updated: 2026.11.23
 
 2a02:e00::/32 Deny Cloud
+2a0a:3d80::/29 Deny Cloud
 Origin: DE
 2a03:402::/32 Deny Cloud
 Origin: TR
@@ -3514,8 +3516,7 @@ Tag: ClaraNET LTD
 # ASN 43289 ("Trabia-Network S.R.L").
 # A *HUGE* source of forum/blog/website spam unending, as well as malware and
 # numerous other kinds of unwanted traffic!
-# Stop Forum Spam (SFS) listings: 19,267.
-# Updated: 2021.02.02 / Checked: 2025.07.17
+# Updated: 2021.02.02 / Checked: 2026.11.20
 
 2a03:f80:373::/48 Deny Cloud
 Origin: AT
@@ -3844,8 +3845,8 @@ Tag: VegasNAP, LLC
 
 
 # ASNs 34702, 34729 ("Aktsiaselts WaveCom").
-# Stop Forum Spam (SFS) listings: 288 (AS34702).
-# Updated: 2023.08.07 / Checked: 2025.07.17
+# Stop Forum Spam (SFS) listings: 19 (AS34702).
+# Updated: 2023.08.07 / Checked: 2026.11.20
 
 2a01:97a0::/32 Deny Cloud
 Origin: EE
@@ -5333,29 +5334,25 @@ Profile: Dedicated;Infrastructure/Transit
 Tag: i3d B.V
 
 
-# ASNs 50673, 208685, 211895 ("Serverius Holding B.V").
-# Stop Forum Spam (SFS) listings: 29 (AS50673).
-# Updated: 2025.07.17
+# ASNs 50673, 211895 ("Serverius Holding B.V").
+# Updated: 2026.11.20
 
 2a06:1700:3:32::/64 Deny Cloud
-2a12:5343:1::/48 Deny Cloud
-2a12:5343:2::/48 Deny Cloud
-Origin: LT
+Origin: IS
 2001:67c:b0::/48 Deny Cloud
+2001:67c:e98::/48 Deny Cloud
+2001:67c:1330::/48 Deny Cloud
 2001:67c:21b4::/48 Deny Cloud
 2001:7f8:b7::/48 Deny Cloud
 2a00:1ca8::/32 Deny Cloud
 2a00:1caa::/32 Deny Cloud
-2a00:7143:15::/48 Deny Cloud
-2a00:7143:16::/47 Deny Cloud
 2a00:d640:d640::40:243/128 Deny Cloud
 2a02:690:4379:83::/64 Deny Cloud
 2a02:1680::/32 Deny Cloud
 2a03:3f40::/32 Deny Cloud
 2a06:8000::/29 Deny Cloud
-2a07:52c0::/29 Deny Cloud
-2a09:e40::/32 Deny Cloud
 2a09:aa80::/32 Deny Cloud
+2a0c:5140::/32 Deny Cloud
 2a0e:c9c0::/29 Deny Cloud
 2a0f:8cc0::/48 Deny Cloud
 Origin: NL
@@ -5363,6 +5360,11 @@ Origin: NL
 Origin: PK
 2a09:4d41::/32 Deny Cloud
 Origin: RU
+2a11:b100:c100::/48 Deny Cloud
+2a14:2000::/29 Deny Cloud
+Origin: UA
+2a0a:3f40::/32 Deny Cloud
+Origin: US
 Profile: Frequent changes;Infrastructure/Transit;Tor endpoints here
 Tag: Serverius Holding
 
@@ -6269,8 +6271,7 @@ Tag: NetSource
 
 # ASN 197226 ('"SPRINT" S.A').
 # Brute-force, SSH, and webapp attacks, port scans, and spam detected here.
-# Stop Forum Spam (SFS) listings: 4.
-# Updated: 2024.07.25 / Checked: 2025.07.28
+# Updated: 2024.07.25 / Checked: 2026.11.23
 
 2a03:7940::/32 Deny Cloud
 Origin: PL
@@ -6824,7 +6825,7 @@ Tag: CtrlS Datacenters
 # ASN 25234 ("ACTIVE 24 Sp. z o.o.").
 # Brute-force, SSH, and webapp attacks, port scans, and spam detected from
 # here. Also caught probing for database dumps.
-# Updated: 2021.09.09 / Checked: 2025.07.08
+# Updated: 2021.09.09 / Checked: 2026.11.19
 
 2a02:4a8::/32 Deny Cloud
 2a10:bbc0::/32 Deny Cloud
@@ -6837,8 +6838,7 @@ Tag: ACTIVE 24
 
 # ASNs 29278, 57095, 210579 ("Rackhost Zrt").
 # SQLi attacks, hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 2 (AS29278).
-# Updated: 2025.07.29
+# Updated: 2025.07.29 / Checked: 2026.11.23
 
 2a02:730::/32 Deny Cloud
 2a13:46c0:bb00::/48 Deny Cloud
@@ -7275,8 +7275,7 @@ Tag: Dotsi
 
 
 # ASN 197071 ("Dennis Rainer Warnholz trading as active-servers.com").
-# Stop Forum Spam (SFS) listings: 1.
-# Updated: 2025.07.30
+# Updated: 2025.07.30 / Checked: 2026.11.23
 
 2a0e:97c0:3e4::/48 Deny Cloud
 Origin: CH
@@ -7455,8 +7454,8 @@ Tag: Master Internet
 
 
 # ASN 200651 ("FlokiNET ehf").
-# Stop Forum Spam (SFS) listings: 1,300.
-# Updated: 2024.07.28 / Checked: 2025.07.31
+# Stop Forum Spam (SFS) listings: 41.
+# Updated: 2024.07.28 / Checked: 2026.11.23
 
 2a06:1700::/46 Deny Cloud
 2a06:1700:4::/48 Deny Cloud
@@ -7802,8 +7801,7 @@ Tag: HugeServer Networks
 
 # ASN 50926 ("AXARNET COMUNICACIONES, S.L").
 # Webhosting company caught hosting spambots, targeting honeypots.
-# Stop Forum Spam (SFS) listings: 98.
-# Updated: 2024.07.03 / Checked: 2025.07.11
+# Updated: 2026.11.20
 
 2a00:5ac0::/44 Deny Cloud
 2a00:5ac0:100::/48 Deny Cloud
@@ -7812,6 +7810,7 @@ Tag: HugeServer Networks
 2a00:5ac0:200::/48 Deny Cloud
 2a00:5ac0:300::/48 Deny Cloud
 2a01:4b80::/32 Deny Cloud
+2a01:71c1:47::/48 Deny Cloud
 Origin: ES
 2a0b:8f80:202::/48 Deny Cloud
 Origin: NL
@@ -7858,11 +7857,9 @@ Tag: Next Layer
 # ASN 62744 ("Quintex Alliance Consulting").
 # Caught probing honeypots for vulnerabilities + significant source of spam.
 # Subtract 44.0.0.0/9, 44.128.0.0/10 (clean).
-# Stop Forum Spam (SFS) listings: 762.
-# Updated: 2023.08.05 / Checked: 2025.07.14
+# Updated: 2026.11.20
 
-2620:7:6000::/47 Deny Cloud
-2620:7:6002::/48 Deny Cloud
+2620:7:6000::/46 Deny Cloud
 Origin: US
 Profile: Restricted/Unidentifiable;Tor endpoints here
 Tag: Quintex
@@ -7962,8 +7959,8 @@ Tag: Serverfield
 # Listing here due to reports from some users of spam events, brute-force
 # attempts, probing, etc. Example: abuseipdb.com/check/129.213.67.237
 # But, listing only the ASNs directly connected to current reports.
-# Stop Forum Spam (SFS) listings: 440.
-# Updated: 2026.09.23
+# Stop Forum Spam (SFS) listings: 8.
+# Updated: 2026.11.20
 
 2407:30c0:200::/45 Deny Cloud
 2407:30c0:208::/48 Deny Cloud
@@ -7974,17 +7971,15 @@ Tag: Serverfield
 2407:30c0:214::/46 Deny Cloud
 2407:30c0:218::/46 Deny Cloud
 Origin: AU
+2a01:e900:f1::/48 Deny Cloud
 2a0c:9a40:8eaa::/48 Deny Cloud
 2a0e:46c4:24a1::/48 Deny Cloud
 2a0e:97c0:aba::/48 Deny Cloud
 2a0e:b107:361::/48 Deny Cloud
 2a0e:b107:362::/48 Deny Cloud
 Origin: CH
-2001:67c:9f0::/48 Deny Cloud
-Origin: DE
-2a01:e900:f1::/48 Deny Cloud
+2a06:4887::/32 Deny Cloud
 2a06:9801::/48 Deny Cloud
-2a06:9801:f9e::/48 Deny Cloud
 2a09:a447:ac1e::/48 Deny Cloud
 2a0f:85c1:c18::/48 Deny Cloud
 2a0f:85c1:cc0::/48 Deny Cloud
@@ -7992,20 +7987,19 @@ Origin: DE
 2a12:bec0:230::/44 Deny Cloud
 2a12:bec0:5df::/48 Deny Cloud
 Origin: GB
+2a0b:4e07:5d03::/48 Deny Cloud
+Origin: IL
 2402:2f60:c101::/48 Deny Cloud
 Origin: JP
 2a04:9a00:14c0::/44 Deny Cloud
 2a06:b7c2::/32 Deny Cloud
 Origin: NL
-2a0e:15c6::/32 Deny Cloud
-2a13:d47::/32 Deny Cloud
-Origin: SC
+2a10:fa81:1800::/40 Deny Cloud
+Origin: RO
 2600:2000:2100::/42 Deny Cloud
-2600:2000:2200::/42 Deny Cloud
 2602:80f:9003::/48 Deny Cloud
 2602:81e::/47 Deny Cloud
 2602:f542::/48 Deny Cloud
-2602:f73c:2::/48 Deny Cloud
 2602:f95b:1::/48 Deny Cloud
 2602:f97a::/48 Deny Cloud
 2602:fc8b:a1::/48 Deny Cloud
@@ -8027,6 +8021,7 @@ Origin: SC
 2603:c000:3800::/38 Deny Cloud
 2603:c000:3c00::/39 Deny Cloud
 2603:c000:3f00::/40 Deny Cloud
+2603:c000:4100::/40 Deny Cloud
 2603:c001::/34 Deny Cloud
 2603:c001:4000::/37 Deny Cloud
 2603:c001:4800::/38 Deny Cloud
@@ -8039,6 +8034,7 @@ Origin: SC
 2603:c001:7000::/37 Deny Cloud
 2603:c001:7800::/38 Deny Cloud
 2603:c001:7e00::/39 Deny Cloud
+2603:c001:8200::/39 Deny Cloud
 2603:c002::/35 Deny Cloud
 2603:c002:2000::/39 Deny Cloud
 2603:c002:2200::/40 Deny Cloud
@@ -8061,6 +8057,7 @@ Origin: SC
 2603:c002:3800::/38 Deny Cloud
 2603:c002:3c00::/39 Deny Cloud
 2603:c002:3f00::/44 Deny Cloud
+2603:c002:4100::/44 Deny Cloud
 2603:c002:8000::/35 Deny Cloud
 2603:c002:a000::/39 Deny Cloud
 2603:c002:a200::/43 Deny Cloud
@@ -8083,6 +8080,7 @@ Origin: SC
 2603:c002:b800::/38 Deny Cloud
 2603:c002:bc00::/39 Deny Cloud
 2603:c002:bf00::/44 Deny Cloud
+2603:c002:c100::/44 Deny Cloud
 2603:c010::/36 Deny Cloud
 2603:c010:2000::/36 Deny Cloud
 2603:c010:4000::/36 Deny Cloud
@@ -8143,6 +8141,7 @@ Origin: SC
 2603:c01b::/36 Deny Cloud
 2603:c01b:2000::/36 Deny Cloud
 2603:c01b:6000::/36 Deny Cloud
+2603:c01b:a000::/36 Deny Cloud
 2603:c020::/35 Deny Cloud
 2603:c020:4000::/35 Deny Cloud
 2603:c020:8000::/35 Deny Cloud
@@ -8203,13 +8202,14 @@ Origin: SC
 2603:c030:4000::/35 Deny Cloud
 2603:c030:8000::/35 Deny Cloud
 2603:c031::/35 Deny Cloud
+2603:c031:8000::/35 Deny Cloud
 2606:b400:8012::/48 Deny Cloud
+2606:b400:c000::/48 Deny Cloud
 2606:b400:c002::/47 Deny Cloud
 2606:b400:c006::/48 Deny Cloud
 2606:b400:c008::/48 Deny Cloud
 2606:b400:c00a::/47 Deny Cloud
-2606:b400:c00d::/48 Deny Cloud
-2606:b400:c00e::/47 Deny Cloud
+2606:b400:c00c::/46 Deny Cloud
 2606:b400:c010::/47 Deny Cloud
 2606:b400:c013::/48 Deny Cloud
 2606:b400:c015::/48 Deny Cloud
@@ -8243,11 +8243,7 @@ Origin: SC
 2606:f4c0:b540::/43 Deny Cloud
 2606:f4c0:b560::/44 Deny Cloud
 2606:f4c0:b580::/41 Deny Cloud
-2606:f4c0:b600::/40 Deny Cloud
-2606:f4c0:b700::/41 Deny Cloud
-2606:f4c0:b780::/43 Deny Cloud
-2606:f4c0:b7a0::/44 Deny Cloud
-2606:f4c0:b7c0::/42 Deny Cloud
+2606:f4c0:b600::/39 Deny Cloud
 2606:f4c0:b800::/42 Deny Cloud
 2606:f4c0:b840::/44 Deny Cloud
 2606:f4c0:b860::/43 Deny Cloud
@@ -8255,6 +8251,7 @@ Origin: SC
 2606:f4c0:b900::/40 Deny Cloud
 2606:f4c0:ba00::/39 Deny Cloud
 2606:f4c0:bc00::/41 Deny Cloud
+2606:f4c0:bc80::/44 Deny Cloud
 2606:f4c0:bca0::/44 Deny Cloud
 2606:f4c0:bcc0::/42 Deny Cloud
 2606:f4c0:bd00::/42 Deny Cloud
@@ -8266,9 +8263,9 @@ Origin: SC
 2606:f4c0:bea0::/44 Deny Cloud
 2606:f4c0:bf00::/44 Deny Cloud
 2606:f4c0:bf30::/44 Deny Cloud
-2606:f4c0:bf40::/44 Deny Cloud
-2606:f4c0:bf60::/43 Deny Cloud
+2606:f4c0:bf40::/42 Deny Cloud
 2606:f4c0:bf80::/41 Deny Cloud
+2606:f4c0:c000::/43 Deny Cloud
 2607:ae80:1::/48 Deny Cloud
 2607:d0c0:f00::/47 Deny Cloud
 2607:d0c0:cffe::/47 Deny Cloud
@@ -8628,7 +8625,7 @@ Tag: Kontel LLC
 # ASN 39122 ("Blacknight Internet Solutions Limited").
 # Caught probing for PII and a source of forum spam.
 # Stop Forum Spam (SFS) listings: 109.
-# Updated: 2024.06.29 / Checked: 2025.07.07
+# Updated: 2024.06.29 / Checked: 2026.11.19
 
 2620:57:4003::/48 Deny Cloud
 Origin: CA
@@ -10044,7 +10041,7 @@ Tag: OOO Patent-Media
 
 # ASNs 10690, 20052 ("Arbor Networks, Inc").
 # Vulnerability scanner + unwanted traffic.
-# Updated: 2024.07.25 / Checked: 2025.07.28
+# Updated: 2024.07.25 / Checked: 2026.11.23
 
 2602:811:10e3::/48 Deny Cloud
 Origin: US
@@ -10200,8 +10197,7 @@ Tag: Beijing Qihu
 # ASN 55803 ("Hostopia Australia Web Pty Ltd").
 # Dedicated cloud provider. SQLi, WordPress/XMLRPC, and webapp attacks
 # persistently detected from here.
-# Stop Forum Spam (SFS) listings: 2.
-# Updated: 2023.08.14 / Checked: 2025.07.28
+# Updated: 2023.08.14 / Checked: 2026.11.23
 
 2400:a600::/32 Deny Cloud
 2401:fc00::/32 Deny Cloud
@@ -10841,8 +10837,7 @@ Tag: Biterika Group LLC
 
 
 # ASNs 15497, 206110 ("1 Cloud Lab s.r.o").
-# Stop Forum Spam (SFS) listings: 66 (AS15497), 1 (AS206110).
-# Updated: 2024.07.14 / Checked: 2025.07.16
+# Updated: 2024.07.14 / Checked: 2026.11.23
 
 2a03:6300::/32 Deny Cloud
 Origin: SK
@@ -12016,16 +12011,17 @@ Tag: Heinlein-Support GmbH
 
 
 # ASN 58955 ("Bangmod Enterprise Co., Ltd").
-# Thai Webhosting provider. Spam and tor endpoints here.
-# Stop Forum Spam (SFS) listings: 65.
-# Updated: 2025.11.05
+# Brute-force, honeypot, and webapp attacks, VoIP fraud, port scans, hacking,
+# Tor endpoints, and spam detected from here.
+# Updated: 2026.11.23
 
+2407:8100:2::/48 Deny Cloud
+Origin: SG
 2001:df2:d3c0::/48 Deny Cloud
 2407:7900:1000::/40 Deny Cloud
 2407:7900:2000::/40 Deny Cloud
 2407:7900:ff02::/48 Deny Cloud
 2407:7900:ffff::/48 Deny Cloud
-2407:8100:2::/48 Deny Cloud
 Origin: TH
 Profile: Tor endpoints here;Webhosting
 Tag: Bangmod
@@ -12142,15 +12138,13 @@ Tag: Alpha Strike Labs GmbH
 # ASNs 48721, 209132, 209272, 209588, 267784 ("Alviva Holding Limited",
 # "Flyservers S.A"). Commercial network. Port scans, hacking, brute-force, and
 # webapp attacks detected from here.
-# Stop Forum Spam (SFS) listings: 24 (AS48721), 68 (AS209588), 63 (AS267784).
-# Updated: 2025.07.15
+# Updated: 2026.11.18
 
 2803:5120:c000::/36 Deny Cloud
 2a10:9100:3::/48 Deny Cloud
 2a10:9100:5::/48 Deny Cloud
 2a10:9100:7::/48 Deny Cloud
 2a10:9100:9::/48 Deny Cloud
-2a10:9107:f000::/36 Deny Cloud
 Origin: PA
 Profile: Commercial;Dedicated;Webhosting
 Tag: Alviva Holding Limited
@@ -12575,8 +12569,7 @@ Tag: SYNLINQ
 # ASN 44679 ("INVITE Systems SRL").
 # Romanian marketing firm. Brute-force, SQLi, XMLRPC, and webapp attacks,
 # hacking, credential stuffing, port scans, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 1,012.
-# Updated: 2024.07.14 / Checked: 2025.07.16
+# Updated: 2024.07.14 / Checked: 2026.11.18
 
 2a02:2160:8000::/36 Deny Cloud
 Origin: RO
@@ -12933,18 +12926,16 @@ Tag: 282, Sector 19
 # ASNs 33480, 132969, 132762, 133296 ("Web Werks", "Web Werks India Pvt. Ltd").
 # Indian server farm. Brute-force, WordPress/XMLRPC, and webapp attacks, port
 # scans, hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 784 (AS133296).
-# Updated: 2025.07.25
+# Updated: 2026.11.18
 
 2001:df1:1400::/48 Deny Cloud
 2001:df2:bec0::/48 Deny Cloud
-2001:df2:e900::/48 Deny Cloud
 2001:df2:f9c0::/48 Deny Cloud
 2001:df5:4380::/48 Deny Cloud
 2001:df5:4480::/48 Deny Cloud
-2001:df5:a7c0::/48 Deny Cloud
 2001:df5:f500::/48 Deny Cloud
 2001:df7:5d00::/48 Deny Cloud
+2001:7500:1076::/47 Deny Cloud
 2400:11c0::/32 Deny Cloud
 2401:7500:100::/40 Deny Cloud
 2401:7500:200::/40 Deny Cloud
@@ -13082,18 +13073,6 @@ Profile: Commercial
 Tag: LLC VK
 
 
-# ASN 35112 ("GBN group Ltd").
-# Russian VPS provider. Brute-force, SQLi, and webapp attacks, port scans,
-# hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 133.
-# Updated: 2023.08.13 / Checked: 2025.07.19
-
-2a0e:7200::/40 Deny Cloud
-Origin: RU
-Profile: Dedicated;Infrastructure/Transit;Webhosting
-Tag: GBN group Ltd
-
-
 # ASNs 54990, 210558 ("1337 Services GmbH").
 # Tor and anonymous cloud services provider. Brute-force, SSH, and mail server
 # attacks, port scans, hacking, and spam detected from here.
@@ -13137,7 +13116,7 @@ Tag: 1GSERVERS, LLC
 # Hong Kong computing and data center. Brute-force, WordPress/XMLRPC, and
 # webapp attacks, scanning for vulnerabilities, port scans, hacking, and spam
 # detected from here.
-# Updated: 2022.04.16 / Checked: 2025.07.31
+# Updated: 2022.04.16 / Checked: 2026.11.18
 
 2001:df3:7580::/48 Deny Cloud
 Origin: HK
@@ -13334,6 +13313,142 @@ Profile: Dedicated;Webhosting
 Tag: ServTech LTD
 
 
+# ASNs 15169, 19527, 394089, 396982 ("Google LLC").
+# There are other ASNs belonging to Google, but we're only interested in these
+# particular ASNs at the moment. The aim is to block the brute-force, SSH,
+# SQLi, webapp, and other kinds of attacks, port scans, hacking, and spam
+# detected from Google, without blocking any primary Google services. To that
+# end, and particularly to avoid the risk of accidentally blocking Googlebot,
+# AdSense, or Google Fibre, only the ranges/addresses known to be affected will
+# be listed here.
+# Stop Forum Spam (SFS) listings: 1 (AS15169), 6 (AS396982).
+# Updated: 2026.11.20
+
+2800:3f0::/32 Run bypasses.php
+Origin: AR
+2404:6800::/32 Run bypasses.php
+2407:30c0:280::/47 Run bypasses.php
+Origin: AU
+2620:127:f00a::/47 Run bypasses.php
+Origin: CA
+2a06:7ac0:f00::/47 Run bypasses.php
+Origin: DE
+2001:671:fc00::/38 Run bypasses.php
+Origin: FI
+2a04:7200::/29 Run bypasses.php
+Origin: FR
+2a03:ace0::/32 Run bypasses.php
+2a05:6340:200::/48 Run bypasses.php
+2a14:67c2:577::/48 Run bypasses.php
+Origin: GB
+2a0d:5980:100::/48 Run bypasses.php
+Origin: GR
+2a00:1450::/32 Run bypasses.php
+2a14:f180:1200::/40 Run bypasses.php
+Origin: IE
+2a0b:4e07:cb9::/48 Run bypasses.php
+Origin: IL
+2402:2f60:1919::/48 Run bypasses.php
+Origin: JP
+2c0f:fb50::/32 Run bypasses.php
+Origin: KE
+2a0a:7a80::/46 Run bypasses.php
+2a0a:7a80:100::/48 Run bypasses.php
+Origin: LU
+2a14:b580::/40 Run bypasses.php
+Origin: NO
+2a14:4b41:1320::/48 Run bypasses.php
+Origin: QA
+2a0e:f600:55::/48 Run bypasses.php
+Origin: SC
+2a07:8241::/36 Run bypasses.php
+2a07:8247:ab1e::/48 Run bypasses.php
+2a14:2a00::/40 Run bypasses.php
+Origin: SE
+2401:fa00:8000::/40 Run bypasses.php
+2404:f340::/32 Run bypasses.php
+Origin: SG
+2402:4760:9c::/48 Run bypasses.php
+Origin: TW
+2001:4860::/32 Run bypasses.php
+2600:1900::/29 Run bypasses.php
+2602:800:2000::/48 Run bypasses.php
+2602:80a:f004::/46 Run bypasses.php
+2602:810:300c::/46 Run bypasses.php
+2602:81d:e000::/47 Run bypasses.php
+2602:f4df:100::/40 Run bypasses.php
+2602:f6fc:100::/41 Run bypasses.php
+2602:f742:40::/47 Run bypasses.php
+2602:f742:42::/48 Run bypasses.php
+2602:f742:7f::/48 Run bypasses.php
+2602:ff11:100::/48 Run bypasses.php
+2602:ff11:200::/48 Run bypasses.php
+2604:a940:300::/47 Run bypasses.php
+2604:a940:302::/48 Run bypasses.php
+2604:b040:13::/48 Run bypasses.php
+2604:e700:80::/43 Run bypasses.php
+2604:e700:a0::/45 Run bypasses.php
+2604:e700:a8::/46 Run bypasses.php
+2604:e700:ac::/48 Run bypasses.php
+2605:3e40::/47 Run bypasses.php
+2605:3e40:2::/48 Run bypasses.php
+2605:3e40:100::/47 Run bypasses.php
+2605:3e40:200::/46 Run bypasses.php
+2605:a7c0:200::/48 Run bypasses.php
+2605:a7c0:240::/48 Run bypasses.php
+2605:a7c0:280::/43 Run bypasses.php
+2605:a7c0:2a0::/45 Run bypasses.php
+2605:a7c0:2bf::/48 Run bypasses.php
+2605:a7c0:2fe::/47 Run bypasses.php
+2605:ce40:a::/48 Run bypasses.php
+2605:ef80::/32 Run bypasses.php
+2606:40::/32 Run bypasses.php
+2606:3dc0:80::/42 Run bypasses.php
+2606:3dc0:880::/41 Run bypasses.php
+2606:73c0::/32 Run bypasses.php
+2606:c7c0:200::/47 Run bypasses.php
+2606:f4c0:2000::/35 Run bypasses.php
+2606:f4c0:5000::/40 Run bypasses.php
+2606:f4c0:703f::/48 Run bypasses.php
+2606:f4c0:8400::/38 Run bypasses.php
+2606:f4c0:9000::/37 Run bypasses.php
+2606:f4c0:d080::/47 Run bypasses.php
+2606:f4c0:d090::/48 Run bypasses.php
+2606:f4c0:d092::/47 Run bypasses.php
+2606:f4c0:d094::/46 Run bypasses.php
+2606:f4c0:d201::/48 Run bypasses.php
+2606:f4c0:d202::/47 Run bypasses.php
+2606:f4c0:d204::/47 Run bypasses.php
+2606:f4c0:d206::/48 Run bypasses.php
+2606:f4c0:d208::/45 Run bypasses.php
+2606:f4c0:d211::/48 Run bypasses.php
+2606:f4c0:d213::/48 Run bypasses.php
+2606:f4c0:d214::/47 Run bypasses.php
+2606:f4c0:d217::/48 Run bypasses.php
+2606:f4c0:d218::/45 Run bypasses.php
+2606:f4c0:d220::/47 Run bypasses.php
+2606:f4c0:d228::/47 Run bypasses.php
+2606:f4c0:d22a::/48 Run bypasses.php
+2607:1c0:300::/40 Run bypasses.php
+2607:4240::/47 Run bypasses.php
+2607:4240:4000::/46 Run bypasses.php
+2607:4240:4004::/47 Run bypasses.php
+2607:6bc0:8007::/48 Run bypasses.php
+2607:8d40:ff0::/48 Run bypasses.php
+2607:9180:1000::/40 Run bypasses.php
+2607:d0c0:bffe::/47 Run bypasses.php
+2607:f8b0::/32 Run bypasses.php
+2620:ce:e000::/47 Run bypasses.php
+2620:117:bff0::/44 Run bypasses.php
+2620:120:e000::/40 Run bypasses.php
+2620:121:5050::/44 Run bypasses.php
+2620:1f9:100::/48 Run bypasses.php
+2620:1f9:104::/48 Run bypasses.php
+Origin: US
+Profile: AI;Content Delivery Network;Dedicated;Infrastructure/Transit;Search engine;Webhosting
+Tag: Google LLC
+
+
 # ASNs 35042, 199912 ("Layer7 Networks GmbH").
 # Brute-force, SSH, and webapp attacks, port scans, hacking, and spam detected
 # from here.
@@ -13394,7 +13509,7 @@ Tag: Tube-Hosting
 # Gaming network. Brute-force and webapp attacks, port scans, hacking, and spam
 # detected from here.
 # Stop Forum Spam (SFS) listings: 49.
-# Updated: 2024.06.29 / Checked: 2025.07.07
+# Updated: 2024.06.29 / Checked: 2026.11.19
 
 2602:fa9a::/40 Deny Cloud
 2602:fea7::/39 Deny Cloud
@@ -13419,7 +13534,7 @@ Tag: Beon Intermedia
 
 # ASN 13706 ("CompleteWeb.Net LLC").
 # Brute-force and webapp attacks, hacking, port scans, and spam detected here.
-# Updated: 2023.08.05 / Checked: 2025.07.16
+# Updated: 2023.08.05 / Checked: 2026.11.18
 
 2602:fa7f:f::/48 Deny Cloud
 2605:3e00::/32 Deny Cloud
@@ -13432,8 +13547,7 @@ Tag: CompleteWeb.Net LLC
 # ASN 200313 ("IT WEB LTD").
 # Russian webhosting provider based in the British Virgin Islands. Brute-force,
 # SSH, and webapp attacks, port scans, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 2.
-# Updated: 2023.08.08 / Checked: 2025.07.17
+# Updated: 2023.08.08 / Checked: 2026.11.18
 
 2a0d:1640::/32 Deny Cloud
 2a0d:1643::/32 Deny Cloud
@@ -13446,7 +13560,7 @@ Tag: IT WEB LTD
 # ASN 51248 ("Host-Telecom.com s.r.o").
 # Brute-force, SSH, RDP, and FTP attacks, port scans, hacking, and spam
 # detected from here.
-# Updated: 2024.07.26 / Checked: 2025.07.30
+# Updated: 2024.07.26 / Checked: 2026.11.18
 
 2a03:1840::/46 Deny Cloud
 Origin: CZ
@@ -14507,7 +14621,7 @@ Tag: Brownrice
 # ASN 213192 ("NetBase BV").
 # Brute-force, WordPress/XMLRPC, and webapp attacks, hacking, and spam detected
 # from here.
-# Updated: 2023.08.08 / Checked: 2025.07.25
+# Updated: 2023.08.08 / Checked: 2026.11.23
 
 2a00:d640::/31 Deny Cloud
 Origin: NL
@@ -14517,8 +14631,7 @@ Tag: NetBase BV
 
 # ASN 40994 ("Hohl IT e.U").
 # DDoS, WordPress/XMLRPC, and webapp attacks, hacking, and spam detected here.
-# Stop Forum Spam (SFS) listings: 16.
-# Updated: 2024.07.15 / Checked: 2025.07.16
+# Updated: 2024.07.15 / Checked: 2026.11.18
 
 2a0d:f302::/32 Deny Cloud
 Origin: AT
@@ -14528,12 +14641,13 @@ Tag: alwyzon
 
 # ASN 209622 ("uPress Inc").
 # DDoS and WordPress attacks detected from here.
-# Updated: 2023.08.08 / Checked: 2025.07.25
+# Updated: 2026.11.18
 
 2a07:4300:31::/48 Deny Cloud
+2a07:4300:61::/48 Deny Cloud
 2a07:4300:972::/48 Deny Cloud
 2a07:4300:1609::/48 Deny Cloud
-2a07:4300:1610::/48 Deny Cloud
+2a07:4300:1610::/47 Deny Cloud
 Origin: US
 Profile: Webhosting
 Tag: uPress Inc
@@ -14552,8 +14666,7 @@ Tag: Adeo
 
 # ASN 137280 ("Kingsoft cloud corporation limited").
 # Port scans and SSH attacks detected from here.
-# Stop Forum Spam (SFS) listings: 1.
-# Updated: 2023.08.09 / Checked: 2025.07.17
+# Updated: 2023.08.09 / Checked: 2026.11.18
 
 2402:47c0::/32 Deny Cloud
 Origin: HK
@@ -14685,11 +14798,12 @@ Tag: Utopia Bilisim
 # ASN 212815 ("Dyjix SAS").
 # Brute-force, SSH, FTP, and webapp attacks, port scans, hacking, and spam
 # detected from here.
-# Updated: 2024.09.20 / Checked: 2025.07.29
+# Updated: 2026.11.18
 
-2a0a:2f80::/31 Deny Cloud
 2a10:4640::/32 Deny Cloud
 Origin: FR
+2a0f:6280:10a0::/45 Deny Cloud
+Origin: US
 Profile: Infrastructure/Transit;Webhosting
 Tag: Dyjix SAS
 
@@ -14991,11 +15105,12 @@ Tag: RetnNet
 
 # ASN 52053 ("REDHEBERG Association declaree").
 # DDoS attacks, DNS poisoning, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 1,137.
-# Updated: 2024.02.11 / Checked: 2025.07.15
+# Updated: 2026.11.18
 
 2a14:1d00::/44 Deny Cloud
 Origin: FR
+2a13:9500:e7::/48 Deny Cloud
+Origin: GB
 Profile: Restricted/Unidentifiable
 Tag: REDHEBERG
 
@@ -15581,24 +15696,19 @@ Tag: A.H.Maaref/FA.M.Mizban
 # ASN 215419 ("Karizanta LTD").
 # Brute-force, SSH attacks, DNS poisoning, hacking, and port scans detected
 # from here.
-# Stop Forum Spam (SFS) listings: 4.
-# Updated: 2024.07.18 / Checked: 2025.07.19
+# Updated: 2026.11.18
 
-2a0f:5840:1::/48 Deny Cloud
-2a13:7b40:40::/48 Deny Cloud
-2a13:7b40:51::/48 Deny Cloud
+2a0e:e780:10::/48 Deny Cloud
 Origin: IR
 Profile: Restricted/Unidentifiable
 Tag: Karizanta LTD
 
 
-# ASN 206075 ("Hollander & Jacobsen UG (haftungsbeschraenkt)").
-# Spam detected from here.
-# Stop Forum Spam (SFS) listings: 75.
-# Updated: 2024.07.18 / Checked: 2025.07.19
+# ASNs 206075, 215960 ("Hollander & Jacobsen UG (haftungsbeschraenkt)").
+# Brute-force, honeypot attacks, port scans, and spam detected from here.
+# Updated: 2026.11.23
 
-2a07:e040::/31 Deny Cloud
-2a07:e042::/32 Deny Cloud
+2a07:e040::/30 Deny Cloud
 Origin: DE
 Profile: Restricted/Unidentifiable
 Tag: Maximilian Jacobsen
@@ -15606,7 +15716,7 @@ Tag: Maximilian Jacobsen
 
 # ASN 62429 ('"C.S.T". Ltd').
 # Brute-force, hacking, port scans, and spam detected from here.
-# Updated: 2024.07.18 / Checked: 2025.07.19
+# Updated: 2024.07.18 / Checked: 2026.11.23
 
 2a00:db20::/32 Deny Cloud
 Origin: RU
@@ -15696,17 +15806,6 @@ Tag: 10 Science Park Road
 Origin: RU
 Profile: Webhosting
 Tag: Iron Hosting Centre LTD
-
-
-# ASN 216383 ("ONLINE SERVER TELEKOMUNIKASYON LIMITED SIRKETI").
-# Brute-force, SSH, and webapp attacks, hacking, and spam detected from here.
-# Stop Forum Spam (SFS) listings: 68.
-# Updated: 2024.08.14 / Checked: 2025.07.14
-
-2a13:c4c7::/32 Deny Cloud
-Origin: TR
-Profile: Webhosting
-Tag: onlineservers.ir
 
 
 # ASN 214466 ("AE Olfe Teknoloji ve Ticaret Limited Sirketi").
@@ -20286,7 +20385,7 @@ Tag: Rock-Hosting SASU
 # ASN 203273 ("NetCrafters OU").
 # Brute-force, SSH, and webapp attacks, port scans, and hacking detected from
 # here.
-# Updated: 2026.09.22
+# Updated: 2026.09.22 / Checked: 2026.11.20
 
 2a14:a084:f000::/36 Deny Cloud
 Origin: GB
@@ -20478,13 +20577,97 @@ Profile: AI
 Tag: SONDATECH S.A.S
 
 
+# ASN 213852 ("Tose'e Shabakeh Azad Ltd").
+# Brute-force and SSH attacks, port scans, phishing, and spam detected from here.
+# Updated: 2026.11.20
+
+2a13:bf00:16::/48 Deny Cloud
+Origin: IR
+Profile: Dedicated;Webhosting
+Tag: liara.ir
+
+
+# ASNs 214719, 215811 ("LLC DZHIBIEN HOST", "Leonid Valerevich Naumov").
+# Brute-force, RDP attacks, phishing, hacking, and spam detected from here.
+# Updated: 2026.11.20
+
+2a0e:7200::/40 Deny Cloud
+Origin: RU
+Profile: Dedicated;Infrastructure/Transit;Webhosting
+Tag: gbnhost.com
+
+
+# ASN 209641 ("IHOR HOSTING LTD").
+# Brute-force and webapp attacks detected from here.
+# Updated: 2026.11.20
+
+2a0b:8040::/29 Deny Cloud
+2a0c:5d00:2001::/48 Deny Cloud
+2a0c:5d00:2003::/48 Deny Cloud
+2a0c:6980::/29 Deny Cloud
+Origin: AE
+2a11:9046::/32 Deny Cloud
+2a11:eac1::/32 Deny Cloud
+2a12:8784::/32 Deny Cloud
+2a12:f985::/32 Deny Cloud
+Origin: HK
+2a04:5203::/32 Deny Cloud
+2a04:5204::/31 Deny Cloud
+2a04:5206::/32 Deny Cloud
+2a0a:9300:2::/48 Deny Cloud
+2a0a:9300:d0::/47 Deny Cloud
+2a0a:9300:d2::/48 Deny Cloud
+2a0a:9302:1::/48 Deny Cloud
+2a0a:9303::/32 Deny Cloud
+2a0a:9304::/30 Deny Cloud
+2a0e:d603::/32 Deny Cloud
+2a0f:7b82::/31 Deny Cloud
+2a0f:7b84::/30 Deny Cloud
+Origin: VG
+Profile: Restricted/Unidentifiable
+Tag: IHOR HOSTING LTD
+
+
+# ASN 203516 ("AltunHOST LTD").
+# Brute-force, SSH, Plesk, wp2shell, WordPress/XMLRPC, and webapp attacks, port
+# scans, and hacking detected from here.
+# Updated: 2026.11.23
+
+2a02:2fc0:12::/48 Deny Cloud
+2a02:2fc0:2b::/48 Deny Cloud
+2a02:2fc0:2c::/48 Deny Cloud
+Origin: DE
+Profile: Dedicated;Webhosting
+Tag: AltunHOST LTD
+
+
+# ASN 211507 ("Julian Achter").
+# Brute-force, WordPress/XMLRPC, honeypot, env, webapp, and PostgreSQL attacks,
+# port scans, and hacking detected from here.
+# Updated: 2026.11.23
+
+2a14:c380:35::/48 Deny Cloud
+2a14:c380:50::/44 Deny Cloud
+2a14:c380:70::/44 Deny Cloud
+2a14:c380:90::/44 Deny Cloud
+2a14:c380:130::/44 Deny Cloud
+2a14:c380:600::/40 Deny Cloud
+2a14:c380:c70::/44 Deny Cloud
+2a14:c380:d70::/44 Deny Cloud
+Origin: DE
+2a14:7583:ffa0::/44 Deny Cloud
+Origin: US
+Profile: Dedicated;Webhosting
+Tag: Julian Achter
+
+
 # ---
 # Microsoft Azure IPv6 CIDRs.
 # Refer microsoft.com/en-us/download/details.aspx?id=56519
 # Refer microsoft.com/en-us/download/details.aspx?id=57062
 # Refer microsoft.com/en-us/download/details.aspx?id=57063
 # Refer microsoft.com/en-us/download/details.aspx?id=57064
-# Updated: 2026.09.23
+# Updated: 2026.11.20
 
 2404:7940::/47 Run bypasses.php
 2404:7940:3::/48 Run bypasses.php
@@ -20652,7 +20835,85 @@ Origin: DE
 2603:1010:8::/48 Run bypasses.php
 2603:1010:40::/48 Run bypasses.php
 2603:1010:80::/56 Run bypasses.php
-2603:1010:100::/40 Run bypasses.php
+2603:1010:100::/48 Run bypasses.php
+2603:1010:101::/62 Run bypasses.php
+2603:1010:101:4::/63 Run bypasses.php
+2603:1010:101:6::/64 Run bypasses.php
+2603:1010:101:7::/118 Run bypasses.php
+2603:1010:101:7::600/119 Run bypasses.php
+2603:1010:101:7::800/117 Run bypasses.php
+2603:1010:101:7::1000/116 Run bypasses.php
+2603:1010:101:7::2000/115 Run bypasses.php
+2603:1010:101:7::4000/114 Run bypasses.php
+2603:1010:101:7::8000/113 Run bypasses.php
+2603:1010:101:7::1:0/112 Run bypasses.php
+2603:1010:101:7::2:0/111 Run bypasses.php
+2603:1010:101:7::4:0/110 Run bypasses.php
+2603:1010:101:7::8:0/109 Run bypasses.php
+2603:1010:101:7::10:0/108 Run bypasses.php
+2603:1010:101:7::20:0/107 Run bypasses.php
+2603:1010:101:7::40:0/106 Run bypasses.php
+2603:1010:101:7::80:0/105 Run bypasses.php
+2603:1010:101:7::100:0/104 Run bypasses.php
+2603:1010:101:7::200:0/103 Run bypasses.php
+2603:1010:101:7::400:0/102 Run bypasses.php
+2603:1010:101:7::800:0/101 Run bypasses.php
+2603:1010:101:7::1000:0/100 Run bypasses.php
+2603:1010:101:7::2000:0/99 Run bypasses.php
+2603:1010:101:7::4000:0/98 Run bypasses.php
+2603:1010:101:7::8000:0/97 Run bypasses.php
+2603:1010:101:7:0:1::/96 Run bypasses.php
+2603:1010:101:7:0:2::/95 Run bypasses.php
+2603:1010:101:7:0:4::/94 Run bypasses.php
+2603:1010:101:7:0:8::/93 Run bypasses.php
+2603:1010:101:7:0:10::/92 Run bypasses.php
+2603:1010:101:7:0:20::/91 Run bypasses.php
+2603:1010:101:7:0:40::/90 Run bypasses.php
+2603:1010:101:7:0:80::/89 Run bypasses.php
+2603:1010:101:7:0:100::/88 Run bypasses.php
+2603:1010:101:7:0:200::/87 Run bypasses.php
+2603:1010:101:7:0:400::/86 Run bypasses.php
+2603:1010:101:7:0:800::/85 Run bypasses.php
+2603:1010:101:7:0:1000::/84 Run bypasses.php
+2603:1010:101:7:0:2000::/83 Run bypasses.php
+2603:1010:101:7:0:4000::/82 Run bypasses.php
+2603:1010:101:7:0:8000::/81 Run bypasses.php
+2603:1010:101:7:1::/80 Run bypasses.php
+2603:1010:101:7:2::/79 Run bypasses.php
+2603:1010:101:7:4::/78 Run bypasses.php
+2603:1010:101:7:8::/77 Run bypasses.php
+2603:1010:101:7:10::/76 Run bypasses.php
+2603:1010:101:7:20::/75 Run bypasses.php
+2603:1010:101:7:40::/74 Run bypasses.php
+2603:1010:101:7:80::/73 Run bypasses.php
+2603:1010:101:7:100::/72 Run bypasses.php
+2603:1010:101:7:200::/71 Run bypasses.php
+2603:1010:101:7:400::/70 Run bypasses.php
+2603:1010:101:7:800::/69 Run bypasses.php
+2603:1010:101:7:1000::/68 Run bypasses.php
+2603:1010:101:7:2000::/67 Run bypasses.php
+2603:1010:101:7:4000::/66 Run bypasses.php
+2603:1010:101:7:8000::/65 Run bypasses.php
+2603:1010:101:8::/61 Run bypasses.php
+2603:1010:101:10::/60 Run bypasses.php
+2603:1010:101:20::/59 Run bypasses.php
+2603:1010:101:40::/58 Run bypasses.php
+2603:1010:101:80::/57 Run bypasses.php
+2603:1010:101:100::/56 Run bypasses.php
+2603:1010:101:200::/55 Run bypasses.php
+2603:1010:101:400::/54 Run bypasses.php
+2603:1010:101:800::/53 Run bypasses.php
+2603:1010:101:1000::/52 Run bypasses.php
+2603:1010:101:2000::/51 Run bypasses.php
+2603:1010:101:4000::/50 Run bypasses.php
+2603:1010:101:8000::/49 Run bypasses.php
+2603:1010:102::/47 Run bypasses.php
+2603:1010:104::/46 Run bypasses.php
+2603:1010:108::/45 Run bypasses.php
+2603:1010:110::/44 Run bypasses.php
+2603:1010:120::/43 Run bypasses.php
+2603:1010:140::/42 Run bypasses.php
+2603:1010:180::/41 Run bypasses.php
 2603:1010:200::/47 Run bypasses.php
 2603:1010:202::/48 Run bypasses.php
 2603:1010:204::/46 Run bypasses.php
@@ -20703,7 +20964,203 @@ Origin: DE
 2603:1020:106::/48 Run bypasses.php
 2603:1020:200::/46 Run bypasses.php
 2603:1020:205::/48 Run bypasses.php
-2603:1020:206::/47 Run bypasses.php
+2603:1020:206::/60 Run bypasses.php
+2603:1020:206:10::/64 Run bypasses.php
+2603:1020:206:11::/118 Run bypasses.php
+2603:1020:206:11::400/120 Run bypasses.php
+2603:1020:206:11::510/124 Run bypasses.php
+2603:1020:206:11::520/123 Run bypasses.php
+2603:1020:206:11::540/122 Run bypasses.php
+2603:1020:206:11::580/121 Run bypasses.php
+2603:1020:206:11::600/119 Run bypasses.php
+2603:1020:206:11::800/117 Run bypasses.php
+2603:1020:206:11::1000/116 Run bypasses.php
+2603:1020:206:11::2000/115 Run bypasses.php
+2603:1020:206:11::4000/114 Run bypasses.php
+2603:1020:206:11::8000/113 Run bypasses.php
+2603:1020:206:11::1:0/112 Run bypasses.php
+2603:1020:206:11::2:0/111 Run bypasses.php
+2603:1020:206:11::4:0/110 Run bypasses.php
+2603:1020:206:11::8:0/109 Run bypasses.php
+2603:1020:206:11::10:0/108 Run bypasses.php
+2603:1020:206:11::20:0/107 Run bypasses.php
+2603:1020:206:11::40:0/106 Run bypasses.php
+2603:1020:206:11::80:0/105 Run bypasses.php
+2603:1020:206:11::100:0/104 Run bypasses.php
+2603:1020:206:11::200:0/103 Run bypasses.php
+2603:1020:206:11::400:0/102 Run bypasses.php
+2603:1020:206:11::800:0/101 Run bypasses.php
+2603:1020:206:11::1000:0/100 Run bypasses.php
+2603:1020:206:11::2000:0/99 Run bypasses.php
+2603:1020:206:11::4000:0/98 Run bypasses.php
+2603:1020:206:11::8000:0/97 Run bypasses.php
+2603:1020:206:11:0:1::/96 Run bypasses.php
+2603:1020:206:11:0:2::/95 Run bypasses.php
+2603:1020:206:11:0:4::/94 Run bypasses.php
+2603:1020:206:11:0:8::/93 Run bypasses.php
+2603:1020:206:11:0:10::/92 Run bypasses.php
+2603:1020:206:11:0:20::/91 Run bypasses.php
+2603:1020:206:11:0:40::/90 Run bypasses.php
+2603:1020:206:11:0:80::/89 Run bypasses.php
+2603:1020:206:11:0:100::/88 Run bypasses.php
+2603:1020:206:11:0:200::/87 Run bypasses.php
+2603:1020:206:11:0:400::/86 Run bypasses.php
+2603:1020:206:11:0:800::/85 Run bypasses.php
+2603:1020:206:11:0:1000::/84 Run bypasses.php
+2603:1020:206:11:0:2000::/83 Run bypasses.php
+2603:1020:206:11:0:4000::/82 Run bypasses.php
+2603:1020:206:11:0:8000::/81 Run bypasses.php
+2603:1020:206:11:1::/80 Run bypasses.php
+2603:1020:206:11:2::/79 Run bypasses.php
+2603:1020:206:11:4::/78 Run bypasses.php
+2603:1020:206:11:8::/77 Run bypasses.php
+2603:1020:206:11:10::/76 Run bypasses.php
+2603:1020:206:11:20::/75 Run bypasses.php
+2603:1020:206:11:40::/74 Run bypasses.php
+2603:1020:206:11:80::/73 Run bypasses.php
+2603:1020:206:11:100::/72 Run bypasses.php
+2603:1020:206:11:200::/71 Run bypasses.php
+2603:1020:206:11:400::/70 Run bypasses.php
+2603:1020:206:11:800::/69 Run bypasses.php
+2603:1020:206:11:1000::/68 Run bypasses.php
+2603:1020:206:11:2000::/67 Run bypasses.php
+2603:1020:206:11:4000::/66 Run bypasses.php
+2603:1020:206:11:8000::/65 Run bypasses.php
+2603:1020:206:12::/119 Run bypasses.php
+2603:1020:206:12::200/122 Run bypasses.php
+2603:1020:206:12::248/125 Run bypasses.php
+2603:1020:206:12::250/124 Run bypasses.php
+2603:1020:206:12::260/123 Run bypasses.php
+2603:1020:206:12::280/121 Run bypasses.php
+2603:1020:206:12::300/120 Run bypasses.php
+2603:1020:206:12::400/118 Run bypasses.php
+2603:1020:206:12::800/117 Run bypasses.php
+2603:1020:206:12::1000/116 Run bypasses.php
+2603:1020:206:12::2000/115 Run bypasses.php
+2603:1020:206:12::4000/114 Run bypasses.php
+2603:1020:206:12::8000/113 Run bypasses.php
+2603:1020:206:12::1:0/112 Run bypasses.php
+2603:1020:206:12::2:0/111 Run bypasses.php
+2603:1020:206:12::4:0/110 Run bypasses.php
+2603:1020:206:12::8:0/109 Run bypasses.php
+2603:1020:206:12::10:0/108 Run bypasses.php
+2603:1020:206:12::20:0/107 Run bypasses.php
+2603:1020:206:12::40:0/106 Run bypasses.php
+2603:1020:206:12::80:0/105 Run bypasses.php
+2603:1020:206:12::100:0/104 Run bypasses.php
+2603:1020:206:12::200:0/103 Run bypasses.php
+2603:1020:206:12::400:0/102 Run bypasses.php
+2603:1020:206:12::800:0/101 Run bypasses.php
+2603:1020:206:12::1000:0/100 Run bypasses.php
+2603:1020:206:12::2000:0/99 Run bypasses.php
+2603:1020:206:12::4000:0/98 Run bypasses.php
+2603:1020:206:12::8000:0/97 Run bypasses.php
+2603:1020:206:12:0:1::/96 Run bypasses.php
+2603:1020:206:12:0:2::/95 Run bypasses.php
+2603:1020:206:12:0:4::/94 Run bypasses.php
+2603:1020:206:12:0:8::/93 Run bypasses.php
+2603:1020:206:12:0:10::/92 Run bypasses.php
+2603:1020:206:12:0:20::/91 Run bypasses.php
+2603:1020:206:12:0:40::/90 Run bypasses.php
+2603:1020:206:12:0:80::/89 Run bypasses.php
+2603:1020:206:12:0:100::/88 Run bypasses.php
+2603:1020:206:12:0:200::/87 Run bypasses.php
+2603:1020:206:12:0:400::/86 Run bypasses.php
+2603:1020:206:12:0:800::/85 Run bypasses.php
+2603:1020:206:12:0:1000::/84 Run bypasses.php
+2603:1020:206:12:0:2000::/83 Run bypasses.php
+2603:1020:206:12:0:4000::/82 Run bypasses.php
+2603:1020:206:12:0:8000::/81 Run bypasses.php
+2603:1020:206:12:1::/80 Run bypasses.php
+2603:1020:206:12:2::/79 Run bypasses.php
+2603:1020:206:12:4::/78 Run bypasses.php
+2603:1020:206:12:8::/77 Run bypasses.php
+2603:1020:206:12:10::/76 Run bypasses.php
+2603:1020:206:12:20::/75 Run bypasses.php
+2603:1020:206:12:40::/74 Run bypasses.php
+2603:1020:206:12:80::/73 Run bypasses.php
+2603:1020:206:12:100::/72 Run bypasses.php
+2603:1020:206:12:200::/71 Run bypasses.php
+2603:1020:206:12:400::/70 Run bypasses.php
+2603:1020:206:12:800::/69 Run bypasses.php
+2603:1020:206:12:1000::/68 Run bypasses.php
+2603:1020:206:12:2000::/67 Run bypasses.php
+2603:1020:206:12:4000::/66 Run bypasses.php
+2603:1020:206:12:8000::/65 Run bypasses.php
+2603:1020:206:13::/121 Run bypasses.php
+2603:1020:206:13::80/124 Run bypasses.php
+2603:1020:206:13::a0/123 Run bypasses.php
+2603:1020:206:13::c0/122 Run bypasses.php
+2603:1020:206:13::100/120 Run bypasses.php
+2603:1020:206:13::200/119 Run bypasses.php
+2603:1020:206:13::400/118 Run bypasses.php
+2603:1020:206:13::800/117 Run bypasses.php
+2603:1020:206:13::1000/116 Run bypasses.php
+2603:1020:206:13::2000/115 Run bypasses.php
+2603:1020:206:13::4000/114 Run bypasses.php
+2603:1020:206:13::8000/113 Run bypasses.php
+2603:1020:206:13::1:0/112 Run bypasses.php
+2603:1020:206:13::2:0/111 Run bypasses.php
+2603:1020:206:13::4:0/110 Run bypasses.php
+2603:1020:206:13::8:0/109 Run bypasses.php
+2603:1020:206:13::10:0/108 Run bypasses.php
+2603:1020:206:13::20:0/107 Run bypasses.php
+2603:1020:206:13::40:0/106 Run bypasses.php
+2603:1020:206:13::80:0/105 Run bypasses.php
+2603:1020:206:13::100:0/104 Run bypasses.php
+2603:1020:206:13::200:0/103 Run bypasses.php
+2603:1020:206:13::400:0/102 Run bypasses.php
+2603:1020:206:13::800:0/101 Run bypasses.php
+2603:1020:206:13::1000:0/100 Run bypasses.php
+2603:1020:206:13::2000:0/99 Run bypasses.php
+2603:1020:206:13::4000:0/98 Run bypasses.php
+2603:1020:206:13::8000:0/97 Run bypasses.php
+2603:1020:206:13:0:1::/96 Run bypasses.php
+2603:1020:206:13:0:2::/95 Run bypasses.php
+2603:1020:206:13:0:4::/94 Run bypasses.php
+2603:1020:206:13:0:8::/93 Run bypasses.php
+2603:1020:206:13:0:10::/92 Run bypasses.php
+2603:1020:206:13:0:20::/91 Run bypasses.php
+2603:1020:206:13:0:40::/90 Run bypasses.php
+2603:1020:206:13:0:80::/89 Run bypasses.php
+2603:1020:206:13:0:100::/88 Run bypasses.php
+2603:1020:206:13:0:200::/87 Run bypasses.php
+2603:1020:206:13:0:400::/86 Run bypasses.php
+2603:1020:206:13:0:800::/85 Run bypasses.php
+2603:1020:206:13:0:1000::/84 Run bypasses.php
+2603:1020:206:13:0:2000::/83 Run bypasses.php
+2603:1020:206:13:0:4000::/82 Run bypasses.php
+2603:1020:206:13:0:8000::/81 Run bypasses.php
+2603:1020:206:13:1::/80 Run bypasses.php
+2603:1020:206:13:2::/79 Run bypasses.php
+2603:1020:206:13:4::/78 Run bypasses.php
+2603:1020:206:13:8::/77 Run bypasses.php
+2603:1020:206:13:10::/76 Run bypasses.php
+2603:1020:206:13:20::/75 Run bypasses.php
+2603:1020:206:13:40::/74 Run bypasses.php
+2603:1020:206:13:80::/73 Run bypasses.php
+2603:1020:206:13:100::/72 Run bypasses.php
+2603:1020:206:13:200::/71 Run bypasses.php
+2603:1020:206:13:400::/70 Run bypasses.php
+2603:1020:206:13:800::/69 Run bypasses.php
+2603:1020:206:13:1000::/68 Run bypasses.php
+2603:1020:206:13:2000::/67 Run bypasses.php
+2603:1020:206:13:4000::/66 Run bypasses.php
+2603:1020:206:13:8000::/65 Run bypasses.php
+2603:1020:206:14::/62 Run bypasses.php
+2603:1020:206:18::/61 Run bypasses.php
+2603:1020:206:20::/59 Run bypasses.php
+2603:1020:206:40::/58 Run bypasses.php
+2603:1020:206:80::/57 Run bypasses.php
+2603:1020:206:100::/56 Run bypasses.php
+2603:1020:206:200::/55 Run bypasses.php
+2603:1020:206:400::/54 Run bypasses.php
+2603:1020:206:800::/53 Run bypasses.php
+2603:1020:206:1000::/52 Run bypasses.php
+2603:1020:206:2000::/51 Run bypasses.php
+2603:1020:206:4000::/50 Run bypasses.php
+2603:1020:206:8000::/49 Run bypasses.php
+2603:1020:207::/48 Run bypasses.php
 2603:1020:208::/56 Run bypasses.php
 2603:1020:209::/48 Run bypasses.php
 2603:1020:300::/47 Run bypasses.php
@@ -20725,7 +21182,206 @@ Origin: DE
 2603:1020:604::/46 Run bypasses.php
 2603:1020:700::/47 Run bypasses.php
 2603:1020:702::/48 Run bypasses.php
-2603:1020:704::/46 Run bypasses.php
+2603:1020:704::/48 Run bypasses.php
+2603:1020:705::/62 Run bypasses.php
+2603:1020:705:4::/63 Run bypasses.php
+2603:1020:705:6::/118 Run bypasses.php
+2603:1020:705:6::400/120 Run bypasses.php
+2603:1020:705:6::500/122 Run bypasses.php
+2603:1020:705:6::560/123 Run bypasses.php
+2603:1020:705:6::580/121 Run bypasses.php
+2603:1020:705:6::600/119 Run bypasses.php
+2603:1020:705:6::800/117 Run bypasses.php
+2603:1020:705:6::1000/116 Run bypasses.php
+2603:1020:705:6::2000/115 Run bypasses.php
+2603:1020:705:6::4000/114 Run bypasses.php
+2603:1020:705:6::8000/113 Run bypasses.php
+2603:1020:705:6::1:0/112 Run bypasses.php
+2603:1020:705:6::2:0/111 Run bypasses.php
+2603:1020:705:6::4:0/110 Run bypasses.php
+2603:1020:705:6::8:0/109 Run bypasses.php
+2603:1020:705:6::10:0/108 Run bypasses.php
+2603:1020:705:6::20:0/107 Run bypasses.php
+2603:1020:705:6::40:0/106 Run bypasses.php
+2603:1020:705:6::80:0/105 Run bypasses.php
+2603:1020:705:6::100:0/104 Run bypasses.php
+2603:1020:705:6::200:0/103 Run bypasses.php
+2603:1020:705:6::400:0/102 Run bypasses.php
+2603:1020:705:6::800:0/101 Run bypasses.php
+2603:1020:705:6::1000:0/100 Run bypasses.php
+2603:1020:705:6::2000:0/99 Run bypasses.php
+2603:1020:705:6::4000:0/98 Run bypasses.php
+2603:1020:705:6::8000:0/97 Run bypasses.php
+2603:1020:705:6:0:1::/96 Run bypasses.php
+2603:1020:705:6:0:2::/95 Run bypasses.php
+2603:1020:705:6:0:4::/94 Run bypasses.php
+2603:1020:705:6:0:8::/93 Run bypasses.php
+2603:1020:705:6:0:10::/92 Run bypasses.php
+2603:1020:705:6:0:20::/91 Run bypasses.php
+2603:1020:705:6:0:40::/90 Run bypasses.php
+2603:1020:705:6:0:80::/89 Run bypasses.php
+2603:1020:705:6:0:100::/88 Run bypasses.php
+2603:1020:705:6:0:200::/87 Run bypasses.php
+2603:1020:705:6:0:400::/86 Run bypasses.php
+2603:1020:705:6:0:800::/85 Run bypasses.php
+2603:1020:705:6:0:1000::/84 Run bypasses.php
+2603:1020:705:6:0:2000::/83 Run bypasses.php
+2603:1020:705:6:0:4000::/82 Run bypasses.php
+2603:1020:705:6:0:8000::/81 Run bypasses.php
+2603:1020:705:6:1::/80 Run bypasses.php
+2603:1020:705:6:2::/79 Run bypasses.php
+2603:1020:705:6:4::/78 Run bypasses.php
+2603:1020:705:6:8::/77 Run bypasses.php
+2603:1020:705:6:10::/76 Run bypasses.php
+2603:1020:705:6:20::/75 Run bypasses.php
+2603:1020:705:6:40::/74 Run bypasses.php
+2603:1020:705:6:80::/73 Run bypasses.php
+2603:1020:705:6:100::/72 Run bypasses.php
+2603:1020:705:6:200::/71 Run bypasses.php
+2603:1020:705:6:400::/70 Run bypasses.php
+2603:1020:705:6:800::/69 Run bypasses.php
+2603:1020:705:6:1000::/68 Run bypasses.php
+2603:1020:705:6:2000::/67 Run bypasses.php
+2603:1020:705:6:4000::/66 Run bypasses.php
+2603:1020:705:6:8000::/65 Run bypasses.php
+2603:1020:705:7::/64 Run bypasses.php
+2603:1020:705:8::/62 Run bypasses.php
+2603:1020:705:c::/125 Run bypasses.php
+2603:1020:705:c::10/124 Run bypasses.php
+2603:1020:705:c::20/123 Run bypasses.php
+2603:1020:705:c::40/122 Run bypasses.php
+2603:1020:705:c::80/121 Run bypasses.php
+2603:1020:705:c::100/120 Run bypasses.php
+2603:1020:705:c::200/119 Run bypasses.php
+2603:1020:705:c::400/118 Run bypasses.php
+2603:1020:705:c::800/117 Run bypasses.php
+2603:1020:705:c::1000/116 Run bypasses.php
+2603:1020:705:c::2000/115 Run bypasses.php
+2603:1020:705:c::4000/114 Run bypasses.php
+2603:1020:705:c::8000/113 Run bypasses.php
+2603:1020:705:c::1:0/112 Run bypasses.php
+2603:1020:705:c::2:0/111 Run bypasses.php
+2603:1020:705:c::4:0/110 Run bypasses.php
+2603:1020:705:c::8:0/109 Run bypasses.php
+2603:1020:705:c::10:0/108 Run bypasses.php
+2603:1020:705:c::20:0/107 Run bypasses.php
+2603:1020:705:c::40:0/106 Run bypasses.php
+2603:1020:705:c::80:0/105 Run bypasses.php
+2603:1020:705:c::100:0/104 Run bypasses.php
+2603:1020:705:c::200:0/103 Run bypasses.php
+2603:1020:705:c::400:0/102 Run bypasses.php
+2603:1020:705:c::800:0/101 Run bypasses.php
+2603:1020:705:c::1000:0/100 Run bypasses.php
+2603:1020:705:c::2000:0/99 Run bypasses.php
+2603:1020:705:c::4000:0/98 Run bypasses.php
+2603:1020:705:c::8000:0/97 Run bypasses.php
+2603:1020:705:c:0:1::/96 Run bypasses.php
+2603:1020:705:c:0:2::/95 Run bypasses.php
+2603:1020:705:c:0:4::/94 Run bypasses.php
+2603:1020:705:c:0:8::/93 Run bypasses.php
+2603:1020:705:c:0:10::/92 Run bypasses.php
+2603:1020:705:c:0:20::/91 Run bypasses.php
+2603:1020:705:c:0:40::/90 Run bypasses.php
+2603:1020:705:c:0:80::/89 Run bypasses.php
+2603:1020:705:c:0:100::/88 Run bypasses.php
+2603:1020:705:c:0:200::/87 Run bypasses.php
+2603:1020:705:c:0:400::/86 Run bypasses.php
+2603:1020:705:c:0:800::/85 Run bypasses.php
+2603:1020:705:c:0:1000::/84 Run bypasses.php
+2603:1020:705:c:0:2000::/83 Run bypasses.php
+2603:1020:705:c:0:4000::/82 Run bypasses.php
+2603:1020:705:c:0:8000::/81 Run bypasses.php
+2603:1020:705:c:1::/80 Run bypasses.php
+2603:1020:705:c:2::/79 Run bypasses.php
+2603:1020:705:c:4::/78 Run bypasses.php
+2603:1020:705:c:8::/77 Run bypasses.php
+2603:1020:705:c:10::/76 Run bypasses.php
+2603:1020:705:c:20::/75 Run bypasses.php
+2603:1020:705:c:40::/74 Run bypasses.php
+2603:1020:705:c:80::/73 Run bypasses.php
+2603:1020:705:c:100::/72 Run bypasses.php
+2603:1020:705:c:200::/71 Run bypasses.php
+2603:1020:705:c:400::/70 Run bypasses.php
+2603:1020:705:c:800::/69 Run bypasses.php
+2603:1020:705:c:1000::/68 Run bypasses.php
+2603:1020:705:c:2000::/67 Run bypasses.php
+2603:1020:705:c:4000::/66 Run bypasses.php
+2603:1020:705:c:8000::/65 Run bypasses.php
+2603:1020:705:d::/64 Run bypasses.php
+2603:1020:705:e::/118 Run bypasses.php
+2603:1020:705:e::400/121 Run bypasses.php
+2603:1020:705:e::480/124 Run bypasses.php
+2603:1020:705:e::4a0/123 Run bypasses.php
+2603:1020:705:e::4c0/122 Run bypasses.php
+2603:1020:705:e::500/120 Run bypasses.php
+2603:1020:705:e::600/119 Run bypasses.php
+2603:1020:705:e::800/117 Run bypasses.php
+2603:1020:705:e::1000/116 Run bypasses.php
+2603:1020:705:e::2000/115 Run bypasses.php
+2603:1020:705:e::4000/114 Run bypasses.php
+2603:1020:705:e::8000/113 Run bypasses.php
+2603:1020:705:e::1:0/112 Run bypasses.php
+2603:1020:705:e::2:0/111 Run bypasses.php
+2603:1020:705:e::4:0/110 Run bypasses.php
+2603:1020:705:e::8:0/109 Run bypasses.php
+2603:1020:705:e::10:0/108 Run bypasses.php
+2603:1020:705:e::20:0/107 Run bypasses.php
+2603:1020:705:e::40:0/106 Run bypasses.php
+2603:1020:705:e::80:0/105 Run bypasses.php
+2603:1020:705:e::100:0/104 Run bypasses.php
+2603:1020:705:e::200:0/103 Run bypasses.php
+2603:1020:705:e::400:0/102 Run bypasses.php
+2603:1020:705:e::800:0/101 Run bypasses.php
+2603:1020:705:e::1000:0/100 Run bypasses.php
+2603:1020:705:e::2000:0/99 Run bypasses.php
+2603:1020:705:e::4000:0/98 Run bypasses.php
+2603:1020:705:e::8000:0/97 Run bypasses.php
+2603:1020:705:e:0:1::/96 Run bypasses.php
+2603:1020:705:e:0:2::/95 Run bypasses.php
+2603:1020:705:e:0:4::/94 Run bypasses.php
+2603:1020:705:e:0:8::/93 Run bypasses.php
+2603:1020:705:e:0:10::/92 Run bypasses.php
+2603:1020:705:e:0:20::/91 Run bypasses.php
+2603:1020:705:e:0:40::/90 Run bypasses.php
+2603:1020:705:e:0:80::/89 Run bypasses.php
+2603:1020:705:e:0:100::/88 Run bypasses.php
+2603:1020:705:e:0:200::/87 Run bypasses.php
+2603:1020:705:e:0:400::/86 Run bypasses.php
+2603:1020:705:e:0:800::/85 Run bypasses.php
+2603:1020:705:e:0:1000::/84 Run bypasses.php
+2603:1020:705:e:0:2000::/83 Run bypasses.php
+2603:1020:705:e:0:4000::/82 Run bypasses.php
+2603:1020:705:e:0:8000::/81 Run bypasses.php
+2603:1020:705:e:1::/80 Run bypasses.php
+2603:1020:705:e:2::/79 Run bypasses.php
+2603:1020:705:e:4::/78 Run bypasses.php
+2603:1020:705:e:8::/77 Run bypasses.php
+2603:1020:705:e:10::/76 Run bypasses.php
+2603:1020:705:e:20::/75 Run bypasses.php
+2603:1020:705:e:40::/74 Run bypasses.php
+2603:1020:705:e:80::/73 Run bypasses.php
+2603:1020:705:e:100::/72 Run bypasses.php
+2603:1020:705:e:200::/71 Run bypasses.php
+2603:1020:705:e:400::/70 Run bypasses.php
+2603:1020:705:e:800::/69 Run bypasses.php
+2603:1020:705:e:1000::/68 Run bypasses.php
+2603:1020:705:e:2000::/67 Run bypasses.php
+2603:1020:705:e:4000::/66 Run bypasses.php
+2603:1020:705:e:8000::/65 Run bypasses.php
+2603:1020:705:f::/64 Run bypasses.php
+2603:1020:705:10::/60 Run bypasses.php
+2603:1020:705:20::/59 Run bypasses.php
+2603:1020:705:40::/58 Run bypasses.php
+2603:1020:705:80::/57 Run bypasses.php
+2603:1020:705:100::/56 Run bypasses.php
+2603:1020:705:200::/55 Run bypasses.php
+2603:1020:705:400::/54 Run bypasses.php
+2603:1020:705:800::/53 Run bypasses.php
+2603:1020:705:1000::/52 Run bypasses.php
+2603:1020:705:2000::/51 Run bypasses.php
+2603:1020:705:4000::/50 Run bypasses.php
+2603:1020:705:8000::/49 Run bypasses.php
+2603:1020:706::/47 Run bypasses.php
 2603:1020:800::/47 Run bypasses.php
 2603:1020:802::/48 Run bypasses.php
 2603:1020:804::/46 Run bypasses.php
@@ -20778,7 +21434,78 @@ Origin: DE
 2603:1020:1502::/47 Run bypasses.php
 2603:1020:1504::/47 Run bypasses.php
 2603:1020:1601::/48 Run bypasses.php
-2603:1020:1602::/47 Run bypasses.php
+2603:1020:1602::/63 Run bypasses.php
+2603:1020:1602:2::/64 Run bypasses.php
+2603:1020:1602:3::/118 Run bypasses.php
+2603:1020:1602:3::400/119 Run bypasses.php
+2603:1020:1602:3::800/117 Run bypasses.php
+2603:1020:1602:3::1000/116 Run bypasses.php
+2603:1020:1602:3::2000/115 Run bypasses.php
+2603:1020:1602:3::4000/114 Run bypasses.php
+2603:1020:1602:3::8000/113 Run bypasses.php
+2603:1020:1602:3::1:0/112 Run bypasses.php
+2603:1020:1602:3::2:0/111 Run bypasses.php
+2603:1020:1602:3::4:0/110 Run bypasses.php
+2603:1020:1602:3::8:0/109 Run bypasses.php
+2603:1020:1602:3::10:0/108 Run bypasses.php
+2603:1020:1602:3::20:0/107 Run bypasses.php
+2603:1020:1602:3::40:0/106 Run bypasses.php
+2603:1020:1602:3::80:0/105 Run bypasses.php
+2603:1020:1602:3::100:0/104 Run bypasses.php
+2603:1020:1602:3::200:0/103 Run bypasses.php
+2603:1020:1602:3::400:0/102 Run bypasses.php
+2603:1020:1602:3::800:0/101 Run bypasses.php
+2603:1020:1602:3::1000:0/100 Run bypasses.php
+2603:1020:1602:3::2000:0/99 Run bypasses.php
+2603:1020:1602:3::4000:0/98 Run bypasses.php
+2603:1020:1602:3::8000:0/97 Run bypasses.php
+2603:1020:1602:3:0:1::/96 Run bypasses.php
+2603:1020:1602:3:0:2::/95 Run bypasses.php
+2603:1020:1602:3:0:4::/94 Run bypasses.php
+2603:1020:1602:3:0:8::/93 Run bypasses.php
+2603:1020:1602:3:0:10::/92 Run bypasses.php
+2603:1020:1602:3:0:20::/91 Run bypasses.php
+2603:1020:1602:3:0:40::/90 Run bypasses.php
+2603:1020:1602:3:0:80::/89 Run bypasses.php
+2603:1020:1602:3:0:100::/88 Run bypasses.php
+2603:1020:1602:3:0:200::/87 Run bypasses.php
+2603:1020:1602:3:0:400::/86 Run bypasses.php
+2603:1020:1602:3:0:800::/85 Run bypasses.php
+2603:1020:1602:3:0:1000::/84 Run bypasses.php
+2603:1020:1602:3:0:2000::/83 Run bypasses.php
+2603:1020:1602:3:0:4000::/82 Run bypasses.php
+2603:1020:1602:3:0:8000::/81 Run bypasses.php
+2603:1020:1602:3:1::/80 Run bypasses.php
+2603:1020:1602:3:2::/79 Run bypasses.php
+2603:1020:1602:3:4::/78 Run bypasses.php
+2603:1020:1602:3:8::/77 Run bypasses.php
+2603:1020:1602:3:10::/76 Run bypasses.php
+2603:1020:1602:3:20::/75 Run bypasses.php
+2603:1020:1602:3:40::/74 Run bypasses.php
+2603:1020:1602:3:80::/73 Run bypasses.php
+2603:1020:1602:3:100::/72 Run bypasses.php
+2603:1020:1602:3:200::/71 Run bypasses.php
+2603:1020:1602:3:400::/70 Run bypasses.php
+2603:1020:1602:3:800::/69 Run bypasses.php
+2603:1020:1602:3:1000::/68 Run bypasses.php
+2603:1020:1602:3:2000::/67 Run bypasses.php
+2603:1020:1602:3:4000::/66 Run bypasses.php
+2603:1020:1602:3:8000::/65 Run bypasses.php
+2603:1020:1602:4::/62 Run bypasses.php
+2603:1020:1602:8::/61 Run bypasses.php
+2603:1020:1602:10::/60 Run bypasses.php
+2603:1020:1602:20::/59 Run bypasses.php
+2603:1020:1602:40::/58 Run bypasses.php
+2603:1020:1602:80::/57 Run bypasses.php
+2603:1020:1602:100::/56 Run bypasses.php
+2603:1020:1602:200::/55 Run bypasses.php
+2603:1020:1602:400::/54 Run bypasses.php
+2603:1020:1602:800::/53 Run bypasses.php
+2603:1020:1602:1000::/52 Run bypasses.php
+2603:1020:1602:2000::/51 Run bypasses.php
+2603:1020:1602:4000::/50 Run bypasses.php
+2603:1020:1602:8000::/49 Run bypasses.php
+2603:1020:1603::/48 Run bypasses.php
 2603:1020:1604::/47 Run bypasses.php
 2603:1020:1700::/46 Run bypasses.php
 2603:1020:1704::/48 Run bypasses.php
@@ -20793,6 +21520,7 @@ Origin: DE
 2603:1026:900:40::/60 Run bypasses.php
 2603:1026:900:50::/61 Run bypasses.php
 2603:1026:900:58::/62 Run bypasses.php
+2603:1026:900:5c::/64 Run bypasses.php
 2603:1026:2400::/40 Run bypasses.php
 2603:1026:2500::/64 Run bypasses.php
 2603:1026:2500:4::/64 Run bypasses.php
@@ -20882,7 +21610,82 @@ Origin: DE
 2603:1030::/45 Run bypasses.php
 2603:1030:8::/46 Run bypasses.php
 2603:1030:d::/48 Run bypasses.php
-2603:1030:e::/47 Run bypasses.php
+2603:1030:e::/48 Run bypasses.php
+2603:1030:f::/60 Run bypasses.php
+2603:1030:f:10::/62 Run bypasses.php
+2603:1030:f:14::/64 Run bypasses.php
+2603:1030:f:15::/118 Run bypasses.php
+2603:1030:f:15::400/121 Run bypasses.php
+2603:1030:f:15::4a0/123 Run bypasses.php
+2603:1030:f:15::4c0/122 Run bypasses.php
+2603:1030:f:15::500/120 Run bypasses.php
+2603:1030:f:15::600/119 Run bypasses.php
+2603:1030:f:15::800/117 Run bypasses.php
+2603:1030:f:15::1000/116 Run bypasses.php
+2603:1030:f:15::2000/115 Run bypasses.php
+2603:1030:f:15::4000/114 Run bypasses.php
+2603:1030:f:15::8000/113 Run bypasses.php
+2603:1030:f:15::1:0/112 Run bypasses.php
+2603:1030:f:15::2:0/111 Run bypasses.php
+2603:1030:f:15::4:0/110 Run bypasses.php
+2603:1030:f:15::8:0/109 Run bypasses.php
+2603:1030:f:15::10:0/108 Run bypasses.php
+2603:1030:f:15::20:0/107 Run bypasses.php
+2603:1030:f:15::40:0/106 Run bypasses.php
+2603:1030:f:15::80:0/105 Run bypasses.php
+2603:1030:f:15::100:0/104 Run bypasses.php
+2603:1030:f:15::200:0/103 Run bypasses.php
+2603:1030:f:15::400:0/102 Run bypasses.php
+2603:1030:f:15::800:0/101 Run bypasses.php
+2603:1030:f:15::1000:0/100 Run bypasses.php
+2603:1030:f:15::2000:0/99 Run bypasses.php
+2603:1030:f:15::4000:0/98 Run bypasses.php
+2603:1030:f:15::8000:0/97 Run bypasses.php
+2603:1030:f:15:0:1::/96 Run bypasses.php
+2603:1030:f:15:0:2::/95 Run bypasses.php
+2603:1030:f:15:0:4::/94 Run bypasses.php
+2603:1030:f:15:0:8::/93 Run bypasses.php
+2603:1030:f:15:0:10::/92 Run bypasses.php
+2603:1030:f:15:0:20::/91 Run bypasses.php
+2603:1030:f:15:0:40::/90 Run bypasses.php
+2603:1030:f:15:0:80::/89 Run bypasses.php
+2603:1030:f:15:0:100::/88 Run bypasses.php
+2603:1030:f:15:0:200::/87 Run bypasses.php
+2603:1030:f:15:0:400::/86 Run bypasses.php
+2603:1030:f:15:0:800::/85 Run bypasses.php
+2603:1030:f:15:0:1000::/84 Run bypasses.php
+2603:1030:f:15:0:2000::/83 Run bypasses.php
+2603:1030:f:15:0:4000::/82 Run bypasses.php
+2603:1030:f:15:0:8000::/81 Run bypasses.php
+2603:1030:f:15:1::/80 Run bypasses.php
+2603:1030:f:15:2::/79 Run bypasses.php
+2603:1030:f:15:4::/78 Run bypasses.php
+2603:1030:f:15:8::/77 Run bypasses.php
+2603:1030:f:15:10::/76 Run bypasses.php
+2603:1030:f:15:20::/75 Run bypasses.php
+2603:1030:f:15:40::/74 Run bypasses.php
+2603:1030:f:15:80::/73 Run bypasses.php
+2603:1030:f:15:100::/72 Run bypasses.php
+2603:1030:f:15:200::/71 Run bypasses.php
+2603:1030:f:15:400::/70 Run bypasses.php
+2603:1030:f:15:800::/69 Run bypasses.php
+2603:1030:f:15:1000::/68 Run bypasses.php
+2603:1030:f:15:2000::/67 Run bypasses.php
+2603:1030:f:15:4000::/66 Run bypasses.php
+2603:1030:f:15:8000::/65 Run bypasses.php
+2603:1030:f:16::/63 Run bypasses.php
+2603:1030:f:18::/61 Run bypasses.php
+2603:1030:f:20::/59 Run bypasses.php
+2603:1030:f:40::/58 Run bypasses.php
+2603:1030:f:80::/57 Run bypasses.php
+2603:1030:f:100::/56 Run bypasses.php
+2603:1030:f:200::/55 Run bypasses.php
+2603:1030:f:400::/54 Run bypasses.php
+2603:1030:f:800::/53 Run bypasses.php
+2603:1030:f:1000::/52 Run bypasses.php
+2603:1030:f:2000::/51 Run bypasses.php
+2603:1030:f:4000::/50 Run bypasses.php
+2603:1030:f:8000::/49 Run bypasses.php
 2603:1030:10::/47 Run bypasses.php
 2603:1030:12::/48 Run bypasses.php
 2603:1030:13::/55 Run bypasses.php
@@ -20895,7 +21698,82 @@ Origin: DE
 2603:1030:200::/45 Run bypasses.php
 2603:1030:20c::/47 Run bypasses.php
 2603:1030:20e::/48 Run bypasses.php
-2603:1030:210::/47 Run bypasses.php
+2603:1030:210::/60 Run bypasses.php
+2603:1030:210:10::/63 Run bypasses.php
+2603:1030:210:12::/118 Run bypasses.php
+2603:1030:210:12::400/120 Run bypasses.php
+2603:1030:210:12::520/123 Run bypasses.php
+2603:1030:210:12::540/122 Run bypasses.php
+2603:1030:210:12::580/121 Run bypasses.php
+2603:1030:210:12::600/119 Run bypasses.php
+2603:1030:210:12::800/117 Run bypasses.php
+2603:1030:210:12::1000/116 Run bypasses.php
+2603:1030:210:12::2000/115 Run bypasses.php
+2603:1030:210:12::4000/114 Run bypasses.php
+2603:1030:210:12::8000/113 Run bypasses.php
+2603:1030:210:12::1:0/112 Run bypasses.php
+2603:1030:210:12::2:0/111 Run bypasses.php
+2603:1030:210:12::4:0/110 Run bypasses.php
+2603:1030:210:12::8:0/109 Run bypasses.php
+2603:1030:210:12::10:0/108 Run bypasses.php
+2603:1030:210:12::20:0/107 Run bypasses.php
+2603:1030:210:12::40:0/106 Run bypasses.php
+2603:1030:210:12::80:0/105 Run bypasses.php
+2603:1030:210:12::100:0/104 Run bypasses.php
+2603:1030:210:12::200:0/103 Run bypasses.php
+2603:1030:210:12::400:0/102 Run bypasses.php
+2603:1030:210:12::800:0/101 Run bypasses.php
+2603:1030:210:12::1000:0/100 Run bypasses.php
+2603:1030:210:12::2000:0/99 Run bypasses.php
+2603:1030:210:12::4000:0/98 Run bypasses.php
+2603:1030:210:12::8000:0/97 Run bypasses.php
+2603:1030:210:12:0:1::/96 Run bypasses.php
+2603:1030:210:12:0:2::/95 Run bypasses.php
+2603:1030:210:12:0:4::/94 Run bypasses.php
+2603:1030:210:12:0:8::/93 Run bypasses.php
+2603:1030:210:12:0:10::/92 Run bypasses.php
+2603:1030:210:12:0:20::/91 Run bypasses.php
+2603:1030:210:12:0:40::/90 Run bypasses.php
+2603:1030:210:12:0:80::/89 Run bypasses.php
+2603:1030:210:12:0:100::/88 Run bypasses.php
+2603:1030:210:12:0:200::/87 Run bypasses.php
+2603:1030:210:12:0:400::/86 Run bypasses.php
+2603:1030:210:12:0:800::/85 Run bypasses.php
+2603:1030:210:12:0:1000::/84 Run bypasses.php
+2603:1030:210:12:0:2000::/83 Run bypasses.php
+2603:1030:210:12:0:4000::/82 Run bypasses.php
+2603:1030:210:12:0:8000::/81 Run bypasses.php
+2603:1030:210:12:1::/80 Run bypasses.php
+2603:1030:210:12:2::/79 Run bypasses.php
+2603:1030:210:12:4::/78 Run bypasses.php
+2603:1030:210:12:8::/77 Run bypasses.php
+2603:1030:210:12:10::/76 Run bypasses.php
+2603:1030:210:12:20::/75 Run bypasses.php
+2603:1030:210:12:40::/74 Run bypasses.php
+2603:1030:210:12:80::/73 Run bypasses.php
+2603:1030:210:12:100::/72 Run bypasses.php
+2603:1030:210:12:200::/71 Run bypasses.php
+2603:1030:210:12:400::/70 Run bypasses.php
+2603:1030:210:12:800::/69 Run bypasses.php
+2603:1030:210:12:1000::/68 Run bypasses.php
+2603:1030:210:12:2000::/67 Run bypasses.php
+2603:1030:210:12:4000::/66 Run bypasses.php
+2603:1030:210:12:8000::/65 Run bypasses.php
+2603:1030:210:13::/64 Run bypasses.php
+2603:1030:210:14::/62 Run bypasses.php
+2603:1030:210:18::/61 Run bypasses.php
+2603:1030:210:20::/59 Run bypasses.php
+2603:1030:210:40::/58 Run bypasses.php
+2603:1030:210:80::/57 Run bypasses.php
+2603:1030:210:100::/56 Run bypasses.php
+2603:1030:210:200::/55 Run bypasses.php
+2603:1030:210:400::/54 Run bypasses.php
+2603:1030:210:800::/53 Run bypasses.php
+2603:1030:210:1000::/52 Run bypasses.php
+2603:1030:210:2000::/51 Run bypasses.php
+2603:1030:210:4000::/50 Run bypasses.php
+2603:1030:210:8000::/49 Run bypasses.php
+2603:1030:211::/48 Run bypasses.php
 2603:1030:212::/56 Run bypasses.php
 2603:1030:213::/48 Run bypasses.php
 2603:1030:214::/48 Run bypasses.php
@@ -20966,7 +21844,8 @@ Origin: DE
 2603:1030:1002::/48 Run bypasses.php
 2603:1030:1004::/46 Run bypasses.php
 2603:1030:1008::/62 Run bypasses.php
-2603:1030:1008:4::/64 Run bypasses.php
+2603:1030:1008:4::/63 Run bypasses.php
+2603:1030:1008:6::/64 Run bypasses.php
 2603:1030:1101::/48 Run bypasses.php
 2603:1030:1102::/47 Run bypasses.php
 2603:1030:1104::/47 Run bypasses.php
@@ -20977,7 +21856,62 @@ Origin: DE
 2603:1030:1302::/47 Run bypasses.php
 2603:1030:1304::/47 Run bypasses.php
 2603:1030:1401::/48 Run bypasses.php
-2603:1030:1402::/47 Run bypasses.php
+2603:1030:1402::/119 Run bypasses.php
+2603:1030:1402::400/118 Run bypasses.php
+2603:1030:1402::800/117 Run bypasses.php
+2603:1030:1402::1000/116 Run bypasses.php
+2603:1030:1402::2000/115 Run bypasses.php
+2603:1030:1402::4000/114 Run bypasses.php
+2603:1030:1402::8000/113 Run bypasses.php
+2603:1030:1402::1:0/112 Run bypasses.php
+2603:1030:1402::2:0/111 Run bypasses.php
+2603:1030:1402::4:0/110 Run bypasses.php
+2603:1030:1402::8:0/109 Run bypasses.php
+2603:1030:1402::10:0/108 Run bypasses.php
+2603:1030:1402::20:0/107 Run bypasses.php
+2603:1030:1402::40:0/106 Run bypasses.php
+2603:1030:1402::80:0/105 Run bypasses.php
+2603:1030:1402::100:0/104 Run bypasses.php
+2603:1030:1402::200:0/103 Run bypasses.php
+2603:1030:1402::400:0/102 Run bypasses.php
+2603:1030:1402::800:0/101 Run bypasses.php
+2603:1030:1402::1000:0/100 Run bypasses.php
+2603:1030:1402::2000:0/99 Run bypasses.php
+2603:1030:1402::4000:0/98 Run bypasses.php
+2603:1030:1402::8000:0/97 Run bypasses.php
+2603:1030:1402:0:1::/80 Run bypasses.php
+2603:1030:1402:0:2::/79 Run bypasses.php
+2603:1030:1402:0:4::/78 Run bypasses.php
+2603:1030:1402:0:8::/77 Run bypasses.php
+2603:1030:1402:0:10::/76 Run bypasses.php
+2603:1030:1402:0:20::/75 Run bypasses.php
+2603:1030:1402:0:40::/74 Run bypasses.php
+2603:1030:1402:0:80::/73 Run bypasses.php
+2603:1030:1402:0:100::/72 Run bypasses.php
+2603:1030:1402:0:200::/71 Run bypasses.php
+2603:1030:1402:0:400::/70 Run bypasses.php
+2603:1030:1402:0:800::/69 Run bypasses.php
+2603:1030:1402:0:1000::/68 Run bypasses.php
+2603:1030:1402:0:2000::/67 Run bypasses.php
+2603:1030:1402:0:4000::/66 Run bypasses.php
+2603:1030:1402:0:8000::/65 Run bypasses.php
+2603:1030:1402:1::/64 Run bypasses.php
+2603:1030:1402:2::/63 Run bypasses.php
+2603:1030:1402:4::/62 Run bypasses.php
+2603:1030:1402:8::/61 Run bypasses.php
+2603:1030:1402:10::/60 Run bypasses.php
+2603:1030:1402:20::/59 Run bypasses.php
+2603:1030:1402:40::/58 Run bypasses.php
+2603:1030:1402:80::/57 Run bypasses.php
+2603:1030:1402:100::/56 Run bypasses.php
+2603:1030:1402:200::/55 Run bypasses.php
+2603:1030:1402:400::/54 Run bypasses.php
+2603:1030:1402:800::/53 Run bypasses.php
+2603:1030:1402:1000::/52 Run bypasses.php
+2603:1030:1402:2000::/51 Run bypasses.php
+2603:1030:1402:4000::/50 Run bypasses.php
+2603:1030:1402:8000::/49 Run bypasses.php
+2603:1030:1403::/48 Run bypasses.php
 2603:1030:1404::/47 Run bypasses.php
 2603:1030:1406::/63 Run bypasses.php
 2603:1030:1501::/48 Run bypasses.php
@@ -21004,10 +21938,7 @@ Origin: DE
 2603:1036:903:3e::/63 Run bypasses.php
 2603:1036:903:40::/61 Run bypasses.php
 2603:1036:903:48::/63 Run bypasses.php
-2603:1036:90c::/61 Run bypasses.php
-2603:1036:90c:8::/62 Run bypasses.php
-2603:1036:90c:c::/63 Run bypasses.php
-2603:1036:90c:e::/64 Run bypasses.php
+2603:1036:90c::/60 Run bypasses.php
 2603:1036:9ff:ffff::/64 Run bypasses.php
 2603:1036:d20::/64 Run bypasses.php
 2603:1036:120d::/48 Run bypasses.php
@@ -21144,25 +22075,309 @@ Origin: DE
 2603:1040:1204::/48 Run bypasses.php
 2603:1040:1206::/48 Run bypasses.php
 2603:1040:1301::/48 Run bypasses.php
-2603:1040:1302::/47 Run bypasses.php
+2603:1040:1302::/62 Run bypasses.php
+2603:1040:1302:4::/64 Run bypasses.php
+2603:1040:1302:5::200/119 Run bypasses.php
+2603:1040:1302:5::400/118 Run bypasses.php
+2603:1040:1302:5::800/117 Run bypasses.php
+2603:1040:1302:5::1000/116 Run bypasses.php
+2603:1040:1302:5::2000/115 Run bypasses.php
+2603:1040:1302:5::4000/114 Run bypasses.php
+2603:1040:1302:5::8000/113 Run bypasses.php
+2603:1040:1302:5::1:0/112 Run bypasses.php
+2603:1040:1302:5::2:0/111 Run bypasses.php
+2603:1040:1302:5::4:0/110 Run bypasses.php
+2603:1040:1302:5::8:0/109 Run bypasses.php
+2603:1040:1302:5::10:0/108 Run bypasses.php
+2603:1040:1302:5::20:0/107 Run bypasses.php
+2603:1040:1302:5::40:0/106 Run bypasses.php
+2603:1040:1302:5::80:0/105 Run bypasses.php
+2603:1040:1302:5::100:0/104 Run bypasses.php
+2603:1040:1302:5::200:0/103 Run bypasses.php
+2603:1040:1302:5::400:0/102 Run bypasses.php
+2603:1040:1302:5::800:0/101 Run bypasses.php
+2603:1040:1302:5::1000:0/100 Run bypasses.php
+2603:1040:1302:5::2000:0/99 Run bypasses.php
+2603:1040:1302:5::4000:0/98 Run bypasses.php
+2603:1040:1302:5::8000:0/97 Run bypasses.php
+2603:1040:1302:5:0:1::/96 Run bypasses.php
+2603:1040:1302:5:0:2::/95 Run bypasses.php
+2603:1040:1302:5:0:4::/94 Run bypasses.php
+2603:1040:1302:5:0:8::/93 Run bypasses.php
+2603:1040:1302:5:0:10::/92 Run bypasses.php
+2603:1040:1302:5:0:20::/91 Run bypasses.php
+2603:1040:1302:5:0:40::/90 Run bypasses.php
+2603:1040:1302:5:0:80::/89 Run bypasses.php
+2603:1040:1302:5:0:100::/88 Run bypasses.php
+2603:1040:1302:5:0:200::/87 Run bypasses.php
+2603:1040:1302:5:0:400::/86 Run bypasses.php
+2603:1040:1302:5:0:800::/85 Run bypasses.php
+2603:1040:1302:5:0:1000::/84 Run bypasses.php
+2603:1040:1302:5:0:2000::/83 Run bypasses.php
+2603:1040:1302:5:0:4000::/82 Run bypasses.php
+2603:1040:1302:5:0:8000::/81 Run bypasses.php
+2603:1040:1302:5:1::/80 Run bypasses.php
+2603:1040:1302:5:2::/79 Run bypasses.php
+2603:1040:1302:5:4::/78 Run bypasses.php
+2603:1040:1302:5:8::/77 Run bypasses.php
+2603:1040:1302:5:10::/76 Run bypasses.php
+2603:1040:1302:5:20::/75 Run bypasses.php
+2603:1040:1302:5:40::/74 Run bypasses.php
+2603:1040:1302:5:80::/73 Run bypasses.php
+2603:1040:1302:5:100::/72 Run bypasses.php
+2603:1040:1302:5:200::/71 Run bypasses.php
+2603:1040:1302:5:400::/70 Run bypasses.php
+2603:1040:1302:5:800::/69 Run bypasses.php
+2603:1040:1302:5:1000::/68 Run bypasses.php
+2603:1040:1302:5:2000::/67 Run bypasses.php
+2603:1040:1302:5:4000::/66 Run bypasses.php
+2603:1040:1302:5:8000::/65 Run bypasses.php
+2603:1040:1302:6::/63 Run bypasses.php
+2603:1040:1302:8::/61 Run bypasses.php
+2603:1040:1302:10::/60 Run bypasses.php
+2603:1040:1302:20::/59 Run bypasses.php
+2603:1040:1302:40::/58 Run bypasses.php
+2603:1040:1302:80::/57 Run bypasses.php
+2603:1040:1302:100::/56 Run bypasses.php
+2603:1040:1302:200::/55 Run bypasses.php
+2603:1040:1302:400::/54 Run bypasses.php
+2603:1040:1302:800::/53 Run bypasses.php
+2603:1040:1302:1000::/52 Run bypasses.php
+2603:1040:1302:2000::/51 Run bypasses.php
+2603:1040:1302:4000::/50 Run bypasses.php
+2603:1040:1302:8000::/49 Run bypasses.php
+2603:1040:1303::/48 Run bypasses.php
 2603:1040:1304::/48 Run bypasses.php
 2603:1040:1306::/48 Run bypasses.php
 2603:1040:1401::/48 Run bypasses.php
 2603:1040:1402::/47 Run bypasses.php
 2603:1040:1404::/48 Run bypasses.php
 2603:1040:1406::/48 Run bypasses.php
-2603:1040:1502::/47 Run bypasses.php
+2603:1040:1502::/48 Run bypasses.php
+2603:1040:1503::/62 Run bypasses.php
+2603:1040:1503:4::/64 Run bypasses.php
+2603:1040:1503:5::/118 Run bypasses.php
+2603:1040:1503:5::600/119 Run bypasses.php
+2603:1040:1503:5::800/117 Run bypasses.php
+2603:1040:1503:5::1000/116 Run bypasses.php
+2603:1040:1503:5::2000/115 Run bypasses.php
+2603:1040:1503:5::4000/114 Run bypasses.php
+2603:1040:1503:5::8000/113 Run bypasses.php
+2603:1040:1503:5::1:0/112 Run bypasses.php
+2603:1040:1503:5::2:0/111 Run bypasses.php
+2603:1040:1503:5::4:0/110 Run bypasses.php
+2603:1040:1503:5::8:0/109 Run bypasses.php
+2603:1040:1503:5::10:0/108 Run bypasses.php
+2603:1040:1503:5::20:0/107 Run bypasses.php
+2603:1040:1503:5::40:0/106 Run bypasses.php
+2603:1040:1503:5::80:0/105 Run bypasses.php
+2603:1040:1503:5::100:0/104 Run bypasses.php
+2603:1040:1503:5::200:0/103 Run bypasses.php
+2603:1040:1503:5::400:0/102 Run bypasses.php
+2603:1040:1503:5::800:0/101 Run bypasses.php
+2603:1040:1503:5::1000:0/100 Run bypasses.php
+2603:1040:1503:5::2000:0/99 Run bypasses.php
+2603:1040:1503:5::4000:0/98 Run bypasses.php
+2603:1040:1503:5::8000:0/97 Run bypasses.php
+2603:1040:1503:5:0:1::/96 Run bypasses.php
+2603:1040:1503:5:0:2::/95 Run bypasses.php
+2603:1040:1503:5:0:4::/94 Run bypasses.php
+2603:1040:1503:5:0:8::/93 Run bypasses.php
+2603:1040:1503:5:0:10::/92 Run bypasses.php
+2603:1040:1503:5:0:20::/91 Run bypasses.php
+2603:1040:1503:5:0:40::/90 Run bypasses.php
+2603:1040:1503:5:0:80::/89 Run bypasses.php
+2603:1040:1503:5:0:100::/88 Run bypasses.php
+2603:1040:1503:5:0:200::/87 Run bypasses.php
+2603:1040:1503:5:0:400::/86 Run bypasses.php
+2603:1040:1503:5:0:800::/85 Run bypasses.php
+2603:1040:1503:5:0:1000::/84 Run bypasses.php
+2603:1040:1503:5:0:2000::/83 Run bypasses.php
+2603:1040:1503:5:0:4000::/82 Run bypasses.php
+2603:1040:1503:5:0:8000::/81 Run bypasses.php
+2603:1040:1503:5:1::/80 Run bypasses.php
+2603:1040:1503:5:2::/79 Run bypasses.php
+2603:1040:1503:5:4::/78 Run bypasses.php
+2603:1040:1503:5:8::/77 Run bypasses.php
+2603:1040:1503:5:10::/76 Run bypasses.php
+2603:1040:1503:5:20::/75 Run bypasses.php
+2603:1040:1503:5:40::/74 Run bypasses.php
+2603:1040:1503:5:80::/73 Run bypasses.php
+2603:1040:1503:5:100::/72 Run bypasses.php
+2603:1040:1503:5:200::/71 Run bypasses.php
+2603:1040:1503:5:400::/70 Run bypasses.php
+2603:1040:1503:5:800::/69 Run bypasses.php
+2603:1040:1503:5:1000::/68 Run bypasses.php
+2603:1040:1503:5:2000::/67 Run bypasses.php
+2603:1040:1503:5:4000::/66 Run bypasses.php
+2603:1040:1503:5:8000::/65 Run bypasses.php
+2603:1040:1503:6::/63 Run bypasses.php
+2603:1040:1503:8::/61 Run bypasses.php
+2603:1040:1503:10::/60 Run bypasses.php
+2603:1040:1503:20::/59 Run bypasses.php
+2603:1040:1503:40::/58 Run bypasses.php
+2603:1040:1503:80::/57 Run bypasses.php
+2603:1040:1503:100::/56 Run bypasses.php
+2603:1040:1503:200::/55 Run bypasses.php
+2603:1040:1503:400::/54 Run bypasses.php
+2603:1040:1503:800::/53 Run bypasses.php
+2603:1040:1503:1000::/52 Run bypasses.php
+2603:1040:1503:2000::/51 Run bypasses.php
+2603:1040:1503:4000::/50 Run bypasses.php
+2603:1040:1503:8000::/49 Run bypasses.php
 2603:1040:1504::/47 Run bypasses.php
 2603:1040:1506::/48 Run bypasses.php
 2603:1040:1601::/48 Run bypasses.php
 2603:1040:1602::/47 Run bypasses.php
 2603:1040:1604::/47 Run bypasses.php
 2603:1040:1701::/48 Run bypasses.php
-2603:1040:1702::/47 Run bypasses.php
+2603:1040:1702::/62 Run bypasses.php
+2603:1040:1702:4::200/119 Run bypasses.php
+2603:1040:1702:4::400/118 Run bypasses.php
+2603:1040:1702:4::800/117 Run bypasses.php
+2603:1040:1702:4::1000/116 Run bypasses.php
+2603:1040:1702:4::2000/115 Run bypasses.php
+2603:1040:1702:4::4000/114 Run bypasses.php
+2603:1040:1702:4::8000/113 Run bypasses.php
+2603:1040:1702:4::1:0/112 Run bypasses.php
+2603:1040:1702:4::2:0/111 Run bypasses.php
+2603:1040:1702:4::4:0/110 Run bypasses.php
+2603:1040:1702:4::8:0/109 Run bypasses.php
+2603:1040:1702:4::10:0/108 Run bypasses.php
+2603:1040:1702:4::20:0/107 Run bypasses.php
+2603:1040:1702:4::40:0/106 Run bypasses.php
+2603:1040:1702:4::80:0/105 Run bypasses.php
+2603:1040:1702:4::100:0/104 Run bypasses.php
+2603:1040:1702:4::200:0/103 Run bypasses.php
+2603:1040:1702:4::400:0/102 Run bypasses.php
+2603:1040:1702:4::800:0/101 Run bypasses.php
+2603:1040:1702:4::1000:0/100 Run bypasses.php
+2603:1040:1702:4::2000:0/99 Run bypasses.php
+2603:1040:1702:4::4000:0/98 Run bypasses.php
+2603:1040:1702:4::8000:0/97 Run bypasses.php
+2603:1040:1702:4:0:1::/96 Run bypasses.php
+2603:1040:1702:4:0:2::/95 Run bypasses.php
+2603:1040:1702:4:0:4::/94 Run bypasses.php
+2603:1040:1702:4:0:8::/93 Run bypasses.php
+2603:1040:1702:4:0:10::/92 Run bypasses.php
+2603:1040:1702:4:0:20::/91 Run bypasses.php
+2603:1040:1702:4:0:40::/90 Run bypasses.php
+2603:1040:1702:4:0:80::/89 Run bypasses.php
+2603:1040:1702:4:0:100::/88 Run bypasses.php
+2603:1040:1702:4:0:200::/87 Run bypasses.php
+2603:1040:1702:4:0:400::/86 Run bypasses.php
+2603:1040:1702:4:0:800::/85 Run bypasses.php
+2603:1040:1702:4:0:1000::/84 Run bypasses.php
+2603:1040:1702:4:0:2000::/83 Run bypasses.php
+2603:1040:1702:4:0:4000::/82 Run bypasses.php
+2603:1040:1702:4:0:8000::/81 Run bypasses.php
+2603:1040:1702:4:1::/80 Run bypasses.php
+2603:1040:1702:4:2::/79 Run bypasses.php
+2603:1040:1702:4:4::/78 Run bypasses.php
+2603:1040:1702:4:8::/77 Run bypasses.php
+2603:1040:1702:4:10::/76 Run bypasses.php
+2603:1040:1702:4:20::/75 Run bypasses.php
+2603:1040:1702:4:40::/74 Run bypasses.php
+2603:1040:1702:4:80::/73 Run bypasses.php
+2603:1040:1702:4:100::/72 Run bypasses.php
+2603:1040:1702:4:200::/71 Run bypasses.php
+2603:1040:1702:4:400::/70 Run bypasses.php
+2603:1040:1702:4:800::/69 Run bypasses.php
+2603:1040:1702:4:1000::/68 Run bypasses.php
+2603:1040:1702:4:2000::/67 Run bypasses.php
+2603:1040:1702:4:4000::/66 Run bypasses.php
+2603:1040:1702:4:8000::/65 Run bypasses.php
+2603:1040:1702:5::/64 Run bypasses.php
+2603:1040:1702:6::/63 Run bypasses.php
+2603:1040:1702:8::/61 Run bypasses.php
+2603:1040:1702:10::/60 Run bypasses.php
+2603:1040:1702:20::/59 Run bypasses.php
+2603:1040:1702:40::/58 Run bypasses.php
+2603:1040:1702:80::/57 Run bypasses.php
+2603:1040:1702:100::/56 Run bypasses.php
+2603:1040:1702:200::/55 Run bypasses.php
+2603:1040:1702:400::/54 Run bypasses.php
+2603:1040:1702:800::/53 Run bypasses.php
+2603:1040:1702:1000::/52 Run bypasses.php
+2603:1040:1702:2000::/51 Run bypasses.php
+2603:1040:1702:4000::/50 Run bypasses.php
+2603:1040:1702:8000::/49 Run bypasses.php
+2603:1040:1703::/48 Run bypasses.php
 2603:1040:1704::/47 Run bypasses.php
 2603:1040:1706::/64 Run bypasses.php
 2603:1040:1801::/48 Run bypasses.php
-2603:1040:1802::/47 Run bypasses.php
+2603:1040:1802::/62 Run bypasses.php
+2603:1040:1802:4::/64 Run bypasses.php
+2603:1040:1802:5::/119 Run bypasses.php
+2603:1040:1802:5::400/118 Run bypasses.php
+2603:1040:1802:5::800/117 Run bypasses.php
+2603:1040:1802:5::1000/116 Run bypasses.php
+2603:1040:1802:5::2000/115 Run bypasses.php
+2603:1040:1802:5::4000/114 Run bypasses.php
+2603:1040:1802:5::8000/113 Run bypasses.php
+2603:1040:1802:5::1:0/112 Run bypasses.php
+2603:1040:1802:5::2:0/111 Run bypasses.php
+2603:1040:1802:5::4:0/110 Run bypasses.php
+2603:1040:1802:5::8:0/109 Run bypasses.php
+2603:1040:1802:5::10:0/108 Run bypasses.php
+2603:1040:1802:5::20:0/107 Run bypasses.php
+2603:1040:1802:5::40:0/106 Run bypasses.php
+2603:1040:1802:5::80:0/105 Run bypasses.php
+2603:1040:1802:5::100:0/104 Run bypasses.php
+2603:1040:1802:5::200:0/103 Run bypasses.php
+2603:1040:1802:5::400:0/102 Run bypasses.php
+2603:1040:1802:5::800:0/101 Run bypasses.php
+2603:1040:1802:5::1000:0/100 Run bypasses.php
+2603:1040:1802:5::2000:0/99 Run bypasses.php
+2603:1040:1802:5::4000:0/98 Run bypasses.php
+2603:1040:1802:5::8000:0/97 Run bypasses.php
+2603:1040:1802:5:0:1::/96 Run bypasses.php
+2603:1040:1802:5:0:2::/95 Run bypasses.php
+2603:1040:1802:5:0:4::/94 Run bypasses.php
+2603:1040:1802:5:0:8::/93 Run bypasses.php
+2603:1040:1802:5:0:10::/92 Run bypasses.php
+2603:1040:1802:5:0:20::/91 Run bypasses.php
+2603:1040:1802:5:0:40::/90 Run bypasses.php
+2603:1040:1802:5:0:80::/89 Run bypasses.php
+2603:1040:1802:5:0:100::/88 Run bypasses.php
+2603:1040:1802:5:0:200::/87 Run bypasses.php
+2603:1040:1802:5:0:400::/86 Run bypasses.php
+2603:1040:1802:5:0:800::/85 Run bypasses.php
+2603:1040:1802:5:0:1000::/84 Run bypasses.php
+2603:1040:1802:5:0:2000::/83 Run bypasses.php
+2603:1040:1802:5:0:4000::/82 Run bypasses.php
+2603:1040:1802:5:0:8000::/81 Run bypasses.php
+2603:1040:1802:5:1::/80 Run bypasses.php
+2603:1040:1802:5:2::/79 Run bypasses.php
+2603:1040:1802:5:4::/78 Run bypasses.php
+2603:1040:1802:5:8::/77 Run bypasses.php
+2603:1040:1802:5:10::/76 Run bypasses.php
+2603:1040:1802:5:20::/75 Run bypasses.php
+2603:1040:1802:5:40::/74 Run bypasses.php
+2603:1040:1802:5:80::/73 Run bypasses.php
+2603:1040:1802:5:100::/72 Run bypasses.php
+2603:1040:1802:5:200::/71 Run bypasses.php
+2603:1040:1802:5:400::/70 Run bypasses.php
+2603:1040:1802:5:800::/69 Run bypasses.php
+2603:1040:1802:5:1000::/68 Run bypasses.php
+2603:1040:1802:5:2000::/67 Run bypasses.php
+2603:1040:1802:5:4000::/66 Run bypasses.php
+2603:1040:1802:5:8000::/65 Run bypasses.php
+2603:1040:1802:6::/63 Run bypasses.php
+2603:1040:1802:8::/61 Run bypasses.php
+2603:1040:1802:10::/60 Run bypasses.php
+2603:1040:1802:20::/59 Run bypasses.php
+2603:1040:1802:40::/58 Run bypasses.php
+2603:1040:1802:80::/57 Run bypasses.php
+2603:1040:1802:100::/56 Run bypasses.php
+2603:1040:1802:200::/55 Run bypasses.php
+2603:1040:1802:400::/54 Run bypasses.php
+2603:1040:1802:800::/53 Run bypasses.php
+2603:1040:1802:1000::/52 Run bypasses.php
+2603:1040:1802:2000::/51 Run bypasses.php
+2603:1040:1802:4000::/50 Run bypasses.php
+2603:1040:1802:8000::/49 Run bypasses.php
+2603:1040:1803::/48 Run bypasses.php
 2603:1040:1804::/48 Run bypasses.php
 2603:1040:1806::/48 Run bypasses.php
 2603:1040:1901::/48 Run bypasses.php
@@ -21174,12 +22389,7 @@ Origin: DE
 2603:1040:1b01::/48 Run bypasses.php
 2603:1040:1b02::/47 Run bypasses.php
 2603:1040:1b04::/47 Run bypasses.php
-2603:1046:a00::/59 Run bypasses.php
-2603:1046:a00:20::/60 Run bypasses.php
-2603:1046:a00:30::/61 Run bypasses.php
-2603:1046:a00:38::/63 Run bypasses.php
-2603:1046:a00:3b::/64 Run bypasses.php
-2603:1046:a00:3c::/62 Run bypasses.php
+2603:1046:a00::/58 Run bypasses.php
 2603:1046:a00:40::/59 Run bypasses.php
 2603:1046:a00:60::/62 Run bypasses.php
 2603:1046:1400::/40 Run bypasses.php
@@ -21200,6 +22410,7 @@ Origin: DE
 2603:1046:1500:44::/64 Run bypasses.php
 2603:1046:2000::/48 Run bypasses.php
 2603:1047:1::/48 Run bypasses.php
+2603:104c:0:200::/55 Run bypasses.php
 2603:104c:0:4200::/63 Run bypasses.php
 2603:104c:0:8200::/55 Run bypasses.php
 2603:104c:0:c200::/55 Run bypasses.php
@@ -21271,8 +22482,10 @@ Origin: DE
 2603:1061:14::/47 Run bypasses.php
 2603:1061:16::/50 Run bypasses.php
 2603:1061:17::/48 Run bypasses.php
+2603:1061:18::/48 Run bypasses.php
 2603:1061:1000::/39 Run bypasses.php
 2603:1061:1310::/44 Run bypasses.php
+2603:1061:13e0::/44 Run bypasses.php
 2603:1061:1601::/48 Run bypasses.php
 2603:1061:1700::/40 Run bypasses.php
 2603:1061:1800::/40 Run bypasses.php
@@ -21338,6 +22551,8 @@ Origin: DE
 2603:1063:4a::/55 Run bypasses.php
 2603:1063:4b::/55 Run bypasses.php
 2603:1063:4c::/55 Run bypasses.php
+2603:1063:4d::/56 Run bypasses.php
+2603:1063:4e::/56 Run bypasses.php
 2603:1063:ff::/48 Run bypasses.php
 2603:1063:100::/55 Run bypasses.php
 2603:1063:100:200::/56 Run bypasses.php
@@ -21620,7 +22835,10 @@ Origin: DE
 2603:1063:637::/56 Run bypasses.php
 2603:1063:638::/56 Run bypasses.php
 2603:1063:639::/56 Run bypasses.php
+2603:1063:63a::/56 Run bypasses.php
+2603:1063:63c::/56 Run bypasses.php
 2603:1063:700::/56 Run bypasses.php
+2603:1063:701::/56 Run bypasses.php
 2603:1063:702::/56 Run bypasses.php
 2603:1063:703::/56 Run bypasses.php
 2603:1063:704::/56 Run bypasses.php
@@ -21670,6 +22888,7 @@ Origin: DE
 2603:1063:730::/56 Run bypasses.php
 2603:1063:731::/56 Run bypasses.php
 2603:1063:732::/56 Run bypasses.php
+2603:1063:734:100::/64 Run bypasses.php
 2603:1063:1c00::/55 Run bypasses.php
 2603:1063:1c01::/55 Run bypasses.php
 2603:1063:1c02::/55 Run bypasses.php
@@ -21746,6 +22965,7 @@ Origin: DE
 2603:1063:2204:10::/64 Run bypasses.php
 2603:1063:2204:14::/64 Run bypasses.php
 2603:1063:2204:18::/64 Run bypasses.php
+2603:1063:2204:1c::/64 Run bypasses.php
 2603:1063:2206::/64 Run bypasses.php
 2603:1063:2206:4::/64 Run bypasses.php
 2603:1063:2206:8::/64 Run bypasses.php
